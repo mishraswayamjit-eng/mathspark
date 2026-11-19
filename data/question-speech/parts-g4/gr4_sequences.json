@@ -1,0 +1,1740 @@
+{
+ "EXT_G4_FP_2020_003": {
+  "q": "The series is 64, 81, 100, 121, and so on. Which number is not in the series?",
+  "options": [
+   "169",
+   "176",
+   "225",
+   "289"
+  ],
+  "hints": [
+   "Look at what kind of numbers are in the series. Each one comes from multiplying a number by itself.",
+   "64 is 8 times 8, and 81 is 9 times 9. Test each choice to see whether it is a number multiplied by itself.",
+   "Here is a similar one: the series 1, 4, 9, 16 holds square numbers. 49 belongs, because 7 times 7 equals 49. 50 does not belong, because it falls between 7 times 7 equals 49 and 8 times 8 equals 64."
+  ],
+  "steps": [
+   "The series is 8 times 8, 9 times 9, 10 times 10, 11 times 11. These are square numbers.",
+   "169 is 13 times 13, 225 is 15 times 15, and 289 is 17 times 17. They all belong.",
+   "13 times 13 equals 169 and 14 times 14 equals 196. No whole number multiplied by itself gives a number between these two.",
+   "176 lies between 169 and 196. So 176 is not in the series."
+  ]
+ },
+ "EXT_G4_FP_2021_013": {
+  "q": "What is the 10th term of 24, 39, 53, 66, 78, and so on?",
+  "options": [
+   "123",
+   "135",
+   "108",
+   "118"
+  ],
+  "hints": [
+   "Look at the gaps between neighbouring terms. Then see how the gaps themselves change.",
+   "Find the gaps: 39 minus 24, 53 minus 39, and so on. Notice the pattern the gaps make.",
+   "Here is a similar one: 10, 20, 29, 37. The gaps are 10, 9, 8, so each gap is 1 less. The next gaps are 7 and 6. 37 plus 7 equals 44, then 44 plus 6 equals 50. So the 6th term is 50."
+  ],
+  "steps": [
+   "Find the gaps between the terms. They are 15, 14, 13, 12. Each gap is 1 less than the one before.",
+   "The next gaps are 11, 10, 9, 8 and 7. The 6th term is 78 plus 11, which is 89, and the 7th is 89 plus 10, which is 99.",
+   "The 8th term is 99 plus 9, which is 108, and the 9th is 108 plus 8, which is 116.",
+   "Add the last gap, 7. So the 10th term is 123. 116 plus 7 equals 123."
+  ]
+ },
+ "EXT_G4_FP_2021_027": {
+  "q": "What is the sum of the series 1, 3, 5, 7, and so on, up to 27?",
+  "options": [
+   "13 squared",
+   "14 squared",
+   "17 squared",
+   "21 squared"
+  ],
+  "hints": [
+   "These are the odd numbers in order, starting from 1. Sums of odd numbers starting from 1 make a special pattern.",
+   "Try small cases first, such as 1 plus 3 and 1 plus 3 plus 5. Then count how many odd numbers there are from 1 to 27.",
+   "Here is a similar one: 1 plus 3 plus 5 plus 7 plus 9 has 5 odd numbers and adds up to 25. That is 5 times 5. So the sum of the first 5 odd numbers is 5 squared."
+  ],
+  "steps": [
+   "Look at small cases. 1 plus 3 equals 4, which is 2 times 2. And 1 plus 3 plus 5 equals 9, which is 3 times 3. The sum is always the count of odd numbers multiplied by itself.",
+   "Count the odd numbers from 1 to 27. Add 1 to 27 and halve it. Open bracket, 27 plus 1, close bracket, divided by 2, equals 14.",
+   "There are 14 odd numbers, so the sum is 14 times 14. 14 times 14 equals 196.",
+   "So the sum is 14 squared."
+  ]
+ },
+ "EXT_G4_FP_2021_030": {
+  "q": "What is the 59th odd number prior to 726?",
+  "options": [
+   "611",
+   "607",
+   "608",
+   "609"
+  ],
+  "hints": [
+   "You are counting backwards through the odd numbers. Odd numbers are 2 apart.",
+   "Find the first odd number just before 726. Then work out how many jumps of 2 take you from the 1st to the 59th.",
+   "Here is a similar one: the 10th odd number before 50. The 1st is 49. The 10th is 9 jumps of 2 further back. 9 times 2 equals 18, and 49 minus 18 equals 31."
+  ],
+  "steps": [
+   "The 1st odd number before 726 is 725.",
+   "To go from the 1st to the 59th you make 58 jumps back, and each jump is 2. 58 times 2 equals 116.",
+   "Jump back 116 from 725. 725 minus 116 equals 609.",
+   "So the 59th odd number before 726 is 609."
+  ]
+ },
+ "EXT_G4_FP_2022_014": {
+  "q": "What is the sum of the 7th and 11th even numbers after the greatest 2-digit prime?",
+  "options": [
+   "198",
+   "248",
+   "328",
+   "None of these"
+  ],
+  "hints": [
+   "There are two jobs here. First find the greatest 2-digit prime number, then count the even numbers that come after it.",
+   "The greatest 2-digit prime is 97, so the 1st even number after it is 98. Count on in 2s from there.",
+   "Here is a similar one: the 3rd and 5th even numbers after 13. The even numbers are 14, 16, 18, 20, 22. The 3rd is 18 and the 5th is 22. Their sum is 18 plus 22, which is 40."
+  ],
+  "steps": [
+   "99 is 9 times 11, and 98 is even, so neither is prime. The greatest 2-digit prime is 97.",
+   "The 1st even number after 97 is 98. The 7th is 6 jumps of 2 further on. 98 plus 12 equals 110.",
+   "The 11th is 10 jumps of 2 after 98. 98 plus 20 equals 118.",
+   "Add the two numbers. 110 plus 118 equals 228.",
+   "228 is not among the numbers given. So the answer is None of these."
+  ]
+ },
+ "EXT_G4_FP_2022_017": {
+  "q": "The series is 122, 117, 107, 92, 72, A. Find A.",
+  "options": [
+   "45",
+   "48",
+   "47",
+   "52"
+  ],
+  "hints": [
+   "This is a number pattern where the numbers get smaller. Look at how much is taken away each time.",
+   "Find the gap between each pair of neighbours: 122 to 117, 117 to 107, and so on. Then see how the gaps themselves change.",
+   "Similar example: 80, 77, 71, 62, 50, blank. The gaps are 3, 6, 9, 12, so they grow by 3 each time. The next gap is 15, and 50 minus 15 equals 35."
+  ],
+  "steps": [
+   "The numbers go down by 5, then 10, then 15, then 20.",
+   "The gaps grow by 5 each time, so the next gap is 25. 20 plus 5 equals 25.",
+   "Take 25 away from 72. So A is 47. 72 minus 25 equals 47."
+  ]
+ },
+ "EXT_G4_FP_2022_030": {
+  "q": "What is the 12th term of the series 13, 15, 18, 23, 30, 41, and so on?",
+  "options": [
+   "169",
+   "142",
+   "195",
+   "173"
+  ],
+  "hints": [
+   "Look at the gaps between the numbers. They are not equal, so see if the gaps belong to a special family of numbers.",
+   "Write the gaps: 15 minus 13, 18 minus 15, 23 minus 18 and so on. Ask yourself what kind of numbers 2, 3, 5, 7 and 11 are.",
+   "Similar example: 5, 7, 10, 15, 22 has gaps 2, 3, 5, 7, the prime numbers. The 7th term needs the first 6 primes: 2 plus 3 plus 5 plus 7 plus 11 plus 13 equals 41. So the 7th term is 5 plus 41, which is 46."
+  ],
+  "steps": [
+   "The gaps are 2, 3, 5, 7 and 11. These are the prime numbers in order.",
+   "To reach the 12th term we make 11 jumps. So we need the first 11 primes: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31.",
+   "Add these 11 primes. 2 plus 3 plus 5 plus 7, plus 11 plus 13 plus 17, plus 19 plus 23, plus 29 plus 31, equals 160.",
+   "Add the total to the first term. The 12th term is 173. 13 plus 160 equals 173."
+  ]
+ },
+ "EXT_G4_FP_2023_003": {
+  "q": "W plus 9 is odd. What is the 48th even number after it?",
+  "options": [
+   "W plus 106",
+   "W plus 104",
+   "W plus 102",
+   "W plus 105"
+  ],
+  "hints": [
+   "Odd and even numbers take turns. The number just after an odd number is always even, and even numbers go up in 2s.",
+   "The 1st even number after W plus 9 is W plus 10. Now think how many jumps of 2 take you from the 1st even number to the 48th.",
+   "Similar example: N plus 5 is odd. The 1st even number after it is N plus 6. The 10th even number is 9 jumps of 2 further on: 9 times 2 equals 18, and 6 plus 18 equals 24. So it is N plus 24."
+  ],
+  "steps": [
+   "W plus 9 is odd, so the next number, W plus 10, is the 1st even number after it.",
+   "From the 1st even number to the 48th there are 47 jumps of 2. 47 times 2 equals 94.",
+   "Add 94 to the 10. The 48th even number is W plus 104. 10 plus 94 equals 104."
+  ]
+ },
+ "EXT_G4_FP_2023_015": {
+  "q": "Find the 28th term of the series: 24, 41, 58, 75, 92, and so on.",
+  "options": [
+   "489",
+   "483",
+   "491",
+   "518"
+  ],
+  "hints": [
+   "The numbers go up by the same amount each time. To reach a far-away term, count jumps instead of writing every number.",
+   "Find the jump: 41 minus 24. Then think how many jumps there are from the 1st term to the 28th term.",
+   "Similar example: 5, 9, 13, 17, and so on, goes up by 4. The 11th term is 10 jumps from the start: 10 times 4 equals 40, and 5 plus 40 equals 45."
+  ],
+  "steps": [
+   "Each term is 17 more than the one before. 41 minus 24 equals 17.",
+   "From the 1st term to the 28th term there are 27 jumps.",
+   "Find 27 jumps of 17. 27 times 17 equals 459.",
+   "Add this to the first term. The 28th term is 483. 24 plus 459 equals 483."
+  ]
+ },
+ "EXT_G4_FP_2024_002": {
+  "q": "x plus 9 is a 2-digit prime. Find the 12th even number after it.",
+  "options": [
+   "x plus 32",
+   "x plus 33",
+   "x plus 34",
+   "None of these"
+  ],
+  "hints": [
+   "A 2-digit prime number is always odd. So the number just after it is even, and even numbers go up in 2s.",
+   "The 1st even number after x plus 9 is x plus 10. Think how many jumps of 2 take you from the 1st even number to the 12th.",
+   "Similar example: N plus 3 is an odd number. The 1st even number after it is N plus 4. The 6th even number is 5 jumps of 2 further: 5 times 2 equals 10, and 4 plus 10 equals 14. So it is N plus 14."
+  ],
+  "steps": [
+   "Every 2-digit prime is odd. So x plus 9 is odd and x plus 10 is the 1st even number after it.",
+   "From the 1st even number to the 12th there are 11 jumps of 2. 11 times 2 equals 22.",
+   "Add 22 to the 10. The 12th even number is x plus 32. 10 plus 22 equals 32."
+  ]
+ },
+ "EXT_G4_FP_2024_007": {
+  "q": "What is the 11th number in the series 7, 10, 13, 16, 19, and so on?",
+  "options": [
+   "40",
+   "37",
+   "34",
+   "42"
+  ],
+  "hints": [
+   "The numbers go up by the same amount each time. Count jumps from the first number instead of writing them all out.",
+   "Find the jump: 10 minus 7. Then think how many jumps there are from the 1st number to the 11th number.",
+   "Similar example: 4, 9, 14, 19, and so on, goes up by 5. The 8th number is 7 jumps from the start: 7 times 5 equals 35, and 4 plus 35 equals 39."
+  ],
+  "steps": [
+   "Each number is 3 more than the one before. 10 minus 7 equals 3.",
+   "From the 1st number to the 11th there are 10 jumps of 3. 10 times 3 equals 30.",
+   "Add this to the first number. The 11th number is 37. 7 plus 30 equals 37."
+  ]
+ },
+ "EXT_G4_FP_2024_039": {
+  "q": "What is the 9th number in the series 12, 23, 33, 42, 50, and so on?",
+  "options": [
+   "85",
+   "72",
+   "76",
+   "81"
+  ],
+  "hints": [
+   "Look at the gaps between the numbers. The gaps are not equal here, so see how the gaps themselves change.",
+   "Write the gaps: 23 minus 12, 33 minus 23, 42 minus 33 and 50 minus 42. Notice what happens to each gap, then keep the pattern going.",
+   "Similar example: 5, 14, 22, 29, and so on, has gaps 9, 8, 7, each 1 smaller. The next gaps are 6 and 5. So the 5th number is 29 plus 6, which is 35, and the 6th is 35 plus 5, which is 40."
+  ],
+  "steps": [
+   "The gaps are 11, 10, 9 and 8. Each gap is 1 less than the one before.",
+   "The next gap is 7. This gives the 6th number. 50 plus 7 equals 57.",
+   "Then add 6 for the 7th number. 57 plus 6 equals 63.",
+   "Then add 5 for the 8th number. 63 plus 5 equals 68.",
+   "Then add 4. The 9th number is 72. 68 plus 4 equals 72."
+  ]
+ },
+ "EXT_G4_FP_2025_004": {
+  "q": "Which of these equals the sum of the first 12 odd natural numbers?",
+  "options": [
+   "136",
+   "144",
+   "132",
+   "156"
+  ],
+  "hints": [
+   "There is a lovely pattern when you add odd numbers starting from 1. Try a few small cases and see what kind of number you get.",
+   "Add the first 2 odd numbers, then the first 3, then the first 4. Compare each total with 2 times 2, 3 times 3, and 4 times 4.",
+   "Similar example: the first 5 odd numbers are 1, 3, 5, 7, 9. Their sum is 1 plus 3 plus 5 plus 7 plus 9, equals 25, which is 5 times 5. So the sum of the first 5 odd numbers is 5 times 5."
+  ],
+  "steps": [
+   "Look at small cases. The first 2 odd numbers add to 4, which is 2 times 2. 1 plus 3 equals 4.",
+   "The first 3 odd numbers add to 9, which is 3 times 3. 1 plus 3 plus 5 equals 9.",
+   "So the sum of the first 12 odd numbers is 12 times 12.",
+   "Multiply. The sum is 144. 12 times 12 equals 144."
+  ]
+ },
+ "EXT_G4_FP_2025_017": {
+  "q": "Which number goes in place of the question mark in the series: 90, 85, 75, 60, 40, question mark?",
+  "options": [
+   "15",
+   "20",
+   "10",
+   "5"
+  ],
+  "hints": [
+   "This is a number pattern where the numbers get smaller. Look at how much is taken away each time.",
+   "Find the gap between each pair of neighbours: 90 to 85, 85 to 75, and so on. Then see how the gaps themselves change.",
+   "Similar example: 100, 98, 94, 88, 80, blank. The gaps are 2, 4, 6, 8, so they grow by 2 each time. The next gap is 10, and 80 minus 10 equals 70."
+  ],
+  "steps": [
+   "The numbers go down by 5, then 10, then 15, then 20.",
+   "The gaps grow by 5 each time, so the next gap is 25. 20 plus 5 equals 25.",
+   "Take 25 away from 40. The missing number is 15. 40 minus 25 equals 15."
+  ]
+ },
+ "EXT_G4_FP_2025_037": {
+  "q": "What is the 38th term of the series 12, 19, 26, 33, 40, and so on?",
+  "options": [
+   "281",
+   "271",
+   "286",
+   "261"
+  ],
+  "hints": [
+   "The numbers go up by the same amount each time. To reach a far-away term, count jumps instead of writing every number.",
+   "Find the jump: 19 minus 12. Then think how many jumps there are from the 1st term to the 38th term.",
+   "Similar example: 3, 9, 15, 21, and so on, goes up by 6. The 21st term is 20 jumps from the start: 20 times 6 equals 120, and 3 plus 120 equals 123."
+  ],
+  "steps": [
+   "Each term is 7 more than the one before. 19 minus 12 equals 7.",
+   "From the 1st term to the 38th term there are 37 jumps.",
+   "Find 37 jumps of 7. 37 times 7 equals 259.",
+   "Add this to the first term. The 38th term is 271. 12 plus 259 equals 271."
+  ]
+ },
+ "EXT_G4_WS2_CH16_001": {
+  "q": "Find the missing term in the sequence: 9999999, 777777, blank, 3333, 111.",
+  "options": [
+   "5555",
+   "44444",
+   "555555",
+   "55555"
+  ],
+  "hints": [
+   "Look at two things in each term: which digit is used, and how many times it is written.",
+   "The digits go 9, 7, blank, 3, 1. Now count how many digits each term has. Work out both for the missing term.",
+   "Similar example: 88888, 6666, blank, 22. The digits go down by 2: 8, 6, 4, 2. The lengths go down by 1: 5, 4, 3, 2. So the missing term is 444."
+  ],
+  "steps": [
+   "The digits used are 9, 7, blank, 3, 1. They go down by 2, so the missing digit is 5.",
+   "The terms have 7, 6, blank, 4 and 3 digits. Each term is one digit shorter, so the missing term has 5 digits.",
+   "Write the digit 5 five times. The missing term is 55555."
+  ]
+ },
+ "EXT_G4_WS2_CH16_002": {
+  "q": "What is the next term in the given sequence? 416, 525, 636, 749, blank.",
+  "options": [
+   "884",
+   "864",
+   "881",
+   "961"
+  ],
+  "hints": [
+   "Each number is made of two parts joined together. Look at the first digit and the last two digits separately.",
+   "Split 416 into 4 and 16, and 525 into 5 and 25. Ask how 16 is made from 4, and how 25 is made from 5.",
+   "Similar example: 13, 26, 39, 412, blank. Split them: 1 and 3, 2 and 6, 3 and 9, 4 and 12. The second part is 3 times the first. Next comes 5 and 5 times 3 equals 15, so the term is 515."
+  ],
+  "steps": [
+   "Split each number: 4 and 16, 5 and 25, 6 and 36, 7 and 49.",
+   "The first parts go 4, 5, 6, 7. Each second part is the first part times itself.",
+   "The next first part is 8. 8 times 8 equals 64.",
+   "Join 8 and 64. The next term is 864."
+  ]
+ },
+ "EXT_G4_WS2_CH16_004": {
+  "q": "What is the next number in the given sequence? 1, 8, 27, 64, 125, blank.",
+  "options": [
+   "169",
+   "185",
+   "216",
+   "225"
+  ],
+  "hints": [
+   "These numbers are not made by adding the same amount. Think about multiplying a number by itself more than once.",
+   "Try 2 times 2 times 2, and 3 times 3 times 3. See which terms they match, then find which number comes next in line.",
+   "Similar example: 1, 4, 9, 16, blank. These are 1 times 1, 2 times 2, 3 times 3, and 4 times 4. The next number is 5 times 5, which is 25."
+  ],
+  "steps": [
+   "Each term is a number multiplied by itself three times. The 2nd term is 8. 2 times 2 times 2 equals 8.",
+   "The 5th term is 125. 5 times 5 times 5 equals 125.",
+   "So the 6th term uses 6. The next number is 216. 6 times 6 times 6 equals 216."
+  ]
+ },
+ "EXT_G4_WS2_CH16_005": {
+  "q": "Find the next two terms in the sequence: 53, 56, 62, 71, 83, blank.",
+  "options": [
+   "98, 113",
+   "107, 155",
+   "98, 128",
+   "98, 116"
+  ],
+  "hints": [
+   "Look at the gaps between the numbers. The gaps are not equal here, so see how the gaps themselves change.",
+   "Write the gaps: 56 minus 53, 62 minus 56, 71 minus 62 and 83 minus 71. Notice how each gap grows, then keep the pattern going.",
+   "Similar example: 10, 12, 16, 22, 30, and so on, has gaps 2, 4, 6, 8, growing by 2. The next gaps are 10 and 12. So the next terms are 30 plus 10 equals 40 and 40 plus 12 equals 52."
+  ],
+  "steps": [
+   "The gaps are 3, 6, 9 and 12. Each gap is 3 more than the one before.",
+   "The next gap is 15. 83 plus 15 equals 98.",
+   "The gap after that is 18. 98 plus 18 equals 116.",
+   "The next two terms are 98, 116."
+  ]
+ },
+ "EXT_G4_WS2_CH16_006": {
+  "q": "What is the missing number in the sequence: 525, 438, blank, 264, 177, 90?",
+  "options": [
+   "351",
+   "349",
+   "353",
+   "324"
+  ],
+  "hints": [
+   "The numbers are getting smaller. Check whether the same amount is taken away each time.",
+   "Subtract two neighbours you know, such as 525 minus 438 or 264 minus 177. Then take that amount away from 438.",
+   "Similar example: 400, 355, blank, 265, 220. The gap is 400 minus 355, which is 45. So the missing number is 355 minus 45, which is 310. Check: 310 minus 45 equals 265."
+  ],
+  "steps": [
+   "Find the gap between the first two numbers. 525 minus 438 equals 87.",
+   "Check with another pair. The gap is 87 again. 264 minus 177 equals 87.",
+   "Take 87 away from 438. The missing number is 351. 438 minus 87 equals 351."
+  ]
+ },
+ "EXT_G4_WS2_CH16_009": {
+  "q": "Find the next two terms in the sequence: 4, 7, 11, 18, 29, blank, blank.",
+  "options": [
+   "37, 66",
+   "47, 65",
+   "47, 67",
+   "47, 76"
+  ],
+  "hints": [
+   "Here the gaps keep changing. See whether each term can be made from the two terms just before it.",
+   "Try adding the first two terms, 4 and 7. Then try 7 and 11. Compare each total with the term that follows.",
+   "Similar example: 2, 5, 7, 12, 19, and so on. Each term is the sum of the two before it: 2 plus 5 equals 7, 5 plus 7 equals 12, 7 plus 12 equals 19. The next terms are 12 plus 19 equals 31 and 19 plus 31 equals 50."
+  ],
+  "steps": [
+   "Each term is the sum of the two terms before it. 4 plus 7 equals 11.",
+   "Check with a later pair. 11 plus 18 equals 29.",
+   "Add the last two terms to get the next one. 18 plus 29 equals 47.",
+   "Do it once more. The next two terms are 47, 76. 29 plus 47 equals 76."
+  ]
+ },
+ "EXT_G4_WS2_CH16_015": {
+  "q": "92, 88, 84, 80, 76, and so on. In the given series, the numbers are decreasing by 4 each time. What is the 18th term?",
+  "options": [
+   "16",
+   "24",
+   "20",
+   "28"
+  ],
+  "hints": [
+   "The numbers go down by the same amount each time. Count jumps from the first term instead of writing them all out.",
+   "Think how many jumps of 4 there are from the 1st term to the 18th term. It is one less than 18.",
+   "Similar example: 70, 67, 64, 61, and so on, goes down by 3. The 11th term is 10 jumps from the start: 10 times 3 equals 30, and 70 minus 30 equals 40."
+  ],
+  "steps": [
+   "From the 1st term to the 18th term there are 17 jumps.",
+   "Find 17 jumps of 4. 17 times 4 equals 68.",
+   "Take this away from the first term. The 18th term is 24. 92 minus 68 equals 24."
+  ]
+ },
+ "EXT_G4_WS2_CH16_017": {
+  "q": "How many terms are in the sequence: 1, 7, 13, 19, 25, and so on, up to 103?",
+  "options": [
+   "52",
+   "17",
+   "20",
+   "18"
+  ],
+  "hints": [
+   "The numbers go up by the same amount each time. Count the jumps from the first number to the last, and remember the starting number too.",
+   "Find the jump size, 7 minus 1. Then find how far it is from 1 to 103 and see how many jumps fit.",
+   "Similar example: 2, 7, 12, and so on, up to 52, goes up by 5. From 2 to 52 is 50, and 50 divided by 5 equals 10 jumps. The number of terms is one more than the jumps: 10 plus 1 equals 11."
+  ],
+  "steps": [
+   "Each term is 6 more than the one before. 7 minus 1 equals 6.",
+   "Find the distance from the first term to the last. 103 minus 1 equals 102.",
+   "See how many jumps of 6 fit in 102. 102 divided by 6 equals 17.",
+   "The terms are one more than the jumps. There are 18 terms. 17 plus 1 equals 18."
+  ]
+ },
+ "EXT_G4_WS2_CH16_018": {
+  "q": "A sequence is formed by repeating 5 symbols: a star, a filled square, a circle, a triangle, and a circle with a plus inside. Which symbol will be in the 37th place?",
+  "options": [
+   "the star",
+   "the filled square",
+   "the circle",
+   "the circle with a plus inside"
+  ],
+  "hints": [
+   "The same 5 symbols repeat again and again. Think about how many full groups of 5 fit before the place you want.",
+   "Divide 37 by 5 and look at the remainder. The remainder tells you how far into the next group to count.",
+   "Similar example: the 4 letters P, Q, R, S repeat. For the 23rd place, 5 full groups use 5 times 4 equals 20 places. The 23rd place is 3 places into the next group, so it is R."
+  ],
+  "steps": [
+   "The pattern repeats every 5 symbols. So every group ends at a place like 5, 10, 15 and so on.",
+   "Seven full groups use up 35 places. 7 times 5 equals 35.",
+   "The 37th place is 2 places into the next group. 37 minus 35 equals 2.",
+   "The 2nd symbol in the group is the filled square. So the 37th symbol is the filled square."
+  ]
+ },
+ "G4A_SEQUENCES_001": {
+  "q": "Look at this number pattern: 2, 50, 5, 46, 8, 42, 11, 38, and so on. What is the 15th number in the pattern?",
+  "options": [
+   "44",
+   "20",
+   "26",
+   "23"
+  ],
+  "hints": [
+   "Two patterns are mixed together here, taking turns. Separate them before you count positions.",
+   "The 1st, 3rd, 5th and 7th numbers are 2, 5, 8, 11. Decide which of the two patterns the 15th number belongs to, and what position it has inside that pattern.",
+   "Similar problem: in 1, 30, 3, 28, 5, 26, and so on, the 9th number is in the rising pattern 1, 3, 5, and so on. The 1st, 3rd, 5th, 7th and 9th places hold its first five numbers, so the 9th number is 9."
+  ],
+  "steps": [
+   "Split the pattern. Odd places: 2, 5, 8, 11, and so on, going up by 3. Even places: 50, 46, 42, 38, and so on, going down by 4.",
+   "The 15th place is an odd place, so it belongs to the pattern that goes up by 3.",
+   "The odd places 1, 3, 5, and so on, up to 15, are 8 places, so we need the 8th number of 2, 5, 8, 11, and so on.",
+   "The 8th number is 2 plus 7 jumps of 3. 2 plus 7 times 3 equals 23.",
+   "The 15th number in the pattern is 23."
+  ]
+ },
+ "G4A_SEQUENCES_002": {
+  "q": "The pattern 4, 9, 14, 19, and so on, goes up by 5 each time and ends at 99. How many of its numbers are even?",
+  "options": [
+   "20",
+   "19",
+   "9",
+   "10"
+  ],
+  "hints": [
+   "First see which numbers in the pattern are even and which are odd. Then count only the ones you need, taking care with the first and the last.",
+   "The pattern goes even, odd, even, odd: 4, 9, 14, 19. The even ones end in 4. Find where they start and where they stop.",
+   "Similar problem: 3, 8, 13, 18, and so on, up to 48. The even numbers are 8, 18, 28, 38, 48, which is 5 numbers."
+  ],
+  "steps": [
+   "Adding 5 changes even to odd and odd to even, so the numbers take turns: 4 is even, 9 is odd, 14 is even, and so on.",
+   "The even numbers are the ones ending in 4: 4, 14, 24, and so on, up to 94.",
+   "From 4 to 94 in jumps of 10 there are 9 jumps, so there are 10 numbers. 9 plus 1 equals 10.",
+   "10 of the numbers in the pattern are even."
+  ]
+ },
+ "G4A_SEQUENCES_003": {
+  "q": "A number pattern goes up and down like this: 1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1, 2, 3, 4, and so on. What is the 100th number in the pattern?",
+  "options": [
+   "2",
+   "4",
+   "3",
+   "1"
+  ],
+  "hints": [
+   "Find the block of numbers that repeats again and again. Be careful about exactly where one block ends and the next begins.",
+   "The pattern starts 1, 2, 3, 4, 3, 2 and then the next block begins with 1 again. Count how many numbers are in one block.",
+   "Similar problem: 1, 2, 3, 2, 1, 2, 3, 2, 1, and so on, has the repeating block 1, 2, 3, 2 with 4 numbers. For the 30th number, 30 divided by 4 leaves remainder 2, so it is the 2nd number of the block, which is 2."
+  ],
+  "steps": [
+   "The repeating block is 1, 2, 3, 4, 3, 2. The next 1 starts a new block, so a block has 6 numbers, not 7.",
+   "100 divided by 6 is 16 with remainder 4, so 16 full blocks use up 96 numbers. 16 times 6 equals 96.",
+   "The 100th number is the 4th number of the next block: 1, 2, 3, 4.",
+   "The 100th number in the pattern is 4."
+  ]
+ },
+ "G4A_SEQUENCES_004": {
+  "q": "What is the value of 20 minus 19, plus 18 minus 17, plus 16 minus 15, and so on, down to plus 2 minus 1? The numbers go down one at a time from 20 to 1, and the signs take turns.",
+  "options": [
+   "20",
+   "0",
+   "10",
+   "1"
+  ],
+  "hints": [
+   "Do not work from left to right through all twenty numbers. Look for small groups that are easy to work out.",
+   "Look at the numbers two at a time: 20 minus 19, then 18 minus 17. What is each pair worth?",
+   "Similar problem: 8 minus 7, plus 6 minus 5, plus 4 minus 3, plus 2 minus 1. Each of the pairs 8 minus 7, 6 minus 5, 4 minus 3 and 2 minus 1 is worth 1, and there are 4 pairs, so the value is 4."
+  ],
+  "steps": [
+   "Group the numbers in pairs: 20 minus 19, then 18 minus 17, and so on down to 2 minus 1.",
+   "Each pair is worth 1.",
+   "There are 20 numbers, so there are 10 pairs. 20 divided by 2 equals 10.",
+   "10 pairs of 1 make 10, so the value is 10."
+  ]
+ },
+ "G4A_SEQUENCES_005": {
+  "q": "Farid arranges dots in rows to make a triangle. The 1st row has 1 dot, the 2nd row has 2 dots, the 3rd row has 3 dots, and so on. He has 60 dots and makes as many complete rows as he can. How many dots are left over?",
+  "options": [
+   "5",
+   "10",
+   "6",
+   "0"
+  ],
+  "hints": [
+   "Keep a running total of the dots used as each new row is added, and stop before the total goes past the dots he has.",
+   "After 4 rows he has used 1 plus 2 plus 3 plus 4 equals 10 dots. Keep adding rows and watch the total.",
+   "Similar problem: with 25 dots, the running totals are 1, 3, 6, 10, 15, 21, and the next would be 28, which is too many. So 6 rows use 21 dots and 25 minus 21 equals 4 dots are left over."
+  ],
+  "steps": [
+   "Running totals of dots after each row: 1, 3, 6, 10, 15, 21, 28, 36, 45, 55.",
+   "After 10 rows he has used 55 dots. An 11th row needs 11 more dots, which would make 66, more than 60.",
+   "So he makes 10 complete rows and uses 55 dots. 60 minus 55 equals 5.",
+   "5 dots are left over."
+  ]
+ },
+ "G4A_SEQUENCES_006": {
+  "q": "Arun saves 5 rupees on the first day. Every day after that he saves 3 rupees more than he saved the day before. On which day does the total money he has saved first become more than 100 rupees?",
+  "options": [
+   "33rd day",
+   "7th day",
+   "8th day",
+   "9th day"
+  ],
+  "hints": [
+   "There are two different amounts here: what he saves on one day, and the total so far. The question is about the total.",
+   "Write the daily savings: 5, 8, 11, 14, and so on, and beside them keep a running total: 5, 13, 24, and so on.",
+   "Similar problem: saving 2 rupees on day 1 and 2 rupees more each day, when does the total pass 25 rupees? Daily: 2, 4, 6, 8, 10. Totals: 2, 6, 12, 20, 30. The total first passes 25 on the 5th day."
+  ],
+  "steps": [
+   "Daily savings in rupees: 5, 8, 11, 14, 17, 20, 23, 26.",
+   "Running totals: 5, 13, 24, 38, 55, 75, 98, 124.",
+   "After the 7th day the total is 98, which is still not more than 100.",
+   "On the 8th day he adds 26 and the total becomes 124. 98 plus 26 equals 124.",
+   "The total first becomes more than 100 rupees on the 8th day."
+  ]
+ },
+ "G4A_SEQUENCES_007": {
+  "q": "Find the rule in this pattern: 2, 6, 4, 12, 10, 30, 28, and so on. What is the 10th number in the pattern?",
+  "options": [
+   "246",
+   "84",
+   "82",
+   "252"
+  ],
+  "hints": [
+   "Look at how each number becomes the next. The same change does not happen every time, so check the steps in turn.",
+   "From 2 to 6 is times 3. From 6 to 4 is take away 2. See whether those two steps keep taking turns.",
+   "Similar problem: 1, 2, 5, 10, 13, 26, and so on, uses times 2 and then add 3 in turn. After 26 comes 29, then 58, so the 8th number is 58."
+  ],
+  "steps": [
+   "The rule takes turns: multiply by 3, then subtract 2. For example 2 times 3 equals 6, 6 minus 2 equals 4, 4 times 3 equals 12 and 12 minus 2 equals 10.",
+   "Seven numbers are given. The 8th is 28 times 3. 28 times 3 equals 84.",
+   "The 9th is 84 minus 2. 84 minus 2 equals 82.",
+   "The 10th is 82 times 3. 82 times 3 equals 246.",
+   "The 10th number in the pattern is 246."
+  ]
+ },
+ "G4A_SEQUENCES_008": {
+  "q": "Pattern A is 5, 9, 13, 17, and so on, and goes up by 4 each time. Pattern B is 2, 9, 16, 23, and so on, and goes up by 7 each time. The number 9 is in both patterns. What is the next number that is in both patterns?",
+  "options": [
+   "28",
+   "65",
+   "33",
+   "37"
+  ],
+  "hints": [
+   "A number in both patterns must be reachable from 9 by jumps of one size and also by jumps of the other size.",
+   "From 9, pattern A moves in jumps of 4 and pattern B moves in jumps of 7. How far from 9 must you go before both kinds of jump land on the same number?",
+   "Similar problem: 1, 3, 5, and so on, up by 2, and 1, 4, 7, and so on, up by 3, share the number 1. Jumps of 2 and jumps of 3 first meet 6 further on, so the next shared number is 1 plus 6, which is 7."
+  ],
+  "steps": [
+   "Both patterns contain 9. From there A goes up in 4s and B goes up in 7s.",
+   "They meet again when the distance from 9 is a multiple of both 4 and 7. The smallest such distance is 28.",
+   "28 is the distance, not the number, so add it to 9. 9 plus 28 equals 37.",
+   "Check: A has 5, 9, 13, 17, 21, 25, 29, 33, 37 and B has 2, 9, 16, 23, 30, 37.",
+   "The next number in both patterns is 37."
+  ]
+ },
+ "G4A_SEQUENCES_009": {
+  "q": "A number pattern goes up by the same amount each time. Its 5th number is 23 and its 8th number is 35. What is the 1st number of the pattern?",
+  "options": [
+   "3",
+   "7",
+   "4",
+   "11"
+  ],
+  "hints": [
+   "First find the size of one jump from the two numbers you know. Then walk backwards, counting jumps, not numbers.",
+   "From the 5th number to the 8th number there are 3 jumps, and the numbers rise from 23 to 35. Find the size of one jump.",
+   "Similar problem: the 3rd number is 14 and the 6th number is 29. Three jumps make 15, so one jump is 5. From the 3rd back to the 1st is 2 jumps, so the 1st number is 14 minus 10, which is 4."
+  ],
+  "steps": [
+   "From the 5th number to the 8th number is 3 jumps, and the numbers rise by 12. 35 minus 23 equals 12.",
+   "So one jump is 4. 12 divided by 3 equals 4.",
+   "From the 5th number back to the 1st number is 4 jumps, not 5. 4 times 4 equals 16.",
+   "Go back 16 from 23. Check: 7, 11, 15, 19, 23, 27, 31, 35. 23 minus 16 equals 7.",
+   "The 1st number of the pattern is 7."
+  ]
+ },
+ "PH3_EXT_G4_FP_2017_005_02_b": {
+  "q": "Find the next number in the sequence: 20, 35, 50, 65, blank.",
+  "options": [
+   "79",
+   "130",
+   "95",
+   "80"
+  ],
+  "hints": [
+   "Find the difference between consecutive terms.",
+   "Each term increases by 15.",
+   "Add 15 to the last term."
+  ],
+  "steps": [
+   "The common difference is 35 minus 20, which is 15.",
+   "The next one is 65 plus 15, which is 80."
+  ]
+ },
+ "PH3_EXT_G4_FP_2017_005_03_b": {
+  "q": "In an arithmetic sequence starting 6, 12, 18, and so on, find the 10th term.",
+  "options": [
+   "66",
+   "60",
+   "61",
+   "59"
+  ],
+  "hints": [
+   "The nth term of an A P equals A plus, open bracket, n minus 1, close bracket, times d.",
+   "Here A equals 6, d equals 6, n equals 10.",
+   "Calculate: 6 plus, open bracket, 10 minus 1, close bracket, times 6."
+  ],
+  "steps": [
+   "The first term, A, equals 6. The common difference, d, equals 6.",
+   "The nth term equals A plus, open bracket, n minus 1, close bracket, times d. That is 6 plus, open bracket, 10 minus 1, close bracket, times 6, which is 6 plus 54, which is 60."
+  ]
+ },
+ "PH3_EXT_G4_FP_2018_021_02": {
+  "q": "Find the next number: 3, 6, 12, 24, 48, blank.",
+  "options": [
+   "98",
+   "72",
+   "96",
+   "97"
+  ],
+  "hints": [
+   "How do you get from one term to the next?",
+   "Each term is 2 times the previous one.",
+   "Multiply the last term by 2."
+  ],
+  "steps": [
+   "Each term is multiplied by 2: a times 2 pattern.",
+   "The next one is 48 times 2, which is 96."
+  ]
+ },
+ "PH3_EXT_G4_FP_2018_021_03_b": {
+  "q": "Find the next number in the sequence: 3, 7, 11, 15, blank.",
+  "options": [
+   "18",
+   "23",
+   "30",
+   "19"
+  ],
+  "hints": [
+   "Find the difference between consecutive terms.",
+   "Each term increases by 4.",
+   "Add 4 to the last term."
+  ],
+  "steps": [
+   "The common difference is 7 minus 3, which is 4.",
+   "The next one is 15 plus 4, which is 19."
+  ]
+ },
+ "PH3_EXT_G4_FP_2019_028_03_b": {
+  "q": "Find the next number in the sequence: 8, 18, 28, 38, 48, 58, blank.",
+  "options": [
+   "67",
+   "68",
+   "78",
+   "116"
+  ],
+  "hints": [
+   "Find the difference between consecutive terms.",
+   "Each term increases by 10.",
+   "Add 10 to the last term."
+  ],
+  "steps": [
+   "The common difference is 18 minus 8, which is 10.",
+   "The next one is 58 plus 10, which is 68."
+  ]
+ },
+ "PH3_EXT_G4_FP_2019_032_01": {
+  "q": "In an arithmetic sequence starting 6, 8, 10, and so on, find the 25th term.",
+  "options": [
+   "150",
+   "50",
+   "54",
+   "56"
+  ],
+  "hints": [
+   "The nth term of an A P equals A plus, open bracket, n minus 1, close bracket, times d.",
+   "Here A equals 6, d equals 2, n equals 25.",
+   "Calculate: 6 plus, open bracket, 25 minus 1, close bracket, times 2."
+  ],
+  "steps": [
+   "The first term, A, equals 6. The common difference, d, equals 2.",
+   "The nth term equals A plus, open bracket, n minus 1, close bracket, times d. That is 6 plus, open bracket, 25 minus 1, close bracket, times 2, which is 6 plus 48, which is 54."
+  ]
+ },
+ "PH3_EXT_G4_FP_2019_032_02_b": {
+  "q": "In an arithmetic sequence starting 7, 13, 19, and so on, find the 30th term.",
+  "options": [
+   "181",
+   "180",
+   "210",
+   "187"
+  ],
+  "hints": [
+   "The nth term of an A P equals A plus, open bracket, n minus 1, close bracket, times d.",
+   "Here A equals 7, d equals 6, n equals 30.",
+   "Calculate: 7 plus, open bracket, 30 minus 1, close bracket, times 6."
+  ],
+  "steps": [
+   "The first term, A, equals 7. The common difference, d, equals 6.",
+   "The nth term equals A plus, open bracket, n minus 1, close bracket, times d. That is 7 plus, open bracket, 30 minus 1, close bracket, times 6, which is 7 plus 174, which is 181."
+  ]
+ },
+ "PH3_EXT_G4_FP_2021_034_02_b": {
+  "q": "Find the next number in the sequence: 11, 16, 21, 26, 31, blank.",
+  "options": [
+   "36",
+   "41",
+   "35",
+   "62"
+  ],
+  "hints": [
+   "Find the difference between consecutive terms.",
+   "Each term increases by 5.",
+   "Add 5 to the last term."
+  ],
+  "steps": [
+   "The common difference is 16 minus 11, which is 5.",
+   "The next one is 31 plus 5, which is 36."
+  ]
+ },
+ "PH3_EXT_G4_FP_2022_030_01": {
+  "q": "In an arithmetic sequence starting 4, 7, 10, and so on, find the 10th term.",
+  "options": [
+   "30",
+   "34",
+   "40",
+   "31"
+  ],
+  "hints": [
+   "The nth term of an A P equals A plus, open bracket, n minus 1, close bracket, times d.",
+   "Here A equals 4, d equals 3, n equals 10.",
+   "Calculate: 4 plus, open bracket, 10 minus 1, close bracket, times 3."
+  ],
+  "steps": [
+   "The first term, A, equals 4. The common difference, d, equals 3.",
+   "The nth term equals A plus, open bracket, n minus 1, close bracket, times d. That is 4 plus, open bracket, 10 minus 1, close bracket, times 3, which is 4 plus 27, which is 31."
+  ]
+ },
+ "PH3_EXT_G4_FP_2022_030_02_b": {
+  "q": "Find the sum of the arithmetic series: 1, 3, 5, and so on, up to 19.",
+  "options": [
+   "20",
+   "200",
+   "100",
+   "190"
+  ],
+  "hints": [
+   "The sum of an A P equals n over 2, times, open bracket, first term plus last term, close bracket.",
+   "First equals 1, last equals 19, n equals 10.",
+   "Sum equals 10 over 2, times, open bracket, 1 plus 19, close bracket."
+  ],
+  "steps": [
+   "The number of terms, n, equals 10. First equals 1, last equals 19.",
+   "Sum equals n over 2, times, open bracket, first plus last, close bracket. That is 10 over 2, times, open bracket, 1 plus 19, close bracket, which is 5 times 20.",
+   "That equals 100."
+  ]
+ },
+ "PH3_EXT_G4_FP_2023_015_02_b": {
+  "q": "Find the next number in the sequence: 15, 30, 45, 60, 75, blank.",
+  "options": [
+   "90",
+   "150",
+   "105",
+   "89"
+  ],
+  "hints": [
+   "Find the difference between consecutive terms.",
+   "Each term increases by 15.",
+   "Add 15 to the last term."
+  ],
+  "steps": [
+   "The common difference is 30 minus 15, which is 15.",
+   "The next one is 75 plus 15, which is 90."
+  ]
+ },
+ "PH3_EXT_G4_FP_2023_029_01": {
+  "q": "In an arithmetic sequence starting 7, 10, 13, and so on, find the 25th term.",
+  "options": [
+   "75",
+   "175",
+   "79",
+   "82"
+  ],
+  "hints": [
+   "The nth term of an A P equals A plus, open bracket, n minus 1, close bracket, times d.",
+   "Here A equals 7, d equals 3, n equals 25.",
+   "Calculate: 7 plus, open bracket, 25 minus 1, close bracket, times 3."
+  ],
+  "steps": [
+   "The first term, A, equals 7. The common difference, d, equals 3.",
+   "The nth term equals A plus, open bracket, n minus 1, close bracket, times d. That is 7 plus, open bracket, 25 minus 1, close bracket, times 3, which is 7 plus 72, which is 79."
+  ]
+ },
+ "PH3_EXT_G4_FP_2023_029_02_b": {
+  "q": "Find the next number in the sequence: 19, 23, 27, 31, 35, 39, blank.",
+  "options": [
+   "43",
+   "42",
+   "47",
+   "78"
+  ],
+  "hints": [
+   "Find the difference between consecutive terms.",
+   "Each term increases by 4.",
+   "Add 4 to the last term."
+  ],
+  "steps": [
+   "The common difference is 23 minus 19, which is 4.",
+   "The next one is 39 plus 4, which is 43."
+  ]
+ },
+ "PH3_EXT_G4_FP_2024_002_02_b": {
+  "q": "Find the next number in the sequence: 20, 32, 44, 56, 68, 80, blank.",
+  "options": [
+   "160",
+   "104",
+   "91",
+   "92"
+  ],
+  "hints": [
+   "Find the difference between consecutive terms.",
+   "Each term increases by 12.",
+   "Add 12 to the last term."
+  ],
+  "steps": [
+   "The common difference is 32 minus 20, which is 12.",
+   "The next one is 80 plus 12, which is 92."
+  ]
+ },
+ "PH3_EXT_G4_FP_2024_002_03_b": {
+  "q": "In an arithmetic sequence starting 7, 14, 21, and so on, find the 30th term.",
+  "options": [
+   "217",
+   "209",
+   "210",
+   "211"
+  ],
+  "hints": [
+   "The nth term of an A P equals A plus, open bracket, n minus 1, close bracket, times d.",
+   "Here A equals 7, d equals 7, n equals 30.",
+   "Calculate: 7 plus, open bracket, 30 minus 1, close bracket, times 7."
+  ],
+  "steps": [
+   "The first term, A, equals 7. The common difference, d, equals 7.",
+   "The nth term equals A plus, open bracket, n minus 1, close bracket, times d. That is 7 plus, open bracket, 30 minus 1, close bracket, times 7, which is 7 plus 203, which is 210."
+  ]
+ },
+ "PH3_EXT_G4_FP_2024_007_02_b": {
+  "q": "Find the next number in the sequence: 2, 11, 20, 29, 38, 47, blank.",
+  "options": [
+   "55",
+   "56",
+   "65",
+   "94"
+  ],
+  "hints": [
+   "Find the difference between consecutive terms.",
+   "Each term increases by 9.",
+   "Add 9 to the last term."
+  ],
+  "steps": [
+   "The common difference is 11 minus 2, which is 9.",
+   "The next one is 47 plus 9, which is 56."
+  ]
+ },
+ "PH3_EXT_G4_FP_2024_018_01": {
+  "q": "In an arithmetic sequence starting 15, 21, 27, and so on, find the 30th term.",
+  "options": [
+   "180",
+   "189",
+   "195",
+   "450"
+  ],
+  "hints": [
+   "The nth term of an A P equals A plus, open bracket, n minus 1, close bracket, times d.",
+   "Here A equals 15, d equals 6, n equals 30.",
+   "Calculate: 15 plus, open bracket, 30 minus 1, close bracket, times 6."
+  ],
+  "steps": [
+   "The first term, A, equals 15. The common difference, d, equals 6.",
+   "The nth term equals A plus, open bracket, n minus 1, close bracket, times d. That is 15 plus, open bracket, 30 minus 1, close bracket, times 6, which is 15 plus 174, which is 189."
+  ]
+ },
+ "PH3_EXT_G4_FP_2024_033_02_b": {
+  "q": "Find the sum of first 6 natural numbers.",
+  "options": [
+   "36",
+   "42",
+   "27",
+   "21"
+  ],
+  "hints": [
+   "There's a formula for the sum of first 6 natural numbers.",
+   "For natural numbers: n times, open bracket, n plus 1, close bracket, all over 2. That equals 6 times 7, over 2.",
+   "Plug in and calculate."
+  ],
+  "steps": [
+   "The formula for the sum of the first 6 natural numbers: n times, open bracket, n plus 1, close bracket, all over 2. That equals 6 times 7, over 2.",
+   "That equals 21."
+  ]
+ },
+ "PH3_EXT_G4_FP_2024_039_01_b": {
+  "q": "Find the next number in the sequence: 1, 7, 13, 19, 25, blank.",
+  "options": [
+   "30",
+   "50",
+   "37",
+   "31"
+  ],
+  "hints": [
+   "Find the difference between consecutive terms.",
+   "Each term increases by 6.",
+   "Add 6 to the last term."
+  ],
+  "steps": [
+   "The common difference is 7 minus 1, which is 6.",
+   "The next one is 25 plus 6, which is 31."
+  ]
+ },
+ "PH3_EXT_G4_FP_2025_021_03": {
+  "q": "Find the sum of the arithmetic series: 10, 15, 20, and so on, up to 105.",
+  "options": [
+   "2300",
+   "115",
+   "2100",
+   "1150"
+  ],
+  "hints": [
+   "The sum of an A P equals n over 2, times, open bracket, first term plus last term, close bracket.",
+   "First equals 10, last equals 105, n equals 20.",
+   "Sum equals 20 over 2, times, open bracket, 10 plus 105, close bracket."
+  ],
+  "steps": [
+   "The number of terms, n, equals 20. First equals 10, last equals 105.",
+   "Sum equals n over 2, times, open bracket, first plus last, close bracket. That is 20 over 2, times, open bracket, 10 plus 105, close bracket, which is 10 times 115.",
+   "That equals 1150."
+  ]
+ },
+ "PH3_EXT_G4_FP_2025_021_03_b": {
+  "q": "Find the next number in the sequence: 18, 20, 22, 24, blank.",
+  "options": [
+   "26",
+   "48",
+   "25",
+   "28"
+  ],
+  "hints": [
+   "Find the difference between consecutive terms.",
+   "Each term increases by 2.",
+   "Add 2 to the last term."
+  ],
+  "steps": [
+   "The common difference is 20 minus 18, which is 2.",
+   "The next one is 24 plus 2, which is 26."
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH16_002_01": {
+  "q": "In an arithmetic sequence starting 9, 13, 17, and so on, find the 25th term.",
+  "options": [
+   "105",
+   "225",
+   "100",
+   "109"
+  ],
+  "hints": [
+   "The nth term of an A P equals A plus, open bracket, n minus 1, close bracket, times d.",
+   "Here A equals 9, d equals 4, n equals 25.",
+   "Calculate: 9 plus, open bracket, 25 minus 1, close bracket, times 4."
+  ],
+  "steps": [
+   "The first term, A, equals 9. The common difference, d, equals 4.",
+   "The nth term equals A plus, open bracket, n minus 1, close bracket, times d. That is 9 plus, open bracket, 25 minus 1, close bracket, times 4, which is 9 plus 96, which is 105."
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH16_004_02": {
+  "q": "Find the next number: 1, 2, 4, 8, 16, blank.",
+  "options": [
+   "24",
+   "34",
+   "33",
+   "32"
+  ],
+  "hints": [
+   "How do you get from one term to the next?",
+   "Each term is 2 times the previous one.",
+   "Multiply the last term by 2."
+  ],
+  "steps": [
+   "Each term is multiplied by 2: a times 2 pattern.",
+   "The next one is 16 times 2, which is 32."
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH16_005_03_b": {
+  "q": "Find the next number in the sequence: 1, 3, 5, 7, 9, 11, blank.",
+  "options": [
+   "12",
+   "22",
+   "15",
+   "13"
+  ],
+  "hints": [
+   "Find the difference between consecutive terms.",
+   "Each term increases by 2.",
+   "Add 2 to the last term."
+  ],
+  "steps": [
+   "The common difference is 3 minus 1, which is 2.",
+   "The next one is 11 plus 2, which is 13."
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH16_006_02": {
+  "q": "Find the next number: 2, 6, 18, blank.",
+  "options": [
+   "36",
+   "54",
+   "24",
+   "57"
+  ],
+  "hints": [
+   "How do you get from one term to the next?",
+   "Each term is 3 times the previous one.",
+   "Multiply the last term by 3."
+  ],
+  "steps": [
+   "Each term is multiplied by 3: a times 3 pattern.",
+   "The next one is 18 times 3, which is 54."
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH16_009_02": {
+  "q": "Find the next number: 4, 8, 16, 32, 64, blank.",
+  "options": [
+   "96",
+   "130",
+   "129",
+   "128"
+  ],
+  "hints": [
+   "How do you get from one term to the next?",
+   "Each term is 2 times the previous one.",
+   "Multiply the last term by 2."
+  ],
+  "steps": [
+   "Each term is multiplied by 2: a times 2 pattern.",
+   "The next one is 64 times 2, which is 128."
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH16_015_02": {
+  "q": "Find the next number: 3, 9, 27, 81, 243, blank.",
+  "options": [
+   "732",
+   "324",
+   "486",
+   "729"
+  ],
+  "hints": [
+   "How do you get from one term to the next?",
+   "Each term is 3 times the previous one.",
+   "Multiply the last term by 3."
+  ],
+  "steps": [
+   "Each term is multiplied by 3: a times 3 pattern.",
+   "The next one is 243 times 3, which is 729."
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH16_016_01_b": {
+  "q": "Find the sum of first 19 even numbers.",
+  "options": [
+   "760",
+   "399",
+   "361",
+   "380"
+  ],
+  "hints": [
+   "There's a formula for the sum of first 19 even numbers.",
+   "For even numbers: n times, open bracket, n plus 1, close bracket. That equals 19 times 20.",
+   "Plug in and calculate."
+  ],
+  "steps": [
+   "The formula for the sum of the first 19 even numbers: n times, open bracket, n plus 1, close bracket. That equals 19 times 20.",
+   "That equals 380."
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH16_018_02_b": {
+  "q": "Find the next number: 1, 3, 9, 27, blank.",
+  "options": [
+   "54",
+   "84",
+   "81",
+   "36"
+  ],
+  "hints": [
+   "How do you get from one term to the next?",
+   "Each term is 3 times the previous one.",
+   "Multiply the last term by 3."
+  ],
+  "steps": [
+   "Each term is multiplied by 3: a times 3 pattern.",
+   "The next one is 27 times 3, which is 81."
+  ]
+ },
+ "PYQ_2016_Q01": {
+  "q": "Which of the following numbers should replace the star in the following series? 48, 51, 57, 69, star.",
+  "options": [
+   "75",
+   "79",
+   "93",
+   "101"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 1.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: Option 3, 93."
+  ]
+ },
+ "PYQ_2017_Q05": {
+  "q": "A man walked a total of 66 kilometres in 6 days. Every day he walked 4 kilometres less than the previous day. How many kilometres did he walk on the 6th day?",
+  "options": [
+   "3 kilometres",
+   "2 kilometres",
+   "11 kilometres",
+   "1 kilometre"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 5.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: Option 4, 1 kilometre."
+  ]
+ },
+ "PYQ_2017_Q12": {
+  "q": "How many terms are there in the sequence: 1, 8, 15, 22, 29, and so on, up to 113?",
+  "options": [
+   "18",
+   "17",
+   "16",
+   "6"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 12.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: Option 2, 17."
+  ]
+ },
+ "PYQ_2017_Q37": {
+  "q": "The 10th term of the series: 24, 39, 53, 66, 78, and so on.",
+  "options": [
+   "123",
+   "135",
+   "108",
+   "118"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 37.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: Option 1, 123."
+  ]
+ },
+ "PYQ_2018_Q38": {
+  "q": "What will be the number in the star place of the given series? 519, 398, 277, 156, star.",
+  "options": [
+   "35",
+   "45",
+   "57",
+   "25"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 38.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Correct answer: Option 1, 35."
+  ]
+ },
+ "PYQ_2019_Q28": {
+  "q": "The number in place of the star in the series 5, 14, 25, 38, star, 70, 89.",
+  "options": [
+   "48",
+   "53",
+   "59",
+   "63"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 28.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "Correct answer: Option 2, 53."
+  ]
+ },
+ "Q_CH15_018": {
+  "q": "Which number comes next: 2, 6, 12, 20, 30, blank?",
+  "options": [
+   "36",
+   "40",
+   "44",
+   "42"
+  ],
+  "hints": [
+   "Find the differences between consecutive terms: 6 minus 2 equals 4, 12 minus 6 equals 6, 20 minus 12 equals 8, 30 minus 20 equals 10.",
+   "The differences are 4, 6, 8, 10, going up by 2 each time!",
+   "The next difference is 12. So the next number is 30 plus 12, which is 42."
+  ],
+  "steps": [
+   "Differences: 4, 6, 8, 10, increasing by 2. 6 minus 2 equals 4, 12 minus 6 equals 6, 20 minus 12 equals 8, 30 minus 20 equals 10.",
+   "The next difference is 12.",
+   "The next number is 30 plus 12, which is 42."
+  ]
+ },
+ "Q_CH16_001": {
+  "q": "Find the missing term: 9999999, 777777, blank, 3333, 111.",
+  "options": [
+   "55555",
+   "555555",
+   "5555",
+   "44444"
+  ],
+  "hints": [
+   "Look at two things in each number: the digit used and how many times it repeats.",
+   "Digits: 9, 7, blank, 3, 1, decreasing by 2. Count of digits: 7, 6, blank, 4, 3, decreasing by 1.",
+   "Missing: the digit is 5, and the count is 5. So the number is 55555."
+  ],
+  "steps": [
+   "Digit pattern: 9, 7, blank, 3, 1, decreasing by 2. The missing digit is 5.",
+   "Repetition pattern: 7, 6, blank, 4, 3, decreasing by 1. The missing count is 5.",
+   "Answer: the digit 5, repeated 5 times, which is 55555."
+  ]
+ },
+ "Q_CH16_002": {
+  "q": "What is the next term in the sequence: 416, 525, 636, 749, blank?",
+  "options": [
+   "961",
+   "884",
+   "864",
+   "881"
+  ],
+  "hints": [
+   "Find the common difference: 525 minus 416 equals what? 636 minus 525 equals what? 749 minus 636 equals what?",
+   "Differences: 109, 111, 113, increasing by 2 each time!",
+   "The next difference is 115. So the next term is 749 plus 115, which is 864."
+  ],
+  "steps": [
+   "Differences: 525 minus 416 equals 109, 636 minus 525 equals 111, 749 minus 636 equals 113.",
+   "The next difference is 113 plus 2, which is 115.",
+   "The next term is 749 plus 115, which is 864."
+  ]
+ },
+ "Q_CH16_003": {
+  "q": "Find the number in place of the question mark: 2, 6, 12, 20, question mark, 42, 56.",
+  "options": [
+   "28",
+   "32",
+   "24",
+   "30"
+  ],
+  "hints": [
+   "Find the differences: 6 minus 2 equals 4, 12 minus 6 equals 6, 20 minus 12 equals 8. What's the pattern?",
+   "Differences: 4, 6, 8, blank, blank, blank, increasing by 2 each time.",
+   "The next difference is 10. So the question mark is 20 plus 10, which is 30. Check: 42 minus 30 equals 12, and 56 minus 42 equals 14. The pattern holds!"
+  ],
+  "steps": [
+   "Differences: 4, 6, 8, increasing by 2. 6 minus 2 equals 4, 12 minus 6 equals 6, 20 minus 12 equals 8.",
+   "The next difference is 10. So the question mark is 20 plus 10, which is 30.",
+   "Verify: 42 minus 30 equals 12, and 56 minus 42 equals 14. Differences: 10, 12, 14. Correct.",
+   "Bonus: these are n times, open bracket, n plus 1, close bracket. 1 times 2 equals 2, 2 times 3 equals 6, 3 times 4 equals 12, 4 times 5 equals 20, 5 times 6 equals 30."
+  ]
+ },
+ "Q_CH16_004": {
+  "q": "What is the next number in the sequence: 1, 8, 27, 64, 125, blank?",
+  "options": [
+   "225",
+   "216",
+   "169",
+   "185"
+  ],
+  "hints": [
+   "These numbers look special. Try to express each as a power of a small number.",
+   "1 equals 1 cubed, 8 equals 2 cubed, 27 equals 3 cubed, 64 equals 4 cubed, 125 equals 5 cubed. They're all cubes!",
+   "The next one is 6 cubed, which is 6 times 6 times 6, which is 216."
+  ],
+  "steps": [
+   "Identify the pattern: these are perfect cubes.",
+   "The next one is 6 cubed, which is 6 times 6 times 6. 6 times 6 equals 36, and 36 times 6 equals 216.",
+   "The next term is 216."
+  ]
+ },
+ "Q_CH16_005": {
+  "q": "Find the next two terms: 53, 56, 62, 71, 83, blank, blank.",
+  "options": [
+   "98, 116",
+   "98, 128",
+   "107, 155",
+   "98, 113"
+  ],
+  "hints": [
+   "Find the differences: 56 minus 53 equals 3, 62 minus 56 equals 6, 71 minus 62 equals 9, 83 minus 71 equals 12. See the pattern?",
+   "Differences: 3, 6, 9, 12. These are multiples of 3! Next differences: 15, 18.",
+   "83 plus 15 equals 98. Then 98 plus 18 equals 116."
+  ],
+  "steps": [
+   "Differences: 3, 6, 9, 12, multiples of 3.",
+   "Next differences: plus 15, plus 18.",
+   "83 plus 15 equals 98. Then 98 plus 18 equals 116."
+  ]
+ },
+ "Q_CH16_006": {
+  "q": "What is the missing number: 525, 438, blank, 264, 177, 90?",
+  "options": [
+   "349",
+   "351",
+   "324",
+   "353"
+  ],
+  "hints": [
+   "This is a decreasing sequence. Find the common difference.",
+   "Check from the end: 177 minus 90 equals 87, 264 minus 177 equals 87. Constant difference of 87!",
+   "So: 525 minus 87 equals 438, correct. 438 minus 87 equals 351. 351 minus 87 equals 264, correct. The missing number is 351."
+  ],
+  "steps": [
+   "Find difference from known consecutive terms: 264 minus 177 equals 87.",
+   "Verify: 177 minus 90 equals 87, and 525 minus 438 equals 87. The common difference is 87.",
+   "The missing number is 438 minus 87, which is 351."
+  ]
+ },
+ "Q_CH16_007": {
+  "q": "Which number should replace the asterisk? 37, 39, 42, 47, 54, asterisk, 78.",
+  "options": [
+   "63",
+   "65",
+   "64",
+   "67"
+  ],
+  "hints": [
+   "Find the differences: 39 minus 37 equals 2, 42 minus 39 equals 3, 47 minus 42 equals 5, 54 minus 47 equals 7. Recognize these numbers?",
+   "2, 3, 5, 7. They're prime numbers! The next primes are 11, 13.",
+   "The asterisk is 54 plus 11, which is 65. Check: 65 plus 13 equals 78!"
+  ],
+  "steps": [
+   "Differences: 2, 3, 5, 7. These are consecutive primes!",
+   "Next primes: 11, 13.",
+   "The asterisk is 54 plus 11, which is 65. Verify: 65 plus 13 equals 78."
+  ]
+ },
+ "Q_CH16_008": {
+  "q": "Find the 10th term in the sequence: 53, 60, 68, 77, and so on.",
+  "options": [
+   "123",
+   "163",
+   "152",
+   "168"
+  ],
+  "hints": [
+   "Find the differences: 60 minus 53 equals 7, 68 minus 60 equals 8, 77 minus 68 equals 9. Pattern: differences increase by 1.",
+   "Continue: plus 10, plus 11, plus 12, plus 13, plus 14, plus 15. That gives us up to the 10th term.",
+   "53, 60, 68, 77, 87, 98, 110, 123, 137, 152. The 10th term is 152."
+  ],
+  "steps": [
+   "Differences: 7, 8, 9, 10, 11, 12, 13, 14, 15.",
+   "Build the sequence: 53, 60, 68, 77, 87, 98, 110, 123, 137, 152.",
+   "Sum of differences equals 7 plus 8, and so on, up to 15, which is 99. So T ten equals 53 plus 99, which is 152."
+  ]
+ },
+ "Q_CH16_009": {
+  "q": "Find the next two terms: 4, 7, 11, 18, 29, blank, blank.",
+  "options": [
+   "47, 65",
+   "47, 76",
+   "37, 66",
+   "47, 67"
+  ],
+  "hints": [
+   "Look at how each term relates to the two terms before it.",
+   "4 plus 7 equals 11, 7 plus 11 equals 18, 11 plus 18 equals 29. Each term is the sum of the previous two! Like Fibonacci!",
+   "Next: 18 plus 29 equals 47, then 29 plus 47 equals 76."
+  ],
+  "steps": [
+   "Pattern: each term is the sum of the previous two. 4 plus 7 equals 11, 7 plus 11 equals 18, 11 plus 18 equals 29.",
+   "Next: 18 plus 29 equals 47.",
+   "Then: 29 plus 47 equals 76.",
+   "Answer: 47, 76."
+  ]
+ },
+ "Q_CH16_010": {
+  "q": "Find the next term in the sequence: 1 over 5, 2 over 5, 4 over 5, 7 over 5, 11 over 5, blank.",
+  "options": [
+   "7 over 5",
+   "2 and 1 over 5",
+   "1 and 4 over 5",
+   "3 and 1 over 5"
+  ],
+  "hints": [
+   "The denominator stays 5. Focus on the numerators: 1, 2, 4, 7, 11, blank.",
+   "Differences of numerators: 1, 2, 3, 4, increasing by 1!",
+   "The next difference is 5. So the next numerator is 11 plus 5, which is 16. Answer: 16 over 5 equals 3 and 1 over 5."
+  ],
+  "steps": [
+   "Numerators: 1, 2, 4, 7, 11. Differences: 1, 2, 3, 4.",
+   "The next difference is 5. The next numerator is 11 plus 5, which is 16.",
+   "16 over 5 equals 3 and 1 over 5.",
+   "Answer: 3 and 1 over 5."
+  ]
+ },
+ "Q_CH16_011": {
+  "q": "Find the number in place of the asterisk: 0.25, 0.50, 1, 1.75, asterisk, 4.",
+  "options": [
+   "2.25",
+   "2.5",
+   "3.5",
+   "2.75"
+  ],
+  "hints": [
+   "Find the differences: 0.50 minus 0.25 equals 0.25, 1 minus 0.50 equals 0.50, 1.75 minus 1 equals 0.75.",
+   "Differences: 0.25, 0.50, 0.75, adding multiples of 0.25!",
+   "Next differences: 1.00, 1.25. So the asterisk is 1.75 plus 1.00, which is 2.75. Check: 2.75 plus 1.25 equals 4."
+  ],
+  "steps": [
+   "Differences: 0.25, 0.50, 0.75, increasing by 0.25.",
+   "Next differences: plus 1.00, plus 1.25.",
+   "The asterisk is 1.75 plus 1.00, which is 2.75. Verify: 2.75 plus 1.25 equals 4."
+  ]
+ },
+ "Q_CH16_013": {
+  "q": "What is the next term: 3, 7, 11, 15, 19, blank?",
+  "options": [
+   "23",
+   "21",
+   "22",
+   "25"
+  ],
+  "hints": [
+   "Find the common difference: 7 minus 3 equals 4, 11 minus 7 equals 4, 15 minus 11 equals 4. Same each time!",
+   "This is an arithmetic sequence with common difference 4.",
+   "The next term is 19 plus 4, which is 23."
+  ],
+  "steps": [
+   "The common difference is 4. 7 minus 3 equals 4, 11 minus 7 equals 4, 15 minus 11 equals 4.",
+   "The next term is 19 plus 4, which is 23."
+  ]
+ },
+ "Q_CH16_014": {
+  "q": "What comes next: 3, 6, 12, 24, 48, blank?",
+  "options": [
+   "72",
+   "60",
+   "96",
+   "84"
+  ],
+  "hints": [
+   "How do you get from one number to the next? 6 divided by 3 equals 2, 12 divided by 6 equals 2, 24 divided by 12 equals 2.",
+   "Each number is multiplied by 2 to get the next!",
+   "48 times 2 equals 96."
+  ],
+  "steps": [
+   "Pattern: each term is the previous one, times 2.",
+   "The next one is 48 times 2, which is 96."
+  ]
+ },
+ "Q_CH16_015": {
+  "q": "What comes next: 1, 4, 9, 16, 25, blank?",
+  "options": [
+   "36",
+   "49",
+   "35",
+   "30"
+  ],
+  "hints": [
+   "These numbers look familiar! Can you express each as something squared?",
+   "1 equals 1 squared, 4 equals 2 squared, 9 equals 3 squared, 16 equals 4 squared, 25 equals 5 squared. They're perfect squares!",
+   "The next one is 6 squared, which is 36."
+  ],
+  "steps": [
+   "Pattern: 1 squared, 2 squared, 3 squared, 4 squared, 5 squared.",
+   "The next one is 6 squared, which is 36."
+  ]
+ },
+ "Q_CH16_016": {
+  "q": "What comes next: 1, 3, 6, 10, 15, 21, blank?",
+  "options": [
+   "25",
+   "28",
+   "27",
+   "30"
+  ],
+  "hints": [
+   "Find the differences: 2, 3, 4, 5, 6, increasing by 1 each time!",
+   "The next difference is 7.",
+   "21 plus 7 equals 28. These are called triangular numbers!"
+  ],
+  "steps": [
+   "Differences: 2, 3, 4, 5, 6, increasing by 1.",
+   "The next difference is 7. 21 plus 7 equals 28.",
+   "Answer: 28."
+  ]
+ },
+ "Q_CH16_017": {
+  "q": "What is the next term: 2, 5, 14, 41, blank?",
+  "options": [
+   "50",
+   "120",
+   "122",
+   "82"
+  ],
+  "hints": [
+   "The differences aren't constant: 3, 9, 27. These are powers of 3!",
+   "Or think of it as: each term, times 3, minus 1, equals the next term. 2 times 3, minus 1, equals 5. 5 times 3, minus 1, equals 14. 14 times 3, minus 1, equals 41.",
+   "Next: 41 times 3, minus 1, equals 123 minus 1, which is 122."
+  ],
+  "steps": [
+   "Pattern: next equals previous, times 3, minus 1. 2 times 3, minus 1, equals 5.",
+   "Check: 5 times 3, minus 1, equals 14. 14 times 3, minus 1, equals 41.",
+   "Next: 41 times 3, minus 1, equals 122."
+  ]
+ },
+ "Q_CH16_018": {
+  "q": "Find the next term: 1, 2, 6, 24, 120, blank.",
+  "options": [
+   "360",
+   "720",
+   "240",
+   "600"
+  ],
+  "hints": [
+   "How does each term relate to the previous? 2 divided by 1 equals 2, 6 divided by 2 equals 3, 24 divided by 6 equals 4, 120 divided by 24 equals 5.",
+   "You multiply by 2, then 3, then 4, then 5. These are factorials! 1 factorial, 2 factorial, 3 factorial, 4 factorial, 5 factorial.",
+   "Next: multiply by 6. 120 times 6 equals 720."
+  ],
+  "steps": [
+   "Pattern: times 2, times 3, times 4, times 5.",
+   "Next: times 6. 120 times 6 equals 720.",
+   "These are factorials: 1 factorial equals 1, 2 factorial equals 2, 3 factorial equals 6, 4 factorial equals 24, 5 factorial equals 120, 6 factorial equals 720."
+  ]
+ },
+ "Q_CH16_020": {
+  "q": "Find the missing number: 2, 3, 5, 8, 13, 21, blank.",
+  "options": [
+   "34",
+   "29",
+   "26",
+   "32"
+  ],
+  "hints": [
+   "How is each number formed from the previous two?",
+   "2 plus 3 equals 5, 3 plus 5 equals 8, 5 plus 8 equals 13, 8 plus 13 equals 21. Each number is the sum of the previous two! Fibonacci!",
+   "Next: 13 plus 21 equals 34."
+  ],
+  "steps": [
+   "Pattern: each term is the sum of the previous two terms. 2 plus 3 equals 5, 3 plus 5 equals 8, 5 plus 8 equals 13, 8 plus 13 equals 21.",
+   "Next: 13 plus 21 equals 34."
+  ]
+ },
+ "Q_CH16_021": {
+  "q": "Which number does not belong: 2, 5, 10, 17, 28, 37?",
+  "options": [
+   "28",
+   "10",
+   "37",
+   "17"
+  ],
+  "hints": [
+   "Find the differences: 3, 5, 7, 11, 9. Most differences are odd numbers increasing by 2.",
+   "Expected differences: 3, 5, 7, 9, 11. The actual sequence should be: 2, 5, 10, 17, 26, 37.",
+   "28 should be 26. So 28 is the number that doesn't belong!"
+  ],
+  "steps": [
+   "Differences: 3, 5, 7, 11, 9. The pattern breaks!",
+   "Expected: plus 3, plus 5, plus 7, plus 9, plus 11. Correct sequence: 2, 5, 10, 17, 26, 37.",
+   "28 doesn't belong. It should be 26."
+  ]
+ },
+ "Q_CH16_022": {
+  "q": "Find the next term: 4, 12, 36, 108, blank.",
+  "options": [
+   "144",
+   "324",
+   "216",
+   "432"
+  ],
+  "hints": [
+   "Find the ratio: 12 divided by 4 equals 3, 36 divided by 12 equals 3, 108 divided by 36 equals 3.",
+   "Each term is multiplied by 3!",
+   "108 times 3 equals 324."
+  ],
+  "steps": [
+   "Pattern: each term, times 3, equals the next term.",
+   "108 times 3 equals 324."
+  ]
+ },
+ "Q_CH16_023": {
+  "q": "The sequence 2, 6, 12, 20, 30, 42 follows the pattern n times, open bracket, n plus 1, close bracket. What is the 10th term?",
+  "options": [
+   "110",
+   "90",
+   "100",
+   "120"
+  ],
+  "hints": [
+   "The pattern is T n equals n times, open bracket, n plus 1, close bracket. Verify: T one equals 1 times 2, which is 2. T two equals 2 times 3, which is 6. T three equals 3 times 4, which is 12.",
+   "For the 10th term: T ten equals 10 times, open bracket, 10 plus 1, close bracket.",
+   "That equals 10 times 11, which is 110."
+  ],
+  "steps": [
+   "Formula: T n equals n times, open bracket, n plus 1, close bracket.",
+   "T ten equals 10 times 11, which is 110.",
+   "Answer: 110."
+  ]
+ },
+ "Q_CH16_024": {
+  "q": "What comes next: 729, 243, 81, 27, 9, blank?",
+  "options": [
+   "0",
+   "1",
+   "6",
+   "3"
+  ],
+  "hints": [
+   "Find the ratio: 243 divided by 729 equals one third. 81 divided by 243 equals one third. Each term is divided by 3!",
+   "These are powers of 3: 3 to the power six equals 729, 3 to the power five equals 243, 3 to the power four equals 81, 3 cubed equals 27, 3 squared equals 9.",
+   "Next: 3 to the power one equals 3."
+  ],
+  "steps": [
+   "Pattern: each term, divided by 3, equals the next term. 729 divided by 3 equals 243, 243 divided by 3 equals 81, and so on.",
+   "Or: 3 to the power six, 3 to the power five, 3 to the power four, 3 cubed, 3 squared, 3 to the power one.",
+   "The next one is 3 to the power one, which is 3."
+  ]
+ },
+ "Q_CH16_025": {
+  "q": "Find the next term: 1, 1, 2, 4, 3, 9, 4, 16, 5, blank.",
+  "options": [
+   "20",
+   "25",
+   "6",
+   "10"
+  ],
+  "hints": [
+   "This looks like two sequences woven together. Separate odd and even positions.",
+   "Odd positions: 1, 2, 3, 4, 5, the counting numbers! Even positions: 1, 4, 9, 16, blank. These are squares!",
+   "Next even position: 5 squared, which is 25."
+  ],
+  "steps": [
+   "Split by position. Odd: 1, 2, 3, 4, 5. Even: 1, 4, 9, 16, blank.",
+   "Even positions are squares: 1 squared, 2 squared, 3 squared, 4 squared, 5 squared.",
+   "The next one is 5 squared, which is 25."
+  ]
+ }
+}

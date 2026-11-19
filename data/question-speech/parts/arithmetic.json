@@ -9044,5 +9044,1054 @@
    "Now the sum reads 13 plus 25 minus 2. Work from left to right: 13 plus 25 equals 38.",
    "Last, 38 minus 2 equals 36. The answer is 36."
   ]
+ },
+ "G5A_DECIMALS_001": {
+  "q": "Anu copied a decimal number that had one digit after the decimal point, but she left out the decimal point. The number she wrote was 40.5 more than the real number. What was the real number?",
+  "options": [
+   "4.05",
+   "4.5",
+   "45",
+   "0.45"
+  ],
+  "hints": [
+   "Leaving out the decimal point of a number with one decimal digit makes it a certain number of times bigger. How many times?",
+   "The number she wrote is 10 times the real number. So the extra 40.5 is 9 times the real number.",
+   "Similar problem: a number with one decimal digit loses its point and becomes 21.6 more. The extra is 9 times the real number, so the real number is 21.6 divided by 9 equals 2.4, and 24 minus 2.4 equals 21.6."
+  ],
+  "steps": [
+   "Without its decimal point, a number with one decimal digit becomes 10 times as big.",
+   "So the number she wrote is 10 times the real number, and the difference is 9 times the real number.",
+   "9 times the real number is 40.5. 40.5 divided by 9 equals 4.5.",
+   "Check: 45 minus 4.5 equals 40.5. The real number was 4.5."
+  ]
+ },
+ "G5A_DECIMALS_002": {
+  "q": "A train journey takes 2.4 hours. The train leaves at 9 50 a m. At what time does it arrive?",
+  "options": [
+   "12 30 p m",
+   "11 54 a m",
+   "12 14 p m",
+   "12 24 p m"
+  ],
+  "hints": [
+   "A decimal part of an hour is not a number of minutes. Change it into minutes first.",
+   "0.4 of an hour is 4 tenths of 60 minutes. Work that out before adding to the starting time.",
+   "Similar problem: a film lasts 1.5 hours and starts at 3 45 p m. 0.5 of an hour is 30 minutes, so the film lasts 1 hour 30 minutes and ends at 5 15 p m."
+  ],
+  "steps": [
+   "0.4 of an hour is 4 tenths of 60 minutes, which is 24 minutes.",
+   "So the journey takes 2 hours 24 minutes.",
+   "2 hours after 9 50 a m is 11 50 a m.",
+   "Now add 24 minutes: 10 minutes reach 12:00 noon, and the other 14 minutes make 12 14 p m. The train arrives at 12 14 p m."
+  ]
+ },
+ "G5A_DECIMALS_003": {
+  "q": "A pencil costs 4.50 rupees and an eraser costs 2.50 rupees. Anu buys 12 items, some pencils and some erasers, and pays exactly 44 rupees. How many pencils does she buy?",
+  "options": [
+   "5",
+   "6",
+   "8",
+   "7"
+  ],
+  "hints": [
+   "Imagine all 12 items were erasers, then swap erasers for pencils one at a time and watch the bill grow.",
+   "12 erasers would cost 12 times 2.50 rupees equals 30 rupees. Each swap of an eraser for a pencil adds 2 rupees to the bill.",
+   "Similar problem: pens cost 6 rupees and clips cost 1 rupee, and 10 items cost 25 rupees. Ten clips cost 10 rupees. Each swap to a pen adds 5 rupees, and 15 rupees more is needed, so there are 3 pens."
+  ],
+  "steps": [
+   "If all 12 items were erasers, the bill would be 30 rupees.",
+   "The real bill is 14 rupees more.",
+   "Each pencil in place of an eraser adds 2 rupees.",
+   "So the number of pencils is 7.",
+   "Check: 7 pencils cost 31.50 rupees and 5 erasers cost 12.50 rupees, which is 44 rupees for 12 items. She buys 7 pencils."
+  ]
+ },
+ "G5A_DECIMALS_004": {
+  "q": "Dividing any number by 0.25 always gives the same result as:",
+  "options": [
+   "multiplying the number by 4",
+   "dividing the number by 4",
+   "multiplying the number by 25",
+   "dividing the number by 25"
+  ],
+  "hints": [
+   "Think of 0.25 as a fraction, and ask how many of them fit into 1.",
+   "0.25 is one quarter. How many quarters are there in 1 whole? In 2 wholes?",
+   "Similar problem: dividing by 0.5 asks how many halves fit. There are 2 halves in every whole, so dividing by 0.5 is the same as multiplying by 2. For example, 3 divided by 0.5 equals 6."
+  ],
+  "steps": [
+   "0.25 is one quarter.",
+   "Dividing by one quarter asks how many quarters fit into the number, and each whole holds 4 quarters.",
+   "Test with 3: there are 12 quarters in 3.",
+   "So dividing by 0.25 is the same as multiplying the number by 4."
+  ]
+ },
+ "G5A_DECIMALS_005": {
+  "q": "The sum of two decimal numbers is 7.2 and their difference is 1.8. What is the larger of the two numbers?",
+  "options": [
+   "5.4",
+   "4.5",
+   "3.6",
+   "2.7"
+  ],
+  "hints": [
+   "If the two numbers were equal, each would be half of the sum. The difference tells you how to adjust.",
+   "Add the difference to the sum: 7.2 plus 1.8. This gives twice the larger number. Can you see why?",
+   "Similar problem: two numbers add up to 5.0 and differ by 1.4. Twice the larger is 5.0 plus 1.4 equals 6.4, so the larger is 3.2 and the smaller is 1.8."
+  ],
+  "steps": [
+   "Adding the difference to the sum gives two copies of the larger number.",
+   "Twice the larger number is 9.",
+   "So the larger number is 4.5.",
+   "Check: the smaller is 2.7, and 4.5 plus 2.7 equals 7.2 while 4.5 minus 2.7 equals 1.8. The larger number is 4.5."
+  ]
+ },
+ "G5A_DECIMALS_006": {
+  "q": "How many numbers with exactly two digits after the decimal point, such as 3.47, are greater than 3.4 and less than 3.5?",
+  "options": [
+   "0",
+   "10",
+   "9",
+   "11"
+  ],
+  "hints": [
+   "Write both end numbers with two digits after the point, then list what lies strictly between them.",
+   "3.4 is the same as 3.40 and 3.5 is the same as 3.50. Which hundredths come after 3.40 and before 3.50?",
+   "Similar problem: between 6.2 and 6.25, the numbers with two decimal digits are 6.21, 6.22, 6.23 and 6.24. The ends 6.20 and 6.25 are not counted, so there are 4 numbers."
+  ],
+  "steps": [
+   "Write the ends with two decimal digits: 3.4 equals 3.40 and 3.5 equals 3.50.",
+   "The numbers strictly between them are 3.41, 3.42, 3.43, 3.44, 3.45, 3.46, 3.47, 3.48 and 3.49.",
+   "3.40 and 3.50 are not counted, because they are equal to the ends.",
+   "There are 9 such numbers."
+  ]
+ },
+ "G5A_DECIMALS_007": {
+  "q": "In the number 4.75, what is the place value of the digit 7?",
+  "options": [
+   "7 ones",
+   "7 hundredths",
+   "7 tens",
+   "7 tenths"
+  ],
+  "hints": [
+   "Name the places to the right of the decimal point in order.",
+   "The first place after the decimal point is the tenths place. Which digit sits there in 4.75?",
+   "Similar problem: in 6.38 the digit 3 is in the first place after the point, so its value is 3 tenths."
+  ],
+  "steps": [
+   "In 4.75, the digit 4 is in the ones place.",
+   "The first digit after the decimal point is in the tenths place, and that digit is 7.",
+   "The place value of the digit 7 is 7 tenths."
+  ]
+ },
+ "G5A_DECIMALS_008": {
+  "q": "Which digit is in the hundredths place in 36.482?",
+  "options": [
+   "8",
+   "4",
+   "2",
+   "3"
+  ],
+  "hints": [
+   "The places after the decimal point are tenths, hundredths and thousandths, in that order.",
+   "Count two places to the right of the decimal point in 36.482.",
+   "Similar problem: in 5.917 the places after the point are 9 tenths, 1 hundredth and 7 thousandths, so the hundredths digit is 1."
+  ],
+  "steps": [
+   "After the decimal point in 36.482 come 4 tenths, 8 hundredths and 2 thousandths.",
+   "The hundredths place is the second place after the point.",
+   "The digit in the hundredths place is 8."
+  ]
+ },
+ "G5A_DECIMALS_009": {
+  "q": "Which of these numbers is the greatest: 3.4, 3.9, 3.1 or 3.7?",
+  "options": [
+   "3.4",
+   "3.9",
+   "3.1",
+   "3.7"
+  ],
+  "hints": [
+   "Compare the whole-number parts first, then the tenths.",
+   "All four numbers have 3 ones, so look at the digit after the decimal point.",
+   "Similar problem: among 5.2, 5.8, 5.5 and 5.6, the ones are all 5 and the biggest tenths digit is 8, so 5.8 is the greatest."
+  ],
+  "steps": [
+   "All four numbers have 3 in the ones place.",
+   "The tenths digits are 4, 9, 1 and 7. The biggest is 9.",
+   "The greatest number is 3.9."
+  ]
+ },
+ "G5A_DECIMALS_010": {
+  "q": "Which of these numbers is the smallest: 0.52, 0.35, 0.25 or 0.55?",
+  "options": [
+   "0.52",
+   "0.35",
+   "0.25",
+   "0.55"
+  ],
+  "hints": [
+   "Compare the tenths digits first. If two are the same, compare the hundredths.",
+   "The tenths digits are 5, 3, 2 and 5. Which is the smallest?",
+   "Similar problem: among 0.61, 0.48, 0.73 and 0.84, the smallest tenths digit is 4, so 0.48 is the smallest."
+  ],
+  "steps": [
+   "All four numbers have 0 ones, so compare the tenths digits: 5, 3, 2 and 5.",
+   "The smallest tenths digit is 2, in 0.25.",
+   "The smallest number is 0.25."
+  ]
+ },
+ "G5A_DECIMALS_011": {
+  "q": "What is 2.5 plus 1.3?",
+  "options": [
+   "3.2",
+   "4.8",
+   "1.2",
+   "3.8"
+  ],
+  "hints": [
+   "Line up the decimal points, then add tenths with tenths and ones with ones.",
+   "Add the tenths first: 5 tenths and 3 tenths.",
+   "Similar problem: 4.2 plus 3.6. Tenths: 2 plus 6 equals 8. Ones: 4 plus 3 equals 7. The sum is 7.8."
+  ],
+  "steps": [
+   "Add the tenths: 5 tenths and 3 tenths make 8 tenths. 0.5 plus 0.3 equals 0.8.",
+   "Add the ones. 2 plus 1 equals 3.",
+   "Put them together: 3 ones and 8 tenths make 3.8."
+  ]
+ },
+ "G5A_DECIMALS_012": {
+  "q": "Rani had 8.50 rupees. She spent 3.20 rupees on a pencil. How much money does she have left?",
+  "options": [
+   "5.30 rupees",
+   "11.70 rupees",
+   "5.70 rupees",
+   "4.30 rupees"
+  ],
+  "hints": [
+   "Money left means taking away what was spent.",
+   "Line up the decimal points and subtract: paise from paise, rupees from rupees.",
+   "Similar problem: 7.90 rupees minus 2.40 rupees. Paise: 90 minus 40 equals 50. Rupees: 7 minus 2 equals 5. The answer is 5.50 rupees."
+  ],
+  "steps": [
+   "Subtract the paise: 30 paise are left.",
+   "Subtract the rupees: 5 rupees are left.",
+   "Rani has 5.30 rupees left."
+  ]
+ },
+ "G5A_DECIMALS_013": {
+  "q": "What is 4.6 times 10?",
+  "options": [
+   "460",
+   "46",
+   "0.46",
+   "40.6"
+  ],
+  "hints": [
+   "Multiplying by 10 makes each digit worth ten times as much, so the decimal point moves.",
+   "Move the decimal point in 4.6 one place to the right.",
+   "Similar problem: 7.3 times 10. Moving the point one place to the right gives 73."
+  ],
+  "steps": [
+   "Multiplying by 10 moves the decimal point one place to the right.",
+   "4.6 becomes 46."
+  ]
+ },
+ "G5A_DECIMALS_014": {
+  "q": "What is 3.25 times 100?",
+  "options": [
+   "32.5",
+   "3,250",
+   "325",
+   "300.25"
+  ],
+  "hints": [
+   "Multiplying by 100 makes each digit worth a hundred times as much, so the decimal point moves.",
+   "Move the decimal point in 3.25 two places to the right.",
+   "Similar problem: 1.47 times 100. Moving the point two places to the right gives 147."
+  ],
+  "steps": [
+   "Multiplying by 100 moves the decimal point two places to the right.",
+   "3.25 becomes 325."
+  ]
+ },
+ "G5A_DECIMALS_015": {
+  "q": "What is 57 divided by 10?",
+  "options": [
+   "570",
+   "0.57",
+   "5.07",
+   "5.7"
+  ],
+  "hints": [
+   "Dividing by 10 makes each digit worth one-tenth as much, so the decimal point moves.",
+   "Think of 57 as 57.0 and move the point one place to the left.",
+   "Similar problem: 83 divided by 10. Moving the point one place to the left gives 8.3."
+  ],
+  "steps": [
+   "Dividing by 10 moves the decimal point one place to the left. 57 is the same as 57.0.",
+   "57 becomes 5.7."
+  ]
+ },
+ "G5A_DECIMALS_016": {
+  "q": "How is 'seven tenths' written as a decimal?",
+  "options": [
+   "0.7",
+   "0.07",
+   "7",
+   "70"
+  ],
+  "hints": [
+   "Tenths go in the first place after the decimal point.",
+   "There are no ones, so write 0 before the point, then put the 7 in the tenths place.",
+   "Similar problem: three tenths is written 0.3, with the 3 in the first place after the point."
+  ],
+  "steps": [
+   "Seven tenths means 7 parts out of 10 equal parts of one whole.",
+   "There are no ones, so write 0, then the decimal point, then 7 in the tenths place.",
+   "Seven tenths is written 0.7."
+  ]
+ },
+ "G5A_INTEGERS_001": {
+  "q": "Meena multiplies 25 copies of minus 1 together. Kabir multiplies 24 copies of minus 1 together. What is the sum of their two answers?",
+  "options": [
+   "Minus 49",
+   "Minus 2",
+   "0",
+   "Minus 1"
+  ],
+  "hints": [
+   "Multiply a few copies of minus 1 and watch the sign. Look for the pattern as the number of copies grows.",
+   "Two copies give 1, three copies give minus 1, four copies give 1. Decide what 24 copies and 25 copies give.",
+   "A similar one: 3 copies of minus 1 multiply to minus 1, and 5 copies also multiply to minus 1, because 3 and 5 are both odd. The sum of those two answers is minus 2."
+  ],
+  "steps": [
+   "Two copies of minus 1 multiply to 1, so the copies can be paired off.",
+   "Kabir's 24 copies make 12 pairs, so his answer is 1.",
+   "Meena's 25 copies are 12 pairs and one more minus 1, so her answer is minus 1.",
+   "The sum of the two answers is 0."
+  ]
+ },
+ "G5A_INTEGERS_002": {
+  "q": "The product of two integers is positive, and their sum is minus 12. Which of these could be the greater of the two integers?",
+  "options": [
+   "Minus 5",
+   "Minus 7",
+   "2",
+   "Minus 13"
+  ],
+  "hints": [
+   "A positive product means the two integers have the same sign. Use the sum to decide which sign that is.",
+   "Both integers are negative. For each choice, find the other integer that makes the sum minus 12, then check which of the two is greater.",
+   "A similar one: two integers have a positive product and a sum of minus 8. They could be minus 3 and minus 5. The greater of those is minus 3, because it is further to the right on the number line."
+  ],
+  "steps": [
+   "The product is positive, so the two integers have the same sign.",
+   "Their sum is negative, so both are negative. That rules out 2, and it rules out minus 13, whose partner would be 1.",
+   "The choices left are minus 7 and minus 5, and they are partners. Minus 7 plus negative 5 equals minus 12.",
+   "On the number line minus 5 is to the right of minus 7, so the greater integer is minus 5."
+  ]
+ },
+ "G5A_INTEGERS_003": {
+  "q": "On a number line, point P is at minus 8. Point Q is 5 units away from P. Point R is 12 units away from Q. What is the greatest possible distance of R from 0?",
+  "options": [
+   "9",
+   "17",
+   "15",
+   "25"
+  ],
+  "hints": [
+   "'Away from' can mean to the left or to the right. Think about every possible position, and remember that distance from 0 counts on both sides.",
+   "Q could be at minus 13 or at minus 3. From each of those, R could be 12 to the left or 12 to the right. Find all four positions for R.",
+   "A similar one: P is at minus 2, Q is 3 units from P and R is 4 units from Q. R could be at minus 9, minus 1, minus 3 or 5. The greatest distance from 0 is 9."
+  ],
+  "steps": [
+   "Q is 5 units from minus 8, so Q is at minus 13 or at minus 3.",
+   "From minus 13, R is at minus 25 or minus 1. From minus 3, R is at minus 15 or 9.",
+   "The distances from 0 are 25, 1, 15 and 9.",
+   "The greatest possible distance of R from 0 is 25."
+  ]
+ },
+ "G5A_INTEGERS_004": {
+  "q": "On a number line an ant is at minus 14 and a beetle is at 6. They start at the same moment and walk towards each other. Every second the ant moves 3 units and the beetle moves 1 unit. At which point do they meet?",
+  "options": [
+   "Minus 4",
+   "1",
+   "5",
+   "Minus 9"
+  ],
+  "hints": [
+   "Find how far apart they are and how quickly the gap between them closes. Then find where one of them is at that moment.",
+   "The distance from minus 14 to 6 is 20 units. Each second the gap shrinks by 3 plus 1 units. Find how many seconds they need.",
+   "A similar one: one walker is at minus 6 and another is at 6, moving towards each other at 2 units and 1 unit each second. The gap of 12 closes by 3 each second, so they meet after 4 seconds at minus 6 plus 8 equals 2."
+  ],
+  "steps": [
+   "Find the distance between them. 6 minus negative 14 equals 20.",
+   "Each second the gap closes by 3 plus 1 equals 4 units, so they meet after 5 seconds.",
+   "In 5 seconds the ant moves 15 units to the right.",
+   "So they meet at the point 1."
+  ]
+ },
+ "G5A_INTEGERS_005": {
+  "q": "In Rahul's office building there is no floor numbered 0: the floor just above floor minus 1 is floor 1. Rahul parks his car on floor minus 3. He takes the lift up 8 floors to his office. Later he goes down 2 floors to the canteen. On which floor is the canteen?",
+  "options": [
+   "3",
+   "4",
+   "6",
+   "5"
+  ],
+  "hints": [
+   "This building's floor numbers skip a number. Ordinary adding will not match the floors, so count each floor the lift passes.",
+   "Starting from minus 3, list the floors going up: minus 2, minus 1, then 1, and so on. Stop when you have counted 8 floors.",
+   "A similar one in the same kind of building: going up 4 floors from minus 2 passes minus 1, 1, 2 and reaches 3, not 2."
+  ],
+  "steps": [
+   "Count 8 floors up from minus 3, remembering that 1 comes straight after minus 1: minus 2, minus 1, 1, 2, 3, 4, 5, 6.",
+   "So the office is on floor 6.",
+   "The canteen is 2 floors below the office: 5, then 4.",
+   "The canteen is on floor 4."
+  ]
+ },
+ "G5A_INTEGERS_006": {
+  "q": "k is an integer less than minus 3. Which of these is always the greatest?",
+  "options": [
+   "k plus 5",
+   "k minus 3",
+   "k plus k",
+   "2 minus k"
+  ],
+  "hints": [
+   "Choose a value that k could have and work out all four expressions. Then ask whether the same thing would happen for every other allowed value.",
+   "Try k equals minus 4. Work out 2 minus k carefully: taking away minus 4 is the same as adding 4.",
+   "A similar one: n is an integer less than minus 1. Compare n plus 2 and 1 minus n using n equals minus 5: n plus 2 equals minus 3 and 1 minus n equals 6. Taking away a negative number gives the greater result."
+  ],
+  "steps": [
+   "Test k equals minus 4. Then k plus 5 equals 1, k minus 3 equals minus 7 and k plus k equals minus 8.",
+   "Taking away minus 4 is the same as adding 4. 2 minus negative 4 equals 2 plus 4, which equals 6.",
+   "For every k below minus 3, k plus 5 is less than 2, while taking away k adds more than 3 to 2.",
+   "So the greatest is always 2 minus k."
+  ]
+ },
+ "G5A_INTEGERS_007": {
+  "q": "On Monday in Leh the lowest temperature was minus 9 degrees Celsius and the highest was 5 degrees Celsius. On Tuesday the lowest temperature was 4 degrees Celsius lower than Monday's lowest. The difference between Tuesday's highest and lowest temperatures was 3 degrees Celsius less than the same difference on Monday. What was Tuesday's highest temperature?",
+  "options": [
+   "Minus 2 degrees Celsius",
+   "6 degrees Celsius",
+   "1 degree Celsius",
+   "Minus 12 degrees Celsius"
+  ],
+  "hints": [
+   "Find three things in order: the difference between Monday's two temperatures, Tuesday's lowest, and Tuesday's difference.",
+   "From minus 9 degrees Celsius up to 5 degrees Celsius, count the degrees up to zero and then the degrees above zero. That is Monday's difference.",
+   "A similar one: from minus 4 degrees Celsius up to 3 degrees Celsius is 4 plus 3 equals 7 degrees. A day whose lowest is minus 6 degrees Celsius and whose difference is 5 degrees has a highest of minus 6 plus 5 equals minus 1 degree Celsius."
+  ],
+  "steps": [
+   "Monday's difference: from minus 9 up to 0 is 9 degrees, then 5 more. 5 minus negative 9 equals 14.",
+   "Tuesday's difference is 3 less. 14 minus 3 equals 11.",
+   "Tuesday's lowest is 4 lower than minus 9. Minus 9 minus 4 equals minus 13.",
+   "Go up 11 degrees from minus 13. Tuesday's highest temperature was minus 2 degrees Celsius."
+  ]
+ },
+ "G5A_INTEGERS_008": {
+  "q": "In a quiz, each right answer earns 5 points and each answer that is not right loses 2 points. Riya answered all 20 questions and scored 51 points. How many of her answers were right?",
+  "options": [
+   "7",
+   "12",
+   "13",
+   "14"
+  ],
+  "hints": [
+   "Imagine Riya had every answer right, then change the answers one at a time. See how much the score drops each time.",
+   "Twenty right answers score 100. Changing one right answer into one that is not right loses the 5 points and 2 more. Find how many such changes bring 100 down to 51.",
+   "A similar one: 10 questions, 4 points for each right answer and 1 point lost otherwise, score 25. A full score is 40. Each miss costs 5, and 15 points are missing, so there were 3 misses and 7 right answers."
+  ],
+  "steps": [
+   "If all 20 answers were right, the score would be 100.",
+   "Riya is 49 points short of that.",
+   "Each answer that is not right costs 5 plus 2 equals 7 points, so 7 answers were not right.",
+   "So 13 of her answers were right."
+  ]
+ },
+ "G5A_INTEGERS_009": {
+  "q": "How many integers greater than minus 10 are closer to minus 3 than to 5 on the number line?",
+  "options": [
+   "11",
+   "9",
+   "10",
+   "14"
+  ],
+  "hints": [
+   "Find the point that is exactly as far from minus 3 as it is from 5. Integers on one side of it are closer to minus 3.",
+   "The distance from minus 3 to 5 is 8 units, so the halfway point is 4 units from each. Find it, then list the integers to its left that are greater than minus 10.",
+   "A similar one: integers greater than minus 5 that are closer to minus 2 than to 4. The halfway point is 1, so they are minus 4, minus 3, minus 2, minus 1 and 0: five integers."
+  ],
+  "steps": [
+   "The distance from minus 3 to 5 is 8 units, so the halfway point is 4 units from each end. Minus 3 plus 4 equals 1.",
+   "Integers to the left of 1 are closer to minus 3. The integer 1 itself is equally far from both, so it is not counted.",
+   "The integers greater than minus 10 and less than 1 are minus 9, minus 8, minus 7, minus 6, minus 5, minus 4, minus 3, minus 2, minus 1 and 0.",
+   "That makes 10 integers."
+  ]
+ },
+ "G5A_INTEGERS_010": {
+  "q": "A frog sits at the bottom of a well, 10 metres below ground level. We can write its position as minus 10. Each day it climbs up 4 metres, and each night it slips down 2 metres. During which day does the frog first reach ground level?",
+  "options": [
+   "the 4th day",
+   "the 5th day",
+   "the 3rd day",
+   "the 6th day"
+  ],
+  "hints": [
+   "Do not use only the gain for a whole day and night. Follow the frog's position step by step and watch for the first moment it reaches 0.",
+   "Start at minus 10. After the first day's climb the frog is at minus 6, and after the night it is at minus 8. Carry on in the same way.",
+   "A similar one: a snail at minus 7 climbs 3 metres each day and slips 1 metre each night. Its positions are minus 4, minus 5, then minus 2, minus 3, then 0. It reaches the top during day 3, not day 4."
+  ],
+  "steps": [
+   "Day 1: the frog climbs to minus 6, then slips to minus 8.",
+   "Day 2: it climbs to minus 4, then slips to minus 6.",
+   "Day 3: it climbs to minus 2, then slips to minus 4.",
+   "Day 4: it climbs 4 metres and reaches 0, which is ground level.",
+   "The frog first reaches ground level during the 4th day."
+  ]
+ },
+ "G5A_INTEGERS_011": {
+  "q": "Which of these integers is the greatest: minus 9, minus 4, minus 6 or minus 12?",
+  "options": [
+   "Minus 9",
+   "Minus 6",
+   "Minus 12",
+   "Minus 4"
+  ],
+  "hints": [
+   "Picture the number line. The further right a number is, the greater it is.",
+   "All four integers are negative, so find the one that is closest to zero.",
+   "A similar one: among minus 3, minus 8 and minus 5, the integer closest to zero is minus 3, so minus 3 is the greatest."
+  ],
+  "steps": [
+   "On the number line, numbers get greater as you move to the right.",
+   "All four are to the left of zero, and minus 4 is the nearest to zero.",
+   "So the greatest is minus 4."
+  ]
+ },
+ "G5A_INTEGERS_012": {
+  "q": "A thermometer in Kargil shows 5 degrees below zero. How is this temperature written?",
+  "options": [
+   "5 degrees Celsius",
+   "Minus 5 degrees Celsius",
+   "0 degrees Celsius",
+   "Minus 50 degrees Celsius"
+  ],
+  "hints": [
+   "Numbers below zero are written with a minus sign in front.",
+   "The temperature is 5 degrees lower than 0 degrees Celsius. Put a minus sign in front of the 5.",
+   "A similar one: 3 degrees below zero is written minus 3 degrees Celsius."
+  ],
+  "steps": [
+   "Zero degrees is the starting point. Below zero means less than 0.",
+   "A number 5 below zero is written with a minus sign.",
+   "So the temperature is written minus 5 degrees Celsius."
+  ]
+ },
+ "G5A_INTEGERS_013": {
+  "q": "What is the opposite of minus 8?",
+  "options": [
+   "Minus 8",
+   "8",
+   "0",
+   "16"
+  ],
+  "hints": [
+   "The opposite of a number is the same distance from zero, on the other side of the number line.",
+   "Minus 8 is 8 units to the left of zero. Find the number 8 units to the right of zero.",
+   "A similar one: minus 3 is 3 units to the left of zero, so its opposite is 3."
+  ],
+  "steps": [
+   "Minus 8 is 8 units to the left of zero.",
+   "Its opposite is 8 units to the right of zero.",
+   "So the opposite of minus 8 is 8."
+  ]
+ },
+ "G5A_INTEGERS_014": {
+  "q": "Work out: negative 6 plus 9",
+  "options": [
+   "Minus 3",
+   "15",
+   "Minus 54",
+   "3"
+  ],
+  "hints": [
+   "Use the number line. Adding a positive number means moving to the right.",
+   "Start at minus 6. It takes 6 steps to reach zero. Count how many of the 9 steps are still left.",
+   "A similar one: negative 4 plus 6. Start at minus 4, use 4 steps to reach zero and the other 2 steps to reach 2."
+  ],
+  "steps": [
+   "Start at minus 6 on the number line and move 9 steps to the right.",
+   "Six steps reach zero, and 3 steps are left.",
+   "So negative 6 plus 9 equals 3."
+  ]
+ },
+ "G5A_INTEGERS_015": {
+  "q": "Work out: 4 minus 10",
+  "options": [
+   "Minus 6",
+   "6",
+   "14",
+   "Minus 4"
+  ],
+  "hints": [
+   "Use the number line. Subtracting means moving to the left.",
+   "Start at 4. It takes 4 steps to reach zero. Count how many of the 10 steps are still left.",
+   "A similar one: 3 minus 8. Start at 3, use 3 steps to reach zero and the other 5 steps to reach minus 5."
+  ],
+  "steps": [
+   "Start at 4 on the number line and move 10 steps to the left.",
+   "Four steps reach zero, and 6 steps are left, which go below zero.",
+   "So 4 minus 10 equals minus 6."
+  ]
+ },
+ "G5A_INTEGERS_016": {
+  "q": "Early in the morning the temperature in Shimla was minus 2 degrees Celsius. By noon it had risen by 7 degrees Celsius. What was the temperature at noon?",
+  "options": [
+   "9 degrees Celsius",
+   "Minus 5 degrees Celsius",
+   "5 degrees Celsius",
+   "7 degrees Celsius"
+  ],
+  "hints": [
+   "A rise in temperature is an addition. Think of the thermometer as a number line standing up.",
+   "Start at minus 2 and go up 7. The first 2 degrees bring the temperature up to zero.",
+   "A similar one: from minus 3 degrees Celsius a rise of 4 degrees Celsius uses 3 degrees to reach zero and 1 more, giving 1 degree Celsius."
+  ],
+  "steps": [
+   "Start at minus 2 and go up 7 degrees.",
+   "Two degrees reach zero, and 5 degrees are left.",
+   "So the temperature at noon was 5 degrees Celsius."
+  ]
+ },
+ "G5A_INTEGERS_017": {
+  "q": "Which of these statements is true?",
+  "options": [
+   "Minus 5 is greater than minus 2",
+   "Minus 5 equals 5",
+   "Minus 5 is less than minus 2",
+   "0 is less than minus 2"
+  ],
+  "hints": [
+   "On the number line, the number further to the left is the smaller one.",
+   "Find minus 5 and minus 2 on the number line and see which one is further to the left.",
+   "A similar one: minus 7 is to the left of minus 3 on the number line, so minus 7 is less than minus 3."
+  ],
+  "steps": [
+   "On the number line minus 5 is to the left of minus 2.",
+   "The number further to the left is the smaller one.",
+   "So the true statement is minus 5 is less than minus 2."
+  ]
+ },
+ "G5A_INTEGERS_018": {
+  "q": "On a number line, which integer is 3 units to the left of 1?",
+  "options": [
+   "Minus 2",
+   "4",
+   "2",
+   "Minus 3"
+  ],
+  "hints": [
+   "Moving left on the number line means subtracting.",
+   "Start at 1 and take one step left at a time, saying each number you land on.",
+   "A similar one: 4 units to the left of 2 goes to 1, 0, minus 1 and then minus 2."
+  ],
+  "steps": [
+   "Start at 1 and move 3 steps to the left: 0, minus 1, minus 2.",
+   "As a subtraction, this is 1 take away 3. 1 minus 3 equals minus 2.",
+   "So the integer is minus 2."
+  ]
+ },
+ "G5A_INTEGERS_019": {
+  "q": "The ground floor of a building is floor 0. A lift is on floor minus 2, which is two floors below the ground floor. It goes up 5 floors. Which floor is it on now?",
+  "options": [
+   "7",
+   "5",
+   "2",
+   "3"
+  ],
+  "hints": [
+   "Going up is an addition. Think of the floors as a number line standing up.",
+   "Start at minus 2 and count up 5 floors, saying each floor you reach.",
+   "A similar one: a lift on floor minus 1 goes up 3 floors. It reaches 0, 1 and then 2, so it stops on floor 2."
+  ],
+  "steps": [
+   "Start at floor minus 2 and go up 5 floors: minus 1, 0, 1, 2, 3.",
+   "As an addition, this is minus 2 plus 5. Minus 2 plus 5 equals 3.",
+   "So the lift is on floor 3."
+  ]
+ },
+ "G5A_INTEGERS_020": {
+  "q": "Which of these temperatures is the coldest: minus 1 degree Celsius, minus 10 degrees Celsius, 2 degrees Celsius or 0 degrees Celsius?",
+  "options": [
+   "Minus 1 degree Celsius",
+   "Minus 10 degrees Celsius",
+   "2 degrees Celsius",
+   "0 degrees Celsius"
+  ],
+  "hints": [
+   "The coldest temperature is the lowest number. On a number line it is the one furthest to the left.",
+   "Two of the temperatures are below zero. Decide which of those two is further below zero.",
+   "A similar one: among minus 2 degrees Celsius, minus 7 degrees Celsius and 4 degrees Celsius, the lowest is minus 7 degrees Celsius, so minus 7 degrees Celsius is the coldest."
+  ],
+  "steps": [
+   "Colder means a lower number, further to the left on the number line.",
+   "In order from lowest to highest the temperatures are minus 10, minus 1, 0 and 2.",
+   "So the coldest is minus 10 degrees Celsius."
+  ]
+ },
+ "G5A_OPERATIONS1_001": {
+  "q": "Riya and Kabir have 450 stickers altogether. If Riya gives 30 of her stickers to Kabir, they will both have the same number. How many stickers does Riya have now?",
+  "options": [
+   "255",
+   "240",
+   "225",
+   "195"
+  ],
+  "hints": [
+   "Think about the moment after the gift, when they are equal. The total number of stickers does not change.",
+   "After the gift each child has half of 450. Then put Riya's 30 stickers back in her hand.",
+   "A similar one: two friends have 80 marbles. If one gives 6 to the other, they are equal at 40 each. So the giver has 40 plus 6 equals 46 now and the other has 34."
+  ],
+  "steps": [
+   "The total stays 450, so after the gift each child has half. 450 divided by 2 equals 225.",
+   "Riya reaches 225 after giving away 30, so before the gift she has 30 more than that. 225 plus 30 equals 255.",
+   "Check: Kabir has 450 minus 255 equals 195, and 195 plus 30 equals 225 too.",
+   "Riya has 255 stickers now."
+  ]
+ },
+ "G5A_OPERATIONS1_002": {
+  "q": "Arjun had to subtract 386 from a number. By mistake he copied 386 as 368, and he added it instead of subtracting. His answer was 2,154. What is the right answer?",
+  "options": [
+   "1,382",
+   "1,786",
+   "1,400",
+   "1,418"
+  ],
+  "hints": [
+   "Work backwards. First undo exactly what Arjun did, to find the number he started with. Then do what he was asked to do.",
+   "Arjun added 368 and reached 2,154. Take 368 away from 2,154 to find his starting number.",
+   "A similar one: a girl must subtract 52 from a number, but she adds 25 and gets 100. Her number was 100 minus 25 equals 75, so the right answer is 75 minus 52 equals 23."
+  ],
+  "steps": [
+   "Undo what Arjun did: he added 368. 2154 minus 368 equals 1786.",
+   "So the starting number is 1,786. Now do what was asked: subtract 386. 1786 minus 386 equals 1400.",
+   "The right answer is 1,400."
+  ]
+ },
+ "G5A_OPERATIONS1_003": {
+  "q": "The digits 1, 2, 3, 4, 5 and 6 are each used once to make two 3-digit numbers. What is the smallest possible difference between the two numbers?",
+  "options": [
+   "49",
+   "56",
+   "47",
+   "531"
+  ],
+  "hints": [
+   "To make two numbers close together, start with the hundreds digits. Then think about how to make the larger number small and the smaller number large.",
+   "Choose hundreds digits that are next to each other, such as 4 and 3. Give the larger number the smallest two digits left, and the smaller number the largest two, in the best order.",
+   "A similar one with the digits 1, 2, 3 and 4 making two 2-digit numbers: the tens digits are neighbours, 3 and 2. The larger number takes the smallest digit left, 31, and the smaller takes the largest, 24. The difference is 31 minus 24 equals 7."
+  ],
+  "steps": [
+   "The numbers must be close, so their hundreds digits should be neighbours.",
+   "Choose 4 and 3. The digits left are 1, 2, 5 and 6. The number starting with 4 should be as small as possible: 412.",
+   "The number starting with 3 should be as large as possible: 365.",
+   "Subtract. 412 minus 365 equals 47.",
+   "Other neighbouring hundreds digits give at least 49, so the smallest difference is 47."
+  ]
+ },
+ "G5A_OPERATIONS1_004": {
+  "q": "A book lies open. The page numbers on the two facing pages add up to 437. Kabir turns over 6 more leaves, one at a time. What is the number on the right-hand page now?",
+  "options": [
+   "231",
+   "225",
+   "230",
+   "224"
+  ],
+  "hints": [
+   "Facing pages carry numbers that follow one another. Find the two numbers first. Then think about how many page numbers one leaf carries.",
+   "Find two numbers next to each other that add up to 437: they are just below and just above half of 437. The larger one is on the right-hand page.",
+   "A similar one: facing pages add up to 61, so they are 30 and 31. After turning 4 leaves the numbers go up by 8, and the right-hand page is 31 plus 8 equals 39."
+  ],
+  "steps": [
+   "The two page numbers follow one another and add up to 437, so they are 218 and 219.",
+   "The right-hand page is 219. Each leaf has two pages, so 6 leaves move the numbers on by 12.",
+   "Add 12 to the right-hand page. It is now page 231."
+  ]
+ },
+ "G5A_OPERATIONS1_005": {
+  "q": "Asha and Bina have 560 rupees together. Bina and Chetan have 640 rupees together. Asha and Chetan have 600 rupees together. How much money does Bina have?",
+  "options": [
+   "1,200 rupees",
+   "260 rupees",
+   "340 rupees",
+   "300 rupees"
+  ],
+  "hints": [
+   "Add all three totals together and think about how many times each child's money has been counted.",
+   "560 plus 640 plus 600 counts each child twice. Halve it to get the money of all three children together. Then remove the pair that does not include Bina.",
+   "A similar one: P and Q have 10, Q and R have 14, P and R have 12. The sum 36 counts each twice, so all three have 18. Then Q has 18 minus 12 equals 6."
+  ],
+  "steps": [
+   "Add the three totals. Each child is counted twice. 560 plus 640 plus 600 equals 1800.",
+   "So the three children together have half of this. 1800 divided by 2 equals 900.",
+   "Take away Asha and Chetan's total to leave Bina's money. 900 minus 600 equals 300.",
+   "Bina has 300 rupees."
+  ]
+ },
+ "G5A_OPERATIONS1_006": {
+  "q": "Meera added up a long list of numbers. She copied 4,582 as 4,852 and she copied 739 as 379. Everything else was right, and her total was 9,640. What is the right total?",
+  "options": [
+   "9,550",
+   "9,730",
+   "9,010",
+   "10,270"
+  ],
+  "hints": [
+   "There is no need to know the other numbers in the list. For each slip, decide whether it made the total too big or too small, and by how much.",
+   "Find 4,852 minus 4,582 and 739 minus 379. The first slip added extra to the total. The second slip left some out.",
+   "A similar one: a total of 500 was found after copying 62 as 26 and 18 as 81. The first slip lost 36 and the second added 63, so the right total is 500 plus 36 minus 63 equals 473."
+  ],
+  "steps": [
+   "The first slip made the total too big. 4852 minus 4582 equals 270.",
+   "The second slip made the total too small. 739 minus 379 equals 360.",
+   "Take away the extra 270 and add the missing 360. 9640 minus 270 plus 360 equals 9730.",
+   "The right total is 9,730."
+  ]
+ },
+ "G5A_OPERATIONS1_007": {
+  "q": "On Monday the tickets numbered 358 to 512 were sold. On Tuesday the ticket numbers carried on from 513, and 40 more tickets were sold than on Monday. What was the number on the last ticket sold on Tuesday?",
+  "options": [
+   "708",
+   "707",
+   "706",
+   "667"
+  ],
+  "hints": [
+   "When numbered things are counted from one number to another, both ends are included. Take care with this twice in the question.",
+   "Count Monday's tickets from 358 to 512, including both of those tickets. Then add 40 for Tuesday's count.",
+   "A similar one: tickets 21 to 30 are 30 minus 21 plus 1 equals 10 tickets. If 12 tickets are then sold starting from number 31, the last is 31 plus 11 equals 42."
+  ],
+  "steps": [
+   "Count Monday's tickets, including both ends. 512 minus 358 plus 1 equals 155.",
+   "Tuesday had 40 more tickets. 155 plus 40 equals 195.",
+   "Ticket 513 is the first of Tuesday's 195 tickets, so the last is 194 further on. 513 plus 194 equals 707.",
+   "The last ticket sold on Tuesday was number 707."
+  ]
+ },
+ "G5A_OPERATIONS1_008": {
+  "q": "In this addition each letter stands for a digit, and different letters stand for different digits: P Q R plus P Q R plus P Q R equals Q Q Q. What is the value of P plus Q plus R?",
+  "options": [
+   "14",
+   "16",
+   "17",
+   "13"
+  ],
+  "hints": [
+   "The total Q Q Q has three equal digits, so there are only a few numbers it could be. Test them one at a time.",
+   "Q Q Q could be 111, 222, 333 and so on. Divide each one by 3 to get P Q R, and check whether the middle digit of P Q R is the same as Q.",
+   "A similar puzzle: X Y plus Y equals Y X, with X and Y different digits. Test the values of Y in turn. Y equals 6 would need 26 plus 6 equals 62, which is not true. Y equals 9 gives 89 plus 9 equals 98, which fits. So X equals 8 and Y equals 9."
+  ],
+  "steps": [
+   "Q Q Q has three equal digits, and P Q R is one third of it. Test the totals in turn.",
+   "444 divided by 3 equals 148. Its middle digit is 4, which matches Q, and the three digits are different.",
+   "The other totals do not fit: for example 555 divided by 3 equals 185, whose middle digit is 8, not 5.",
+   "So P equals 1, Q equals 4 and R equals 8, and P plus Q plus R equals 13."
+  ]
+ },
+ "G5A_OPERATIONS1_009": {
+  "q": "Using each of the digits 1, 2, 3 and 4 exactly once, 24 different 4-digit numbers can be made. What is the sum of all 24 numbers?",
+  "options": [
+   "66,660",
+   "11,110",
+   "44,440",
+   "26,664"
+  ],
+  "hints": [
+   "Do not add the 24 numbers one by one. Look at one place at a time and ask how often each digit appears there.",
+   "Look at the units place. The 24 numbers share the four digits equally, so each digit is in the units place 24 divided by 4 times. Find what the units digits add up to.",
+   "A similar one: the digits 1, 2 and 3 make 6 numbers. Each digit is in each place 2 times, so every place adds up to 2 times 6 equals 12, and the sum is 12 times 111 equals 1,332."
+  ],
+  "steps": [
+   "There are 24 numbers and 4 digits, so each digit is in each place 6 times.",
+   "So the digits in any one place add up to 60.",
+   "This happens in the thousands, hundreds, tens and units places. 60 times 1000 plus 60 times 100 plus 60 times 10 plus 60 equals 66660.",
+   "The sum of all 24 numbers is 66,660."
+  ]
+ },
+ "G5A_OPERATIONS1_010": {
+  "q": "Work out: 100 minus 99 plus 98 minus 97 plus 96 minus 95 plus, and so on, plus 4 minus 3 plus 2 minus 1. The pattern carries on in the same way through all the numbers from 100 down to 1.",
+  "options": [
+   "100",
+   "0",
+   "50",
+   "51"
+  ],
+  "hints": [
+   "Do not work from left to right. Look for small groups of numbers that are easy to work out and that repeat.",
+   "Group the numbers in twos: 100 minus 99, then 98 minus 97, and so on. Find what each group is worth and how many groups there are.",
+   "A similar one: 10 minus 9 plus 8 minus 7 plus 6 minus 5 plus 4 minus 3 plus 2 minus 1 has 5 pairs, each worth 1, so it equals 5."
+  ],
+  "steps": [
+   "Group the numbers in pairs. Each pair is worth 1.",
+   "There are 100 numbers, so there are 50 pairs.",
+   "Fifty pairs worth 1 each give a total of 50."
+  ]
+ },
+ "G5A_OPERATIONS2_001": {
+  "q": "A tray holds 12 eggs. How many eggs are there in 6 full trays?",
+  "options": [
+   "72",
+   "18",
+   "66",
+   "84"
+  ],
+  "hints": [
+   "Equal groups are counted by multiplying.",
+   "There are 6 trays with 12 eggs in each. Work out 12 times 6, or 10 times 6 and 2 times 6 added together.",
+   "A similar one: 5 trays with 12 eggs in each hold 12 times 5 equals 60 eggs."
+  ],
+  "steps": [
+   "There are 6 equal groups of 12, so multiply.",
+   "Work out 12 times 6. 12 times 6 equals 72.",
+   "There are 72 eggs."
+  ]
+ },
+ "G5A_OPERATIONS2_002": {
+  "q": "An auto-rickshaw charges 9 rupees for every kilometre. What is the fare for a ride of 7 kilometres?",
+  "options": [
+   "16 rupees",
+   "56 rupees",
+   "63 rupees",
+   "72 rupees"
+  ],
+  "hints": [
+   "The same amount is charged for every kilometre, so multiply.",
+   "Each of the 7 kilometres costs 9 rupees. Work out 9 times 7.",
+   "A similar one: at 9 rupees for every kilometre, a ride of 5 kilometres costs 9 times 5 equals 45 rupees."
+  ],
+  "steps": [
+   "The fare is 9 rupees for each of the 7 kilometres, so multiply.",
+   "Work out 9 times 7. 9 times 7 equals 63.",
+   "The fare is 63 rupees."
+  ]
+ },
+ "G5A_OPERATIONS2_003": {
+  "q": "There are 7 days in a week. Meera's summer holiday lasts exactly 8 weeks. How many days is that?",
+  "options": [
+   "15",
+   "48",
+   "56",
+   "54"
+  ],
+  "hints": [
+   "Every week has the same number of days, so multiply.",
+   "There are 8 weeks with 7 days in each. Work out 7 times 8.",
+   "A similar one: 4 weeks of 7 days each make 7 times 4 equals 28 days."
+  ],
+  "steps": [
+   "There are 8 equal groups of 7 days, so multiply.",
+   "Work out 7 times 8. 7 times 8 equals 56.",
+   "The holiday lasts 56 days."
+  ]
+ },
+ "G5A_OPERATIONS2_004": {
+  "q": "Dadi shares 45 laddoos equally among 5 children. How many laddoos does each child get?",
+  "options": [
+   "9",
+   "40",
+   "50",
+   "8"
+  ],
+  "hints": [
+   "Sharing equally is a division.",
+   "Divide 45 by 5. You can ask which number multiplied by 5 gives 45.",
+   "A similar one: 35 laddoos shared equally among 5 children give each child 35 divided by 5 equals 7."
+  ],
+  "steps": [
+   "Sharing equally means dividing.",
+   "Divide 45 by 5. 45 divided by 5 equals 9.",
+   "Each child gets 9 laddoos."
+  ]
+ },
+ "G5A_OPERATIONS2_005": {
+  "q": "For the morning assembly, 96 children stand in rows of 8. How many rows are there?",
+  "options": [
+   "88",
+   "104",
+   "11",
+   "12"
+  ],
+  "hints": [
+   "Putting things into equal rows is a division.",
+   "Divide 96 by 8. It may help to see 96 as 80 and 16.",
+   "A similar one: 72 children in rows of 8 make 72 divided by 8 equals 9 rows."
+  ],
+  "steps": [
+   "The children are put into equal groups of 8, so divide.",
+   "Divide 96 by 8. 96 divided by 8 equals 12.",
+   "There are 12 rows."
+  ]
+ },
+ "G5A_OPERATIONS2_006": {
+  "q": "Six notebooks of the same kind cost 240 rupees altogether. What is the cost of one notebook?",
+  "options": [
+   "234 rupees",
+   "40 rupees",
+   "1,440 rupees",
+   "30 rupees"
+  ],
+  "hints": [
+   "When equal things cost a total amount, the cost of one is found by dividing.",
+   "Divide 240 by 6. It may help to think of 24 divided by 6 first.",
+   "A similar one: if 5 notebooks cost 150 rupees altogether, one costs 150 divided by 5 equals 30 rupees."
+  ],
+  "steps": [
+   "The total cost is shared equally among 6 notebooks, so divide.",
+   "Divide 240 by 6. 240 divided by 6 equals 40.",
+   "One notebook costs 40 rupees."
+  ]
+ },
+ "G5A_OPERATIONS2_007": {
+  "q": "Which number, when multiplied by 9, gives 108?",
+  "options": [
+   "99",
+   "12",
+   "117",
+   "11"
+  ],
+  "hints": [
+   "A missing number in a multiplication is found by dividing.",
+   "Divide 108 by 9. It may help to see 108 as 90 and 18.",
+   "A similar one: the number that gives 91 when multiplied by 7 is 91 divided by 7 equals 13, because 70 divided by 7 equals 10 and 21 divided by 7 equals 3."
+  ],
+  "steps": [
+   "To undo multiplying by 9, divide by 9.",
+   "Divide 108 by 9. 108 divided by 9 equals 12.",
+   "The number is 12. 12 times 9 equals 108."
+  ]
+ },
+ "G5A_OPERATIONS2_008": {
+  "q": "One dozen is 12. A fruit seller has 60 bananas. How many dozens of bananas is that?",
+  "options": [
+   "48",
+   "72",
+   "6",
+   "5"
+  ],
+  "hints": [
+   "Counting how many equal groups fit into a number is a division.",
+   "Divide 60 by 12. You can count up in twelves: 12, 24, 36 and so on, until you reach 60.",
+   "A similar one: 36 bananas are 36 divided by 12 equals 3 dozens."
+  ],
+  "steps": [
+   "A dozen is a group of 12, so divide 60 by 12.",
+   "Count in twelves: 12, 24, 36, 48, 60. That is 5 groups.",
+   "There are 5 dozens of bananas."
+  ]
  }
 }

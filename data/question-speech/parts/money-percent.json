@@ -7870,5 +7870,492 @@
    "There are 5 years, so the interest is 40 times 5, which is 200 rupees.",
    "The amount is the money put in plus the interest: 1000 plus 200 equals 1200 rupees. The amount is 1200 rupees."
   ]
+ },
+ "G5A_PERCENTAGE_001": {
+  "q": "The price of a cricket bat is raised by 20 percent. A month later, the new price is cut by 20 percent. Compared with the price at the very beginning, the final price is:",
+  "options": [
+   "4 percent less",
+   "the same",
+   "4 percent more",
+   "2 percent less"
+  ],
+  "hints": [
+   "The two percentages are taken of different prices. Try a simple starting price and follow it through.",
+   "Start with 100 rupees. After a 20 percent rise the price is 120 rupees. The 20 percent cut is now taken from 120 rupees.",
+   "Similar problem: a price goes up by 10 percent and then down by 10 percent. From 100 rupees it goes to 110 rupees, then drops by 11 rupees to 99 rupees, which is 1 percent less than at the start."
+  ],
+  "steps": [
+   "Take a starting price of 100 rupees. A 20 percent rise makes it 120 rupees.",
+   "The 20 percent cut is 20 percent of 120 rupees, which is 24 rupees.",
+   "The final price is 96 rupees.",
+   "96 rupees is 4 rupees below 100 rupees, so the final price is 4 percent less than at the beginning."
+  ]
+ },
+ "G5A_PERCENTAGE_002": {
+  "q": "The fare for a bus trip was raised by 20 percent. Later the new fare was reduced by 10 percent, and it is now 594 rupees. What was the fare before the two changes?",
+  "options": [
+   "540 rupees",
+   "550 rupees",
+   "660 rupees",
+   "495 rupees"
+  ],
+  "hints": [
+   "Work backwards, undoing the last change first. Each percentage belongs to the fare just before that change.",
+   "After the 10 percent reduction, the fare is 90 percent of the raised fare. So 594 rupees is 90 percent of the raised fare.",
+   "Similar problem: a price rises by 25 percent and then falls by 20 percent to 300 rupees. 300 rupees is 80 percent of the raised price, so the raised price is 375 rupees. 375 rupees is 125 percent of the first price, so the first price was 300 rupees."
+  ],
+  "steps": [
+   "594 rupees is 90 percent of the raised fare, so the raised fare was 660 rupees.",
+   "660 rupees is 120 percent of the first fare.",
+   "So the first fare was 550 rupees.",
+   "Check: 550 rupees raised by 20 percent is 660 rupees, and 660 rupees less 10 percent is 594 rupees. The fare was 550 rupees."
+  ]
+ },
+ "G5A_PERCENTAGE_003": {
+  "q": "Anil's weight is 25 percent more than Binu's weight. By what percent is Binu's weight less than Anil's weight?",
+  "options": [
+   "25 percent",
+   "75 percent",
+   "20 percent",
+   "80 percent"
+  ],
+  "hints": [
+   "The two percentages have different bases. 'Less than Anil's' means compare with Anil's weight.",
+   "Let Binu weigh 100 units. Then Anil weighs 125 units. The gap of 25 units must now be compared with 125.",
+   "Similar problem: Tina's height is 50 percent more than Uma's. If Uma is 100 units, Tina is 150 units. Uma is 50 units less out of 150, which is one-third less, about 33 percent, not 50 percent."
+  ],
+  "steps": [
+   "Let Binu's weight be 100 units. Anil's weight is 25 percent more, which is 125 units.",
+   "Binu is 25 units lighter than Anil.",
+   "Compare the 25 units with Anil's 125 units. 25 over 125 times 100 equals 20.",
+   "Binu's weight is 20 percent less than Anil's weight."
+  ]
+ },
+ "G5A_PERCENTAGE_004": {
+  "q": "Farida has 400 rupees and Gopal has 500 rupees. Which one of these statements is true?",
+  "options": [
+   "Farida has 25 percent less money than Gopal.",
+   "Gopal has 20 percent more money than Farida.",
+   "Farida has 80 percent less money than Gopal.",
+   "Gopal has 25 percent more money than Farida."
+  ],
+  "hints": [
+   "'More than Farida' is measured against Farida's money. 'Less than Gopal' is measured against Gopal's money.",
+   "The difference is 100 rupees. Work out what percent 100 rupees is of 400 rupees, and what percent it is of 500 rupees.",
+   "Similar problem: Hema has 200 rupees and Isha has 300 rupees. The gap is 100 rupees. Isha has 100 out of 200 more, which is 50 percent more than Hema. Hema has 100 out of 300 less, which is one-third less than Isha."
+  ],
+  "steps": [
+   "The difference between them is 100 rupees.",
+   "Measured against Farida's 400 rupees, the difference is 25 percent.",
+   "Measured against Gopal's 500 rupees, the difference is 20 percent.",
+   "So Farida has 20 percent less than Gopal, and the true statement is: Gopal has 25 percent more money than Farida."
+  ]
+ },
+ "G5A_PERCENTAGE_005": {
+  "q": "Meera spent 40 percent of her money on a school bag. Then she spent 25 percent of the money that was left on a water bottle. She now has 315 rupees. How much money did Meera have at first?",
+  "options": [
+   "700 rupees",
+   "900 rupees",
+   "2,100 rupees",
+   "525 rupees"
+  ],
+  "hints": [
+   "The second percentage is of what was left, not of all the money. Work backwards from 315 rupees.",
+   "After the bottle, 75 percent of the money left after the bag remained. So 315 rupees is 75 percent of that amount.",
+   "Similar problem: Ravi spends 50 percent of his money, then 20 percent of the rest, and has 80 rupees. 80 rupees is 80 percent of what was left after the first spend, so that was 100 rupees. 100 rupees is 50 percent of the start, so he began with 200 rupees."
+  ],
+  "steps": [
+   "315 rupees is 75 percent of the money left after the bag, so that amount was 420 rupees.",
+   "After the bag, 60 percent of all her money was left, so 420 rupees is 60 percent of the starting amount.",
+   "So she started with 700 rupees.",
+   "Check: 40 percent of 700 rupees is 280 rupees, leaving 420 rupees. 25 percent of 420 rupees is 105 rupees, leaving 315 rupees. Meera had 700 rupees at first."
+  ]
+ },
+ "G5A_PERCENTAGE_006": {
+  "q": "In a test, Asha scored 30 percent of the total marks and was 15 marks short of the pass mark. Bala scored 45 percent of the total marks and got 30 marks more than the pass mark. What were the total marks of the test?",
+  "options": [
+   "100",
+   "300",
+   "150",
+   "200"
+  ],
+  "hints": [
+   "Both scores are compared with the same pass mark. Think about how far apart the two children's marks are.",
+   "Asha is 15 below the pass mark and Bala is 30 above it. How many marks apart are they? That gap is also 45 percent minus 30 percent of the total.",
+   "Similar problem: Chetan gets 40 percent and is 10 marks short of passing. Dev gets 60 percent and is 20 marks above the pass mark. They are 30 marks apart, which is 20 percent of the total, so the total is 150 marks."
+  ],
+  "steps": [
+   "Asha is 15 below the pass mark and Bala is 30 above it, so Bala has 45 marks more than Asha.",
+   "In percent, Bala has 15 percent of the total more than Asha.",
+   "So 15 percent of the total is 45 marks, and 1 percent is 3 marks.",
+   "The total is 300 marks."
+  ]
+ },
+ "G5A_PERCENTAGE_007": {
+  "q": "A school bag has a marked price of 1,500 rupees. Shop A takes 20 percent off the marked price and then adds 5 percent tax on the reduced price. Shop B adds 5 percent tax to the marked price and then takes 20 percent off that total. Which statement is true?",
+  "options": [
+   "Both shops charge 1,275 rupees.",
+   "Shop A charges 1,260 rupees and Shop B charges 1,275 rupees.",
+   "Both shops charge 1,260 rupees.",
+   "Both shops charge 1,200 rupees."
+  ],
+  "hints": [
+   "A percentage change is a multiplication. Think about whether the order of two multiplications matters, then check with the numbers.",
+   "Work out Shop A first: take 20 percent off 1,500 rupees, then add 5 percent of the reduced price.",
+   "Similar problem: on 1,000 rupees, taking 10 percent off and then adding 10 percent gives 900 rupees and then 990 rupees. Adding 10 percent first and then taking 10 percent off gives 1,100 rupees and then 990 rupees. Both orders end at 990 rupees."
+  ],
+  "steps": [
+   "Shop A: 20 percent off 1,500 rupees leaves 1,200 rupees.",
+   "5 percent tax on 1,200 rupees is 60 rupees, so Shop A charges 1,260 rupees.",
+   "Shop B: 5 percent tax on 1,500 rupees is 75 rupees, making 1,575 rupees.",
+   "20 percent off 1,575 rupees is 315 rupees, so Shop B charges 1,260 rupees as well.",
+   "Both shops charge 1,260 rupees."
+  ]
+ },
+ "G5A_PERCENTAGE_008": {
+  "q": "A restaurant bill of 1,155 rupees already includes a 5 percent tax on the price of the food. How many rupees of tax are in the bill?",
+  "options": [
+   "57.75 rupees",
+   "50 rupees",
+   "155 rupees",
+   "55 rupees"
+  ],
+  "hints": [
+   "The tax was worked out on the food price, not on the final bill. Ask what percent of the food price the whole bill is.",
+   "The bill is the food price, 100 percent, plus the tax, 5 percent, so 1,155 rupees is 105 percent of the food price.",
+   "Similar problem: a bill of 660 rupees includes 10 percent tax. 660 rupees is 110 percent of the price, so 1 percent is 6 rupees, the price is 600 rupees and the tax is 60 rupees."
+  ],
+  "steps": [
+   "The bill is 100 percent plus 5 percent equals 105 percent of the food price.",
+   "So 1 percent of the food price is 11 rupees.",
+   "The tax is 5 percent of the food price. 5 times 11 equals 55.",
+   "Check: food 1,100 rupees plus tax 55 rupees makes 1,155 rupees. The tax is 55 rupees."
+  ]
+ },
+ "G5A_PERCENTAGE_009": {
+  "q": "In a class, 40 percent of the children are girls and the rest are boys. 30 percent of the girls and 50 percent of the boys wear glasses. What percent of the whole class wears glasses?",
+  "options": [
+   "42 percent",
+   "80 percent",
+   "40 percent",
+   "30 percent"
+  ],
+  "hints": [
+   "Each percentage is of a different group. Picture a class of 100 children and count.",
+   "In a class of 100 there are 40 girls and 60 boys. Find 30 percent of the 40 girls first.",
+   "Similar problem: 20 percent of a club are adults. 50 percent of the adults and 10 percent of the children wear caps. Out of 100 members, 10 adults and 8 children wear caps, so 18 percent of the club wears caps."
+  ],
+  "steps": [
+   "Picture a class of 100 children: 40 girls and 60 boys.",
+   "Girls with glasses: 30 percent of 40 is 12.",
+   "Boys with glasses: 50 percent of 60 is 30.",
+   "Altogether 42 children out of 100 wear glasses, which is 42 percent."
+  ]
+ },
+ "G5A_PERCENTAGE_010": {
+  "q": "A class has 40 children, and 30 percent of them are girls. Some boys move to another class, and no girls leave. Now 40 percent of the children in the class are girls. How many boys moved?",
+  "options": [
+   "4",
+   "10",
+   "12",
+   "16"
+  ],
+  "hints": [
+   "The number of girls stays the same, but the class gets smaller. The new percentage belongs to the new class size.",
+   "First find the number of girls: 30 percent of 40. These same girls are 40 percent of the smaller class.",
+   "Similar problem: a club has 60 children and 20 percent are girls, so there are 12 girls. Some boys leave and the girls become 25 percent of the club. 12 is 25 percent of 48, so the club now has 48 children and 60 minus 48 equals 12 boys left."
+  ],
+  "steps": [
+   "There are 12 girls.",
+   "After the boys move, these 12 girls are 40 percent of the class.",
+   "So 10 percent of the new class is 3 children, and the new class has 30 children.",
+   "The number of boys who moved is 10."
+  ]
+ },
+ "G5A_PERCENTAGE_011": {
+  "q": "Each side of a square playground is made 50 percent longer. By what percent does the area of the playground increase?",
+  "options": [
+   "50 percent",
+   "100 percent",
+   "125 percent",
+   "225 percent"
+  ],
+  "hints": [
+   "Area uses the side twice, so the increase counts twice over. Try a square with an easy side length.",
+   "Take a side of 10 metres, so the area is 100 square metres. Find the new side and the new area.",
+   "Similar problem: each side of a square is doubled, which is a 100 percent increase. A side of 10 metres becomes 20 metres and the area goes from 100 to 400 square metres, an increase of 300 percent."
+  ],
+  "steps": [
+   "Take a square of side 10 metres. Its area is 100 square metres.",
+   "50 percent longer means the side becomes 15 metres.",
+   "The new area is 225 square metres.",
+   "The area grows by 125 square metres on 100, which is an increase of 125 percent."
+  ]
+ },
+ "G5A_PERCENTAGE_012": {
+  "q": "Rohan's mother puts 6,000 rupees in a bank that pays simple interest of 5 percent per year. How much money will she have in all after 18 months?",
+  "options": [
+   "450 rupees",
+   "11,400 rupees",
+   "6,300 rupees",
+   "6,450 rupees"
+  ],
+  "hints": [
+   "The rate is for one year, so the time must be in years. Also check whether the question wants the interest or the total.",
+   "18 months is one and a half years. Find the interest for one year first: 5 percent of 6,000 rupees.",
+   "Similar problem: 4,000 rupees at 10 percent per year for 6 months. One year's interest is 400 rupees, so half a year gives 200 rupees, and the total is 4,200 rupees."
+  ],
+  "steps": [
+   "The interest for one year is 300 rupees.",
+   "18 months is one and a half years, so the interest is 300 rupees plus 150 rupees equals 450 rupees.",
+   "Add the interest to the money put in. 6000 plus 450 equals 6450.",
+   "She will have 6,450 rupees in all."
+  ]
+ },
+ "G5A_PERCENTAGE_013": {
+  "q": "In a school election there were only two candidates, and every vote went to one of them. The winner got 60 percent of the votes and won by 240 votes. How many votes were cast in all?",
+  "options": [
+   "1,200",
+   "400",
+   "600",
+   "480"
+  ],
+  "hints": [
+   "'Won by 240' is the gap between the two candidates. Find that gap as a percent of all the votes.",
+   "The other candidate got 100 percent minus 60 percent equals 40 percent of the votes. What percent of the votes is the gap between them?",
+   "Similar problem: a winner gets 55 percent of the votes and wins by 50 votes. The other candidate gets 45 percent, so the gap is 10 percent of the votes. 10 percent is 50 votes, so 500 votes were cast."
+  ],
+  "steps": [
+   "The other candidate got 40 percent of the votes.",
+   "The winner's lead is 20 percent of the votes.",
+   "20 percent of the votes is 240, so 10 percent is 120.",
+   "In all, 1,200 votes were cast."
+  ]
+ },
+ "G5A_PERCENTAGE_014": {
+  "q": "Exactly 35 percent of the children in a class are girls. What is the smallest number of children the class could have?",
+  "options": [
+   "100",
+   "20",
+   "35",
+   "40"
+  ],
+  "hints": [
+   "The number of girls must be a whole number. Write the percentage as a fraction in its simplest form.",
+   "35 percent is 35 out of 100. Divide the top and the bottom by the same number until you cannot go any further.",
+   "Similar problem: exactly 12 percent of the beads in a box are red. 12 out of 100 simplifies to 3 out of 25, so the smallest box has 25 beads, 3 of them red."
+  ],
+  "steps": [
+   "35 percent means 35 out of every 100.",
+   "Simplify by dividing the top and the bottom by 5. 35 over 100 equals 7 over 20.",
+   "7 and 20 share no factor, so the girls are 7 out of every 20 children.",
+   "The smallest class has 20 children, 7 of them girls."
+  ]
+ },
+ "G5A_PERCENTAGE_015": {
+  "q": "A shop has an offer on notebooks: 'Buy 4, get 1 more free.' Riya takes 5 notebooks of the same price and pays for 4. What percent discount is she really getting on the 5 notebooks?",
+  "options": [
+   "25 percent",
+   "80 percent",
+   "20 percent",
+   "5 percent"
+  ],
+  "hints": [
+   "A discount is measured against the full price of everything taken home.",
+   "Give each notebook an easy price, such as 10 rupees. What is the full price of 5 notebooks, and how much does Riya save?",
+   "Similar problem: 'Buy 2, get 1 free.' With 10 rupee items, the 3 items are worth 30 rupees and you save 10 rupees. That is one-third of the full price, about 33 percent, not 50 percent."
+  ],
+  "steps": [
+   "Let each notebook cost 10 rupees. The 5 notebooks are worth 50 rupees.",
+   "Riya pays for 4 notebooks, which is 40 rupees, so she saves 10 rupees.",
+   "Compare the saving with the full price of 50 rupees. 10 over 50 times 100 equals 20.",
+   "The discount is 20 percent."
+  ]
+ },
+ "G5A_PROFITLOSS_001": {
+  "q": "A shopkeeper bought a toy car for 40 rupees and sold it for 55 rupees. How much profit did he make?",
+  "options": [
+   "95 rupees",
+   "15 rupees",
+   "25 rupees",
+   "5 rupees"
+  ],
+  "hints": [
+   "Profit is how much more the selling price is than the cost price.",
+   "Take the cost price, 40 rupees, away from the selling price, 55 rupees.",
+   "Similar problem: a kite bought for 30 rupees and sold for 50 rupees gives a profit of 50 minus 30 equals 20 rupees."
+  ],
+  "steps": [
+   "The cost price is 40 rupees and the selling price is 55 rupees.",
+   "Profit equals selling price minus cost price. 55 minus 40 equals 15.",
+   "The profit is 15 rupees."
+  ]
+ },
+ "G5A_PROFITLOSS_002": {
+  "q": "Meena bought a bag for 250 rupees and sold it for 220 rupees. How much loss did she make?",
+  "options": [
+   "470 rupees",
+   "20 rupees",
+   "30 rupees",
+   "50 rupees"
+  ],
+  "hints": [
+   "A loss happens when the selling price is less than the cost price. The loss is the difference.",
+   "Take the selling price, 220 rupees, away from the cost price, 250 rupees.",
+   "Similar problem: a lamp bought for 500 rupees and sold for 460 rupees gives a loss of 500 minus 460 equals 40 rupees."
+  ],
+  "steps": [
+   "The cost price is 250 rupees and the selling price is 220 rupees, which is less.",
+   "Loss equals cost price minus selling price. 250 minus 220 equals 30.",
+   "The loss is 30 rupees."
+  ]
+ },
+ "G5A_PROFITLOSS_003": {
+  "q": "A fruit seller buys a basket of mangoes for 300 rupees. He wants to make a profit of 50 rupees. At what price should he sell the basket?",
+  "options": [
+   "250 rupees",
+   "300 rupees",
+   "400 rupees",
+   "350 rupees"
+  ],
+  "hints": [
+   "To make a profit, the selling price must be more than the cost price.",
+   "Add the profit he wants, 50 rupees, to the cost price, 300 rupees.",
+   "Similar problem: something that cost 200 rupees must be sold for 200 plus 40 equals 240 rupees to make a profit of 40 rupees."
+  ],
+  "steps": [
+   "Selling price equals cost price plus profit. 300 plus 50 equals 350.",
+   "He should sell the basket for 350 rupees."
+  ]
+ },
+ "G5A_PROFITLOSS_004": {
+  "q": "Ravi bought a cricket bat for 500 rupees. He sold it to a friend at a loss of 80 rupees. For how much did he sell the bat?",
+  "options": [
+   "420 rupees",
+   "580 rupees",
+   "480 rupees",
+   "520 rupees"
+  ],
+  "hints": [
+   "A loss means the selling price is less than the cost price.",
+   "Take the loss, 80 rupees, away from the cost price, 500 rupees.",
+   "Similar problem: something that cost 600 rupees and is sold at a loss of 50 rupees is sold for 600 minus 50 equals 550 rupees."
+  ],
+  "steps": [
+   "Selling price equals cost price minus loss. 500 minus 80 equals 420.",
+   "He sold the bat for 420 rupees."
+  ]
+ },
+ "G5A_PROFITLOSS_005": {
+  "q": "A shopkeeper sold a pen for 90 rupees and made a profit of 20 rupees. How much had he paid for the pen?",
+  "options": [
+   "110 rupees",
+   "70 rupees",
+   "20 rupees",
+   "80 rupees"
+  ],
+  "hints": [
+   "With a profit, the cost price is less than the selling price.",
+   "Take the profit, 20 rupees, away from the selling price, 90 rupees.",
+   "Similar problem: a cap sold for 60 rupees with a profit of 15 rupees had cost 60 minus 15 equals 45 rupees."
+  ],
+  "steps": [
+   "Cost price equals selling price minus profit. 90 minus 20 equals 70.",
+   "He had paid 70 rupees for the pen."
+  ]
+ },
+ "G5A_PROFITLOSS_006": {
+  "q": "Sita sold a storybook for 150 rupees. She made a loss of 30 rupees. How much had she paid for the storybook?",
+  "options": [
+   "120 rupees",
+   "150 rupees",
+   "180 rupees",
+   "170 rupees"
+  ],
+  "hints": [
+   "With a loss, the cost price is more than the selling price.",
+   "Add the loss, 30 rupees, to the selling price, 150 rupees.",
+   "Similar problem: a toy sold for 200 rupees at a loss of 40 rupees had cost 200 plus 40 equals 240 rupees."
+  ],
+  "steps": [
+   "Cost price equals selling price plus loss. 150 plus 30 equals 180.",
+   "She had paid 180 rupees for the storybook."
+  ]
+ },
+ "G5A_PROFITLOSS_007": {
+  "q": "A shopkeeper sells a toy for more money than he paid for it. What does he make?",
+  "options": [
+   "a loss",
+   "a discount",
+   "a tax",
+   "a profit"
+  ],
+  "hints": [
+   "Think about whether the shopkeeper ends up with more money or less money than he spent.",
+   "He gets back everything he paid and some extra. What is that extra money called?",
+   "Similar problem: Anu buys a ball for 10 rupees and sells it for 8 rupees. She gets back less than she paid, so she makes a loss."
+  ],
+  "steps": [
+   "The selling price is more than the cost price.",
+   "The extra money the shopkeeper gets is called profit.",
+   "So he makes a profit."
+  ]
+ },
+ "G5A_PROFITLOSS_008": {
+  "q": "Mohan bought a cycle for 900 rupees and later sold it for 900 rupees. What did he make?",
+  "options": [
+   "neither a profit nor a loss",
+   "a profit of 900 rupees",
+   "a loss of 90 rupees",
+   "a profit of 1,800 rupees"
+  ],
+  "hints": [
+   "Compare the selling price with the cost price.",
+   "Work out the selling price less the cost price: 900 minus 900.",
+   "Similar problem: Tara buys a book for 50 rupees and sells it for 50 rupees. The two prices are equal, so she makes no profit and no loss."
+  ],
+  "steps": [
+   "The cost price is 900 rupees and the selling price is 900 rupees.",
+   "The two prices are equal, so nothing is gained and nothing is lost. 900 minus 900 equals 0.",
+   "Mohan made neither a profit nor a loss."
+  ]
+ },
+ "G5A_PROFITLOSS_009": {
+  "q": "A shopkeeper bought a water bottle for 80 rupees and sold it for 100 rupees. What was his profit?",
+  "options": [
+   "180 rupees",
+   "30 rupees",
+   "20 rupees",
+   "10 rupees"
+  ],
+  "hints": [
+   "Profit is the selling price less the cost price.",
+   "Take 80 rupees away from 100 rupees.",
+   "Similar problem: a notebook bought for 45 rupees and sold for 60 rupees gives a profit of 60 minus 45 equals 15 rupees."
+  ],
+  "steps": [
+   "The cost price is 80 rupees and the selling price is 100 rupees.",
+   "Profit equals selling price minus cost price. 100 minus 80 equals 20.",
+   "His profit was 20 rupees."
+  ]
+ },
+ "G5A_PROFITLOSS_010": {
+  "q": "A fruit seller paid 200 rupees for a box of apples. Which of these selling prices gives him a profit?",
+  "options": [
+   "180 rupees",
+   "200 rupees",
+   "150 rupees",
+   "240 rupees"
+  ],
+  "hints": [
+   "A profit needs a selling price that is more than the cost price.",
+   "Compare each price with 200 rupees. Which one is greater than 200 rupees?",
+   "Similar problem: something that cost 50 rupees gives a profit when it is sold for 65 rupees, because 65 is more than 50, but not when it is sold for 45 rupees."
+  ],
+  "steps": [
+   "The cost price is 200 rupees. A profit needs a selling price above 200 rupees.",
+   "180 rupees and 150 rupees are less than 200 rupees, and 200 rupees is equal to it.",
+   "Only 240 rupees is more than 200 rupees, so 240 rupees gives a profit."
+  ]
  }
 }

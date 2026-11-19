@@ -6233,5 +6233,334 @@
    "The factors of 56 are 1, 2, 4, 7, 8, 14, 28 and 56.",
    "The numbers in both lists are 1, 2, 4 and 8. The biggest of these is 8, so the H C F of 48 and 56 is 8."
   ]
+ },
+ "G5A_DIVISIBILITY_001": {
+  "q": "The 5-digit number 4 P 27 Q is divisible by both 5 and 9, where P and Q each stand for a digit. How many different numbers fit?",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "hints": [
+   "Use one rule to list the choices for one digit, then use the other rule to find the other digit for each choice.",
+   "A number divisible by 5 ends in 0 or 5, so Q has two possible values. Take them one at a time and use the rule for 9.",
+   "Similar problem: 6 P Q is divisible by 5 and 9. If Q equals 0 the digits add up to 6 plus P, so P equals 3. If Q equals 5 they add up to 11 plus P, so P equals 7. That gives 2 numbers: 630 and 675."
+  ],
+  "steps": [
+   "Divisible by 5 means Q is 0 or 5.",
+   "If Q equals 0, the digits add up to 4 plus P plus 2 plus 7 plus 0 equals 13 plus P. For a multiple of 9, P must be 5, giving 45,270.",
+   "If Q equals 5, the digits add up to 18 plus P. This is a multiple of 9 when P equals 0 or P equals 9, giving 40,275 and 49,275.",
+   "So there are 3 numbers that fit."
+  ]
+ },
+ "G5A_DIVISIBILITY_002": {
+  "q": "The 3-digit number 4 P 8 is divisible by 6 but not by 9, where P stands for a digit. How many different digits can P be?",
+  "options": [
+   "4",
+   "1",
+   "2",
+   "3"
+  ],
+  "hints": [
+   "There are two conditions. Find every digit that fits the first one, then check each of them against the second.",
+   "4 P 8 is even whatever P is, so for divisibility by 6 you only need the digits to add up to a multiple of 3. The digits add up to 12 plus P.",
+   "Similar problem: 5 P 4 is divisible by 6 but not by 9. The digits add up to 9 plus P, so P can be 0, 3, 6 or 9 for a multiple of 3. P equals 0 and P equals 9 make a multiple of 9, so they are out. That leaves 2 digits: 3 and 6."
+  ],
+  "steps": [
+   "4 P 8 ends in 8, so it is always even. It is divisible by 6 when its digits add up to a multiple of 3.",
+   "The digits add up to 12 plus P, which is a multiple of 3 when P is 0, 3, 6 or 9.",
+   "The number must not be divisible by 9. With P equals 6 the digits add up to 18, a multiple of 9, so 6 is out.",
+   "That leaves P equals 0, 3 or 9, so P can be 3 different digits."
+  ]
+ },
+ "G5A_DIVISIBILITY_003": {
+  "q": "How many whole numbers from 1 to 50 have exactly three factors?",
+  "options": [
+   "7",
+   "15",
+   "4",
+   "3"
+  ],
+  "hints": [
+   "Factors usually come in pairs, which gives an even number of them. Think about what kind of number has an odd number of factors.",
+   "Square numbers have an odd number of factors, because one factor pairs with itself. List the squares up to 50 and count the factors of each.",
+   "Similar problem: which numbers from 51 to 200 have exactly three factors? They must be squares of primes: 11 times 11 equals 121 and 13 times 13 equals 169. So there are 2."
+  ],
+  "steps": [
+   "Factors come in pairs, so a number has an odd number of factors only when it is a square: 1, 4, 9, 16, 25, 36, 49.",
+   "Count the factors of each. 1 has one factor. 4 has 1, 2, 4. 9 has 1, 3, 9. 16 has five factors. 25 has 1, 5, 25. 36 has nine factors. 49 has 1, 7, 49.",
+   "The ones with exactly three factors are the squares of the primes 2, 3, 5 and 7.",
+   "So 4 numbers have exactly three factors: 4, 9, 25 and 49."
+  ]
+ },
+ "G5A_DIVISIBILITY_004": {
+  "q": "What is the smallest whole number that has exactly 6 factors?",
+  "options": [
+   "12",
+   "18",
+   "32",
+   "16"
+  ],
+  "hints": [
+   "Several of these numbers may have 6 factors. Count the factors of each carefully, in pairs, and then choose the smallest that fits.",
+   "List the factors of 12 in pairs: 1 times 12, 2 times 6, and so on. How many factors is that?",
+   "Similar problem: the smallest number with exactly 4 factors. 2, 3 and 5 have two factors each and 4 has three, 1, 2, 4. 6 has 1, 2, 3 and 6, which is four factors. So the answer is 6."
+  ],
+  "steps": [
+   "Count factors in pairs. 12 equals 1 times 12, which equals 2 times 6, which equals 3 times 4, so 12 has 6 factors: 1, 2, 3, 4, 6, 12.",
+   "Check that no smaller number has 6 factors: 6, 8 and 10 have four factors each, 4 and 9 have three, and 2, 3, 5, 7 and 11 have two.",
+   "18 and 32 also have 6 factors, but they are bigger than 12. 16 has only five factors.",
+   "The smallest number with exactly 6 factors is 12."
+  ]
+ },
+ "G5A_DIVISIBILITY_005": {
+  "q": "p, p plus 2 and p plus 4 are all prime numbers. What is the sum of these three prime numbers?",
+  "options": [
+   "9",
+   "15",
+   "21",
+   "39"
+  ],
+  "hints": [
+   "Try small primes for p and check all three numbers each time. Watch for a reason why most choices break down.",
+   "Try p equals 2, then p equals 3, then p equals 5, then p equals 7. For each, write p, p plus 2 and p plus 4 and check whether every one is prime.",
+   "Similar problem: p and p plus 1 are both prime. One of two neighbouring numbers is always even, and the only even prime is 2. So p equals 2, the primes are 2 and 3, and their sum is 5."
+  ],
+  "steps": [
+   "Try p equals 2: the numbers are 2, 4, 6. Not all prime.",
+   "Try p equals 3: the numbers are 3, 5, 7. All three are prime.",
+   "Try bigger primes: 5, 7, 9 has 9 equals 3 times 3. 7, 9, 11 has 9 again. 11, 13, 15 has 15 equals 3 times 5. One of the three numbers is always a multiple of 3, so only 3, 5, 7 works.",
+   "Add the three primes. 3 plus 5 plus 7 equals 15.",
+   "The sum is 15."
+  ]
+ },
+ "G5A_DIVISIBILITY_006": {
+  "q": "Two prime numbers add up to 99. What is the difference between them?",
+  "options": [
+   "95",
+   "1",
+   "5",
+   "85"
+  ],
+  "hints": [
+   "99 is odd. Think about whether two odd numbers can add up to an odd number.",
+   "Odd plus odd is even, so the two primes cannot both be odd. Which prime number is even?",
+   "Similar problem: two primes add up to 45. The sum is odd, so one prime must be even, which means it is 2. The other is 45 minus 2 equals 43, which is prime. Their difference is 43 minus 2 equals 41."
+  ],
+  "steps": [
+   "Two odd numbers always add up to an even number. 99 is odd, so one of the primes must be even.",
+   "The only even prime is 2.",
+   "The other prime is 99 minus 2 equals 97, and 97 is prime.",
+   "Find the difference. 97 minus 2 equals 95.",
+   "The difference between the two primes is 95."
+  ]
+ },
+ "G5A_DIVISIBILITY_007": {
+  "q": "What is the smallest number that leaves a remainder of 3 when divided by 4, a remainder of 4 when divided by 5, and a remainder of 5 when divided by 6?",
+  "options": [
+   "61",
+   "63",
+   "119",
+   "59"
+  ],
+  "hints": [
+   "Compare each remainder with the number you are dividing by. What do you notice every time?",
+   "Each remainder is 1 less than its divisor. So if 1 more were added to the number, it would divide exactly by 4, by 5 and by 6.",
+   "Similar problem: remainder 1 when divided by 2, remainder 2 when divided by 3, remainder 3 when divided by 4. The number is 1 short of a common multiple of 2, 3 and 4. The least common multiple is 12, so the number is 11."
+  ],
+  "steps": [
+   "Each remainder is 1 less than the divisor: 3 and 4, 4 and 5, 5 and 6.",
+   "So the number plus 1 is exactly divisible by 4, 5 and 6.",
+   "The least common multiple of 4, 5 and 6 is 60.",
+   "Take 1 away. 60 minus 1 equals 59.",
+   "The smallest such number is 59."
+  ]
+ },
+ "G5A_DIVISIBILITY_008": {
+  "q": "When a number is divided by 9, the remainder is 4. When another number is divided by 9, the remainder is 7. What is the remainder when the sum of the two numbers is divided by 9?",
+  "options": [
+   "11",
+   "3",
+   "2",
+   "1"
+  ],
+  "hints": [
+   "You are not told the numbers, so choose simple numbers that fit and try them. Then think about why it would come out the same for any numbers.",
+   "Pick the simplest numbers that fit, such as 13, which is 9 plus 4, and 16, which is 9 plus 7. Add them and divide by 9.",
+   "Similar problem: two numbers leave remainders 5 and 6 when divided by 7. Try 12 and 13: the sum is 25, and 25 divided by 7 is 3 remainder 4. The remainders 5 plus 6 equals 11 hold one more 7, leaving 4."
+  ],
+  "steps": [
+   "Choose numbers that fit: 13 leaves remainder 4 and 16 leaves remainder 7 when divided by 9.",
+   "Add them. 13 plus 16 equals 29.",
+   "29 divided by 9 is 3 with remainder 2.",
+   "This happens for any such numbers: the remainders add up to 4 plus 7 equals 11, and 11 holds one more 9, leaving 2.",
+   "The remainder is 2."
+  ]
+ },
+ "G5A_DIVISIBILITY_009": {
+  "q": "The sum of any four consecutive whole numbers is always divisible by which of these?",
+  "options": [
+   "4",
+   "6",
+   "10",
+   "2"
+  ],
+  "hints": [
+   "'Always' means it must work for every set of four consecutive numbers. Test more than one set before you decide.",
+   "Work out 1 plus 2 plus 3 plus 4, then 2 plus 3 plus 4 plus 5, then 3 plus 4 plus 5 plus 6. Which of the given numbers divides all of these sums?",
+   "Similar problem: the sum of any three consecutive numbers. 1 plus 2 plus 3 equals 6, 2 plus 3 plus 4 equals 9 and 3 plus 4 plus 5 equals 12. All of these are divisible by 3, but 9 is not divisible by 2 or by 6. So the sum is always divisible by 3."
+  ],
+  "steps": [
+   "Test some sets of four consecutive numbers. 1 plus 2 plus 3 plus 4 equals 10.",
+   "Test the next set. 2 plus 3 plus 4 plus 5 equals 14.",
+   "And one more. 3 plus 4 plus 5 plus 6 equals 18.",
+   "10, 14 and 18 are not all divisible by 4, by 6 or by 10. All of them are even.",
+   "This always happens: four consecutive numbers hold two odd and two even numbers, so their sum is even. The sum is always divisible by 2."
+  ]
+ },
+ "G5A_DIVISIBILITY_010": {
+  "q": "A 2-digit number is added to the number made by reversing its digits, for example, 47 plus 74. The sum is always divisible by which of these?",
+  "options": [
+   "9",
+   "11",
+   "2",
+   "10"
+  ],
+  "hints": [
+   "Try a few different 2-digit numbers and look at the sums. Then think about how often each digit lands in the tens place and in the ones place.",
+   "Work out 47 plus 74, 12 plus 21 and 35 plus 53. What do the three sums have in common?",
+   "Similar problem: a 2-digit number minus its reverse. 73 minus 37 equals 36, 82 minus 28 equals 54 and 51 minus 15 equals 36. These are all multiples of 9, so the difference is always divisible by 9."
+  ],
+  "steps": [
+   "Try the example. 47 plus 74 equals 121.",
+   "Try two more: 12 plus 21 equals 33 and 35 plus 53 equals 88.",
+   "121, 33 and 88 are all multiples of 11. They are not all divisible by 9, 2 or 10.",
+   "The reason: each digit is used once as tens and once as ones, so each digit is counted 10 plus 1 equals 11 times.",
+   "The sum is always divisible by 11."
+  ]
+ },
+ "G5A_DIVISIBILITY_011": {
+  "q": "The product 1 times 2 times 3 times 4 times 5 times 6 times 7 times 8 times 9 times 10 is worked out in full. How many zeros are at the end of the answer?",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "10"
+  ],
+  "hints": [
+   "A zero at the end comes from a factor of 10, and a 10 can be hiding as 2 times 5. Look for every way a 10 can be made.",
+   "The factor 10 gives one zero. Now look at the factor 5: is there an even number among the others that it can pair with?",
+   "Similar problem: 1 times 2 times 3 times 4 times 5 times 6 equals 720. There is no factor 10 in the list, but 5 times 2 makes a 10, so the answer ends in 1 zero."
+  ],
+  "steps": [
+   "A zero at the end appears each time the product has a factor of 10, and 10 equals 2 times 5.",
+   "The factor 10 itself gives one zero.",
+   "The factor 5 pairs with an even factor such as 2 to make another 10, which gives a second zero.",
+   "There are no more 5's among the factors, so no more zeros. In fact the product is 36,28,800.",
+   "The answer ends in 2 zeros."
+  ]
+ },
+ "G5A_DIVISIBILITY_012": {
+  "q": "The 5-digit number 3 P 46 Q is divisible by both 8 and 11, where P and Q each stand for a digit. What is the value of P plus Q?",
+  "options": [
+   "17",
+   "9",
+   "1",
+   "13"
+  ],
+  "hints": [
+   "Each rule looks at a different part of the number. Use the rule that involves only one unknown digit first.",
+   "For 8, look at the last three digits: 46 Q must be divisible by 8. Test 460, 461, and so on, to find Q.",
+   "Similar problem: 2 P 13 Q is divisible by 8 and 11. The last three digits, 13 Q, must be divisible by 8, so Q equals 6, because 136 equals 8 times 17. For 11, compare 2 plus 1 plus 6 equals 9 with P plus 3: they are equal when P equals 6. So P plus Q equals 12."
+  ],
+  "steps": [
+   "For 8, the last three digits must be divisible by 8. Among 460 to 469 only 464 works, which is 8 times 58, so Q equals 4.",
+   "For 11, add the 1st, 3rd and 5th digits: 3 plus 4 plus 4 equals 11. Add the 2nd and 4th digits: P plus 6.",
+   "These two sums must be equal or differ by a multiple of 11. P plus 6 equals 11 gives P equals 5.",
+   "So the number is 35,464. Add the two digits. 5 plus 4 equals 9.",
+   "The value of P plus Q is 9."
+  ]
+ },
+ "G5A_DIVISIBILITY_013": {
+  "q": "How many of the factors of 120 are even numbers?",
+  "options": [
+   "8",
+   "16",
+   "4",
+   "12"
+  ],
+  "hints": [
+   "Odd and even factors are not always shared half and half. Count one kind carefully and take it from the total.",
+   "List the factors of 120 in pairs, starting 1 times 120, 2 times 60, 3 times 40. How many factors are there in all, and which are odd?",
+   "Similar problem: 100 has 9 factors, 1, 2, 4, 5, 10, 20, 25, 50, 100. The odd ones are 1, 5 and 25, so 9 minus 3 equals 6 of its factors are even."
+  ],
+  "steps": [
+   "List the factors of 120 in pairs: 1 times 120, 2 times 60, 3 times 40, 4 times 30, 5 times 24, 6 times 20, 8 times 15, 10 times 12. That is 16 factors.",
+   "The odd factors are 1, 3, 5 and 15. That is 4 factors.",
+   "All the others are even. 16 minus 4 equals 12.",
+   "So 12 of the factors of 120 are even."
+  ]
+ },
+ "G5A_DIVISIBILITY_014": {
+  "q": "How many prime numbers between 50 and 100 are still prime numbers when their digits are reversed?",
+  "options": [
+   "4",
+   "5",
+   "3",
+   "6"
+  ],
+  "hints": [
+   "First make a careful list of the primes between 50 and 100. Then reverse each one and test the new number.",
+   "The primes between 50 and 100 are 53, 59, 61, 67, 71, 73, 79, 83, 89 and 97. Reversing 53 gives 35, which is 5 times 7. Carry on with the others.",
+   "Similar problem: primes between 10 and 40 that stay prime when reversed. From 11, 13, 17, 19, 23, 29, 31, 37 the reverses are 11, 31, 71, 91, 32, 92, 13, 73. Since 91 equals 7 times 13 and 32 and 92 are even, five remain: 11, 13, 17, 31 and 37."
+  ],
+  "steps": [
+   "The primes between 50 and 100 are 53, 59, 61, 67, 71, 73, 79, 83, 89 and 97. 91 is not prime: 91 equals 7 times 13.",
+   "Reversing gives 35, 95, 16, 76, 17, 37, 97, 38, 98 and 79.",
+   "35 and 95 are multiples of 5, and 16, 76, 38 and 98 are even. The primes among the reverses are 17, 37, 97 and 79.",
+   "So 4 primes stay prime when reversed: 71, 73, 79 and 97."
+  ]
+ },
+ "G5A_DIVISIBILITY_015": {
+  "q": "How many whole numbers between 100 and 200 are divisible by 3 but not by 6?",
+  "options": [
+   "33",
+   "17",
+   "16",
+   "50"
+  ],
+  "hints": [
+   "A multiple of 3 that is not a multiple of 6 must be an odd number. Find the first and last such numbers in the range.",
+   "The multiples of 3 between 100 and 200 run from 102 to 198. Which of these are odd? Write the first few and the last one.",
+   "Similar problem: numbers from 1 to 50 divisible by 5 but not by 10. They are the odd multiples of 5: 5, 15, 25, 35 and 45. So there are 5."
+  ],
+  "steps": [
+   "A multiple of 3 that is not a multiple of 6 is an odd multiple of 3.",
+   "The odd multiples of 3 between 100 and 200 are 105, 111, 117, and so on, up to 195. They go up in sixes.",
+   "Count the jumps of 6 from 105 to 195. Open bracket 195 minus 105 close bracket, divided by 6 equals 15.",
+   "The number of terms is one more than the number of jumps. 15 plus 1 equals 16.",
+   "So 16 numbers are divisible by 3 but not by 6."
+  ]
+ },
+ "G5A_DIVISIBILITY_016": {
+  "q": "How many whole numbers from 1 to 100 are divisible by both 4 and 6?",
+  "options": [
+   "8",
+   "4",
+   "16",
+   "33"
+  ],
+  "hints": [
+   "Find the smallest number that both 4 and 6 divide. Every number divisible by both is a multiple of that number.",
+   "Is 12 divisible by both 4 and 6? If so, the numbers you want are the multiples of 12, not only the multiples of 24.",
+   "Similar problem: numbers from 1 to 100 divisible by both 6 and 9. The smallest is 18, not 54, so they are 18, 36, 54, 72 and 90. There are 5."
+  ],
+  "steps": [
+   "The smallest number divisible by both 4 and 6 is 12, their least common multiple.",
+   "So the numbers divisible by both are the multiples of 12: 12, 24, 36, 48, 60, 72, 84, 96.",
+   "The next multiple, 108, is more than 100.",
+   "There are 8 such numbers."
+  ]
  }
 }

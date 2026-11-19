@@ -7239,5 +7239,328 @@
    "Take 30 away from both sides: 54 minus 30 equals 24. Now 2 x equals 24.",
    "2 x means 2 times x. Divide both sides by 2: 24 divided by 2 equals 12. So x equals 12."
   ]
+ },
+ "G5A_ALGEBRA_001": {
+  "q": "Meera thinks of a number n. She adds 5 to it, multiplies the result by 3, and then subtracts the number she first thought of. Which expression shows her final answer?",
+  "options": [
+   "2 n plus 5",
+   "2 n plus 15",
+   "3 n plus 15",
+   "4 n plus 15"
+  ],
+  "hints": [
+   "Write down what Meera has after each action, one at a time. Use brackets when a whole result is multiplied.",
+   "After adding 5 she has n plus 5. Now the whole of this is multiplied by 3. Write that with brackets, then open the brackets.",
+   "Similar problem: think of a number m, add 2, multiply the result by 4, then subtract m. That is 4 times open bracket m plus 2 close bracket, minus m equals 4 m plus 8 minus m, which equals 3 m plus 8."
+  ],
+  "steps": [
+   "After adding 5, Meera has n plus 5.",
+   "She multiplies the whole result by 3, which gives 3 times open bracket n plus 5 close bracket. Both parts are multiplied, so this is 3 n plus 15.",
+   "She subtracts the number she first thought of: 3 n plus 15 minus n.",
+   "3 n minus n is 2 n, so her final answer is 2 n plus 15."
+  ]
+ },
+ "G5A_ALGEBRA_002": {
+  "q": "A rectangular sheet of card is 4 p centimetres long and 3 p centimetres wide. A square of side p centimetres is cut away from one corner. What is the perimeter of the piece of card that is left?",
+  "options": [
+   "12 p centimetres",
+   "10 p centimetres",
+   "14 p centimetres",
+   "16 p centimetres"
+  ],
+  "hints": [
+   "Picture walking all the way round the edge of the new shape. Some edges have gone, but some new edges have appeared.",
+   "Start with the perimeter of the whole rectangle: 2 times open bracket 4 p plus 3 p close bracket. Then think about which edges the cut removes and which new edges it makes.",
+   "Similar problem: a square of side 1 centimetre is cut from the corner of a 6 centimetre by 3 centimetre rectangle. Going round the new shape the edges are 6, 2, 1, 1, 5 and 3 centimetres, which add up to 18 centimetres, the same as the rectangle's perimeter of 2 times open bracket 6 plus 3 close bracket, equals 18 centimetres."
+  ],
+  "steps": [
+   "The whole rectangle has perimeter 2 times open bracket 4 p plus 3 p close bracket, equals 14 p centimetres.",
+   "Cutting a square from the corner removes p centimetres from the end of one long edge and p centimetres from the end of one short edge.",
+   "The cut also makes two new edges inside the corner, each p centimetres long. So p plus p is taken away and p plus p is added back.",
+   "The perimeter of the piece that is left is still 14 p centimetres."
+  ]
+ },
+ "G5A_ALGEBRA_003": {
+  "q": "Each side of a square is s centimetres long, where s is a whole number greater than 3. A rectangle is made that is 3 centimetres longer than the square and 3 centimetres narrower than the square. How does the area of the rectangle compare with the area of the square?",
+  "options": [
+   "It is always the same",
+   "It is always 9 square centimetres smaller",
+   "It is always 6 square centimetres smaller",
+   "It is always 9 square centimetres bigger"
+  ],
+  "hints": [
+   "When a question says a rule holds for every value of a letter, try two or three values and see what stays the same.",
+   "Try s equals 5. The square has area 5 times 5. The rectangle is 8 centimetres by 2 centimetres. Compare the two areas, then try another value of s.",
+   "Similar problem: a rectangle is 2 centimetres longer and 2 centimetres narrower than a square. With side 10 the areas are 100 and 12 times 8 equals 96. With side 6 they are 36 and 8 times 4 equals 32. Each time the rectangle is 4 square centimetres smaller."
+  ],
+  "steps": [
+   "Try s equals 5: the square has area 25 square centimetres and the rectangle is 8 centimetres by 2 centimetres. 8 times 2 equals 16.",
+   "Try s equals 10: the square has area 100 square centimetres and the rectangle is 13 centimetres by 7 centimetres. 13 times 7 equals 91.",
+   "Both times the rectangle is 9 square centimetres smaller: 25 minus 16 equals 9 and 100 minus 91 equals 9.",
+   "The reason: a strip 3 centimetres wide and s centimetres long is removed, but the strip added is 3 centimetres wide and only s minus 3 centimetres long, which is 3 times 3 equals 9 square centimetres less.",
+   "So the area of the rectangle is always 9 square centimetres smaller."
+  ]
+ },
+ "G5A_ALGEBRA_004": {
+  "q": "If 2 a plus b equals 9, what is the value of 6 a plus 3 b minus 4?",
+  "options": [
+   "27",
+   "50",
+   "23",
+   "14"
+  ],
+  "hints": [
+   "You do not need to know a and b separately. Look for the given expression hiding inside the new one.",
+   "Compare 6 a plus 3 b with 2 a plus b. How many times bigger is each part?",
+   "Similar problem: if x plus 2 y equals 5, find 4 x plus 8 y plus 1. Since 4 x plus 8 y is 4 times open bracket x plus 2 y close bracket, the value is 4 times 5 plus 1 equals 21."
+  ],
+  "steps": [
+   "6 a is 3 times 2 a, and 3 b is 3 times b. So 6 a plus 3 b is 3 times open bracket 2 a plus b close bracket.",
+   "Use 2 a plus b equals 9. 3 times 9 equals 27.",
+   "Now subtract 4. 27 minus 4 equals 23.",
+   "The value is 23."
+  ]
+ },
+ "G5A_ALGEBRA_005": {
+  "q": "If x minus y equals 4, what is the value of open bracket x plus 7 close bracket, minus open bracket y minus 3 close bracket?",
+  "options": [
+   "14",
+   "8",
+   "4",
+   "10"
+  ],
+  "hints": [
+   "You cannot find x and y separately, so regroup the expression until x minus y appears. Take care with what the minus sign does to the second bracket.",
+   "Subtracting open bracket y minus 3 close bracket means taking away y and then giving back 3, because 3 less was there to be taken away.",
+   "Similar problem: if a minus b equals 6, find open bracket a plus 2 close bracket, minus open bracket b minus 5 close bracket. Taking away open bracket b minus 5 close bracket is the same as taking away b and adding 5, so the value is open bracket a minus b close bracket, plus 2 plus 5 equals 13."
+  ],
+  "steps": [
+   "Taking away open bracket y minus 3 close bracket is the same as taking away y and then adding 3.",
+   "So the expression becomes x plus 7 minus y plus 3, which regroups as open bracket x minus y close bracket, plus 7 plus 3.",
+   "Use x minus y equals 4. 4 plus 7 plus 3 equals 14.",
+   "The value is 14. You can check with x equals 10 and y equals 6: 17 minus 3 equals 14."
+  ]
+ },
+ "G5A_ALGEBRA_006": {
+  "q": "Riya makes a row of squares with matchsticks. One square needs 4 matchsticks, two squares joined in a row need 7, and three squares need 10, because each new square shares a side with the one before it. How many squares are in the row she can make with exactly 100 matchsticks?",
+  "options": [
+   "25",
+   "34",
+   "32",
+   "33"
+  ],
+  "hints": [
+   "Find how many matchsticks each extra square adds, and write a rule for n squares. Then work backwards from the total.",
+   "From 4 to 7 to 10, each new square adds 3 matchsticks. So n squares need 3 for each square plus 1 extra.",
+   "Similar problem: triangles in a row need 3, 5, 7, and so on, matchsticks, which is 2 for each triangle plus 1 extra. With 41 matchsticks: 41 minus 1 equals 40, and 40 divided by 2 equals 20 triangles."
+  ],
+  "steps": [
+   "Each new square adds 3 matchsticks, and the pattern 4, 7, 10 is always 1 more than a multiple of 3. So n squares need 3 n plus 1 matchsticks.",
+   "Work backwards from 100. First take away the 1 extra matchstick. 100 minus 1 equals 99.",
+   "Then share the rest in threes. 99 divided by 3 equals 33.",
+   "Riya can make a row of 33 squares."
+  ]
+ },
+ "G5A_ALGEBRA_007": {
+  "q": "On day n of an experiment, plant A is 3 n plus 2 centimetres tall and plant B is 5 n minus 40 centimetres tall, where n is 10 or more. On which day is plant B taller than plant A for the first time?",
+  "options": [
+   "20",
+   "21",
+   "22",
+   "42"
+  ],
+  "hints": [
+   "Plant B starts shorter but grows faster. Think about how much of the gap it closes each day.",
+   "On day 10, plant A is 32 centimetres and plant B is 10 centimetres, a gap of 22 centimetres. Each day A grows 3 centimetres and B grows 5 centimetres. How much does the gap shrink each day?",
+   "Similar problem: A is 2 n plus 10 centimetres and B is 4 n minus 6 centimetres. On day 8 both are 26 centimetres. On day 9, A is 28 centimetres and B is 30 centimetres, so B is first taller on day 9."
+  ],
+  "steps": [
+   "On day 10, plant A is 32 centimetres and plant B is 10 centimetres, so A is ahead. 32 minus 10 equals 22.",
+   "Each day A grows 3 centimetres and B grows 5 centimetres, so the gap shrinks by 2 centimetres a day. It takes 11 days to close.",
+   "So on day 21 the plants are equal: both are 65 centimetres tall.",
+   "On day 22, plant A is 68 centimetres and plant B is 70 centimetres.",
+   "Plant B is taller for the first time on day 22."
+  ]
+ },
+ "G5A_ALGEBRA_008": {
+  "q": "Asha works out 3 times open bracket n plus 4 close bracket and Bala works out 3 n plus 4 for the same whole number n. Whatever number n is, by how much is Asha's answer greater than Bala's?",
+  "options": [
+   "0",
+   "12",
+   "4",
+   "8"
+  ],
+  "hints": [
+   "Open Asha's brackets so that both expressions are written the same way, then compare them part by part.",
+   "3 times open bracket n plus 4 close bracket means 3 lots of n and 3 lots of 4. Write it without brackets.",
+   "Similar problem: compare 5 times open bracket n plus 2 close bracket with 5 n plus 2. Opening the brackets gives 5 n plus 10, which is always 10 minus 2 equals 8 more than 5 n plus 2. Check with n equals 1: 15 against 7."
+  ],
+  "steps": [
+   "Open Asha's brackets: 3 times open bracket n plus 4 close bracket is 3 n plus 12.",
+   "Bala has 3 n plus 4. Both have 3 n, so only the number parts differ.",
+   "Compare the number parts. 12 minus 4 equals 8.",
+   "Asha's answer is always greater by 8. Check with n equals 2: 18 against 10."
+  ]
+ },
+ "G5A_ALGEBRA_009": {
+  "q": "A pen costs p rupees, where p is more than 3. Ravi buys 4 pens and gets 3 rupees off his total bill. Sana buys 4 pens and gets 3 rupees off the price of each pen. How many rupees more than Sana does Ravi pay?",
+  "options": [
+   "0 rupees",
+   "9 rupees",
+   "3 rupees",
+   "12 rupees"
+  ],
+  "hints": [
+   "Write an expression for what each child pays. Think carefully about how many times each 3 rupees is taken off.",
+   "Ravi pays 4 p minus 3. Sana pays 4 lots of open bracket p minus 3 close bracket. Open Sana's brackets and compare.",
+   "Similar problem: 5 notebooks at n rupees each. With 2 rupees off the bill you pay 5 n minus 2. With 2 rupees off each notebook you pay 5 times open bracket n minus 2 close bracket, equals 5 n minus 10. The first way costs 10 minus 2 equals 8 rupees more."
+  ],
+  "steps": [
+   "Ravi pays 4 p minus 3 rupees.",
+   "Sana pays 4 times open bracket p minus 3 close bracket rupees. Opening the brackets, this is 4 p minus 12.",
+   "Both have 4 p, so Ravi pays more by the gap between the two savings. 12 minus 3 equals 9.",
+   "Ravi pays 9 rupees more than Sana."
+  ]
+ },
+ "G5A_ALGEBRA_010": {
+  "q": "If p equals 2 q and q equals 3 r, which expression is equal to p plus q plus r?",
+  "options": [
+   "10 r",
+   "6 r",
+   "9 r",
+   "5 r"
+  ],
+  "hints": [
+   "To add the three letters, first write each of them using the same letter.",
+   "q is 3 r. Since p is 2 lots of q, replace q with 3 r to find p in terms of r.",
+   "Similar problem: if a equals 4 b and b equals 2 c, then a equals 4 times 2 c, which equals 8 c, so a plus b plus c equals 8 c plus 2 c plus c, which equals 11 c."
+  ],
+  "steps": [
+   "q is already written with r: q equals 3 r.",
+   "p is 2 lots of q, so p is 2 lots of 3 r, which is 6 r.",
+   "Add the three: 6 r plus 3 r plus r. 6 plus 3 plus 1 equals 10.",
+   "So p plus q plus r equals 10 r."
+  ]
+ },
+ "G5A_ALGEBRA_011": {
+  "q": "The perimeter of a rectangle is 4 k plus 10 centimetres and its length is k plus 4 centimetres. Which expression gives its breadth in centimetres?",
+  "options": [
+   "3 k plus 6",
+   "2 k plus 2",
+   "2 k plus 5",
+   "k plus 1"
+  ],
+  "hints": [
+   "The perimeter is made of two lengths and two breadths. Work backwards from it one stage at a time.",
+   "Half of the perimeter is one length plus one breadth. Find half of 4 k plus 10 first.",
+   "Similar problem: perimeter 6 m plus 8 centimetres and length 2 m plus 3 centimetres. Half the perimeter is 3 m plus 4, and taking away the length leaves a breadth of m plus 1."
+  ],
+  "steps": [
+   "Half of the perimeter is one length plus one breadth. Half of 4 k plus 10 is 2 k plus 5.",
+   "Take away the length, k plus 4, from 2 k plus 5.",
+   "2 k minus k is k, and 5 minus 4 is 1.",
+   "The breadth is k plus 1."
+  ]
+ },
+ "G5A_ALGEBRA_012": {
+  "q": "Arjun is y years old now. His father's age is 4 years more than 3 times Arjun's age. Which expression gives the sum of their ages 5 years from now?",
+  "options": [
+   "4 y plus 14",
+   "4 y plus 9",
+   "4 y plus 4",
+   "3 y plus 14"
+  ],
+  "hints": [
+   "Write each person's age now, then each person's age later, and only then add.",
+   "The father's age now is 3 times y, plus 4. In 5 years, how much older will each of them be?",
+   "Similar problem: Diya is d years old and her mother is 2 more than 4 times her age, so 4 d plus 2. In 3 years they will be d plus 3 and 4 d plus 5, and the sum will be 5 d plus 8."
+  ],
+  "steps": [
+   "Arjun is y now, and his father is 3 y plus 4.",
+   "In 5 years Arjun will be y plus 5 and his father will be 3 y plus 4 plus 5, which is 3 y plus 9.",
+   "Add the two ages: y plus 5 plus 3 y plus 9.",
+   "The sum of their ages will be 4 y plus 14."
+  ]
+ },
+ "G5A_ALGEBRA_013": {
+  "q": "The nth term of a sequence is 6 n plus 5, so the first term is 11. How many terms of the sequence are less than 100?",
+  "options": [
+   "16",
+   "15",
+   "14",
+   "17"
+  ],
+  "hints": [
+   "Find the last term that is still below 100, and work out which position it has in the sequence.",
+   "6 n plus 5 must be less than 100, so 6 n must be less than 95. Find the biggest n that fits.",
+   "Similar problem: the nth term is 4 n plus 3. How many terms are below 50? 4 n must be less than 47, so n can be at most 11: the 11th term is 47, and the 12th is 51. There are 11 terms."
+  ],
+  "steps": [
+   "For a term to be below 100, 6 n plus 5 must be less than 100, so 6 n must be less than 95.",
+   "6 times 15 equals 90 fits, but 6 times 16 equals 96 is too big.",
+   "Check: the 15th term is 95 and the 16th term is 101.",
+   "So 15 terms are less than 100."
+  ]
+ },
+ "G5A_ALGEBRA_014": {
+  "q": "Which of these expressions gives an odd number for every whole number n?",
+  "options": [
+   "n plus 1",
+   "3 n",
+   "2 n plus 4",
+   "n times open bracket n plus 1 close bracket, plus 1"
+  ],
+  "hints": [
+   "An expression that works for every n must work for both odd and even values of n. Test each expression with one of each.",
+   "Try n equals 1 and n equals 2 in each expression. Cross out any expression that gives an even number even once.",
+   "Similar problem: which is always even, n plus 2 or n times open bracket n plus 1 close bracket? With n equals 1, n plus 2 equals 3, which is odd, so it is out. n times open bracket n plus 1 close bracket gives 2, 6, 12, 20, and so on, because one of two neighbouring numbers is always even."
+  ],
+  "steps": [
+   "Test n equals 1 and n equals 2. n plus 1 gives 2 and 3, so it is not always odd. 3 n gives 3 and 6, so it is not always odd.",
+   "2 n plus 4 gives 6 and 8. It is always even, because both parts are even.",
+   "n times open bracket n plus 1 close bracket, plus 1 gives 1 times 2 plus 1 equals 3 and 2 times 3 plus 1 equals 7. Both are odd.",
+   "This always happens: n and n plus 1 are neighbours, so one of them is even and their product is even. Adding 1 makes it odd.",
+   "The expression that is always odd is n times open bracket n plus 1 close bracket, plus 1."
+  ]
+ },
+ "G5A_ALGEBRA_015": {
+  "q": "A taxi charges 40 rupees for the first 2 kilometres of a ride and c rupees for every kilometre after that. Which expression gives the fare, in rupees, for a ride of d kilometres, where d is more than 2?",
+  "options": [
+   "40 plus c times d",
+   "Open bracket 40 plus c close bracket, times open bracket d minus 2 close bracket",
+   "40 plus c times open bracket d minus 2 close bracket",
+   "40 plus c times d minus 2"
+  ],
+  "hints": [
+   "Split the ride into two parts: the part covered by the fixed charge and the part charged per kilometre.",
+   "The first 2 kilometres cost 40 rupees altogether. How many kilometres of the ride are left to be charged at c rupees each?",
+   "Similar problem: an auto charges 25 rupees for the first kilometre and m rupees for every kilometre after that. A ride of 6 kilometres has 6 minus 1 equals 5 kilometres charged at m rupees, so the fare is 25 plus m times 5. For n kilometres it is 25 plus m times open bracket n minus 1 close bracket."
+  ],
+  "steps": [
+   "The first 2 kilometres cost 40 rupees in total.",
+   "That leaves d minus 2 kilometres to be charged at c rupees each.",
+   "Those kilometres cost c times open bracket d minus 2 close bracket rupees. The brackets show that c multiplies the whole of d minus 2.",
+   "The fare is 40 plus c times open bracket d minus 2 close bracket."
+  ]
+ },
+ "G5A_ALGEBRA_016": {
+  "q": "A number machine takes a whole number n, doubles it, adds 6, halves the result, and then subtracts the number n that went in. What comes out?",
+  "options": [
+   "3",
+   "6",
+   "n plus 3",
+   "n plus 6"
+  ],
+  "hints": [
+   "Follow the machine one action at a time with the letter n, or try two different numbers and compare what comes out.",
+   "After doubling and adding 6 the machine holds 2 n plus 6. Halving must be done to both parts.",
+   "Similar problem: take m, multiply by 3, add 12, divide the result by 3, subtract m. That is 3 m plus 12, then m plus 4, then 4. The machine gives 4 for every input."
+  ],
+  "steps": [
+   "Doubling n gives 2 n, and adding 6 gives 2 n plus 6.",
+   "Halving the whole result gives n plus 3, because half of 2 n is n and half of 6 is 3.",
+   "Subtracting n leaves 3.",
+   "Check with n equals 5: 10, 16, 8, then 8 minus 5 equals 3. The machine always gives 3."
+  ]
  }
 }

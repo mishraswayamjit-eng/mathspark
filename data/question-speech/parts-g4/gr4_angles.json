@@ -1,0 +1,2281 @@
+{
+ "EXT_G4_FP_2020_025": {
+  "q": "A man facing north turns 135 degrees left, then 225 degrees right. Which way is he facing?",
+  "options": [
+   "South-West",
+   "South-East",
+   "East",
+   "North-West"
+  ],
+  "hints": [
+   "This is a turning problem. A left turn and a right turn undo each other, so think about the turn that is left over.",
+   "The right turn is bigger than the left turn. Find how many degrees of right turn remain after the left turn is cancelled.",
+   "Similar example: a girl faces north, turns 45 degrees left and then 225 degrees right. The turns leave 225 degrees minus 45 degrees, which is 180 degrees, to the right. Half a turn from north is south, so she faces south."
+  ],
+  "steps": [
+   "Turning left and then right cancel each other. The right turn is bigger. 225 degrees minus 135 degrees equals 90 degrees.",
+   "So the man ends up turned 90 degrees to the right from north.",
+   "A quarter turn to the right from north points east. He is facing East."
+  ]
+ },
+ "EXT_G4_FP_2021_016": {
+  "q": "An angle is 35 degrees. What is the sum of its complementary and supplementary angles?",
+  "options": [
+   "200 degrees",
+   "190 degrees",
+   "180 degrees",
+   "165 degrees"
+  ],
+  "hints": [
+   "This is about complementary and supplementary angles. Complementary angles add up to 90 degrees and supplementary angles add up to 180 degrees.",
+   "Find the complement of 35 degrees first by taking it away from 90 degrees. Then find its supplement.",
+   "Similar example: for an angle of 20 degrees, the complement is 90 degrees minus 20 degrees, which is 70 degrees, and the supplement is 180 degrees minus 20 degrees, which is 160 degrees. Their sum is 70 degrees plus 160 degrees, which is 230 degrees."
+  ],
+  "steps": [
+   "The complement makes 90 degrees with the angle. 90 degrees minus 35 degrees equals 55 degrees.",
+   "The supplement makes 180 degrees with the angle. 180 degrees minus 35 degrees equals 145 degrees.",
+   "Add the complement and the supplement. 55 degrees plus 145 degrees equals 200 degrees.",
+   "The sum is 200 degrees."
+  ]
+ },
+ "EXT_G4_FP_2021_029": {
+  "q": "An angle is 1 5th of its supplementary angle. Find the angle.",
+  "options": [
+   "40 degrees",
+   "35 degrees",
+   "30 degrees",
+   "50 degrees"
+  ],
+  "hints": [
+   "This is a supplementary angle problem with parts. The angle and its supplement together make 180 degrees.",
+   "If the angle is 1 part, its supplement is 5 equal parts. Count how many parts make 180 degrees altogether.",
+   "Similar example: an angle is one third of its supplement. The angle is 1 part and the supplement is 3 parts, so 4 parts make 180 degrees. One part is 180 degrees divided by 4, which is 45 degrees. The angle is 45 degrees."
+  ],
+  "steps": [
+   "The angle is one fifth of its supplement. So if the angle is 1 part, the supplement is 5 parts.",
+   "Together they make 180 degrees, and that is 6 parts. 1 plus 5 equals 6.",
+   "Find one part. 180 degrees divided by 6 equals 30 degrees.",
+   "Check: the supplement is 150 degrees, and one fifth of 150 degrees is 30 degrees. The angle is 30 degrees."
+  ]
+ },
+ "EXT_G4_FP_2022_008": {
+  "q": "The supplementary angle of an obtuse angle is always what?",
+  "options": [
+   "Right Angle",
+   "Complementary Angle",
+   "Straight Angle",
+   "Acute Angle"
+  ],
+  "hints": [
+   "This is about types of angles. Think about how big an obtuse angle is and what its supplement must add to it.",
+   "An obtuse angle is more than 90 degrees but less than 180 degrees. Its supplement is what is left to reach 180 degrees. Is that more or less than 90 degrees?",
+   "Similar example: what kind of angle is the supplement of an acute angle? Try 40 degrees: its supplement is 180 degrees minus 40 degrees, which is 140 degrees. An acute angle is less than 90 degrees, so what is left is always more than 90 degrees. The supplement of an acute angle is always obtuse."
+  ],
+  "steps": [
+   "An obtuse angle is more than 90 degrees and less than 180 degrees.",
+   "Its supplement is 180 degrees take away the angle. Taking away more than 90 degrees leaves less than 90 degrees.",
+   "For example, the supplement of 110 degrees is 70 degrees. 180 degrees minus 110 degrees equals 70 degrees.",
+   "An angle less than 90 degrees is acute. So the supplement of an obtuse angle is always an Acute Angle."
+  ]
+ },
+ "EXT_G4_FP_2023_008": {
+  "q": "What is the sum of the complementary and supplementary angles of 48 degrees?",
+  "options": [
+   "164 degrees",
+   "174 degrees",
+   "176 degrees",
+   "184 degrees"
+  ],
+  "hints": [
+   "This is about complementary and supplementary angles. Complementary angles add up to 90 degrees and supplementary angles add up to 180 degrees.",
+   "Find the complement of 48 degrees first by taking it away from 90 degrees. Then find its supplement.",
+   "Similar example: for an angle of 30 degrees, the complement is 90 degrees minus 30 degrees, which is 60 degrees, and the supplement is 180 degrees minus 30 degrees, which is 150 degrees. Their sum is 60 degrees plus 150 degrees, which is 210 degrees."
+  ],
+  "steps": [
+   "The complement makes 90 degrees with the angle. 90 degrees minus 48 degrees equals 42 degrees.",
+   "The supplement makes 180 degrees with the angle. 180 degrees minus 48 degrees equals 132 degrees.",
+   "Add the complement and the supplement. 42 degrees plus 132 degrees equals 174 degrees.",
+   "The sum is 174 degrees."
+  ]
+ },
+ "EXT_G4_FP_2024_003": {
+  "q": "What is the sum of the complementary and supplementary angles of 48 degrees?",
+  "options": [
+   "164 degrees",
+   "176 degrees",
+   "168 degrees",
+   "174 degrees"
+  ],
+  "hints": [
+   "This question has two parts. Find the complementary angle and the supplementary angle of the same angle, then add them.",
+   "The complement of 48 degrees is what must be added to 48 degrees to make 90 degrees. Find it first, then find the supplement in the same way with 180 degrees.",
+   "Similar example: for an angle of 25 degrees, the complement is 90 degrees minus 25 degrees, which is 65 degrees, and the supplement is 180 degrees minus 25 degrees, which is 155 degrees. Their sum is 65 degrees plus 155 degrees, which is 220 degrees."
+  ],
+  "steps": [
+   "The complement makes 90 degrees with the angle. 90 degrees minus 48 degrees equals 42 degrees.",
+   "The supplement makes 180 degrees with the angle. 180 degrees minus 48 degrees equals 132 degrees.",
+   "Add the complement and the supplement. 42 degrees plus 132 degrees equals 174 degrees.",
+   "The sum is 174 degrees."
+  ]
+ },
+ "EXT_G4_FP_2024_017": {
+  "q": "What is the angle between the hour hand and the minute hand at 7 20 p m?",
+  "options": [
+   "90 degrees",
+   "110 degrees",
+   "100 degrees",
+   "85 degrees"
+  ],
+  "hints": [
+   "This is a clock angle problem. The clock face has 12 equal gaps between the numbers, and the hour hand keeps moving slowly as the minutes pass.",
+   "A full turn is 360 degrees, so each gap between two numbers is 30 degrees. At 20 minutes the minute hand points at 4. Now think about where the hour hand is: it has moved past 7.",
+   "Similar example: at 3 30 the minute hand is at 6. The hour hand is halfway between 3 and 4, so it is 15 degrees before 4. From 4 to 6 is 2 gaps, which is 60 degrees. The angle is 60 degrees plus 15 degrees, which is 75 degrees."
+  ],
+  "steps": [
+   "Each gap between two numbers on a clock is 30 degrees. 360 degrees divided by 12 equals 30 degrees.",
+   "At 20 minutes past, the minute hand points at 4. From 4 to 7 is 3 gaps. 3 times 30 degrees equals 90 degrees.",
+   "20 minutes is one third of an hour, so the hour hand has moved one third of a gap past 7. 30 degrees divided by three equals 10 degrees.",
+   "Add the two parts. 90 degrees plus 10 degrees equals 100 degrees.",
+   "The angle between the hands is 100 degrees."
+  ]
+ },
+ "EXT_G4_FP_2024_038": {
+  "q": "A man walking south-west turns clockwise to face north. How many degrees has he turned?",
+  "options": [
+   "90",
+   "225 degrees",
+   "180 degrees",
+   "None of these"
+  ],
+  "hints": [
+   "This is a turning problem on the compass. Between two neighbouring directions, such as north and north-east, the turn is 45 degrees.",
+   "Start at south-west and move clockwise. Name each direction you pass until you reach north, and count the 45 degree steps.",
+   "Similar example: a boy faces north-east and turns clockwise to face north-west. He passes east, south-east, south, south-west, west and then north-west. That is 6 steps of 45 degrees, so he turns 6 times 45 degrees, which is 270 degrees."
+  ],
+  "steps": [
+   "The eight compass directions are 45 degrees apart. 360 degrees divided by 8 equals 45 degrees.",
+   "Clockwise from south-west he passes west, then north-west, then north. That is 3 steps.",
+   "Each step is 45 degrees. 3 times 45 degrees equals 135 degrees.",
+   "135 degrees is not in the list, so the answer is None of these."
+  ]
+ },
+ "EXT_G4_FP_2025_013": {
+  "q": "What is the angle between the hour hand and the minute hand at 18 minutes past 5?",
+  "options": [
+   "51 degrees",
+   "47 degrees",
+   "64 degrees",
+   "57 degrees"
+  ],
+  "hints": [
+   "This is a clock angle problem. Measure each hand's turn from the 12, and remember the hour hand keeps moving as the minutes pass.",
+   "The minute hand turns 6 degrees every minute. Find how far it has turned from 12 in 18 minutes. Then find where the hour hand is.",
+   "Similar example: at 10 minutes past 4, the minute hand has turned 10 times 6 degrees, which is 60 degrees, from 12. The hour hand has turned 4 times 30 degrees, which is 120 degrees, plus 5 degrees more for the 10 minutes, so it is at 125 degrees. The angle between them is 125 degrees minus 60 degrees, which is 65 degrees."
+  ],
+  "steps": [
+   "The minute hand turns 6 degrees each minute. In 18 minutes it is 108 degrees from 12. 18 times 6 degrees equals 108 degrees.",
+   "At 5 o'clock the hour hand is 150 degrees from 12. 5 times 30 degrees equals 150 degrees.",
+   "The hour hand moves 1 degree every 2 minutes, so in 18 minutes it moves 9 degrees more. 150 degrees plus 9 degrees equals 159 degrees.",
+   "Subtract to find the angle between the hands. 159 degrees minus 108 degrees equals 51 degrees.",
+   "The angle is 51 degrees."
+  ]
+ },
+ "EXT_G4_FP_2025_031": {
+  "q": "Which pair of angles is supplementary?",
+  "options": [
+   "62 degrees and 128 degrees",
+   "73.5 degrees and 107.5 degrees",
+   "85.5 degrees and 93.5 degrees",
+   "140.5 degrees and 39.5 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when they add up to exactly 180 degrees.",
+   "Add the two angles in each pair. Start with 62 degrees plus 128 degrees and see whether it makes 180 degrees.",
+   "Similar example: is 112.5 degrees and 67.5 degrees a supplementary pair? Add them: 112.5 plus 67.5 equals 180. Yes, they are supplementary. Is 95 degrees and 75 degrees? 95 plus 75 equals 170, so that pair is not."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees, so add each pair.",
+   "Add the first pair. 62 degrees plus 128 degrees equals 190 degrees.",
+   "Add the second pair. 73.5 degrees plus 107.5 degrees equals 181 degrees.",
+   "Add the third pair. 85.5 degrees plus 93.5 degrees equals 179 degrees.",
+   "Add the fourth pair. 140.5 degrees plus 39.5 degrees equals 180 degrees.",
+   "Only the last pair makes 180 degrees. The supplementary pair is 140.5 degrees and 39.5 degrees."
+  ]
+ },
+ "EXT_G4_WS2_CH18_001": {
+  "q": "A line segment has how many end points?",
+  "options": [
+   "2",
+   "1",
+   "0",
+   "Infinite"
+  ],
+  "hints": [
+   "This is about the parts of a line. Think about the difference between a line, a ray and a line segment.",
+   "A line segment is a piece of a line that starts at one point and stops at another. Count the points where it stops.",
+   "Similar example: how many end points does a ray have? A ray starts at one point and goes on forever in one direction. So a ray has 1 end point."
+  ],
+  "steps": [
+   "A line segment is a straight path between two points.",
+   "It stops at both of those points, so each one is an end point.",
+   "A line segment has 2 end points."
+  ]
+ },
+ "EXT_G4_WS2_CH18_002": {
+  "q": "How many lines can pass through two distinct points?",
+  "options": [
+   "One",
+   "Two",
+   "Infinite",
+   "None"
+  ],
+  "hints": [
+   "This is about lines and points. Picture two dots on paper and a ruler.",
+   "Mark two different points and lay a ruler so its edge touches both. Try to draw a second, different straight line through both.",
+   "Similar example: how many lines can pass through a single point? You can keep turning a ruler around that point and draw a new line each time. So endless lines pass through a single point."
+  ],
+  "steps": [
+   "Mark two different points and join them with a ruler. You get a straight line.",
+   "Any other straight line through both points lies exactly on top of the first.",
+   "So only One line can pass through two distinct points."
+  ]
+ },
+ "EXT_G4_WS2_CH18_003": {
+  "q": "Three or more points on the same line are called:",
+  "options": [
+   "Collinear",
+   "Non-collinear",
+   "Concurrent",
+   "Parallel"
+  ],
+  "hints": [
+   "This is a geometry word question. Think about what the parts of each word mean.",
+   "'Co' means together, as in co-operate. Look for the word that means together on one line.",
+   "Similar example: three or more lines that pass through the same point are called concurrent lines. The word tells you they run together through one point."
+  ],
+  "steps": [
+   "'Co' means together and 'linear' means on a line.",
+   "So points that lie together on the same line are called collinear points.",
+   "Three or more points on the same line are called Collinear."
+  ]
+ },
+ "EXT_G4_WS2_CH18_004": {
+  "q": "An angle less than 90 degrees is called:",
+  "options": [
+   "Acute angle",
+   "Right angle",
+   "Obtuse angle",
+   "Straight angle"
+  ],
+  "hints": [
+   "This is about naming angles by size. Each name goes with a range of degrees, measured against 90 degrees and 180 degrees.",
+   "Compare with a right angle, which is exactly 90 degrees. Which name is used for an angle smaller than that?",
+   "Similar example: an angle more than 90 degrees but less than 180 degrees is called an obtuse angle. For example, 120 degrees is obtuse."
+  ],
+  "steps": [
+   "A right angle is exactly 90 degrees.",
+   "An angle smaller than a right angle, between 0 degrees and 90 degrees, has its own name.",
+   "An angle less than 90 degrees is called an Acute angle."
+  ]
+ },
+ "EXT_G4_WS2_CH18_005": {
+  "q": "A right angle measures:",
+  "options": [
+   "90 degrees",
+   "180 degrees",
+   "45 degrees",
+   "360 degrees"
+  ],
+  "hints": [
+   "This is about the size of a special angle. Think of the corner of a square or of your book.",
+   "A full turn is 360 degrees. A right angle is a quarter of a full turn.",
+   "Similar example: a straight angle is half of a full turn. Half of 360 degrees is 360 degrees divided by 2, which is 180 degrees, so a straight angle measures 180 degrees."
+  ],
+  "steps": [
+   "A full turn is 360 degrees. A right angle is a quarter turn, like the corner of a square.",
+   "Divide the full turn into 4 equal parts. 360 degrees divided by 4 equals 90 degrees.",
+   "A right angle measures 90 degrees."
+  ]
+ },
+ "EXT_G4_WS2_CH18_006": {
+  "q": "An angle of 180 degrees is called a:",
+  "options": [
+   "Straight angle",
+   "Right angle",
+   "Reflex angle",
+   "Complete angle"
+  ],
+  "hints": [
+   "This is about naming angles by size. Picture what the two arms of the angle look like.",
+   "Draw an angle of 180 degrees. The two arms point in opposite directions. What shape do they make together?",
+   "Similar example: an angle of 360 degrees is a full turn back to the start, so it is called a complete angle."
+  ],
+  "steps": [
+   "180 degrees is half of a full turn.",
+   "The two arms point in opposite directions and form a straight line.",
+   "So an angle of 180 degrees is called a Straight angle."
+  ]
+ },
+ "EXT_G4_WS2_CH18_007": {
+  "q": "What type of angle is 135 degrees?",
+  "options": [
+   "Obtuse",
+   "Acute",
+   "Right",
+   "Reflex"
+  ],
+  "hints": [
+   "This is about naming an angle by its size. Compare the angle with 90 degrees and with 180 degrees.",
+   "Is 135 degrees more than 90 degrees? Is it less than 180 degrees? Use both answers to pick the name.",
+   "Similar example: what type of angle is 200 degrees? It is more than 180 degrees and less than 360 degrees, so it is a reflex angle."
+  ],
+  "steps": [
+   "135 degrees is more than 90 degrees, so it is bigger than a right angle.",
+   "135 degrees is less than 180 degrees, so it is smaller than a straight angle.",
+   "An angle between 90 degrees and 180 degrees is obtuse. So 135 degrees is an Obtuse angle."
+  ]
+ },
+ "EXT_G4_WS2_CH18_008": {
+  "q": "Two angles that add up to 90 degrees are called:",
+  "options": [
+   "Complementary",
+   "Supplementary",
+   "Adjacent",
+   "Vertically opposite"
+  ],
+  "hints": [
+   "This is a geometry word question about pairs of angles. Two special totals have their own names: 90 degrees and 180 degrees.",
+   "One name is for pairs that make a right angle, the other for pairs that make a straight line. Decide which total 90 degrees is.",
+   "Similar example: 110 degrees and 70 degrees add up to 180 degrees. Two angles that add up to 180 degrees are called supplementary angles."
+  ],
+  "steps": [
+   "Two angles that add up to 90 degrees make a right angle together.",
+   "For example, 30 degrees and 60 degrees. 30 degrees plus 60 degrees equals 90 degrees.",
+   "Such a pair of angles is called Complementary."
+  ]
+ },
+ "G4A_ANGLES_001": {
+  "q": "Three angles lie side by side on a straight line. Two of them are 48 degrees and 67 degrees. What is the third angle?",
+  "options": [
+   "115 degrees",
+   "65 degrees",
+   "245 degrees",
+   "75 degrees"
+  ],
+  "hints": [
+   "Angles that lie side by side on a straight line add up to a straight angle. Remember how many degrees that is.",
+   "A straight angle is 180 degrees. Add the two angles you know, then see what is left.",
+   "A similar one: two angles of 50 degrees and 70 degrees on a straight line make 120 degrees together, so the third angle is 180 degrees minus 120 degrees, which is 60 degrees."
+  ],
+  "steps": [
+   "Angles on a straight line add up to 180 degrees.",
+   "Add the two known angles. 48 plus 67 equals 115.",
+   "Take this away from 180 degrees. 180 minus 115 equals 65.",
+   "The third angle is 65 degrees."
+  ]
+ },
+ "G4A_ANGLES_002": {
+  "q": "A round pizza is cut from the centre into 8 equal slices. Ria eats 3 slices. What angle at the centre do the remaining slices make together?",
+  "options": [
+   "135 degrees",
+   "45 degrees",
+   "225 degrees",
+   "315 degrees"
+  ],
+  "hints": [
+   "The angles all the way around a point add up to 360 degrees. Equal slices share this equally.",
+   "Find the angle of one slice by sharing 360 degrees among 8 slices. Then count the slices that are left.",
+   "A similar one: a cake cut into 6 equal slices has 360 degrees divided by 6, which is 60 degrees, in each slice. If 2 are eaten, the 4 left make 4 times 60 degrees, which is 240 degrees."
+  ],
+  "steps": [
+   "The angle at the centre of one slice. 360 divided by 8 equals 45.",
+   "Slices left. 8 minus 3 equals 5.",
+   "Angle made by the slices left. 5 times 45 equals 225.",
+   "The remaining slices make an angle of 225 degrees."
+  ]
+ },
+ "G4A_ANGLES_003": {
+  "q": "Through how many degrees does the hour hand of a clock turn between 3 p m and 7 30 p m on the same day?",
+  "options": [
+   "135 degrees",
+   "120 degrees",
+   "270 degrees",
+   "150 degrees"
+  ],
+  "hints": [
+   "The hour hand goes once around the clock, 360 degrees, in 12 hours. Find how far it turns in one hour.",
+   "In one hour the hour hand turns 360 degrees divided by 12, which is 30 degrees. How many hours are there from 3 p m to 7 30 p m?",
+   "A similar one: from 1 p m to 3 30 p m is 2 and a half hours. The hour hand turns 30 degrees plus 30 degrees for the two hours and 15 degrees for the half hour, which is 75 degrees."
+  ],
+  "steps": [
+   "The hour hand turns 30 degrees every hour. 360 divided by 12 equals 30.",
+   "From 3 p m to 7 30 p m is 4 and a half hours.",
+   "Four hours give 120 degrees, and half an hour gives half of 30 degrees, which is 15 degrees. 4 times 30, plus 15, equals 135.",
+   "The hour hand turns through 135 degrees."
+  ]
+ },
+ "G4A_ANGLES_004": {
+  "q": "Arjun is facing East. He makes a three-quarter turn anticlockwise. Which direction is he facing now?",
+  "options": [
+   "North",
+   "West",
+   "East",
+   "South"
+  ],
+  "hints": [
+   "A quarter turn is 90 degrees and takes you from one main direction to the next. Anticlockwise is the opposite way to the hands of a clock.",
+   "Starting from East, one quarter turn anticlockwise brings Arjun to North. Make two more quarter turns the same way.",
+   "A similar one: facing North, a half turn anticlockwise goes North to West to South. So that person ends up facing South."
+  ],
+  "steps": [
+   "Going anticlockwise, the directions come in the order East, North, West, South.",
+   "First quarter turn: East to North. Second quarter turn: North to West.",
+   "Third quarter turn: West to South.",
+   "Arjun is now facing South."
+  ]
+ },
+ "G4A_ANGLES_005": {
+  "q": "A ladder leans against an upright wall on level ground. The ladder makes an angle of 58 degrees with the ground. What angle does the ladder make with the wall?",
+  "options": [
+   "122 degrees",
+   "32 degrees",
+   "42 degrees",
+   "58 degrees"
+  ],
+  "hints": [
+   "The ladder, the wall and the ground make a triangle. An upright wall meets level ground at a right angle.",
+   "One angle of the triangle is 90 degrees, so the other two angles together make 90 degrees. One of them is 58 degrees.",
+   "A similar one: a ladder that makes 65 degrees with the ground makes 90 degrees minus 65 degrees, which is 25 degrees, with the wall."
+  ],
+  "steps": [
+   "The wall and the ground meet at 90 degrees. The three angles of the triangle add up to 180 degrees.",
+   "So the two angles at the ends of the ladder add up to 90 degrees. 180 minus 90 equals 90.",
+   "Take away the angle with the ground. 90 minus 58 equals 32.",
+   "The ladder makes an angle of 32 degrees with the wall."
+  ]
+ },
+ "G4A_ANGLES_006": {
+  "q": "At 6:00 the hands of a clock make an angle of 180 degrees. By how many degrees has the angle between the hands become smaller at 6 30?",
+  "options": [
+   "180 degrees",
+   "150 degrees",
+   "165 degrees",
+   "15 degrees"
+  ],
+  "hints": [
+   "Both hands move. In half an hour the minute hand goes halfway around, and the hour hand moves a little too.",
+   "At 6 30 the minute hand points at 6. The hour hand is not at 6 any more: it is halfway between 6 and 7. How many degrees is half of one hour space?",
+   "A similar one: at 3:00 the angle is 90 degrees. At 3 30 the minute hand is at 6 and the hour hand is halfway between 3 and 4, so the angle is 90 degrees minus 15 degrees, which is 75 degrees. The angle became smaller by 15 degrees."
+  ],
+  "steps": [
+   "At 6 30 the minute hand points exactly at 6.",
+   "The hour hand has moved halfway from 6 to 7. One hour space is 30 degrees, so half of it is 15 degrees. 30 divided by 2 equals 15.",
+   "So the angle between the hands at 6 30 is 15 degrees.",
+   "Compare with the angle at 6:00. 180 minus 15 equals 165.",
+   "The angle has become smaller by 165 degrees."
+  ]
+ },
+ "G4A_ANGLES_007": {
+  "q": "The lamp of a lighthouse turns at a steady speed and makes one full turn every 40 seconds. Through how many degrees does it turn in 15 seconds?",
+  "options": [
+   "135 degrees",
+   "150 degrees",
+   "24 degrees",
+   "600 degrees"
+  ],
+  "hints": [
+   "One full turn is 360 degrees. Find how many degrees the lamp turns in one second, then in the number of seconds asked.",
+   "Share 360 degrees equally among 40 seconds to get the turn in one second.",
+   "A similar one: a wheel makes a full turn in 20 seconds, so it turns 360 degrees divided by 20, which is 18 degrees, each second. In 5 seconds it turns 5 times 18 degrees, which is 90 degrees."
+  ],
+  "steps": [
+   "A full turn is 360 degrees. Find the turn in one second. 360 divided by 40 equals 9.",
+   "Multiply by 15 seconds. 15 times 9 equals 135.",
+   "The lamp turns through 135 degrees."
+  ]
+ },
+ "G4A_ANGLES_008": {
+  "q": "The supplement of an angle is 3 times its complement. What is the angle?",
+  "options": [
+   "60 degrees",
+   "30 degrees",
+   "135 degrees",
+   "45 degrees"
+  ],
+  "hints": [
+   "The complement of an angle is what must be added to make 90 degrees. The supplement is what must be added to make 180 degrees. You can test each choice.",
+   "The supplement is always 90 degrees more than the complement. If the supplement is 3 times the complement, then that extra 90 degrees is 2 times the complement.",
+   "A similar one: the supplement of an angle is 7 times its complement. Try 75 degrees: its supplement is 105 degrees and its complement is 15 degrees, and 105 equals 7 times 15. So that angle is 75 degrees."
+  ],
+  "steps": [
+   "The supplement is 90 degrees more than the complement, because 180 degrees is 90 degrees more than 90 degrees.",
+   "The supplement is 3 times the complement, so the extra 90 degrees is 2 times the complement. 90 divided by 2 equals 45.",
+   "The complement is 45 degrees, so find the angle. 90 minus 45 equals 45.",
+   "Check: the supplement is 135 degrees, which is 3 times 45 degrees. The angle is 45 degrees."
+  ]
+ },
+ "G4A_ANGLES_009": {
+  "q": "Two straight lines cross each other. One of the angles formed is 4 times the angle beside it. What is the largest angle formed?",
+  "options": [
+   "36 degrees",
+   "144 degrees",
+   "72 degrees",
+   "288 degrees"
+  ],
+  "hints": [
+   "When two straight lines cross, two angles that are beside each other lie on a straight line, so they add up to 180 degrees.",
+   "Think of the smaller angle as 1 part and the angle beside it as 4 parts. Together the 5 parts make 180 degrees.",
+   "A similar one: if one angle is twice the angle beside it, then 3 parts make 180 degrees. One part is 60 degrees, so the angles are 60 degrees and 120 degrees, and the largest is 120 degrees."
+  ],
+  "steps": [
+   "Two angles beside each other on a straight line add up to 180 degrees.",
+   "The angles are 1 part and 4 parts, which is 5 parts in all. 180 divided by 5 equals 36.",
+   "The larger angle is 4 parts. 4 times 36 equals 144.",
+   "The largest angle formed is 144 degrees."
+  ]
+ },
+ "G4A_ANGLES_010": {
+  "q": "Five angles meet at a point and fill the whole turn around it. One of them is 80 degrees and the other four are equal. How big is each of the four equal angles?",
+  "options": [
+   "25 degrees",
+   "56 degrees",
+   "70 degrees",
+   "280 degrees"
+  ],
+  "hints": [
+   "Angles that fill the whole turn around a point add up to 360 degrees. Take away the angle you know, then share the rest.",
+   "Take 80 degrees away from 360 degrees. What is left is shared equally among the four equal angles.",
+   "A similar one: four angles fill the turn around a point. One is 60 degrees and the other three are equal. They share 360 degrees minus 60 degrees, which is 300 degrees, so each is 100 degrees."
+  ],
+  "steps": [
+   "Angles around a point add up to 360 degrees. Take away the known angle. 360 minus 80 equals 280.",
+   "Share the rest equally among the four angles. 280 divided by 4 equals 70.",
+   "Each of the four equal angles is 70 degrees."
+  ]
+ },
+ "G4A_ANGLES_011": {
+  "q": "What is the smaller angle between the hour hand and the minute hand of a clock at 2 40?",
+  "options": [
+   "160 degrees",
+   "180 degrees",
+   "200 degrees",
+   "170 degrees"
+  ],
+  "hints": [
+   "At 2 40 the hour hand is not pointing exactly at the 2. It has been moving all the time since 2 o'clock.",
+   "The minute hand is on the 8. The hour hand moves 30 degrees in a whole hour, so work out how far it moves in 40 minutes, which is two thirds of an hour.",
+   "Similar problem: at 4 20 the minute hand is on the 4, which is 120 degrees from the 12. The hour hand has moved one third of 30 degrees, which is 10 degrees, past the 4, so it is 130 degrees from the 12. The angle between the hands is 130 minus 120, which is 10 degrees."
+  ],
+  "steps": [
+   "The minute hand is on the 8. Each number on the clock is 30 degrees from the next. 8 times 30 equals 240.",
+   "The hour hand moves 30 degrees in 60 minutes, so in 40 minutes it moves 20 degrees. 30 times 40 over 60 equals 20.",
+   "So the hour hand is 20 degrees past the 2. 2 times 30, plus 20, equals 80.",
+   "Subtract to find the angle between the hands. 240 minus 80 equals 160.",
+   "So the smaller angle between the hands is 160 degrees."
+  ]
+ },
+ "G4A_ANGLES_012": {
+  "q": "From 2 10 to 2 50 on the same afternoon, both hands of a clock keep turning. How many more degrees does the minute hand turn than the hour hand in this time?",
+  "options": [
+   "240 degrees",
+   "260 degrees",
+   "220 degrees",
+   "20 degrees"
+  ],
+  "hints": [
+   "Both hands move during this time, one fast and one slowly. Find how far each one turns, then compare.",
+   "From 2 10 to 2 50 is 40 minutes. The minute hand turns 6 degrees every minute. The hour hand turns 30 degrees in a whole hour.",
+   "Similar problem: from 5:00 to 5 30. The minute hand turns half a full turn, 180 degrees. The hour hand turns half of 30 degrees, which is 15 degrees. The minute hand turns 180 minus 15, which is 165 degrees, more."
+  ],
+  "steps": [
+   "Find the time that passes. 50 minus 10 equals 40.",
+   "The minute hand turns 6 degrees each minute. 40 times 6 equals 240.",
+   "The hour hand turns 30 degrees in 60 minutes, so 1 degree every 2 minutes. 40 divided by 2 equals 20.",
+   "Find how much more the minute hand turns. 240 minus 20 equals 220.",
+   "So the minute hand turns 220 degrees more than the hour hand."
+  ]
+ },
+ "G4A_ANGLES_013": {
+  "q": "At 12 noon the hour hand of a clock points straight up at the 12. Later the same afternoon, the hour hand has turned through exactly 75 degrees from that position. What time is it?",
+  "options": [
+   "2 50 p m",
+   "2 30 p m",
+   "1 15 p m",
+   "2 oh 5 p m"
+  ],
+  "hints": [
+   "Work backwards from the angle. Think about how many degrees the hour hand turns in one hour, and be careful when you change a part of an hour into minutes.",
+   "The hour hand turns 30 degrees every hour. Find how many 30s there are in 75, and what is left over.",
+   "Similar problem: the hour hand has turned 105 degrees since noon. Three hours take 90 degrees, and 15 degrees are left. Since 15 degrees is half of 30 degrees, that is half an hour, or 30 minutes. The time is 3 30 p m."
+  ],
+  "steps": [
+   "The hour hand turns 30 degrees in one hour.",
+   "Two hours take 60 degrees of the turn. Find what is left. 75 minus 60 equals 15.",
+   "15 degrees is half of 30 degrees, so it takes half an hour. 60 divided by 2 equals 30.",
+   "So 2 hours and 30 minutes have passed since noon.",
+   "So the time is 2 30 p m."
+  ]
+ },
+ "G4A_ANGLES_014": {
+  "q": "At 12 20, Sana says: \"The minute hand is on the 4 and the hour hand is on the 12, so the angle between the hands is 120 degrees.\" By how many degrees is Sana's answer different from the true angle between the hands?",
+  "options": [
+   "10 degrees",
+   "0 degrees",
+   "20 degrees",
+   "110 degrees"
+  ],
+  "hints": [
+   "Check each part of what Sana says. Is each hand exactly where she says it is at 12 20?",
+   "The minute hand is exactly on the 4. Now think about the hour hand: 20 minutes is one third of an hour, and the hour hand moves 30 degrees in an hour.",
+   "Similar problem: at 12 30 someone says the angle is 180 degrees. But the hour hand has moved half of 30 degrees, which is 15 degrees, past the 12. The true angle is 180 minus 15, which is 165 degrees, so that answer is 15 degrees too big."
+  ],
+  "steps": [
+   "The minute hand is on the 4, so it is 120 degrees from the 12. 4 times 30 equals 120.",
+   "In 20 minutes the hour hand has moved one third of 30 degrees past the 12. 30 divided by 3 equals 10.",
+   "The true angle between the hands is smaller than Sana's. 120 minus 10 equals 110.",
+   "Compare Sana's answer with the true angle. 120 minus 110 equals 10.",
+   "So Sana's answer is different from the true angle by 10 degrees."
+  ]
+ },
+ "G4A_ANGLES_015": {
+  "q": "Farhan is facing North-East. He turns 90 degrees clockwise, then 225 degrees anticlockwise, and then 135 degrees clockwise. Which direction is he facing now?",
+  "options": [
+   "South-East",
+   "West",
+   "North-West",
+   "North-East"
+  ],
+  "hints": [
+   "Follow the turns one at a time and keep track of the direction after each turn. Watch which way each turn goes.",
+   "The eight compass directions are 45 degrees apart. A turn of 90 degrees clockwise from North-East moves two directions on: find where that is first.",
+   "Similar problem: Asha faces North, turns 90 degrees clockwise and then 135 degrees anticlockwise. After the first turn she faces East. Going back 135 degrees is three steps of 45 degrees: North-East, North, North-West. She faces North-West."
+  ],
+  "steps": [
+   "From North-East, a 90 degree clockwise turn moves two steps of 45 degrees: he faces South-East.",
+   "225 degrees is five steps of 45 degrees. 225 divided by 45 equals 5.",
+   "Five steps anticlockwise from South-East go East, North-East, North, North-West, West: he faces West.",
+   "135 degrees is three steps of 45 degrees. 135 divided by 45 equals 3.",
+   "Three steps clockwise from West go North-West, North, North-East.",
+   "So Farhan is facing North-East, the direction he started in."
+  ]
+ },
+ "G4A_ANGLES_016": {
+  "q": "Ravi turns 135 degrees clockwise and then 90 degrees anticlockwise. Now he is facing South. Which direction was he facing before he turned?",
+  "options": [
+   "South-West",
+   "South-East",
+   "West",
+   "North-West"
+  ],
+  "hints": [
+   "You know where Ravi ends, not where he starts. To go back in time, undo each turn by turning the opposite way.",
+   "Start from South. The last thing Ravi did was turn 90 degrees anticlockwise, so undo it first by turning 90 degrees clockwise.",
+   "Similar problem: after turning 90 degrees clockwise, Asha faces West. To undo this, turn 90 degrees anticlockwise from West, which gives South. So Asha was facing South at the start."
+  ],
+  "steps": [
+   "Start from where Ravi ends: South.",
+   "Undo the last turn. It was 90 degrees anticlockwise, so turn 90 degrees clockwise from South: West.",
+   "Undo the first turn. It was 135 degrees clockwise, so turn 135 degrees anticlockwise from West: South-West, South, South-East.",
+   "Check forwards: from South-East, 135 degrees clockwise is West, and then 90 degrees anticlockwise is South.",
+   "So Ravi was facing South-East before he turned."
+  ]
+ },
+ "G4A_ANGLES_017": {
+  "q": "A toy robot is facing North. Each time Kavya presses a button, the robot turns 45 degrees clockwise. Which direction is the robot facing after Kavya has pressed the button 13 times?",
+  "options": [
+   "South",
+   "South-West",
+   "West",
+   "North-East"
+  ],
+  "hints": [
+   "The robot keeps going round and round. Look for the number of presses that brings it back to where it started.",
+   "A full turn is 360 degrees. Find how many presses of 45 degrees make a full turn, and then how many presses are left over after that.",
+   "Similar problem: a robot facing North turns 90 degrees clockwise at each press. Four presses make a full turn. After 10 presses, 8 presses make two full turns and 2 are left, so it faces East and then South. It ends facing South."
+  ],
+  "steps": [
+   "Find how many presses make one full turn. 360 divided by 45 equals 8.",
+   "After 8 presses the robot is facing North again.",
+   "Find how many presses are left. 13 minus 8 equals 5.",
+   "Five more presses from North go North-East, East, South-East, South, South-West.",
+   "So the robot is facing South-West."
+  ]
+ },
+ "G4A_ANGLES_018": {
+  "q": "Three angles meet at a point and together fill the whole turn around the point, with no gaps and no overlaps. The second angle is twice the first, and the third angle is three times the first. What kind of angle is the largest of the three?",
+  "options": [
+   "A right angle",
+   "An obtuse angle",
+   "A straight angle",
+   "A reflex angle"
+  ],
+  "hints": [
+   "First decide what the three angles add up to. Read carefully: do they lie on a straight line, inside a triangle, or all the way round a point?",
+   "Call the first angle one part. Then the three angles are 1 part, 2 parts and 3 parts. Find how many parts there are in the whole turn.",
+   "Similar problem: two angles fill the whole turn around a point, and one is 3 times the other. There are 4 parts in 360 degrees, so one part is 90 degrees. The angles are 90 degrees and 270 degrees, and the larger one is a reflex angle."
+  ],
+  "steps": [
+   "Angles that fill the whole turn around a point add up to 360 degrees.",
+   "The angles are 1 part, 2 parts and 3 parts, which is 6 parts. 360 divided by 6 equals 60.",
+   "The largest angle is 3 parts. 3 times 60 equals 180.",
+   "An angle of 180 degrees makes a straight line.",
+   "So the largest angle is a straight angle."
+  ]
+ },
+ "G4A_ANGLES_019": {
+  "q": "Two straight lines cross each other and make four angles around the crossing point. Three of these angles add up to 250 degrees. What is the size of the smallest of the four angles?",
+  "options": [
+   "70 degrees",
+   "110 degrees",
+   "55 degrees",
+   "35 degrees"
+  ],
+  "hints": [
+   "The four angles go all the way round the point. Find the angle that was left out, then use what you know about the angles made when two straight lines cross.",
+   "Take 250 degrees away from the whole turn to find the fourth angle. The angle beside it lies with it on a straight line.",
+   "Similar problem: three of the four angles add up to 300 degrees. The fourth is 360 minus 300, which is 60 degrees. The angle beside it is 180 minus 60, which is 120 degrees. The four angles are 60 degrees, 120 degrees, 60 degrees, 120 degrees, so the largest is 120 degrees."
+  ],
+  "steps": [
+   "The four angles add up to a whole turn, so find the fourth angle. 360 minus 250 equals 110.",
+   "The angle beside it makes a straight line with it. 180 minus 110 equals 70.",
+   "Angles opposite each other are equal, so the four angles are 110 degrees, 70 degrees, 110 degrees and 70 degrees.",
+   "Check the three that were added. 70 plus 110 plus 70 equals 250.",
+   "So the smallest of the four angles is 70 degrees."
+  ]
+ },
+ "G4A_ANGLES_020": {
+  "q": "An angle is 30 degrees more than its complement. What is the supplement of this angle?",
+  "options": [
+   "60 degrees",
+   "30 degrees",
+   "150 degrees",
+   "120 degrees"
+  ],
+  "hints": [
+   "There are two different ideas here, complement and supplement. Find the angle first using its complement, and then answer what is asked.",
+   "The angle and its complement add up to 90 degrees, and the angle is 30 degrees bigger. Take the extra 30 degrees away from 90 degrees and share what is left equally.",
+   "Similar problem: an angle is 10 degrees more than its complement. Taking 10 from 90 leaves 80, so the complement is 40 degrees and the angle is 50 degrees. The supplement of the angle is 180 minus 50, which is 130 degrees."
+  ],
+  "steps": [
+   "The angle and its complement add up to 90 degrees. Take away the extra 30 degrees and halve. 90 minus 30, then divided by 2, equals 30.",
+   "The complement is 30 degrees, so the angle is 30 degrees more. 30 plus 30 equals 60.",
+   "The supplement is what the angle needs to make 180 degrees. 180 minus 60 equals 120.",
+   "So the supplement of the angle is 120 degrees."
+  ]
+ },
+ "G4A_ANGLES_021": {
+  "q": "Angle P and angle Q are complementary, so they add up to 90 degrees. Angle Q and angle R are supplementary, so they add up to 180 degrees. Which of these is true whatever the size of angle P?",
+  "options": [
+   "Angle R is equal to angle P",
+   "Angle P and angle R are supplementary",
+   "Angle R is 90 degrees more than angle P",
+   "Angle R is twice angle Q"
+  ],
+  "hints": [
+   "No sizes are given, so the statement must hold for every possible angle P. Try one size for angle P, and then try a different size to make sure.",
+   "Let angle P be 20 degrees. Find angle Q from the first clue and angle R from the second clue. Then do the same again with angle P as 40 degrees.",
+   "Similar problem: angle X and angle Y add up to 180 degrees, and angle Y and angle Z also add up to 180 degrees. If X is 50 degrees, Y is 130 degrees and Z is 50 degrees. If X is 70 degrees, Y is 110 degrees and Z is 70 degrees. Whatever X is, Z is equal to X."
+  ],
+  "steps": [
+   "Try angle P equals 20 degrees. Then angle Q is 70 degrees and angle R is 110 degrees. 90 minus 20 equals 70, and 180 minus 70 equals 110.",
+   "Try angle P equals 40 degrees. Then angle Q is 50 degrees and angle R is 130 degrees. 90 minus 40 equals 50, and 180 minus 50 equals 130.",
+   "Both times angle R is 90 degrees more than angle P. 110 minus 20 equals 90, and 130 minus 40 equals 90.",
+   "This always happens: going from 90 degrees to 180 degrees adds 90 degrees to the total, and angle Q is the same in both.",
+   "So angle R is 90 degrees more than angle P."
+  ]
+ },
+ "G4A_ANGLES_022": {
+  "q": "Angle A O B is 70 degrees. A ray O C is drawn from the same point O so that angle B O C is 30 degrees. Riya says angle A O C must be 100 degrees. Which of these is true about angle A O C?",
+  "options": [
+   "It must be 100 degrees",
+   "It must be 40 degrees",
+   "It could be any angle from 40 degrees to 100 degrees",
+   "It could be 100 degrees or 40 degrees"
+  ],
+  "hints": [
+   "There is no picture, so imagine it. The ray O C can be drawn on either side of the ray O B.",
+   "First picture O C on the far side of O B, away from O A. Then picture O C on the near side of O B, between O A and O B. Find angle A O C each time.",
+   "Similar problem: angle X O Y is 50 degrees and angle Y O Z is 20 degrees. If O Z is outside angle X O Y, angle X O Z is 50 plus 20, which is 70 degrees. If O Z is inside angle X O Y, angle X O Z is 50 minus 20, which is 30 degrees. So angle X O Z could be 70 degrees or 30 degrees."
+  ],
+  "steps": [
+   "The ray O C makes 30 degrees with O B, and it can lie on either side of O B.",
+   "If O C is on the side away from O A, the two angles add. 70 plus 30 equals 100.",
+   "If O C is between O A and O B, the smaller angle is taken away. 70 minus 30 equals 40.",
+   "These are the only two places where O C can be.",
+   "So angle A O C could be 100 degrees or 40 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2016_021_02_b": {
+  "q": "Two angles are supplementary. If one angle is 89 degrees, find the other.",
+  "options": [
+   "271",
+   "89",
+   "1",
+   "91"
+  ],
+  "hints": [
+   "Supplementary angles add up to 180 degrees.",
+   "Subtract 89 degrees from 180 degrees.",
+   "180 minus 89 equals what?"
+  ],
+  "steps": [
+   "Supplementary angles sum to 180 degrees.",
+   "The other angle is 180 degrees minus 89 degrees, which is 91 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2016_024_01": {
+  "q": "Two angles are supplementary. If one angle is 71 degrees, find the other.",
+  "options": [
+   "109",
+   "19",
+   "289",
+   "71"
+  ],
+  "hints": [
+   "Supplementary angles add up to 180 degrees.",
+   "Subtract 71 degrees from 180 degrees.",
+   "180 minus 71 equals what?"
+  ],
+  "steps": [
+   "Supplementary angles sum to 180 degrees.",
+   "The other angle is 180 degrees minus 71 degrees, which is 109 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2016_029_04": {
+  "q": "Two straight lines cross. One angle formed is 22 degrees. Find the vertically opposite angle.",
+  "options": [
+   "158",
+   "68",
+   "22",
+   "338"
+  ],
+  "hints": [
+   "When two lines cross, opposite angles are equal.",
+   "This is called 'vertically opposite angles'.",
+   "So the answer is simply 22 degrees."
+  ],
+  "steps": [
+   "Vertically opposite angles are equal.",
+   "The vertically opposite angle is 22 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2016_034_04_b": {
+  "q": "Two angles on a straight line are x degrees and 56 degrees. Find x.",
+  "options": [
+   "304",
+   "124",
+   "56",
+   "34"
+  ],
+  "hints": [
+   "A straight line makes an angle of 180 degrees.",
+   "The two angles must add up to 180 degrees.",
+   "x equals 180 minus 56."
+  ],
+  "steps": [
+   "Angles on a straight line sum to 180 degrees.",
+   "x equals 180 degrees minus 56 degrees, which is 124 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2017_010_01": {
+  "q": "Two angles are supplementary. If one angle is 25 degrees, find the other.",
+  "options": [
+   "335",
+   "65",
+   "25",
+   "155"
+  ],
+  "hints": [
+   "Supplementary angles add up to 180 degrees.",
+   "Subtract 25 degrees from 180 degrees.",
+   "180 minus 25 equals what?"
+  ],
+  "steps": [
+   "Supplementary angles sum to 180 degrees.",
+   "The other angle is 180 degrees minus 25 degrees, which is 155 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2017_040_03": {
+  "q": "Two angles on a straight line are x degrees and 89 degrees. Find x.",
+  "options": [
+   "89",
+   "271",
+   "91",
+   "1"
+  ],
+  "hints": [
+   "A straight line makes an angle of 180 degrees.",
+   "The two angles must add up to 180 degrees.",
+   "x equals 180 minus 89."
+  ],
+  "steps": [
+   "Angles on a straight line sum to 180 degrees.",
+   "x equals 180 degrees minus 89 degrees, which is 91 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2018_004_01": {
+  "q": "Two angles are supplementary. If one angle is 128 degrees, find the other.",
+  "options": [
+   "128",
+   "38",
+   "232",
+   "52"
+  ],
+  "hints": [
+   "Supplementary angles add up to 180 degrees.",
+   "Subtract 128 degrees from 180 degrees.",
+   "180 minus 128 equals what?"
+  ],
+  "steps": [
+   "Supplementary angles sum to 180 degrees.",
+   "The other angle is 180 degrees minus 128 degrees, which is 52 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2018_015_03_b": {
+  "q": "Two straight lines cross. One angle formed is 59 degrees. Find the vertically opposite angle.",
+  "options": [
+   "59",
+   "301",
+   "31",
+   "121"
+  ],
+  "hints": [
+   "When two lines cross, opposite angles are equal.",
+   "This is called 'vertically opposite angles'.",
+   "So the answer is simply 59 degrees."
+  ],
+  "steps": [
+   "Vertically opposite angles are equal.",
+   "The vertically opposite angle is 59 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2019_015_03_b": {
+  "q": "Two angles are supplementary. If one angle is 156 degrees, find the other.",
+  "options": [
+   "24",
+   "66",
+   "204",
+   "156"
+  ],
+  "hints": [
+   "Supplementary angles add up to 180 degrees.",
+   "Subtract 156 degrees from 180 degrees.",
+   "180 minus 156 equals what?"
+  ],
+  "steps": [
+   "Supplementary angles sum to 180 degrees.",
+   "The other angle is 180 degrees minus 156 degrees, which is 24 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2021_012_04": {
+  "q": "Two straight lines cross. One angle formed is 110 degrees. Find the vertically opposite angle.",
+  "options": [
+   "200",
+   "250",
+   "110",
+   "70"
+  ],
+  "hints": [
+   "When two lines cross, opposite angles are equal.",
+   "This is called 'vertically opposite angles'.",
+   "So the answer is simply 110 degrees."
+  ],
+  "steps": [
+   "Vertically opposite angles are equal.",
+   "The vertically opposite angle is 110 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2021_038_03": {
+  "q": "Two angles on a straight line are x degrees and 123 degrees. Find x.",
+  "options": [
+   "58",
+   "237",
+   "57",
+   "123"
+  ],
+  "hints": [
+   "A straight line makes an angle of 180 degrees.",
+   "The two angles must add up to 180 degrees.",
+   "x equals 180 minus 123."
+  ],
+  "steps": [
+   "Angles on a straight line sum to 180 degrees.",
+   "x equals 180 degrees minus 123 degrees, which is 57 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2022_033_01": {
+  "q": "Two angles are supplementary. If one angle is 49 degrees, find the other.",
+  "options": [
+   "41",
+   "131",
+   "49",
+   "311"
+  ],
+  "hints": [
+   "Supplementary angles add up to 180 degrees.",
+   "Subtract 49 degrees from 180 degrees.",
+   "180 minus 49 equals what?"
+  ],
+  "steps": [
+   "Supplementary angles sum to 180 degrees.",
+   "The other angle is 180 degrees minus 49 degrees, which is 131 degrees."
+  ]
+ },
+ "PH3_EXT_G4_FP_2023_001_04": {
+  "q": "Two straight lines cross. One angle formed is 160 degrees. Find the vertically opposite angle.",
+  "options": [
+   "160",
+   "20",
+   "200",
+   "250"
+  ],
+  "hints": [
+   "When two lines cross, opposite angles are equal.",
+   "This is called 'vertically opposite angles'.",
+   "So the answer is simply 160 degrees."
+  ],
+  "steps": [
+   "Vertically opposite angles are equal.",
+   "The vertically opposite angle is 160 degrees."
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH19_001_03": {
+  "q": "Two angles on a straight line are x degrees and 27 degrees. Find x.",
+  "options": [
+   "63",
+   "153",
+   "333",
+   "27"
+  ],
+  "hints": [
+   "A straight line makes an angle of 180 degrees.",
+   "The two angles must add up to 180 degrees.",
+   "x equals 180 minus 27."
+  ],
+  "steps": [
+   "Angles on a straight line sum to 180 degrees.",
+   "x equals 180 degrees minus 27 degrees, which is 153 degrees."
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH19_005_03_b": {
+  "q": "Two angles on a straight line are x degrees and 139 degrees. Find x.",
+  "options": [
+   "221",
+   "42",
+   "41",
+   "139"
+  ],
+  "hints": [
+   "A straight line makes an angle of 180 degrees.",
+   "The two angles must add up to 180 degrees.",
+   "x equals 180 minus 139."
+  ],
+  "steps": [
+   "Angles on a straight line sum to 180 degrees.",
+   "x equals 180 degrees minus 139 degrees, which is 41 degrees."
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH20_003_03": {
+  "q": "Two angles on a straight line are x degrees and 154 degrees. Find x.",
+  "options": [
+   "27",
+   "154",
+   "206",
+   "26"
+  ],
+  "hints": [
+   "A straight line makes an angle of 180 degrees.",
+   "The two angles must add up to 180 degrees.",
+   "x equals 180 minus 154."
+  ],
+  "steps": [
+   "Angles on a straight line sum to 180 degrees.",
+   "x equals 180 degrees minus 154 degrees, which is 26 degrees."
+  ]
+ },
+ "PYQ_2016_Q14": {
+  "q": "A man was standing facing South, after a while he is seen facing the North-East direction. Which of the following statement is true in regards to his position?",
+  "options": [
+   "He turned 45 degrees in the clockwise direction",
+   "He turned 135 degrees in the anticlockwise direction",
+   "He turned 135 degrees in the clockwise direction",
+   "He turned 270 degrees in the anticlockwise direction"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 14.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 2. He turned 135 degrees in the anticlockwise direction."
+  ]
+ },
+ "PYQ_2016_Q34": {
+  "q": "Which of the following angle given below could be the supplementary angle to 57 and one quarter degrees?",
+  "options": [
+   "123 and one quarter degrees",
+   "121 and three quarters degrees",
+   "121 and one quarter degrees",
+   "122 and three quarters degrees"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 34.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 4, which is 122 and three quarters degrees."
+  ]
+ },
+ "PYQ_2017_Q20": {
+  "q": "In 300 seconds, the minute hand of a clock moves how many degrees?",
+  "options": [
+   "150",
+   "60",
+   "30",
+   "15"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 20.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 30."
+  ]
+ },
+ "PYQ_2017_Q40": {
+  "q": "Which of the following pairs of angles are complementary to each other?",
+  "options": [
+   "30 degrees and 30 degrees",
+   "40 degrees and 30 degrees",
+   "22 degrees and 68 degrees",
+   "34 degrees and 66 degrees"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 40.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 22 degrees and 68 degrees."
+  ]
+ },
+ "PYQ_2018_Q29": {
+  "q": "An angle measures 35 degrees. What is the sum of the complementary and the supplementary angles of the given angle?",
+  "options": [
+   "200 degrees",
+   "190 degrees",
+   "180 degrees",
+   "165 degrees"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 29.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 200 degrees."
+  ]
+ },
+ "PYQ_2019_Q25": {
+  "q": "Which pair of angles given below are complementary to each other?",
+  "options": [
+   "55 degrees and 45 degrees",
+   "65 degrees and 25 degrees",
+   "35 degrees and 48 degrees",
+   "17 degrees and 63 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when they add up to exactly 90 degrees.",
+   "Add the two angles in each pair. Start with 55 degrees plus 45 degrees and see whether it makes 90 degrees.",
+   "Similar example: is 40 degrees and 50 degrees a complementary pair? Add them: 40 plus 50 equals 90, so yes. Is 30 degrees and 70 degrees? 30 plus 70 equals 100, so that pair is not."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees, so add each pair.",
+   "Add the first pair. 55 degrees plus 45 degrees equals 100 degrees.",
+   "Add the second pair. 65 degrees plus 25 degrees equals 90 degrees.",
+   "Add the third pair. 35 degrees plus 48 degrees equals 83 degrees.",
+   "Add the fourth pair. 17 degrees plus 63 degrees equals 80 degrees.",
+   "Only one pair makes 90 degrees. The complementary pair is 65 degrees and 25 degrees."
+  ]
+ },
+ "PYQ_2019_Q40": {
+  "q": "When a boy asks a teacher, what is the time now, the teacher replies, the angle between the hour hand and the minute hand of my watch makes an angle of 45 degrees now. What time is it now?",
+  "options": [
+   "1 15",
+   "2 30",
+   "8 30",
+   "7 30"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 40.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "The correct answer is option 4, which is 7 30."
+  ]
+ },
+ "Q_CH09_011_V08": {
+  "q": "What is the supplement of an angle of 153 degrees?",
+  "options": [
+   "27 degrees",
+   "37 degrees",
+   "17 degrees",
+   "333 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 153 degrees away from 180 degrees.",
+   "Similar example: the supplement of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 153 degrees equals 27 degrees.",
+   "Check by adding: 153 degrees plus 27 degrees equals 180 degrees. The supplement of 153 degrees is 27 degrees."
+  ]
+ },
+ "Q_CH13_010_V01": {
+  "q": "What is the complement of an angle of 51 degrees?",
+  "options": [
+   "321 degrees",
+   "49 degrees",
+   "39 degrees",
+   "29 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 51 degrees away from 90 degrees.",
+   "Similar example: the complement of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 51 degrees equals 39 degrees.",
+   "Check by adding: 51 degrees plus 39 degrees equals 90 degrees. The complement of 51 degrees is 39 degrees."
+  ]
+ },
+ "Q_CH13_010_V02": {
+  "q": "What is the supplement of an angle of 95 degrees?",
+  "options": [
+   "95 degrees",
+   "75 degrees",
+   "85 degrees",
+   "275 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 95 degrees away from 180 degrees.",
+   "Similar example: the supplement of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 95 degrees equals 85 degrees.",
+   "Check by adding: 95 degrees plus 85 degrees equals 180 degrees. The supplement of 95 degrees is 85 degrees."
+  ]
+ },
+ "Q_CH15_016_V01": {
+  "q": "What is the supplement of an angle of 125 degrees?",
+  "options": [
+   "45 degrees",
+   "55 degrees",
+   "305 degrees",
+   "65 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 125 degrees away from 180 degrees.",
+   "Similar example: the supplement of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 125 degrees equals 55 degrees.",
+   "Check by adding: 125 degrees plus 55 degrees equals 180 degrees. The supplement of 125 degrees is 55 degrees."
+  ]
+ },
+ "Q_CH15_016_V09": {
+  "q": "What is the complement of an angle of 73 degrees?",
+  "options": [
+   "27 degrees",
+   "7 degrees",
+   "17 degrees",
+   "343 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 73 degrees away from 90 degrees.",
+   "Similar example: the complement of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 73 degrees equals 17 degrees.",
+   "Check by adding: 73 degrees plus 17 degrees equals 90 degrees. The complement of 73 degrees is 17 degrees."
+  ]
+ },
+ "Q_CH18_001": {
+  "q": "An angle that measures more than 90 degrees but less than 180 degrees is called:",
+  "options": [
+   "acute",
+   "right",
+   "obtuse",
+   "reflex"
+  ],
+  "hints": [
+   "Remember the angle types. Acute is less than 90 degrees. Right is exactly 90 degrees. Obtuse is between 90 degrees and 180 degrees. Straight is 180 degrees. Reflex is more than 180 degrees.",
+   "The angle is more than 90 degrees but less than 180 degrees.",
+   "That's an obtuse angle."
+  ],
+  "steps": [
+   "Acute means the angle is more than 0 degrees and less than 90 degrees. Right means the angle is 90 degrees. Obtuse means the angle is more than 90 degrees and less than 180 degrees.",
+   "The answer is an obtuse angle."
+  ]
+ },
+ "Q_CH18_002": {
+  "q": "An angle measuring 250 degrees is a:",
+  "options": [
+   "reflex angle",
+   "straight angle",
+   "obtuse angle",
+   "complete angle"
+  ],
+  "hints": [
+   "250 degrees is more than 180 degrees but less than 360 degrees.",
+   "Reflex angles are between 180 degrees and 360 degrees.",
+   "So 250 degrees is a reflex angle."
+  ],
+  "steps": [
+   "180 degrees is less than 250 degrees, which is less than 360 degrees.",
+   "This falls in the reflex angle range."
+  ]
+ },
+ "Q_CH18_003": {
+  "q": "Which instrument is used to measure an angle?",
+  "options": [
+   "protractor",
+   "compass",
+   "a pair of dividers",
+   "set square"
+  ],
+  "hints": [
+   "A protractor has degree markings from 0 degrees to 180 degrees arranged in a semicircle.",
+   "Dividers measure distance. Set squares draw specific angles, 45 degrees or 60 degrees. A compass draws circles.",
+   "A protractor measures any angle."
+  ],
+  "steps": [
+   "A protractor is the standard tool for measuring angles.",
+   "The answer is a protractor."
+  ]
+ },
+ "Q_CH18_004": {
+  "q": "What is the complementary angle of 67 and a half degrees?",
+  "options": [
+   "113 and a half degrees",
+   "32 and a half degrees",
+   "22 and a half degrees",
+   "23 and a half degrees"
+  ],
+  "hints": [
+   "Complementary angles add up to 90 degrees.",
+   "The complement is 90 degrees minus 67 and a half degrees.",
+   "90 degrees minus 67.5 degrees equals 22.5 degrees, which is 22 and a half degrees."
+  ],
+  "steps": [
+   "Complementary angles sum to 90 degrees.",
+   "The complement is 90 degrees minus 67 and a half degrees, which is 22 and a half degrees.",
+   "The answer is 22 and a half degrees."
+  ]
+ },
+ "Q_CH18_005": {
+  "q": "What is the supplementary angle of 55 degrees?",
+  "options": [
+   "135 degrees",
+   "35 degrees",
+   "125 degrees",
+   "305 degrees"
+  ],
+  "hints": [
+   "Supplementary angles add up to 180 degrees.",
+   "The supplement is 180 degrees minus 55 degrees.",
+   "That equals 125 degrees."
+  ],
+  "steps": [
+   "Supplementary angles sum to 180 degrees.",
+   "The supplement is 180 degrees minus 55 degrees, which is 125 degrees.",
+   "The answer is 125 degrees."
+  ]
+ },
+ "Q_CH18_005_V08": {
+  "q": "What is the supplement of an angle of 10 degrees?",
+  "options": [
+   "160 degrees",
+   "170 degrees",
+   "190 degrees",
+   "180 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 10 degrees away from 180 degrees.",
+   "Similar example: the supplement of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 10 degrees equals 170 degrees.",
+   "Check by adding: 10 degrees plus 170 degrees equals 180 degrees. The supplement of 10 degrees is 170 degrees."
+  ]
+ },
+ "Q_CH18_006": {
+  "q": "If x plus 35 degrees equals 90 degrees, what is the supplement of x?",
+  "options": [
+   "145 degrees",
+   "125 degrees",
+   "55 degrees",
+   "90 degrees"
+  ],
+  "hints": [
+   "First find x from the equation x plus 35 degrees equals 90 degrees.",
+   "x equals 90 degrees minus 35 degrees, which is 55 degrees. Now find the supplement of 55 degrees.",
+   "The supplement is 180 degrees minus 55 degrees, which is 125 degrees."
+  ],
+  "steps": [
+   "Find x. x equals 90 degrees minus 35 degrees, which is 55 degrees.",
+   "The supplement of x is 180 degrees minus 55 degrees, which is 125 degrees.",
+   "The answer is 125 degrees."
+  ]
+ },
+ "Q_CH18_007": {
+  "q": "The supplement of an angle is 125 degrees. What is its complement?",
+  "options": [
+   "The angle has no complement",
+   "35 degrees",
+   "55 degrees",
+   "65 degrees"
+  ],
+  "hints": [
+   "First find the angle. The angle is 180 degrees minus 125 degrees, which is 55 degrees.",
+   "Now find its complement: 90 degrees minus 55 degrees equals 35 degrees.",
+   "The complement is 35 degrees."
+  ],
+  "steps": [
+   "Find the angle: 180 degrees minus 125 degrees equals 55 degrees.",
+   "Find the complement: 90 degrees minus 55 degrees equals 35 degrees.",
+   "The complement is 35 degrees."
+  ]
+ },
+ "Q_CH18_008": {
+  "q": "When two lines cross, how many pairs of vertically opposite angles are formed?",
+  "options": [
+   "3",
+   "2",
+   "4",
+   "1"
+  ],
+  "hints": [
+   "When two lines cross, they form 4 angles. How do these angles pair up?",
+   "Opposite angles are equal. There are 2 pairs: one pair of equal angles, and another pair of equal angles.",
+   "So there are 2 pairs of vertically opposite angles."
+  ],
+  "steps": [
+   "Two intersecting lines create 4 angles.",
+   "Angles across from each other are equal: 2 pairs.",
+   "The answer is 2 pairs."
+  ]
+ },
+ "Q_CH18_009": {
+  "q": "Two lines intersect. One of the angles is 70 degrees. What is the angle opposite to it?",
+  "options": [
+   "20 degrees",
+   "290 degrees",
+   "110 degrees",
+   "70 degrees"
+  ],
+  "hints": [
+   "Vertically opposite angles are always...",
+   "Equal! The angle opposite to 70 degrees is also 70 degrees.",
+   "That's the key property: vertically opposite angles are equal."
+  ],
+  "steps": [
+   "Vertically opposite angles are equal.",
+   "The angle opposite to 70 degrees is 70 degrees."
+  ]
+ },
+ "Q_CH18_009_V04": {
+  "q": "What is the supplement of an angle of 85 degrees?",
+  "options": [
+   "105 degrees",
+   "265 degrees",
+   "95 degrees",
+   "85 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 85 degrees away from 180 degrees.",
+   "Similar example: the supplement of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 85 degrees equals 95 degrees.",
+   "Check by adding: 85 degrees plus 95 degrees equals 180 degrees. The supplement of 85 degrees is 95 degrees."
+  ]
+ },
+ "Q_CH18_010": {
+  "q": "Two adjacent angles form a linear pair. If one angle is 65 degrees, what is the other?",
+  "options": [
+   "25 degrees",
+   "65 degrees",
+   "115 degrees",
+   "295 degrees"
+  ],
+  "hints": [
+   "A linear pair of angles adds up to 180 degrees. They form a straight line together.",
+   "The other angle is 180 degrees minus 65 degrees.",
+   "That equals 115 degrees."
+  ],
+  "steps": [
+   "In a linear pair, the sum is 180 degrees. 65 degrees plus what equals 180 degrees?",
+   "The other angle is 180 degrees minus 65 degrees, which is 115 degrees."
+  ]
+ },
+ "Q_CH18_011": {
+  "q": "What is the angle between the hour hand and the minute hand at 3 o'clock?",
+  "options": [
+   "30 degrees",
+   "90 degrees",
+   "120 degrees",
+   "60 degrees"
+  ],
+  "hints": [
+   "At 3 o'clock, the minute hand is at 12 and the hour hand is at 3.",
+   "The clock face is a circle, 360 degrees, divided into 12 hours. Each hour is 360 degrees divided by 12, which is 30 degrees.",
+   "From 12 to 3 is 3 spaces, times 30 degrees, which is 90 degrees."
+  ],
+  "steps": [
+   "Each hour mark is 360 degrees divided by 12, which is 30 degrees.",
+   "At 3 o'clock, 3 spaces times 30 degrees equals 90 degrees.",
+   "The angle is 90 degrees, a right angle!"
+  ]
+ },
+ "Q_CH18_012": {
+  "q": "Find the angle between the hour hand and the minute hand at 9 30.",
+  "options": [
+   "90 degrees",
+   "105 degrees",
+   "120 degrees",
+   "none of these"
+  ],
+  "hints": [
+   "At 9 30, the minute hand is at 6, pointing down. Where is the hour hand?",
+   "At 9 30, the hour hand is between 9 and 10. It's halfway, so at the 9 and a half position.",
+   "From 6 to 9 and a half is 3.5 spaces, times 30 degrees, which is 105 degrees."
+  ],
+  "steps": [
+   "The minute hand is at 6. 30 minutes is the 6 o'clock position.",
+   "The hour hand at 9 30 is halfway between 9 and 10, which is the 9.5 position.",
+   "The gap is 9.5 minus 6, which is 3.5 spaces. The angle is 3.5 times 30 degrees, which is 105 degrees.",
+   "The angle is 105 degrees."
+  ]
+ },
+ "Q_CH18_012_V08": {
+  "q": "What is the supplement of an angle of 165 degrees?",
+  "options": [
+   "5 degrees",
+   "345 degrees",
+   "25 degrees",
+   "15 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 165 degrees away from 180 degrees.",
+   "Similar example: the supplement of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 165 degrees equals 15 degrees.",
+   "Check by adding: 165 degrees plus 15 degrees equals 180 degrees. The supplement of 165 degrees is 15 degrees."
+  ]
+ },
+ "Q_CH18_013": {
+  "q": "At which of these times will the angle between the clock hands be obtuse?",
+  "options": [
+   "3 30",
+   "4:00",
+   "10:00",
+   "6:00"
+  ],
+  "hints": [
+   "Obtuse means between 90 degrees and 180 degrees. Calculate the angle at each time.",
+   "At 10:00, 2 spaces make 60 degrees, which is acute. At 4:00, 4 spaces make 120 degrees, which is obtuse! At 3 30, it is about 75 degrees, which is acute. At 6:00, 6 spaces make 180 degrees, which is straight.",
+   "4:00 gives 120 degrees, which is obtuse."
+  ],
+  "steps": [
+   "At 10:00, from 12 to 10 is 2 spaces, which is 60 degrees. That is acute.",
+   "At 4:00, 4 spaces make 120 degrees. That is obtuse!",
+   "At 3 30, it is about 75 degrees, which is acute. At 6:00, it is 180 degrees, which is straight, not obtuse."
+  ]
+ },
+ "Q_CH18_014": {
+  "q": "When will the hour hand and the minute hand form a straight angle, 180 degrees?",
+  "options": [
+   "3 45",
+   "6:00",
+   "9 15",
+   "all of these"
+  ],
+  "hints": [
+   "A straight angle means the hands point in exactly opposite directions.",
+   "At 6:00, the minute hand is at 12 and the hour hand is at 6. They are directly opposite, which is 180 degrees.",
+   "At 3 45, the angle is about 157.5 degrees, not exactly 180 degrees. At 9 15, it's about 172.5 degrees."
+  ],
+  "steps": [
+   "At 6:00, the minute hand is at 12 and the hour hand is at 6. That is 6 spaces, which is 180 degrees.",
+   "At 3 45, the hands are close to opposite, but not exactly 180 degrees.",
+   "Only 6:00 gives exactly 180 degrees."
+  ]
+ },
+ "Q_CH18_015": {
+  "q": "At which of these times is the angle between the clock hands the greatest?",
+  "options": [
+   "4 30",
+   "6 15",
+   "9:00",
+   "12 15"
+  ],
+  "hints": [
+   "Work out the angle between the hands for each time, then compare. Remember that the hour hand keeps moving slowly as the minutes pass.",
+   "The clock face has 12 gaps of 30 degrees each. For each time, find where the minute hand points, find where the hour hand is, and count the gaps between them. Start with 9:00.",
+   "Similar example: at 3 30 the minute hand is on the 6. The hour hand is halfway between 3 and 4. From there to the 6 is 2 and a half gaps, and 2.5 times 30 degrees equals 75 degrees."
+  ],
+  "steps": [
+   "The clock has 12 gaps between the numbers, and each gap is 30 degrees. 360 divided by 12 equals 30.",
+   "At 9:00 the hands are on 9 and 12, which is 3 gaps. 3 times 30 equals 90 degrees.",
+   "At 4 30 the minute hand is on 6 and the hour hand is halfway between 4 and 5. That is 1 and a half gaps. 1.5 times 30 equals 45 degrees.",
+   "At 12 15 the minute hand is on 3. The hour hand has moved a quarter of a gap past 12, so there are 2 and three-quarter gaps between them. 2.75 times 30 equals 82.5 degrees.",
+   "At 6 15 the minute hand is on 3. The hour hand is a quarter of a gap past 6, so there are 3 and a quarter gaps between them. 3.25 times 30 equals 97.5 degrees.",
+   "Compare 45 degrees, 97.5 degrees, 90 degrees and 82.5 degrees. The greatest angle is 97.5 degrees, at 6 15."
+  ]
+ },
+ "Q_CH18_016": {
+  "q": "At 1 o'clock, the angle between clock hands is 30 degrees. At what time will the angle be complementary to this?",
+  "options": [
+   "7 o'clock",
+   "6 o'clock",
+   "5 o'clock",
+   "2 o'clock"
+  ],
+  "hints": [
+   "Complementary to 30 degrees means the angle should be 90 degrees minus 30 degrees, which is 60 degrees.",
+   "60 degrees is 2 spaces on the clock. Which time gives exactly 2 spaces?",
+   "At 2 o'clock, the hands are 2 spaces apart, which is 60 degrees."
+  ],
+  "steps": [
+   "The complement of 30 degrees is 90 degrees minus 30 degrees, which is 60 degrees.",
+   "60 degrees is 2 spaces on the clock, which is 2 o'clock.",
+   "At 2 o'clock, the angle is 60 degrees."
+  ]
+ },
+ "Q_CH18_016_V01": {
+  "q": "What is the complement of an angle of 27 degrees?",
+  "options": [
+   "73 degrees",
+   "63 degrees",
+   "53 degrees",
+   "297 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 27 degrees away from 90 degrees.",
+   "Similar example: the complement of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 27 degrees equals 63 degrees.",
+   "Check by adding: 27 degrees plus 63 degrees equals 90 degrees. The complement of 27 degrees is 63 degrees."
+  ]
+ },
+ "Q_CH18_016_V07": {
+  "q": "What is the complement of an angle of 85 degrees?",
+  "options": [
+   "15 degrees",
+   "95 degrees",
+   "355 degrees",
+   "5 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 85 degrees away from 90 degrees.",
+   "Similar example: the complement of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 85 degrees equals 5 degrees.",
+   "Check by adding: 85 degrees plus 5 degrees equals 90 degrees. The complement of 85 degrees is 5 degrees."
+  ]
+ },
+ "Q_CH18_017": {
+  "q": "What is the angle between North-East and South directions?",
+  "options": [
+   "90 degrees",
+   "120 degrees",
+   "135 degrees",
+   "45 degrees"
+  ],
+  "hints": [
+   "Draw a compass: North is up, East is right, South is down, West is left. North-East is between North and East.",
+   "North to East is 90 degrees. North to North-East is 45 degrees, halfway. So North-East is at 45 degrees from North.",
+   "North-East to South: from 45 degrees to 180 degrees is 135 degrees."
+  ],
+  "steps": [
+   "North-East is at 45 degrees from North, clockwise.",
+   "South is at 180 degrees from North.",
+   "The angle from North-East to South is 180 degrees minus 45 degrees, which is 135 degrees."
+  ]
+ },
+ "Q_CH18_018": {
+  "q": "How many degrees does the hour hand move in one hour?",
+  "options": [
+   "360 degrees",
+   "6 degrees",
+   "30 degrees",
+   "60 degrees"
+  ],
+  "hints": [
+   "The hour hand goes around the whole clock, 360 degrees, in 12 hours.",
+   "Per hour, that is 360 degrees divided by 12.",
+   "That equals 30 degrees per hour."
+  ],
+  "steps": [
+   "A full rotation is 360 degrees. The time for a full rotation is 12 hours. 360 degrees divided by 12 equals 30 degrees.",
+   "The hour hand moves 30 degrees per hour."
+  ]
+ },
+ "Q_CH18_018_V04": {
+  "q": "What is the complement of an angle of 8 degrees?",
+  "options": [
+   "82 degrees",
+   "72 degrees",
+   "278 degrees",
+   "92 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 8 degrees away from 90 degrees.",
+   "Similar example: the complement of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 8 degrees equals 82 degrees.",
+   "Check by adding: 8 degrees plus 82 degrees equals 90 degrees. The complement of 8 degrees is 82 degrees."
+  ]
+ },
+ "Q_CH18_019": {
+  "q": "How many degrees does the minute hand move in 1 minute?",
+  "options": [
+   "12 degrees",
+   "1 degree",
+   "30 degrees",
+   "6 degrees"
+  ],
+  "hints": [
+   "The minute hand goes around the whole clock, 360 degrees, in 60 minutes.",
+   "Per minute, that is 360 degrees divided by 60.",
+   "That equals 6 degrees per minute."
+  ],
+  "steps": [
+   "A full rotation is 360 degrees. The time is 60 minutes. 360 degrees divided by 60 equals 6 degrees.",
+   "The minute hand moves 6 degrees per minute."
+  ]
+ },
+ "Q_CH18_020": {
+  "q": "Two complementary angles are in the ratio 2 is to 3. Find the smaller angle.",
+  "options": [
+   "36 degrees",
+   "54 degrees",
+   "72 degrees",
+   "30 degrees"
+  ],
+  "hints": [
+   "Complementary means the sum is 90 degrees. The ratio is 2 is to 3, so the total parts are 2 plus 3, which is 5.",
+   "Each part is 90 degrees divided by 5, which is 18 degrees.",
+   "The smaller angle is 2 times 18 degrees, which is 36 degrees."
+  ],
+  "steps": [
+   "The total is 90 degrees, because they are complementary. The parts are 2 plus 3, which is 5. 90 degrees divided by 5 equals 18 degrees per part.",
+   "The smaller is 2 times 18 degrees, which is 36 degrees. The larger is 3 times 18 degrees, which is 54 degrees.",
+   "Verify: 36 degrees plus 54 degrees equals 90 degrees."
+  ]
+ },
+ "Q_CH18_020_V07": {
+  "q": "What is the supplement of an angle of 118 degrees?",
+  "options": [
+   "62 degrees",
+   "72 degrees",
+   "52 degrees",
+   "298 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 118 degrees away from 180 degrees.",
+   "Similar example: the supplement of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 118 degrees equals 62 degrees.",
+   "Check by adding: 118 degrees plus 62 degrees equals 180 degrees. The supplement of 118 degrees is 62 degrees."
+  ]
+ },
+ "Q_CH18_021": {
+  "q": "Two supplementary angles differ by 40 degrees. Find the larger angle.",
+  "options": [
+   "100 degrees",
+   "110 degrees",
+   "120 degrees",
+   "80 degrees"
+  ],
+  "hints": [
+   "Let the angles be x, and x plus 40 degrees. They're supplementary, so x, plus x plus 40 degrees, equals 180 degrees.",
+   "2 x plus 40 degrees equals 180 degrees. 2 x equals 140 degrees. x equals 70 degrees.",
+   "The larger is 70 degrees plus 40 degrees, which is 110 degrees."
+  ],
+  "steps": [
+   "Let the smaller be x, and the larger be x plus 40 degrees. So x, plus x plus 40 degrees, equals 180 degrees.",
+   "2 x equals 140 degrees, so x equals 70 degrees.",
+   "The larger is 70 degrees plus 40 degrees, which is 110 degrees."
+  ]
+ },
+ "Q_CH18_022": {
+  "q": "Three angles meeting at a point are 110 degrees, 85 degrees, and x degrees. Find x.",
+  "options": [
+   "75 degrees",
+   "155 degrees",
+   "175 degrees",
+   "165 degrees"
+  ],
+  "hints": [
+   "Angles around a point add up to 360 degrees.",
+   "110 degrees plus 85 degrees plus x degrees equals 360 degrees. So x equals 360 degrees minus 110 degrees minus 85 degrees.",
+   "x equals 360 degrees minus 195 degrees, which is 165 degrees."
+  ],
+  "steps": [
+   "Angles around a point add up to 360 degrees. 110 degrees plus 85 degrees plus x degrees equals 360 degrees.",
+   "x equals 360 degrees minus 195 degrees, which is 165 degrees.",
+   "x equals 165 degrees."
+  ]
+ },
+ "Q_CH18_022_V05": {
+  "q": "What is the complement of an angle of 55 degrees?",
+  "options": [
+   "35 degrees",
+   "45 degrees",
+   "25 degrees",
+   "325 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 55 degrees away from 90 degrees.",
+   "Similar example: the complement of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 55 degrees equals 35 degrees.",
+   "Check by adding: 55 degrees plus 35 degrees equals 90 degrees. The complement of 55 degrees is 35 degrees."
+  ]
+ },
+ "Q_CH18_023": {
+  "q": "Angles on a straight line are x degrees, 2 x degrees, and 3 x degrees. Find x.",
+  "options": [
+   "30 degrees",
+   "45 degrees",
+   "20 degrees",
+   "60 degrees"
+  ],
+  "hints": [
+   "Angles on a straight line add up to 180 degrees.",
+   "x plus 2 x plus 3 x equals 180 degrees. So 6 x equals 180 degrees.",
+   "x equals 30 degrees."
+  ],
+  "steps": [
+   "The sum is 180 degrees, a straight line. x plus 2 x plus 3 x equals 180 degrees.",
+   "6 x equals 180 degrees.",
+   "x equals 30 degrees."
+  ]
+ },
+ "Q_CH18_024": {
+  "q": "What is the angle between the clock hands at 4 30?",
+  "options": [
+   "30 degrees",
+   "45 degrees",
+   "60 degrees",
+   "75 degrees"
+  ],
+  "hints": [
+   "At 4 30, the minute hand is at 6, pointing down. The hour hand is between 4 and 5. Halfway is 4.5.",
+   "From 4.5 to 6 is 1.5 spaces.",
+   "1.5 times 30 degrees equals 45 degrees."
+  ],
+  "steps": [
+   "The minute hand is at 6. The hour hand is at 4.5, halfway between 4 and 5. The gap is 6 minus 4.5, which is 1.5 spaces.",
+   "The angle is 1.5 times 30 degrees, which is 45 degrees.",
+   "The angle at 4 30 is 45 degrees."
+  ]
+ },
+ "Q_CH18_025": {
+  "q": "A person facing North turns clockwise through 225 degrees. Which direction is he now facing?",
+  "options": [
+   "West",
+   "South-East",
+   "South-West",
+   "North-West"
+  ],
+  "hints": [
+   "Start at North, 0 degrees, and turn 225 degrees clockwise. North is 0 degrees, East is 90 degrees, South is 180 degrees, West is 270 degrees.",
+   "225 degrees is between South, at 180 degrees, and West, at 270 degrees. It's 45 degrees past South.",
+   "45 degrees past South, towards West, is South-West."
+  ],
+  "steps": [
+   "On the compass, North is 0 degrees, East is 90 degrees, South is 180 degrees, West is 270 degrees. 225 degrees is between South and West.",
+   "225 degrees is 180 degrees plus 45 degrees. That is South, plus 45 degrees towards West.",
+   "The direction is South-West."
+  ]
+ },
+ "Q_CH19_003_V08": {
+  "q": "What is the complement of an angle of 43 degrees?",
+  "options": [
+   "37 degrees",
+   "47 degrees",
+   "57 degrees",
+   "313 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 43 degrees away from 90 degrees.",
+   "Similar example: the complement of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 43 degrees equals 47 degrees.",
+   "Check by adding: 43 degrees plus 47 degrees equals 90 degrees. The complement of 43 degrees is 47 degrees."
+  ]
+ },
+ "Q_CH19_008_V04": {
+  "q": "What is the complement of an angle of 6 degrees?",
+  "options": [
+   "74 degrees",
+   "94 degrees",
+   "276 degrees",
+   "84 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 6 degrees away from 90 degrees.",
+   "Similar example: the complement of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 6 degrees equals 84 degrees.",
+   "Check by adding: 6 degrees plus 84 degrees equals 90 degrees. The complement of 6 degrees is 84 degrees."
+  ]
+ },
+ "Q_CH19_011_V03": {
+  "q": "What is the complement of an angle of 84 degrees?",
+  "options": [
+   "354 degrees",
+   "16 degrees",
+   "minus 4 degrees",
+   "6 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 84 degrees away from 90 degrees.",
+   "Similar example: the complement of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 84 degrees equals 6 degrees.",
+   "Check by adding: 84 degrees plus 6 degrees equals 90 degrees. The complement of 84 degrees is 6 degrees."
+  ]
+ },
+ "Q_CH19_012_V04": {
+  "q": "What is the supplement of an angle of 12 degrees?",
+  "options": [
+   "192 degrees",
+   "168 degrees",
+   "158 degrees",
+   "178 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 12 degrees away from 180 degrees.",
+   "Similar example: the supplement of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 12 degrees equals 168 degrees.",
+   "Check by adding: 12 degrees plus 168 degrees equals 180 degrees. The supplement of 12 degrees is 168 degrees."
+  ]
+ },
+ "Q_CH19_013_V06": {
+  "q": "What is the supplement of an angle of 169 degrees?",
+  "options": [
+   "349 degrees",
+   "21 degrees",
+   "1 degree",
+   "11 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 169 degrees away from 180 degrees.",
+   "Similar example: the supplement of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 169 degrees equals 11 degrees.",
+   "Check by adding: 169 degrees plus 11 degrees equals 180 degrees. The supplement of 169 degrees is 11 degrees."
+  ]
+ },
+ "Q_CH19_014_V01": {
+  "q": "What is the supplement of an angle of 72 degrees?",
+  "options": [
+   "98 degrees",
+   "118 degrees",
+   "252 degrees",
+   "108 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 72 degrees away from 180 degrees.",
+   "Similar example: the supplement of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 72 degrees equals 108 degrees.",
+   "Check by adding: 72 degrees plus 108 degrees equals 180 degrees. The supplement of 72 degrees is 108 degrees."
+  ]
+ },
+ "Q_CH20_001_V02": {
+  "q": "What is the complement of an angle of 18 degrees?",
+  "options": [
+   "288 degrees",
+   "82 degrees",
+   "62 degrees",
+   "72 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 18 degrees away from 90 degrees.",
+   "Similar example: the complement of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 18 degrees equals 72 degrees.",
+   "Check by adding: 18 degrees plus 72 degrees equals 90 degrees. The complement of 18 degrees is 72 degrees."
+  ]
+ },
+ "Q_CH20_001_V08": {
+  "q": "What is the supplement of an angle of 98 degrees?",
+  "options": [
+   "278 degrees",
+   "92 degrees",
+   "82 degrees",
+   "72 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 98 degrees away from 180 degrees.",
+   "Similar example: the supplement of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 98 degrees equals 82 degrees.",
+   "Check by adding: 98 degrees plus 82 degrees equals 180 degrees. The supplement of 98 degrees is 82 degrees."
+  ]
+ },
+ "VAR_G4_vary_angles_V146": {
+  "q": "Find the supplementary angle of 151 degrees.",
+  "options": [
+   "61 degrees",
+   "19 degrees",
+   "151 degrees",
+   "29 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 151 degrees away from 180 degrees.",
+   "Similar example: the supplementary angle of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 151 degrees equals 29 degrees.",
+   "Check by adding: 151 degrees plus 29 degrees equals 180 degrees. The supplementary angle of 151 degrees is 29 degrees."
+  ]
+ },
+ "VAR_G4_vary_angles_V161": {
+  "q": "Find the complementary angle of 10 degrees.",
+  "options": [
+   "10 degrees",
+   "90 degrees",
+   "170 degrees",
+   "80 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 10 degrees away from 90 degrees.",
+   "Similar example: the complementary angle of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 10 degrees equals 80 degrees.",
+   "Check by adding: 10 degrees plus 80 degrees equals 90 degrees. The complementary angle of 10 degrees is 80 degrees."
+  ]
+ },
+ "VAR_G4_vary_angles_V164": {
+  "q": "Find the supplementary angle of 64 degrees.",
+  "options": [
+   "26 degrees",
+   "64 degrees",
+   "116 degrees",
+   "126 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 64 degrees away from 180 degrees.",
+   "Similar example: the supplementary angle of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 64 degrees equals 116 degrees.",
+   "Check by adding: 64 degrees plus 116 degrees equals 180 degrees. The supplementary angle of 64 degrees is 116 degrees."
+  ]
+ },
+ "VAR_G4_vary_angles_V179": {
+  "q": "Find the supplementary angle of 111 degrees.",
+  "options": [
+   "21 degrees",
+   "69 degrees",
+   "111 degrees",
+   "59 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 111 degrees away from 180 degrees.",
+   "Similar example: the supplementary angle of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 111 degrees equals 69 degrees.",
+   "Check by adding: 111 degrees plus 69 degrees equals 180 degrees. The supplementary angle of 111 degrees is 69 degrees."
+  ]
+ },
+ "VAR_G4_vary_angles_V36": {
+  "q": "Find the supplementary angle of 129 degrees.",
+  "options": [
+   "61 degrees",
+   "41 degrees",
+   "129 degrees",
+   "51 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 129 degrees away from 180 degrees.",
+   "Similar example: the supplementary angle of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 129 degrees equals 51 degrees.",
+   "Check by adding: 129 degrees plus 51 degrees equals 180 degrees. The supplementary angle of 129 degrees is 51 degrees."
+  ]
+ },
+ "VAR_G4_vary_angles_V40": {
+  "q": "Find the complementary angle of 56 degrees.",
+  "options": [
+   "24 degrees",
+   "34 degrees",
+   "124 degrees",
+   "56 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 56 degrees away from 90 degrees.",
+   "Similar example: the complementary angle of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 56 degrees equals 34 degrees.",
+   "Check by adding: 56 degrees plus 34 degrees equals 90 degrees. The complementary angle of 56 degrees is 34 degrees."
+  ]
+ },
+ "VAR_G4_vary_angles_V49": {
+  "q": "Find the supplementary angle of 50 degrees.",
+  "options": [
+   "130 degrees",
+   "50 degrees",
+   "40 degrees",
+   "140 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 50 degrees away from 180 degrees.",
+   "Similar example: the supplementary angle of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 50 degrees equals 130 degrees.",
+   "Check by adding: 50 degrees plus 130 degrees equals 180 degrees. The supplementary angle of 50 degrees is 130 degrees."
+  ]
+ },
+ "VAR_G4_vary_angles_V56": {
+  "q": "Find the supplementary angle of 22 degrees.",
+  "options": [
+   "168 degrees",
+   "148 degrees",
+   "68 degrees",
+   "158 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 22 degrees away from 180 degrees.",
+   "Similar example: the supplementary angle of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 22 degrees equals 158 degrees.",
+   "Check by adding: 22 degrees plus 158 degrees equals 180 degrees. The supplementary angle of 22 degrees is 158 degrees."
+  ]
+ },
+ "VAR_G4_vary_angles_V69": {
+  "q": "Find the complementary angle of 28 degrees.",
+  "options": [
+   "62 degrees",
+   "72 degrees",
+   "52 degrees",
+   "152 degrees"
+  ],
+  "hints": [
+   "This is about complementary angles. Two angles are complementary when together they make a right angle.",
+   "Complementary angles add up to 90 degrees. So take 28 degrees away from 90 degrees.",
+   "Similar example: the complementary angle of 20 degrees is 90 degrees minus 20 degrees, which is 70 degrees. Check: 20 degrees plus 70 degrees equals 90 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees.",
+   "Take the given angle away from 90 degrees. 90 degrees minus 28 degrees equals 62 degrees.",
+   "Check by adding: 28 degrees plus 62 degrees equals 90 degrees. The complementary angle of 28 degrees is 62 degrees."
+  ]
+ },
+ "VAR_G4_vary_angles_V87": {
+  "q": "Find the supplementary angle of 42 degrees.",
+  "options": [
+   "138 degrees",
+   "48 degrees",
+   "42 degrees",
+   "148 degrees"
+  ],
+  "hints": [
+   "This is about supplementary angles. Two angles are supplementary when together they make a straight line.",
+   "Supplementary angles add up to 180 degrees. So take 42 degrees away from 180 degrees.",
+   "Similar example: the supplementary angle of 70 degrees is 180 degrees minus 70 degrees, which is 110 degrees. Check: 70 degrees plus 110 degrees equals 180 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees.",
+   "Take the given angle away from 180 degrees. 180 degrees minus 42 degrees equals 138 degrees.",
+   "Check by adding: 42 degrees plus 138 degrees equals 180 degrees. The supplementary angle of 42 degrees is 138 degrees."
+  ]
+ }
+}

@@ -1,0 +1,1344 @@
+{
+ "BOOST_EXT_G4_FP_2016_010_05": {
+  "q": "The ages of Kavya and Karan are in the ratio 3 is to 5. If Karan is 15 years old, how old is Kavya?",
+  "options": [
+   "12",
+   "9",
+   "15",
+   "24"
+  ],
+  "hints": [
+   "If the ratio is 3 is to 5 and Karan is 15, find one 'part'.",
+   "One part is 15 divided by 5.",
+   "Then Kavya's age is 3 times one part."
+  ],
+  "steps": [
+   "The ratio is 3 is to 5, and Karan is 15.",
+   "One part is 15 divided by 5, which is 3.",
+   "Kavya's age is 3 times 3, which is 9."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2017_018_05": {
+  "q": "The ages of Sahil and Neha are in the ratio 5 is to 6. If Neha is 12 years old, how old is Sahil?",
+  "options": [
+   "12",
+   "22",
+   "7",
+   "10"
+  ],
+  "hints": [
+   "If the ratio is 5 is to 6 and Neha is 12, find one 'part'.",
+   "One part is 12 divided by 6.",
+   "Then Sahil's age is 5 times one part."
+  ],
+  "steps": [
+   "The ratio is 5 is to 6, and Neha is 12.",
+   "One part is 12 divided by 6, which is 2.",
+   "Sahil's age is 5 times 2, which is 10."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2019_005_05": {
+  "q": "The ages of Karan and Ananya are in the ratio 4 is to 5. If Ananya is 25 years old, how old is Karan?",
+  "options": [
+   "25",
+   "45",
+   "20",
+   "21"
+  ],
+  "hints": [
+   "If the ratio is 4 is to 5 and Ananya is 25, find one 'part'.",
+   "One part is 25 divided by 5.",
+   "Then Karan's age is 4 times one part."
+  ],
+  "steps": [
+   "The ratio is 4 is to 5, and Ananya is 25.",
+   "One part is 25 divided by 5, which is 5.",
+   "Karan's age is 4 times 5, which is 20."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2019_033_05": {
+  "q": "The ages of Meera and Vivek are in the ratio 2 is to 3. If Vivek is 6 years old, how old is Meera?",
+  "options": [
+   "5",
+   "10",
+   "6",
+   "4"
+  ],
+  "hints": [
+   "If the ratio is 2 is to 3 and Vivek is 6, find one 'part'.",
+   "One part is 6 divided by 3.",
+   "Then Meera's age is 2 times one part."
+  ],
+  "steps": [
+   "The ratio is 2 is to 3, and Vivek is 6.",
+   "One part is 6 divided by 3, which is 2.",
+   "Meera's age is 2 times 2, which is 4."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2022_001_06": {
+  "q": "Divide 104 in the ratio 3 is to 5. What is the smaller share?",
+  "options": [
+   "34",
+   "65",
+   "13",
+   "39"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 39."
+  ]
+ },
+ "BOOST_EXT_G4_WS2_CH17_003_06": {
+  "q": "If 4 is to 7, as 8 is to x, find x.",
+  "options": [
+   "14",
+   "15",
+   "4",
+   "28"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 14."
+  ]
+ },
+ "BOOST_EXT_G4_WS2_CH17_003_07": {
+  "q": "Vivek has 70 books and divides them in the ratio 3 is to 4. How many books are in the larger group?",
+  "options": [
+   "40",
+   "35",
+   "69",
+   "30"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 40."
+  ]
+ },
+ "BOOST_EXT_G4_WS2_CH17_003_08": {
+  "q": "If 3 is to 6, as 6 is to x, find x.",
+  "options": [
+   "13",
+   "18",
+   "3",
+   "12"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 12."
+  ]
+ },
+ "G4A_RATIO_001": {
+  "q": "A class has 12 boys and 18 girls. What is the ratio of boys to girls in its simplest form?",
+  "options": [
+   "2 is to 3",
+   "3 is to 2",
+   "2 is to 5",
+   "6 is to 9"
+  ],
+  "hints": [
+   "Write the two numbers in the order the question names them. Then divide both by the same number until nothing more divides both.",
+   "Boys come first, so start with 12 is to 18. Both numbers can be divided by 6.",
+   "Example: 15 boys and 20 girls give 15 is to 20. Dividing both by 5 gives 3 is to 4."
+  ],
+  "steps": [
+   "Boys to girls is 12 is to 18.",
+   "Both numbers can be divided by 6: 12 divided by 6 equals 2 and 18 divided by 6 equals 3.",
+   "So the ratio in its simplest form is 2 is to 3."
+  ]
+ },
+ "G4A_RATIO_002": {
+  "q": "What is the ratio 20 is to 35 in its simplest form?",
+  "options": [
+   "5 is to 7",
+   "4 is to 7",
+   "7 is to 4",
+   "4 is to 35"
+  ],
+  "hints": [
+   "To simplify a ratio, divide both numbers by the same number: the biggest one that divides both.",
+   "Both 20 and 35 are in the 5 times table. Divide each by 5.",
+   "Example: in 18 is to 30 both numbers can be divided by 6, giving 3 is to 5."
+  ],
+  "steps": [
+   "The biggest number that divides both 20 and 35 is 5.",
+   "20 divided by 5 equals 4 and 35 divided by 5 equals 7.",
+   "So 20 is to 35 in its simplest form is 4 is to 7."
+  ]
+ },
+ "G4A_RATIO_003": {
+  "q": "4 notebooks cost 60 rupees. How many rupees does 1 notebook cost?",
+  "options": [
+   "240",
+   "56",
+   "15",
+   "64"
+  ],
+  "hints": [
+   "When you know the cost of several equal things, divide to find the cost of one.",
+   "Share 60 rupees equally among the 4 notebooks.",
+   "Example: if 5 pens cost 40 rupees, one pen costs 40 divided by 5, which is 8 rupees."
+  ],
+  "steps": [
+   "All 4 notebooks cost the same, so divide the total by 4.",
+   "60 divided by 4 equals 15.",
+   "So 1 notebook costs 15 rupees."
+  ]
+ },
+ "G4A_RATIO_004": {
+  "q": "A bag holds 3 red balls and 5 blue balls. What is the ratio of red balls to all the balls in the bag?",
+  "options": [
+   "3 is to 5",
+   "5 is to 3",
+   "5 is to 8",
+   "3 is to 8"
+  ],
+  "hints": [
+   "Read carefully what is being compared. Here one colour is compared with the whole bag, so you need the total.",
+   "First add to find all the balls in the bag.",
+   "Example: with 2 green and 7 yellow balls there are 9 balls in all, so green to all is 2 is to 9."
+  ],
+  "steps": [
+   "All the balls: 3 plus 5 equals 8.",
+   "Red balls come first, then all the balls.",
+   "So the ratio is 3 is to 8."
+  ]
+ },
+ "G4A_RATIO_005": {
+  "q": "Which of these ratios is equal to 2 is to 3?",
+  "options": [
+   "6 is to 9",
+   "4 is to 9",
+   "3 is to 2",
+   "5 is to 6"
+  ],
+  "hints": [
+   "Two ratios are equal when both numbers of one are multiplied, or divided, by the same number to get the other.",
+   "Multiply both 2 and 3 by 2, then by 3, and see which result is in the list.",
+   "Example: 1 is to 4 is equal to 3 is to 12, because 1 times 3 equals 3 and 4 times 3 equals 12."
+  ],
+  "steps": [
+   "Multiply both numbers of 2 is to 3 by 3.",
+   "2 times 3 equals 6 and 3 times 3 equals 9.",
+   "So 6 is to 9 is equal to 2 is to 3."
+  ]
+ },
+ "G4A_RATIO_006": {
+  "q": "To make lemonade, Sana mixes 1 cup of lemon juice with 4 cups of water. If she uses 3 cups of lemon juice, how many cups of water does she need?",
+  "options": [
+   "7",
+   "12",
+   "15",
+   "6"
+  ],
+  "hints": [
+   "The mix must stay the same, so whatever you multiply the juice by, multiply the water by the same number.",
+   "The juice has gone from 1 cup to 3 cups. That is 3 times as much.",
+   "Example: 1 cup of rice needs 2 cups of water, so 5 cups of rice need 5 times 2, which is 10 cups of water."
+  ],
+  "steps": [
+   "The juice is 3 times as much as before.",
+   "So the water must be 3 times as much too.",
+   "4 times 3 equals 12, so she needs 12 cups of water."
+  ]
+ },
+ "G4A_RATIO_007": {
+  "q": "A car travels 60 kilometres in 1 hour. At the same speed, how many kilometres does it travel in 3 hours?",
+  "options": [
+   "63",
+   "20",
+   "180",
+   "120"
+  ],
+  "hints": [
+   "At a steady speed, the car covers the same distance in every hour. More hours means more distance.",
+   "It covers 60 kilometres in each hour, and there are 3 hours. Multiply.",
+   "Example: a bus that travels 40 kilometres in 1 hour travels 40 times 4, which is 160 kilometres in 4 hours."
+  ],
+  "steps": [
+   "In 1 hour the car travels 60 kilometres.",
+   "In 3 hours it travels 3 times as far: 60 times 3 equals 180.",
+   "So it travels 180 kilometres."
+  ]
+ },
+ "G4A_RATIO_008": {
+  "q": "10 rupees buys 2 samosas. At the same price, how many samosas does 50 rupees buy?",
+  "options": [
+   "25",
+   "100",
+   "5",
+   "10"
+  ],
+  "hints": [
+   "Find how many times bigger the money is. The number of samosas grows by the same number of times.",
+   "How many tens are there in 50? Each ten buys 2 samosas.",
+   "Example: if 20 rupees buys 3 bananas, then 80 rupees is 4 times as much money and buys 3 times 4, which is 12 bananas."
+  ],
+  "steps": [
+   "50 divided by 10 equals 5, so 50 rupees is 5 times as much money as 10 rupees.",
+   "The samosas are 5 times as many: 2 times 5 equals 10.",
+   "So 50 rupees buys 10 samosas."
+  ]
+ },
+ "G4A_RATIO_009": {
+  "q": "Sweets are shared between two children in the ratio 3 is to 7. Into how many equal parts are the sweets divided altogether?",
+  "options": [
+   "10",
+   "4",
+   "21",
+   "7"
+  ],
+  "hints": [
+   "A ratio tells you how many equal parts each person gets. The total number of parts comes from putting them together.",
+   "One child gets 3 parts and the other gets 7 parts. Put them together.",
+   "Example: sharing in the ratio 4 is to 5 means 4 plus 5, which is 9 equal parts altogether."
+  ],
+  "steps": [
+   "The first child gets 3 parts and the second child gets 7 parts.",
+   "3 plus 7 equals 10.",
+   "So the sweets are divided into 10 equal parts altogether."
+  ]
+ },
+ "G4A_RATIO_010": {
+  "q": "A tailor needs 2 metres of cloth to make 1 shirt. How many shirts can he make from 14 metres of cloth?",
+  "options": [
+   "28",
+   "7",
+   "12",
+   "16"
+  ],
+  "hints": [
+   "Each shirt uses up the same amount of cloth. Find how many such amounts fit into the whole cloth.",
+   "How many 2s are there in 14? Divide.",
+   "Example: if 1 kurta needs 3 metres, then 15 metres make 15 divided by 3, which is 5 kurtas."
+  ],
+  "steps": [
+   "Each shirt needs 2 metres of cloth.",
+   "14 divided by 2 equals 7.",
+   "So he can make 7 shirts."
+  ]
+ },
+ "G4A_RATIO_011": {
+  "q": "What is the ratio of 50 paise to 2 rupees in its simplest form?",
+  "options": [
+   "25 is to 1",
+   "1 is to 2",
+   "1 is to 4",
+   "4 is to 1"
+  ],
+  "hints": [
+   "Before writing a ratio, both amounts must be in the same unit.",
+   "Change 2 rupees into paise. One rupee is 100 paise.",
+   "Example: 20 centimetres to 1 metre. Since 1 metre is 100 centimetres, the ratio is 20 is to 100, and dividing both by 20 gives 1 is to 5."
+  ],
+  "steps": [
+   "2 rupees is 200 paise.",
+   "The ratio is 50 is to 200.",
+   "Divide both by 50: 50 divided by 50 equals 1 and 200 divided by 50 equals 4.",
+   "So the ratio in its simplest form is 1 is to 4."
+  ]
+ },
+ "G4A_RATIO_012": {
+  "q": "A kabaddi club has 20 children. 8 of them are girls. What is the ratio of girls to boys in its simplest form?",
+  "options": [
+   "2 is to 5",
+   "3 is to 2",
+   "5 is to 2",
+   "2 is to 3"
+  ],
+  "hints": [
+   "Check which two groups are being compared. You may need to work out one of them first.",
+   "Find the number of boys: 20 minus 8.",
+   "Example: of 24 children, 6 are girls, so 18 are boys. Girls to boys is 6 is to 18, and dividing both by 6 gives 1 is to 3."
+  ],
+  "steps": [
+   "Boys: 20 minus 8 equals 12.",
+   "Girls to boys is 8 is to 12.",
+   "Divide both by 4: 8 divided by 4 equals 2 and 12 divided by 4 equals 3.",
+   "So the ratio in its simplest form is 2 is to 3."
+  ]
+ },
+ "G4A_RATIO_013": {
+  "q": "5 kilograms of rice costs 300 rupees. At the same price, how many rupees do 8 kilograms of rice cost?",
+  "options": [
+   "480",
+   "60",
+   "2400",
+   "340"
+  ],
+  "hints": [
+   "Find the cost of one unit first, then multiply by the number you need.",
+   "Find the cost of 1 kilogram: 300 divided by 5.",
+   "Example: if 4 kilograms of dal costs 200 rupees, then 1 kilogram costs 50 rupees, and 7 kilograms cost 50 times 7, which is 350 rupees."
+  ],
+  "steps": [
+   "1 kilogram costs 300 divided by 5, which is 60 rupees.",
+   "8 kilograms cost 8 times as much: 60 times 8 equals 480.",
+   "So 8 kilograms of rice cost 480 rupees."
+  ]
+ },
+ "G4A_RATIO_014": {
+  "q": "120 rupees is shared among Amit, Bina and Chetan in the ratio 1 is to 2 is to 3. How many rupees does Chetan get?",
+  "options": [
+   "40",
+   "60",
+   "20",
+   "360"
+  ],
+  "hints": [
+   "Add the numbers in the ratio to find the total number of equal parts. Then find the value of one part.",
+   "The parts are 1 plus 2 plus 3 in all. Divide 120 rupees by that total.",
+   "Example: 450 rupees shared in the ratio 1 is to 3 is to 5 has 9 parts of 50 rupees each, so the last person gets 5 times 50, which is 250 rupees."
+  ],
+  "steps": [
+   "Total parts: 1 plus 2 plus 3 equals 6.",
+   "One part is 120 divided by 6, which is 20 rupees.",
+   "Chetan gets 3 parts: 3 times 20 equals 60.",
+   "So Chetan gets 60 rupees."
+  ]
+ },
+ "G4A_RATIO_015": {
+  "q": "The ratio of pencils to pens in a box is 4 is to 3. There are 28 pencils. How many pencils and pens are there altogether?",
+  "options": [
+   "21",
+   "7",
+   "49",
+   "56"
+  ],
+  "hints": [
+   "Use the amount you know to find the size of one part. Then use the parts to find what is asked.",
+   "The pencils are 4 parts and there are 28 of them. Find one part: 28 divided by 4.",
+   "Example: books to copies are 5 is to 2 and there are 30 books. One part is 30 divided by 5, which is 6, and there are 7 parts in all, so there are 7 times 6, which is 42 things altogether."
+  ],
+  "steps": [
+   "One part is 28 divided by 4, which is 7.",
+   "Pens are 3 parts: 3 times 7 equals 21.",
+   "Altogether: 28 plus 21 equals 49.",
+   "So there are 49 pencils and pens altogether."
+  ]
+ },
+ "G4A_RATIO_016": {
+  "q": "A train covers 240 kilometres in 4 hours. At the same speed, how many hours does it take to cover 420 kilometres?",
+  "options": [
+   "8",
+   "60",
+   "6",
+   "7"
+  ],
+  "hints": [
+   "Find how far the train goes in one hour. Then see how many such hours are needed for the new distance.",
+   "Find the distance covered in 1 hour: 240 divided by 4.",
+   "Example: a bus covers 150 kilometres in 3 hours, so 50 kilometres each hour. For 450 kilometres it takes 450 divided by 50, which is 9 hours."
+  ],
+  "steps": [
+   "In 1 hour the train covers 240 divided by 4, which is 60 kilometres.",
+   "Time for 420 kilometres: 420 divided by 60 equals 7.",
+   "So the train takes 7 hours."
+  ]
+ },
+ "G4A_RATIO_017": {
+  "q": "A recipe for 6 people needs 300 grams of flour. How many grams of flour are needed for 4 people?",
+  "options": [
+   "200",
+   "50",
+   "450",
+   "1200"
+  ],
+  "hints": [
+   "Find the amount for one person first, then multiply by the number of people you are cooking for.",
+   "Flour for 1 person: 300 divided by 6.",
+   "Example: a recipe for 5 people uses 400 grams of rice, so 80 grams each. For 3 people it needs 80 times 3, which is 240 grams."
+  ],
+  "steps": [
+   "For 1 person: 300 divided by 6 equals 50 grams.",
+   "For 4 people: 50 times 4 equals 200.",
+   "So 200 grams of flour are needed."
+  ]
+ },
+ "G4A_RATIO_018": {
+  "q": "45 mangoes are shared between Kiran and Leela in the ratio 4 is to 5. How many more mangoes does Leela get than Kiran?",
+  "options": [
+   "9",
+   "5",
+   "20",
+   "25"
+  ],
+  "hints": [
+   "Find the size of one part. Then see how many more parts one person has than the other.",
+   "There are 4 plus 5 parts in all. Divide 45 by that.",
+   "Example: 40 sweets shared in the ratio 3 is to 5 make 8 parts of 5 sweets each. The second child has 2 parts more, which is 2 times 5, or 10 sweets more."
+  ],
+  "steps": [
+   "Total parts: 4 plus 5 equals 9.",
+   "One part is 45 divided by 9, which is 5 mangoes.",
+   "Leela has 5 parts and Kiran has 4 parts, so Leela has 1 part more.",
+   "So Leela gets 5 more mangoes."
+  ]
+ },
+ "G4A_RATIO_019": {
+  "q": "On a map, 2 centimetres stands for 10 kilometres. Two towns are 7 centimetres apart on the map. How many kilometres apart are they really?",
+  "options": [
+   "70",
+   "17",
+   "35",
+   "5"
+  ],
+  "hints": [
+   "Find what 1 centimetre on the map stands for. Then multiply by the number of centimetres.",
+   "If 2 centimetres stands for 10 kilometres, find what 1 centimetre stands for: 10 divided by 2.",
+   "Example: if 3 centimetres stands for 12 kilometres, then 1 centimetre stands for 4 kilometres, and 5 centimetres stands for 4 times 5, which is 20 kilometres."
+  ],
+  "steps": [
+   "1 centimetre stands for 10 divided by 2, which is 5 kilometres.",
+   "7 centimetres stands for 7 times 5, which is 35 kilometres.",
+   "So the towns are really 35 kilometres apart."
+  ]
+ },
+ "G4A_RATIO_020": {
+  "q": "What is the ratio 18 is to 24 is to 30 in its simplest form?",
+  "options": [
+   "9 is to 12 is to 15",
+   "6 is to 8 is to 10",
+   "3 is to 4 is to 6",
+   "3 is to 4 is to 5"
+  ],
+  "hints": [
+   "A ratio with three numbers is simplified the same way as one with two: divide all of them by the biggest number that divides every one.",
+   "18, 24 and 30 are all in the 6 times table. Divide each by 6.",
+   "Example: in 10 is to 20 is to 25 all three numbers can be divided by 5, giving 2 is to 4 is to 5."
+  ],
+  "steps": [
+   "The biggest number that divides 18, 24 and 30 is 6.",
+   "18 divided by 6 equals 3, 24 divided by 6 equals 4 and 30 divided by 6 equals 5.",
+   "So the simplest form is 3 is to 4 is to 5."
+  ]
+ },
+ "G4A_RATIO_021": {
+  "q": "Which of these ratios is not equal to 4 is to 6?",
+  "options": [
+   "6 is to 8",
+   "2 is to 3",
+   "8 is to 12",
+   "12 is to 18"
+  ],
+  "hints": [
+   "Simplify each ratio, or build each one from the given ratio by multiplying or dividing both numbers by the same number.",
+   "4 is to 6 in its simplest form is 2 is to 3. Now simplify each ratio in the list.",
+   "Example: is 9 is to 12 equal to 3 is to 5? Dividing 9 and 12 by 3 gives 3 is to 4, so they are not equal."
+  ],
+  "steps": [
+   "4 is to 6 simplifies to 2 is to 3.",
+   "8 is to 12 and 12 is to 18 both simplify to 2 is to 3 as well.",
+   "6 is to 8 simplifies to 3 is to 4, which is different.",
+   "So the ratio that is not equal to 4 is to 6 is 6 is to 8."
+  ]
+ },
+ "G4A_RATIO_022": {
+  "q": "A machine fills 45 bottles in 9 minutes. At the same rate, how many bottles does it fill in 1 hour?",
+  "options": [
+   "5",
+   "300",
+   "405",
+   "500"
+  ],
+  "hints": [
+   "Find how many bottles are filled in one minute. Watch the units: the question changes from minutes to an hour.",
+   "Bottles in 1 minute: 45 divided by 9. Then remember how many minutes make 1 hour.",
+   "Example: a tap fills 24 buckets in 8 minutes, so 3 each minute. In half an hour, which is 30 minutes, it fills 3 times 30, which is 90 buckets."
+  ],
+  "steps": [
+   "In 1 minute the machine fills 45 divided by 9, which is 5 bottles.",
+   "1 hour is 60 minutes.",
+   "5 times 60 equals 300.",
+   "So the machine fills 300 bottles in 1 hour."
+  ]
+ },
+ "G4A_RATIO_023": {
+  "q": "The ratio of Arun's stamps to Bela's stamps is 3 is to 5. Bela has 12 more stamps than Arun. How many stamps does Arun have?",
+  "options": [
+   "36",
+   "30",
+   "18",
+   "48"
+  ],
+  "hints": [
+   "The extra stamps match the extra parts in the ratio. Use that to find the size of one part.",
+   "Bela has 5 minus 3, which is 2 parts more than Arun, and those 2 parts are 12 stamps.",
+   "Example: the ratio is 2 is to 5 and the second person has 15 more. The 3 extra parts are 15, so one part is 5, and the first person has 2 times 5, which is 10."
+  ],
+  "steps": [
+   "Bela has 5 minus 3, which is 2 parts more than Arun.",
+   "Those 2 parts are 12 stamps, so one part is 12 divided by 2, which is 6 stamps.",
+   "Arun has 3 parts: 3 times 6 equals 18.",
+   "So Arun has 18 stamps."
+  ]
+ },
+ "G4A_RATIO_024": {
+  "q": "The length and breadth of a rectangular playground are in the ratio 5 is to 3. The length is 40 metres. What is the perimeter of the playground in metres?",
+  "options": [
+   "24",
+   "64",
+   "960",
+   "128"
+  ],
+  "hints": [
+   "Use the ratio to find the missing side first. Then go all the way round the rectangle.",
+   "The length is 5 parts and measures 40 metres. Find one part: 40 divided by 5.",
+   "Example: length to breadth is 4 is to 1 and the length is 20 metres. One part is 5 metres, so the breadth is 5 metres and the perimeter is 20 plus 5 plus 20 plus 5, which is 50 metres."
+  ],
+  "steps": [
+   "One part is 40 divided by 5, which is 8 metres.",
+   "The breadth is 3 parts: 3 times 8 equals 24 metres.",
+   "One length and one breadth: 40 plus 24 equals 64 metres.",
+   "The perimeter is twice that: 64 times 2 equals 128, so the perimeter is 128 metres."
+  ]
+ },
+ "G4A_RATIO_025": {
+  "q": "Asha's money and Bina's money are in the ratio 2 is to 3. Bina's money and Chitra's money are in the ratio 3 is to 4. Asha has 40 rupees. How many rupees does Chitra have?",
+  "options": [
+   "80",
+   "60",
+   "160",
+   "120"
+  ],
+  "hints": [
+   "Work along the chain one link at a time: use the first ratio to find the middle person, then the second ratio to find the last.",
+   "Asha's 2 parts are 40 rupees. Find one part, then Bina's 3 parts.",
+   "Example: Pia to Qadir is 1 is to 2 and Qadir to Rita is 2 is to 5. If Pia has 10 rupees, then Qadir has 20 rupees, one part of the second ratio is 10 rupees, and Rita has 5 times 10, which is 50 rupees."
+  ],
+  "steps": [
+   "Asha's 2 parts are 40 rupees, so one part is 40 divided by 2, which is 20 rupees.",
+   "Bina has 3 parts: 3 times 20 equals 60 rupees.",
+   "In the second ratio Bina's 3 parts are 60 rupees, so one part is 60 divided by 3, which is 20 rupees.",
+   "Chitra has 4 parts: 4 times 20 equals 80, so Chitra has 80 rupees."
+  ]
+ },
+ "G4A_RATIO_026": {
+  "q": "A bag has 20 marbles, red and green, in the ratio 2 is to 3. Then 4 more red marbles are put in. What is the new ratio of red marbles to green marbles?",
+  "options": [
+   "2 is to 1",
+   "1 is to 1",
+   "3 is to 2",
+   "3 is to 5"
+  ],
+  "hints": [
+   "A ratio gives parts, not actual numbers. Find the actual numbers first, make the change, then write the new ratio.",
+   "There are 2 plus 3, which is 5 parts in 20 marbles. Find one part, then the number of red and of green marbles.",
+   "Example: 15 sweets, orange to lemon 2 is to 3, so 6 orange and 9 lemon. Add 6 orange: now there are 12 orange and 9 lemon, which is 12 is to 9, or 4 is to 3."
+  ],
+  "steps": [
+   "Total parts: 2 plus 3 equals 5, so one part is 20 divided by 5, which is 4 marbles.",
+   "Red: 2 times 4 equals 8. Green: 3 times 4 equals 12.",
+   "After 4 more red marbles: 8 plus 4 equals 12 red, and still 12 green.",
+   "12 is to 12 simplifies, so the new ratio is 1 is to 1."
+  ]
+ },
+ "G4A_RATIO_027": {
+  "q": "3 pens cost the same as 5 pencils. One pencil costs 6 rupees. How many rupees do 4 pens cost?",
+  "options": [
+   "24",
+   "30",
+   "40",
+   "10"
+  ],
+  "hints": [
+   "Use the thing whose price you know to find the price of the other thing. Then find the cost of the number asked.",
+   "Find the cost of 5 pencils: 5 times 6. That is also the cost of 3 pens.",
+   "Example: 2 erasers cost the same as 6 sharpeners at 3 rupees each, which is 18 rupees. So one eraser costs 9 rupees, and 5 erasers cost 5 times 9, which is 45 rupees."
+  ],
+  "steps": [
+   "5 pencils cost 5 times 6, which is 30 rupees.",
+   "So 3 pens cost 30 rupees, and 1 pen costs 30 divided by 3, which is 10 rupees.",
+   "4 pens cost 4 times 10, which is 40.",
+   "So 4 pens cost 40 rupees."
+  ]
+ },
+ "G4A_RATIO_028": {
+  "q": "96 sweets are shared among three children in the ratio 1 is to 3 is to 4. What is the difference between the largest share and the smallest share?",
+  "options": [
+   "12",
+   "48",
+   "24",
+   "36"
+  ],
+  "hints": [
+   "Find the size of one part. Then compare the biggest share with the smallest by counting how many parts apart they are.",
+   "There are 1 plus 3 plus 4 parts in all. Divide 96 by that.",
+   "Example: 60 sweets in the ratio 1 is to 2 is to 3 make 6 parts of 10 sweets. The largest share is 2 parts more than the smallest, so the difference is 2 times 10, which is 20."
+  ],
+  "steps": [
+   "Total parts: 1 plus 3 plus 4 equals 8.",
+   "One part is 96 divided by 8, which is 12 sweets.",
+   "The largest share is 4 parts and the smallest is 1 part, so they are 3 parts apart.",
+   "3 times 12 equals 36, so the difference is 36 sweets."
+  ]
+ },
+ "G4A_RATIO_029": {
+  "q": "Hari walks 3 kilometres in 45 minutes. At the same speed, how many kilometres does he walk in 2 hours?",
+  "options": [
+   "8",
+   "6",
+   "9",
+   "90"
+  ],
+  "hints": [
+   "Find the time for 1 kilometre. Change the hours into minutes so that the units match.",
+   "Time for 1 kilometre: 45 divided by 3 minutes. And 2 hours is 120 minutes.",
+   "Example: Mina cycles 4 kilometres in 20 minutes, so 1 kilometre takes 5 minutes. In 1 hour, which is 60 minutes, she cycles 60 divided by 5, which is 12 kilometres."
+  ],
+  "steps": [
+   "1 kilometre takes 45 divided by 3, which is 15 minutes.",
+   "2 hours is 120 minutes.",
+   "120 divided by 15 equals 8.",
+   "So Hari walks 8 kilometres in 2 hours."
+  ]
+ },
+ "G4A_RATIO_030": {
+  "q": "To make green paint, a painter mixes 2 tins of blue with every 3 tins of yellow. He has 12 tins of blue and 15 tins of yellow. What is the greatest number of tins of green paint he can make?",
+  "options": [
+   "27",
+   "25",
+   "30",
+   "5"
+  ],
+  "hints": [
+   "Each lot of the mix uses up some of each colour. See which colour runs out first; that colour decides how many lots can be made.",
+   "The blue is enough for 12 divided by 2 lots. The yellow is enough for 15 divided by 3 lots. Which is smaller?",
+   "Example: a drink needs 1 cup of syrup for every 4 cups of water. With 3 cups of syrup and 8 cups of water, the water allows only 2 lots, so the most is 2 times 5, which is 10 cups of drink."
+  ],
+  "steps": [
+   "The blue is enough for 12 divided by 2, which is 6 lots. The yellow is enough for 15 divided by 3, which is 5 lots.",
+   "The yellow runs out first, so only 5 lots can be made.",
+   "Each lot is 2 plus 3, which is 5 tins of green paint.",
+   "5 times 5 equals 25, so he can make 25 tins of green paint."
+  ]
+ },
+ "G4A_RATIO_031": {
+  "q": "Asha and Bina have stickers in the ratio 5 is to 3. Asha gives 6 of her stickers to Bina, and now the two girls have the same number of stickers. How many stickers did Asha have at first?",
+  "options": [
+   "15",
+   "30",
+   "18",
+   "24"
+  ],
+  "hints": [
+   "When one girl gives stickers to the other, one number goes down and the other goes up. Think about how much the gap between them changes.",
+   "Asha has 2 parts more than Bina. Giving away 6 stickers lowers Asha by 6 and raises Bina by 6. How big must the gap have been for them to end up equal?",
+   "A similar one: Ravi and Sam have marbles in the ratio 7 is to 3, and when Ravi gives Sam 10 they are equal. The gap was 2 times 10, which is 20 marbles, or 4 parts, so one part is 5 and Ravi had 35."
+  ],
+  "steps": [
+   "Giving 6 stickers closes the gap from both sides, so the gap at first was twice 6. 2 times 6 equals 12.",
+   "The gap is 5 minus 3, which is 2 parts, so find one part. 12 divided by 2 equals 6.",
+   "Asha had 5 parts. 5 times 6 equals 30.",
+   "Check: Asha 30 and Bina 18 become 24 and 24.",
+   "Asha had 30 stickers at first."
+  ]
+ },
+ "G4A_RATIO_032": {
+  "q": "8 workers can paint a school in 12 days, all working at the same speed. They start the job, and after 4 days 8 more workers join them. How many more days will it take to finish the painting?",
+  "options": [
+   "8",
+   "6",
+   "4",
+   "2"
+  ],
+  "hints": [
+   "Think of the whole job as a number of days of work for one worker. Then see how much is left after the first 4 days.",
+   "8 workers for 12 days is 8 times 12, which is 96 days of work for one worker. Find how much of that the 8 workers finish in 4 days.",
+   "A similar one: 6 workers need 10 days, so the job is 60 worker-days. After 5 days, 30 worker-days are left. If the team grows to 10 workers, the rest takes 30 divided by 10, which is 3 days."
+  ],
+  "steps": [
+   "Measure the whole job in worker-days. 8 times 12 equals 96.",
+   "Find the work done in the first 4 days. 8 times 4 equals 32.",
+   "Find the work still left. 96 minus 32 equals 64.",
+   "Now there are 8 plus 8, which is 16 workers to share it. 64 divided by 16 equals 4.",
+   "It will take 4 more days."
+  ]
+ },
+ "G4A_RATIO_033": {
+  "q": "70 rupees is shared among Asha, Bina and Chitra. Asha's share and Bina's share are in the ratio 2 is to 3. Bina's share and Chitra's share are in the ratio 4 is to 5. How many rupees does Chitra get?",
+  "options": [
+   "35",
+   "24",
+   "16",
+   "30"
+  ],
+  "hints": [
+   "Bina appears in both ratios but with different numbers of parts. Make Bina's number the same in both before joining the ratios.",
+   "Bina is 3 in the first ratio and 4 in the second. Find a number that both 3 and 4 divide, and rewrite each ratio so Bina has that many parts.",
+   "A similar one: P is to Q, as 1 is to 2 and Q is to R, as 3 is to 4. Make Q equal to 6 in both: 3 is to 6 and 6 is to 8. So P is to Q is to R, as 3 is to 6 is to 8, which is 17 parts. If the total is 34 rupees, each part is 2 rupees and R gets 16 rupees."
+  ],
+  "steps": [
+   "Make Bina's part the same in both ratios. Use 12, which both 3 and 4 divide.",
+   "Rewrite the ratios: 2 is to 3 becomes 8 is to 12 and 4 is to 5 becomes 12 is to 15. So the three shares are 8 is to 12 is to 15.",
+   "Count the parts. 8 plus 12 plus 15 equals 35.",
+   "Find one part. 70 divided by 35 equals 2.",
+   "Chitra has 15 parts. 15 times 2 equals 30.",
+   "Chitra gets 30 rupees."
+  ]
+ },
+ "G4A_RATIO_034": {
+  "q": "A box has red and blue beads in the ratio 2 is to 3. Meena adds 8 red beads and no blue beads. Now the ratio of red beads to blue beads is 2 is to 1. How many blue beads are in the box?",
+  "options": [
+   "12",
+   "6",
+   "4",
+   "24"
+  ],
+  "hints": [
+   "Only the red beads change. Rewrite the two ratios so that the blue beads have the same number of parts in both.",
+   "Blue is 3 parts in 2 is to 3 but 1 part in 2 is to 1. Multiply the second ratio so that blue is 3 parts there too.",
+   "A similar one: red to blue is 1 is to 2, and after adding 15 red it is 2 is to 1. Write 2 is to 1 as 4 is to 2 so blue stays 2 parts. Red has grown from 1 part to 4 parts, so 3 parts are 15 beads, one part is 5, and blue is 2 parts, which is 10."
+  ],
+  "steps": [
+   "Blue does not change, so write 2 is to 1 as 6 is to 3. Now blue is 3 parts before and after.",
+   "Red grows from 2 parts to 6 parts. 6 minus 2 equals 4.",
+   "Those 4 parts are the 8 beads added. Find one part. 8 divided by 4 equals 2.",
+   "Blue is 3 parts. 3 times 2 equals 6.",
+   "Check: 4 red and 6 blue become 12 red and 6 blue, which is 2 is to 1.",
+   "There are 6 blue beads in the box."
+  ]
+ },
+ "G4A_RATIO_035": {
+  "q": "A piggy bank holds only 1 rupee, 2 rupee and 5 rupee coins. The numbers of 1 rupee, 2 rupee and 5 rupee coins are in the ratio 3 is to 2 is to 1. The coins are worth 96 rupees altogether. How many 5 rupee coins are there?",
+  "options": [
+   "16",
+   "40",
+   "8",
+   "24"
+  ],
+  "hints": [
+   "The ratio compares how many coins there are, not how much money they are worth. Find the value of one small group of coins.",
+   "Take one group of 3 one-rupee coins, 2 two-rupee coins and 1 five-rupee coin. Work out how many rupees that group is worth.",
+   "A similar one: 1 rupee and 5 rupee coins in the ratio 2 is to 1 are worth 35 rupees. One group of 2 one-rupee coins and 1 five-rupee coin is worth 7 rupees, so there are 35 divided by 7, which is 5 groups, and 5 five-rupee coins."
+  ],
+  "steps": [
+   "Take one group: 3 coins of 1 rupee, 2 coins of 2 rupees and 1 coin of 5 rupees. Find its value. 3 times 1, plus 2 times 2, plus 1 times 5, equals 12.",
+   "Find how many such groups make 96 rupees. 96 divided by 12 equals 8.",
+   "Each group has one 5 rupee coin, so count them. 8 times 1 equals 8.",
+   "There are 8 coins of 5 rupees."
+  ]
+ },
+ "G4A_RATIO_036": {
+  "q": "A carpenter takes 12 minutes to cut a long wooden pole into 4 pieces. Each cut takes the same time. How many minutes will he take to cut another pole of the same kind into 8 pieces?",
+  "options": [
+   "24",
+   "32",
+   "21",
+   "28"
+  ],
+  "hints": [
+   "Count the cuts, not the pieces. Picture the pole and mark where the saw goes.",
+   "To get 4 pieces from one pole you need only 3 cuts. Find how long one cut takes.",
+   "A similar one: 10 minutes to cut a rope into 3 pieces means 2 cuts of 5 minutes each. For 6 pieces you need 5 cuts, so 5 times 5 equals 25 minutes, not 20."
+  ],
+  "steps": [
+   "4 pieces need 3 cuts. 4 minus 1 equals 3.",
+   "Find the time for one cut. 12 divided by 3 equals 4.",
+   "8 pieces need 7 cuts. 8 minus 1 equals 7.",
+   "Find the time for 7 cuts. 7 times 4 equals 28.",
+   "He will take 28 minutes."
+  ]
+ },
+ "G4A_RATIO_037": {
+  "q": "A temple bell rings 4 times in 6 seconds, measured from the first ring to the last ring. The gaps between the rings are all equal. How many seconds will the bell take, from the first ring to the last, to ring 12 times?",
+  "options": [
+   "22",
+   "18",
+   "24",
+   "20"
+  ],
+  "hints": [
+   "The time is spent in the gaps between the rings. Count the gaps, not the rings.",
+   "4 rings have only 3 gaps between them. Find how long one gap lasts.",
+   "A similar one: a bell takes 10 seconds to ring 3 times, so there are 2 gaps of 5 seconds each. To ring 9 times there are 8 gaps, so it takes 8 times 5, which is 40 seconds."
+  ],
+  "steps": [
+   "4 rings have 3 gaps. 4 minus 1 equals 3.",
+   "Find the length of one gap. 6 divided by 3 equals 2.",
+   "12 rings have 11 gaps. 12 minus 1 equals 11.",
+   "Find the time for 11 gaps. 11 times 2 equals 22.",
+   "It will take 22 seconds."
+  ]
+ },
+ "G4A_RATIO_038": {
+  "q": "Jug A holds 8 cups of lemonade made with lemon juice and water in the ratio 1 is to 3. Jug B holds 8 cups of lemonade made with lemon juice and water in the ratio 1 is to 1. Both jugs are poured into one big pot. What is the ratio of lemon juice to water in the pot?",
+  "options": [
+   "1 is to 2",
+   "3 is to 5",
+   "5 is to 3",
+   "1 is to 3"
+  ],
+  "hints": [
+   "You cannot add the numbers in two ratios unless the parts are the same size. Find the actual cups of juice and water in each jug.",
+   "In Jug A the 8 cups are split into 1 plus 3, which is 4 parts, so each part is 2 cups. Find the cups of juice and of water in Jug A, then in Jug B.",
+   "A similar one: 6 cups mixed 1 is to 2 has 2 cups of juice and 4 cups of water. Another 6 cups mixed 1 is to 1 has 3 and 3. Together that is 5 cups of juice and 7 cups of water, a ratio of 5 is to 7."
+  ],
+  "steps": [
+   "Jug A: 4 parts make 8 cups, so each part is 2 cups. It has 2 cups of juice and 6 cups of water.",
+   "Jug B: 2 parts make 8 cups, so each part is 4 cups. It has 4 cups of juice and 4 cups of water.",
+   "Add the juice, and add the water. 2 plus 4 equals 6, 6 plus 4 equals 10.",
+   "Simplify 6 is to 10 by dividing both numbers by 2.",
+   "The ratio of lemon juice to water is 3 is to 5."
+  ]
+ },
+ "G4A_RATIO_039": {
+  "q": "In a class, the ratio of boys to girls is exactly 4 is to 5. Which of these could be the number of children in the class?",
+  "options": [
+   "36",
+   "40",
+   "32",
+   "25"
+  ],
+  "hints": [
+   "Think about how many equal parts the class is split into. The whole class must be made of whole parts.",
+   "Boys are 4 parts and girls are 5 parts. Add these to find how many parts make the whole class, and look for a number that can be split into that many equal parts.",
+   "A similar one: if cats to dogs is 2 is to 5, there are 7 parts, so the total must be a multiple of 7. A total of 28 gives 8 cats and 20 dogs. A total of 20 cannot be split into 7 equal whole parts."
+  ],
+  "steps": [
+   "The class is 4 parts boys and 5 parts girls. 4 plus 5 equals 9.",
+   "So the number of children must be a multiple of 9.",
+   "Of 36, 40, 32 and 25, only 36 is a multiple of 9. 36 divided by 9 equals 4.",
+   "Check: 16 boys and 20 girls is 4 is to 5.",
+   "The class could have 36 children."
+  ]
+ },
+ "G4A_RATIO_040": {
+  "q": "An auto-rickshaw fare is a fixed starting charge plus the same amount for every kilometre. A 3 kilometre ride costs 50 rupees and a 5 kilometre ride costs 70 rupees. How much does a 10 kilometre ride cost?",
+  "options": [
+   "140",
+   "100",
+   "120",
+   "150"
+  ],
+  "hints": [
+   "Doubling the distance does not double the fare here, because part of the fare is the same for every ride. Compare the two rides you know.",
+   "The 5 kilometre ride is 2 kilometres longer than the 3 kilometre ride and costs 20 rupees more. Find the cost of one extra kilometre.",
+   "A similar one: 2 kilometres costs 35 rupees and 4 kilometres costs 55 rupees. The extra 2 kilometres cost 20 rupees, so each kilometre is 10 rupees and the starting charge is 35 minus 20, which is 15 rupees. An 8 kilometre ride costs 15 plus 80, which is 95 rupees."
+  ],
+  "steps": [
+   "The extra 2 kilometres cost the extra money. 70 minus 50 equals 20.",
+   "Find the cost of one kilometre. 20 divided by 2 equals 10.",
+   "Find the starting charge from the 3 kilometre ride. 50 minus 3 times 10 equals 20.",
+   "Find the fare for 10 kilometres. 20 plus 10 times 10 equals 120.",
+   "A 10 kilometre ride costs 120 rupees."
+  ]
+ },
+ "G4A_RATIO_041": {
+  "q": "Ravi and Sita share 60 sweets in the ratio 7 is to 3. Ravi wants both of them to have the same number of sweets. How many sweets must Ravi give to Sita?",
+  "options": [
+   "24",
+   "30",
+   "42",
+   "12"
+  ],
+  "hints": [
+   "Find each child's share first. Then remember that every sweet Ravi gives away also adds one to Sita.",
+   "There are 7 plus 3, which is 10 parts, so each part is 6 sweets. Find Ravi's sweets and Sita's sweets, and what each should have when they are equal.",
+   "A similar one: 40 sweets shared 3 is to 1 gives 30 and 10. Equal shares would be 20 each, so the giver hands over 30 minus 20, which is 10 sweets, or half of the gap of 20."
+  ],
+  "steps": [
+   "Find one part. 60 divided by 10 equals 6.",
+   "Find the two shares. 7 times 6 equals 42, 3 times 6 equals 18.",
+   "Equal shares would be half of 60 each. 60 divided by 2 equals 30.",
+   "Ravi must come down from 42 to 30. 42 minus 30 equals 12.",
+   "Ravi must give 12 sweets to Sita."
+  ]
+ },
+ "G4A_RATIO_042": {
+  "q": "Two-thirds of Asha's stickers is the same number as one-half of Bina's stickers. What is the ratio of Asha's stickers to Bina's stickers?",
+  "options": [
+   "4 is to 3",
+   "3 is to 2",
+   "3 is to 4",
+   "2 is to 3"
+  ],
+  "hints": [
+   "Try real numbers. Pick a number for the equal amount and work back to each girl's stickers.",
+   "Suppose the equal amount is 6 stickers. If two-thirds of Asha's stickers is 6, how many does Asha have? If half of Bina's is 6, how many does Bina have?",
+   "A similar one: half of P equals one-quarter of Q. If the equal amount is 5, then P is 10 and Q is 20, so P is to Q is 1 is to 2. The one who needs the smaller fraction has more."
+  ],
+  "steps": [
+   "Choose an easy number for the equal amount, such as 6.",
+   "Two-thirds of Asha's stickers is 6, so one-third is 3 and Asha has 9.",
+   "Half of Bina's stickers is 6, so Bina has 12.",
+   "Simplify 9 is to 12 by dividing both numbers by 3.",
+   "The ratio of Asha's stickers to Bina's stickers is 3 is to 4."
+  ]
+ },
+ "G4A_RATIO_043": {
+  "q": "4 hens lay 12 eggs in 3 days. If every hen lays eggs at the same steady rate, how many eggs will 6 hens lay in 5 days?",
+  "options": [
+   "18",
+   "20",
+   "24",
+   "30"
+  ],
+  "hints": [
+   "Two things change at once: the number of hens and the number of days. Find what one hen does in one day.",
+   "4 hens for 3 days is 4 times 3, which is 12 hen-days. They lay 12 eggs in that time, so how many eggs does one hen lay in one day?",
+   "A similar one: 2 hens lay 8 eggs in 4 days. That is 8 hen-days, so 1 egg for each hen each day. Then 5 hens in 3 days lay 5 times 3, which is 15 eggs."
+  ],
+  "steps": [
+   "Count the hen-days in the first case. 4 times 3 equals 12.",
+   "Find the eggs for one hen in one day. 12 divided by 12 equals 1.",
+   "Count the hen-days in the second case. 6 times 5 equals 30.",
+   "At 1 egg for each hen-day, find the eggs. 30 times 1 equals 30.",
+   "6 hens will lay 30 eggs in 5 days."
+  ]
+ },
+ "G4A_RATIO_044": {
+  "q": "Some sweets are shared between Anu and Bala in the ratio 3 is to 4, with none left over. There are more than 40 but fewer than 50 sweets, and Bala gets more than 25 sweets. How many sweets does Anu get?",
+  "options": [
+   "21",
+   "18",
+   "28",
+   "24"
+  ],
+  "hints": [
+   "The total must split into equal whole parts. List the totals that are possible, then test each one against the other clue.",
+   "There are 3 plus 4, which is 7 parts, so the total is a multiple of 7. Which multiples of 7 lie between 40 and 50?",
+   "A similar one: a ratio of 2 is to 3 with a total between 22 and 32 means a total of 25 or 30. If the bigger share is more than 16, the total is 30 with shares 12 and 18, because 25 gives only 10 and 15."
+  ],
+  "steps": [
+   "The total is a multiple of 3 plus 4, which is 7. Between 40 and 50, the multiples of 7 are 42 and 49.",
+   "With 42 sweets each part is 6, so Bala gets 24. That is not more than 25.",
+   "With 49 sweets each part is 7, so Bala gets 28. That is more than 25.",
+   "Anu gets 3 parts of 7. 3 times 7 equals 21.",
+   "Anu gets 21 sweets."
+  ]
+ },
+ "G4A_RATIO_045": {
+  "q": "In a school club, the ratio of girls to all the children in the club is 3 is to 8. There are 40 boys in the club. How many girls are there?",
+  "options": [
+   "24",
+   "15",
+   "64",
+   "25"
+  ],
+  "hints": [
+   "Read carefully what the two numbers in the ratio stand for. One of them is the whole club, not the boys.",
+   "Out of every 8 children, 3 are girls. How many of every 8 are boys? Use that with the 40 boys.",
+   "A similar one: girls to all children is 2 is to 7 and there are 30 boys. Boys are 7 minus 2, which is 5 parts, so each part is 6 and there are 2 times 6, which is 12 girls."
+  ],
+  "steps": [
+   "The whole club is 8 parts and girls are 3 parts, so find the boys' parts. 8 minus 3 equals 5.",
+   "The 40 boys are 5 parts. Find one part. 40 divided by 5 equals 8.",
+   "Girls are 3 parts. 3 times 8 equals 24.",
+   "Check: 24 girls out of 64 children is 3 is to 8.",
+   "There are 24 girls."
+  ]
+ },
+ "G4A_RATIO_046": {
+  "q": "Asha cycles 5 kilometres in the same time that Bala cycles 4 kilometres. They start together on a 30 kilometre ride and keep these steady speeds. When Asha finishes the ride, how many kilometres does Bala still have to go?",
+  "options": [
+   "1",
+   "6",
+   "24",
+   "5"
+  ],
+  "hints": [
+   "The gap between them keeps growing as they ride. Find how far Bala has gone by the time Asha finishes.",
+   "30 kilometres is 6 lots of 5 kilometres. In each of those lots of time, how far does Bala go?",
+   "A similar one: Ravi runs 3 kilometres while Sam runs 2 kilometres. When Ravi finishes 12 kilometres, that is 4 lots, so Sam has run 4 times 2, which is 8 kilometres and still has 12 minus 8, or 4 kilometres to go."
+  ],
+  "steps": [
+   "Find how many lots of 5 kilometres Asha rides. 30 divided by 5 equals 6.",
+   "In each lot of time Bala rides 4 kilometres. 6 times 4 equals 24.",
+   "Find how far Bala still has to go. 30 minus 24 equals 6.",
+   "Bala still has 6 kilometres to go."
+  ]
+ },
+ "Q_CH09_018": {
+  "q": "12 workers can build a wall in 10 days. How many days for 15 workers?",
+  "options": [
+   "12",
+   "18",
+   "8",
+   "6"
+  ],
+  "hints": [
+   "More workers finish the same job sooner. Think about the total amount of work the wall needs.",
+   "Find the total work first: how many days would one worker need alone? Multiply the workers by the days.",
+   "Here is a similar one: 6 workers build a wall in 10 days. Total work is 6 times 10, which is 60 days of work for one worker. With 12 workers it takes 60 divided by 12, which is 5 days."
+  ],
+  "steps": [
+   "Find the total work. 12 workers for 10 days is the same as one worker for 120 days.",
+   "Share that work among 15 workers. 120 divided by 15 equals 8.",
+   "So 15 workers need 8 days."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2021_010_02": {
+  "q": "The ages of Vivek and Tara are in the ratio 5 is to 7. If Tara is 49 years old, how old is Vivek?",
+  "options": [
+   "84",
+   "44",
+   "49",
+   "35"
+  ],
+  "hints": [
+   "If the ratio is 5 is to 7 and Tara is 49, find one 'part'.",
+   "One part is 49 divided by 7.",
+   "Then Vivek's age is 5 times one part."
+  ],
+  "steps": [
+   "The ratio is 5 is to 7, and Tara is 49.",
+   "One part is 49 divided by 7, which is 7.",
+   "Vivek's age is 5 times 7, which is 35."
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH13_003_02": {
+  "q": "The ages of Ananya and Karan are in the ratio 5 is to 6. If Karan is 48 years old, how old is Ananya?",
+  "options": [
+   "43",
+   "48",
+   "40",
+   "88"
+  ],
+  "hints": [
+   "If the ratio is 5 is to 6 and Karan is 48, find one 'part'.",
+   "One part is 48 divided by 6.",
+   "Then Ananya's age is 5 times one part."
+  ],
+  "steps": [
+   "The ratio is 5 is to 6, and Karan is 48.",
+   "One part is 48 divided by 6, which is 8.",
+   "Ananya's age is 5 times 8, which is 40."
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_025_02": {
+  "q": "If 7 is to 8, as 35 is to x, find x.",
+  "options": [
+   "43",
+   "30",
+   "56",
+   "40"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 40."
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_001_01": {
+  "q": "Priya has 136 marbles and divides them in the ratio 3 is to 5. How many marbles are in the larger group?",
+  "options": [
+   "68",
+   "51",
+   "85",
+   "135"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 85."
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_001_04": {
+  "q": "Dev has 98 stickers and divides them in the ratio 3 is to 4. How many stickers are in the larger group?",
+  "options": [
+   "49",
+   "56",
+   "42",
+   "97"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 56."
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_001_05_b2": {
+  "q": "Diya has 84 toffees and divides them in the ratio 2 is to 5. How many toffees are in the larger group?",
+  "options": [
+   "83",
+   "42",
+   "24",
+   "60"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 60."
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_025_03_b2": {
+  "q": "Divide 195 in the ratio 5 is to 8. What is the smaller share?",
+  "options": [
+   "39",
+   "75",
+   "120",
+   "15"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 75."
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_025_04": {
+  "q": "Meera has 75 toffees and divides them in the ratio 1 is to 4. How many toffees are in the larger group?",
+  "options": [
+   "60",
+   "15",
+   "37",
+   "74"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 60."
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_039_05": {
+  "q": "If 6 is to 10, as 18 is to x, find x.",
+  "options": [
+   "28",
+   "60",
+   "30",
+   "10"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 30."
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_039_05_b2": {
+  "q": "Divide 150 in the ratio 3 is to 7. What is the smaller share?",
+  "options": [
+   "45",
+   "105",
+   "15",
+   "50"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 45."
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_010_01": {
+  "q": "Neha has 85 toffees and divides them in the ratio 1 is to 4. How many toffees are in the larger group?",
+  "options": [
+   "84",
+   "42",
+   "17",
+   "68"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 68."
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_010_03": {
+  "q": "Divide 30 in the ratio 2 is to 3. What is the smaller share?",
+  "options": [
+   "6",
+   "15",
+   "12",
+   "18"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 12."
+  ]
+ },
+ "VAR_EXT_G4_WS2_CH17_003_01": {
+  "q": "Kavya has 136 toffees and divides them in the ratio 3 is to 5. How many toffees are in the larger group?",
+  "options": [
+   "85",
+   "135",
+   "68",
+   "51"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 85."
+  ]
+ },
+ "VAR_EXT_G4_WS2_CH17_003_04": {
+  "q": "Arjun has 60 books and divides them in the ratio 1 is to 4. How many books are in the larger group?",
+  "options": [
+   "30",
+   "59",
+   "12",
+   "48"
+  ],
+  "hints": [
+   "Sum the ratio parts to find the total number of parts.",
+   "Divide the total by the sum of parts to find one part.",
+   "Multiply to find each share."
+  ],
+  "steps": [
+   "Identify the ratio parts and total.",
+   "Work out the answer. It is 48."
+  ]
+ }
+}

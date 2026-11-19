@@ -6029,5 +6029,372 @@
    "The digit 0 is in the hundreds place.",
    "Place value equals 0 times 100, which is 0."
   ]
+ },
+ "G5A_PLACEVALUE_001": {
+  "q": "Find the difference between the greatest 5-digit even number with all its digits different and the smallest 5-digit odd number with all its digits different.",
+  "options": [
+   "88,529",
+   "88,531",
+   "88,530",
+   "86,419"
+  ],
+  "hints": [
+   "Build each number one place at a time, and check both conditions, all digits different, and even or odd, before you subtract.",
+   "The greatest 5-digit number with different digits is 98,765, but it is odd. Change only the ones digit to make it even while keeping the digits different.",
+   "Similar problem with 4-digit numbers: the greatest even one with different digits is 9,876 and the smallest odd one with different digits is 1,023. Their difference is 9,876 minus 1,023 equals 8,853."
+  ],
+  "steps": [
+   "The greatest 5-digit number with all digits different is 98,765. It is odd, so lower the ones digit to the next unused even digit: 98,764.",
+   "The smallest 5-digit number with all digits different is 10,234. It is even, so raise the ones digit to the next unused odd digit: 10,235.",
+   "Subtract the two numbers. 98764 minus 10235 equals 88529.",
+   "The difference is 88,529."
+  ]
+ },
+ "G5A_PLACEVALUE_002": {
+  "q": "In a 5-digit number, the digit in the thousands place is 4. When the thousands digit and the tens digit swap places, the number becomes greater by 2,970. What is the digit in the tens place of the original number?",
+  "options": [
+   "3",
+   "7",
+   "1",
+   "6"
+  ],
+  "hints": [
+   "Think about how much each of the two digits is worth before and after the swap. The other three digits do not change at all.",
+   "If the tens digit is 1 more than the thousands digit, the swap adds 1,000 and takes away 10. Work out that change first.",
+   "Similar problem: the hundreds digit is 2, and swapping it with the ones digit makes the number greater by 297. Each 1 of difference changes the number by 100 minus 1 equals 99, and 297 divided by 99 equals 3, so the ones digit is 2 plus 3 equals 5."
+  ],
+  "steps": [
+   "Only the thousands and tens digits change. If the tens digit is 1 more than the thousands digit, the swap adds 1,000 and removes 10, a gain of 990.",
+   "Find how many more the tens digit is than the thousands digit. 2970 divided by 990 equals 3.",
+   "The number became greater, so the tens digit is the bigger one: 3 more than 4. 4 plus 3 equals 7.",
+   "Check with 54,372: after the swap it is 57,342, and 57,342 minus 54,372 equals 2,970. The digit in the tens place is 7."
+  ]
+ },
+ "G5A_PLACEVALUE_003": {
+  "q": "A dairy sold 45 million 6 thousand packets of milk last year. This year it sold 9 lakh 95 thousand more packets than last year. How many packets did it sell this year, written in the Indian system?",
+  "options": [
+   "45 crore 10 lakh 1 thousand",
+   "55 lakh 1 thousand",
+   "4 crore 60 lakh 1 thousand",
+   "4 crore 59 lakh 1 thousand"
+  ],
+  "hints": [
+   "Write both numbers in the same system before adding. Decide how many lakhs make one million.",
+   "1 million is 10 lakh, so 45 million is 450 lakh, which is 4 crore 50 lakh. Now write the whole of last year's number in the Indian system.",
+   "Similar problem: 12 million 4 thousand plus 3 lakh 98 thousand. 12 million is 1 crore 20 lakh. The thousands give 4 plus 98 equals 102 thousand, which is 1 lakh 2 thousand. The lakhs give 20 plus 3 plus 1 equals 24 lakh. The sum is 1 crore 24 lakh 2 thousand."
+  ],
+  "steps": [
+   "1 million is 10 lakh, so 45 million is 450 lakh, which is 4 crore 50 lakh.",
+   "So last year's number is 4 crore 50 lakh 6 thousand.",
+   "Add the thousands: 6 thousand plus 95 thousand equals 101 thousand, which is 1 lakh 1 thousand.",
+   "Add the lakhs, with the 1 lakh carried over. 50 plus 9 plus 1 equals 60.",
+   "This year the dairy sold 4 crore 60 lakh 1 thousand packets."
+  ]
+ },
+ "G5A_PLACEVALUE_004": {
+  "q": "Every whole number from 1 to 100 is written in Roman numerals. Which number needs the most letters?",
+  "options": [
+   "99",
+   "88",
+   "78",
+   "38"
+  ],
+  "hints": [
+   "A bigger number does not always need more letters. Look at the tens part and the ones part separately, and ask which of each is the longest.",
+   "Write the ones from 1 to 9 in Roman numerals: I, I I, I I I, I V, V, V I, V I I, V I I I, I X. Which one has the most letters? Then do the same for the tens.",
+   "Similar problem for 1 to 39: the longest ones part is V I I I, for 8, and the longest tens part is X X X, for 30, so the longest numeral is X X X V I I I, which is 38 and has 7 letters."
+  ],
+  "steps": [
+   "Among the ones, 8 is the longest: V I I I has 4 letters.",
+   "Among the tens, 80 is the longest: L X X X has 4 letters. 90 is just X C.",
+   "Join them: 88 is L X X X V I I I. 4 plus 4 equals 8.",
+   "No other number from 1 to 100 has as many as 8 letters, so the answer is 88."
+  ]
+ },
+ "G5A_PLACEVALUE_005": {
+  "q": "Every whole number from 1 to 100 is written in Roman numerals. How many of them do not use the letter X?",
+  "options": [
+   "20",
+   "17",
+   "10",
+   "18"
+  ],
+  "hints": [
+   "X can come from the tens part of a number, but it can also hide in the ones part. Check both.",
+   "First decide which tens are written without X. Remember that 40 is X L and 90 is X C.",
+   "Similar problem: how many numbers from 1 to 20 do not use the letter V? The ones parts with V are 4, 5, 6, 7 and 8, so five numbers up to 10 are out and five more between 11 and 20 are out. That leaves 20 minus 10 equals 10 numbers."
+  ],
+  "steps": [
+   "X appears in the tens part for 10 to 49, X, X X, X X X, X L, and for 60 to 99, L X, L X X, L X X X, X C. So only 1 to 9, 50 to 59 and 100, which is C, are left to check.",
+   "X also appears when the ones digit is 9, because 9 is I X. So 9 and 59 are out as well.",
+   "Count what is left: 1 to 8 gives 8 numbers, 50 to 58 gives 9 numbers, and 100 gives 1 more. 8 plus 9 plus 1 equals 18.",
+   "So 18 of the numbers do not use the letter X."
+  ]
+ },
+ "G5A_PLACEVALUE_006": {
+  "q": "How many whole numbers become 4,700 when rounded to the nearest hundred, but do not become 4,700 when rounded to the nearest ten?",
+  "options": [
+   "100",
+   "91",
+   "90",
+   "89"
+  ],
+  "hints": [
+   "Find the full list of numbers for each kind of rounding. Then think about which numbers are in the first list but not in the second.",
+   "The numbers that round to 4,700 to the nearest hundred run from 4,650 to 4,749. Count how many numbers that is.",
+   "Similar problem: rounding to the nearest thousand gives 6,000 for 5,500 to 6,499, which is 1,000 numbers. Rounding to the nearest hundred gives 6,000 for 5,950 to 6,049, which is 100 numbers. So 1,000 minus 100 equals 900 numbers round to 6,000 the first way but not the second."
+  ],
+  "steps": [
+   "To the nearest hundred, 4,700 comes from 4,650 up to 4,749. That is 100 numbers.",
+   "To the nearest ten, 4,700 comes from 4,695 up to 4,704. That is 10 numbers.",
+   "All 10 of those numbers are also in the first list, so take them away. 100 minus 10 equals 90.",
+   "So 90 whole numbers round to 4,700 to the nearest hundred but not to the nearest ten."
+  ]
+ },
+ "G5A_PLACEVALUE_007": {
+  "q": "Kabir and Zoya count their marbles. Rounded to the nearest ten, Kabir has 80 marbles and Zoya has 50 marbles. What is the smallest possible difference between the numbers of marbles they really have?",
+  "options": [
+   "21",
+   "30",
+   "20",
+   "39"
+  ],
+  "hints": [
+   "Each rounded number hides a range of real numbers. Think about which real numbers would bring the two children closest together.",
+   "List the numbers that round to 80: they run from 75 to 84. Now find the range of numbers that round to 50.",
+   "Similar problem: two numbers round to 60 and 20 to the nearest ten. The smallest the first can be is 55 and the greatest the second can be is 24, so the smallest possible difference is 55 minus 24 equals 31."
+  ],
+  "steps": [
+   "Kabir's real number can be anything from 75 to 84. Zoya's can be anything from 45 to 54.",
+   "For the smallest difference, take Kabir's smallest number and Zoya's greatest number: 75 and 54. 55 would round up to 60, so 54 is her greatest.",
+   "Subtract. 75 minus 54 equals 21.",
+   "The smallest possible difference is 21 marbles."
+  ]
+ },
+ "G5A_PLACEVALUE_008": {
+  "q": "Anaya writes every whole number from 1 to 200. How many times does she write the digit 7?",
+  "options": [
+   "38",
+   "20",
+   "39",
+   "40"
+  ],
+  "hints": [
+   "Count digits, not numbers. It helps to count the ones place and the tens place separately.",
+   "Start with the ones place: 7, 17, 27 and so on. How many of these are there up to 200?",
+   "Similar problem: how many times is the digit 3 written from 1 to 100? In the ones place it appears 10 times, 3, 13, and so on, up to 93. In the tens place it appears 10 times, 30 to 39. That is 10 plus 10 equals 20 times, and 33 is rightly counted twice."
+  ],
+  "steps": [
+   "Count the 7's in the ones place: 7, 17, 27, and so on, up to 197. There is one in every ten numbers, so there are 20.",
+   "Count the 7's in the tens place: 70 to 79 and 170 to 179. 10 plus 10 equals 20.",
+   "No number up to 200 has 7 in the hundreds place.",
+   "Add the two counts. Numbers such as 77 are counted twice, which is right because they have two 7's. 20 plus 20 equals 40.",
+   "Anaya writes the digit 7 a total of 40 times."
+  ]
+ },
+ "G5A_PLACEVALUE_009": {
+  "q": "How many 3-digit numbers have digits whose product is 12? For example, 143 is one of them, because 1 times 4 times 3 equals 12.",
+  "options": [
+   "12",
+   "15",
+   "18",
+   "9"
+  ],
+  "hints": [
+   "First find every set of three digits that multiply to 12. Then count how many numbers each set can make.",
+   "Start with the sets that include the digit 1: the other two digits must multiply to 12. Then look for a set without any 1.",
+   "Similar problem: digits with product 8. The sets are 1, 1, 8, which gives 3 numbers; 1, 2, 4, which gives 6 numbers; and 2, 2, 2, which gives 1 number. So there are 3 plus 6 plus 1 equals 10 such numbers."
+  ],
+  "steps": [
+   "List the sets of three digits that multiply to 12: 1, 2, 6 and 1, 3, 4 and 2, 2, 3.",
+   "Three different digits can be arranged in 6 ways. So 1, 2, 6 gives 6 numbers and 1, 3, 4 gives 6 numbers.",
+   "The set 2, 2, 3 has a repeated digit, so it gives only 3 numbers: 223, 232 and 322.",
+   "Add them up. 6 plus 6 plus 3 equals 15.",
+   "There are 15 such numbers."
+  ]
+ },
+ "G5A_PLACEVALUE_010": {
+  "q": "I am a 4-digit number. My thousands digit is twice my ones digit. My hundreds digit is 3 more than my tens digit. The sum of my four digits is 20. Which number am I?",
+  "options": [
+   "6473",
+   "8744",
+   "6743",
+   "6853"
+  ],
+  "hints": [
+   "Use the clue that leaves the fewest possibilities first, then test each possibility against the other clues.",
+   "The thousands digit is twice the ones digit. List every pair of digits that fits this clue.",
+   "Similar problem: a 3-digit number whose hundreds digit is 3 times its ones digit, with tens digit 4 and digit sum 12. The ones digit can be 1, 2 or 3. Trying each: 3 plus 4 plus 1 equals 8, then 6 plus 4 plus 2 equals 12, so the number is 642."
+  ],
+  "steps": [
+   "The thousands digit is twice the ones digit, so the thousands and ones digits can only be 2 and 1, 4 and 2, 6 and 3, or 8 and 4.",
+   "These pairs add up to 3, 6, 9 and 12. The four digits total 20, so the hundreds and tens digits must add up to 17, 14, 11 or 8.",
+   "The hundreds digit is 3 more than the tens digit. A sum of 11 fits, with 7 and 4. A sum of 17 would need 10 and 7, and 10 is not a digit. Sums of 14 and 8 cannot be split into two whole numbers that are 3 apart.",
+   "So the digits are 6, 7, 4 and 3. Check the sum. 6 plus 7 plus 4 plus 3 equals 20.",
+   "The number is 6743."
+  ]
+ },
+ "G5A_PLACEVALUE_011": {
+  "q": "What is the smallest 6-digit number that can be made using only the digits 0, 3, 5 and 8, if each of these digits must be used at least once?",
+  "options": [
+   "300588",
+   "300358",
+   "303058",
+   "300058"
+  ],
+  "hints": [
+   "There are six places but only four digits, so some digit must repeat. Think about which digit is best to repeat when the number should be small.",
+   "The first digit cannot be 0. Choose the smallest digit that can go first, then think about the next places.",
+   "Similar problem: the smallest 5-digit number using only 0, 2 and 7, each at least once. Start with 2, then use 0 as often as possible, keeping the last place for 7. The number is 20007."
+  ],
+  "steps": [
+   "The first digit cannot be 0, so start with the smallest other digit: 3.",
+   "To keep the number small, fill the next places with 0, the smallest digit. Digits may repeat, so 0 can be used again and again.",
+   "The digits 5 and 8 must each appear once. Put them in the last two places, smaller one first.",
+   "That leaves three places for 0, so the number is 300058."
+  ]
+ },
+ "G5A_PLACEVALUE_012": {
+  "q": "What is the greatest 4-digit number in which all four digits are different and add up to 12?",
+  "options": [
+   "9300",
+   "9210",
+   "9201",
+   "8310"
+  ],
+  "hints": [
+   "Make the digits on the left as big as you can, but keep checking both conditions as you go.",
+   "Start with 9 in the thousands place. What must the other three digits add up to?",
+   "Similar problem: the greatest 3-digit number with different digits adding up to 10. Start with 9, leaving 1 for the other two digits. They must be different, so they are 1 and 0, and the number is 910."
+  ],
+  "steps": [
+   "Make the thousands digit as big as possible: 9. The other three digits must add up to 3.",
+   "The hundreds digit cannot be 3, because then the last two digits would both be 0, and the digits must all be different.",
+   "So the hundreds digit is 2, leaving 1 for the last two digits: 1 and 0, bigger one first.",
+   "The greatest such number is 9210."
+  ]
+ },
+ "G5A_PLACEVALUE_013": {
+  "q": "Which of these statements is true for every 4-digit number?",
+  "options": [
+   "The sum of the place values of all its digits is equal to the number itself",
+   "The face value of each digit is smaller than its place value",
+   "The place value of the hundreds digit is greater than the place value of the tens digit",
+   "The sum of the face values of all its digits is equal to the number itself"
+  ],
+  "hints": [
+   "A statement is true for every number only if no number can break it. Try to break each one with a tricky number, such as one with zeros in it.",
+   "Test each statement on 3,050. Write the face value and the place value of each of its four digits first.",
+   "Similar idea with 3-digit numbers: is 'the place value of the hundreds digit is always more than 100' true? Test 100 itself: the place value of its 1 is exactly 100, not more. One number that breaks a statement is enough to rule it out."
+  ],
+  "steps": [
+   "Test each statement with a tricky number such as 3,050. Its face values are 3, 0, 5, 0 and its place values are 3,000, 0, 50, 0.",
+   "The face values add up to 8, not 3,050. The ones digit 0 has face value 0 and place value 0, so its face value is not smaller. The hundreds digit has place value 0, which is not greater than the tens digit's 50.",
+   "The place values add up to the number. This is just the expanded form, so it happens for every number. 3000 plus 0 plus 50 plus 0 equals 3050.",
+   "So the statement that is always true is: the sum of the place values of all its digits is equal to the number itself."
+  ]
+ },
+ "G5A_PLACEVALUE_014": {
+  "q": "A 2-digit number is 27 more than the number made by writing its digits in the opposite order. The reversed number is also a 2-digit number. How many such numbers are there?",
+  "options": [
+   "6",
+   "7",
+   "3",
+   "9"
+  ],
+  "hints": [
+   "Try one or two examples of a number minus its reverse and look for a pattern in the answers.",
+   "Work out 41 minus 14 and 52 minus 25. What do you notice about the gap between the digits each time?",
+   "Similar problem with 45 more: 45 divided by 9 equals 5, so the tens digit is 5 more than the ones digit. The numbers are 61, 72, 83 and 94. 50 is left out because its reverse is not a 2-digit number. So there are 4 of them."
+  ],
+  "steps": [
+   "Try examples: 41 minus 14 equals 27 and 52 minus 25 equals 27. A 2-digit number minus its reverse is always 9 times the gap between its digits.",
+   "Find the gap between the digits. 27 divided by 9 equals 3.",
+   "So the tens digit is 3 more than the ones digit: 30, 41, 52, 63, 74, 85, 96.",
+   "The reverse of 30 is 03, which is not a 2-digit number, so 30 is left out.",
+   "That leaves 41, 52, 63, 74, 85 and 96, so there are 6 such numbers."
+  ]
+ },
+ "G5A_PLACEVALUE_015": {
+  "q": "How many 3-digit numbers have exactly one digit that is 0?",
+  "options": [
+   "180",
+   "171",
+   "162",
+   "81"
+  ],
+  "hints": [
+   "Decide where the single 0 can be, and remember that the other digits must then not be 0.",
+   "The hundreds digit can never be 0. Start with the case where the 0 is in the tens place: how many choices are there for each of the other two digits?",
+   "Similar problem: how many 2-digit numbers have exactly one digit that is 5? Tens digit 5 with a ones digit that is not 5 gives 9 numbers. Ones digit 5 with a tens digit that is not 5 or 0 gives 8 numbers. Total: 9 plus 8 equals 17."
+  ],
+  "steps": [
+   "The hundreds digit can never be 0, so the single 0 is either in the tens place or in the ones place.",
+   "0 in the tens place only: the hundreds digit has 9 choices, 1 to 9, and the ones digit has 9 choices, 1 to 9. 9 times 9 equals 81.",
+   "0 in the ones place only: again 9 choices for the hundreds digit and 9 for the tens digit. 9 times 9 equals 81.",
+   "Add the two cases. 81 plus 81 equals 162.",
+   "So 162 three-digit numbers have exactly one 0."
+  ]
+ },
+ "G5A_PLACEVALUE_016": {
+  "q": "A number has all its digits different. Rounded to the nearest thousand, it becomes 60,000. What is the greatest number it could be?",
+  "options": [
+   "60,499",
+   "60,500",
+   "59,876",
+   "60,498"
+  ],
+  "hints": [
+   "First find the range of numbers that round to 60,000. Then look for the greatest one in that range that also fits the other condition.",
+   "The greatest number that rounds to 60,000 to the nearest thousand is 60,499. Check its digits one by one.",
+   "Similar problem: all digits different, and the number rounds to 7,000 to the nearest thousand. The greatest number that rounds to 7,000 is 7,499, but 9 repeats. Lowering the last digit to the next unused one gives 7,498."
+  ],
+  "steps": [
+   "Numbers that round to 60,000 to the nearest thousand run from 59,500 to 60,499.",
+   "The greatest of these is 60,499, but it uses the digit 9 twice.",
+   "Keep 6, 0, 4 and 9 in the first four places and lower the ones digit to the biggest digit not yet used: 8.",
+   "The greatest such number is 60,498."
+  ]
+ },
+ "G5A_PLACEVALUE_017": {
+  "q": "Using each of the digits 2, 5 and 7 exactly once, six different 3-digit numbers can be made. What is the sum of all six numbers?",
+  "options": [
+   "1,554",
+   "4,662",
+   "3,108",
+   "2,664"
+  ],
+  "hints": [
+   "You could add six numbers, but there is a quicker way: think about how often each digit appears in each place.",
+   "List the six numbers and look only at the hundreds place. How many times does each of 2, 5 and 7 appear there?",
+   "Similar problem with the digits 1, 2 and 3: each digit appears twice in each place, so every place adds up to 2 times open bracket 1 plus 2 plus 3 close bracket, equals 12. The sum is 12 hundreds plus 12 tens plus 12 ones equals 1,332."
+  ],
+  "steps": [
+   "The six numbers are 257, 275, 527, 572, 725 and 752. Each digit appears exactly twice in the hundreds place, twice in the tens place and twice in the ones place.",
+   "So each place adds up to twice the sum of the digits. 2 times open bracket 2 plus 5 plus 7 close bracket, equals 28.",
+   "Add the three places: 28 hundreds, 28 tens and 28 ones. 2800 plus 280 plus 28 equals 3108.",
+   "The sum of all six numbers is 3,108."
+  ]
+ },
+ "G5A_PLACEVALUE_018": {
+  "q": "A palindrome is a number that reads the same forwards and backwards, such as 3,553. How many 4-digit palindromes are even numbers?",
+  "options": [
+   "50",
+   "40",
+   "90",
+   "45"
+  ],
+  "hints": [
+   "In a palindrome, some digits are copies of others. Work out how many digits you are really free to choose.",
+   "The last digit decides whether a number is even. In a 4-digit palindrome, which other digit is the same as the last digit?",
+   "Similar problem: how many 3-digit palindromes are multiples of 5? The last digit must be 0 or 5, and it equals the first digit, which cannot be 0. So the first digit is 5, which is 1 choice, and the middle digit is free, which is 10 choices: 1 times 10 equals 10."
+  ],
+  "steps": [
+   "A 4-digit palindrome is decided by its first two digits: the third digit copies the second and the fourth copies the first.",
+   "For an even number the last digit must be even. It is the same as the first digit, which cannot be 0, so it is 2, 4, 6 or 8: 4 choices.",
+   "The second digit can be any digit from 0 to 9: 10 choices.",
+   "Multiply the choices. 4 times 10 equals 40.",
+   "There are 40 even 4-digit palindromes."
+  ]
  }
 }

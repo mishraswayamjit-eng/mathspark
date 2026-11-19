@@ -7171,5 +7171,666 @@
    "First multiply the base by the height: 16 times 15 equals 240.",
    "Now take half: 240 divided by 2 equals 120. The area of the triangle is 120 square centimetres."
   ]
+ },
+ "G5A_ANGLES_001": {
+  "q": "At which of these times is the smaller angle between the hour hand and the minute hand of a clock exactly 45 degrees?",
+  "options": [
+   "1 30",
+   "4 30",
+   "10 30",
+   "12 45"
+  ],
+  "hints": [
+   "For each time, find where each hand points. The hour hand does not sit on a number unless the time is exactly on the hour.",
+   "At half past an hour the minute hand points at the 6 and the hour hand is halfway between two numbers. Each number-to-number gap on the clock is 30 degrees.",
+   "A similar check at 2 30: the hour hand is halfway between the 2 and the 3, and the minute hand is on the 6. From there to the 6 is 3 and a half gaps, which is 105 degrees."
+  ],
+  "steps": [
+   "At 4 30 the minute hand points at the 6 and the hour hand is halfway between the 4 and the 5.",
+   "From the hour hand to the 5 is half a gap, which is 15 degrees, and from the 5 to the 6 is one gap, which is 30 degrees.",
+   "Add the two parts. 15 plus 30 equals 45.",
+   "At the other times the angles are 135 degrees, 135 degrees and 112.5 degrees, so the time is 4 30."
+  ]
+ },
+ "G5A_ANGLES_002": {
+  "q": "At 12 o'clock the two hands of a clock lie exactly together. After how many minutes is the angle between them 66 degrees for the first time?",
+  "options": [
+   "11 minutes",
+   "13 minutes",
+   "132 minutes",
+   "12 minutes"
+  ],
+  "hints": [
+   "Both hands are moving, one much faster than the other. Think about how quickly the faster one pulls ahead.",
+   "In one minute the minute hand turns 6 degrees and the hour hand turns half a degree. Find how much the gap between them grows in one minute.",
+   "A similar question: how long after 12 o'clock is the angle 33 degrees? The gap grows by 5 and a half degrees each minute, and 6 lots of 5 and a half make 33, so it takes 6 minutes."
+  ],
+  "steps": [
+   "In one minute the minute hand turns 6 degrees and the hour hand turns half a degree.",
+   "So the angle between them grows by 5 and a half degrees every minute, which is 11 degrees every 2 minutes.",
+   "Find how many lots of 11 degrees make 66 degrees. 66 divided by 11 equals 6.",
+   "Six lots of 2 minutes: the angle is 66 degrees after 12 minutes."
+  ]
+ },
+ "G5A_ANGLES_003": {
+  "q": "At 10 10, what is the larger angle between the hour hand and the minute hand, measured the long way round the clock?",
+  "options": [
+   "240 degrees",
+   "115 degrees",
+   "245 degrees",
+   "120 degrees"
+  ],
+  "hints": [
+   "Two things need care: where exactly the hour hand is at ten minutes past the hour, and which of the two angles is being asked for.",
+   "The minute hand points at the 2. The hour hand has moved past the 10 by 10 minutes' worth of turning, at half a degree each minute.",
+   "A similar question at 8 20: the minute hand is at the 4, which is 120 degrees from the 12. The hour hand is at 240 degrees plus 10 degrees equals 250 degrees. The smaller angle is 130 degrees, so the larger one is 360 degrees minus 130 degrees equals 230 degrees."
+  ],
+  "steps": [
+   "Measure from the 12, going clockwise. The minute hand is at the 2, which is 60 degrees.",
+   "The hour hand is 5 degrees past the 10. 300 plus 5 equals 305.",
+   "Going clockwise from the minute hand to the hour hand is the long way round. 305 minus 60 equals 245.",
+   "The other way round is only 115 degrees, so the larger angle is 245 degrees."
+  ]
+ },
+ "G5A_ANGLES_004": {
+  "q": "While the minute hand of a clock turns through 150 degrees, through how many degrees does the hour hand turn?",
+  "options": [
+   "12.5 degrees",
+   "25 degrees",
+   "15 degrees",
+   "2.5 degrees"
+  ],
+  "hints": [
+   "The two hands are linked by time. Find how long the minute hand takes, then ask how far the hour hand goes in that time.",
+   "The minute hand turns 360 degrees in 60 minutes, which is 6 degrees each minute. Find how many minutes it needs for 150 degrees.",
+   "A similar question: while the minute hand turns 90 degrees, 15 minutes pass. The hour hand turns 30 degrees in 60 minutes, so in 15 minutes it turns a quarter of 30 degrees, which is 7.5 degrees."
+  ],
+  "steps": [
+   "The minute hand turns 6 degrees each minute. Find the time taken. 150 divided by 6 equals 25.",
+   "The hour hand turns 30 degrees in 60 minutes, which is half a degree each minute.",
+   "Find half of 25. 25 divided by 2 equals 12.5.",
+   "So the hour hand turns through 12.5 degrees."
+  ]
+ },
+ "G5A_ANGLES_005": {
+  "q": "Point O lies on a straight line A B. A ray O C is drawn from O, making the two angles A O C and C O B. Ray O P cuts angle A O C into two equal parts, and ray O Q cuts angle C O B into two equal parts. What is the size of angle P O Q?",
+  "options": [
+   "It changes when ray O C is moved",
+   "45 degrees",
+   "180 degrees",
+   "90 degrees"
+  ],
+  "hints": [
+   "No size is given for angle A O C, so try to see what stays the same wherever ray O C points. Testing one or two sizes of your own can help.",
+   "Angle P O Q is made of half of angle A O C and half of angle C O B. Think about what angle A O C and angle C O B add up to.",
+   "A similar idea: angle X O Z is 120 degrees and ray O Y lies inside it. If one ray halves angle X O Y and another halves angle Y O Z, the angle between those two rays is half of 120 degrees, which is 60 degrees, wherever O Y lies."
+  ],
+  "steps": [
+   "Angles A O C and C O B lie side by side on a straight line, so together they make 180 degrees.",
+   "Angle P O Q is half of angle A O C together with half of angle C O B.",
+   "Half of each is the same as half of the total. 180 divided by 2 equals 90.",
+   "So angle P O Q is 90 degrees, wherever ray O C is drawn."
+  ]
+ },
+ "G5A_ANGLES_006": {
+  "q": "Two straight lines cross at a point, making four angles. Three of the four angles add up to 250 degrees. What is the size of the smallest of the four angles?",
+  "options": [
+   "110 degrees",
+   "70 degrees",
+   "125 degrees",
+   "55 degrees"
+  ],
+  "hints": [
+   "All four angles round the crossing point make a full turn. Once you know one angle, the straight lines tell you all the others.",
+   "Take 250 degrees from 360 degrees to find the angle that was left out of the sum. Then ask whether that angle is the smallest one.",
+   "A similar crossing: three of the four angles add up to 300 degrees. The fourth is 60 degrees, the angle opposite it is also 60 degrees, and the other two are 120 degrees each. Here the smallest angle is 60 degrees."
+  ],
+  "steps": [
+   "Find the angle that was left out. 360 minus 250 equals 110.",
+   "The angle opposite it is also 110 degrees.",
+   "Each of the other two angles lies beside it on a straight line. 180 minus 110 equals 70.",
+   "The four angles are 110 degrees, 70 degrees, 110 degrees and 70 degrees, so the smallest angle is 70 degrees."
+  ]
+ },
+ "G5A_ANGLES_007": {
+  "q": "The supplement of an angle is 4 times its complement. What is the angle?",
+  "options": [
+   "30 degrees",
+   "60 degrees",
+   "72 degrees",
+   "36 degrees"
+  ],
+  "hints": [
+   "Compare the supplement and the complement of the same angle. How far apart are they, whatever the angle is?",
+   "The supplement is what must be added to reach 180 degrees and the complement is what must be added to reach 90 degrees, so the supplement is 90 degrees more than the complement.",
+   "A similar puzzle: the supplement of an angle is 3 times its complement. The extra 90 degrees is then 2 times the complement, so the complement is 45 degrees and the angle is 45 degrees."
+  ],
+  "steps": [
+   "For any angle, the supplement is 90 degrees more than the complement.",
+   "Here the supplement is 4 times the complement, so the extra 90 degrees is 3 times the complement.",
+   "Find the complement. 90 divided by 3 equals 30.",
+   "Take the complement from 90 degrees: the angle is 60 degrees."
+  ]
+ },
+ "G5A_ANGLES_008": {
+  "q": "The complement and the supplement of an angle add up to 194 degrees. What is the angle?",
+  "options": [
+   "76 degrees",
+   "14 degrees",
+   "52 degrees",
+   "38 degrees"
+  ],
+  "hints": [
+   "Think about how the complement and the supplement are each made from the angle, and how many times the angle is taken away in all.",
+   "The complement is 90 degrees less the angle and the supplement is 180 degrees less the angle. Together they are 270 degrees less two copies of the angle.",
+   "A similar puzzle: the complement and supplement of an angle add up to 210 degrees. Then 270 degrees minus 210 degrees equals 60 degrees is two copies of the angle, so the angle is 30 degrees. Check: 60 degrees plus 150 degrees equals 210 degrees."
+  ],
+  "steps": [
+   "The complement is 90 degrees less the angle, and the supplement is 180 degrees less the angle.",
+   "Together they are 270 degrees less two copies of the angle. Find the two copies. 270 minus 194 equals 76.",
+   "Halve it to find the angle. 76 divided by 2 equals 38.",
+   "Check: 52 degrees plus 142 degrees equals 194 degrees, so the angle is 38 degrees."
+  ]
+ },
+ "G5A_ANGLES_009": {
+  "q": "Angle P and angle Q are complementary. Angle Q and angle R are supplementary. How much bigger is angle R than angle P?",
+  "options": [
+   "90 degrees",
+   "It depends on the size of angle Q",
+   "45 degrees",
+   "180 degrees"
+  ],
+  "hints": [
+   "No sizes are given, so try a size of your own for angle Q, work out P and R, and then try another size. Compare the results.",
+   "Angle P is what must be added to Q to make 90 degrees. Angle R is what must be added to the same Q to make 180 degrees.",
+   "A similar idea with other totals: A and B add up to 50, and B and C add up to 80. Whatever B is, C is 30 more than A, because 80 is 30 more than 50."
+  ],
+  "steps": [
+   "Angle P and angle Q add up to 90 degrees, so P is 90 degrees less Q.",
+   "Angle Q and angle R add up to 180 degrees, so R is 180 degrees less Q.",
+   "The same Q is taken away both times, so the difference is the difference of the totals. 180 minus 90 equals 90.",
+   "So angle R is always 90 degrees bigger than angle P."
+  ]
+ },
+ "G5A_ANGLES_010": {
+  "q": "Two angles are complementary. Measured in whole degrees, one of them is a multiple of 7 and the other is a multiple of 11. What is the difference between the two angles?",
+  "options": [
+   "23 degrees",
+   "2 degrees",
+   "20 degrees",
+   "66 degrees"
+  ],
+  "hints": [
+   "There are only a few multiples of 11 below 90. Test them in order and see what each one leaves.",
+   "Start with 11 degrees: the other angle would be 79 degrees. Is 79 a multiple of 7? Carry on with 22 degrees, 33 degrees and so on.",
+   "A similar search: two supplementary angles, one a multiple of 50 and the other a multiple of 30. Testing 50 degrees, 100 degrees and 150 degrees leaves 130 degrees, 80 degrees and 30 degrees. Only the last is a multiple of 30, so the angles are 150 degrees and 30 degrees and they differ by 120 degrees."
+  ],
+  "steps": [
+   "Complementary angles add up to 90 degrees. The multiples of 11 below 90 are 11, 22, 33, 44, 55, 66, 77 and 88.",
+   "Taking each from 90 leaves 79, 68, 57, 46, 35, 24, 13 and 2.",
+   "Only 35 is a multiple of 7, so the angles are 55 degrees and 35 degrees.",
+   "Subtract: the difference is 20 degrees."
+  ]
+ },
+ "G5A_ANGLES_011": {
+  "q": "Two straight roads run exactly east to west and are parallel, one to the north of the other. Bela stands at point B on the north road and Dev stands at point D on the south road. A lamp post E stands between the two roads, to the east of both children. The straight line from B to E makes an angle of 35 degrees with the north road, and the straight line from D to E makes an angle of 40 degrees with the south road. What is the size of angle B E D, the angle at the lamp post between the two lines?",
+  "options": [
+   "75 degrees",
+   "105 degrees",
+   "5 degrees",
+   "145 degrees"
+  ],
+  "hints": [
+   "Sketch the two roads and the bend at E. The angle at E touches neither road, so think about adding a helpful line of your own.",
+   "Draw a line through E parallel to the two roads. It cuts angle B E D into two parts. Compare the top part with the 35 degree angle at B.",
+   "A similar bend: with angles of 20 degrees at the top road and 50 degrees at the bottom road, a parallel line through the bend makes alternate angles of 20 degrees and 50 degrees, so the angle at the bend is 20 degrees plus 50 degrees equals 70 degrees."
+  ],
+  "steps": [
+   "Draw a line through E that is parallel to both roads. It splits angle B E D into an upper part and a lower part.",
+   "The upper part and the 35 degree angle at B are alternate angles between parallel lines, so the upper part is 35 degrees.",
+   "In the same way the lower part equals the 40 degree angle at D.",
+   "Add the two parts: angle B E D is 75 degrees."
+  ]
+ },
+ "G5A_ANGLES_012": {
+  "q": "A straight line crosses two parallel lines. An angle at the first crossing and its alternate angle at the second crossing add up to 124 degrees. What is the size of each obtuse angle formed at the crossings?",
+  "options": [
+   "62 degrees",
+   "56 degrees",
+   "118 degrees",
+   "124 degrees"
+  ],
+  "hints": [
+   "Recall what is special about alternate angles between parallel lines, then read again which angles the question asks for.",
+   "Alternate angles between parallel lines are equal, so share 124 degrees equally between the two. Are those angles obtuse?",
+   "A similar crossing: two alternate angles add up to 100 degrees, so each is 50 degrees. The obtuse angles beside them on the straight line are 180 degrees minus 50 degrees equals 130 degrees."
+  ],
+  "steps": [
+   "Alternate angles between parallel lines are equal.",
+   "Find each of the two alternate angles. 124 divided by 2 equals 62.",
+   "62 degrees is acute. Each obtuse angle lies beside a 62 degree angle on a straight line.",
+   "Take it from 180 degrees: each obtuse angle is 118 degrees."
+  ]
+ },
+ "G5A_ANGLES_013": {
+  "q": "Two parallel lines are drawn, one above the other. P is a point on the top line. Q and R are points on the bottom line, with Q to the left of R. The line P Q makes an angle of 50 degrees with the top line on the left of P, and the line P R makes an angle of 62 degrees with the top line on the right of P. What is the largest angle of triangle P Q R?",
+  "options": [
+   "62 degrees",
+   "68 degrees",
+   "112 degrees",
+   "130 degrees"
+  ],
+  "hints": [
+   "Sketch it. Three angles sit side by side at P along the top line, and the two given ones also reappear somewhere in the triangle.",
+   "At P, the 50 degree angle, the angle Q P R and the 62 degree angle together make the straight top line. Find angle Q P R first.",
+   "A similar picture with 40 degrees on the left and 60 degrees on the right: the angle at the top point is 180 degrees minus 40 degrees minus 60 degrees equals 80 degrees, and the base angles are 40 degrees and 60 degrees by alternate angles, so the largest angle is 80 degrees."
+  ],
+  "steps": [
+   "The three angles at P lie along a straight line. Find angle Q P R. 180 minus 50 minus 62 equals 68.",
+   "Angle P Q R and the 50 degree angle are alternate angles between the parallel lines, so angle P Q R is 50 degrees.",
+   "In the same way angle P R Q is 62 degrees.",
+   "The triangle has angles 68 degrees, 50 degrees and 62 degrees, so its largest angle is 68 degrees."
+  ]
+ },
+ "G5A_ANGLES_014": {
+  "q": "Ravi turns 135 degrees clockwise and then 270 degrees anticlockwise. He is now facing North. In which direction was he facing at the start?",
+  "options": [
+   "South-West",
+   "North-East",
+   "North-West",
+   "South-East"
+  ],
+  "hints": [
+   "North is where Ravi finishes, not where he begins. Think about how to undo a turn.",
+   "The two turns together are the same as one turn of 135 degrees anticlockwise. To go back to the start, make the opposite turn from North.",
+   "A similar puzzle: Tina turns 90 degrees clockwise and then 45 degrees anticlockwise and ends facing East. Her turns together are 45 degrees clockwise, so she started 45 degrees anticlockwise of East, which is North-East."
+  ],
+  "steps": [
+   "A turn of 135 degrees clockwise followed by 270 degrees anticlockwise is the same as one turn of 135 degrees anticlockwise.",
+   "To find the start, undo this from North: turn 135 degrees clockwise.",
+   "From North, 90 degrees clockwise is East and 45 degrees more is South-East.",
+   "Check: from South-East, 135 degrees clockwise is West, and 270 degrees anticlockwise from West is North. So he started facing South-East."
+  ]
+ },
+ "G5A_ANGLES_015": {
+  "q": "Asha faces North-East. She turns through 3 right angles clockwise and then through 135 degrees anticlockwise. What is the smallest turn that will make her face North-East again?",
+  "options": [
+   "225 degrees clockwise",
+   "135 degrees clockwise",
+   "135 degrees anticlockwise",
+   "225 degrees anticlockwise"
+  ],
+  "hints": [
+   "Find the direction Asha faces after her two turns. From there she can turn back either way round, so compare the two ways.",
+   "Three right angles are 270 degrees. From North-East, 270 degrees clockwise is North-West. Now make the 135 degrees anticlockwise turn from North-West.",
+   "A similar puzzle: Ravi faces East, turns 180 degrees clockwise and then 45 degrees anticlockwise, so he faces South-West. To face East again he can turn 225 degrees clockwise or 135 degrees anticlockwise, and the smaller is 135 degrees anticlockwise."
+  ],
+  "steps": [
+   "Three right angles are 270 degrees. From North-East, 270 degrees clockwise is North-West.",
+   "From North-West, 135 degrees anticlockwise is South. So Asha now faces South.",
+   "From South to North-East is 225 degrees going clockwise through West and North, or 135 degrees going anticlockwise through South-East and East.",
+   "The smaller of the two is 135 degrees anticlockwise."
+  ]
+ },
+ "G5A_ANGLES_016": {
+  "q": "A toy robot faces North. Each time a bell rings it turns 135 degrees clockwise. After how many rings does it face North again for the first time?",
+  "options": [
+   "8",
+   "3",
+   "4",
+   "6"
+  ],
+  "hints": [
+   "Facing North again means the robot has turned through an exact number of full turns, not just a bit more than one.",
+   "Add up the turning after each ring: 135 degrees, 270 degrees, 405 degrees and so on. Look for the first total that is a multiple of 360 degrees.",
+   "A similar robot turns 150 degrees at each ring. Its totals are 150 degrees, 300 degrees, 450 degrees and so on, and the first total that is a whole number of full turns is 1800 degrees, which is 5 full turns, reached after 12 rings."
+  ],
+  "steps": [
+   "The robot faces North again when its total turning is a whole number of full turns of 360 degrees.",
+   "The totals are 135 degrees, 270 degrees, 405 degrees, 540 degrees, 675 degrees, 810 degrees, 945 degrees and 1080 degrees.",
+   "The first of these that is a multiple of 360 degrees is 1080 degrees, which is 3 full turns.",
+   "So the robot faces North again after 8 rings. 8 times 135 equals 1080."
+  ]
+ },
+ "G5A_ANGLES_017": {
+  "q": "Four rays O A, O B, O C and O D start from the same point O. Going round in order, angle A O B is 20 degrees, angle B O C is 30 degrees and angle C O D is 40 degrees. Counting every angle that has two of these four rays as its arms, how many of the angles are acute?",
+  "options": [
+   "3",
+   "6",
+   "4",
+   "5"
+  ],
+  "hints": [
+   "An angle can be made by any two of the rays, not only by rays that are next to each other. List the pairs of rays in an orderly way.",
+   "Besides the three given angles there are angle A O C, angle B O D and angle A O D. Find each by adding the parts it is made of.",
+   "A similar picture: rays O P, O Q and O R with angle P O Q 50 degrees and angle Q O R 60 degrees. The angles are 50 degrees, 60 degrees and the combined angle P O R of 110 degrees. Two of the three are acute."
+  ],
+  "steps": [
+   "The three given angles are 20 degrees, 30 degrees and 40 degrees, and all three are acute.",
+   "Angle A O C is 20 degrees plus 30 degrees equals 50 degrees and angle B O D is 30 degrees plus 40 degrees equals 70 degrees. Both are acute.",
+   "Angle A O D is made of all three parts. 20 plus 30 plus 40 equals 90.",
+   "Angle A O D is a right angle, not an acute angle. So the acute angles are 20 degrees, 30 degrees, 40 degrees, 50 degrees and 70 degrees, which makes 5."
+  ]
+ },
+ "G5A_ANGLES_018": {
+  "q": "Two angles are supplementary. Which of these statements is true for every such pair of angles?",
+  "options": [
+   "One of them must be obtuse",
+   "They cannot both be acute",
+   "They cannot be equal",
+   "The larger one is always more than 90 degrees"
+  ],
+  "hints": [
+   "A statement is true for every pair only if no pair at all breaks it. Hunt for an unusual pair that might break each statement.",
+   "Try the pair 90 degrees and 90 degrees. They add up to 180 degrees, so they are supplementary. Test each statement on this pair.",
+   "A similar test: for two complementary angles, is it always true that one is bigger than 45 degrees? Trying 45 degrees and 45 degrees shows it is not, since they add up to 90 degrees and neither is bigger than 45 degrees."
+  ],
+  "steps": [
+   "Supplementary angles add up to 180 degrees. One special pair is 90 degrees and 90 degrees.",
+   "In that pair neither angle is obtuse, the two are equal, and neither is more than 90 degrees, so three of the statements are not always true.",
+   "Two acute angles are each less than 90 degrees, so together they are less than 180 degrees and can never be supplementary.",
+   "So the statement that is always true is: they cannot both be acute."
+  ]
+ },
+ "G5A_ANGLES_019": {
+  "q": "Angle A O B is 70 degrees and angle B O C is 50 degrees. The two angles share the arm O B. Which answer gives every possible size of angle A O C?",
+  "options": [
+   "120 degrees only",
+   "20 degrees or 120 degrees",
+   "20 degrees only",
+   "60 degrees or 120 degrees"
+  ],
+  "hints": [
+   "No picture is given, so ask yourself whether there is more than one way to draw it. Where can ray O C go?",
+   "Draw angle A O B first. Ray O C makes 50 degrees with O B, and it can be drawn on either side of O B. Sketch both pictures.",
+   "A similar case: angle X O Y is 80 degrees and angle Y O Z is 30 degrees, sharing the arm O Y. If O Z is on the far side of O Y, angle X O Z is 110 degrees. If O Z is on the same side as O X, it is 50 degrees. So it can be 50 degrees or 110 degrees."
+  ],
+  "steps": [
+   "Ray O C makes an angle of 50 degrees with O B, and it can lie on either side of O B.",
+   "If O C is on the other side of O B from O A, the two angles lie side by side and are added. 70 plus 50 equals 120.",
+   "If O C is on the same side of O B as O A, the angles overlap and are subtracted. 70 minus 50 equals 20.",
+   "So angle A O C can be 20 degrees or 120 degrees."
+  ]
+ },
+ "G5A_ANGLES_020": {
+  "q": "A wheel has 9 spokes, equally spaced and numbered 1 to 9 in order round the wheel. What is the smaller angle between spoke 2 and spoke 8?",
+  "options": [
+   "240 degrees",
+   "280 degrees",
+   "80 degrees",
+   "120 degrees"
+  ],
+  "hints": [
+   "On a wheel you can go from one spoke to another in two directions. Find the angle of one gap first, then compare the two ways round.",
+   "Nine equal gaps make a full turn of 360 degrees, so find the angle between two neighbouring spokes. Then count the gaps from spoke 2 to spoke 8 each way.",
+   "A similar wheel has 8 spokes, so each gap is 45 degrees. From spoke 1 to spoke 7 is 6 gaps one way, which is 270 degrees, but only 2 gaps the other way, through spoke 8. The smaller angle is 90 degrees."
+  ],
+  "steps": [
+   "Find the angle between neighbouring spokes. 360 divided by 9 equals 40.",
+   "Counting up from spoke 2 to spoke 8 there are 6 gaps, which is 240 degrees.",
+   "Going the other way, from spoke 8 to spoke 9, then 1, then 2, there are only 3 gaps.",
+   "Three gaps of 40 degrees: the smaller angle is 120 degrees."
+  ]
+ },
+ "G5A_TRIANGLES_001": {
+  "q": "How many of these five sets of lengths can be the three sides of a triangle? Set 1: 3 centimetres, 4 centimetres, 7 centimetres. Set 2: 5 centimetres, 5 centimetres, 9 centimetres. Set 3: 2 centimetres, 6 centimetres, 9 centimetres. Set 4: 4 centimetres, 7 centimetres, 10 centimetres. Set 5: 6 centimetres, 6 centimetres, 12 centimetres.",
+  "options": [
+   "2",
+   "4",
+   "3",
+   "1"
+  ],
+  "hints": [
+   "Imagine fixing the longest stick on the table and hinging the two shorter sticks at its ends. When can their tips meet above it?",
+   "For each set, add the two shorter lengths and compare the total with the longest length. Think hard about the sets where they are exactly equal.",
+   "A similar check: 2 centimetres, 3 centimetres, 5 centimetres cannot make a triangle, because 2 plus 3 is exactly 5 and the short sticks lie flat on the long one. But 3 centimetres, 3 centimetres, 5 centimetres can, because 3 plus 3 is more than 5."
+  ],
+  "steps": [
+   "Three lengths make a triangle only when the two shorter ones together are more than the longest.",
+   "Set 1: 3 plus 4 equals 7, only equal, so no. Set 2: 5 plus 5 equals 10, more than 9, so yes. Set 3: 2 plus 6 equals 8, less than 9, so no.",
+   "Set 4: 4 plus 7 equals 11, more than 10, so yes. Set 5: 6 plus 6 equals 12, only equal, so no.",
+   "Only Set 2 and Set 4 make triangles, so the answer is 2."
+  ]
+ },
+ "G5A_TRIANGLES_002": {
+  "q": "Mira has five sticks of lengths 2 centimetres, 3 centimetres, 4 centimetres, 5 centimetres and 7 centimetres. She picks three sticks at a time and tries to make a triangle with them as its sides. How many different triangles can she make?",
+  "options": [
+   "10",
+   "8",
+   "5",
+   "4"
+  ],
+  "hints": [
+   "Not every choice of three sticks will close up into a triangle. List the choices in an orderly way so that none is missed, and test each one.",
+   "Start with the choices that use the 2 centimetre stick: 2, 3, 4 and 2, 3, 5 and 2, 3, 7 and so on. For each, compare the two shorter sticks together with the longest.",
+   "A similar task with sticks of 1 centimetre, 2 centimetres, 3 centimetres and 4 centimetres: the choices are 1, 2, 3 and 1, 2, 4 and 1, 3, 4 and 2, 3, 4. Only 2, 3, 4 works, because 2 plus 3 is more than 4, so just 1 triangle can be made."
+  ],
+  "steps": [
+   "There are 10 ways to choose three of the five sticks. A choice makes a triangle only if the two shorter sticks together are longer than the longest.",
+   "With the 2 centimetre stick: 2, 3, 4 works and 2, 4, 5 works. But 2, 3, 5 and 2, 5, 7 are only equal, and 2, 3, 7 and 2, 4, 7 are too short.",
+   "Without the 2 centimetre stick: 3, 4, 5 and 3, 5, 7 and 4, 5, 7 work, but 3, 4, 7 is only equal.",
+   "So Mira can make 5 triangles."
+  ]
+ },
+ "G5A_TRIANGLES_003": {
+  "q": "Two sides of a triangle are 4 centimetres and 9 centimetres long. The third side is a whole number of centimetres. How many different lengths can the third side have?",
+  "options": [
+   "7",
+   "9",
+   "12",
+   "6"
+  ],
+  "hints": [
+   "The third side cannot be too long or too short. Find both limits, then count the whole numbers strictly between them.",
+   "If the third side is the longest, it must be less than 4 plus 9. If 9 centimetres is the longest, then 4 plus the third side must be more than 9.",
+   "A similar triangle has sides 3 centimetres and 8 centimetres. The third side must be more than 5 centimetres and less than 11 centimetres, so it can be 6, 7, 8, 9 or 10 centimetres: that is 5 different lengths."
+  ],
+  "steps": [
+   "The third side must be shorter than the other two together. 4 plus 9 equals 13.",
+   "With 4 centimetres it must beat the 9 centimetre side, so it must be longer than their difference. 9 minus 4 equals 5.",
+   "So the third side is more than 5 centimetres and less than 13 centimetres: it can be 6, 7, 8, 9, 10, 11 or 12 centimetres.",
+   "Counting these gives 7 different lengths."
+  ]
+ },
+ "G5A_TRIANGLES_004": {
+  "q": "Three villages P, Q and R do not lie in one straight line. Straight roads join each pair of villages. Road P Q is 7 kilometres long and road Q R is 12 kilometres long. Which of these could be the length of road P R?",
+  "options": [
+   "19 kilometres",
+   "5 kilometres",
+   "18 kilometres",
+   "4 kilometres"
+  ],
+  "hints": [
+   "The three roads form a triangle. Think about going from P to R directly, and going from P to R by way of Q.",
+   "The direct road P R must be shorter than going round through Q, which is 7 kilometres plus 12 kilometres. It also cannot be too short: 7 kilometres and P R together must be more than 12 kilometres.",
+   "A similar map: road A B is 6 kilometres and road B C is 10 kilometres, with the three villages not in a line. Road A C must be more than 4 kilometres and less than 16 kilometres, so 15 kilometres is possible but 16 kilometres and 4 kilometres are not."
+  ],
+  "steps": [
+   "The direct road must be shorter than the way round through Q. 7 plus 12 equals 19.",
+   "Roads P Q and P R together must be longer than road Q R, so P R is longer than the difference. 12 minus 7 equals 5.",
+   "So P R is more than 5 kilometres and less than 19 kilometres. Exactly 19 kilometres or exactly 5 kilometres would put the villages in a straight line.",
+   "Of the lengths offered, only 18 kilometres fits."
+  ]
+ },
+ "G5A_TRIANGLES_005": {
+  "q": "How many different triangles have sides that are whole numbers of centimetres and a perimeter of 13 centimetres? Triangles with the same three side lengths count as one triangle.",
+  "options": [
+   "14",
+   "5",
+   "3",
+   "6"
+  ],
+  "hints": [
+   "Not every three numbers that add up to 13 make a triangle. Decide first how long the longest side is allowed to be.",
+   "The longest side must be shorter than the other two together, so it must be less than half of 13. It also cannot be less than 5 centimetres, or the three sides could not reach 13 centimetres.",
+   "A similar count for perimeter 9 centimetres: the longest side must be less than 4 and a half, so it is 3 or 4. That gives 3, 3, 3 and 4, 4, 1 and 4, 3, 2, which is 3 triangles."
+  ],
+  "steps": [
+   "The longest side must be less than the other two together, so it is less than half of 13 centimetres: at most 6 centimetres. It is at least 5 centimetres, because three sides of 4 centimetres or less cannot add up to 13 centimetres.",
+   "Longest side 6 centimetres: the other two add up to 7 centimetres, giving 6, 6, 1 and 6, 5, 2 and 6, 4, 3.",
+   "Longest side 5 centimetres: the other two add up to 8 centimetres, giving 5, 5, 3 and 5, 4, 4.",
+   "Count them: there are 5 triangles."
+  ]
+ },
+ "G5A_TRIANGLES_006": {
+  "q": "An isosceles triangle has sides that are whole numbers of centimetres and a perimeter of 20 centimetres. How many different triangles like this are there?",
+  "options": [
+   "9",
+   "5",
+   "8",
+   "4"
+  ],
+  "hints": [
+   "Choose the length of the two equal sides and the third side is then fixed. But not every choice closes up into a triangle.",
+   "If each equal side is 3 centimetres, the third side is 14 centimetres. Can two sides of 3 centimetres reach across 14 centimetres? Find which lengths of the equal sides do work.",
+   "A similar count for perimeter 12 centimetres: equal sides of 4 centimetres give 4, 4, 4 and equal sides of 5 centimetres give 5, 5, 2. Equal sides of 3 centimetres give 3, 3, 6, which lies flat. So there are 2 triangles."
+  ],
+  "steps": [
+   "If each equal side is a certain length, the third side is 20 centimetres less twice that length.",
+   "The two equal sides together must be longer than the third side, so together they are more than half of 20 centimetres: each equal side is more than 5 centimetres.",
+   "The third side must be at least 1 centimetre, so each equal side is at most 9 centimetres.",
+   "The equal sides can be 6, 7, 8 or 9 centimetres, giving 6, 6, 8 and 7, 7, 6 and 8, 8, 4 and 9, 9, 2: that is 4 triangles."
+  ]
+ },
+ "G5A_TRIANGLES_007": {
+  "q": "One angle of an isosceles triangle is 40 degrees. Which answer gives every possible size of the largest angle of the triangle?",
+  "options": [
+   "100 degrees only",
+   "70 degrees only",
+   "70 degrees or 100 degrees",
+   "40 degrees or 100 degrees"
+  ],
+  "hints": [
+   "An isosceles triangle has two equal angles. The question does not say whether the 40 degree angle is one of the equal pair or the odd one out.",
+   "First let 40 degrees be one of the two equal angles and find the third angle. Then let 40 degrees be the odd one out and find the two equal angles.",
+   "A similar triangle: one angle of an isosceles triangle is 50 degrees. If the equal angles are 50 degrees each, the third is 80 degrees. If 50 degrees is the odd one, the others are 65 degrees each. So the largest angle is 65 degrees or 80 degrees."
+  ],
+  "steps": [
+   "If 40 degrees is one of the two equal angles, the third angle is what is left. 180 minus 40 minus 40 equals 100.",
+   "If 40 degrees is the odd one out, the two equal angles share the rest. 180 minus 40 equals 140.",
+   "Halve it to find each equal angle. 140 divided by 2 equals 70.",
+   "The triangle is 40 degrees, 40 degrees, 100 degrees or 40 degrees, 70 degrees, 70 degrees, so its largest angle is 70 degrees or 100 degrees."
+  ]
+ },
+ "G5A_TRIANGLES_008": {
+  "q": "Two sides of an isosceles triangle are 4 centimetres and 9 centimetres long. What is the perimeter of the triangle?",
+  "options": [
+   "22 centimetres",
+   "17 centimetres or 22 centimetres",
+   "17 centimetres",
+   "13 centimetres"
+  ],
+  "hints": [
+   "The third side must equal one of the two given sides. Before adding up, check that each choice really makes a triangle.",
+   "Try the third side as 4 centimetres: can sides of 4 centimetres and 4 centimetres reach across a side of 9 centimetres? Then try the third side as 9 centimetres.",
+   "A similar triangle: an isosceles triangle has sides 3 centimetres and 8 centimetres. Sides 3, 3, 8 cannot meet, because 3 plus 3 is less than 8. So the sides are 3, 8, 8 and the perimeter is 19 centimetres."
+  ],
+  "steps": [
+   "The third side is equal to one of the others, so it is 4 centimetres or 9 centimetres.",
+   "With 4 centimetres, 4 centimetres and 9 centimetres: 4 plus 4 equals 8, which is less than 9, so these sides cannot meet to make a triangle.",
+   "With 4 centimetres, 9 centimetres and 9 centimetres: 4 plus 9 is more than 9, so this triangle can be made.",
+   "Add the three sides: the perimeter is 22 centimetres."
+  ]
+ },
+ "G5A_TRIANGLES_009": {
+  "q": "One exterior angle of a triangle is 110 degrees. Of the two interior angles that are not next to this exterior angle, one is 20 degrees bigger than the other. What is the largest interior angle of the triangle?",
+  "options": [
+   "65 degrees",
+   "110 degrees",
+   "45 degrees",
+   "70 degrees"
+  ],
+  "hints": [
+   "A triangle has three interior angles. Make sure you know all three before deciding which is the largest.",
+   "An exterior angle equals the two far interior angles added together, so those two add up to 110 degrees. The interior angle next to the exterior angle lies with it on a straight line.",
+   "A similar triangle: an exterior angle is 100 degrees and the two far interior angles differ by 10 degrees, so they are 45 degrees and 55 degrees. The interior angle next to the exterior angle is 80 degrees, and that is the largest."
+  ],
+  "steps": [
+   "The two far interior angles add up to the exterior angle, 110 degrees, and one is 20 degrees more than the other.",
+   "Take away the extra 20 degrees and halve to find the smaller one. Open bracket 110 minus 20 close bracket, divided by 2 equals 45.",
+   "So those two angles are 45 degrees and 65 degrees.",
+   "The third interior angle lies beside the exterior angle on a straight line. 180 minus 110 equals 70.",
+   "The interior angles are 45 degrees, 65 degrees and 70 degrees, so the largest interior angle is 70 degrees."
+  ]
+ },
+ "G5A_TRIANGLES_010": {
+  "q": "In a triangle, the largest angle is equal to the sum of the other two angles. One of those two angles is 4 times the other. What is the smallest angle of the triangle?",
+  "options": [
+   "36 degrees",
+   "18 degrees",
+   "30 degrees",
+   "72 degrees"
+  ],
+  "hints": [
+   "Begin with the first sentence alone. If one angle equals the other two added together, what part of the whole 180 degrees must it be?",
+   "The largest angle and the other two together make 180 degrees, and the other two together equal the largest. So the largest angle is half of 180 degrees.",
+   "A similar triangle: the largest angle equals the sum of the other two, and one of those is twice the other. The largest is 90 degrees, and the other two share 90 degrees as 1 part and 2 parts, so they are 30 degrees and 60 degrees."
+  ],
+  "steps": [
+   "The largest angle equals the other two together, so it is half of the total. 180 divided by 2 equals 90.",
+   "The other two angles add up to 90 degrees, and one is 4 times the other, so together they are 5 equal parts.",
+   "Find one part. 90 divided by 5 equals 18.",
+   "The angles are 18 degrees, 72 degrees and 90 degrees, so the smallest angle is 18 degrees."
+  ]
+ },
+ "G5A_TRIANGLES_011": {
+  "q": "At each corner of a triangle, one exterior angle is drawn. What is the smallest number of these three exterior angles that can be obtuse?",
+  "options": [
+   "1",
+   "2",
+   "0",
+   "3"
+  ],
+  "hints": [
+   "An exterior angle and the interior angle beside it lie on a straight line. Think about what kind of interior angle gives an obtuse exterior angle.",
+   "If an interior angle is acute, the exterior angle beside it is more than 90 degrees. Now ask how many acute angles a triangle must have.",
+   "A similar idea: a triangle with interior angles 100 degrees, 50 degrees and 30 degrees has exterior angles 80 degrees, 130 degrees and 150 degrees. Only the corner with the obtuse interior angle has an acute exterior angle."
+  ],
+  "steps": [
+   "An exterior angle is 180 degrees less the interior angle beside it, so it is obtuse exactly when that interior angle is acute.",
+   "A triangle cannot have two angles of 90 degrees or more, because those two alone would already reach 180 degrees.",
+   "So every triangle has at least two acute interior angles, and each of them gives an obtuse exterior angle.",
+   "A triangle such as 100 degrees, 50 degrees, 30 degrees has exactly two obtuse exterior angles, so the smallest number is 2."
+  ]
+ },
+ "G5A_TRIANGLES_012": {
+  "q": "A triangle has a base of 20 centimetres, and the height drawn to that base is 9 centimetres. Another side of the same triangle is 12 centimetres long. What is the height drawn to the 12 centimetre side?",
+  "options": [
+   "7.5 centimetres",
+   "5.4 centimetres",
+   "30 centimetres",
+   "15 centimetres"
+  ],
+  "hints": [
+   "Any side of a triangle can be used as the base, with its own height. Think about what stays the same whichever side you choose.",
+   "Use the first base and height to find the area: half of 20 times 9. The 12 centimetre side and its height must give the same area.",
+   "A similar triangle has base 10 centimetres with height 6 centimetres, so its area is 30 square centimetres. If another side is 8 centimetres, then half of 8 times its height is 30, so 4 times the height is 30 and the height is 7 and a half centimetres."
+  ],
+  "steps": [
+   "Find the area using the first base and height. One half times 20 times 9 equals 90.",
+   "The area is 90 square centimetres whichever side is used as the base.",
+   "With the 12 centimetre side as base, half of 12 times the height is 90, so 12 times the height is 180.",
+   "Divide by 12: the height drawn to the 12 centimetre side is 15 centimetres."
+  ]
+ },
+ "G5A_TRIANGLES_013": {
+  "q": "A triangle has sides that are whole numbers of centimetres and a perimeter of 24 centimetres. What is the greatest possible length of its longest side?",
+  "options": [
+   "11 centimetres",
+   "12 centimetres",
+   "22 centimetres",
+   "8 centimetres"
+  ],
+  "hints": [
+   "When one side gets longer, the other two together get shorter, because the perimeter is fixed. Find the point where they can no longer meet.",
+   "If the longest side is 12 centimetres, the other two sides together are also 12 centimetres. Can they rise above the long side to make a triangle?",
+   "A similar triangle with perimeter 16 centimetres: a longest side of 8 centimetres leaves 8 centimetres for the other two, which would lie flat. A longest side of 7 centimetres leaves 9 centimetres, and 7, 7, 2 works. So the greatest is 7 centimetres."
+  ],
+  "steps": [
+   "The longest side must be shorter than the other two sides together.",
+   "A longest side of 12 centimetres leaves exactly 12 centimetres for the other two, so they would lie flat along it and make no triangle.",
+   "A longest side of 11 centimetres leaves 13 centimetres for the other two, which is more than 11 centimetres. For example, 11 centimetres, 11 centimetres and 2 centimetres make a triangle.",
+   "So the greatest possible length of the longest side is 11 centimetres."
+  ]
  }
 }

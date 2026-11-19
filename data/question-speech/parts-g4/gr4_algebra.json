@@ -1,0 +1,2532 @@
+{
+ "BOOST_EXT_G4_FP_2016_019_07": {
+  "q": "Simplify: 11 x plus 10 plus 8 x minus 3.",
+  "options": [
+   "19 x plus 10",
+   "19 x plus 7",
+   "29 x",
+   "11 x plus 8 x plus 7"
+  ],
+  "hints": [
+   "Group the x terms together and the numbers together.",
+   "Add the coefficients of x.",
+   "Combine the constant numbers."
+  ],
+  "steps": [
+   "Combine x terms: 11 x plus 8 x equals 19 x.",
+   "Combine constants: 10 minus 3 equals 7.",
+   "Result: 19 x plus 7."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2020_039_05": {
+  "q": "If x equals 2 and y equals 4, find the value of 2 x plus 4 y.",
+  "options": [
+   "64",
+   "16",
+   "36",
+   "20"
+  ],
+  "hints": [
+   "Replace x with 2 and y with 4.",
+   "Calculate 2 times 2, and 4 times 4, separately.",
+   "Then add them up."
+  ],
+  "steps": [
+   "Substitute: 2 times 2, plus 4 times 4.",
+   "That equals 4 plus 16, which is 20."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2022_038_05": {
+  "q": "If x equals 2 and y equals 1, find the value of 3 x plus 4 y.",
+  "options": [
+   "21",
+   "24",
+   "10",
+   "11"
+  ],
+  "hints": [
+   "Replace x with 2 and y with 1.",
+   "Calculate 3 times 2, and 4 times 1, separately.",
+   "Then add them up."
+  ],
+  "steps": [
+   "Substitute: 3 times 2, plus 4 times 1.",
+   "That equals 6 plus 4, which is 10."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2023_006_05": {
+  "q": "If x equals 6 and y equals 4, find the value of 4 x plus 4 y.",
+  "options": [
+   "41",
+   "80",
+   "384",
+   "40"
+  ],
+  "hints": [
+   "Replace x with 6 and y with 4.",
+   "Calculate 4 times 6, and 4 times 4, separately.",
+   "Then add them up."
+  ],
+  "steps": [
+   "Substitute: 4 times 6, plus 4 times 4.",
+   "That equals 24 plus 16, which is 40."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2024_001_07": {
+  "q": "If x equals 6, find the value of 5 x plus 10 minus 8.",
+  "options": [
+   "32",
+   "13",
+   "48",
+   "72"
+  ],
+  "hints": [
+   "Replace x with the given value.",
+   "Then do the arithmetic: 5 times 6, plus 10, minus 8.",
+   "Follow Bodmas!"
+  ],
+  "steps": [
+   "Substitute x equals 6: 5 times 6, plus 10, minus 8.",
+   "That equals 30 plus 10 minus 8, which is 32."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2025_038_06": {
+  "q": "If x equals 3, find the value of 7 x plus 8 minus 1.",
+  "options": [
+   "76",
+   "30",
+   "28",
+   "17"
+  ],
+  "hints": [
+   "Replace x with the given value.",
+   "Then do the arithmetic: 7 times 3, plus 8, minus 1.",
+   "Follow Bodmas!"
+  ],
+  "steps": [
+   "Substitute x equals 3: 7 times 3, plus 8, minus 1.",
+   "That equals 21 plus 8 minus 1, which is 28."
+  ]
+ },
+ "EXT_G4_FP_2020_018": {
+  "q": "If A equals 2 b, and b equals 3, what is the value of 2 A minus b?",
+  "options": [
+   "9",
+   "3",
+   "6",
+   "15"
+  ],
+  "hints": [
+   "This is a substitution problem. One letter is given through the other, so find every letter's value first.",
+   "Start with b equals 3. Use A equals 2 b to find A before you touch 2 A minus b.",
+   "Similar example: if p equals 3 q and q equals 2, find 2 p minus q. First p equals 3 times 2, which is 6. Then 2 p minus q equals 2 times 6, minus 2, which is 12 minus 2, which is 10."
+  ],
+  "steps": [
+   "A is 2 times b, and b is 3. A equals 2 times 3, which is 6.",
+   "Now put A equals 6 and b equals 3 into 2 A minus b. 2 times 6, minus 3, equals 12 minus 3, which is 9.",
+   "The value of 2 A minus b is 9."
+  ]
+ },
+ "EXT_G4_FP_2020_037": {
+  "q": "A rectangle's length equals its breadth plus 2. The breadth equals A plus 2. What is the perimeter?",
+  "options": [
+   "4 A plus 4",
+   "4 A plus 8",
+   "4 A plus 12",
+   "2 A plus 12"
+  ],
+  "hints": [
+   "This is a perimeter problem written with letters. The perimeter of a rectangle is 2 times, open bracket, length plus breadth, close bracket.",
+   "First write the length using A. The length is 2 more than the breadth, and the breadth is A plus 2.",
+   "Similar example: a rectangle has breadth k plus 1 and its length is 3 more than its breadth. Length equals k plus 1 plus 3, which is k plus 4. Length plus breadth equals k plus 4 plus k plus 1, which is 2 k plus 5. Perimeter equals 2 times, open bracket, 2 k plus 5, close bracket, which is 4 k plus 10."
+  ],
+  "steps": [
+   "The breadth is A plus 2. The length is 2 more, so the length is A plus 4.",
+   "Add the length and the breadth: A plus 4 plus A plus 2 equals 2 A plus 6.",
+   "The perimeter is 2 times this. 2 times, open bracket, 2 A plus 6, close bracket, equals 4 A plus 12.",
+   "The perimeter is 4 A plus 12."
+  ]
+ },
+ "EXT_G4_FP_2020_039": {
+  "q": "A equals 2, and b equals 5. What is the value of, open bracket, A plus b, close bracket, times, open bracket, b minus A, close bracket?",
+  "options": [
+   "49",
+   "21",
+   "25",
+   "10"
+  ],
+  "hints": [
+   "This is a substitution problem with brackets. Work out each bracket first, then multiply.",
+   "Put A equals 2 and b equals 5 into the first bracket, A plus b. Then do the same for b minus A.",
+   "Similar example: if A equals 3 and b equals 7, find, open bracket, A plus b, close bracket, times, open bracket, b minus A, close bracket. First bracket: 3 plus 7 equals 10. Second bracket: 7 minus 3 equals 4. Multiply: 10 times 4 equals 40."
+  ],
+  "steps": [
+   "Work out the first bracket. A plus b equals 2 plus 5, which is 7.",
+   "Work out the second bracket. b minus A equals 5 minus 2, which is 3.",
+   "Multiply the two results. 7 times 3 equals 21.",
+   "The value is 21."
+  ]
+ },
+ "EXT_G4_FP_2021_008": {
+  "q": "What is 6 x minus 3 y plus 5 z, when x equals 3, y equals x minus 1, and z equals x plus y?",
+  "options": [
+   "37",
+   "42",
+   "27",
+   "None of these"
+  ],
+  "hints": [
+   "This is a substitution problem. Some letters are given through other letters, so find each letter's value in order first.",
+   "Start with x equals 3. Use it to find y equals x minus 1, then use both to find z equals x plus y.",
+   "Similar example: find 4 x minus 2 y plus 3 z when x equals 5, y equals x minus 2 and z equals x plus y. First y equals 5 minus 2, which is 3, and z equals 5 plus 3, which is 8. Then 4 times 5, minus 2 times 3, plus 3 times 8, equals 20 minus 6 plus 24, which is 38."
+  ],
+  "steps": [
+   "y is 1 less than x. y equals 3 minus 1, which is 2.",
+   "z is x and y added together. z equals 3 plus 2, which is 5.",
+   "Now put the values in: 6 x is 18, 3 y is 6 and 5 z is 25. 18 minus 6 plus 25 equals 37.",
+   "The value is 37."
+  ]
+ },
+ "EXT_G4_FP_2022_038": {
+  "q": "If A equals 3 and b equals 6, which expression has least value?",
+  "options": [
+   "4 A minus b",
+   "5 b minus 7 A",
+   "3 b minus 5 A",
+   "7 A minus 2 b"
+  ],
+  "hints": [
+   "This is a compare problem. Find the value of every expression, then pick the smallest.",
+   "Put A equals 3 and b equals 6 into the first expression: 4 A means 4 times 3. Do the same for each of the others.",
+   "Similar example: with A equals 2 and b equals 5, which is least: 3 A plus b, 2 b minus A, or 4 A minus b? 3 A plus b is 6 plus 5, which is 11. 2 b minus A is 10 minus 2, which is 8. 4 A minus b is 8 minus 5, which is 3. The least value is 3, so 4 A minus b is least."
+  ],
+  "steps": [
+   "Work out 4 A minus b. 4 times 3, minus 6, equals 6.",
+   "Work out 5 b minus 7 A. 5 times 6, minus 7 times 3, equals 9.",
+   "Work out 3 b minus 5 A. 3 times 6, minus 5 times 3, equals 3.",
+   "Work out 7 A minus 2 b. 7 times 3, minus 2 times 6, equals 9.",
+   "The smallest value is 3, so 3 b minus 5 A has the least value."
+  ]
+ },
+ "EXT_G4_FP_2024_001": {
+  "q": "m equals 2, n equals 3, p equals 5. Which expression has least value?",
+  "options": [
+   "m times n plus p",
+   "open bracket, p minus m, close bracket, times n",
+   "open bracket, p minus n, close bracket, times m",
+   "p plus n minus m"
+  ],
+  "hints": [
+   "This is a compare problem. Find the value of every expression, then pick the smallest. Work out brackets first.",
+   "Put m equals 2, n equals 3 and p equals 5 into the first expression: m times n plus p. Then do the same for each of the others.",
+   "Similar example: with m equals 3, n equals 4 and p equals 6, which is least: m times n plus p; open bracket, p minus m, close bracket, times n; or p plus n minus m? The first is 12 plus 6, which is 18. The second is 3 times 4, which is 12. The third is 10 minus 3, which is 7. The least value is 7, so p plus n minus m is least."
+  ],
+  "steps": [
+   "Work out m times n plus p. 2 times 3, plus 5, equals 11.",
+   "Work out, open bracket, p minus m, close bracket, times n. Open bracket, 5 minus 2, close bracket, times 3, equals 9.",
+   "Work out, open bracket, p minus n, close bracket, times m. Open bracket, 5 minus 3, close bracket, times 2, equals 4.",
+   "Work out p plus n minus m. 5 plus 3 minus 2 equals 6.",
+   "The smallest value is 4. So open bracket, p minus n, close bracket, times m, has the least value."
+  ]
+ },
+ "EXT_G4_FP_2024_022": {
+  "q": "Insert the sign: 4 A plus 17, blank, 8 A minus 9, where A equals 7.",
+  "options": [
+   "greater than",
+   "less than",
+   "equal to",
+   "None of these"
+  ],
+  "hints": [
+   "This is a compare problem. Find the value of each side, then choose the sign that fits between them.",
+   "Put A equals 7 into the left side first: 4 A means 4 times 7, then add 17. Then work out the right side.",
+   "Similar example: compare 5 A plus 6 and 7 A minus 4 when A equals 3. Left side: 5 times 3, plus 6, equals 21. Right side: 7 times 3, minus 4, equals 17. Since 21 is greater than 17, the sign is the greater than sign."
+  ],
+  "steps": [
+   "Left side: put A equals 7 into 4 A plus 17. 4 times 7, plus 17, equals 45.",
+   "Right side: put A equals 7 into 8 A minus 9. 8 times 7, minus 9, equals 47.",
+   "45 is less than 47, so the sign is the less than sign."
+  ]
+ },
+ "EXT_G4_FP_2025_010": {
+  "q": "V plus 38 is a 2-digit prime. Find the 13th even number before it.",
+  "options": [
+   "V plus 13",
+   "V plus 11",
+   "V plus 15",
+   "V plus 14"
+  ],
+  "hints": [
+   "This is a counting-back problem. Think about whether a 2-digit prime is odd or even, and how far apart even numbers are.",
+   "A 2-digit prime is odd, so the first even number before V plus 38 is just 1 less. After that, each even number is 2 less than the one before.",
+   "Similar example: N plus 30 is an odd number. Find the 6th even number before it. The 1st even number before it is N plus 29. To reach the 6th, go back 5 more jumps of 2, which is 10. So the 6th even number before it is N plus 19."
+  ],
+  "steps": [
+   "Every 2-digit prime is odd. So the 1st even number before V plus 38 is 1 less: V plus 37.",
+   "Even numbers are 2 apart. From the 1st to the 13th is 12 jumps of 2. 12 times 2 equals 24.",
+   "Go back 24 from V plus 37. 37 minus 24 equals 13.",
+   "The 13th even number before it is V plus 13."
+  ]
+ },
+ "EXT_G4_FP_2025_012": {
+  "q": "p equals 4, and q equals 2 p plus 1. What is the value of, open bracket, q minus p, close bracket, times, open bracket, q plus p, close bracket?",
+  "options": [
+   "56",
+   "65",
+   "72",
+   "69"
+  ],
+  "hints": [
+   "This is a substitution problem with brackets. Find the value of every letter first, then work out each bracket.",
+   "Start with p equals 4 and use it to find q equals 2 p plus 1. Only then work out q minus p and q plus p.",
+   "Similar example: if p equals 3 and q equals 2 p plus 2, find, open bracket, q minus p, close bracket, times, open bracket, q plus p, close bracket. q equals 2 times 3, plus 2, which is 8. Then q minus p equals 8 minus 3, which is 5, and q plus p equals 8 plus 3, which is 11. Multiply: 5 times 11 equals 55."
+  ],
+  "steps": [
+   "Find q using p equals 4. q equals 2 times 4, plus 1, which is 9.",
+   "Work out the first bracket. q minus p equals 9 minus 4, which is 5.",
+   "Work out the second bracket. q plus p equals 9 plus 4, which is 13.",
+   "Multiply the two brackets. 5 times 13 equals 65.",
+   "The value is 65."
+  ]
+ },
+ "EXT_G4_FP_2025_038": {
+  "q": "p equals 4, A equals 2 p minus 1, and y equals A plus 2. Which expression has the greatest value?",
+  "options": [
+   "3 A minus 2 y plus p",
+   "3 p plus A minus y",
+   "y minus A plus p",
+   "All have same value"
+  ],
+  "hints": [
+   "This is a compare problem. Find the value of each letter, then the value of each expression, and pick the greatest.",
+   "Start with p equals 4. Find A equals 2 p minus 1 first, then y equals A plus 2.",
+   "Similar example: p equals 2, A equals 2 p plus 1 and y equals A plus 3. So A equals 5 and y equals 8. Then A plus y minus p is 5 plus 8 minus 2, which is 11, and 3 p plus y minus A is 6 plus 8 minus 5, which is 9. The first one, A plus y minus p, is greater."
+  ],
+  "steps": [
+   "Find A from p equals 4. A equals 2 times 4, minus 1, which is 7.",
+   "Find y from A. y equals 7 plus 2, which is 9.",
+   "Work out 3 A minus 2 y plus p. 21 minus 18 plus 4 equals 7.",
+   "Work out 3 p plus A minus y. 12 plus 7 minus 9 equals 10.",
+   "Work out y minus A plus p. 9 minus 7 plus 4 equals 6.",
+   "10 is the greatest, so 3 p plus A minus y has the greatest value."
+  ]
+ },
+ "EXT_G4_WS2_CH13_001": {
+  "q": "Sia purchased x kilograms of apples and 2 kilograms of bananas. What is the total weight of fruits?",
+  "options": [
+   "x plus 2 kilograms",
+   "x minus 2 kilograms",
+   "2 x kilograms",
+   "x over 2 kilograms"
+  ],
+  "hints": [
+   "This is about writing an expression from words. Decide which operation the word total asks for.",
+   "The total weight is the two weights put together. Write the weight of the apples and the weight of the bananas with the right sign between them.",
+   "Similar example: Ravi buys y kilograms of rice and 5 kilograms of flour. Total means add, so the total weight is y plus 5 kilograms."
+  ],
+  "steps": [
+   "The apples weigh x kilograms and the bananas weigh 2 kilograms.",
+   "Total weight means we add the two weights.",
+   "The total weight is x plus 2 kilograms."
+  ]
+ },
+ "EXT_G4_WS2_CH13_002": {
+  "q": "Mann reads k pages in an hour. How many pages can he read in 6 hours?",
+  "options": [
+   "6 k pages",
+   "k plus 6 pages",
+   "k over 6 pages",
+   "k minus 6 pages"
+  ],
+  "hints": [
+   "This is about writing an expression from words. The same amount is repeated every hour, so think about which operation fits.",
+   "He reads k pages in each of the 6 hours. Think of adding k six times.",
+   "Similar example: Meera walks m kilometres every day. In 4 days she walks m plus m plus m plus m, which is 4 times m, written 4 m kilometres."
+  ],
+  "steps": [
+   "In 1 hour Mann reads k pages.",
+   "In 6 hours he reads 6 times as many.",
+   "He can read 6 k pages."
+  ]
+ },
+ "EXT_G4_WS2_CH13_003": {
+  "q": "8 years hence, Rahul will be y years old. What is his present age?",
+  "options": [
+   "y minus 8 years",
+   "y plus 8 years",
+   "8 y years",
+   "y over 8 years"
+  ],
+  "hints": [
+   "This is an age expression. Decide whether his age now is more or less than his age in the future.",
+   "8 years hence means 8 years from now. His age now is smaller than y. Think about by how much.",
+   "Similar example: 5 years from now Anu will be p years old. She is 5 years younger now, so her present age is p minus 5 years."
+  ],
+  "steps": [
+   "8 years hence means 8 years from now. Then Rahul will be y years old.",
+   "Now he is 8 years younger than that, so take 8 away from y.",
+   "His present age is y minus 8 years."
+  ]
+ },
+ "EXT_G4_WS2_CH13_004": {
+  "q": "What is 4 more than the sum of A and b?",
+  "options": [
+   "A plus b plus 4",
+   "4 times, open bracket, A plus b, close bracket",
+   "A plus b minus 4",
+   "4 A b"
+  ],
+  "hints": [
+   "This is about turning words into an expression. Look for the words that tell you the operation: sum and more than.",
+   "First write the sum of A and b. Then think about what 4 more than does to it.",
+   "Similar example: 7 more than the sum of p and q. The sum is p plus q. 7 more means add 7, so it is p plus q plus 7."
+  ],
+  "steps": [
+   "The sum of A and b is A plus b.",
+   "4 more than this means add 4.",
+   "The expression is A plus b plus 4."
+  ]
+ },
+ "EXT_G4_WS2_CH13_005": {
+  "q": "What is 4 times the difference of x and y?",
+  "options": [
+   "4 times, open bracket, x minus y, close bracket",
+   "4 x minus y",
+   "x minus 4 y",
+   "x minus y, all over 4"
+  ],
+  "hints": [
+   "This is about turning words into an expression. Look for the words that tell you the operation: times and difference.",
+   "First write the difference of x and y. Then think how to show that the whole difference is multiplied by 4.",
+   "Similar example: 3 times the sum of p and q. The sum is p plus q. To multiply the whole sum by 3, put it in brackets: 3 times, open bracket, p plus q, close bracket."
+  ],
+  "steps": [
+   "The difference of x and y is x minus y.",
+   "4 times the whole difference needs brackets around x minus y.",
+   "The expression is 4 times, open bracket, x minus y, close bracket."
+  ]
+ },
+ "EXT_G4_WS2_CH13_006": {
+  "q": "If A equals 3, b equals 2, find the value of 5 A plus 3 b.",
+  "options": [
+   "21",
+   "13",
+   "17",
+   "23"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "Put A equals 3 into 5 A first: that is 5 times 3. Then do the same for 3 b.",
+   "Similar example: if A equals 4 and b equals 1, find 6 A plus 2 b. 6 A is 6 times 4, which is 24, and 2 b is 2 times 1, which is 2. Add: 24 plus 2 equals 26."
+  ],
+  "steps": [
+   "5 A means 5 times A. 5 times 3 equals 15.",
+   "3 b means 3 times b. 3 times 2 equals 6.",
+   "Add the two parts. 15 plus 6 equals 21.",
+   "The value is 21."
+  ]
+ },
+ "EXT_G4_WS2_CH13_007": {
+  "q": "Simplify: 3 times, open bracket, 2 b plus 4 c, close bracket.",
+  "options": [
+   "6 b plus 12 c",
+   "6 b plus 4 c",
+   "5 b plus 7 c",
+   "3 b plus 12 c"
+  ],
+  "hints": [
+   "This is about opening a bracket. The number outside multiplies every term inside.",
+   "Multiply 3 by the first term, 2 b. Then multiply 3 by the second term too.",
+   "Similar example: 2 times, open bracket, 3 x plus 5 y, close bracket. Multiply each term by 2: 2 times 3 x is 6 x and 2 times 5 y is 10 y. So 2 times, open bracket, 3 x plus 5 y, close bracket, equals 6 x plus 10 y."
+  ],
+  "steps": [
+   "Multiply the first term by 3. 3 times 2 b equals 6 b.",
+   "Multiply the second term by 3. 3 times 4 c equals 12 c.",
+   "So 3 times, open bracket, 2 b plus 4 c, close bracket, equals 6 b plus 12 c."
+  ]
+ },
+ "EXT_G4_WS2_CH13_008": {
+  "q": "Simplify: 5 times, open bracket, 3 minus 4 n, close bracket.",
+  "options": [
+   "15 minus 20 n",
+   "15 plus 20 n",
+   "8 minus 4 n",
+   "minus 20 n minus 15"
+  ],
+  "hints": [
+   "This is about opening a bracket. The number outside multiplies every term inside, and the sign between the terms stays.",
+   "Multiply 5 by the first term, 3. Then multiply 5 by the second term, 4 n, and keep the minus sign.",
+   "Similar example: 4 times, open bracket, 2 minus 3 k, close bracket. Multiply each term by 4: 4 times 2 equals 8 and 4 times 3 k is 12 k. Keep the minus sign: 4 times, open bracket, 2 minus 3 k, close bracket, equals 8 minus 12 k."
+  ],
+  "steps": [
+   "Multiply the first term by 5. 5 times 3 equals 15.",
+   "Multiply the second term by 5. 5 times 4 n equals 20 n.",
+   "Keep the minus sign between them. So 5 times, open bracket, 3 minus 4 n, close bracket, equals 15 minus 20 n."
+  ]
+ },
+ "G4A_ALGEBRA_001": {
+  "q": "Meera had p rupees. She bought 3 pencils that cost q rupees each. Which expression shows the money she has left, in rupees?",
+  "options": [
+   "3 p minus q",
+   "p minus 3 q",
+   "3 times, open bracket, p minus q, close bracket",
+   "p minus q minus 3"
+  ],
+  "hints": [
+   "Money left is the money she had minus the money she spent. Write the money spent as an expression first.",
+   "One pencil costs q rupees. Write the cost of 3 pencils using q, then take it away from p.",
+   "A similar one: Arun had m rupees and bought 5 erasers at n rupees each. The erasers cost 5 n rupees, so he has m minus 5 n rupees left."
+  ],
+  "steps": [
+   "One pencil costs q rupees, so 3 pencils cost 3 times q, which is 3 q rupees.",
+   "Money left equals money she had minus money she spent.",
+   "So the money left is p minus 3 q rupees."
+  ]
+ },
+ "G4A_ALGEBRA_002": {
+  "q": "In a cricket match a team scored r runs in the first innings. In the second innings it scored 40 runs fewer. Which expression shows the total runs in both innings?",
+  "options": [
+   "r minus 40",
+   "2 r minus 80",
+   "2 r",
+   "2 r minus 40"
+  ],
+  "hints": [
+   "Write an expression for each innings, then add the two expressions together.",
+   "The first innings is r. The second innings is 40 fewer than r. Write that with a minus sign.",
+   "A similar one: a shop sold k kites on Monday and 15 more on Tuesday. Tuesday is k plus 15, so the total is k plus k plus 15, which is 2 k plus 15."
+  ],
+  "steps": [
+   "First innings: r runs.",
+   "Second innings: 40 fewer, so r minus 40 runs.",
+   "Add the two innings: r plus r minus 40. The two r terms make 2 r.",
+   "The total is 2 r minus 40."
+  ]
+ },
+ "G4A_ALGEBRA_003": {
+  "q": "Simplify: 7 A plus 3 b minus 2 A plus b.",
+  "options": [
+   "5 A plus 4 b",
+   "9 A b",
+   "5 A plus 3 b",
+   "9 A plus 4 b"
+  ],
+  "hints": [
+   "Only like terms can be put together. Collect the terms with A, and separately the terms with b.",
+   "The A terms are 7 A and minus 2 A. The b terms are 3 b and b. Remember that b on its own means 1 b.",
+   "A similar one: 4 x plus 2 y plus 3 x minus y. The x terms give 7 x and the y terms give 2 y minus y equals y. The result is 7 x plus y."
+  ],
+  "steps": [
+   "Collect the A terms: 7 A minus 2 A equals 5 A.",
+   "Collect the b terms: 3 b plus b equals 4 b, because b means 1 b.",
+   "The A terms and b terms are unlike, so they stay separate.",
+   "The simplified expression is 5 A plus 4 b."
+  ]
+ },
+ "G4A_ALGEBRA_004": {
+  "q": "The odd numbers in order are 1, 3, 5, 7, and so on. Which expression gives the nth odd number?",
+  "options": [
+   "n plus 2",
+   "3 n minus 2",
+   "2 n minus 1",
+   "2 n"
+  ],
+  "hints": [
+   "A good rule must fit every position, not just the first. Test each expression with n equals 1, n equals 2 and n equals 3.",
+   "The 1st odd number is 1, the 2nd is 3 and the 3rd is 5. Compare them with the even numbers 2, 4, 6 in the same positions.",
+   "A similar one: the numbers 5, 10, 15, and so on, are given by 5 n. The numbers 4, 9, 14, and so on, are each one less, so they are given by 5 n minus 1."
+  ],
+  "steps": [
+   "The even numbers 2, 4, 6, 8, and so on, are 2 times their position, so the nth even number is 2 n.",
+   "Each odd number 1, 3, 5, 7, and so on, is one less than the even number in the same position.",
+   "Check with n equals 4: 2 times 4 is 8, and one less is 7, the 4th odd number.",
+   "The nth odd number is 2 n minus 1."
+  ]
+ },
+ "G4A_ALGEBRA_005": {
+  "q": "An isosceles triangle has two equal sides of 2 A plus 3 centimetres each. Its third side is A minus 2 centimetres. What is the perimeter of the triangle?",
+  "options": [
+   "3 A plus 1 centimetres",
+   "5 A plus 4 centimetres",
+   "5 A plus 1 centimetres",
+   "5 A plus 8 centimetres"
+  ],
+  "hints": [
+   "The perimeter is the sum of all three sides. An isosceles triangle has two sides that are the same, so one expression is added twice.",
+   "Write the three sides in a row: 2 A plus 3, 2 A plus 3, and A minus 2. Collect the A terms first, then the plain numbers.",
+   "A similar one: equal sides of x plus 4 centimetres each and a third side of x minus 1 centimetres. The x terms give 3 x and the numbers give 4 plus 4 minus 1 equals 7. The perimeter is 3 x plus 7 centimetres."
+  ],
+  "steps": [
+   "Add the three sides: 2 A plus 3, plus 2 A plus 3, plus A minus 2.",
+   "Collect the A terms: 2 A plus 2 A plus A equals 5 A.",
+   "Collect the numbers: 3 plus 3 minus 2 equals 4.",
+   "The perimeter is 5 A plus 4 centimetres."
+  ]
+ },
+ "G4A_ALGEBRA_006": {
+  "q": "A rectangular garden is p metres long and q metres wide. One long side is along a wall, so a fence is put only on the other three sides. What is the length of the fence?",
+  "options": [
+   "p plus 2 q metres",
+   "2 p plus 2 q metres",
+   "2 p plus q metres",
+   "p plus q metres"
+  ],
+  "hints": [
+   "Picture the four sides of the rectangle: two long sides and two short sides. Decide which sides get a fence.",
+   "The wall takes the place of one long side of p metres. The fence covers the other long side and both short sides.",
+   "A similar one with numbers: a pen is 9 metres long and 4 metres wide with one long side against a wall. The fence is 9 plus 4 plus 4, which is 17 metres."
+  ],
+  "steps": [
+   "A rectangle has two long sides of p metres and two short sides of q metres.",
+   "One long side is the wall, so the fence covers one long side and two short sides.",
+   "Add them: p plus q plus q.",
+   "The length of the fence is p plus 2 q metres."
+  ]
+ },
+ "G4A_ALGEBRA_007": {
+  "q": "If A equals 6 and b equals 4, what is the value of 3 A minus 2 b plus A b?",
+  "options": [
+   "74",
+   "20",
+   "50",
+   "34"
+  ],
+  "hints": [
+   "Put the numbers in place of the letters. Two letters written side by side, or a number next to a letter, mean multiply.",
+   "Work out each part on its own: 3 A means 3 times 6, 2 b means 2 times 4, and A b means 6 times 4.",
+   "A similar one: if A equals 2 and b equals 5, then 4 A minus b plus A b is 8 minus 5 plus 10, which is 13."
+  ],
+  "steps": [
+   "3 A means 3 times A. 3 times 6 equals 18.",
+   "2 b means 2 times b. 2 times 4 equals 8.",
+   "A b means A times b. 6 times 4 equals 24.",
+   "Put the parts together. 18 minus 8 plus 24 equals 34.",
+   "The value is 34."
+  ]
+ },
+ "G4A_ALGEBRA_008": {
+  "q": "The nth odd number is 2 n minus 1 and the nth even number is 2 n. How much more is the 30th odd number than the 12th even number?",
+  "options": [
+   "18",
+   "36",
+   "35",
+   "37"
+  ],
+  "hints": [
+   "Use each rule to find the actual number first. Then subtract the smaller from the greater.",
+   "For the 30th odd number put n equals 30 into 2 n minus 1. For the 12th even number put n equals 12 into 2 n.",
+   "A similar one: the 10th odd number is 2 times 10, minus 1, which is 19. The 6th even number is 12. The difference is 19 minus 12, which is 7."
+  ],
+  "steps": [
+   "The 30th odd number: put n equals 30 into 2 n minus 1. 2 times 30, minus 1, equals 59.",
+   "The 12th even number: put n equals 12 into 2 n. 2 times 12 equals 24.",
+   "Subtract. 59 minus 24 equals 35.",
+   "The 30th odd number is 35 more."
+  ]
+ },
+ "G4A_ALGEBRA_009": {
+  "q": "Anu is x years old. Her father's age is 4 years more than three times Anu's age. What will be the sum of their ages after 5 years?",
+  "options": [
+   "4 x plus 9",
+   "4 x plus 14",
+   "4 x plus 4",
+   "3 x plus 14"
+  ],
+  "hints": [
+   "Write each person's age now as an expression. After some years, every person is older by that many years.",
+   "Three times Anu's age is 3 x, so her father is 3 x plus 4 now. In 5 years, both of them will be 5 years older.",
+   "A similar one: Ravi is y years old and his mother is 20 more than twice his age, which is 2 y plus 20. After 3 years they are y plus 3 and 2 y plus 23, and the sum is 3 y plus 26."
+  ],
+  "steps": [
+   "Father's age now: three times x and 4 more, which is 3 x plus 4.",
+   "After 5 years Anu is x plus 5 and her father is 3 x plus 4 plus 5, which is 3 x plus 9.",
+   "Add: x plus 5 plus 3 x plus 9. The x terms make 4 x and the numbers make 14.",
+   "The sum of their ages will be 4 x plus 14."
+  ]
+ },
+ "G4A_ALGEBRA_010": {
+  "q": "Three numbers come one after another. The smallest of them is n. What is the sum of the three numbers?",
+  "options": [
+   "3 n plus 3",
+   "3 n",
+   "n plus 3",
+   "3 n plus 2"
+  ],
+  "hints": [
+   "Numbers that come one after another go up by 1 each time. Write all three numbers using n before adding.",
+   "The smallest is n. The next is n plus 1. Write the third number, then add the three expressions.",
+   "A similar one: two numbers one after another, the smaller being k, are k and k plus 1. Their sum is 2 k plus 1. Check with 7 and 8: the sum is 15."
+  ],
+  "steps": [
+   "The three numbers are n, n plus 1 and n plus 2.",
+   "Add them: n plus n plus 1 plus n plus 2.",
+   "The n terms make 3 n and the numbers make 1 plus 2 equals 3.",
+   "The sum is 3 n plus 3."
+  ]
+ },
+ "G4A_ALGEBRA_011": {
+  "q": "A taxi charges 50 rupees for the first kilometre and 12 rupees for every kilometre after that. Which expression gives the fare, in rupees, for a ride of d kilometres, d is more than 1?",
+  "options": [
+   "12 d plus 50",
+   "62 d",
+   "12 d plus 38",
+   "12 d plus 62"
+  ],
+  "hints": [
+   "Split the ride into two parts: the first kilometre, and all the kilometres after it. Count carefully how many kilometres come after the first.",
+   "After the first kilometre there are d minus 1 kilometres left. Each of those costs 12 rupees. Add the 50 rupees for the first kilometre.",
+   "A similar one: an auto charges 30 rupees for the first kilometre and 10 rupees for each one after. For k kilometres the fare is 30 plus 10 times, open bracket, k minus 1, close bracket, equals 30 plus 10 k minus 10, which is 10 k plus 20."
+  ],
+  "steps": [
+   "The first kilometre costs 50 rupees.",
+   "The remaining kilometres number d minus 1, and each costs 12 rupees, so they cost 12 times, open bracket, d minus 1, close bracket, equals 12 d minus 12.",
+   "Add the two parts: 50 plus 12 d minus 12.",
+   "The fare is 12 d plus 38."
+  ]
+ },
+ "G4A_ALGEBRA_012": {
+  "q": "Riya has 3 boxes with m mangoes in each and 5 loose mangoes. Sameer has 2 boxes with m mangoes in each and 4 loose mangoes. Riya gives one full box to Sameer. How many more mangoes does Sameer have than Riya now?",
+  "options": [
+   "m plus 9",
+   "5 m plus 9",
+   "1",
+   "m minus 1"
+  ],
+  "hints": [
+   "Write an expression for each child's mangoes after the box has moved. Then subtract Riya's expression from Sameer's.",
+   "After giving a box, Riya has 2 boxes and 5 loose mangoes. Sameer now has 3 boxes and 4 loose mangoes.",
+   "A similar one: Asha has 4 bags of k marbles and 2 loose, Bela has 3 bags of k and 6 loose. Asha gives Bela a bag. Now Asha has 3 k plus 2 and Bela has 4 k plus 6, so Bela has k plus 4 more."
+  ],
+  "steps": [
+   "After giving one box, Riya has 2 boxes and 5 loose mangoes: 2 m plus 5.",
+   "Sameer now has 3 boxes and 4 loose mangoes: 3 m plus 4.",
+   "Subtract Riya's from Sameer's. The boxes give 3 m minus 2 m equals m, and the loose mangoes give 4 minus 5, which takes 1 away.",
+   "Sameer has m minus 1 more mangoes."
+  ]
+ },
+ "G4A_ALGEBRA_013": {
+  "q": "The letter n stands for an even number. Which expression gives the 5th odd number that comes after n?",
+  "options": [
+   "n plus 10",
+   "n plus 5",
+   "n plus 9",
+   "n plus 11"
+  ],
+  "hints": [
+   "Try the idea with a small even number of your own and list the odd numbers that follow it.",
+   "The first odd number after the even number n is n plus 1. Write the next ones from there.",
+   "Similar problem: the 3rd odd number after the even number 20. The odd numbers after 20 are 21, 23, 25, so the 3rd is 25, which is 20 plus 5."
+  ],
+  "steps": [
+   "n is even, so the very next number, n plus 1, is the first odd number after it.",
+   "Odd numbers go up in twos: n plus 1, n plus 3, n plus 5, n plus 7, n plus 9.",
+   "Check with n equals 10: the odd numbers after 10 are 11, 13, 15, 17, 19, and 19 is 10 plus 9.",
+   "The 5th odd number after n is n plus 9."
+  ]
+ },
+ "G4A_ALGEBRA_014": {
+  "q": "A piece of wire is bent to make a square with each side 3 A plus 6 centimetres long. The same wire is then straightened and bent to make a triangle with three equal sides. How long is each side of the triangle?",
+  "options": [
+   "4 A plus 8 centimetres",
+   "12 A plus 24 centimetres",
+   "9 A plus 18 centimetres",
+   "A plus 2 centimetres"
+  ],
+  "hints": [
+   "The wire does not get longer or shorter. Think about what stays the same for both shapes.",
+   "First find the whole length of the wire: a square has 4 equal sides of 3 A plus 6 centimetres.",
+   "Similar problem: a wire makes a square of side 3 b plus 3 centimetres. Its length is 4 times, open bracket, 3 b plus 3, close bracket, equals 12 b plus 12 centimetres. Bent into a triangle with equal sides, each side is, open bracket, 12 b plus 12, close bracket, divided by 3, equals 4 b plus 4 centimetres."
+  ],
+  "steps": [
+   "The wire is as long as the perimeter of the square: 4 times, open bracket, 3 A plus 6, close bracket, equals 12 A plus 24 centimetres.",
+   "The triangle uses the same wire, so its three equal sides add up to 12 A plus 24 centimetres.",
+   "Share it equally among 3 sides: 12 A divided by 3 equals 4 A and 24 divided by 3 equals 8.",
+   "Each side of the triangle is 4 A plus 8 centimetres."
+  ]
+ },
+ "G4A_ALGEBRA_015": {
+  "q": "If 2 x plus y equals 10, what is the value of 6 x plus 3 y minus 4?",
+  "options": [
+   "56",
+   "30",
+   "16",
+   "26"
+  ],
+  "hints": [
+   "You do not need to know x or y on their own. Look for the given expression hiding inside the new one.",
+   "Compare 6 x plus 3 y with 2 x plus y. How many times bigger is each part?",
+   "Similar problem: if A plus 2 b equals 7, find 4 A plus 8 b plus 1. Each part is 4 times bigger, so 4 A plus 8 b equals 4 times 7, which is 28, and 28 plus 1 equals 29."
+  ],
+  "steps": [
+   "6 x is 3 times 2 x, and 3 y is 3 times y, so 6 x plus 3 y is 3 times, open bracket, 2 x plus y, close bracket.",
+   "2 x plus y is 10, so 6 x plus 3 y is 3 times 10, which is 30.",
+   "Now take away 4. 30 minus 4 equals 26.",
+   "The value of 6 x plus 3 y minus 4 is 26."
+  ]
+ },
+ "G4A_ALGEBRA_016": {
+  "q": "The letter p stands for an odd number. Which of these is always a multiple of 4?",
+  "options": [
+   "p plus 3",
+   "2 p plus 2",
+   "4 p plus 2",
+   "2 p"
+  ],
+  "hints": [
+   "The word always matters. One test is not enough, so try more than one odd number in each expression.",
+   "Try p equals 1 and then p equals 3 in each expression and see which ones stay multiples of 4 both times.",
+   "Similar problem: q is an even number; is q plus 2 always a multiple of 4? With q equals 2 it is 4, but with q equals 4 it is 6, so it is not always a multiple of 4."
+  ],
+  "steps": [
+   "Test p equals 1: p plus 3 equals 4, 2 p equals 2, 4 p plus 2 equals 6 and 2 p plus 2 equals 4. Only p plus 3 and 2 p plus 2 are still possible.",
+   "Test p equals 3: p plus 3 equals 6, which is not a multiple of 4, but 2 p plus 2 equals 8, which is.",
+   "Why it always happens: 2 p plus 2 is 2 times, open bracket, p plus 1, close bracket. Because p is odd, p plus 1 is even, and 2 times an even number is a multiple of 4.",
+   "The expression that is always a multiple of 4 is 2 p plus 2."
+  ]
+ },
+ "G4A_ALGEBRA_017": {
+  "q": "Three years ago, Meena was twice as old as Ravi was then. Ravi is x years old now, and x is more than 3. How old is Meena now, in years?",
+  "options": [
+   "2 x minus 6",
+   "2 x minus 3",
+   "2 x",
+   "x plus 3"
+  ],
+  "hints": [
+   "There are two moments in this story: three years ago and now. Keep track of which moment each age belongs to.",
+   "Start with Ravi: if he is x years old now, write his age three years ago.",
+   "Similar problem: two years ago Asha was three times as old as Bala was then, and Bala is y now. Two years ago Bala was y minus 2 and Asha was 3 times, open bracket, y minus 2, close bracket, equals 3 y minus 6. Now Asha is 3 y minus 6 plus 2, which is 3 y minus 4."
+  ],
+  "steps": [
+   "Three years ago Ravi was x minus 3 years old.",
+   "Then Meena was twice that: 2 times, open bracket, x minus 3, close bracket, equals 2 x minus 6 years old.",
+   "That was three years ago, so add 3 to reach her age now: 2 x minus 6 plus 3.",
+   "Meena is 2 x minus 3 years old now."
+  ]
+ },
+ "G4A_ALGEBRA_018": {
+  "q": "Rina makes a row of squares with matchsticks. The first square needs 4 matchsticks. Each new square shares one side with the square before it, so it needs only 3 more matchsticks. How many matchsticks does she need for a row of n squares?",
+  "options": [
+   "3 n plus 4",
+   "4 n",
+   "n plus 3",
+   "3 n plus 1"
+  ],
+  "hints": [
+   "Try small rows first and count, then look for a rule that fits every row.",
+   "Count the matchsticks for 1 square, 2 squares and 3 squares: 4, 7, 10. How many squares are new in a row of n squares?",
+   "Similar problem: a row of triangles where the first needs 3 sticks and each new one needs 2 more. For n triangles there are n minus 1 new ones, so the sticks are 3 plus 2 times, open bracket, n minus 1, close bracket, equals 2 n plus 1."
+  ],
+  "steps": [
+   "The first square uses 4 matchsticks.",
+   "In a row of n squares, the other n minus 1 squares are new ones, and each needs 3 matchsticks: 3 times, open bracket, n minus 1, close bracket, equals 3 n minus 3.",
+   "Add them: 4 plus 3 n minus 3 equals 3 n plus 1.",
+   "Check with 3 squares: 3 times 3, plus 1, equals 10, which matches 4, 7, 10.",
+   "She needs 3 n plus 1 matchsticks."
+  ]
+ },
+ "G4A_ALGEBRA_019": {
+  "q": "Anu has 5 k plus 3 rupees and Bala has 3 k plus 11 rupees, where k is a whole number. For how many values of k from 1 to 10 does Anu have more money than Bala?",
+  "options": [
+   "6",
+   "7",
+   "5",
+   "4"
+  ],
+  "hints": [
+   "Make a small table of both amounts for different values of k and compare them row by row.",
+   "Start with k equals 1: Anu has 8 rupees and Bala has 14 rupees. Keep going and watch the gap between them.",
+   "Similar problem: Rita has 4 k plus 1 and Sam has 2 k plus 7, for k from 1 to 8. They are equal at k equals 3, 13 each. Rita has more for k equals 4, 5, 6, 7, 8, which is 5 values."
+  ],
+  "steps": [
+   "Each time k goes up by 1, Anu gains 5 rupees and Bala gains only 3, so Anu catches up by 2 each time.",
+   "At k equals 1 Anu has 8 and Bala has 14, a gap of 6. The gap closes at k equals 4, when both have 23.",
+   "Equal is not more, so k equals 4 does not count. Anu has more for k equals 5, 6, 7, 8, 9 and 10.",
+   "Anu has more money for 6 values of k."
+  ]
+ },
+ "G4A_ALGEBRA_020": {
+  "q": "A rectangular card is 2 A plus 5 centimetres long and A plus 1 centimetres wide. A small square with each side A centimetres is cut out from one corner of the card. What is the perimeter of the card that is left?",
+  "options": [
+   "2 A plus 12 centimetres",
+   "4 A plus 12 centimetres",
+   "6 A plus 12 centimetres",
+   "8 A plus 12 centimetres"
+  ],
+  "hints": [
+   "Imagine walking around the edge of the card after the corner is cut. Think about which edges disappear and which new edges appear.",
+   "Cutting the corner removes two pieces of edge, each A centimetres long. Now count the new edges the cut makes and how long they are.",
+   "Similar problem: a card 10 centimetres by 6 centimetres has a 2 centimetre square cut from one corner. Two 2 centimetre pieces of edge go and two new 2 centimetre edges appear, so the perimeter stays 2 times, open bracket, 10 plus 6, close bracket, equals 32 centimetres."
+  ],
+  "steps": [
+   "Perimeter of the whole card: 2 times, open bracket, 2 A plus 5 plus A plus 1, close bracket, equals 2 times, open bracket, 3 A plus 6, close bracket, which is 6 A plus 12 centimetres.",
+   "Cutting the corner square takes away two pieces of the outside edge, each A centimetres long.",
+   "The cut makes two new edges on the inside of the corner, each A centimetres long, so the distance around does not change.",
+   "The perimeter of the card that is left is 6 A plus 12 centimetres."
+  ]
+ },
+ "G4A_ALGEBRA_021": {
+  "q": "The nth term of a number pattern is 4 n minus 1, so the pattern begins 3, 7, 11, 15, and so on. Which of these numbers is a term of the pattern?",
+  "options": [
+   "47",
+   "45",
+   "44",
+   "46"
+  ],
+  "hints": [
+   "Work backwards: undo what the rule does to n and see whether you land on a whole number.",
+   "The rule multiplies n by 4 and then subtracts 1. To undo it, first add 1, then see whether 4 divides the result exactly.",
+   "Similar problem: is 35 a term of 3 n minus 1? Add 1 to get 36, and 36 divided by 3 equals 12, a whole number, so 35 is the 12th term."
+  ],
+  "steps": [
+   "A term is 1 less than a multiple of 4, so adding 1 to a term must give a multiple of 4.",
+   "44 plus 1 equals 45, 45 plus 1 equals 46 and 46 plus 1 equals 47. None of these is a multiple of 4.",
+   "47 plus 1 equals 48, and 48 divided by 4 equals 12, a whole number.",
+   "So 47 is a term of the pattern: it is the 12th term."
+  ]
+ },
+ "G4A_ALGEBRA_022": {
+  "q": "Sana has s rupees and Tara has 20 rupees more than Sana. Tara gives 15 rupees to Sana. Who has more money now, and how much more?",
+  "options": [
+   "Tara has 5 rupees more",
+   "Tara has 20 rupees more",
+   "Sana has 10 rupees more",
+   "Sana has 15 rupees more"
+  ],
+  "hints": [
+   "When one person gives money to another, both amounts change. Write both new amounts before comparing.",
+   "Tara starts with s plus 20 rupees. Write what each girl has after 15 rupees moves from Tara to Sana.",
+   "Similar problem: Raj has 12 rupees more than Dev, who has d rupees. Raj gives Dev 8 rupees. Raj now has d plus 4 and Dev has d plus 8, so Dev has 4 rupees more."
+  ],
+  "steps": [
+   "At the start Sana has s rupees and Tara has s plus 20 rupees.",
+   "After giving 15 rupees, Tara has s plus 20 minus 15 equals s plus 5 rupees.",
+   "After getting 15 rupees, Sana has s plus 15 rupees.",
+   "s plus 15 is 10 more than s plus 5, so Sana has 10 rupees more."
+  ]
+ },
+ "G4A_ALGEBRA_023": {
+  "q": "Five whole numbers come one after another, like 6, 7, 8, 9, 10. The middle number is m. Which expression is the sum of the smallest and the greatest of the five numbers?",
+  "options": [
+   "2 m plus 4",
+   "2 m",
+   "5 m",
+   "m plus 4"
+  ],
+  "hints": [
+   "Write all five numbers using m, starting from the middle and stepping outwards on both sides.",
+   "The numbers just before and after m are m minus 1 and m plus 1. Go one more step each way to find the smallest and the greatest.",
+   "Similar problem: three numbers in a row with middle number k are k minus 1, k and k plus 1. The smallest plus the greatest is k minus 1 plus k plus 1, which is 2 k."
+  ],
+  "steps": [
+   "The five numbers are m minus 2, m minus 1, m, m plus 1 and m plus 2.",
+   "The smallest is m minus 2 and the greatest is m plus 2.",
+   "Add them: m minus 2 plus m plus 2. The minus 2 and the plus 2 cancel each other.",
+   "Check with 6, 7, 8, 9, 10: 6 plus 10 equals 16, and 2 times 8 equals 16.",
+   "The sum of the smallest and the greatest is 2 m."
+  ]
+ },
+ "G4A_ALGEBRA_024": {
+  "q": "The perimeter of a rectangle is 10 A plus 6 centimetres. Its length is 3 A plus 2 centimetres. What is its breadth?",
+  "options": [
+   "4 A plus 2 centimetres",
+   "7 A plus 4 centimetres",
+   "5 A plus 3 centimetres",
+   "2 A plus 1 centimetres"
+  ],
+  "hints": [
+   "The perimeter is made of two lengths and two breadths. Work backwards from the perimeter.",
+   "Half of the perimeter is one length plus one breadth. Find half of 10 A plus 6, first.",
+   "Similar problem: perimeter 8 b plus 10 centimetres and length 3 b plus 4 centimetres. Half the perimeter is 4 b plus 5. Take away the length: 4 b plus 5 minus 3 b minus 4 equals b plus 1, so the breadth is b plus 1 centimetres."
+  ],
+  "steps": [
+   "One length and one breadth together make half the perimeter: half of 10 A plus 6 is 5 A plus 3.",
+   "Take the length away from this: 5 A plus 3 minus, open bracket, 3 A plus 2, close bracket.",
+   "5 A minus 3 A equals 2 A and 3 minus 2 equals 1.",
+   "The breadth is 2 A plus 1 centimetres."
+  ]
+ },
+ "G4A_ALGEBRA_025": {
+  "q": "A two-digit number has tens digit t and ones digit u. A second number is made by swapping the two digits. Which expression is the sum of the two numbers?",
+  "options": [
+   "2 t plus 2 u",
+   "20 t plus 2 u",
+   "10 t plus 10 u",
+   "11 t plus 11 u"
+  ],
+  "hints": [
+   "A digit in the tens place is worth ten times the digit. Write each number using place value before adding.",
+   "The first number is worth 10 t plus u. Write the swapped number in the same way.",
+   "Similar problem: the number with tens digit 4 and ones digit 3 is 43, and swapped it is 34. In the sum, the tens are 4 plus 3 equals 7 and the ones are 3 plus 4 equals 7, so the sum is 77."
+  ],
+  "steps": [
+   "The first number is worth 10 t plus u.",
+   "After the swap, u is in the tens place and t is in the ones place, so the second number is worth 10 u plus t.",
+   "Add them: 10 t plus t equals 11 t and u plus 10 u equals 11 u.",
+   "Check with 43 and 34: 43 plus 34 equals 77, and 11 times 4, plus 11 times 3, equals 77.",
+   "The sum of the two numbers is 11 t plus 11 u."
+  ]
+ },
+ "G4A_ALGEBRA_026": {
+  "q": "The value of 3 x plus 2 is 20. What is the value of 3 times, open bracket, x plus 2, close bracket?",
+  "options": [
+   "20",
+   "24",
+   "26",
+   "18"
+  ],
+  "hints": [
+   "The two expressions look alike, but the bracket changes what is multiplied by 3. Open the bracket first.",
+   "3 times, open bracket, x plus 2, close bracket, means 3 times x and also 3 times 2. Write it without the bracket and compare it with 3 x plus 2.",
+   "Similar problem: 2 y plus 1 is 15. Then 2 times, open bracket, y plus 1, close bracket, equals 2 y plus 2, which is 1 more than 2 y plus 1, so it is 16."
+  ],
+  "steps": [
+   "Open the bracket: 3 times, open bracket, x plus 2, close bracket, equals 3 x plus 6.",
+   "3 x plus 6 is 4 more than 3 x plus 2.",
+   "3 x plus 2 is 20, so add 4. 20 plus 4 equals 24.",
+   "Check: 3 x equals 18, so x equals 6, and 3 times, open bracket, 6 plus 2, close bracket, equals 24. 3 times 8 equals 24.",
+   "The value of 3 times, open bracket, x plus 2, close bracket, is 24."
+  ]
+ },
+ "G4A_ALGEBRA_027": {
+  "q": "A carpenter cuts a long wooden pole into n pieces. Each cut takes him 3 minutes. How many minutes does all the cutting take?",
+  "options": [
+   "3 n",
+   "3 n minus 1",
+   "3 n minus 3",
+   "n plus 3"
+  ],
+  "hints": [
+   "Count the cuts, not the pieces. Try it with a small number of pieces.",
+   "To get 2 pieces you need 1 cut, and to get 3 pieces you need 2 cuts. How many cuts give n pieces?",
+   "Similar problem: cutting a ribbon into 5 pieces needs 4 cuts. If each cut takes 2 seconds, the cutting takes 4 times 2 equals 8 seconds."
+  ],
+  "steps": [
+   "One cut makes 2 pieces and two cuts make 3 pieces, so the number of cuts is always 1 less than the number of pieces.",
+   "For n pieces he makes n minus 1 cuts.",
+   "Each cut takes 3 minutes: 3 times, open bracket, n minus 1, close bracket, equals 3 n minus 3.",
+   "All the cutting takes 3 n minus 3 minutes."
+  ]
+ },
+ "PYQ_2016_Q19": {
+  "q": "Which of the given expressions below would have a value of 70 when m equals 5 and n equals 7?",
+  "options": [
+   "5 m plus 7 n",
+   "7 m plus 5 n",
+   "5 m minus 7 n",
+   "7 m minus 5 n"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 19.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: Option 2, 7 m plus 5 n."
+  ]
+ },
+ "PYQ_2016_Q20": {
+  "q": "If P represents an odd number, then the 17th odd number coming after it will be?",
+  "options": [
+   "P plus 34",
+   "P plus 33",
+   "P plus 17",
+   "P minus 33"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 20.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: Option 1, P plus 34."
+  ]
+ },
+ "PYQ_2016_Q39": {
+  "q": "Find the value of the expression 6 x minus 3 y plus 5 z, when the values of x equals 3, y equals x minus 1 and z equals x plus y.",
+  "options": [
+   "37",
+   "42",
+   "27",
+   "None of these"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 39.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: Option 1, 37."
+  ]
+ },
+ "PYQ_2017_Q18": {
+  "q": "The sum of the ages of a mother and daughter 5 years ago was 5 x. How will you express the sum of their ages 5 years hence?",
+  "options": [
+   "5 x minus 10",
+   "5 x minus 20",
+   "5 x plus 20",
+   "5 x plus 10"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 18.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: Option 3, 5 x plus 20."
+  ]
+ },
+ "PYQ_2017_Q22": {
+  "q": "The side of an equilateral triangle is 7 m minus 2 n, then its perimeter will be.",
+  "options": [
+   "21 m plus 6 n",
+   "15 m n",
+   "21 m minus 6 n",
+   "7 m minus 6 n"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 22.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: Option 3, 21 m minus 6 n."
+  ]
+ },
+ "PYQ_2017_Q24": {
+  "q": "The letter P represents an even number. Which of the following would represent the 3rd even number before it?",
+  "options": [
+   "P minus 6",
+   "P minus 3",
+   "P plus 6",
+   "2 P plus 3"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 24.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: Option 1, P minus 6."
+  ]
+ },
+ "PYQ_2018_Q04": {
+  "q": "The length of the rectangle is 2 A plus 5 b centimetres and its breadth is 7 centimetres. What is the perimeter of this rectangle?",
+  "options": [
+   "2 A plus 5 b plus 7 centimetres",
+   "4 A plus 10 b plus 7 centimetres",
+   "4 A plus 10 b plus 14 centimetres",
+   "14 plus 2 A plus 5 b centimetres"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 4.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Correct answer: Option 3, 4 A plus 10 b plus 14 centimetres."
+  ]
+ },
+ "PYQ_2018_Q21": {
+  "q": "It is known that G plus 12 is an even number, then the 6th even number prior to it would be?",
+  "options": [
+   "G minus 12",
+   "G plus 24",
+   "G",
+   "G plus 6"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 21.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Correct answer: Option 3, G."
+  ]
+ },
+ "PYQ_2018_Q37": {
+  "q": "The side of a square measures 3 A plus 2 b. Its perimeter would be?",
+  "options": [
+   "2 times, open bracket, 3 A plus 2 b, close bracket",
+   "2 times 5 A b",
+   "20 A b",
+   "2 times, open bracket, 6 A plus 4 b, close bracket"
+  ],
+  "hints": [
+   "This is a perimeter problem with letters. A square has four equal sides.",
+   "The perimeter of a square is 4 times its side. Write that for this side, then compare with the options, which may be written in another form.",
+   "Similar example: a square has side 2 x plus y. Its perimeter is 4 times, open bracket, 2 x plus y, close bracket, which is 8 x plus 4 y. This can also be written as 2 times, open bracket, 4 x plus 2 y, close bracket, because 2 times 4 x is 8 x and 2 times 2 y is 4 y."
+  ],
+  "steps": [
+   "A square has 4 equal sides, so the perimeter is 4 times the side.",
+   "Multiply each term by 4. 4 times, open bracket, 3 A plus 2 b, close bracket, equals 12 A plus 8 b.",
+   "Now open the bracket in 2 times, open bracket, 6 A plus 4 b, close bracket: 2 times 6 A is 12 A and 2 times 4 b is 8 b. It is the same.",
+   "The perimeter is 2 times, open bracket, 6 A plus 4 b, close bracket."
+  ]
+ },
+ "PYQ_2019_Q03": {
+  "q": "What is the sum of the expression 5 m minus 3 n, and 7 m minus 2 n?",
+  "options": [
+   "12 m minus n",
+   "2 m plus 5 n",
+   "12 m minus 5 n",
+   "12 m plus 5 n"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 3.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "Correct answer: Option 3, 12 m minus 5 n."
+  ]
+ },
+ "PYQ_2019_Q27": {
+  "q": "Find the value of the expression 5 p plus 6 q minus 12, when p equals 7 and q equals p minus 3.",
+  "options": [
+   "140",
+   "35",
+   "47",
+   "52"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 27.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "Correct answer: Option 3, 47."
+  ]
+ },
+ "PYQ_2019_Q36": {
+  "q": "The side of a square is 4 x minus 3 y centimetres. Which of the following expression can represent the perimeter of this square?",
+  "options": [
+   "4 x y centimetres",
+   "16 x plus 12 y centimetres",
+   "12 x minus 16 y centimetres",
+   "16 x minus 12 y centimetres"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 36.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "Correct answer: Option 4, 16 x minus 12 y centimetres."
+  ]
+ },
+ "Q_CH13_001": {
+  "q": "If A equals 3, find the value of A plus 4.",
+  "options": [
+   "34",
+   "7",
+   "1",
+   "12"
+  ],
+  "hints": [
+   "Replace A with its value. A equals 3, so A plus 4 becomes what?",
+   "3 plus 4 equals what?",
+   "3 plus 4 equals 7."
+  ],
+  "steps": [
+   "Substitute A equals 3 into the expression. A plus 4 equals 3 plus 4.",
+   "Add: 3 plus 4 equals 7."
+  ]
+ },
+ "Q_CH13_001_V01": {
+  "q": "If A equals 6 and b equals 7, what is 3 A minus b?",
+  "options": [
+   "4",
+   "13",
+   "17",
+   "11"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "3 A means 3 times A, so start with 3 times 6. Then take away b.",
+   "Similar example: if A equals 7 and b equals 3, then 3 A minus b is 3 times 7, minus 3. That is 21 minus 3, which is 18."
+  ],
+  "steps": [
+   "3 A means 3 times A. Put A equals 6. 3 times 6 equals 18.",
+   "Now take away b, which is 7. 18 minus 7 equals 11.",
+   "The value of 3 A minus b is 11."
+  ]
+ },
+ "Q_CH13_001_V03": {
+  "q": "If A equals 9 and b equals 5, what is 3 A minus b?",
+  "options": [
+   "22",
+   "14",
+   "17",
+   "31"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "3 A means 3 times A, so start with 3 times 9. Then take away b.",
+   "Similar example: if A equals 5 and b equals 4, then 3 A minus b is 3 times 5, minus 4. That is 15 minus 4, which is 11."
+  ],
+  "steps": [
+   "3 A means 3 times A. Put A equals 9. 3 times 9 equals 27.",
+   "Now take away b, which is 5. 27 minus 5 equals 22.",
+   "The value of 3 A minus b is 22."
+  ]
+ },
+ "Q_CH13_001_V05": {
+  "q": "If A equals 9 and b equals 2, what is A plus 4 b?",
+  "options": [
+   "15",
+   "26",
+   "17",
+   "11"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "4 b means 4 times b, so start with 4 times 2. Then add A.",
+   "Similar example: if A equals 5 and b equals 4, then A plus 4 b is 5 plus 4 times 4. That is 5 plus 16, which is 21."
+  ],
+  "steps": [
+   "4 b means 4 times b. Put b equals 2. 4 times 2 equals 8.",
+   "Now add A, which is 9. 9 plus 8 equals 17.",
+   "The value of A plus 4 b is 17."
+  ]
+ },
+ "Q_CH13_001_V07": {
+  "q": "If A equals 10 and b equals 3, what is 2 A plus b?",
+  "options": [
+   "20",
+   "13",
+   "33",
+   "23"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "2 A means 2 times A, so start with 2 times 10. Then add b.",
+   "Similar example: if A equals 5 and b equals 4, then 2 A plus b is 2 times 5, plus 4. That is 10 plus 4, which is 14."
+  ],
+  "steps": [
+   "2 A means 2 times A. Put A equals 10. 2 times 10 equals 20.",
+   "Now add b, which is 3. 20 plus 3 equals 23.",
+   "The value of 2 A plus b is 23."
+  ]
+ },
+ "Q_CH13_002": {
+  "q": "If A equals 3, find the value of 4 A.",
+  "options": [
+   "12",
+   "7",
+   "34",
+   "43"
+  ],
+  "hints": [
+   "4 A means 4 times A. What is the value of A?",
+   "A equals 3, so 4 A equals 4 times 3.",
+   "4 times 3 equals 12."
+  ],
+  "steps": [
+   "4 A means 4 multiplied by A.",
+   "Substitute A equals 3. 4 times 3 equals 12.",
+   "So 4 A equals 12."
+  ]
+ },
+ "Q_CH13_002_V01": {
+  "q": "If A equals 10 and b equals 5, what is 3 A minus b?",
+  "options": [
+   "15",
+   "35",
+   "20",
+   "25"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "3 A means 3 times A, so start with 3 times 10. Then take away b.",
+   "Similar example: if A equals 5 and b equals 4, then 3 A minus b is 3 times 5, minus 4. That is 15 minus 4, which is 11."
+  ],
+  "steps": [
+   "3 A means 3 times A. Put A equals 10. 3 times 10 equals 30.",
+   "Now take away b, which is 5. 30 minus 5 equals 25.",
+   "The value of 3 A minus b is 25."
+  ]
+ },
+ "Q_CH13_002_V02": {
+  "q": "If A equals 3 and b equals 9, what is A squared?",
+  "options": [
+   "0",
+   "14",
+   "12",
+   "9"
+  ],
+  "hints": [
+   "This is a substitution problem. The small 2 above a letter means the letter is multiplied by itself.",
+   "A squared means A times A. Use A equals 3. You do not need b here.",
+   "Similar example: if A equals 5, then A squared is 5 times 5, which is 25."
+  ],
+  "steps": [
+   "A squared means A times A. Put A equals 3. 3 times 3 equals 9.",
+   "The value of b is not needed here. The value of A squared is 9."
+  ]
+ },
+ "Q_CH13_002_V08": {
+  "q": "If A equals 10 and b equals 8, what is 3 A minus b?",
+  "options": [
+   "18",
+   "32",
+   "22",
+   "14"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "3 A means 3 times A, so start with 3 times 10. Then take away b.",
+   "Similar example: if A equals 5 and b equals 4, then 3 A minus b is 3 times 5, minus 4. That is 15 minus 4, which is 11."
+  ],
+  "steps": [
+   "3 A means 3 times A. Put A equals 10. 3 times 10 equals 30.",
+   "Now take away b, which is 8. 30 minus 8 equals 22.",
+   "The value of 3 A minus b is 22."
+  ]
+ },
+ "Q_CH13_003": {
+  "q": "If A equals 3, find the value of 2 A over 3.",
+  "options": [
+   "6",
+   "3",
+   "1",
+   "2"
+  ],
+  "hints": [
+   "First, find 2 A. Then divide by 3.",
+   "2 A equals 2 times 3, which is 6. Now divide 6 by 3.",
+   "6 divided by 3 equals 2."
+  ],
+  "steps": [
+   "Calculate 2 A: 2 times 3 equals 6.",
+   "Divide by 3: 6 divided by 3 equals 2.",
+   "So 2 A over 3 equals 2."
+  ]
+ },
+ "Q_CH13_003_V03": {
+  "q": "If A equals 4 and b equals 6, what is 3 A minus b?",
+  "options": [
+   "10",
+   "0",
+   "3",
+   "6"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "3 A means 3 times A, so start with 3 times 4. Then take away b.",
+   "Similar example: if A equals 5 and b equals 4, then 3 A minus b is 3 times 5, minus 4. That is 15 minus 4, which is 11."
+  ],
+  "steps": [
+   "3 A means 3 times A. Put A equals 4. 3 times 4 equals 12.",
+   "Now take away b, which is 6. 12 minus 6 equals 6.",
+   "The value of 3 A minus b is 6."
+  ]
+ },
+ "Q_CH13_003_V06": {
+  "q": "If A equals 9 and b equals 10, what is 2 A plus b?",
+  "options": [
+   "28",
+   "18",
+   "37",
+   "19"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "2 A means 2 times A, so start with 2 times 9. Then add b.",
+   "Similar example: if A equals 5 and b equals 4, then 2 A plus b is 2 times 5, plus 4. That is 10 plus 4, which is 14."
+  ],
+  "steps": [
+   "2 A means 2 times A. Put A equals 9. 2 times 9 equals 18.",
+   "Now add b, which is 10. 18 plus 10 equals 28.",
+   "The value of 2 A plus b is 28."
+  ]
+ },
+ "Q_CH13_003_V07": {
+  "q": "If A equals 5 and b equals 4, what is 2 A plus b?",
+  "options": [
+   "9",
+   "19",
+   "10",
+   "14"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "2 A means 2 times A, so start with 2 times 5. Then add b.",
+   "Similar example: if A equals 8 and b equals 2, then 2 A plus b is 2 times 8, plus 2. That is 16 plus 2, which is 18."
+  ],
+  "steps": [
+   "2 A means 2 times A. Put A equals 5. 2 times 5 equals 10.",
+   "Now add b, which is 4. 10 plus 4 equals 14.",
+   "The value of 2 A plus b is 14."
+  ]
+ },
+ "Q_CH13_003_V09": {
+  "q": "If A equals 9 and b equals 7, what is A plus 4 b?",
+  "options": [
+   "46",
+   "37",
+   "30",
+   "16"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "4 b means 4 times b, so start with 4 times 7. Then add A.",
+   "Similar example: if A equals 5 and b equals 4, then A plus 4 b is 5 plus 4 times 4. That is 5 plus 16, which is 21."
+  ],
+  "steps": [
+   "4 b means 4 times b. Put b equals 7. 4 times 7 equals 28.",
+   "Now add A, which is 9. 9 plus 28 equals 37.",
+   "The value of A plus 4 b is 37."
+  ]
+ },
+ "Q_CH13_004": {
+  "q": "If A equals 3, find the value of A plus 12, all over 3.",
+  "options": [
+   "1",
+   "4",
+   "13",
+   "5"
+  ],
+  "hints": [
+   "The whole expression, A plus 12, is divided by 3. First calculate A plus 12.",
+   "A plus 12 equals 3 plus 12, which is 15. Now divide 15 by 3.",
+   "15 divided by 3 equals 5."
+  ],
+  "steps": [
+   "Substitute A equals 3 in the numerator. A plus 12 equals 3 plus 12, which is 15.",
+   "Divide by 3. 15 over 3 equals 5.",
+   "So A plus 12, all over 3, equals 5."
+  ]
+ },
+ "Q_CH13_004_V03": {
+  "q": "If A equals 9 and b equals 9, what is the value of A b?",
+  "options": [
+   "81",
+   "90",
+   "72",
+   "18"
+  ],
+  "hints": [
+   "This is a substitution problem. Two letters written side by side mean multiply.",
+   "A b means A times b. Put the two numbers in place of the letters.",
+   "Similar example: if A equals 6 and b equals 5, then A b is 6 times 5, which is 30."
+  ],
+  "steps": [
+   "A b means A times b. Put A equals 9 and b equals 9. 9 times 9 equals 81.",
+   "The value of A b is 81."
+  ]
+ },
+ "Q_CH13_004_V04": {
+  "q": "If A equals 8 and b equals 7, what is A squared?",
+  "options": [
+   "72",
+   "15",
+   "64",
+   "57"
+  ],
+  "hints": [
+   "This is a substitution problem. The small 2 above a letter means the letter is multiplied by itself.",
+   "A squared means A times A. Use A equals 8. You do not need b here.",
+   "Similar example: if A equals 5, then A squared is 5 times 5, which is 25."
+  ],
+  "steps": [
+   "A squared means A times A. Put A equals 8. 8 times 8 equals 64.",
+   "The value of b is not needed here. The value of A squared is 64."
+  ]
+ },
+ "Q_CH13_004_V09": {
+  "q": "If A equals 4 and b equals 4, what is 2 A plus b?",
+  "options": [
+   "8",
+   "12",
+   "14",
+   "16"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "2 A means 2 times A, so start with 2 times 4. Then add b.",
+   "Similar example: if A equals 8 and b equals 2, then 2 A plus b is 2 times 8, plus 2. That is 16 plus 2, which is 18."
+  ],
+  "steps": [
+   "2 A means 2 times A. Put A equals 4. 2 times 4 equals 8.",
+   "Now add b, which is 4. 8 plus 4 equals 12.",
+   "The value of 2 A plus b is 12."
+  ]
+ },
+ "Q_CH13_005": {
+  "q": "If A equals 3, find the value of A squared.",
+  "options": [
+   "5",
+   "6",
+   "32",
+   "9"
+  ],
+  "hints": [
+   "A squared means A times A. It does not mean A times 2!",
+   "A squared equals 3 times 3.",
+   "3 times 3 equals 9."
+  ],
+  "steps": [
+   "A squared means A multiplied by itself.",
+   "Substitute A equals 3. 3 times 3 equals 9.",
+   "So A squared equals 9."
+  ]
+ },
+ "Q_CH13_005_V03": {
+  "q": "If A equals 3 and b equals 2, what is 3 A minus b?",
+  "options": [
+   "10",
+   "7",
+   "5",
+   "9"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "3 A means 3 times A, so start with 3 times 3. Then take away b.",
+   "Similar example: if A equals 5 and b equals 4, then 3 A minus b is 3 times 5, minus 4. That is 15 minus 4, which is 11."
+  ],
+  "steps": [
+   "3 A means 3 times A. Put A equals 3. 3 times 3 equals 9.",
+   "Now take away b, which is 2. 9 minus 2 equals 7.",
+   "The value of 3 A minus b is 7."
+  ]
+ },
+ "Q_CH13_005_V09": {
+  "q": "If A equals 4 and b equals 7, what is the value of A b?",
+  "options": [
+   "32",
+   "11",
+   "21",
+   "28"
+  ],
+  "hints": [
+   "This is a substitution problem. Two letters written side by side mean multiply.",
+   "A b means A times b. Put the two numbers in place of the letters.",
+   "Similar example: if A equals 6 and b equals 5, then A b is 6 times 5, which is 30."
+  ],
+  "steps": [
+   "A b means A times b. Put A equals 4 and b equals 7. 4 times 7 equals 28.",
+   "The value of A b is 28."
+  ]
+ },
+ "Q_CH13_005_V10": {
+  "q": "If A equals 3 and b equals 2, what is 2 A plus b?",
+  "options": [
+   "11",
+   "5",
+   "6",
+   "8"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "2 A means 2 times A, so start with 2 times 3. Then add b.",
+   "Similar example: if A equals 5 and b equals 4, then 2 A plus b is 2 times 5, plus 4. That is 10 plus 4, which is 14."
+  ],
+  "steps": [
+   "2 A means 2 times A. Put A equals 3. 2 times 3 equals 6.",
+   "Now add b, which is 2. 6 plus 2 equals 8.",
+   "The value of 2 A plus b is 8."
+  ]
+ },
+ "Q_CH13_006": {
+  "q": "If A equals 3, find the value of 4 A squared.",
+  "options": [
+   "36",
+   "24",
+   "144",
+   "12"
+  ],
+  "hints": [
+   "4 A squared means 4 times A squared. First find A squared, then multiply by 4.",
+   "A squared equals 3 times 3, which is 9. Now multiply: 4 times 9 equals what?",
+   "4 times 9 equals 36."
+  ],
+  "steps": [
+   "First calculate A squared: 3 times 3 equals 9.",
+   "Multiply by 4: 4 times 9 equals 36.",
+   "So 4 A squared equals 36."
+  ]
+ },
+ "Q_CH13_006_V02": {
+  "q": "If A equals 2 and b equals 2, what is the value of A b?",
+  "options": [
+   "6",
+   "minus 1",
+   "2",
+   "4"
+  ],
+  "hints": [
+   "This is a substitution problem. Two letters written side by side mean multiply.",
+   "A b means A times b. Put the two numbers in place of the letters.",
+   "Similar example: if A equals 6 and b equals 5, then A b is 6 times 5, which is 30."
+  ],
+  "steps": [
+   "A b means A times b. Put A equals 2 and b equals 2. 2 times 2 equals 4.",
+   "The value of A b is 4."
+  ]
+ },
+ "Q_CH13_006_V03": {
+  "q": "If A equals 3 and b equals 3, what is A plus 4 b?",
+  "options": [
+   "12",
+   "15",
+   "6",
+   "18"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "4 b means 4 times b, so start with 4 times 3. Then add A.",
+   "Similar example: if A equals 7 and b equals 3, then A plus 4 b is 7 plus 4 times 3. That is 7 plus 12, which is 19."
+  ],
+  "steps": [
+   "4 b means 4 times b. Put b equals 3. 4 times 3 equals 12.",
+   "Now add A, which is 3. 3 plus 12 equals 15.",
+   "The value of A plus 4 b is 15."
+  ]
+ },
+ "Q_CH13_007": {
+  "q": "If A equals 3 and b equals 5, find the value of 4 A b.",
+  "options": [
+   "60",
+   "17",
+   "35",
+   "12"
+  ],
+  "hints": [
+   "4 A b means 4 times A times b. Substitute the values.",
+   "4 times 3 times 5 equals what?",
+   "4 times 3 equals 12, then 12 times 5 equals 60."
+  ],
+  "steps": [
+   "4 A b equals 4 times A times b.",
+   "Substitute: 4 times 3 times 5.",
+   "That equals 12 times 5, which is 60."
+  ]
+ },
+ "Q_CH13_007_V01": {
+  "q": "If A equals 6 and b equals 9, what is A plus 4 b?",
+  "options": [
+   "48",
+   "33",
+   "42",
+   "15"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "4 b means 4 times b, so start with 4 times 9. Then add A.",
+   "Similar example: if A equals 5 and b equals 4, then A plus 4 b is 5 plus 4 times 4. That is 5 plus 16, which is 21."
+  ],
+  "steps": [
+   "4 b means 4 times b. Put b equals 9. 4 times 9 equals 36.",
+   "Now add A, which is 6. 6 plus 36 equals 42.",
+   "The value of A plus 4 b is 42."
+  ]
+ },
+ "Q_CH13_008": {
+  "q": "If A equals 3 and b equals 5, find the value of 4 A plus b.",
+  "options": [
+   "17",
+   "12",
+   "20",
+   "35"
+  ],
+  "hints": [
+   "4 A means 4 times A. Calculate that first, then add b.",
+   "4 A equals 4 times 3, which is 12. Now add b, which is 5.",
+   "12 plus 5 equals 17."
+  ],
+  "steps": [
+   "Calculate 4 A: 4 times 3 equals 12.",
+   "Add b: 12 plus 5 equals 17.",
+   "So 4 A plus b equals 17."
+  ]
+ },
+ "Q_CH13_008_V02": {
+  "q": "If A equals 2 and b equals 2, what is A squared?",
+  "options": [
+   "6",
+   "4",
+   "minus 1",
+   "2"
+  ],
+  "hints": [
+   "This is a substitution problem. The small 2 above a letter means the letter is multiplied by itself.",
+   "A squared means A times A. Use A equals 2. You do not need b here.",
+   "Similar example: if A equals 5, then A squared is 5 times 5, which is 25."
+  ],
+  "steps": [
+   "A squared means A times A. Put A equals 2. 2 times 2 equals 4.",
+   "The value of b is not needed here. The value of A squared is 4."
+  ]
+ },
+ "Q_CH13_008_V06": {
+  "q": "If A equals 2 and b equals 6, what is A plus 4 b?",
+  "options": [
+   "28",
+   "26",
+   "20",
+   "8"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "4 b means 4 times b, so start with 4 times 6. Then add A.",
+   "Similar example: if A equals 5 and b equals 4, then A plus 4 b is 5 plus 4 times 4. That is 5 plus 16, which is 21."
+  ],
+  "steps": [
+   "4 b means 4 times b. Put b equals 6. 4 times 6 equals 24.",
+   "Now add A, which is 2. 2 plus 24 equals 26.",
+   "The value of A plus 4 b is 26."
+  ]
+ },
+ "Q_CH13_009": {
+  "q": "If A equals 3 and b equals 5, find the value of 6 b minus 4 A.",
+  "options": [
+   "10",
+   "18",
+   "42",
+   "2"
+  ],
+  "hints": [
+   "Calculate 6 b and 4 A separately, then subtract.",
+   "6 b equals 6 times 5, which is 30. 4 A equals 4 times 3, which is 12.",
+   "30 minus 12 equals 18."
+  ],
+  "steps": [
+   "Calculate 6 b: 6 times 5 equals 30.",
+   "Calculate 4 A: 4 times 3 equals 12.",
+   "Subtract: 30 minus 12 equals 18."
+  ]
+ },
+ "Q_CH13_009_V03": {
+  "q": "If A equals 9 and b equals 3, what is A plus 4 b?",
+  "options": [
+   "30",
+   "18",
+   "12",
+   "21"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "4 b means 4 times b, so start with 4 times 3. Then add A.",
+   "Similar example: if A equals 8 and b equals 2, then A plus 4 b is 8 plus 4 times 2. That is 8 plus 8, which is 16."
+  ],
+  "steps": [
+   "4 b means 4 times b. Put b equals 3. 4 times 3 equals 12.",
+   "Now add A, which is 9. 9 plus 12 equals 21.",
+   "The value of A plus 4 b is 21."
+  ]
+ },
+ "Q_CH13_010": {
+  "q": "If A equals 3 and b equals 5, find the value of 12 minus 5 A plus 3 b.",
+  "options": [
+   "0",
+   "12",
+   "30",
+   "minus 18"
+  ],
+  "hints": [
+   "Substitute both values: 12 minus 5 times 3, plus 3 times 5. Be careful with the order of operations!",
+   "12 minus 15 plus 15 equals what?",
+   "12 minus 15 equals minus 3, then minus 3 plus 15 equals 12."
+  ],
+  "steps": [
+   "Substitute: 12 minus 5 times 3, plus 3 times 5.",
+   "Calculate multiplications: 12 minus 15 plus 15.",
+   "Work left to right: minus 3 plus 15 equals 12."
+  ]
+ },
+ "Q_CH13_011": {
+  "q": "If A equals 3 and b equals 5, find the value of 4 times, open bracket, A plus b, close bracket.",
+  "options": [
+   "23",
+   "60",
+   "17",
+   "32"
+  ],
+  "hints": [
+   "The bracket means add A and b first, then multiply by 4.",
+   "A plus b equals 3 plus 5, which is 8. Now multiply: 4 times 8 equals what?",
+   "4 times 8 equals 32."
+  ],
+  "steps": [
+   "Calculate inside the bracket: A plus b equals 3 plus 5, which is 8.",
+   "Multiply: 4 times 8 equals 32.",
+   "So 4 times, open bracket, A plus b, close bracket, equals 32."
+  ]
+ },
+ "Q_CH13_011_V05": {
+  "q": "If A equals 5 and b equals 9, what is 2 A plus b?",
+  "options": [
+   "14",
+   "24",
+   "19",
+   "10"
+  ],
+  "hints": [
+   "This is a substitution problem. Swap each letter for its number. A number written next to a letter means multiply.",
+   "2 A means 2 times A, so start with 2 times 5. Then add b.",
+   "Similar example: if A equals 7 and b equals 3, then 2 A plus b is 2 times 7, plus 3. That is 14 plus 3, which is 17."
+  ],
+  "steps": [
+   "2 A means 2 times A. Put A equals 5. 2 times 5 equals 10.",
+   "Now add b, which is 9. 10 plus 9 equals 19.",
+   "The value of 2 A plus b is 19."
+  ]
+ },
+ "Q_CH13_012": {
+  "q": "What is half of the square of t?",
+  "options": [
+   "2 t squared",
+   "t over 2",
+   "t squared over 2",
+   "open bracket, t over 2, close bracket, squared"
+  ],
+  "hints": [
+   "Break it down: first, the square of t means t squared. Then, half of, means divide by 2.",
+   "Square of t equals t squared. Half of t squared equals t squared divided by 2.",
+   "So the answer is t squared over 2."
+  ],
+  "steps": [
+   "Square of t equals t squared.",
+   "Half of t squared equals t squared over 2.",
+   "Answer: t squared over 2."
+  ]
+ },
+ "Q_CH13_013": {
+  "q": "The sum of d and its successor is.",
+  "options": [
+   "d plus 2",
+   "2 d plus 1",
+   "2 d",
+   "d squared"
+  ],
+  "hints": [
+   "The successor of a number is the next number. So the successor of d is d plus 1.",
+   "Now add d and d plus 1.",
+   "d plus d plus 1 equals 2 d plus 1."
+  ],
+  "steps": [
+   "Successor of d equals d plus 1.",
+   "Sum equals d plus d plus 1, which is 2 d plus 1.",
+   "Answer: 2 d plus 1."
+  ]
+ },
+ "Q_CH13_014": {
+  "q": "Diya has m ten-rupee notes. What is the total amount Diya has?",
+  "options": [
+   "m plus 10 rupees",
+   "10 m rupees",
+   "m rupees",
+   "m over 10 rupees"
+  ],
+  "hints": [
+   "Each note is worth 10 rupees, and she has m notes. Total equals value times number of notes.",
+   "Total equals 10 times m.",
+   "That equals 10 m rupees."
+  ],
+  "steps": [
+   "Each note equals 10 rupees, number of notes equals m.",
+   "Total equals 10 times m, which is 10 m.",
+   "Total amount equals 10 m rupees."
+  ]
+ },
+ "Q_CH13_015": {
+  "q": "Diya has m ten-rupee notes and n five-rupee notes. What is the total amount?",
+  "options": [
+   "10 plus m plus 5 plus n rupees",
+   "15 m n rupees",
+   "m plus n rupees",
+   "10 m plus 5 n rupees"
+  ],
+  "hints": [
+   "Calculate the value of ten-rupee notes and five-rupee notes separately, then add.",
+   "Ten-rupee notes: 10 times m equals 10 m. Five-rupee notes: 5 times n equals 5 n.",
+   "Total equals 10 m plus 5 n."
+  ],
+  "steps": [
+   "Value of ten-rupee notes: 10 times m equals 10 m.",
+   "Value of five-rupee notes: 5 times n equals 5 n.",
+   "Total equals 10 m plus 5 n."
+  ]
+ },
+ "Q_CH13_016": {
+  "q": "Out of m notes of 10 rupees each, Diya spent 12 notes to buy a cake. How many notes are left with her?",
+  "options": [
+   "12 minus m",
+   "10 m minus 12",
+   "m minus 12",
+   "m minus 120"
+  ],
+  "hints": [
+   "She had m notes. She spent 12 notes. How many are left?",
+   "Notes left equals total notes minus notes spent.",
+   "That equals m minus 12."
+  ],
+  "steps": [
+   "Total notes equals m.",
+   "Notes spent equals 12.",
+   "Notes left equals m minus 12."
+  ]
+ },
+ "Q_CH13_017": {
+  "q": "x years ago, Soham was 8 years old. What will his age be y years hence, from now?",
+  "options": [
+   "8 plus y",
+   "8 plus x plus y",
+   "8 plus x",
+   "8 minus x plus y"
+  ],
+  "hints": [
+   "x years ago he was 8. So his present age equals 8 plus x.",
+   "y years from now equals present age plus y.",
+   "That equals 8 plus x plus y."
+  ],
+  "steps": [
+   "x years ago he was 8, so present age equals 8 plus x.",
+   "y years hence equals present age plus y. 8 plus x, plus y equals 8 plus x plus y.",
+   "Age y years hence equals 8 plus x plus y."
+  ]
+ },
+ "Q_CH13_018": {
+  "q": "A pen costs thrice as much as a pencil. If the price of a pencil is x rupees, how much would you pay for a pen and a pencil together?",
+  "options": [
+   "3 x squared rupees",
+   "x plus 3 rupees",
+   "3 x rupees",
+   "4 x rupees"
+  ],
+  "hints": [
+   "The pencil is x rupees. The pen costs thrice that, so 3 times x, which is 3 x.",
+   "Total equals pen plus pencil, which is 3 x plus x.",
+   "3 x plus x equals 4 x."
+  ],
+  "steps": [
+   "The pencil is x rupees. The pen is 3 times x, which is 3 x rupees.",
+   "Total equals 3 x plus x, which is 4 x.",
+   "Total cost equals 4 x rupees."
+  ]
+ },
+ "Q_CH13_019": {
+  "q": "A piece of y metres was cut from a rope x metres long. What is the length of the remaining piece in metres?",
+  "options": [
+   "y minus x metres",
+   "x plus y metres",
+   "x minus y metres",
+   "x y metres"
+  ],
+  "hints": [
+   "You start with x metres and cut away y metres. What operation is that?",
+   "Cutting means subtraction. Remaining equals total, minus cut piece.",
+   "That equals x minus y."
+  ],
+  "steps": [
+   "Total rope equals x metres.",
+   "Piece cut equals y metres.",
+   "Remaining equals x minus y."
+  ]
+ },
+ "Q_CH13_020": {
+  "q": "From a wire x metres long, y centimetres was cut. How many centimetres of wire is left?",
+  "options": [
+   "1000 x minus y centimetres",
+   "100 x minus y centimetres",
+   "x y centimetres",
+   "x minus y centimetres"
+  ],
+  "hints": [
+   "The wire is in metres but the cut piece is in centimetres. Convert to the same unit!",
+   "x metres equals x times 100, which is 100 x centimetres.",
+   "Left equals 100 x minus y centimetres."
+  ],
+  "steps": [
+   "Convert metres to centimetres: x metres equals 100 x centimetres.",
+   "Subtract cut piece: 100 x minus y.",
+   "Wire left equals 100 x minus y centimetres."
+  ]
+ },
+ "Q_CH13_021": {
+  "q": "Simplify: 5 A plus A.",
+  "options": [
+   "5 A",
+   "6 A",
+   "5 A squared",
+   "A 6"
+  ],
+  "hints": [
+   "A by itself is the same as 1 A. So you're adding 5 A plus 1 A.",
+   "Like terms can be added: 5 A plus 1 A equals, open bracket, 5 plus 1, close bracket, times A.",
+   "That equals 6 A."
+  ],
+  "steps": [
+   "A equals 1 A. The coefficient is 1.",
+   "Add like terms: 5 A plus 1 A equals 6 A.",
+   "Answer: 6 A."
+  ]
+ },
+ "Q_CH13_022": {
+  "q": "Add: 3 x plus 4 y, and x plus 2 y.",
+  "options": [
+   "10 x y",
+   "4 x plus 4 y",
+   "4 x plus 6 y",
+   "3 x plus 6 y"
+  ],
+  "hints": [
+   "Add the x terms together, and the y terms together. They are like terms!",
+   "x terms: 3 x plus x equals 4 x. y terms: 4 y plus 2 y equals 6 y.",
+   "Answer: 4 x plus 6 y."
+  ],
+  "steps": [
+   "Group like terms. 3 x plus x, and 4 y plus 2 y.",
+   "Add x terms: 3 x plus x equals 4 x.",
+   "Add y terms: 4 y plus 2 y equals 6 y.",
+   "Answer: 4 x plus 6 y."
+  ]
+ },
+ "Q_CH13_023": {
+  "q": "Add: 7 A plus 5 b, and 3 A minus b.",
+  "options": [
+   "4 A plus 4 b",
+   "10 A plus 6 b",
+   "10 A plus 4 b",
+   "10 A minus 4 b"
+  ],
+  "hints": [
+   "Add the A terms: 7 A plus 3 A equals what? Add the b terms: 5 b plus, minus b, equals what?",
+   "7 A plus 3 A equals 10 A. For b: 5 b plus, minus b, equals 5 b minus b, which is 4 b.",
+   "Answer: 10 A plus 4 b."
+  ],
+  "steps": [
+   "Add the A terms: 7 A plus 3 A equals 10 A.",
+   "Add the b terms: 5 b plus, minus b, equals 5 b minus 1 b, which is 4 b.",
+   "Answer: 10 A plus 4 b."
+  ]
+ },
+ "Q_CH13_024": {
+  "q": "Which of the following pairs are unlike terms?",
+  "options": [
+   "5 A and 3 A",
+   "y and 12 y",
+   "7 x and minus 2 x",
+   "4 m and 3 n"
+  ],
+  "hints": [
+   "Like terms have the same variable. Unlike terms have different variables.",
+   "Check each pair: 5 A and 3 A have the same variable, A. 4 m and 3 n have different variables, m and n!",
+   "4 m and 3 n are unlike terms because m is not equal to n."
+  ],
+  "steps": [
+   "Like terms: same variable letter. Unlike terms: different variable letters.",
+   "5 A and 3 A: both A, so like. 4 m and 3 n: m and n, so unlike!",
+   "4 m and 3 n are unlike terms."
+  ]
+ },
+ "Q_CH13_025": {
+  "q": "Subtract 2 x plus 3, from 5 x plus 7.",
+  "options": [
+   "3 x plus 4",
+   "7 x plus 10",
+   "3 x plus 10",
+   "3 x minus 4"
+  ],
+  "hints": [
+   "Be careful with the order! Subtract A from B means B minus A.",
+   "5 x plus 7, minus, open bracket, 2 x plus 3, close bracket, equals 5 x plus 7 minus 2 x minus 3.",
+   "x terms: 5 x minus 2 x equals 3 x. Constants: 7 minus 3 equals 4. Answer: 3 x plus 4."
+  ],
+  "steps": [
+   "Set up: 5 x plus 7, minus, open bracket, 2 x plus 3, close bracket.",
+   "Remove brackets, distribute the minus: 5 x plus 7 minus 2 x minus 3.",
+   "Combine: x terms: 5 x minus 2 x equals 3 x. Constants: 7 minus 3 equals 4.",
+   "Answer: 3 x plus 4."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_007_01": {
+  "q": "Simplify: 3 x plus 1 plus 2 x plus 2.",
+  "options": [
+   "3 x plus 2 x plus 3",
+   "5 x plus 1",
+   "6 x",
+   "5 x plus 3"
+  ],
+  "hints": [
+   "Group the x terms together and the numbers together.",
+   "Add the coefficients of x.",
+   "Combine the constant numbers."
+  ],
+  "steps": [
+   "Combine x terms: 3 x plus 2 x equals 5 x.",
+   "Combine constants: 1 plus 2 equals 3.",
+   "Result: 5 x plus 3."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_007_04": {
+  "q": "If x equals 4, find the value of 2 x plus 3 minus 8.",
+  "options": [
+   "19",
+   "6",
+   "3",
+   "1"
+  ],
+  "hints": [
+   "Replace x with the given value.",
+   "Then do the arithmetic: 2 times 4, plus 3, minus 8.",
+   "Follow Bodmas!"
+  ],
+  "steps": [
+   "Substitute x equals 4: 2 times 4, plus 3, minus 8.",
+   "That equals 8 plus 3 minus 8, which is 3."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_019_01": {
+  "q": "Simplify: 9 x plus 1 plus 5 x plus 2.",
+  "options": [
+   "9 x plus 5 x plus 3",
+   "15 x",
+   "14 x plus 1",
+   "14 x plus 3"
+  ],
+  "hints": [
+   "Group the x terms together and the numbers together.",
+   "Add the coefficients of x.",
+   "Combine the constant numbers."
+  ],
+  "steps": [
+   "Combine x terms: 9 x plus 5 x equals 14 x.",
+   "Combine constants: 1 plus 2 equals 3.",
+   "Result: 14 x plus 3."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_019_04_p2b": {
+  "q": "Simplify: 5 x plus 8 plus 6 x minus 5.",
+  "options": [
+   "11 x plus 8",
+   "11 x plus 3",
+   "19 x",
+   "5 x plus 6 x plus 3"
+  ],
+  "hints": [
+   "Group the x terms together and the numbers together.",
+   "Add the coefficients of x.",
+   "Combine the constant numbers."
+  ],
+  "steps": [
+   "Combine x terms: 5 x plus 6 x equals 11 x.",
+   "Combine constants: 8 minus 5 equals 3.",
+   "Result: 11 x plus 3."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2017_002_01": {
+  "q": "Simplify: 4 x plus 7 plus 3 x plus 8.",
+  "options": [
+   "7 x plus 7",
+   "4 x plus 3 x plus 15",
+   "14 x",
+   "7 x plus 15"
+  ],
+  "hints": [
+   "Group the x terms together and the numbers together.",
+   "Add the coefficients of x.",
+   "Combine the constant numbers."
+  ],
+  "steps": [
+   "Combine x terms: 4 x plus 3 x equals 7 x.",
+   "Combine constants: 7 plus 8 equals 15.",
+   "Result: 7 x plus 15."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_018_02": {
+  "q": "If x equals 7 and y equals 2, find the value of 2 x plus 4 y.",
+  "options": [
+   "22",
+   "32",
+   "54",
+   "112"
+  ],
+  "hints": [
+   "Replace x with 7 and y with 2.",
+   "Calculate 2 times 7, and 4 times 2, separately.",
+   "Then add them up."
+  ],
+  "steps": [
+   "Substitute: 2 times 7, plus 4 times 2.",
+   "That equals 14 plus 8, which is 22."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_039_04": {
+  "q": "If x equals 5, find the value of 8 x plus 8 minus 5.",
+  "options": [
+   "53",
+   "16",
+   "43",
+   "99"
+  ],
+  "hints": [
+   "Replace x with the given value.",
+   "Then do the arithmetic: 8 times 5, plus 8, minus 5.",
+   "Follow Bodmas!"
+  ],
+  "steps": [
+   "Substitute x equals 5: 8 times 5, plus 8, minus 5.",
+   "That equals 40 plus 8 minus 5, which is 43."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2021_028_02": {
+  "q": "If x equals 7 and y equals 5, find the value of 5 x plus 4 y.",
+  "options": [
+   "700",
+   "108",
+   "53",
+   "55"
+  ],
+  "hints": [
+   "Replace x with 7 and y with 5.",
+   "Calculate 5 times 7, and 4 times 5, separately.",
+   "Then add them up."
+  ],
+  "steps": [
+   "Substitute: 5 times 7, plus 4 times 5.",
+   "That equals 35 plus 20, which is 55."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2022_012_01": {
+  "q": "Simplify: 2 x plus 6 plus 4 x minus 3.",
+  "options": [
+   "6 x plus 6",
+   "6 x plus 3",
+   "12 x",
+   "2 x plus 4 x plus 3"
+  ],
+  "hints": [
+   "Group the x terms together and the numbers together.",
+   "Add the coefficients of x.",
+   "Combine the constant numbers."
+  ],
+  "steps": [
+   "Combine x terms: 2 x plus 4 x equals 6 x.",
+   "Combine constants: 6 minus 3 equals 3.",
+   "Result: 6 x plus 3."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2023_006_01": {
+  "q": "Simplify: 3 x plus 3 plus 5 x minus 1.",
+  "options": [
+   "11 x",
+   "3 x plus 5 x plus 2",
+   "8 x plus 3",
+   "8 x plus 2"
+  ],
+  "hints": [
+   "Group the x terms together and the numbers together.",
+   "Add the coefficients of x.",
+   "Combine the constant numbers."
+  ],
+  "steps": [
+   "Combine x terms: 3 x plus 5 x equals 8 x.",
+   "Combine constants: 3 minus 1 equals 2.",
+   "Result: 8 x plus 2."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_004_01": {
+  "q": "Simplify: 10 x plus 5 plus 8 x plus 6.",
+  "options": [
+   "18 x plus 5",
+   "18 x plus 11",
+   "23 x",
+   "10 x plus 8 x plus 11"
+  ],
+  "hints": [
+   "Group the x terms together and the numbers together.",
+   "Add the coefficients of x.",
+   "Combine the constant numbers."
+  ],
+  "steps": [
+   "Combine x terms: 10 x plus 8 x equals 18 x.",
+   "Combine constants: 5 plus 6 equals 11.",
+   "Result: 18 x plus 11."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_004_02": {
+  "q": "If x equals 7 and y equals 1, find the value of 3 x plus 2 y.",
+  "options": [
+   "23",
+   "40",
+   "17",
+   "42"
+  ],
+  "hints": [
+   "Replace x with 7 and y with 1.",
+   "Calculate 3 times 7, and 2 times 1, separately.",
+   "Then add them up."
+  ],
+  "steps": [
+   "Substitute: 3 times 7, plus 2 times 1.",
+   "That equals 21 plus 2, which is 23."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_009_01": {
+  "q": "Simplify: 2 x plus 2 plus 6 x plus 8.",
+  "options": [
+   "10 x",
+   "8 x plus 2",
+   "2 x plus 6 x plus 10",
+   "8 x plus 10"
+  ],
+  "hints": [
+   "Group the x terms together and the numbers together.",
+   "Add the coefficients of x.",
+   "Combine the constant numbers."
+  ],
+  "steps": [
+   "Combine x terms: 2 x plus 6 x equals 8 x.",
+   "Combine constants: 2 plus 8 equals 10.",
+   "Result: 8 x plus 10."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_037_01": {
+  "q": "Simplify: 4 x plus 9 plus 3 x minus 4.",
+  "options": [
+   "7 x plus 5",
+   "16 x",
+   "7 x plus 9",
+   "4 x plus 3 x plus 5"
+  ],
+  "hints": [
+   "Group the x terms together and the numbers together.",
+   "Add the coefficients of x.",
+   "Combine the constant numbers."
+  ],
+  "steps": [
+   "Combine x terms: 4 x plus 3 x equals 7 x.",
+   "Combine constants: 9 minus 4 equals 5.",
+   "Result: 7 x plus 5."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2025_012_02": {
+  "q": "If x equals 7 and y equals 3, find the value of 3 x plus 1 y.",
+  "options": [
+   "63",
+   "24",
+   "40",
+   "16"
+  ],
+  "hints": [
+   "Replace x with 7 and y with 3.",
+   "Calculate 3 times 7, and 1 times 3, separately.",
+   "Then add them up."
+  ],
+  "steps": [
+   "Substitute: 3 times 7, plus 1 times 3.",
+   "That equals 21 plus 3, which is 24."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2025_035_01": {
+  "q": "Simplify: 10 x plus 8 plus 3 x minus 3.",
+  "options": [
+   "10 x plus 3 x plus 5",
+   "21 x",
+   "13 x plus 8",
+   "13 x plus 5"
+  ],
+  "hints": [
+   "Group the x terms together and the numbers together.",
+   "Add the coefficients of x.",
+   "Combine the constant numbers."
+  ],
+  "steps": [
+   "Combine x terms: 10 x plus 3 x equals 13 x.",
+   "Combine constants: 8 minus 3 equals 5.",
+   "Result: 13 x plus 5."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2025_038_04": {
+  "q": "If x equals 9, find the value of 6 x plus 13 minus 10.",
+  "options": [
+   "122",
+   "18",
+   "77",
+   "57"
+  ],
+  "hints": [
+   "Replace x with the given value.",
+   "Then do the arithmetic: 6 times 9, plus 13, minus 10.",
+   "Follow Bodmas!"
+  ],
+  "steps": [
+   "Substitute x equals 9: 6 times 9, plus 13, minus 10.",
+   "That equals 54 plus 13 minus 10, which is 57."
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH13_004_04_p2b": {
+  "q": "If x equals 5, find the value of 3 x plus 3 minus 3.",
+  "options": [
+   "8",
+   "15",
+   "16",
+   "21"
+  ],
+  "hints": [
+   "Replace x with the given value.",
+   "Then do the arithmetic: 3 times 5, plus 3, minus 3.",
+   "Follow Bodmas!"
+  ],
+  "steps": [
+   "Substitute x equals 5: 3 times 5, plus 3, minus 3.",
+   "That equals 15 plus 3 minus 3, which is 15."
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH13_005_02": {
+  "q": "If x equals 6 and y equals 3, find the value of 4 x plus 3 y.",
+  "options": [
+   "30",
+   "216",
+   "33",
+   "63"
+  ],
+  "hints": [
+   "Replace x with 6 and y with 3.",
+   "Calculate 4 times 6, and 3 times 3, separately.",
+   "Then add them up."
+  ],
+  "steps": [
+   "Substitute: 4 times 6, plus 3 times 3.",
+   "That equals 24 plus 9, which is 33."
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH13_005_04": {
+  "q": "If x equals 2, find the value of 3 x plus 11 minus 7.",
+  "options": [
+   "24",
+   "9",
+   "10",
+   "32"
+  ],
+  "hints": [
+   "Replace x with the given value.",
+   "Then do the arithmetic: 3 times 2, plus 11, minus 7.",
+   "Follow Bodmas!"
+  ],
+  "steps": [
+   "Substitute x equals 2: 3 times 2, plus 11, minus 7.",
+   "That equals 6 plus 11 minus 7, which is 10."
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH13_006_04": {
+  "q": "If x equals 7, find the value of 7 x plus 8 minus 5.",
+  "options": [
+   "17",
+   "52",
+   "100",
+   "62"
+  ],
+  "hints": [
+   "Replace x with the given value.",
+   "Then do the arithmetic: 7 times 7, plus 8, minus 5.",
+   "Follow Bodmas!"
+  ],
+  "steps": [
+   "Substitute x equals 7: 7 times 7, plus 8, minus 5.",
+   "That equals 49 plus 8 minus 5, which is 52."
+  ]
+ }
+}

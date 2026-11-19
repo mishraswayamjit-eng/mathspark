@@ -1,0 +1,1124 @@
+{
+ "EXT_G4_FP_2020_026": {
+  "q": "There are 8 points on a circle. How many line segments can be drawn joining any two of them?",
+  "options": [
+   "16",
+   "7",
+   "28",
+   "14"
+  ],
+  "hints": [
+   "This is a counting problem. Every line segment joins a pair of points, so you are counting pairs. Be careful not to count the same pair twice.",
+   "Start with one point. How many other points can it join to? Then think about whether joining one point to another is the same segment going the other way.",
+   "A similar example: with 5 points on a circle, each point joins to 4 others. 5 times 4 equals 20, but every segment got counted twice, once from each end. 20 divided by 2 equals 10 line segments."
+  ],
+  "steps": [
+   "Each of the 8 points can be joined to the 7 other points. 8 times 7 equals 56.",
+   "This counts every segment twice, once from each end. So halve it. 56 divided by 2 equals 28.",
+   "You can check by adding the new segments point by point. 7 plus 6 plus 5 plus 4 plus 3 plus 2 plus 1 equals 28.",
+   "There are 28 line segments."
+  ]
+ },
+ "EXT_G4_FP_2021_004": {
+  "q": "A, B, C and D play chess. Each plays 2 games with every other player. How many games are played in total?",
+  "options": [
+   "8",
+   "14",
+   "16",
+   "12"
+  ],
+  "hints": [
+   "This is a counting problem about pairs. First find how many different pairs of players there are, then think about how many games each pair plays.",
+   "List the pairs of players. The first player can pair with three others. Keep going, without repeating any pair.",
+   "A similar example: 3 friends each play 2 games with every other friend. The pairs are first and second, first and third, second and third. That is 3 pairs. 3 times 2 equals 6 games."
+  ],
+  "steps": [
+   "Use the players' names to list the pairs: A B, A C, A D, B C, B D and C D. That is 6 pairs.",
+   "Each pair plays 2 games. 6 times 2 equals 12.",
+   "The total is 12 games."
+  ]
+ },
+ "EXT_G4_FP_2021_014": {
+  "q": "Some points are on a circle. A maximum of 15 line segments can be drawn joining them. How many points are there?",
+  "options": [
+   "4",
+   "6",
+   "5",
+   "7"
+  ],
+  "hints": [
+   "This is a counting problem turned around. You know the number of line segments and need the number of points. Remember that each segment joins one pair of points.",
+   "Try a small number of points and count the segments. With 3 points you get 3 segments. See how the count grows each time you add one more point.",
+   "A similar example: how many points give 10 segments? 2 points give 1 segment. A third point adds 2 more, making 3. A fourth point adds 3 more, and a fifth adds 4 more. 3 plus 3 plus 4 equals 10, so 5 points give 10 segments."
+  ],
+  "steps": [
+   "Each new point joins to all the points already there. Build up the count one point at a time.",
+   "2 points give 1 segment. 3 points give 1 plus 2, which is 3 segments. 4 points give 3 plus 3, which is 6 segments.",
+   "5 points give 6 plus 4, which is 10 segments. One more point adds 5 more. 1 plus 2 plus 3 plus 4 plus 5 equals 15.",
+   "Check another way: 6 points, each joined to 5 others, with each segment counted twice. 6 times 5 divided by 2 equals 15.",
+   "So there are 6 points."
+  ]
+ },
+ "EXT_G4_FP_2023_031": {
+  "q": "Using the digits 4, 7, 6 and 9, each only once, how many 4-digit odd numbers can be made?",
+  "options": [
+   "18",
+   "6",
+   "12",
+   "16"
+  ],
+  "hints": [
+   "This is a counting problem about arranging digits. An odd number must end in an odd digit, so start by thinking about the last place.",
+   "Which of the digits 4, 7, 6 and 9 are odd? Those are the only digits allowed in the ones place. Choose that place first, then fill the other places.",
+   "A similar example: using 2, 3 and 8 once each, how many 3-digit even numbers are there? The last digit must be 2 or 8, so 2 choices. The other two digits can go in 2 times 1, which is 2 orders. 2 times 2 equals 4 even numbers."
+  ],
+  "steps": [
+   "An odd number ends in an odd digit. Here the odd digits are 7 and 9, so there are 2 choices for the ones place.",
+   "The 3 digits left over fill the other three places. They can be arranged in 3 times 2 times 1 ways. 3 times 2 times 1 equals 6.",
+   "Multiply the choices together. 2 times 6 equals 12.",
+   "There are 12 odd numbers."
+  ]
+ },
+ "EXT_G4_FP_2023_035": {
+  "q": "15 people are at a meeting, and each shakes hands once with every other person. How many handshakes are there in total?",
+  "options": [
+   "115",
+   "120",
+   "105",
+   "100"
+  ],
+  "hints": [
+   "This is a counting problem about pairs. Each handshake is between two people, so count the pairs. Make sure each handshake is counted only once.",
+   "Think about one person first. How many other people do they shake hands with? Then remember that one handshake is shared by two people.",
+   "A similar example: 6 people each shake hands once with everyone else. Each person shakes 5 hands. 6 times 5 equals 30, but each handshake was counted twice. 30 divided by 2 equals 15 handshakes."
+  ],
+  "steps": [
+   "Each of the 15 people shakes hands with the 14 others. 15 times 14 equals 210.",
+   "Each handshake has been counted twice, once for each person. So halve it. 210 divided by 2 equals 105.",
+   "There are 105 handshakes."
+  ]
+ },
+ "EXT_G4_FP_2024_029": {
+  "q": "Using the digits 1, 5, 3 and 7, each once, how many numbers greater than 5000 can be made?",
+  "options": [
+   "24",
+   "16",
+   "12",
+   "18"
+  ],
+  "hints": [
+   "This is a counting problem about arranging digits. A 4-digit number is bigger than 5000 only if its first digit is big enough. Start with the thousands place.",
+   "Which of the digits 1, 5, 3 and 7 can go in the thousands place so the number is more than 5000? Choose that digit first, then arrange the rest.",
+   "A similar example: using 2, 4 and 9 once each, how many 3-digit numbers are bigger than 400? The first digit must be 4 or 9, so 2 choices. The other two digits can go in 2 times 1, which is 2 orders. 2 times 2 equals 4 numbers."
+  ],
+  "steps": [
+   "To be more than 5000, the thousands digit must be 5 or 7. That is 2 choices.",
+   "The 3 digits left can fill the other places in 3 times 2 times 1 ways. 3 times 2 times 1 equals 6.",
+   "Multiply the choices. 2 times 6 equals 12.",
+   "There are 12 numbers greater than 5000."
+  ]
+ },
+ "EXT_G4_FP_2025_019": {
+  "q": "Using 7, 6, 9 and 4, each once, how many 4-digit odd numbers can be made?",
+  "options": [
+   "18",
+   "6",
+   "24",
+   "12"
+  ],
+  "hints": [
+   "This is a counting problem about arranging digits. An odd number must end in an odd digit, so start by thinking about the last place.",
+   "Which of the digits 4, 7, 6 and 9 are odd? Those are the only digits allowed in the ones place. Choose that place first, then fill the other places.",
+   "A similar example: using 2, 3 and 8 once each, how many 3-digit even numbers are there? The last digit must be 2 or 8, so 2 choices. The other two digits can go in 2 times 1, which is 2 orders. 2 times 2 equals 4 even numbers."
+  ],
+  "steps": [
+   "An odd number ends in an odd digit. Here the odd digits are 7 and 9, so there are 2 choices for the ones place.",
+   "The 3 digits left over fill the other three places. They can be arranged in 3 times 2 times 1 ways. 3 times 2 times 1 equals 6.",
+   "Multiply the choices together. 2 times 6 equals 12.",
+   "There are 12 odd numbers."
+  ]
+ },
+ "G4A_COUNTING_001": {
+  "q": "How many whole numbers are there from 15 to 42, counting both 15 and 42?",
+  "options": [
+   "27",
+   "28",
+   "29",
+   "26"
+  ],
+  "hints": [
+   "When you count from one number up to another and both ends are included, think about whether subtracting alone counts every number.",
+   "Find 42 minus 15 first. Then ask yourself whether the starting number 15 has been counted yet.",
+   "A similar problem: from 6 to 10 the numbers are 6, 7, 8, 9, 10. Subtracting gives 10 minus 6, which is 4, and adding 1 for the starting number gives 5 numbers."
+  ],
+  "steps": [
+   "Subtract the smaller number from the larger one. 42 minus 15 equals 27.",
+   "This counts the jumps. Add 1 so that the starting number 15 is counted too. 27 plus 1 equals 28.",
+   "There are 28 whole numbers from 15 to 42."
+  ]
+ },
+ "G4A_COUNTING_002": {
+  "q": "Meera stands in a queue at the school canteen. She is 7th from the front and 5th from the back. How many children are in the queue?",
+  "options": [
+   "12",
+   "13",
+   "11",
+   "10"
+  ],
+  "hints": [
+   "A position from the front and a position from the back both count the same child. Think about what happens if you simply add them.",
+   "There are 6 children in front of Meera. Work out how many are behind her, then count Meera once.",
+   "A similar problem: Raju is 3rd from the front and 4th from the back. In front of him are 2 children, behind him are 3, and Raju makes 2 plus 3 plus 1, which is 6 children."
+  ],
+  "steps": [
+   "Count the children in front of Meera and behind her. 7 minus 1 equals 6 in front, and 5 minus 1 equals 4 behind.",
+   "Add them, and add Meera herself once. 6 plus 4 plus 1 equals 11.",
+   "There are 11 children in the queue."
+  ]
+ },
+ "G4A_COUNTING_003": {
+  "q": "A straight fence is 40 metres long. A post stands every 5 metres, with a post at each end. How many posts are there?",
+  "options": [
+   "9",
+   "8",
+   "7",
+   "10"
+  ],
+  "hints": [
+   "Posts stand at the ends of the gaps. In a straight line with a post at both ends, compare the number of posts with the number of gaps.",
+   "First find how many 5-metre gaps fit into 40 metres.",
+   "A similar problem: a 12-metre fence with a post every 4 metres has 12 divided by 4, which is 3 gaps. The posts stand at 0, 4, 8 and 12 metres, so there are 4 posts."
+  ],
+  "steps": [
+   "Find the number of gaps between posts. 40 divided by 5 equals 8.",
+   "A straight line of gaps has one more post than gaps. 8 plus 1 equals 9.",
+   "There are 9 posts."
+  ]
+ },
+ "G4A_COUNTING_004": {
+  "q": "How many 2-digit numbers end in the digit 5?",
+  "options": [
+   "10",
+   "5",
+   "8",
+   "9"
+  ],
+  "hints": [
+   "Think about which digits are allowed in the tens place of a 2-digit number.",
+   "Start listing them: 15, 25, 35, and keep going until the last 2-digit number that ends in 5.",
+   "A similar problem: the 2-digit numbers smaller than 60 that end in 2 are 12, 22, 32, 42 and 52. The tens digit runs from 1 to 5, so there are 5 numbers."
+  ],
+  "steps": [
+   "The ones digit is fixed as 5. The tens digit can be 1, 2, 3, 4, 5, 6, 7, 8 or 9.",
+   "The numbers are 15, 25, 35, 45, 55, 65, 75, 85 and 95.",
+   "There are 9 such numbers."
+  ]
+ },
+ "G4A_COUNTING_005": {
+  "q": "Riya has 3 different tops and 2 different skirts. An outfit is one top worn with one skirt. How many different outfits can she make?",
+  "options": [
+   "5",
+   "6",
+   "9",
+   "3"
+  ],
+  "hints": [
+   "Every top can be paired with every skirt. Think about how many pairs each top makes.",
+   "Take the first top. How many outfits can it make with the 2 skirts? Then do the same for the other tops.",
+   "A similar problem: with 4 caps and 2 scarves, each cap can go with 2 scarves, so there are 4 times 2, which is 8 pairs."
+  ],
+  "steps": [
+   "Each top can be worn with either of the 2 skirts, so each top gives 2 outfits.",
+   "There are 3 tops. 3 times 2 equals 6.",
+   "Riya can make 6 different outfits."
+  ]
+ },
+ "G4A_COUNTING_006": {
+  "q": "How many even numbers are there from 1 to 30?",
+  "options": [
+   "15",
+   "14",
+   "16",
+   "30"
+  ],
+  "hints": [
+   "Even and odd numbers take turns as you count. Think about what share of the numbers are even.",
+   "The even numbers start 2, 4, 6. Find the last even number in the range and see which place it holds in the list.",
+   "A similar problem: from 1 to 10 the even numbers are 2, 4, 6, 8, 10. Every second number is even, so there are 10 divided by 2, which is 5 of them."
+  ],
+  "steps": [
+   "From 1 to 30, every second number is even: 2, 4, 6, and so on up to 30.",
+   "Half of the 30 numbers are even. 30 divided by 2 equals 15.",
+   "There are 15 even numbers from 1 to 30."
+  ]
+ },
+ "G4A_COUNTING_007": {
+  "q": "A carpenter cuts a long wooden plank into 6 pieces. He cuts one piece at a time. How many cuts does he make?",
+  "options": [
+   "6",
+   "7",
+   "5",
+   "12"
+  ],
+  "hints": [
+   "Think about what one cut does to the number of pieces.",
+   "Before any cut there is 1 piece. After the first cut there are 2 pieces. Keep going until there are 6.",
+   "A similar problem: to cut a ribbon into 3 pieces, the first cut makes 2 pieces and the second cut makes 3 pieces. So 2 cuts are needed."
+  ],
+  "steps": [
+   "The plank starts as 1 piece. Every cut adds 1 more piece.",
+   "To reach 6 pieces, 5 more pieces are needed. 6 minus 1 equals 5.",
+   "The carpenter makes 5 cuts."
+  ]
+ },
+ "G4A_COUNTING_008": {
+  "q": "How many different 2-digit numbers can you make using only the digits 3 and 8? A digit may be used twice in a number.",
+  "options": [
+   "2",
+   "3",
+   "6",
+   "4"
+  ],
+  "hints": [
+   "Think about the choices for the tens place and the choices for the ones place.",
+   "Write the numbers that start with 3 first. Then write the ones that start with 8.",
+   "A similar problem: with the digits 1, 2 and 5 and repeats allowed, there are 3 choices for the tens place and 3 for the ones place, so 3 times 3 equals 9 numbers."
+  ],
+  "steps": [
+   "The tens digit can be 3 or 8, and the ones digit can be 3 or 8.",
+   "That gives 2 choices for each place. 2 times 2 equals 4.",
+   "The numbers are 33, 38, 83 and 88, so 4 numbers can be made."
+  ]
+ },
+ "G4A_COUNTING_009": {
+  "q": "The pages of a small story book are numbered from 1 to 25. How many digits are printed in all to number the pages?",
+  "options": [
+   "41",
+   "50",
+   "25",
+   "34"
+  ],
+  "hints": [
+   "Some page numbers have one digit and some have two. Count the two groups separately.",
+   "Pages 1 to 9 use one digit each. Work out how many pages are left from 10 to 25.",
+   "A similar problem: for pages 1 to 12, pages 1 to 9 use 9 digits. Pages 10, 11 and 12 are 3 pages using 2 digits each, which is 6 digits. In all, 9 plus 6 equals 15 digits."
+  ],
+  "steps": [
+   "Pages 1 to 9 have one digit each. 9 times 1 equals 9.",
+   "Pages 10 to 25 are 16 pages with two digits each. 16 times 2 equals 32.",
+   "Add the two groups. 9 plus 32 equals 41.",
+   "In all, 41 digits are printed."
+  ]
+ },
+ "G4A_COUNTING_010": {
+  "q": "How many 2-digit numbers have digits that add up to 7?",
+  "options": [
+   "6",
+   "8",
+   "7",
+   "14"
+  ],
+  "hints": [
+   "Work in an organised way: choose the tens digit first, and the ones digit is then decided.",
+   "Start with tens digit 1. The ones digit must be 6, giving 16. Now try tens digit 2, and carry on.",
+   "A similar problem: 2-digit numbers with digits adding to 4 are 13, 22, 31 and 40. The tens digit runs from 1 to 4, so there are 4 numbers."
+  ],
+  "steps": [
+   "The tens digit can be 1, 2, 3, 4, 5, 6 or 7. It cannot be 0.",
+   "For each tens digit there is exactly one ones digit that makes the total 7.",
+   "The numbers are 16, 25, 34, 43, 52, 61 and 70.",
+   "There are 7 such numbers."
+  ]
+ },
+ "G4A_COUNTING_011": {
+  "q": "Kiran writes all the numbers from 1 to 40 in her notebook. How many times does she write the digit 3?",
+  "options": [
+   "4",
+   "13",
+   "10",
+   "14"
+  ],
+  "hints": [
+   "A digit can appear in the ones place or in the tens place. Count each place separately.",
+   "First list the numbers that have 3 in the ones place: 3, 13, and so on. Then look at the numbers that have 3 in the tens place.",
+   "A similar problem: from 1 to 30, the digit 2 is in the ones place in 2, 12 and 22, which is 3 times. It is in the tens place in 20 to 29, which is 10 times. In all it is written 13 times, and 22 is counted twice because it has two 2s."
+  ],
+  "steps": [
+   "In the ones place, 3 appears in 3, 13, 23 and 33. That is 4 times.",
+   "In the tens place, 3 appears in 30, 31, 32, and so on up to 39. That is 10 times.",
+   "Add the two counts. The number 33 has two 3s, so it is rightly counted in both. 4 plus 10 equals 14.",
+   "She writes the digit 3 a total of 14 times."
+  ]
+ },
+ "G4A_COUNTING_012": {
+  "q": "30 children stand in a line for the morning assembly. Arjun is 12th from the front. What is his position from the back?",
+  "options": [
+   "18",
+   "19",
+   "20",
+   "42"
+  ],
+  "hints": [
+   "Find how many children stand behind him. His place from the back is one more than that.",
+   "Arjun is 12th from the front, so take 12 away from 30 to find how many children are behind him.",
+   "A similar problem: in a line of 10 children, Sita is 4th from the front. Behind her are 10 minus 4, which is 6 children, so she is 7th from the back."
+  ],
+  "steps": [
+   "Find how many children are behind Arjun. 30 minus 12 equals 18.",
+   "Counting from the back, those 18 children come first and Arjun is next. 18 plus 1 equals 19.",
+   "Arjun is 19th from the back."
+  ]
+ },
+ "G4A_COUNTING_013": {
+  "q": "A square garden has sides of 12 metres. Posts are fixed all around its edge, one at every corner and one every 3 metres along each side. How many posts are needed?",
+  "options": [
+   "20",
+   "17",
+   "16",
+   "12"
+  ],
+  "hints": [
+   "The posts go all the way around and come back to the start. In a closed loop, compare the number of posts with the number of gaps.",
+   "Find the distance all the way around the garden first. Then see how many 3-metre gaps fit into it.",
+   "A similar problem: a square of side 6 metres with a post every 2 metres has a distance around of 24 metres. That is 24 divided by 2, which is 12 gaps, and going around a loop needs exactly 12 posts."
+  ],
+  "steps": [
+   "Find the distance around the garden. 4 times 12 equals 48.",
+   "Find the number of 3-metre gaps. 48 divided by 3 equals 16.",
+   "Around a closed loop the last gap ends at the first post, so the number of posts equals the number of gaps.",
+   "16 posts are needed."
+  ]
+ },
+ "G4A_COUNTING_014": {
+  "q": "Anu, Binu and Charu stand in a row for a photo. In how many different orders can they stand?",
+  "options": [
+   "9",
+   "3",
+   "4",
+   "6"
+  ],
+  "hints": [
+   "Think place by place: who can stand first, then who can stand next, then who is left.",
+   "Suppose Anu stands first. Write the orders the other two can stand in. Then let Binu stand first, and then Charu.",
+   "A similar problem: two friends, Raj and Sam, can stand as Raj then Sam, or Sam then Raj. There are 2 choices for the first place and 1 for the second, so 2 times 1 equals 2 orders."
+  ],
+  "steps": [
+   "Any of the 3 children can stand first.",
+   "Once the first is chosen, 2 children are left for the second place, and then 1 for the last place.",
+   "Multiply the choices. 3 times 2 times 1 equals 6.",
+   "They can stand in 6 different orders."
+  ]
+ },
+ "G4A_COUNTING_015": {
+  "q": "A window has 4 small square panes, arranged as 2 rows of 2. Counting squares of every size, how many squares can you see in the window?",
+  "options": [
+   "5",
+   "4",
+   "6",
+   "8"
+  ],
+  "hints": [
+   "Squares can be of different sizes. Count the small ones, then look for bigger squares made by joining small ones.",
+   "Count the small panes first. Then ask whether all four panes together make a square.",
+   "A similar problem: a single square pane has just 1 square. A row of 2 panes has 2 small squares and no bigger square, because the two together make a long rectangle. So it has 2 squares."
+  ],
+  "steps": [
+   "There are 4 small square panes.",
+   "The whole window, made of all 4 panes, is 1 big square.",
+   "Add them. 4 plus 1 equals 5.",
+   "There are 5 squares in the window."
+  ]
+ },
+ "G4A_COUNTING_016": {
+  "q": "16 players enter a knockout badminton tournament. In every match the loser goes out and the winner plays on. How many matches are played to find the champion?",
+  "options": [
+   "8",
+   "16",
+   "15",
+   "4"
+  ],
+  "hints": [
+   "Each match sends exactly one player out. Think about how many players must go out before one champion is left.",
+   "Count round by round: 16 players play 8 matches in the first round, leaving 8 players. Carry on until one player is left.",
+   "A similar problem: with 4 players, the first round has 2 matches and the final is 1 match. That is 2 plus 1, which is 3 matches, and 3 players have gone out."
+  ],
+  "steps": [
+   "Count the matches in each round. 8 plus 4 plus 2 plus 1 equals 15.",
+   "Another way to see it: each match sends one player out, and 15 players must go out to leave 1 champion.",
+   "15 matches are played."
+  ]
+ },
+ "G4A_COUNTING_017": {
+  "q": "How many 2-digit numbers are multiples of 7?",
+  "options": [
+   "14",
+   "13",
+   "12",
+   "15"
+  ],
+  "hints": [
+   "Find the smallest and the largest 2-digit multiples, then count how many multiples lie from one to the other.",
+   "The first multiple of 7 with two digits is 14, which is 7 times 2. Find the largest multiple of 7 that is below 100.",
+   "A similar problem: the 2-digit multiples of 20 are 20, 40, 60 and 80. They are 20 times 1 up to 20 times 4, so there are 4 of them."
+  ],
+  "steps": [
+   "The smallest 2-digit multiple of 7 is 14. 7 times 2 equals 14.",
+   "The largest 2-digit multiple of 7 is 98. 7 times 14 equals 98.",
+   "Count the multipliers from 2 to 14. 14 minus 2 plus 1 equals 13.",
+   "There are 13 two-digit multiples of 7."
+  ]
+ },
+ "G4A_COUNTING_018": {
+  "q": "Sunita walks up from the 1st floor to the 4th floor and climbs 48 steps. Every floor has the same number of steps. How many steps would she climb from the 1st floor to the 7th floor?",
+  "options": [
+   "84",
+   "112",
+   "72",
+   "96"
+  ],
+  "hints": [
+   "Going from one floor to another, count the flights of stairs climbed, not the floor numbers.",
+   "From the 1st floor to the 4th floor Sunita climbs 3 flights of stairs. Use this to find the steps in one flight.",
+   "A similar problem: going from the 1st floor to the 3rd floor is 2 flights. If that is 20 steps, each flight has 10 steps. From the 1st floor to the 5th floor is 4 flights, which is 40 steps."
+  ],
+  "steps": [
+   "From the 1st to the 4th floor there are 3 flights of stairs. 4 minus 1 equals 3.",
+   "Find the steps in one flight. 48 divided by 3 equals 16.",
+   "From the 1st to the 7th floor there are 6 flights. 6 times 16 equals 96.",
+   "She would climb 96 steps."
+  ]
+ },
+ "G4A_COUNTING_019": {
+  "q": "An ice-cream shop has 4 flavours: mango, chocolate, vanilla and strawberry. Rohan picks 2 different flavours for his cup. How many different pairs of flavours can he choose?",
+  "options": [
+   "6",
+   "12",
+   "8",
+   "4"
+  ],
+  "hints": [
+   "A pair is the same whichever flavour is named first. List the pairs in an organised way so that none is repeated.",
+   "Start with mango and pair it with each of the other three. Then move to chocolate, pairing it only with flavours not used with it before.",
+   "A similar problem: from 3 fruits, apple, banana and cherry, the pairs are apple-banana, apple-cherry and banana-cherry. That is 2 plus 1, which is 3 pairs."
+  ],
+  "steps": [
+   "Mango can pair with chocolate, vanilla or strawberry: 3 pairs.",
+   "Chocolate can pair with vanilla or strawberry: 2 new pairs. Vanilla can pair with strawberry: 1 new pair.",
+   "Add the pairs. 3 plus 2 plus 1 equals 6.",
+   "Rohan can choose 6 different pairs."
+  ]
+ },
+ "G4A_COUNTING_020": {
+  "q": "Using each of the digits 2, 0 and 5 exactly once, how many 3-digit numbers can be made?",
+  "options": [
+   "6",
+   "3",
+   "4",
+   "2"
+  ],
+  "hints": [
+   "Look carefully at the hundreds place. One of these digits cannot go there.",
+   "A 3-digit number cannot begin with 0. So the hundreds digit is 2 or 5. List the numbers that begin with 2 first.",
+   "A similar problem: with the digits 0 and 7 used once each, 07 is just 7, so the only 2-digit number is 70. That is 1 number, not 2."
+  ],
+  "steps": [
+   "The hundreds digit can be 2 or 5, but not 0.",
+   "Starting with 2: 205 and 250. Starting with 5: 502 and 520.",
+   "Count them. 2 times 2 equals 4.",
+   "4 three-digit numbers can be made."
+  ]
+ },
+ "G4A_COUNTING_021": {
+  "q": "A big triangle has two straight lines drawn from its top corner down to its base. These lines split it into 3 small triangles side by side. Counting triangles of every size, how many triangles are there in the figure?",
+  "options": [
+   "3",
+   "6",
+   "5",
+   "4"
+  ],
+  "hints": [
+   "Count the small triangles first, then triangles made by joining neighbouring small ones.",
+   "There are 3 small triangles. Next, count the triangles made of 2 small triangles that are next to each other.",
+   "A similar problem: one line from the top corner to the base splits a triangle into 2 small triangles. Together with the big one, that makes 2 plus 1, which is 3 triangles."
+  ],
+  "steps": [
+   "There are 3 small triangles.",
+   "Two neighbouring small triangles together make a bigger triangle. This can be done in 2 ways: left with middle, and middle with right.",
+   "All three together make the 1 big triangle.",
+   "Add them all. 3 plus 2 plus 1 equals 6.",
+   "There are 6 triangles in the figure."
+  ]
+ },
+ "G4A_COUNTING_022": {
+  "q": "In a ticket queue at the railway station, Ravi is 8th from the front and Sana is 15th from the front. How many people stand between them?",
+  "options": [
+   "7",
+   "23",
+   "8",
+   "6"
+  ],
+  "hints": [
+   "The people between them hold the positions after Ravi and before Sana. Neither Ravi nor Sana is counted.",
+   "List the positions between them, starting 9th, 10th, and stopping just before the 15th.",
+   "A similar problem: between the 3rd and the 6th person stand the 4th and the 5th. Subtracting gives 6 minus 3, which is 3, and taking 1 away gives 2 people."
+  ],
+  "steps": [
+   "The people between them are at positions 9, 10, 11, 12, 13 and 14.",
+   "A quick way: subtract the positions and take away 1. 15 minus 8 minus 1 equals 6.",
+   "6 people stand between them."
+  ]
+ },
+ "G4A_COUNTING_023": {
+  "q": "How many numbers from 100 to 200, counting both 100 and 200, end in the digit 0?",
+  "options": [
+   "11",
+   "10",
+   "9",
+   "20"
+  ],
+  "hints": [
+   "Numbers ending in 0 come once in every ten numbers. Be careful with both ends of the range.",
+   "List them: 100, 110, 120, and keep going. Check whether 200 belongs in your list.",
+   "A similar problem: from 10 to 50, the numbers ending in 0 are 10, 20, 30, 40 and 50. There are 4 jumps of ten, and 4 plus 1 equals 5 numbers."
+  ],
+  "steps": [
+   "The numbers are 100, 110, 120, 130, 140, 150, 160, 170, 180, 190 and 200.",
+   "From 100 to 200 there are 10 jumps of ten, and one more for the starting number. 10 plus 1 equals 11.",
+   "There are 11 such numbers."
+  ]
+ },
+ "G4A_COUNTING_024": {
+  "q": "The pages of a book are numbered starting from 1. In all, 129 digits were printed for the page numbers. How many pages does the book have?",
+  "options": [
+   "64",
+   "69",
+   "60",
+   "70"
+  ],
+  "hints": [
+   "Work backwards. Take away the digits used by the one-digit pages, then see how many two-digit pages the remaining digits can number.",
+   "Pages 1 to 9 use 9 digits. Subtract these from 129 to find the digits left for pages with two digits.",
+   "A similar problem: a booklet uses 29 digits. Pages 1 to 9 use 9, leaving 20 digits. That numbers 20 divided by 2, which is 10 two-digit pages, so the booklet has 9 plus 10, which is 19 pages."
+  ],
+  "steps": [
+   "Pages 1 to 9 use 9 digits. Find the digits left. 129 minus 9 equals 120.",
+   "Each page from 10 onwards uses 2 digits. 120 divided by 2 equals 60.",
+   "Add the one-digit pages and the two-digit pages. 9 plus 60 equals 69.",
+   "The book has 69 pages."
+  ]
+ },
+ "G4A_COUNTING_025": {
+  "q": "How many 2-digit numbers have a tens digit that is bigger than the ones digit? For example, 72 is such a number but 27 is not.",
+  "options": [
+   "36",
+   "55",
+   "45",
+   "81"
+  ],
+  "hints": [
+   "Work in an organised way: fix the tens digit and count the ones digits that are smaller than it. Look for a pattern.",
+   "With tens digit 1, the only smaller ones digit is 0, giving 10. With tens digit 2, the ones digit can be 0 or 1. Carry on up to tens digit 9.",
+   "A similar problem: among numbers from 10 to 39, tens digit 1 gives 1 number, which is 10. Tens digit 2 gives 2 numbers, 20 and 21. And tens digit 3 gives 3 numbers, 30, 31 and 32. That is 1 plus 2 plus 3, which is 6 numbers."
+  ],
+  "steps": [
+   "Tens digit 1 gives 1 number, which is 10. Tens digit 2 gives 2 numbers, 20 and 21. Tens digit 3 gives 3 numbers, and so on.",
+   "Tens digit 9 gives 9 numbers, from 90 to 98.",
+   "Add the counts. 1 plus 2 plus 3 plus 4 plus 5 plus 6 plus 7 plus 8 plus 9 equals 45.",
+   "There are 45 such numbers."
+  ]
+ },
+ "G4A_COUNTING_026": {
+  "q": "How many 3-digit numbers have digits that add up to 4?",
+  "options": [
+   "9",
+   "15",
+   "6",
+   "10"
+  ],
+  "hints": [
+   "Work in an organised way: fix the hundreds digit, then count the ways the other two digits can make up the rest.",
+   "Start with hundreds digit 1. The other two digits must add up to 3. List these numbers, then move on to hundreds digit 2.",
+   "A similar problem: 3-digit numbers with digits adding to 2 are 101, 110 and 200. Hundreds digit 1 gives 2 numbers and hundreds digit 2 gives 1 number, so there are 3."
+  ],
+  "steps": [
+   "Hundreds digit 1: the other digits add to 3, giving 103, 112, 121 and 130. That is 4 numbers.",
+   "Hundreds digit 2: 202, 211 and 220. That is 3 numbers.",
+   "Hundreds digit 3: 301 and 310. Hundreds digit 4: 400. That is 2 numbers and 1 number.",
+   "Add the counts. 4 plus 3 plus 2 plus 1 equals 10.",
+   "There are 10 such numbers."
+  ]
+ },
+ "G4A_COUNTING_027": {
+  "q": "A square board is divided into 9 small squares, in 3 rows of 3. Counting squares of every size, how many squares are there on the board?",
+  "options": [
+   "14",
+   "9",
+   "10",
+   "13"
+  ],
+  "hints": [
+   "Squares come in different sizes. Count each size separately: the smallest, the middle size, and the largest.",
+   "There are 9 small squares. Now count the squares that are 2 small squares wide and 2 tall. One sits in each corner of the board.",
+   "A similar problem: a board with 2 rows of 2 has 4 small squares and 1 big square, so 4 plus 1 equals 5 squares."
+  ],
+  "steps": [
+   "There are 9 small squares.",
+   "Squares that are 2 wide and 2 tall: one fits in each corner of the board, so there are 4.",
+   "The whole board is 1 large square.",
+   "Add all the sizes. 9 plus 4 plus 1 equals 14.",
+   "There are 14 squares on the board."
+  ]
+ },
+ "G4A_COUNTING_028": {
+  "q": "Four small squares are joined in a single row to make a long strip. Counting rectangles of every size, with the small squares counted too, how many rectangles are there in the strip?",
+  "options": [
+   "7",
+   "10",
+   "4",
+   "9"
+  ],
+  "hints": [
+   "A rectangle in the strip is made of 1, 2, 3 or 4 neighbouring squares. Count each length separately.",
+   "There are 4 rectangles made of 1 square. Next, count the rectangles made of 2 neighbouring squares: first with second, second with third, and so on.",
+   "A similar problem: a strip of 3 squares has 3 rectangles of one square, 2 of two squares and 1 of three squares. That is 3 plus 2 plus 1, which is 6 rectangles."
+  ],
+  "steps": [
+   "Rectangles made of 1 square: 4.",
+   "Rectangles made of 2 neighbouring squares: 3. Made of 3 neighbouring squares: 2.",
+   "The whole strip of 4 squares: 1.",
+   "Add them. 4 plus 3 plus 2 plus 1 equals 10.",
+   "There are 10 rectangles in the strip."
+  ]
+ },
+ "G4A_COUNTING_029": {
+  "q": "At a birthday party, every child gave one card to every other child. In all, 30 cards were given. How many children were at the party?",
+  "options": [
+   "5",
+   "15",
+   "6",
+   "10"
+  ],
+  "hints": [
+   "Each child gives a card to everyone except themselves. So the total is the number of children times one less than that number.",
+   "Try a small party: with 3 children, each gives 2 cards. Work out the total for 4 children, then 5, and keep going until you reach 30.",
+   "A similar problem: if 12 cards were given, try 4 children. Each gives 3 cards, and 4 times 3 equals 12. So there were 4 children."
+  ],
+  "steps": [
+   "If there are some children, each one gives a card to all the others, which is one fewer than the number of children.",
+   "Look for two numbers next to each other that multiply to 30. 6 times 5 equals 30.",
+   "So 6 children each gave 5 cards.",
+   "There were 6 children at the party."
+  ]
+ },
+ "G4A_COUNTING_030": {
+  "q": "Using the digits 0, 1, 2 and 3, with no digit repeated in a number, how many 3-digit even numbers can be made?",
+  "options": [
+   "12",
+   "8",
+   "18",
+   "10"
+  ],
+  "hints": [
+   "Two places need care: the ones place must make the number even, and the hundreds place cannot be 0. Split into cases by the last digit.",
+   "An even number here ends in 0 or 2. First count the numbers that end in 0. The other two places are filled from 1, 2 and 3.",
+   "A similar problem: 2-digit even numbers from the digits 0, 3 and 4 with no repeats. Ending in 0: 30 and 40. Ending in 4: only 34, because 04 is not a 2-digit number. That is 2 plus 1, which is 3 numbers."
+  ],
+  "steps": [
+   "Ending in 0: the hundreds digit has 3 choices, 1, 2 or 3, and the tens digit then has 2 choices. 3 times 2 equals 6.",
+   "Ending in 2: the hundreds digit can only be 1 or 3, and the tens digit then has 2 choices. 2 times 2 equals 4.",
+   "Add the two cases. 6 plus 4 equals 10.",
+   "10 such numbers can be made."
+  ]
+ },
+ "G4A_COUNTING_031": {
+  "q": "A temple bell takes 6 seconds to ring 4 times, measured from the first ring to the last ring. The rings are evenly spaced. How many seconds does it take to ring 10 times?",
+  "options": [
+   "15",
+   "18",
+   "20",
+   "12"
+  ],
+  "hints": [
+   "The time is spent in the gaps between the rings, not on the rings themselves. Count the gaps.",
+   "Between 4 rings there are 3 gaps. Use this to find how long one gap lasts.",
+   "A similar problem: a bell takes 8 seconds to ring 3 times. That is 2 gaps, so each gap is 4 seconds. Ringing 6 times has 5 gaps, and that takes 5 times 4, which is 20 seconds."
+  ],
+  "steps": [
+   "4 rings have 3 gaps between them. Find the length of one gap. 6 divided by 3 equals 2.",
+   "10 rings have 9 gaps between them. 10 minus 1 equals 9.",
+   "Multiply the gaps by the length of each gap. 9 times 2 equals 18.",
+   "It takes 18 seconds to ring 10 times."
+  ]
+ },
+ "G4A_COUNTING_032": {
+  "q": "Children stand in a row. Tara is 9th from the left and Uma is 6th from the right. They swap places, and now Tara is 15th from the left. How many children are in the row?",
+  "options": [
+   "21",
+   "15",
+   "20",
+   "24"
+  ],
+  "hints": [
+   "After the swap, Tara stands exactly where Uma stood. So you know one spot's position from both ends.",
+   "Uma's old spot is 6th from the right. After the swap Tara is in that spot, and it is 15th from the left. Use both positions for this one spot.",
+   "A similar problem: a spot is 4th from the left and 3rd from the right. There are 3 children to its left and 2 to its right, so the row has 3 plus 2 plus 1, which is 6 children."
+  ],
+  "steps": [
+   "After swapping, Tara stands in Uma's old spot. That spot is 15th from the left and 6th from the right.",
+   "Add the two positions and take away 1, because the spot is counted twice. 15 plus 6 minus 1 equals 20.",
+   "There are 20 children in the row."
+  ]
+ },
+ "G4A_COUNTING_033": {
+  "q": "Aman writes all the numbers from 1 to 100. How many times does he write the digit 1?",
+  "options": [
+   "21",
+   "20",
+   "19",
+   "11"
+  ],
+  "hints": [
+   "Count place by place: how often the digit is in the ones place, in the tens place, and in the hundreds place.",
+   "In the ones place the digit 1 appears in 1, 11, 21, and so on up to 91. Count these first, then look at the tens place.",
+   "A similar problem: from 1 to 50, the digit 4 is in the ones place 5 times, in 4, 14, 24, 34 and 44. It is in the tens place 10 times, from 40 to 49. That makes 15 times."
+  ],
+  "steps": [
+   "Ones place: 1, 11, 21, 31, 41, 51, 61, 71, 81, 91. That is 10 times.",
+   "Tens place: 10, 11, 12, and so on up to 19.",
+   "Hundreds place: only in 100. That is 1 time.",
+   "Add them. 10 plus 10 plus 1 equals 21.",
+   "Aman writes the digit 1 a total of 21 times."
+  ]
+ },
+ "G4A_COUNTING_034": {
+  "q": "How many numbers from 1 to 60 can be divided exactly by 2 or by 3, or by both?",
+  "options": [
+   "50",
+   "30",
+   "10",
+   "40"
+  ],
+  "hints": [
+   "Some numbers can be divided by both 2 and 3. If you count the two groups and add, those numbers get counted twice.",
+   "Count the multiples of 2 up to 60, and the multiples of 3 up to 60. Then find how many numbers are in both lists.",
+   "A similar problem: from 1 to 12 there are 6 multiples of 2 and 4 multiples of 3. The numbers 6 and 12 are in both lists. So the count is 6 plus 4 minus 2, which is 8."
+  ],
+  "steps": [
+   "Count the multiples of 2 and the multiples of 3. 60 divided by 2 equals 30, and 60 divided by 3 equals 20.",
+   "Numbers in both lists are the multiples of 6. 60 divided by 6 equals 10.",
+   "Add the two lists and take away the numbers counted twice. 30 plus 20 minus 10 equals 40.",
+   "There are 40 such numbers."
+  ]
+ },
+ "G4A_COUNTING_035": {
+  "q": "A flag has 3 stripes in a row. Each stripe is painted red, green or blue. Stripes that touch each other must be different colours. How many different flags can be made?",
+  "options": [
+   "12",
+   "6",
+   "27",
+   "9"
+  ],
+  "hints": [
+   "Choose the colours stripe by stripe. Read the rule with care: only stripes that touch must differ.",
+   "The first stripe can be any of the 3 colours. The second stripe must differ from the first. Think about how many colours the third stripe can take.",
+   "A similar problem: a flag with 2 stripes and 3 colours, where the stripes must differ. The first stripe has 3 choices and the second has 2, so there are 3 times 2, which is 6 flags."
+  ],
+  "steps": [
+   "The first stripe can be any of 3 colours.",
+   "The second stripe touches the first, so it has 2 choices.",
+   "The third stripe touches only the second, so it also has 2 choices. It may match the first stripe.",
+   "Multiply the choices. 3 times 2 times 2 equals 12.",
+   "12 different flags can be made."
+  ]
+ },
+ "G4A_COUNTING_036": {
+  "q": "How many numbers are in this list? 4, 8, 12, 16, 20, 24",
+  "options": [
+   "5",
+   "6",
+   "24",
+   "7"
+  ],
+  "hints": [
+   "Count the numbers one at a time. You are counting how many there are, not looking at how big they are.",
+   "Point to each number in turn and count: 4 is the first, 8 is the second, and so on.",
+   "A similar problem: the list 5, 10, 15 has three numbers, because we count 5 as one, 10 as two and 15 as three."
+  ],
+  "steps": [
+   "Count the numbers one by one: 4, 8, 12, 16, 20, 24.",
+   "There are 6 numbers in the list."
+  ]
+ },
+ "G4A_COUNTING_037": {
+  "q": "Ria writes down all the whole numbers from 6 to 10: 6, 7, 8, 9, 10. How many numbers does she write?",
+  "options": [
+   "4",
+   "10",
+   "5",
+   "6"
+  ],
+  "hints": [
+   "Count the numbers Ria writes, one at a time.",
+   "Point to each number in the list 6, 7, 8, 9, 10 and count as you go.",
+   "A similar problem: the whole numbers from 2 to 4 are 2, 3, 4. Counting them one by one gives 3 numbers."
+  ],
+  "steps": [
+   "Count the numbers one by one: 6, 7, 8, 9, 10.",
+   "Ria writes 5 numbers."
+  ]
+ },
+ "G4A_COUNTING_038": {
+  "q": "How many whole numbers lie between 10 and 15? Do not count 10 or 15.",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "3"
+  ],
+  "hints": [
+   "Write out the numbers that come after the first number and before the last one, then count them.",
+   "The first number after 10 is 11. Keep writing numbers until you reach the one just before 15.",
+   "A similar problem: the whole numbers between 3 and 6 are 4 and 5, so there are 2 of them."
+  ],
+  "steps": [
+   "Write the numbers that come after 10 and before 15: 11, 12, 13, 14.",
+   "Count them. There are 4 whole numbers between 10 and 15."
+  ]
+ },
+ "G4A_COUNTING_039": {
+  "q": "Anu and Bala stand in a line, one behind the other. In how many different orders can they stand?",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "hints": [
+   "Write down every order you can think of, then count them.",
+   "Start with Anu in front and Bala behind. Is there another way?",
+   "A similar problem: a red cup and a blue cup on a shelf can be placed as red then blue, or blue then red. That is 2 orders."
+  ],
+  "steps": [
+   "List the orders: Anu in front with Bala behind, or Bala in front with Anu behind.",
+   "There are no other ways, so they can stand in 2 different orders."
+  ]
+ },
+ "G4A_COUNTING_040": {
+  "q": "Using the digits 4 and 7 once each, how many different 2-digit numbers can you make?",
+  "options": [
+   "2",
+   "4",
+   "1",
+   "3"
+  ],
+  "hints": [
+   "Write down every number you can make, then count them.",
+   "Put 4 in the tens place and 7 in the ones place. Then try the digits the other way round.",
+   "A similar problem: with the digits 2 and 5 once each, the numbers are 25 and 52. That is 2 numbers."
+  ],
+  "steps": [
+   "Put 4 first and then 7 to make 47. Put 7 first and then 4 to make 74.",
+   "There are no other ways, so you can make 2 different numbers."
+  ]
+ },
+ "G4A_COUNTING_041": {
+  "q": "Five children stand in a queue in this order, starting from the front: Asha, Bina, Chetan, Dev, Esha. Who is 3rd in the queue?",
+  "options": [
+   "Bina",
+   "Dev",
+   "Chetan",
+   "Esha"
+  ],
+  "hints": [
+   "Count along the queue from the front, one child at a time.",
+   "Asha is 1st because she is at the front. Keep counting: 2nd, 3rd.",
+   "A similar problem: in the queue Ravi, Sita, Tara, counting from the front, Ravi is 1st and Sita is 2nd."
+  ],
+  "steps": [
+   "Count from the front: Asha is 1st and Bina is 2nd.",
+   "The next child is 3rd. So Chetan is 3rd in the queue."
+  ]
+ },
+ "G4A_COUNTING_042": {
+  "q": "Ravi is 4th in a queue. How many children are standing in front of him?",
+  "options": [
+   "4",
+   "5",
+   "2",
+   "3"
+  ],
+  "hints": [
+   "Think about the places in the queue that come before Ravi's place.",
+   "The places in front of the 4th place are the 1st, the 2nd and so on. List them.",
+   "A similar problem: Sita is 6th in a queue. The children in front of her are 1st, 2nd, 3rd, 4th and 5th, so 5 children are in front of her."
+  ],
+  "steps": [
+   "The places in front of the 4th place are the 1st, 2nd and 3rd places.",
+   "So 3 children are standing in front of Ravi. 4 minus 1 equals 3."
+  ]
+ },
+ "G4A_COUNTING_043": {
+  "q": "There are 6 children in a queue. Meena is at the very front. How many children are behind her?",
+  "options": [
+   "6",
+   "5",
+   "4",
+   "7"
+  ],
+  "hints": [
+   "Everyone in the queue except Meena is behind her.",
+   "Take Meena away from the 6 children and see how many are left.",
+   "A similar problem: 9 children are in a queue and Arun is at the very front. The other children, 9 minus 1, which is 8, are behind him."
+  ],
+  "steps": [
+   "Meena is at the front, so all the other children are behind her.",
+   "Take Meena away from the 6 children. So 5 children are behind her. 6 minus 1 equals 5."
+  ]
+ },
+ "G4A_COUNTING_044": {
+  "q": "How many even numbers are in this list? 3, 4, 7, 8, 10, 13",
+  "options": [
+   "2",
+   "6",
+   "4",
+   "3"
+  ],
+  "hints": [
+   "An even number can be shared into two equal groups. Even numbers end in 0, 2, 4, 6 or 8.",
+   "Go through the list one number at a time and look at the last digit of each.",
+   "A similar problem: in the list 1, 2, 5, 6 the even numbers are 2 and 6, so there are 2 even numbers."
+  ],
+  "steps": [
+   "Even numbers end in 0, 2, 4, 6 or 8. In the list, these are 4, 8 and 10.",
+   "So there are 3 even numbers in the list."
+  ]
+ },
+ "G4A_COUNTING_045": {
+  "q": "Anu, Binu and Charu stand in a row. Writing A for Anu, B for Binu and C for Charu, all the possible orders are: A B C, A C B, B A C, B C A, C A B, C B A. In how many of these orders is Anu first?",
+  "options": [
+   "2",
+   "3",
+   "1",
+   "6"
+  ],
+  "hints": [
+   "Look at the first letter of each order in the list.",
+   "Anu is shown by the letter A. Find the orders that begin with A and count them.",
+   "A similar problem: in the same list, the orders that begin with C are C A B and C B A, so Charu is first in 2 orders."
+  ],
+  "steps": [
+   "Look for the orders that begin with A: they are A B C and A C B.",
+   "So Anu is first in 2 of the orders."
+  ]
+ },
+ "G4A_COUNTING_046": {
+  "q": "Count the days from Monday to Thursday, counting both Monday and Thursday. How many days is that?",
+  "options": [
+   "3",
+   "5",
+   "2",
+   "4"
+  ],
+  "hints": [
+   "Say the days in order and count each one as you say it.",
+   "Start with Monday as the first day. Keep going until you have said Thursday.",
+   "A similar problem: from Friday to Sunday, counting both, the days are Friday, Saturday, Sunday. That is 3 days."
+  ],
+  "steps": [
+   "List the days: Monday, Tuesday, Wednesday, Thursday.",
+   "Count them. That is 4 days."
+  ]
+ },
+ "G4A_COUNTING_047": {
+  "q": "Seven chairs stand in a row. They are numbered 1 to 7 in order. Which chair is exactly in the middle?",
+  "options": [
+   "Chair 3",
+   "Chair 5",
+   "Chair 4",
+   "Chair 7"
+  ],
+  "hints": [
+   "The middle chair has the same number of chairs on each side of it.",
+   "Write the numbers 1, 2, 3, 4, 5, 6, 7 in a row. Cross off one from each end, again and again, until one is left.",
+   "A similar problem: for five chairs numbered 1 to 5, cross off 1 and 5, then 2 and 4. Chair 3 is left, with two chairs on each side."
+  ],
+  "steps": [
+   "Write the chairs in order: 1, 2, 3, 4, 5, 6, 7.",
+   "Chairs 1, 2 and 3 are on one side and chairs 5, 6 and 7 are on the other side.",
+   "With three chairs on each side, the middle one is Chair 4."
+  ]
+ },
+ "PYQ_2016_Q17": {
+  "q": "A, B, C and D are playing chess. Each of the 4 players played two games with every other player. How many games of chess were played altogether?",
+  "options": [
+   "12",
+   "8",
+   "16",
+   "14"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 17.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 12."
+  ]
+ },
+ "PYQ_2018_Q12": {
+  "q": "There are some points drawn on the circumference of the circle. The teacher draws a maximum of 15 line segments joining any two of the points. How many points were on the circle?",
+  "options": [
+   "4",
+   "6",
+   "5",
+   "7"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 12.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The correct answer is option 2, which is 6."
+  ]
+ },
+ "PYQ_2019_Q07": {
+  "q": "Eight points, named A to H, are marked on the circumference of a circle. How many line segments can be drawn by joining any two of these points?",
+  "options": [
+   "28",
+   "8",
+   "16",
+   "24"
+  ],
+  "hints": [
+   "Count in an organised way so that no segment is missed and none is counted twice. Start from one point and move on to the next.",
+   "From A you can draw a segment to each of the other 7 points. From B, the segment to A is already drawn, so count only the new ones. Carry on like this.",
+   "Similar example: with 5 points A to E, A joins 4 others, B joins 3 new ones, C joins 2 new ones and D joins 1 new one. 4 plus 3 plus 2 plus 1 equals 10 segments."
+  ],
+  "steps": [
+   "From A, draw a segment to each of the other 7 points.",
+   "From B there are 6 new segments, from C there are 5, and so on down to 1 new segment from G.",
+   "Add them all up. 7 plus 6 plus 5 plus 4 plus 3 plus 2 plus 1 equals 28.",
+   "So 28 line segments can be drawn."
+  ]
+ },
+ "Q_CH21_013": {
+  "q": "5 points are marked on a circle. How many chords can be drawn by joining these points?",
+  "options": [
+   "8",
+   "5",
+   "20",
+   "10"
+  ],
+  "hints": [
+   "Each chord connects 2 points. How many ways can you choose 2 points from 5?",
+   "Count systematically. Point A connects to B, C, D and E: 4 chords. Point B to C, D and E: 3 new. Point C to D and E: 2 new. Point D to E: 1 new.",
+   "4 plus 3 plus 2 plus 1 equals 10 chords."
+  ],
+  "steps": [
+   "From A, 4 chords. From B, 3 new. From C, 2 new. From D, 1 new.",
+   "The total is 10 chords.",
+   "The formula gives 5 factorial, divided by 2 factorial times 3 factorial, which equals 10."
+  ]
+ }
+}

@@ -1,0 +1,2624 @@
+{
+ "BOOST_EXT_G4_FP_2019_027_07": {
+  "q": "Solve: 2 x minus 9 equals 5.",
+  "options": [
+   "14",
+   "2",
+   "minus 2",
+   "7"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 9 to the right side, it becomes plus 9.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 9 to both sides. 2 x equals 5 plus 9, which is 14.",
+   "Divide both sides by 2. x equals 14 divided by 2, which is 7."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2021_008_06": {
+  "q": "Solve: 2 x plus 10 equals 24.",
+  "options": [
+   "12",
+   "7",
+   "14",
+   "17"
+  ],
+  "hints": [
+   "First, move 10 to the other side by subtracting it from both sides.",
+   "After subtracting: 2 x equals 14. Now divide both sides by 2.",
+   "Think: 2 times what number gives 14?"
+  ],
+  "steps": [
+   "Subtract 10 from both sides. 2 x equals 24 minus 10, which is 14.",
+   "Divide both sides by 2. x equals 14 divided by 2, which is 7."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2022_021_08": {
+  "q": "Solve: 7 x plus 17 equals 101.",
+  "options": [
+   "84",
+   "16",
+   "14",
+   "12"
+  ],
+  "hints": [
+   "First, move 17 to the other side by subtracting it from both sides.",
+   "After subtracting: 7 x equals 84. Now divide both sides by 7.",
+   "Think: 7 times what number gives 84?"
+  ],
+  "steps": [
+   "Subtract 17 from both sides. 7 x equals 101 minus 17, which is 84.",
+   "Divide both sides by 7. x equals 84 divided by 7, which is 12."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2024_016_07": {
+  "q": "Solve: 7 x minus 9 equals 26.",
+  "options": [
+   "3",
+   "35",
+   "2",
+   "5"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 9 to the right side, it becomes plus 9.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 9 to both sides. 7 x equals 26 plus 9, which is 35.",
+   "Divide both sides by 7. x equals 35 divided by 7, which is 5."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2025_016_08": {
+  "q": "Solve: 5 x plus 6 equals 61.",
+  "options": [
+   "11",
+   "12",
+   "13",
+   "55"
+  ],
+  "hints": [
+   "First, move 6 to the other side by subtracting it from both sides.",
+   "After subtracting: 5 x equals 55. Now divide both sides by 5.",
+   "Think: 5 times what number gives 55?"
+  ],
+  "steps": [
+   "Subtract 6 from both sides. 5 x equals 61 minus 6, which is 55.",
+   "Divide both sides by 5. x equals 55 divided by 5, which is 11."
+  ]
+ },
+ "BOOST_EXT_G4_WS2_CH14_007_07": {
+  "q": "Solve: 5 x minus 8 equals 7.",
+  "options": [
+   "1",
+   "3",
+   "minus 1",
+   "15"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 8 to the right side, it becomes plus 8.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 8 to both sides. 5 x equals 7 plus 8, which is 15.",
+   "Divide both sides by 5. x equals 15 divided by 5, which is 3."
+  ]
+ },
+ "EXT_G4_FP_2020_005": {
+  "q": "Find x: 3 x minus 7 equals 8 minus 2 x.",
+  "options": [
+   "15",
+   "1",
+   "3",
+   "5"
+  ],
+  "hints": [
+   "This is an equation with x on both sides. The aim is to get all the x terms on one side and the plain numbers on the other.",
+   "Add 2 x to both sides. That removes the x from the right side. What does the left side become?",
+   "A similar example: 4 x minus 6 equals 14 minus x. Add x to both sides: 5 x minus 6 equals 14. Add 6 to both sides: 5 x equals 20. Divide by 5: x equals 4."
+  ],
+  "steps": [
+   "Add 2 x to both sides. The left side becomes 5 x minus 7 and the right side becomes 8.",
+   "Add 7 to both sides to find 5 x. 8 plus 7 equals 15.",
+   "Divide by 5. 15 divided by 5 equals 3.",
+   "Check: 3 times 3, minus 7, equals 2. And 8, minus 2 times 3, equals 2. Both sides match.",
+   "So x equals 3."
+  ]
+ },
+ "EXT_G4_FP_2021_028": {
+  "q": "The sum of 2 natural numbers is 16, and their difference is 8. What is their product?",
+  "options": [
+   "64",
+   "40",
+   "48",
+   "128"
+  ],
+  "hints": [
+   "This is a sum and difference problem. Find the two numbers first, then multiply them.",
+   "Add the sum and the difference together. That gives twice the bigger number.",
+   "A similar example: two numbers have sum 30 and difference 10. 30 plus 10 equals 40, and 40 divided by 2 equals 20, which is the bigger number. The smaller is 30 minus 20, which is 10. Their product is 20 times 10, which is 200."
+  ],
+  "steps": [
+   "Add the sum and the difference to get twice the bigger number. 16 plus 8 equals 24.",
+   "Halve it to get the bigger number. 24 divided by 2 equals 12.",
+   "The smaller number is the sum minus the bigger number. 16 minus 12 equals 4.",
+   "Multiply the two numbers. 12 times 4 equals 48.",
+   "The product is 48."
+  ]
+ },
+ "EXT_G4_FP_2021_036": {
+  "q": "One third, plus one half, plus 1 over x, equals 4. Find x.",
+  "options": [
+   "6 over 19",
+   "19 over 6",
+   "18 over 5",
+   "5 over 18"
+  ],
+  "hints": [
+   "This is an equation with fractions. First find what the missing fraction 1 over x must be, then turn it upside down to get x.",
+   "Add one third and one half using a common bottom number of 6. Then see how much more is needed to reach 4.",
+   "A similar example: one quarter, plus one half, plus 1 over x, equals 2. First, one quarter plus one half equals three quarters. Then 1 over x must be 2 minus three quarters, which is 5 over 4. Turn it upside down: x equals 4 over 5."
+  ],
+  "steps": [
+   "Add the two fractions you know. One third plus one half equals 5 over 6.",
+   "Find what 1 over x must be, by taking this from 4. Write 4 as 24 over 6. 24 over 6, minus 5 over 6, equals 19 over 6.",
+   "So 1 over x is 19 over 6. Turn it upside down to find x.",
+   "x equals 6 over 19."
+  ]
+ },
+ "EXT_G4_FP_2022_002": {
+  "q": "Find A in the equation: 6 A plus 8 equals 4 A plus 18.",
+  "options": [
+   "13",
+   "10",
+   "8",
+   "None of these"
+  ],
+  "hints": [
+   "This is an equation with the letter on both sides. Collect the letter terms on one side and the plain numbers on the other.",
+   "Take 4 A away from both sides. How many A are left on the left side?",
+   "A similar example: 7 A plus 3 equals 4 A plus 15. Take 4 A from both sides: 3 A plus 3 equals 15. Take 3 from both sides: 3 A equals 12. Divide by 3: A equals 4."
+  ],
+  "steps": [
+   "Take 4 A from both sides. That leaves 2 A plus 8 on the left and 18 on the right.",
+   "Take 8 from both sides to find 2 A. 18 minus 8 equals 10.",
+   "Divide by 2. 10 divided by 2 equals 5.",
+   "Check: 6 times 5, plus 8, equals 38, and 4 times 5, plus 18, equals 38. Both sides match.",
+   "So A equals 5. That is not in the list, so the answer is none of these."
+  ]
+ },
+ "EXT_G4_FP_2022_023": {
+  "q": "If 8 P plus 7 equals 39, and Q equals P plus 3, find the value of 2 P plus 3 Q.",
+  "options": [
+   "21",
+   "26",
+   "29",
+   "19"
+  ],
+  "hints": [
+   "This has three small jobs. Find P from the equation, use it to find Q, then work out the last expression.",
+   "Start with 8 P plus 7 equals 39. Take 7 from 39 to find what 8 P equals.",
+   "A similar example: 6 P plus 5 equals 17 and Q equals P plus 4. Find 2 P plus 3 Q. First 6 P equals 12, so P equals 2. Then Q equals 2 plus 4, which is 6. Last, 2 times 2, plus 3 times 6, equals 22."
+  ],
+  "steps": [
+   "Take 7 from 39 to find 8 P. 39 minus 7 equals 32.",
+   "Divide by 8 to find P. 32 divided by 8 equals 4.",
+   "Q is 3 more than P. 4 plus 3 equals 7.",
+   "Now work out 2 P plus 3 Q, with P as 4 and Q as 7. 2 times 4, plus 3 times 7, equals 29.",
+   "The value of 2 P plus 3 Q is 29."
+  ]
+ },
+ "EXT_G4_FP_2023_006": {
+  "q": "Mishti has 97 pens, and Manav has 11. Mishti gives some, so that she has twice Manav's. How many are given?",
+  "options": [
+   "13",
+   "25",
+   "43",
+   "35"
+  ],
+  "hints": [
+   "When one person gives pens to another, the total number of pens stays the same. Use the total to find how many each has at the end.",
+   "Add the two amounts to find the total. At the end Mishti has 2 shares and Manav has 1 share, so there are 3 equal shares.",
+   "A similar example: Asha has 50 stickers and Ravi has 10. Asha gives some so she has twice as many as Ravi. The total is 60. Three equal shares: 60 divided by 3 equals 20, so Ravi ends with 20. He gained 20 minus 10, which is 10, so Asha gave 10 stickers."
+  ],
+  "steps": [
+   "The total number of pens does not change. 97 plus 11 equals 108.",
+   "At the end Mishti has twice as many as Manav. That is 3 equal shares, with 1 share for Manav. 108 divided by 3 equals 36.",
+   "Manav ends with 36 pens. He started with 11. 36 minus 11 equals 25.",
+   "Check: Mishti is left with 72, which is twice 36. 97 minus 25 equals 72.",
+   "Mishti gave 25 pens."
+  ]
+ },
+ "EXT_G4_FP_2023_011": {
+  "q": "If 3 x plus 7 equals 38, then 6 x plus 7 equals what?",
+  "options": [
+   "71",
+   "76",
+   "67",
+   "none of these"
+  ],
+  "hints": [
+   "You do not have to find x itself here. Look at how 6 x is related to 3 x.",
+   "First find what 3 x equals by taking 7 away from 38. Then think: 6 x is double 3 x.",
+   "A similar example: if 2 x plus 5 equals 16, find 4 x plus 5. First 2 x is 16 minus 5, which is 11. Then 4 x is double that, which is 22. So 4 x plus 5 is 22 plus 5, which is 27."
+  ],
+  "steps": [
+   "Take 7 from 38 to find 3 x. 38 minus 7 equals 31.",
+   "6 x is double 3 x. 31 times 2 equals 62.",
+   "Now add 7. 62 plus 7 equals 69.",
+   "69 is not in the list, so the answer is none of these."
+  ]
+ },
+ "EXT_G4_FP_2023_020": {
+  "q": "For N equals 8, which equation is true?",
+  "options": [
+   "3 N minus 14 equals N plus 3",
+   "44 minus 4 N equals 3 N minus 12",
+   "62 plus 3 N equals 11 N plus 2",
+   "none of these"
+  ],
+  "hints": [
+   "An equation is true when both sides come to the same number. Here you test each equation by putting 8 in place of N.",
+   "Take the first equation. Work out the left side with N as 8, then the right side. Are they equal? Do the same for the others.",
+   "A similar example: is 5 N minus 6 equals 2 N plus 9 true when N is 5? Left side: 5 times 5, minus 6, equals 19. Right side: 2 times 5, plus 9, equals 19. Both sides match, so it is true."
+  ],
+  "steps": [
+   "Put 8 in place of N in each equation and compare the two sides.",
+   "First one: 3 times 8, minus 14, equals 10, but 8 plus 3 equals 11. Not equal.",
+   "Second one: 44, minus 4 times 8, equals 12. And 3 times 8, minus 12, equals 12. Equal.",
+   "Third one: 62, plus 3 times 8, equals 86. But 11 times 8, plus 2, equals 90. Not equal.",
+   "The true equation is 44 minus 4 N equals 3 N minus 12."
+  ]
+ },
+ "EXT_G4_FP_2023_021": {
+  "q": "Solve the equation: 7 times, open bracket, 3 P minus 4, close bracket, equals 4 times, open bracket, 5 plus 3 P, close bracket, plus 6.",
+  "options": [
+   "6",
+   "8",
+   "7",
+   "5"
+  ],
+  "hints": [
+   "This equation has brackets. Open the brackets first by multiplying, then collect the P terms on one side.",
+   "Multiply everything inside the first bracket by 7 and everything inside the second bracket by 4. Write the new equation without brackets.",
+   "A similar example: 3 times, open bracket, 2 P minus 1, close bracket, equals 2 times, open bracket, P plus 4, close bracket, plus 1. Open the brackets: 6 P minus 3 equals 2 P plus 9. Take 2 P from both sides: 4 P minus 3 equals 9. Add 3 to both sides: 4 P equals 12. Divide by 4: P equals 3."
+  ],
+  "steps": [
+   "Open the brackets. The left side is 21 P minus 28. The right side is 20 plus 12 P plus 6, which is 12 P plus 26.",
+   "Take 12 P from both sides, leaving 9 P minus 28 on the left and 26 on the right. Then add 28 to both sides. 26 plus 28 equals 54.",
+   "So 9 P is 54. Divide by 9. 54 divided by 9 equals 6.",
+   "Check with P as 6: 7 times 14 equals 98, and 4 times 23, plus 6, equals 98. Both sides match.",
+   "So P equals 6."
+  ]
+ },
+ "EXT_G4_FP_2023_028": {
+  "q": "If m plus n equals 18, n plus p equals 24, and m plus p equals 36, find the value of p.",
+  "options": [
+   "18",
+   "15",
+   "16",
+   "none of these"
+  ],
+  "hints": [
+   "Here three sums each use two of the three letters. If you add all three sums, every letter gets counted twice.",
+   "Add 18, 24 and 36. That total is two lots of m plus n plus p. Halve it to get m plus n plus p.",
+   "A similar example: A plus b equals 10, b plus c equals 14, and A plus c equals 12. Find c. Adding all three gives 36, which is twice A plus b plus c. So A plus b plus c is 18. Take away A plus b, which is 10, to get c equals 8."
+  ],
+  "steps": [
+   "Add the three sums. Each letter is counted twice. 18 plus 24 plus 36 equals 78.",
+   "Halve it to get m plus n plus p. 78 divided by 2 equals 39.",
+   "Take away m plus n, which is 18, to leave p. 39 minus 18 equals 21.",
+   "p is 21, which is not in the list, so the answer is none of these."
+  ]
+ },
+ "EXT_G4_FP_2024_012": {
+  "q": "Find y: 16 y minus 36 equals 4 y plus, open bracket, 8 times 9, close bracket.",
+  "options": [
+   "11",
+   "8",
+   "9",
+   "6"
+  ],
+  "hints": [
+   "This is an equation with y on both sides. Work out the bracket first, then collect the y terms on one side.",
+   "Start by working out 8 times 9. Then take 4 y away from both sides.",
+   "A similar example: 10 y minus 12 equals 4 y plus, open bracket, 6 times 5, close bracket. The bracket is 30. Take 4 y from both sides: 6 y minus 12 equals 30. Add 12 to both sides: 6 y equals 42. Divide by 6: y equals 7."
+  ],
+  "steps": [
+   "Work out the bracket. 8 times 9 equals 72.",
+   "Take 4 y from both sides. That leaves 12 y minus 36 on the left and 72 on the right.",
+   "Add 36 to both sides to find 12 y. 72 plus 36 equals 108.",
+   "Divide by 12. 108 divided by 12 equals 9.",
+   "So y equals 9."
+  ]
+ },
+ "EXT_G4_FP_2024_028": {
+  "q": "The sum of two consecutive odd numbers is 16. What is the sum of their squares?",
+  "options": [
+   "130",
+   "74",
+   "202",
+   "145"
+  ],
+  "hints": [
+   "First find the two odd numbers, then square each one and add. Consecutive odd numbers are 2 apart, like 3 and 5.",
+   "Half of 16 is 8. The two odd numbers sit one below and one above that middle number.",
+   "A similar example: two consecutive odd numbers add up to 8. Half of 8 is 4, so the numbers are 3 and 5. Their squares are 3 times 3, which is 9, and 5 times 5, which is 25. Then 9 plus 25 equals 34."
+  ],
+  "steps": [
+   "Half of 16 is 8, so the two odd numbers are 7 and 9. 7 plus 9 equals 16.",
+   "Square the first number. 7 times 7 equals 49.",
+   "Square the second number. 9 times 9 equals 81.",
+   "Add the squares. 49 plus 81 equals 130.",
+   "The sum of their squares is 130."
+  ]
+ },
+ "EXT_G4_FP_2024_037": {
+  "q": "12 x minus 19 equals 53. Find the value of 5 x plus 29.",
+  "options": [
+   "69",
+   "59",
+   "68",
+   "78"
+  ],
+  "hints": [
+   "There are two jobs. Solve the equation to find x, then use x in the second expression.",
+   "Undo the minus 19 first. Add 19 to 53 to find what 12 x equals.",
+   "A similar example: 9 x minus 14 equals 31. Find 4 x plus 10. Add 14 to both sides: 9 x equals 45. Divide by 9: x equals 5. Then 4 times 5, plus 10, equals 30."
+  ],
+  "steps": [
+   "Add 19 to both sides to find 12 x. 53 plus 19 equals 72.",
+   "Divide by 12 to find x. 72 divided by 12 equals 6.",
+   "Now put 6 in place of x in 5 x plus 29. 5 times 6, plus 29, equals 59.",
+   "The value of 5 x plus 29 is 59."
+  ]
+ },
+ "EXT_G4_FP_2025_020": {
+  "q": "Find the value of m: 4 m over 3, plus 17, equals 2 m plus 3.",
+  "options": [
+   "33",
+   "24",
+   "21",
+   "18"
+  ],
+  "hints": [
+   "This equation has a fraction in it. Multiplying every part by the bottom number clears the fraction and makes it easier.",
+   "Multiply every term by 3. Remember to multiply the 17, the 2 m and the 3 as well.",
+   "A similar example: 3 m over 2, plus 4, equals 2 m plus 1. Multiply every term by 2 to get 3 m plus 8 on the left and 4 m plus 2 on the right. Take 3 m from both sides, so m plus 2 equals 8. Then m equals 6."
+  ],
+  "steps": [
+   "Multiply every term by 3 to clear the fraction. The left side becomes 4 m plus 51 and the right side becomes 6 m plus 9. 17 times 3 equals 51.",
+   "Take 4 m from both sides. Now 2 m plus 9 equals 51.",
+   "Take 9 from both sides to find 2 m. 51 minus 9 equals 42.",
+   "Divide by 2. 42 divided by 2 equals 21.",
+   "Check with m as 21: 4 times 21 divided by 3, plus 17, equals 45, and 2 times 21, plus 3, equals 45. Both sides match.",
+   "So m equals 21."
+  ]
+ },
+ "EXT_G4_FP_2025_035": {
+  "q": "If 3 m plus 7 equals 28, find the value of 2 m plus 25.",
+  "options": [
+   "39",
+   "29",
+   "35",
+   "37"
+  ],
+  "hints": [
+   "There are two jobs. Solve the equation to find m, then use m in the second expression.",
+   "Undo the plus 7 first. Take 7 away from 28 to find what 3 m equals.",
+   "A similar example: 5 m plus 3 equals 23. Find 3 m plus 20. Take 3 from both sides: 5 m equals 20. Divide by 5: m equals 4. Then 3 times 4, plus 20, equals 32."
+  ],
+  "steps": [
+   "Take 7 from 28 to find 3 m. 28 minus 7 equals 21.",
+   "Divide by 3 to find m. 21 divided by 3 equals 7.",
+   "Now put 7 in place of m in 2 m plus 25. 2 times 7, plus 25, equals 39.",
+   "The value of 2 m plus 25 is 39."
+  ]
+ },
+ "EXT_G4_WS2_CH14_001": {
+  "q": "Solve: x plus 5 equals 12.",
+  "options": [
+   "7",
+   "17",
+   "5",
+   "8"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal.",
+   "Something plus 5 makes 12. To undo adding 5, take 5 away from 12.",
+   "A similar example: x plus 4 equals 13. Take 4 from both sides, so x is 13 minus 4, which is 9."
+  ],
+  "steps": [
+   "x plus 5 makes 12. Undo the plus 5 by subtracting 5 from 12. 12 minus 5 equals 7.",
+   "Check by putting 7 back in. 7 plus 5 equals 12.",
+   "So x equals 7."
+  ]
+ },
+ "EXT_G4_WS2_CH14_002": {
+  "q": "Solve: 3 x equals 24.",
+  "options": [
+   "8",
+   "7",
+   "6",
+   "9"
+  ],
+  "hints": [
+   "This is an equation. 3 x means 3 times x. Find the number x that makes both sides equal.",
+   "3 times a number makes 24. To undo multiplying by 3, divide 24 by 3.",
+   "A similar example: 6 x equals 30. Divide both sides by 6, so x is 30 divided by 6, which is 5."
+  ],
+  "steps": [
+   "3 x means 3 times x. Undo the times 3 by dividing 24 by 3. 24 divided by 3 equals 8.",
+   "Check by putting 8 back in. 3 times 8 equals 24.",
+   "So x equals 8."
+  ]
+ },
+ "EXT_G4_WS2_CH14_003": {
+  "q": "Solve: x minus 7 equals 15.",
+  "options": [
+   "22",
+   "8",
+   "21",
+   "23"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal.",
+   "A number take away 7 leaves 15. To undo subtracting 7, add 7 to 15.",
+   "A similar example: x minus 6 equals 12. Add 6 to both sides, so x is 12 plus 6, which is 18."
+  ],
+  "steps": [
+   "x take away 7 leaves 15. Undo the minus 7 by adding 7 to 15. 15 plus 7 equals 22.",
+   "Check by putting 22 back in. 22 minus 7 equals 15.",
+   "So x equals 22."
+  ]
+ },
+ "EXT_G4_WS2_CH14_004": {
+  "q": "Solve: x over 4 equals 5.",
+  "options": [
+   "20",
+   "9",
+   "1",
+   "25"
+  ],
+  "hints": [
+   "This is an equation. x over 4 means x divided by 4. Find the number x that makes both sides equal.",
+   "A number divided by 4 gives 5. To undo dividing by 4, multiply 5 by 4.",
+   "A similar example: x over 3 equals 6. Multiply both sides by 3, so x is 6 times 3, which is 18."
+  ],
+  "steps": [
+   "x divided by 4 gives 5. Undo the division by multiplying 5 by 4. 5 times 4 equals 20.",
+   "Check by putting 20 back in. 20 divided by 4 equals 5.",
+   "So x equals 20."
+  ]
+ },
+ "EXT_G4_WS2_CH14_005": {
+  "q": "Solve: 2 x plus 3 equals 11.",
+  "options": [
+   "4",
+   "5",
+   "3",
+   "6"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal. Work backwards, undoing one thing at a time.",
+   "First undo the plus 3. Take 3 away from 11 to find what 2 x equals.",
+   "A similar example: 2 x plus 7 equals 25. Take 7 from both sides: 2 x equals 18. Divide by 2: x equals 9."
+  ],
+  "steps": [
+   "2 times x, plus 3, makes 11. Undo the plus 3 first by taking 3 from 11. 11 minus 3 equals 8.",
+   "So 2 times x is 8. Undo the times 2 by dividing. 8 divided by 2 equals 4.",
+   "Check by putting 4 back in. 2 times 4, plus 3, equals 11.",
+   "So x equals 4."
+  ]
+ },
+ "EXT_G4_WS2_CH14_006": {
+  "q": "Solve: 5 x minus 2 equals 18.",
+  "options": [
+   "4",
+   "3",
+   "5",
+   "2"
+  ],
+  "hints": [
+   "This is a two-step equation. x was multiplied, then something was taken away. Undo those in reverse order.",
+   "First undo the minus 2. Add 2 to 18 to find what 5 x equals.",
+   "A similar example: 3 x minus 5 equals 16. Add 5 to both sides: 3 x equals 21. Divide by 3: x equals 7."
+  ],
+  "steps": [
+   "Undo the minus 2 by adding 2 to 18. This gives 5 x. 18 plus 2 equals 20.",
+   "Undo the times 5 by dividing. 20 divided by 5 equals 4.",
+   "Check by putting 4 back in. 5 times 4, minus 2, equals 18.",
+   "So x equals 4."
+  ]
+ },
+ "EXT_G4_WS2_CH14_007": {
+  "q": "If 3 times a number plus 7 equals 28, what is the number?",
+  "options": [
+   "7",
+   "8",
+   "9",
+   "6"
+  ],
+  "hints": [
+   "This is a word problem you can work backwards. Something was done to a mystery number to reach 28. Undo each thing in reverse order.",
+   "The last thing done was adding 7. Undo that first by taking 7 away from 28.",
+   "A similar example: 2 times a number plus 9 equals 29. Take away 9: 29 minus 9 equals 20. Divide by 2: 20 divided by 2 equals 10. The number is 10."
+  ],
+  "steps": [
+   "Undo the plus 7 by taking 7 from 28. This gives 3 times the number. 28 minus 7 equals 21.",
+   "Undo the times 3 by dividing. 21 divided by 3 equals 7.",
+   "Check by putting 7 back in. 3 times 7, plus 7, equals 28.",
+   "The number is 7."
+  ]
+ },
+ "EXT_G4_WS2_CH14_008": {
+  "q": "The sum of two consecutive numbers is 25. Find the smaller number.",
+  "options": [
+   "12",
+   "13",
+   "11",
+   "14"
+  ],
+  "hints": [
+   "Consecutive numbers come one after the other, like 8 and 9. So the two numbers are 1 apart.",
+   "If the two numbers were equal, each would be half of the sum. Take 1 away from 25 first, then halve.",
+   "A similar example: two consecutive numbers add up to 31. Take away 1 to get 30. Halve it to get 15. The numbers are 15 and 16, so the smaller is 15."
+  ],
+  "steps": [
+   "The bigger number is 1 more than the smaller. Take that extra 1 away from the sum. 25 minus 1 equals 24.",
+   "Now halve it to get the smaller number. 24 divided by 2 equals 12.",
+   "Check: the two numbers are 12 and 13. 12 plus 13 equals 25.",
+   "The smaller number is 12."
+  ]
+ },
+ "G4A_EQUATIONS_001": {
+  "q": "Anil thinks of a number. He adds 6 to it, multiplies the result by 4 and gets 60. What number did Anil think of?",
+  "options": [
+   "9",
+   "15",
+   "21",
+   "264"
+  ],
+  "hints": [
+   "You know the end and want the start, so work backwards, undoing each step.",
+   "The last thing Anil did was multiply by 4. Undo it: 60 divided by 4.",
+   "A similar one: a number plus 5, then times 3, gives 36. Backwards: 36 divided by 3 equals 12, and 12 minus 5 equals 7."
+  ],
+  "steps": [
+   "Undo the last step, multiplying by 4. 60 divided by 4 equals 15.",
+   "Undo the first step, adding 6. 15 minus 6 equals 9.",
+   "Anil thought of 9."
+  ]
+ },
+ "G4A_EQUATIONS_002": {
+  "q": "Kabir and his sister Diya save 96 rupees altogether. Diya saves twice as much as Kabir. How much does Kabir save?",
+  "options": [
+   "48 rupees",
+   "32 rupees",
+   "64 rupees",
+   "24 rupees"
+  ],
+  "hints": [
+   "Think of Kabir's money as one share. Then Diya's money is two of the same shares.",
+   "Together they have 1 plus 2, which is 3 equal shares, and the 3 shares make 96 rupees.",
+   "A similar one: two friends have 60 marbles, and one has twice as many as the other. 60 divided by 3 equals 20, so the friend with fewer has 20 marbles."
+  ],
+  "steps": [
+   "Call Kabir's saving 1 share. Diya's saving is 2 shares. 1 plus 2 equals 3.",
+   "The 3 shares together are 96 rupees. 96 divided by 3 equals 32.",
+   "Kabir saves 32 rupees."
+  ]
+ },
+ "G4A_EQUATIONS_003": {
+  "q": "A teacher shares some toffees equally among 8 children. Each child gets 7 toffees and 5 toffees are left over. How many toffees did the teacher have?",
+  "options": [
+   "56",
+   "51",
+   "20",
+   "61"
+  ],
+  "hints": [
+   "Work back to the start: the toffees given out and the toffees left over together make the total.",
+   "Find how many toffees the 8 children got: 8 times 7.",
+   "A similar one: 6 children get 9 sweets each and 4 are left. 6 times 9 equals 54, and 54 plus 4 equals 58 sweets."
+  ],
+  "steps": [
+   "Toffees given to the children. 8 times 7 equals 56.",
+   "Add the toffees left over. 56 plus 5 equals 61.",
+   "The teacher had 61 toffees."
+  ]
+ },
+ "G4A_EQUATIONS_004": {
+  "q": "The perimeter of a rectangular photo frame is 46 centimetres. Its length is 15 centimetres. What is its breadth?",
+  "options": [
+   "16 centimetres",
+   "31 centimetres",
+   "23 centimetres",
+   "8 centimetres"
+  ],
+  "hints": [
+   "The perimeter is the distance all the way round: two lengths and two breadths.",
+   "Half of the perimeter is one length plus one breadth. Find half of 46.",
+   "A similar one: perimeter 30 centimetres and length 9 centimetres. Half of 30 is 15, and 15 minus 9 equals 6 centimetres, which is the breadth."
+  ],
+  "steps": [
+   "Half the perimeter is one length and one breadth. 46 divided by 2 equals 23.",
+   "Take away the length. 23 minus 15 equals 8.",
+   "The breadth is 8 centimetres."
+  ]
+ },
+ "G4A_EQUATIONS_005": {
+  "q": "On a balance, 3 equal boxes and a 2 kilogram weight are on one pan. They balance a 14 kilogram weight on the other pan. What is the weight of one box?",
+  "options": [
+   "12 kilograms",
+   "4 kilograms",
+   "6 kilograms",
+   "16 kilograms"
+  ],
+  "hints": [
+   "A balance stays level when both pans hold the same weight. So the boxes and the 2 kilogram weight together weigh 14 kilograms.",
+   "Take the 2 kilogram weight away from 14 kilograms to find what the three boxes weigh together.",
+   "A similar one: 2 equal tins and a 3 kilogram weight balance 13 kilograms. The tins weigh 13 minus 3, which is 10 kilograms, so each tin weighs 5 kilograms."
+  ],
+  "steps": [
+   "Both pans weigh the same, so 3 boxes and 2 kilograms make 14 kilograms.",
+   "Weight of the 3 boxes. 14 minus 2 equals 12.",
+   "Share among 3 boxes. One box weighs 4 kilograms. 12 divided by 3 equals 4."
+  ]
+ },
+ "G4A_EQUATIONS_006": {
+  "q": "Tara's mother is 3 times as old as Tara. She is also 24 years older than Tara. How old is Tara?",
+  "options": [
+   "8 years",
+   "6 years",
+   "12 years",
+   "36 years"
+  ],
+  "hints": [
+   "Think of Tara's age as one share. Her mother's age is three of those shares.",
+   "The mother has 3 minus 1, which is 2 shares more than Tara, and those 2 shares are 24 years.",
+   "A similar one: a father is 4 times as old as his son and 27 years older. The gap is 3 shares, so one share is 27 divided by 3, which is 9, and the son is 9."
+  ],
+  "steps": [
+   "Tara's age is 1 share and her mother's is 3 shares. The difference is 2 shares. 3 minus 1 equals 2.",
+   "The 2 shares are 24 years. 24 divided by 2 equals 12.",
+   "Tara is 12 years old."
+  ]
+ },
+ "G4A_EQUATIONS_007": {
+  "q": "Sana buys 5 pens of the same price. She pays with a 100 rupee note and gets 35 rupees back. What is the price of one pen?",
+  "options": [
+   "13 rupees",
+   "7 rupees",
+   "20 rupees",
+   "27 rupees"
+  ],
+  "hints": [
+   "First find how much Sana really spent. Then share that cost among the pens.",
+   "She gave 100 rupees and got 35 rupees back, so the pens cost 100 minus 35.",
+   "A similar one: 4 erasers, 50 rupees paid, 14 rupees returned. The erasers cost 50 minus 14, which is 36 rupees, so each costs 36 divided by 4, which is 9 rupees."
+  ],
+  "steps": [
+   "Money spent on the pens. 100 minus 35 equals 65.",
+   "Price of one pen. 65 divided by 5 equals 13.",
+   "One pen costs 13 rupees."
+  ]
+ },
+ "G4A_EQUATIONS_008": {
+  "q": "An auto-rickshaw charges 30 rupees for the first kilometre and 12 rupees for every kilometre after that. Imran pays 90 rupees for his ride. How many kilometres does he travel?",
+  "options": [
+   "6 kilometres",
+   "5 kilometres",
+   "7.5 kilometres",
+   "10 kilometres"
+  ],
+  "hints": [
+   "The fare has two parts: a fixed charge for the first kilometre and the same charge for each kilometre after it.",
+   "Take away the 30 rupees for the first kilometre: 90 minus 30. That money pays for the other kilometres.",
+   "A similar one: 20 rupees for the first kilometre, 10 rupees for each one after, and a fare of 100 rupees. 100 minus 20 equals 80, and 80 divided by 10 equals 8 more kilometres, so the ride is 9 kilometres in all."
+  ],
+  "steps": [
+   "Take away the charge for the first kilometre. 90 minus 30 equals 60.",
+   "Kilometres after the first. 60 divided by 12 equals 5.",
+   "Add the first kilometre. Imran travels 6 kilometres. 5 plus 1 equals 6."
+  ]
+ },
+ "G4A_EQUATIONS_009": {
+  "q": "In these two sums, the star stands for one number and the triangle stands for another number. Star plus star equals 18, and star plus triangle equals 14. What number does the triangle stand for?",
+  "options": [
+   "9",
+   "4",
+   "5",
+   "7"
+  ],
+  "hints": [
+   "Start with the sum that has only one kind of shape in it.",
+   "Star plus star equals 18 means two equal numbers add to 18. Find the star first.",
+   "A similar one: star plus star equals 12, and star plus triangle equals 10. Then star equals 6, and triangle equals 10 minus 6, which is 4."
+  ],
+  "steps": [
+   "Two equal numbers make 18, so find the star. 18 divided by 2 equals 9.",
+   "Put 9 in the second sum: 9 plus triangle equals 14. 14 minus 9 equals 5.",
+   "The triangle stands for 5."
+  ]
+ },
+ "G4A_EQUATIONS_010": {
+  "q": "Half of a number, increased by 8, is 20. What is the number?",
+  "options": [
+   "12",
+   "6",
+   "56",
+   "24"
+  ],
+  "hints": [
+   "Work backwards from 20, undoing each step in turn.",
+   "The last step was adding 8. Undo it: 20 minus 8 gives half of the number.",
+   "A similar one: half of a number, increased by 5, is 14. 14 minus 5 equals 9, which is the half, so the number is 18."
+  ],
+  "steps": [
+   "Undo the adding of 8. 20 minus 8 equals 12.",
+   "12 is half of the number, so double it. 12 times 2 equals 24.",
+   "The number is 24."
+  ]
+ },
+ "G4A_EQUATIONS_011": {
+  "q": "A farmer keeps hens and 6 cows. Together the animals have 44 legs. How many hens are there?",
+  "options": [
+   "20",
+   "10",
+   "5",
+   "38"
+  ],
+  "hints": [
+   "A cow has 4 legs and a hen has 2. Take out the legs you already know about.",
+   "The 6 cows have 6 times 4 legs. Take these away from 44.",
+   "A similar one: hens and 5 goats have 36 legs. The goats have 20 legs, 36 minus 20 equals 16 legs, which are hens' legs, so there are 8 hens."
+  ],
+  "steps": [
+   "Legs of the 6 cows. 6 times 4 equals 24.",
+   "Legs left for the hens. 44 minus 24 equals 20.",
+   "Each hen has 2 legs. There are 10 hens. 20 divided by 2 equals 10."
+  ]
+ },
+ "G4A_EQUATIONS_012": {
+  "q": "Gopal is x years old. His sister is 3 years younger than Gopal. Their ages add up to 21 years. Which equation matches this story?",
+  "options": [
+   "x plus 3 x equals 21",
+   "x plus x minus 3 equals 21",
+   "x minus 3 equals 21",
+   "3 x equals 21"
+  ],
+  "hints": [
+   "Write each person's age using x, then add the two ages.",
+   "Gopal's age is x. His sister is 3 years younger, so think about whether to add or subtract 3 to get her age.",
+   "A similar one: Mala is y years old and her brother is 2 years older; together they are 20. Mala is y, her brother is y plus 2, so the equation is y plus y plus 2 equals 20."
+  ],
+  "steps": [
+   "Gopal's age is x.",
+   "His sister is 3 years younger, so her age is x minus 3.",
+   "The two ages add up to 21, so the equation is x plus x minus 3 equals 21."
+  ]
+ },
+ "G4A_EQUATIONS_013": {
+  "q": "Six times a number is the same as the number itself increased by 35. What is the number?",
+  "options": [
+   "5",
+   "35",
+   "29",
+   "7"
+  ],
+  "hints": [
+   "Picture a balance: six equal bags on one side, one bag and a weight of 35 on the other. Removing the same thing from both sides keeps it level.",
+   "Take one of the number away from both sides. Then 5 times the number equals 35.",
+   "A similar one: four times a number equals the number plus 27. Take one away from each side: 3 times the number is 27, so the number is 9."
+  ],
+  "steps": [
+   "Six times the number equals the number plus 35. Take one of the number away from both sides. 6 minus 1 equals 5.",
+   "Now 5 times the number is 35. 35 divided by 5 equals 7.",
+   "The number is 7."
+  ]
+ },
+ "G4A_EQUATIONS_014": {
+  "q": "A balance is level. On the left pan there are 5 equal tins and a 3 kilogram weight. On the right pan there are 2 of the same tins and an 18 kilogram weight. What is the weight of one tin?",
+  "options": [
+   "5 kilograms",
+   "15 kilograms",
+   "7 kilograms",
+   "3 kilograms"
+  ],
+  "hints": [
+   "A balance stays level if you take the same thing off both pans. Use this to leave tins on one side only.",
+   "Take 2 tins off each pan. Now the left has 3 tins and 3 kilograms, and the right has just 18 kilograms.",
+   "A similar one: 3 jars and 2 kilograms balance 1 jar and 10 kilograms. Take 1 jar and 2 kilograms off each side: 2 jars balance 8 kilograms, so one jar weighs 4 kilograms."
+  ],
+  "steps": [
+   "Take 2 tins off each pan. Left: 3 tins and 3 kilograms. Right: 18 kilograms.",
+   "Take 3 kilograms off each pan. Now 3 tins balance 15 kilograms. 18 minus 3 equals 15.",
+   "Share among 3 tins. One tin weighs 5 kilograms. 15 divided by 3 equals 5."
+  ]
+ },
+ "G4A_EQUATIONS_015": {
+  "q": "Asha has 52 stickers and Bina has 28 stickers. How many stickers must Asha give to Bina so that both girls have the same number?",
+  "options": [
+   "24",
+   "40",
+   "12",
+   "80"
+  ],
+  "hints": [
+   "The total number of stickers does not change when one girl gives some to the other. Think about what each should have at the end.",
+   "Find the total: 52 plus 28. Then share it equally between the two girls.",
+   "A similar one: Ravi has 30 marbles and Sam has 18. Together they have 48, so each should have 24, and Ravi must give 30 minus 24, which is 6."
+  ],
+  "steps": [
+   "Total stickers. 52 plus 28 equals 80.",
+   "Each girl should have half. 80 divided by 2 equals 40.",
+   "Asha must come down from 52 to 40. She must give 12 stickers."
+  ]
+ },
+ "G4A_EQUATIONS_016": {
+  "q": "A parking lot has only auto-rickshaws with 3 wheels each and cars with 4 wheels each. There are 10 vehicles and 34 wheels in all. How many cars are there?",
+  "options": [
+   "6",
+   "8",
+   "4",
+   "5"
+  ],
+  "hints": [
+   "Imagine every vehicle is an auto-rickshaw and count the wheels. Then see how many wheels are missing.",
+   "10 auto-rickshaws would have 10 times 3, which is 30 wheels. Each car has one more wheel than an auto-rickshaw.",
+   "A similar one: 8 vehicles, bicycles with 2 wheels and auto-rickshaws with 3, and 19 wheels. All bicycles would give 16 wheels; the 3 extra wheels mean 3 auto-rickshaws."
+  ],
+  "steps": [
+   "Suppose all 10 vehicles are auto-rickshaws. 10 times 3 equals 30.",
+   "Extra wheels that are really there. 34 minus 30 equals 4.",
+   "Each car adds 1 extra wheel, so the 4 extra wheels mean 4 cars.",
+   "There are 4 cars."
+  ]
+ },
+ "G4A_EQUATIONS_017": {
+  "q": "Three friends collect shells. Jaya has twice as many shells as Bala. Chitra has 5 more shells than Bala. Together they have 45 shells. How many shells does Bala have?",
+  "options": [
+   "10",
+   "20",
+   "15",
+   "8"
+  ],
+  "hints": [
+   "Call Bala's shells one share. Write the other two friends' shells using that share.",
+   "Jaya has 2 shares and Chitra has 1 share and 5 more. So 4 shares and 5 make 45.",
+   "A similar one: Anu has twice as many as Binu, Charu has 3 more than Binu, and together they have 27. Then 4 shares and 3 make 27, 4 shares are 24, and Binu has 6."
+  ],
+  "steps": [
+   "Bala has 1 share, Jaya has 2 shares, Chitra has 1 share and 5 more. That is 4 shares and 5.",
+   "Take away the extra 5. 45 minus 5 equals 40.",
+   "Share among 4. Bala has 10 shells. 40 divided by 4 equals 10."
+  ]
+ },
+ "G4A_EQUATIONS_018": {
+  "q": "The length of a rectangular garden is 3 metres more than twice its breadth. The perimeter of the garden is 48 metres. What is the length of the garden?",
+  "options": [
+   "7 metres",
+   "17 metres",
+   "15 metres",
+   "14 metres"
+  ],
+  "hints": [
+   "Half the perimeter is one length plus one breadth. Write the length in terms of the breadth.",
+   "Half of 48 is 24. The length is 2 breadths and 3 metres, so length plus breadth is 3 breadths and 3 metres.",
+   "A similar one: the length is 1 metre more than twice the breadth, and the perimeter is 32 metres. Half is 16 metres, so 3 breadths and 1 metre make 16 metres; the breadth is 5 metres and the length is 2 times 5, plus 1, which is 11 metres."
+  ],
+  "steps": [
+   "One length and one breadth make half the perimeter. 48 divided by 2 equals 24.",
+   "The length is 2 breadths and 3 metres, so 3 breadths and 3 metres make 24 metres. 24 minus 3 equals 21.",
+   "Find the breadth. 21 divided by 3 equals 7.",
+   "The length is 17 metres. 2 times 7, plus 3, equals 17."
+  ]
+ },
+ "G4A_EQUATIONS_019": {
+  "q": "Raju and Sonu start with the same amount of money. Raju buys 3 notebooks and has 14 rupees left. Sonu buys 4 notebooks of the same kind and has 2 rupees left. What is the price of one notebook?",
+  "options": [
+   "16 rupees",
+   "7 rupees",
+   "6 rupees",
+   "12 rupees"
+  ],
+  "hints": [
+   "Both boys had the same money. Compare what each bought and what each has left.",
+   "Sonu bought just one notebook more than Raju. See how much less money he has left.",
+   "A similar one: with the same money, Mina buys 2 pens and has 20 rupees left, and Tina buys 3 pens and has 5 rupees left. The extra pen cost 20 minus 5, which is 15 rupees."
+  ],
+  "steps": [
+   "Both started with the same money, so 3 notebooks and 14 rupees equal 4 notebooks and 2 rupees.",
+   "Sonu bought 1 more notebook than Raju. 4 minus 3 equals 1.",
+   "That one notebook used up the difference in the money left. One notebook costs 12 rupees. 14 minus 2 equals 12."
+  ]
+ },
+ "G4A_EQUATIONS_020": {
+  "q": "Neha spends half of her money on a book. Then she spends 30 rupees on a pen. She has 45 rupees left. How much money did Neha have at first?",
+  "options": [
+   "120 rupees",
+   "75 rupees",
+   "105 rupees",
+   "150 rupees"
+  ],
+  "hints": [
+   "You know the end, so work backwards, undoing the last thing first.",
+   "The last thing Neha did was spend 30 rupees. Add it back to 45 rupees.",
+   "A similar one: Ali spends half his money, then 10 rupees, and has 25 rupees left. 25 plus 10 equals 35, which is half, so he had 70 rupees."
+  ],
+  "steps": [
+   "Add back the 30 rupees spent on the pen. 45 plus 30 equals 75.",
+   "75 rupees is the half left after the book, so double it. 75 times 2 equals 150.",
+   "Neha had 150 rupees at first."
+  ]
+ },
+ "G4A_EQUATIONS_021": {
+  "q": "Asha and Bina both start with the same number. Asha adds 8 to it and then doubles the result. Bina doubles the number and then adds 8. How much greater is Asha's answer than Bina's answer?",
+  "options": [
+   "8",
+   "0",
+   "16",
+   "4"
+  ],
+  "hints": [
+   "Try the two sets of steps with a small number of your own and compare the two answers.",
+   "Start with 1. Asha: 1 plus 8 equals 9, and doubled that is 18. Now work out Bina's answer for the same start.",
+   "Similar problem: Raj adds 5 then multiplies by 3, and Sam multiplies by 3 then adds 5. Starting with 2, Raj gets 21 and Sam gets 11, so Raj's answer is 10 greater."
+  ],
+  "steps": [
+   "Try the number 1. Asha: 1 plus 8 equals 9, and double 9 is 18. Bina: double 1 is 2, and 2 plus 8 equals 10.",
+   "Asha is ahead by 18 minus 10. 18 minus 10 equals 8.",
+   "It is the same for any start: Asha doubles the 8 as well, so her 8 becomes 16, while Bina adds only 8.",
+   "16 minus 8 equals 8, so Asha's answer is 8 greater."
+  ]
+ },
+ "G4A_EQUATIONS_022": {
+  "q": "The two digits of a two-digit number add up to 9. When the digits are swapped, the new number is 27 more than the first number. What is the first number?",
+  "options": [
+   "63",
+   "45",
+   "36",
+   "27"
+  ],
+  "hints": [
+   "Use one clue to make a short list of possible numbers, then test each of them with the other clue.",
+   "List the two-digit numbers whose digits add up to 9: 18, 27, 36, 45 and so on. Swap the digits of each and compare.",
+   "Similar problem: the digits add up to 7 and swapping gives a number 9 more. From 16, 25, 34, 43 test each: 34 swapped is 43, and 43 minus 34 equals 9, so the number is 34."
+  ],
+  "steps": [
+   "Numbers whose digits add up to 9: 18, 27, 36, 45, 54, 63, 72, 81, 90.",
+   "The swapped number must be greater, so the tens digit must be the smaller digit: try 18, 27, 36 and 45.",
+   "81 minus 18 equals 63, 72 minus 27 equals 45, 63 minus 36 equals 27, and 54 minus 45 equals 9.",
+   "Only 36 gives a difference of 27, so the first number is 36."
+  ]
+ },
+ "G4A_EQUATIONS_023": {
+  "q": "Ravi has 4 times as many marbles as Sonu. Then each boy wins 5 more marbles. Now Ravi has 3 times as many marbles as Sonu. How many marbles did Sonu have at first?",
+  "options": [
+   "10",
+   "15",
+   "40",
+   "5"
+  ],
+  "hints": [
+   "Test a possible answer in the story: work out both boys' marbles before and after, and see whether both clues hold.",
+   "Suppose Sonu had 5 at first. Then Ravi had 20. After 5 more each they have 10 and 25. Is 25 three times 10? Then try another start.",
+   "Similar problem: Mira has 3 times as many stickers as Nita. After each gets 4 more, Mira has twice as many. Try Nita as 4: then Mira has 12, and afterwards they have 8 and 16. 16 is twice 8, so Nita had 4."
+  ],
+  "steps": [
+   "Test Sonu as 10. Then Ravi has 4 times 10, which is 40 marbles.",
+   "After winning 5 each, Sonu has 15 and Ravi has 45.",
+   "45 is 3 times 15, so both clues fit. 3 times 15 equals 45.",
+   "Testing 5 gives 10 and 25, and testing 15 gives 20 and 65. Neither pair is three times, so only 10 fits.",
+   "Sonu had 10 marbles at first."
+  ]
+ },
+ "G4A_EQUATIONS_024": {
+  "q": "A basket has some mangoes. Asha takes half of the mangoes and 1 more. Then Bala takes half of the mangoes that are left and 1 more. Now 3 mangoes are left in the basket. How many mangoes were in the basket at first?",
+  "options": [
+   "15",
+   "14",
+   "12",
+   "18"
+  ],
+  "hints": [
+   "Start from the end of the story and undo each step, the last step first.",
+   "Before Bala took his share there were more than 3 mangoes. He took half and 1 more, so first put back the 1, then double.",
+   "Similar problem: Ria takes half of some sweets and 2 more, and 4 are left. Put back the 2 to get 6, which is the other half, so there were 12 sweets."
+  ],
+  "steps": [
+   "Work backwards. After Bala there are 3 mangoes. Put back his extra 1. 3 plus 1 equals 4.",
+   "That 4 is half of what Bala found, so before Bala there were 8 mangoes.",
+   "Put back Asha's extra 1. That gives 9, which is half of the basket. 8 plus 1 equals 9.",
+   "Double it. Check: Asha takes 9 plus 1, which is 10, leaving 8; Bala takes 4 plus 1, which is 5, leaving 3. 9 times 2 equals 18.",
+   "There were 18 mangoes in the basket at first."
+  ]
+ },
+ "G4A_EQUATIONS_025": {
+  "q": "In a game, Kavya wins 5 points for every round she wins and loses 2 points for every round she loses. She plays 20 rounds and finishes with 65 points. How many rounds did she win?",
+  "options": [
+   "13",
+   "15",
+   "17",
+   "5"
+  ],
+  "hints": [
+   "Every round is either won or lost, so the two counts add up to the number of rounds. Test a possible number of wins.",
+   "Imagine she won all 20 rounds: she would have 100 points. Think about what changes each time one win becomes a loss.",
+   "Similar problem: 3 points for a win, 1 point lost for a loss, 10 rounds and 18 points. All wins would give 30. Each loss lowers the score by 3 plus 1, which is 4, and 30 minus 18 equals 12, so there were 3 losses and 7 wins."
+  ],
+  "steps": [
+   "If Kavya won all 20 rounds she would have 100 points. 20 times 5 equals 100.",
+   "Each lost round takes away the 5 points she would have won and 2 more, so it lowers the score by 7.",
+   "She is 100 minus 65, which is 35 points below 100, so she lost 5 rounds.",
+   "Check: 15 wins give 75 points and 5 losses take away 10, leaving 65.",
+   "She won 20 minus 5, which is 15 rounds."
+  ]
+ },
+ "G4A_EQUATIONS_026": {
+  "q": "At a stationery shop, 2 pens and 3 pencils cost 36 rupees. At the same shop, 2 pens and 5 pencils cost 48 rupees. What is the price of one pen?",
+  "options": [
+   "6 rupees",
+   "9 rupees",
+   "12 rupees",
+   "18 rupees"
+  ],
+  "hints": [
+   "Compare the two purchases. Look at what is the same in both and what is extra in the second one.",
+   "Both purchases have 2 pens. The second has 2 more pencils and costs more. Use that to find the price of one pencil first.",
+   "Similar problem: 1 bun and 2 biscuits cost 10 rupees, and 1 bun and 4 biscuits cost 14 rupees. The 2 extra biscuits cost 4 rupees, so one biscuit is 2 rupees and the bun is 10 minus 4, which is 6 rupees."
+  ],
+  "steps": [
+   "The second purchase has 2 extra pencils and costs 12 rupees more. 48 minus 36 equals 12.",
+   "So one pencil costs 6 rupees. 12 divided by 2 equals 6.",
+   "In the first purchase the 3 pencils cost 18 rupees, so the 2 pens cost 18 rupees. 36 minus 18 equals 18.",
+   "One pen costs 18 divided by 2, which is 9 rupees, so the price of one pen is 9 rupees."
+  ]
+ },
+ "G4A_EQUATIONS_027": {
+  "q": "A teacher has between 20 and 40 children in her class. When they stand in rows of 4, 3 children are left over. When they stand in rows of 5, 2 children are left over. How many children are in the class?",
+  "options": [
+   "23",
+   "32",
+   "35",
+   "27"
+  ],
+  "hints": [
+   "List the numbers that fit one clue, then check each of them against the other clue.",
+   "Numbers between 20 and 40 that leave 3 over in rows of 4 are 23, 27, 31, 35 and 39. Now test each of them in rows of 5.",
+   "Similar problem: between 10 and 20, rows of 3 leave 1 over and rows of 4 leave 1 over. Rows of 3 give 10, 13, 16, 19. In rows of 4, only 13 leaves 1 over, so the answer is 13."
+  ],
+  "steps": [
+   "Rows of 4 with 3 left over: the number is 3 more than a multiple of 4. Between 20 and 40 that gives 23, 27, 31, 35, 39.",
+   "Rows of 5 with 2 left over: the number must end in 2 or 7.",
+   "In the list, only 27 ends in 2 or 7.",
+   "Check: 27 is 6 rows of 4 and 3 over, and 27 is 5 rows of 5 and 2 over.",
+   "There are 27 children in the class."
+  ]
+ },
+ "G4A_EQUATIONS_028": {
+  "q": "On a balance, 1 melon weighs the same as 2 mangoes and 1 guava together. Also, 1 mango weighs the same as 3 guavas. How many guavas weigh the same as 2 melons?",
+  "options": [
+   "14",
+   "7",
+   "12",
+   "8"
+  ],
+  "hints": [
+   "Change every fruit into guavas, one swap at a time, so that only one kind of fruit is left.",
+   "Start with one melon: it equals 2 mangoes and 1 guava. Swap each mango for the guavas it equals.",
+   "Similar problem: 1 box weighs the same as 2 tins and 3 nuts, and 1 tin weighs the same as 2 nuts. Then 1 box is 4 nuts plus 3 nuts, which is 7 nuts, and 3 boxes are 21 nuts."
+  ],
+  "steps": [
+   "1 mango equals 3 guavas, so 2 mangoes equal 6 guavas. 2 times 3 equals 6.",
+   "1 melon equals 2 mangoes and 1 guava, which is 7 guavas. 6 plus 1 equals 7.",
+   "The question asks about 2 melons. 2 times 7 equals 14.",
+   "2 melons weigh the same as 14 guavas."
+  ]
+ },
+ "G4A_EQUATIONS_029": {
+  "q": "A number is as much greater than 36 as it is less than 86. What is the number?",
+  "options": [
+   "50",
+   "25",
+   "61",
+   "122"
+  ],
+  "hints": [
+   "Picture the three numbers on a number line. Where must the unknown number sit between the other two?",
+   "The number is the same distance from 36 and from 86. First find how far apart 36 and 86 are.",
+   "Similar problem: a number is as much greater than 10 as it is less than 30. The gap is 20 and half of it is 10, so the number is 10 plus 10, which is 20."
+  ],
+  "steps": [
+   "The number is the same distance above 36 as it is below 86, so it is exactly halfway between them.",
+   "The gap from 36 to 86 is 50. 86 minus 36 equals 50.",
+   "Half of the gap is 25. 50 divided by 2 equals 25.",
+   "Add this to 36. Check: 61 minus 36 equals 25, and 86 minus 61 equals 25.",
+   "The number is 61."
+  ]
+ },
+ "G4A_EQUATIONS_030": {
+  "q": "Two whole numbers add up to 12. When they are multiplied, the answer is 35. What is the difference between the two numbers?",
+  "options": [
+   "2",
+   "7",
+   "5",
+   "23"
+  ],
+  "hints": [
+   "Find the two numbers first by testing pairs, then read again what the question asks for.",
+   "List pairs that multiply to 35, or pairs that add up to 12, and look for a pair that does both.",
+   "Similar problem: two numbers add up to 10 and multiply to 21. 3 times 7 equals 21, and 3 plus 7 equals 10, so the numbers are 3 and 7, and their difference is 4."
+  ],
+  "steps": [
+   "Pairs of whole numbers that multiply to 35 are 1 and 35, and 5 and 7.",
+   "1 plus 35 equals 36, but 5 plus 7 equals 12, so the two numbers are 5 and 7.",
+   "The question asks for their difference. 7 minus 5 equals 2.",
+   "The difference between the two numbers is 2."
+  ]
+ },
+ "G4A_EQUATIONS_031": {
+  "q": "A shop sells pencils only in packs of 4 and packs of 7. Meena buys exactly 30 pencils. How many packs does she buy altogether?",
+  "options": [
+   "2",
+   "4",
+   "6",
+   "8"
+  ],
+  "hints": [
+   "Test the possible numbers of the bigger packs one at a time, and see whether the rest can be made from the smaller packs.",
+   "Try 1 pack of 7: that leaves 23 pencils. Can 23 be made from packs of 4? Then try 2 packs of 7.",
+   "Similar problem: packs of 3 and packs of 5, exactly 19 pencils. With 2 packs of 5 there are 9 left, which is 3 packs of 3. That is 5 packs altogether."
+  ],
+  "steps": [
+   "Try the packs of 7 one at a time. With no packs of 7, 30 is not a multiple of 4.",
+   "1 pack of 7 leaves 23, 3 packs leave 9 and 4 packs leave 2. None of these is a multiple of 4.",
+   "2 packs of 7 leave 16, which is exactly 4 packs of 4. 30 minus 14 equals 16.",
+   "So she buys 2 packs of 7 and 4 packs of 4. 2 plus 4 equals 6.",
+   "Meena buys 6 packs altogether."
+  ]
+ },
+ "G4A_EQUATIONS_032": {
+  "q": "When a number is divided by 8, the quotient is 9 and the remainder is the greatest remainder possible. What is the remainder when the same number is divided by 5?",
+  "options": [
+   "0",
+   "4",
+   "2",
+   "7"
+  ],
+  "hints": [
+   "First rebuild the number from the divisor, the quotient and the remainder. Think carefully about how big a remainder can be.",
+   "A remainder is always smaller than the divisor. When dividing by 8, what is the greatest remainder?",
+   "Similar problem: a number divided by 6 gives quotient 4 and the greatest possible remainder, which is 5. The number is 6 times 4, plus 5, which is 29. Divided by 4, 29 leaves remainder 1."
+  ],
+  "steps": [
+   "A remainder must be smaller than the divisor, so the greatest remainder when dividing by 8 is 7.",
+   "Build the number from the divisor, quotient and remainder. 8 times 9, plus 7, equals 79.",
+   "Now divide 79 by 5: 5 times 15 equals 75, and 79 is 4 more than 75.",
+   "The remainder is 4."
+  ]
+ },
+ "G4A_EQUATIONS_033": {
+  "q": "Sunita is 30 years old and her daughter Pari is 6 years old. In how many years will Sunita be exactly 3 times as old as Pari?",
+  "options": [
+   "4 years",
+   "10 years",
+   "12 years",
+   "6 years"
+  ],
+  "hints": [
+   "Both of them grow older together, so the gap between their ages never changes. Use that gap.",
+   "Sunita is 24 years older than Pari, now and always. When one age is 3 times the other, the gap is 2 times the smaller age.",
+   "Similar problem: a father is 38 and his son is 8. The gap is always 30. When the father is 3 times as old, the gap is 2 times the son's age, so the son is 15. That happens in 15 minus 8, which is 7 years."
+  ],
+  "steps": [
+   "Sunita is 24 years older than Pari, and this gap stays the same every year. 30 minus 6 equals 24.",
+   "When Sunita is 3 times as old as Pari, the gap is 2 times Pari's age.",
+   "So Pari's age then is 12, and Sunita's is 36. 24 divided by 2 equals 12.",
+   "Pari is 6 now, so that is 12 minus 6 years from now. 12 minus 6 equals 6.",
+   "Sunita will be 3 times as old as Pari in 6 years."
+  ]
+ },
+ "G4A_EQUATIONS_034": {
+  "q": "A snail is at the bottom of a well that is 10 metres deep. Each day it climbs up 3 metres, and each night it slips back 2 metres. On which day does the snail first reach the top of the well?",
+  "options": [
+   "10th day",
+   "7th day",
+   "4th day",
+   "8th day"
+  ],
+  "hints": [
+   "Follow the snail day by day, and think carefully about the last day: once it reaches the top it does not slip back.",
+   "After each full day and night the snail is 1 metre higher. Find the height from which one day's climb of 3 metres reaches the top.",
+   "Similar problem: a well 7 metres deep, climbing 3 metres each day and slipping 1 metre each night. The snail starts day 2 at 2 metres and day 3 at 4 metres. On day 3 it climbs from 4 metres to 7 metres, so it reaches the top on the 3rd day."
+  ],
+  "steps": [
+   "Each full day and night the snail gains 1 metre. 3 minus 2 equals 1.",
+   "On its last day the snail climbs 3 metres and is out, so it only needs to start a day at 7 metres. 10 minus 3 equals 7.",
+   "Gaining 1 metre each full day and night, it starts a day at 7 metres after 7 days and nights.",
+   "On the next day it climbs from 7 metres to 10 metres. 7 plus 3 equals 10.",
+   "The snail first reaches the top on the 8th day."
+  ]
+ },
+ "PYQ_2016_Q07": {
+  "q": "If m equals 21, and n equals 3, and m equals n times p, find the value of m divided by p.",
+  "options": [
+   "3",
+   "7",
+   "5",
+   "4"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 7.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 3."
+  ]
+ },
+ "PYQ_2016_Q16": {
+  "q": "Radhika went to a store and bought 24 pieces of fruits. She purchased three times as many oranges as bananas. On her way home she accidentally dropped twice as many oranges as bananas. She still took home 15 pieces of fruit. How many oranges were there when she reached home?",
+  "options": [
+   "9",
+   "10",
+   "6",
+   "12"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 16.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 4, which is 12."
+  ]
+ },
+ "PYQ_2017_Q11": {
+  "q": "Karan has bought 5 paise and 10 paise stamps for a total of 55 paise. If he were to buy the same number of 5 paise stamps, but twice the number of 10 paise stamps, it would cost him 1 rupee and 5 paise. How many 5 paise stamps did he buy?",
+  "options": [
+   "1",
+   "3",
+   "4",
+   "5"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 11.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 1."
+  ]
+ },
+ "PYQ_2017_Q14": {
+  "q": "If 12 x minus 40 equals 2 x, then the value of x is?",
+  "options": [
+   "3",
+   "1",
+   "4",
+   "5"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 14.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 4."
+  ]
+ },
+ "PYQ_2018_Q10": {
+  "q": "At a society meeting there were 21 more women present than the men. If the total men and women at the meeting were 105, then the number of women present at the meeting were?",
+  "options": [
+   "63",
+   "42",
+   "21",
+   "84"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 10.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 63."
+  ]
+ },
+ "PYQ_2018_Q25": {
+  "q": "If 19 over star, plus 17 over star, equals 2, then what same number does the star represent?",
+  "options": [
+   "36",
+   "18",
+   "19",
+   "17"
+  ],
+  "hints": [
+   "Both fractions have the same bottom number. Fractions with the same bottom number are added by adding the tops.",
+   "Add the two top numbers. Then think: that total divided by the star must equal 2.",
+   "A similar example: 13 over star, plus 11 over star, equals 3. Add the tops: 13 plus 11 equals 24. So 24 divided by the star is 3, and the star is 24 divided by 3, which is 8."
+  ],
+  "steps": [
+   "The bottom numbers are the same, so add the tops. 19 plus 17 equals 36.",
+   "So 36 divided by the star equals 2. Divide 36 by 2 to find the star. 36 divided by 2 equals 18.",
+   "Check by putting 18 in place of the star. 19 over 18, plus 17 over 18, equals 36 over 18, which is 2.",
+   "The star stands for 18."
+  ]
+ },
+ "PYQ_2018_Q27": {
+  "q": "Find the value of x in the equation: 97 minus 17 x equals 5 x plus 31.",
+  "options": [
+   "11",
+   "5",
+   "3",
+   "9"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 27.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 3."
+  ]
+ },
+ "PYQ_2018_Q31": {
+  "q": "Tom has 100 marbles and four boxes. He puts the marbles in the four boxes, such that each box has 2 more marbles than the one before. The total marbles in the first 3 boxes are?",
+  "options": [
+   "60",
+   "80",
+   "72",
+   "88"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 31.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 72."
+  ]
+ },
+ "PYQ_2019_Q13": {
+  "q": "If 15 minus 3 x equals x minus 9, then the value of x is?",
+  "options": [
+   "3",
+   "5",
+   "6",
+   "12"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 13.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 6."
+  ]
+ },
+ "PYQ_2019_Q29": {
+  "q": "Find the value of the variable T, when 31 minus T equals 2 T plus 7.",
+  "options": [
+   "8",
+   "24",
+   "12",
+   "6"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 29.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 8."
+  ]
+ },
+ "Q_CH14_001": {
+  "q": "Find the value of A: A plus 5 equals 12.",
+  "options": [
+   "7",
+   "17",
+   "5",
+   "60"
+  ],
+  "hints": [
+   "To find A, you need to get A alone on one side. What can you do to both sides?",
+   "Subtract 5 from both sides: A plus 5 minus 5 equals 12 minus 5.",
+   "A equals 12 minus 5, which is 7."
+  ],
+  "steps": [
+   "We need to isolate A. Subtract 5 from both sides. A plus 5 minus 5 equals 12 minus 5.",
+   "A equals 7.",
+   "Verify: 7 plus 5 equals 12. That is correct."
+  ]
+ },
+ "Q_CH14_001_V09": {
+  "q": "5 x plus 10 equals 85. What is x?",
+  "options": [
+   "17",
+   "75",
+   "15",
+   "20"
+  ],
+  "hints": [
+   "Here x is a hidden number. It was multiplied, then something was added. Undo those two things in reverse order to find x.",
+   "First undo the plus 10. Take 10 away from 85 to find what 5 x equals.",
+   "A similar example: 2 x plus 7 equals 25. Take 7 from both sides: 2 x equals 18. Divide by 2: x equals 9."
+  ],
+  "steps": [
+   "5 times x, plus 10, makes 85. Undo the plus 10 first by taking 10 from 85. 85 minus 10 equals 75.",
+   "So 5 times x is 75. Undo the times 5 by dividing. 75 divided by 5 equals 15.",
+   "Check by putting 15 back in. 5 times 15, plus 10, equals 85.",
+   "So x equals 15."
+  ]
+ },
+ "Q_CH14_002": {
+  "q": "Find the value of b: b minus 5 equals 12.",
+  "options": [
+   "minus 7",
+   "60",
+   "17",
+   "7"
+  ],
+  "hints": [
+   "b minus 5 equals 12. To find b, undo the subtraction by adding 5.",
+   "Add 5 to both sides: b minus 5 plus 5 equals 12 plus 5.",
+   "b equals 17."
+  ],
+  "steps": [
+   "Add 5 to both sides to isolate b. b minus 5 plus 5 equals 12 plus 5.",
+   "b equals 17.",
+   "Verify: 17 minus 5 equals 12. That is correct."
+  ]
+ },
+ "Q_CH14_002_V01": {
+  "q": "2 x plus 1 equals 11. What is x?",
+  "options": [
+   "5",
+   "2",
+   "10",
+   "7"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal. Work backwards, undoing one thing at a time.",
+   "First undo the plus 1. Take 1 away from 11 to find what 2 x equals.",
+   "A similar example: 2 x plus 7 equals 25. Take 7 from both sides: 2 x equals 18. Divide by 2: x equals 9."
+  ],
+  "steps": [
+   "2 times x, plus 1, makes 11. Undo the plus 1 first by taking 1 from 11. 11 minus 1 equals 10.",
+   "So 2 times x is 10. Undo the times 2 by dividing. 10 divided by 2 equals 5.",
+   "Check by putting 5 back in. 2 times 5, plus 1, equals 11.",
+   "So x equals 5."
+  ]
+ },
+ "Q_CH14_002_V06": {
+  "q": "6 x plus 19 equals 61. What is x?",
+  "options": [
+   "10",
+   "13",
+   "42",
+   "7"
+  ],
+  "hints": [
+   "Here x is a hidden number. It was multiplied, then something was added. Undo those two things in reverse order to find x.",
+   "First undo the plus 19. Take 19 away from 61 to find what 6 x equals.",
+   "A similar example: 3 x plus 4 equals 19. Take 4 from both sides: 3 x equals 15. Divide by 3: x equals 5."
+  ],
+  "steps": [
+   "6 times x, plus 19, makes 61. Undo the plus 19 first by taking 19 from 61. 61 minus 19 equals 42.",
+   "So 6 times x is 42. Undo the times 6 by dividing. 42 divided by 6 equals 7.",
+   "Check by putting 7 back in. 6 times 7, plus 19, equals 61.",
+   "So x equals 7."
+  ]
+ },
+ "Q_CH14_003": {
+  "q": "Find the value of c: 3 c equals 12.",
+  "options": [
+   "9",
+   "15",
+   "36",
+   "4"
+  ],
+  "hints": [
+   "3 c means 3 times c. If 3 times c equals 12, then c equals 12 divided by 3.",
+   "12 divided by 3 equals what?",
+   "c equals 4."
+  ],
+  "steps": [
+   "3 c equals 12 means 3 times c equals 12. Divide both sides by 3.",
+   "c equals 4.",
+   "Verify: 3 times 4 equals 12. That is correct."
+  ]
+ },
+ "Q_CH14_003_V02": {
+  "q": "6 x plus 19 equals 37. What is x?",
+  "options": [
+   "18",
+   "9",
+   "3",
+   "6"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal. Work backwards, undoing one thing at a time.",
+   "First undo the plus 19. Take 19 away from 37 to find what 6 x equals.",
+   "A similar example: 6 x plus 5 equals 47. Take 5 from both sides: 6 x equals 42. Divide by 6: x equals 7."
+  ],
+  "steps": [
+   "6 times x, plus 19, makes 37. Undo the plus 19 first by taking 19 from 37. 37 minus 19 equals 18.",
+   "So 6 times x is 18. Undo the times 6 by dividing. 18 divided by 6 equals 3.",
+   "Check by putting 3 back in. 6 times 3, plus 19, equals 37.",
+   "So x equals 3."
+  ]
+ },
+ "Q_CH14_004": {
+  "q": "Find the value of d: d over 3 equals 12.",
+  "options": [
+   "4",
+   "36",
+   "15",
+   "9"
+  ],
+  "hints": [
+   "d divided by 3 equals 12. To undo division, multiply!",
+   "Multiply both sides by 3: d equals 12 times 3.",
+   "d equals 36."
+  ],
+  "steps": [
+   "d over 3 equals 12. Multiply both sides by 3.",
+   "d equals 36.",
+   "Verify: 36 divided by 3 equals 12. That is correct."
+  ]
+ },
+ "Q_CH14_005": {
+  "q": "Find the value of e: 5 plus e equals 12.",
+  "options": [
+   "2",
+   "7",
+   "17",
+   "60"
+  ],
+  "hints": [
+   "5 plus e equals 12, which is the same as e plus 5 equals 12. Subtract 5 from both sides.",
+   "e equals 12 minus 5.",
+   "e equals 7."
+  ],
+  "steps": [
+   "Subtract 5 from both sides. 5 plus e minus 5 equals 12 minus 5.",
+   "e equals 7.",
+   "Verify: 5 plus 7 equals 12. That is correct."
+  ]
+ },
+ "Q_CH14_006": {
+  "q": "Find the value of f: 15 minus f equals 6.",
+  "options": [
+   "minus 9",
+   "21",
+   "9",
+   "6"
+  ],
+  "hints": [
+   "15 minus something equals 6. What number taken from 15 gives 6?",
+   "f equals 15 minus 6.",
+   "f equals 9. Check: 15 minus 9 equals 6. That is correct."
+  ],
+  "steps": [
+   "15 minus f equals 6. Rearrange: f equals 15 minus 6.",
+   "f equals 9.",
+   "Verify: 15 minus 9 equals 6. That is correct."
+  ]
+ },
+ "Q_CH14_007": {
+  "q": "Find the value of g: 32 over g equals 4.",
+  "options": [
+   "8",
+   "36",
+   "128",
+   "28"
+  ],
+  "hints": [
+   "32 divided by g equals 4. If 32 divided by what, equals 4, what number goes in the blank?",
+   "Think: 4 times what, equals 32?",
+   "4 times 8 equals 32, so g equals 8."
+  ],
+  "steps": [
+   "32 over g equals 4 means 32 equals 4 times g.",
+   "Divide both sides by 4: g equals 32 divided by 4, which is 8.",
+   "Verify: 32 divided by 8 equals 4. That is correct."
+  ]
+ },
+ "Q_CH14_007_V06": {
+  "q": "2 x plus 13 equals 33. What is x?",
+  "options": [
+   "10",
+   "12",
+   "20",
+   "16"
+  ],
+  "hints": [
+   "Here x is a hidden number. It was multiplied, then something was added. Undo those two things in reverse order to find x.",
+   "First undo the plus 13. Take 13 away from 33 to find what 2 x equals.",
+   "A similar example: 3 x plus 4 equals 19. Take 4 from both sides: 3 x equals 15. Divide by 3: x equals 5."
+  ],
+  "steps": [
+   "2 times x, plus 13, makes 33. Undo the plus 13 first by taking 13 from 33. 33 minus 13 equals 20.",
+   "So 2 times x is 20. Undo the times 2 by dividing. 20 divided by 2 equals 10.",
+   "Check by putting 10 back in. 2 times 10, plus 13, equals 33.",
+   "So x equals 10."
+  ]
+ },
+ "Q_CH14_008": {
+  "q": "Find the value of h: 7 plus h plus 2 equals 15.",
+  "options": [
+   "6",
+   "10",
+   "8",
+   "24"
+  ],
+  "hints": [
+   "First, simplify the left side: 7 plus 2 equals 9. So the equation becomes 9 plus h equals 15.",
+   "h equals 15 minus 9.",
+   "h equals 6."
+  ],
+  "steps": [
+   "Combine constants: 7 plus 2 equals 9. So 9 plus h equals 15.",
+   "h equals 15 minus 9, which is 6.",
+   "Verify: 7 plus 6 plus 2 equals 15. That is correct."
+  ]
+ },
+ "Q_CH14_008_V01": {
+  "q": "3 x plus 10 equals 25. What is x?",
+  "options": [
+   "15",
+   "10",
+   "8",
+   "5"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal. Work backwards, undoing one thing at a time.",
+   "First undo the plus 10. Take 10 away from 25 to find what 3 x equals.",
+   "A similar example: 2 x plus 7 equals 25. Take 7 from both sides: 2 x equals 18. Divide by 2: x equals 9."
+  ],
+  "steps": [
+   "3 times x, plus 10, makes 25. Undo the plus 10 first by taking 10 from 25. 25 minus 10 equals 15.",
+   "So 3 times x is 15. Undo the times 3 by dividing. 15 divided by 3 equals 5.",
+   "Check by putting 5 back in. 3 times 5, plus 10, equals 25.",
+   "So x equals 5."
+  ]
+ },
+ "Q_CH14_009": {
+  "q": "Find the value of x: 2 x plus 3 equals 11.",
+  "options": [
+   "7",
+   "14",
+   "5.5",
+   "4"
+  ],
+  "hints": [
+   "Two steps: first subtract 3 from both sides, then divide by 2.",
+   "Step 1: 2 x equals 11 minus 3, which is 8. Step 2: x equals 8 divided by 2.",
+   "x equals 4."
+  ],
+  "steps": [
+   "Subtract 3 from both sides: 2 x equals 11 minus 3, which is 8.",
+   "Divide both sides by 2: x equals 8 divided by 2, which is 4.",
+   "Verify: 2 times 4, plus 3, equals 8 plus 3, which is 11. That is correct."
+  ]
+ },
+ "Q_CH14_010": {
+  "q": "Find the value of m: 5 m minus 7 equals 18.",
+  "options": [
+   "11",
+   "25",
+   "5",
+   "2.2"
+  ],
+  "hints": [
+   "First add 7 to both sides, then divide by 5.",
+   "5 m equals 18 plus 7, which is 25. Then m equals 25 divided by 5.",
+   "m equals 5."
+  ],
+  "steps": [
+   "Add 7 to both sides: 5 m equals 18 plus 7, which is 25.",
+   "Divide by 5: m equals 25 divided by 5, which is 5.",
+   "Verify: 5 times 5, minus 7, equals 25 minus 7, which is 18. That is correct."
+  ]
+ },
+ "Q_CH14_010_V02": {
+  "q": "8 x plus 10 equals 50. What is x?",
+  "options": [
+   "5",
+   "6",
+   "40",
+   "13"
+  ],
+  "hints": [
+   "Here x is a hidden number. It was multiplied, then something was added. Undo those two things in reverse order to find x.",
+   "First undo the plus 10. Take 10 away from 50 to find what 8 x equals.",
+   "A similar example: 2 x plus 7 equals 25. Take 7 from both sides: 2 x equals 18. Divide by 2: x equals 9."
+  ],
+  "steps": [
+   "8 times x, plus 10, makes 50. Undo the plus 10 first by taking 10 from 50. 50 minus 10 equals 40.",
+   "So 8 times x is 40. Undo the times 8 by dividing. 40 divided by 8 equals 5.",
+   "Check by putting 5 back in. 8 times 5, plus 10, equals 50.",
+   "So x equals 5."
+  ]
+ },
+ "Q_CH14_010_V04": {
+  "q": "4 x plus 9 equals 17. What is x?",
+  "options": [
+   "6",
+   "2",
+   "4",
+   "8"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal. Work backwards, undoing one thing at a time.",
+   "First undo the plus 9. Take 9 away from 17 to find what 4 x equals.",
+   "A similar example: 3 x plus 4 equals 19. Take 4 from both sides: 3 x equals 15. Divide by 3: x equals 5."
+  ],
+  "steps": [
+   "4 times x, plus 9, makes 17. Undo the plus 9 first by taking 9 from 17. 17 minus 9 equals 8.",
+   "So 4 times x is 8. Undo the times 4 by dividing. 8 divided by 4 equals 2.",
+   "Check by putting 2 back in. 4 times 2, plus 9, equals 17.",
+   "So x equals 2."
+  ]
+ },
+ "Q_CH14_011": {
+  "q": "Find the value of x: x over 3, plus 5, equals 10.",
+  "options": [
+   "15",
+   "30",
+   "1.67",
+   "5"
+  ],
+  "hints": [
+   "Two steps: first subtract 5 to isolate x over 3, then multiply by 3.",
+   "x over 3 equals 10 minus 5, which is 5. Then x equals 5 times 3.",
+   "x equals 15."
+  ],
+  "steps": [
+   "Subtract 5 from both sides: x over 3 equals 10 minus 5, which is 5.",
+   "Multiply both sides by 3: x equals 5 times 3, which is 15.",
+   "Verify: 15 over 3, plus 5, equals 5 plus 5, which is 10. That is correct."
+  ]
+ },
+ "Q_CH14_012": {
+  "q": "Find the value of y: y over 4, minus 8, equals 0.",
+  "options": [
+   "12",
+   "8",
+   "32",
+   "2"
+  ],
+  "hints": [
+   "If y over 4, minus 8, equals 0, then y over 4 equals 8. Now solve for y.",
+   "y over 4 equals 8 means y equals 8 times 4.",
+   "y equals 32."
+  ],
+  "steps": [
+   "Add 8 to both sides: y over 4 equals 0 plus 8, which is 8.",
+   "Multiply both sides by 4: y equals 8 times 4, which is 32.",
+   "Verify: 32 over 4, minus 8, equals 8 minus 8, which is 0. That is correct."
+  ]
+ },
+ "Q_CH14_012_V08": {
+  "q": "7 x plus 5 equals 110. What is x?",
+  "options": [
+   "15",
+   "17",
+   "22",
+   "105"
+  ],
+  "hints": [
+   "Here x is a hidden number. It was multiplied, then something was added. Undo those two things in reverse order to find x.",
+   "First undo the plus 5. Take 5 away from 110 to find what 7 x equals.",
+   "A similar example: 2 x plus 7 equals 25. Take 7 from both sides: 2 x equals 18. Divide by 2: x equals 9."
+  ],
+  "steps": [
+   "7 times x, plus 5, makes 110. Undo the plus 5 first by taking 5 from 110. 110 minus 5 equals 105.",
+   "So 7 times x is 105. Undo the times 7 by dividing. 105 divided by 7 equals 15.",
+   "Check by putting 15 back in. 7 times 15, plus 5, equals 110.",
+   "So x equals 15."
+  ]
+ },
+ "Q_CH14_013": {
+  "q": "Find the value of z: z equals 12 minus 2 z.",
+  "options": [
+   "3",
+   "4",
+   "12",
+   "6"
+  ],
+  "hints": [
+   "z is on both sides! Bring all z terms to one side: add 2 z to both sides.",
+   "z plus 2 z equals 12, so 3 z equals 12.",
+   "z equals 12 divided by 3, which is 4."
+  ],
+  "steps": [
+   "Add 2 z to both sides: z plus 2 z equals 12.",
+   "Combine: 3 z equals 12.",
+   "Divide by 3: z equals 4.",
+   "Verify: the left side is 4. The right side is 12 minus 2 times 4, which is 12 minus 8, which is 4. That is correct."
+  ]
+ },
+ "Q_CH14_013_V09": {
+  "q": "5 x plus 8 equals 63. What is x?",
+  "options": [
+   "11",
+   "55",
+   "16",
+   "12"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal. Work backwards, undoing one thing at a time.",
+   "First undo the plus 8. Take 8 away from 63 to find what 5 x equals.",
+   "A similar example: 3 x plus 4 equals 19. Take 4 from both sides: 3 x equals 15. Divide by 3: x equals 5."
+  ],
+  "steps": [
+   "5 times x, plus 8, makes 63. Undo the plus 8 first by taking 8 from 63. 63 minus 8 equals 55.",
+   "So 5 times x is 55. Undo the times 5 by dividing. 55 divided by 5 equals 11.",
+   "Check by putting 11 back in. 5 times 11, plus 8, equals 63.",
+   "So x equals 11."
+  ]
+ },
+ "Q_CH14_014": {
+  "q": "Find the value of A: 6 A minus 32 equals 2 A.",
+  "options": [
+   "16",
+   "8",
+   "4",
+   "6"
+  ],
+  "hints": [
+   "Get all A terms on one side: subtract 2 A from both sides.",
+   "6 A minus 2 A minus 32 equals 0, so 4 A minus 32 equals 0, so 4 A equals 32.",
+   "A equals 32 divided by 4, which is 8."
+  ],
+  "steps": [
+   "Subtract 2 A from both sides: 6 A minus 2 A minus 32 equals 0. So 4 A minus 32 equals 0.",
+   "Add 32: 4 A equals 32.",
+   "Divide by 4: A equals 8.",
+   "Verify: the left side is 6 times 8, minus 32, which is 48 minus 32, which is 16. The right side is 2 times 8, which is 16. That is correct."
+  ]
+ },
+ "Q_CH14_014_V09": {
+  "q": "4 x plus 9 equals 41. What is x?",
+  "options": [
+   "8",
+   "32",
+   "12",
+   "10"
+  ],
+  "hints": [
+   "Here x is a hidden number. It was multiplied, then something was added. Undo those two things in reverse order to find x.",
+   "First undo the plus 9. Take 9 away from 41 to find what 4 x equals.",
+   "A similar example: 3 x plus 4 equals 19. Take 4 from both sides: 3 x equals 15. Divide by 3: x equals 5."
+  ],
+  "steps": [
+   "4 times x, plus 9, makes 41. Undo the plus 9 first by taking 9 from 41. 41 minus 9 equals 32.",
+   "So 4 times x is 32. Undo the times 4 by dividing. 32 divided by 4 equals 8.",
+   "Check by putting 8 back in. 4 times 8, plus 9, equals 41.",
+   "So x equals 8."
+  ]
+ },
+ "Q_CH14_015": {
+  "q": "Find the value of b: 4 b plus 5 equals 2 b plus 19.",
+  "options": [
+   "12",
+   "3",
+   "4",
+   "7"
+  ],
+  "hints": [
+   "Move all b terms to one side and all numbers to the other side.",
+   "4 b minus 2 b equals 19 minus 5, so 2 b equals 14.",
+   "b equals 14 divided by 2, which is 7."
+  ],
+  "steps": [
+   "Subtract 2 b from both sides: 4 b minus 2 b plus 5 equals 19.",
+   "Subtract 5 from both sides: 2 b equals 14.",
+   "Divide by 2: b equals 7.",
+   "Verify: the left side is 4 times 7, plus 5, which is 33. The right side is 2 times 7, plus 19, which is 33. That is correct."
+  ]
+ },
+ "Q_CH14_016": {
+  "q": "Find the value of c: 7 plus 5 c equals 3 c plus 25.",
+  "options": [
+   "6",
+   "4",
+   "9",
+   "16"
+  ],
+  "hints": [
+   "Move c terms to one side: 5 c minus 3 c equals 25 minus 7.",
+   "2 c equals 18.",
+   "c equals 18 divided by 2, which is 9."
+  ],
+  "steps": [
+   "Subtract 3 c from both sides: 7 plus 2 c equals 25.",
+   "Subtract 7 from both sides: 2 c equals 18.",
+   "Divide by 2: c equals 9.",
+   "Verify: the left side is 7 plus 5 times 9, which is 52. The right side is 3 times 9, plus 25, which is 52. That is correct."
+  ]
+ },
+ "Q_CH14_017": {
+  "q": "If x equals 5, which equation is true?",
+  "options": [
+   "2 x minus 3 equals 7",
+   "x plus 10 equals 16",
+   "3 x plus 2 equals 18",
+   "4 x plus 1 equals 20"
+  ],
+  "hints": [
+   "Substitute x equals 5 into each equation, and check which one makes the left side equal the right side.",
+   "A: 3 times 5, plus 2, equals 17, which is not 18. B: 2 times 5, minus 3, equals 7. That is correct. C: 4 times 5, plus 1, equals 21, which is not 20. D: 5 plus 10 equals 15, which is not 16.",
+   "Only B is true: 2 times 5, minus 3, equals 10 minus 3, which is 7. That is correct."
+  ],
+  "steps": [
+   "Check A: 3 times 5, plus 2, equals 15 plus 2, which is 17. That is not equal to 18.",
+   "Check B: 2 times 5, minus 3, equals 10 minus 3, which is 7, the same as 7. That is correct.",
+   "B is the correct equation. 2 x minus 3 equals 7."
+  ]
+ },
+ "Q_CH14_018": {
+  "q": "A number added to 8 gives 23. What is the number?",
+  "options": [
+   "3",
+   "31",
+   "15",
+   "184"
+  ],
+  "hints": [
+   "Write it as an equation: x plus 8 equals 23.",
+   "x equals 23 minus 8.",
+   "x equals 15."
+  ],
+  "steps": [
+   "Form equation: x plus 8 equals 23.",
+   "Subtract 8: x equals 23 minus 8, which is 15.",
+   "The number is 15."
+  ]
+ },
+ "Q_CH14_019": {
+  "q": "Seven times a number is 63. What is the number?",
+  "options": [
+   "9",
+   "441",
+   "70",
+   "56"
+  ],
+  "hints": [
+   "Seven times a number equals 63 means 7 times n equals 63.",
+   "n equals 63 divided by 7.",
+   "n equals 9."
+  ],
+  "steps": [
+   "Form equation: 7 n equals 63.",
+   "Divide by 7: n equals 63 divided by 7, which is 9.",
+   "The number is 9."
+  ]
+ },
+ "Q_CH14_020": {
+  "q": "Three times a number decreased by 5 is 16. What is the number?",
+  "options": [
+   "21",
+   "11",
+   "7",
+   "3.67"
+  ],
+  "hints": [
+   "Form the equation: 3 n minus 5 equals 16. First add 5 to both sides.",
+   "3 n equals 16 plus 5, which is 21. Now divide by 3.",
+   "n equals 21 divided by 3, which is 7."
+  ],
+  "steps": [
+   "Form equation: 3 n minus 5 equals 16.",
+   "Add 5: 3 n equals 21.",
+   "Divide by 3: n equals 7.",
+   "Verify: 3 times 7, minus 5, equals 21 minus 5, which is 16. That is correct."
+  ]
+ },
+ "Q_CH14_021": {
+  "q": "Riya's age is 3 years more than twice her brother's age. If Riya is 17 years old, how old is her brother?",
+  "options": [
+   "14",
+   "7",
+   "10",
+   "5"
+  ],
+  "hints": [
+   "Let brother's age be x. Riya's age is twice brother's age plus 3, which is 2 x plus 3. And Riya is 17.",
+   "So 2 x plus 3 equals 17. Subtract 3: 2 x equals 14.",
+   "x equals 14 divided by 2, which is 7."
+  ],
+  "steps": [
+   "Let brother's age be x. Form equation: 2 x plus 3 equals 17.",
+   "Subtract 3: 2 x equals 14.",
+   "Divide by 2: x equals 7.",
+   "Brother is 7 years old. Check: 2 times 7, plus 3, equals 17. That is correct."
+  ]
+ },
+ "Q_CH14_022_V06": {
+  "q": "8 x plus 16 equals 136. What is x?",
+  "options": [
+   "23",
+   "15",
+   "120",
+   "17"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal. Work backwards, undoing one thing at a time.",
+   "First undo the plus 16. Take 16 away from 136 to find what 8 x equals.",
+   "A similar example: 2 x plus 7 equals 25. Take 7 from both sides: 2 x equals 18. Divide by 2: x equals 9."
+  ],
+  "steps": [
+   "8 times x, plus 16, makes 136. Undo the plus 16 first by taking 16 from 136. 136 minus 16 equals 120.",
+   "So 8 times x is 120. Undo the times 8 by dividing. 120 divided by 8 equals 15.",
+   "Check by putting 15 back in. 8 times 15, plus 16, equals 136.",
+   "So x equals 15."
+  ]
+ },
+ "Q_CH14_023": {
+  "q": "Aman has some money. He spends 45 rupees and is left with 78 rupees. How much did he have initially?",
+  "options": [
+   "33 rupees",
+   "123 rupees",
+   "3510 rupees",
+   "45 rupees"
+  ],
+  "hints": [
+   "He had some money, x, spent 45, left with 78. So x minus 45 equals 78.",
+   "x equals 78 plus 45.",
+   "x equals 123."
+  ],
+  "steps": [
+   "Form equation: x minus 45 equals 78.",
+   "Add 45 to both sides: x equals 78 plus 45, which is 123.",
+   "He had 123 rupees. Verify: 123 minus 45 equals 78. That is correct."
+  ]
+ },
+ "Q_CH14_025": {
+  "q": "The sum of three consecutive numbers is 36. What is the smallest number?",
+  "options": [
+   "10",
+   "12",
+   "11",
+   "13"
+  ],
+  "hints": [
+   "Let the three consecutive numbers be n, n plus 1, and n plus 2. Their sum equals 36.",
+   "n, plus n plus 1, plus n plus 2, equals 36. So 3 n plus 3 equals 36.",
+   "3 n equals 33, so n equals 11."
+  ],
+  "steps": [
+   "Let the numbers be n, n plus 1, and n plus 2. n, plus n plus 1, plus n plus 2, equals 36.",
+   "Simplify: 3 n plus 3 equals 36.",
+   "Subtract 3: 3 n equals 33.",
+   "Divide by 3: n equals 11. The numbers are 11, 12 and 13."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_008_02_p2b": {
+  "q": "If the square root of x, plus 1, equals 6, find x.",
+  "options": [
+   "25",
+   "36",
+   "5",
+   "26"
+  ],
+  "hints": [
+   "First isolate the square root of x by subtracting 1 from both sides.",
+   "Then square both sides to find x.",
+   "If the square root of x equals 5, then x equals 5 squared."
+  ],
+  "steps": [
+   "The square root of x, plus 1, equals 6, so the square root of x equals 5.",
+   "x equals 5 squared, which is 25."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_008_03_p2b": {
+  "q": "If the square root of x, plus 20, equals 35, find x.",
+  "options": [
+   "1225",
+   "15",
+   "245",
+   "225"
+  ],
+  "hints": [
+   "First isolate the square root of x by subtracting 20 from both sides.",
+   "Then square both sides to find x.",
+   "If the square root of x equals 15, then x equals 15 squared."
+  ],
+  "steps": [
+   "The square root of x, plus 20, equals 35, so the square root of x equals 15.",
+   "x equals 15 squared, which is 225."
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_035_04_b2": {
+  "q": "Solve: 7 x minus 8 equals 34.",
+  "options": [
+   "6",
+   "3",
+   "4",
+   "42"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 8 to the right side, it becomes plus 8.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 8 to both sides. 7 x equals 34 plus 8, which is 42.",
+   "Divide both sides by 7. x equals 42 divided by 7, which is 6."
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_039_03": {
+  "q": "Solve: 5 x plus 1 equals 41.",
+  "options": [
+   "9",
+   "7",
+   "40",
+   "8"
+  ],
+  "hints": [
+   "First, move 1 to the other side by subtracting it from both sides.",
+   "After subtracting: 5 x equals 40. Now divide both sides by 5.",
+   "Think: 5 times what number gives 40?"
+  ],
+  "steps": [
+   "Subtract 1 from both sides. 5 x equals 41 minus 1, which is 40.",
+   "Divide both sides by 5. x equals 40 divided by 5, which is 8."
+  ]
+ },
+ "VAR_EXT_G4_FP_2017_014_01": {
+  "q": "Solve: 3 x minus 10 equals 14.",
+  "options": [
+   "1",
+   "8",
+   "24",
+   "4"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 10 to the right side, it becomes plus 10.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 10 to both sides. 3 x equals 14 plus 10, which is 24.",
+   "Divide both sides by 3. x equals 24 divided by 3, which is 8."
+  ]
+ },
+ "VAR_EXT_G4_FP_2017_015_04_b2": {
+  "q": "Solve: 6 x plus 18 equals 42.",
+  "options": [
+   "4",
+   "7",
+   "10",
+   "24"
+  ],
+  "hints": [
+   "First, move 18 to the other side by subtracting it from both sides.",
+   "After subtracting: 6 x equals 24. Now divide both sides by 6.",
+   "Think: 6 times what number gives 24?"
+  ],
+  "steps": [
+   "Subtract 18 from both sides. 6 x equals 42 minus 18, which is 24.",
+   "Divide both sides by 6. x equals 24 divided by 6, which is 4."
+  ]
+ },
+ "VAR_EXT_G4_FP_2018_025_02_b2": {
+  "q": "Solve: 5 x minus 11 equals 44.",
+  "options": [
+   "55",
+   "8",
+   "11",
+   "6"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 11 to the right side, it becomes plus 11.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 11 to both sides. 5 x equals 44 plus 11, which is 55.",
+   "Divide both sides by 5. x equals 55 divided by 5, which is 11."
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_016_01": {
+  "q": "Solve: 2 x minus 10 equals 12.",
+  "options": [
+   "1",
+   "22",
+   "11",
+   "6"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 10 to the right side, it becomes plus 10.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 10 to both sides. 2 x equals 12 plus 10, which is 22.",
+   "Divide both sides by 2. x equals 22 divided by 2, which is 11."
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_020_03": {
+  "q": "Solve: 2 x plus 19 equals 31.",
+  "options": [
+   "15",
+   "12",
+   "6",
+   "25"
+  ],
+  "hints": [
+   "First, move 19 to the other side by subtracting it from both sides.",
+   "After subtracting: 2 x equals 12. Now divide both sides by 2.",
+   "Think: 2 times what number gives 12?"
+  ],
+  "steps": [
+   "Subtract 19 from both sides. 2 x equals 31 minus 19, which is 12.",
+   "Divide both sides by 2. x equals 12 divided by 2, which is 6."
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_021_03": {
+  "q": "Solve: 7 x plus 13 equals 83.",
+  "options": [
+   "11",
+   "13",
+   "10",
+   "70"
+  ],
+  "hints": [
+   "First, move 13 to the other side by subtracting it from both sides.",
+   "After subtracting: 7 x equals 70. Now divide both sides by 7.",
+   "Think: 7 times what number gives 70?"
+  ],
+  "steps": [
+   "Subtract 13 from both sides. 7 x equals 83 minus 13, which is 70.",
+   "Divide both sides by 7. x equals 70 divided by 7, which is 10."
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_021_03_b2": {
+  "q": "Solve: 7 x plus 8 equals 43.",
+  "options": [
+   "7",
+   "35",
+   "5",
+   "6"
+  ],
+  "hints": [
+   "First, move 8 to the other side by subtracting it from both sides.",
+   "After subtracting: 7 x equals 35. Now divide both sides by 7.",
+   "Think: 7 times what number gives 35?"
+  ],
+  "steps": [
+   "Subtract 8 from both sides. 7 x equals 43 minus 8, which is 35.",
+   "Divide both sides by 7. x equals 35 divided by 7, which is 5."
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_021_05_b2": {
+  "q": "Solve: 5 x plus 19 equals 59.",
+  "options": [
+   "40",
+   "11",
+   "15",
+   "8"
+  ],
+  "hints": [
+   "First, move 19 to the other side by subtracting it from both sides.",
+   "After subtracting: 5 x equals 40. Now divide both sides by 5.",
+   "Think: 5 times what number gives 40?"
+  ],
+  "steps": [
+   "Subtract 19 from both sides. 5 x equals 59 minus 19, which is 40.",
+   "Divide both sides by 5. x equals 40 divided by 5, which is 8."
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_016_05_b2": {
+  "q": "Solve: 6 x plus 5 equals 17.",
+  "options": [
+   "1",
+   "3",
+   "12",
+   "2"
+  ],
+  "hints": [
+   "First, move 5 to the other side by subtracting it from both sides.",
+   "After subtracting: 6 x equals 12. Now divide both sides by 6.",
+   "Think: 6 times what number gives 12?"
+  ],
+  "steps": [
+   "Subtract 5 from both sides. 6 x equals 17 minus 5, which is 12.",
+   "Divide both sides by 6. x equals 12 divided by 6, which is 2."
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_022_04": {
+  "q": "Solve: 7 x minus 2 equals 82.",
+  "options": [
+   "84",
+   "12",
+   "11",
+   "13"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 2 to the right side, it becomes plus 2.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 2 to both sides. 7 x equals 82 plus 2, which is 84.",
+   "Divide both sides by 7. x equals 84 divided by 7, which is 12."
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_037_04": {
+  "q": "Solve: 4 x minus 8 equals 20.",
+  "options": [
+   "28",
+   "3",
+   "7",
+   "5"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 8 to the right side, it becomes plus 8.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 8 to both sides. 4 x equals 20 plus 8, which is 28.",
+   "Divide both sides by 4. x equals 28 divided by 4, which is 7."
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_016_04": {
+  "q": "Solve: 2 x minus 4 equals 2.",
+  "options": [
+   "6",
+   "minus 1",
+   "1",
+   "3"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 4 to the right side, it becomes plus 4.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 4 to both sides. 2 x equals 2 plus 4, which is 6.",
+   "Divide both sides by 2. x equals 6 divided by 2, which is 3."
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_016_04_b2": {
+  "q": "Solve: 2 x plus 1 equals 9.",
+  "options": [
+   "5",
+   "3",
+   "4",
+   "8"
+  ],
+  "hints": [
+   "First, move 1 to the other side by subtracting it from both sides.",
+   "After subtracting: 2 x equals 8. Now divide both sides by 2.",
+   "Think: 2 times what number gives 8?"
+  ],
+  "steps": [
+   "Subtract 1 from both sides. 2 x equals 9 minus 1, which is 8.",
+   "Divide both sides by 2. x equals 8 divided by 2, which is 4."
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_035_03_b2": {
+  "q": "Solve: 5 x minus 4 equals 56.",
+  "options": [
+   "12",
+   "10",
+   "11",
+   "60"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 4 to the right side, it becomes plus 4.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 4 to both sides. 5 x equals 56 plus 4, which is 60.",
+   "Divide both sides by 5. x equals 60 divided by 5, which is 12."
+  ]
+ },
+ "VAR_EXT_G4_WS2_CH14_002_03_b2": {
+  "q": "Solve: 8 x plus 5 equals 29.",
+  "options": [
+   "4",
+   "3",
+   "2",
+   "24"
+  ],
+  "hints": [
+   "First, move 5 to the other side by subtracting it from both sides.",
+   "After subtracting: 8 x equals 24. Now divide both sides by 8.",
+   "Think: 8 times what number gives 24?"
+  ],
+  "steps": [
+   "Subtract 5 from both sides. 8 x equals 29 minus 5, which is 24.",
+   "Divide both sides by 8. x equals 24 divided by 8, which is 3."
+  ]
+ },
+ "VAR_EXT_G4_WS2_CH14_002_04": {
+  "q": "Solve: 6 x minus 9 equals 21.",
+  "options": [
+   "5",
+   "30",
+   "3",
+   "2"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 9 to the right side, it becomes plus 9.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 9 to both sides. 6 x equals 21 plus 9, which is 30.",
+   "Divide both sides by 6. x equals 30 divided by 6, which is 5."
+  ]
+ },
+ "VAR_G4_vary_equation_V106": {
+  "q": "Find the value of x: 3 x plus 13 equals 73.",
+  "options": [
+   "20",
+   "40",
+   "19",
+   "21"
+  ],
+  "hints": [
+   "Here x is a hidden number. It was multiplied, then something was added. Undo those two things in reverse order to find x.",
+   "First undo the plus 13. Take 13 away from 73 to find what 3 x equals.",
+   "A similar example: 3 x plus 4 equals 19. Take 4 from both sides: 3 x equals 15. Divide by 3: x equals 5."
+  ],
+  "steps": [
+   "3 times x, plus 13, makes 73. Undo the plus 13 first by taking 13 from 73. 73 minus 13 equals 60.",
+   "So 3 times x is 60. Undo the times 3 by dividing. 60 divided by 3 equals 20.",
+   "Check by putting 20 back in. 3 times 20, plus 13, equals 73.",
+   "So x equals 20."
+  ]
+ },
+ "VAR_G4_vary_equation_V110": {
+  "q": "Find the value of x: 4 x plus 30 equals 110.",
+  "options": [
+   "20",
+   "21",
+   "40",
+   "19"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal. Work backwards, undoing one thing at a time.",
+   "First undo the plus 30. Take 30 away from 110 to find what 4 x equals.",
+   "A similar example: 3 x plus 4 equals 19. Take 4 from both sides: 3 x equals 15. Divide by 3: x equals 5."
+  ],
+  "steps": [
+   "4 times x, plus 30, makes 110. Undo the plus 30 first by taking 30 from 110. 110 minus 30 equals 80.",
+   "So 4 times x is 80. Undo the times 4 by dividing. 80 divided by 4 equals 20.",
+   "Check by putting 20 back in. 4 times 20, plus 30, equals 110.",
+   "So x equals 20."
+  ]
+ },
+ "VAR_G4_vary_equation_V130": {
+  "q": "Find the value of x: 2 x plus 6 equals 14.",
+  "options": [
+   "5",
+   "4",
+   "3",
+   "8"
+  ],
+  "hints": [
+   "Here x is a hidden number. It was multiplied, then something was added. Undo those two things in reverse order to find x.",
+   "First undo the plus 6. Take 6 away from 14 to find what 2 x equals.",
+   "A similar example: 2 x plus 7 equals 25. Take 7 from both sides: 2 x equals 18. Divide by 2: x equals 9."
+  ],
+  "steps": [
+   "2 times x, plus 6, makes 14. Undo the plus 6 first by taking 6 from 14. 14 minus 6 equals 8.",
+   "So 2 times x is 8. Undo the times 2 by dividing. 8 divided by 2 equals 4.",
+   "Check by putting 4 back in. 2 times 4, plus 6, equals 14.",
+   "So x equals 4."
+  ]
+ },
+ "VAR_G4_vary_equation_V167": {
+  "q": "Find the value of x: 5 x plus 15 equals 85.",
+  "options": [
+   "15",
+   "28",
+   "14",
+   "13"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal. Work backwards, undoing one thing at a time.",
+   "First undo the plus 15. Take 15 away from 85 to find what 5 x equals.",
+   "A similar example: 3 x plus 4 equals 19. Take 4 from both sides: 3 x equals 15. Divide by 3: x equals 5."
+  ],
+  "steps": [
+   "5 times x, plus 15, makes 85. Undo the plus 15 first by taking 15 from 85. 85 minus 15 equals 70.",
+   "So 5 times x is 70. Undo the times 5 by dividing. 70 divided by 5 equals 14.",
+   "Check by putting 14 back in. 5 times 14, plus 15, equals 85.",
+   "So x equals 14."
+  ]
+ },
+ "VAR_G4_vary_equation_V181": {
+  "q": "Find the value of x: 2 x plus 13 equals 45.",
+  "options": [
+   "15",
+   "32",
+   "17",
+   "16"
+  ],
+  "hints": [
+   "Here x is a hidden number. It was multiplied, then something was added. Undo those two things in reverse order to find x.",
+   "First undo the plus 13. Take 13 away from 45 to find what 2 x equals.",
+   "A similar example: 3 x plus 4 equals 19. Take 4 from both sides: 3 x equals 15. Divide by 3: x equals 5."
+  ],
+  "steps": [
+   "2 times x, plus 13, makes 45. Undo the plus 13 first by taking 13 from 45. 45 minus 13 equals 32.",
+   "So 2 times x is 32. Undo the times 2 by dividing. 32 divided by 2 equals 16.",
+   "Check by putting 16 back in. 2 times 16, plus 13, equals 45.",
+   "So x equals 16."
+  ]
+ },
+ "VAR_G4_vary_equation_V24": {
+  "q": "Find the value of x: 5 x plus 12 equals 22.",
+  "options": [
+   "1",
+   "3",
+   "2",
+   "4"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal. Work backwards, undoing one thing at a time.",
+   "First undo the plus 12. Take 12 away from 22 to find what 5 x equals.",
+   "A similar example: 3 x plus 4 equals 19. Take 4 from both sides: 3 x equals 15. Divide by 3: x equals 5."
+  ],
+  "steps": [
+   "5 times x, plus 12, makes 22. Undo the plus 12 first by taking 12 from 22. 22 minus 12 equals 10.",
+   "So 5 times x is 10. Undo the times 5 by dividing. 10 divided by 5 equals 2.",
+   "Check by putting 2 back in. 5 times 2, plus 12, equals 22.",
+   "So x equals 2."
+  ]
+ },
+ "VAR_G4_vary_equation_V31": {
+  "q": "Find the value of x: 4 x plus 14 equals 30.",
+  "options": [
+   "4",
+   "3",
+   "5",
+   "8"
+  ],
+  "hints": [
+   "Here x is a hidden number. It was multiplied, then something was added. Undo those two things in reverse order to find x.",
+   "First undo the plus 14. Take 14 away from 30 to find what 4 x equals.",
+   "A similar example: 2 x plus 7 equals 25. Take 7 from both sides: 2 x equals 18. Divide by 2: x equals 9."
+  ],
+  "steps": [
+   "4 times x, plus 14, makes 30. Undo the plus 14 first by taking 14 from 30. 30 minus 14 equals 16.",
+   "So 4 times x is 16. Undo the times 4 by dividing. 16 divided by 4 equals 4.",
+   "Check by putting 4 back in. 4 times 4, plus 14, equals 30.",
+   "So x equals 4."
+  ]
+ },
+ "VAR_G4_vary_equation_V35": {
+  "q": "Find the value of x: 3 x plus 5 equals 65.",
+  "options": [
+   "21",
+   "19",
+   "40",
+   "20"
+  ],
+  "hints": [
+   "This is an equation. Find the number x that makes both sides equal. Work backwards, undoing one thing at a time.",
+   "First undo the plus 5. Take 5 away from 65 to find what 3 x equals.",
+   "A similar example: 3 x plus 4 equals 19. Take 4 from both sides: 3 x equals 15. Divide by 3: x equals 5."
+  ],
+  "steps": [
+   "3 times x, plus 5, makes 65. Undo the plus 5 first by taking 5 from 65. 65 minus 5 equals 60.",
+   "So 3 times x is 60. Undo the times 3 by dividing. 60 divided by 3 equals 20.",
+   "Check by putting 20 back in. 3 times 20, plus 5, equals 65.",
+   "So x equals 20."
+  ]
+ }
+}

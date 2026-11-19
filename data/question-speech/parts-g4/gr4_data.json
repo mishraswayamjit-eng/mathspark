@@ -1,0 +1,1508 @@
+{
+ "BOOST_EXT_G4_FP_2016_032_06": {
+  "q": "Find the average of: 44, 26, 51, 56, 48",
+  "options": [
+   "46",
+   "45",
+   "56",
+   "26"
+  ],
+  "hints": [
+   "Average equals Sum of all numbers divided by Count of numbers.",
+   "Add up all 5 numbers first.",
+   "Then divide the total by 5."
+  ],
+  "steps": [
+   "Sum equals 44 plus 26 plus 51 plus 56 plus 48, which is 225",
+   "Average equals 225 divided by 5, which is 45"
+  ]
+ },
+ "BOOST_EXT_G4_FP_2016_032_07": {
+  "q": "The average of 4 numbers is 58. If 3 of the numbers are 71, 56, 72, find the missing number.",
+  "options": [
+   "33",
+   "66",
+   "232",
+   "58"
+  ],
+  "hints": [
+   "First find the total: Average times Number of items.",
+   "Then subtract the known numbers from the total.",
+   "Total should be 58 times 4 equals 232."
+  ],
+  "steps": [
+   "Total equals Average times Count, which is 58 times 4, which is 232",
+   "The missing number equals 232 minus the total of 71 plus 56 plus 72. That is 232 minus 199, which is 33"
+  ]
+ },
+ "BOOST_EXT_G4_FP_2016_032_08": {
+  "q": "The average of 4 numbers is 49. When a new number 59 is added, what is the new average?",
+  "options": [
+   "51",
+   "59",
+   "54",
+   "49"
+  ],
+  "hints": [
+   "Find the old total first: 49 times 4.",
+   "Add 59 to get the new total.",
+   "Divide new total by 5, the new count."
+  ],
+  "steps": [
+   "Old total equals 49 times 4, which is 196",
+   "New total equals 196 plus 59, which is 255",
+   "New average equals 255 divided by 5, which is 51"
+  ]
+ },
+ "G4A_DATA_001": {
+  "q": "Rohit's runs in five cricket matches were: Match 1: 34, Match 2: 52, Match 3: 47, Match 4: 25, Match 5: 43. In which match did he score the most runs?",
+  "options": [
+   "Match 3",
+   "Match 2",
+   "Match 5",
+   "Match 4"
+  ],
+  "hints": [
+   "This asks you to find the biggest number in a list and say which match it belongs to.",
+   "Compare the tens digits of the five scores first. Which scores have the biggest tens digit?",
+   "Example: Scores of Game 1: 18, Game 2: 31, Game 3: 27. The biggest number is 31, so the most runs came in Game 2."
+  ],
+  "steps": [
+   "Look at the tens digits: 34, 52, 47, 25 and 43 have tens digits 3, 5, 4, 2 and 4.",
+   "The biggest tens digit is 5, so 52 is the biggest score.",
+   "52 runs were scored in Match 2, so the answer is Match 2."
+  ]
+ },
+ "G4A_DATA_002": {
+  "q": "In a pictograph, each picture of a book stands for 5 books sold. Monday has 4 pictures, Tuesday has 6 pictures, Wednesday has 3 pictures and Thursday has 5 pictures. On which day were the fewest books sold?",
+  "options": [
+   "Monday",
+   "Tuesday",
+   "Thursday",
+   "Wednesday"
+  ],
+  "hints": [
+   "Every picture stands for the same number of books, so think about what the number of pictures tells you.",
+   "The day with the fewest pictures has the fewest books. Compare 4, 6, 3 and 5.",
+   "Example: Each picture stands for 2 kites. Ravi has 7 pictures, Sita has 2 pictures and Anu has 5 pictures. Sita has the fewest pictures, so Sita has the fewest kites."
+  ],
+  "steps": [
+   "Each picture stands for the same number of books, so fewer pictures means fewer books.",
+   "The numbers of pictures are 4, 6, 3 and 5. The smallest is 3.",
+   "Wednesday has 3 pictures, which is 15 books. 3 times 5 equals 15.",
+   "The fewest books were sold on Wednesday."
+  ]
+ },
+ "G4A_DATA_003": {
+  "q": "In a tally chart, each bundle stands for 5 and each single stroke stands for 1. The row for parrots has 3 bundles and 2 single strokes. How many parrots were counted?",
+  "options": [
+   "17",
+   "5",
+   "15",
+   "32"
+  ],
+  "hints": [
+   "A tally chart counts in fives. Work out the bundles first, then add the single strokes.",
+   "Find how many the 3 bundles stand for by multiplying 3 by 5.",
+   "Example: 2 bundles and 4 single strokes. The bundles give 2 times 5 equals 10, and 10 plus 4 equals 14."
+  ],
+  "steps": [
+   "Each bundle stands for 5, so 3 bundles stand for 15. 3 times 5 equals 15.",
+   "Add the 2 single strokes. 15 plus 2 equals 17.",
+   "17 parrots were counted."
+  ]
+ },
+ "G4A_DATA_004": {
+  "q": "The number of children present in Class 4 was: Monday 38, Tuesday 35, Wednesday 40, Thursday 32. How many more children were present on Wednesday than on Tuesday?",
+  "options": [
+   "75",
+   "8",
+   "5",
+   "3"
+  ],
+  "hints": [
+   "The words 'how many more' ask you to compare two numbers from the list.",
+   "Pick out the numbers for Wednesday and Tuesday only. They are 40 and 35.",
+   "Example: Monday 26, Tuesday 19. To find how many more on Monday, subtract: 26 minus 19 equals 7."
+  ],
+  "steps": [
+   "Wednesday has 40 children and Tuesday has 35 children.",
+   "Subtract to find how many more. 40 minus 35 equals 5.",
+   "5 more children were present on Wednesday."
+  ]
+ },
+ "G4A_DATA_005": {
+  "q": "A bar graph shows the samosas sold at a stall: Monday 12, Tuesday 15, Wednesday 9, Thursday 15, Friday 11. Which two days have bars of the same height?",
+  "options": [
+   "Tuesday and Thursday",
+   "Monday and Friday",
+   "Monday and Thursday",
+   "Wednesday and Friday"
+  ],
+  "hints": [
+   "Bars of the same height show the same number. Look for a number that appears twice.",
+   "Read the five numbers one by one: 12, 15, 9, 15, 11. Which number do you see two times?",
+   "Example: Red 7, Blue 4, Green 7, Yellow 6. The number 7 appears twice, so the bars for Red and Green are equally tall."
+  ],
+  "steps": [
+   "Bars are equally tall when their numbers are equal.",
+   "In the list 12, 15, 9, 15, 11 only the number 15 appears twice.",
+   "15 belongs to Tuesday and Thursday, so the equal bars are Tuesday and Thursday."
+  ]
+ },
+ "G4A_DATA_006": {
+  "q": "The children of Class 4 each chose one favourite fruit: Mango 14, Banana 6, Apple 9, Guava 5. How many children chose banana or guava?",
+  "options": [
+   "1",
+   "20",
+   "34",
+   "11"
+  ],
+  "hints": [
+   "You need to put two groups from the table together.",
+   "Pick out only the numbers for banana and guava. They are 6 and 5.",
+   "Example: Rose 8, Lily 7, Lotus 4. The children who chose rose or lotus are 8 plus 4 equals 12."
+  ],
+  "steps": [
+   "Banana was chosen by 6 children and guava by 5 children.",
+   "Add the two groups. 6 plus 5 equals 11.",
+   "11 children chose banana or guava."
+  ]
+ },
+ "G4A_DATA_007": {
+  "q": "Six children got these marks in a spelling test: 14, 18, 9, 20, 12, 17. How many children got more than 15 marks?",
+  "options": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ],
+  "hints": [
+   "Here you count how many numbers in a list are bigger than a given number.",
+   "Go through the marks one at a time and tick each one that is bigger than 15. Start with 14: is it bigger than 15?",
+   "Example: Marks 6, 11, 8, 13, 5. The marks more than 10 are 11 and 13, so 2 children got more than 10."
+  ],
+  "steps": [
+   "Check each mark against 15.",
+   "14, 9 and 12 are less than 15. The marks 18, 20 and 17 are more than 15.",
+   "That makes 3 children with more than 15 marks."
+  ]
+ },
+ "G4A_DATA_008": {
+  "q": "Each child in a class chose one favourite game: Cricket 13, Kho-kho 8, Football 7, Carrom 4. How many children are there in the class?",
+  "options": [
+   "28",
+   "4",
+   "32",
+   "22"
+  ],
+  "hints": [
+   "Every child chose exactly one game, so the whole class is all the groups put together.",
+   "Add the four numbers. A good start is 13 plus 7, which makes a round number.",
+   "Example: Tea 9, Milk 11, Juice 5. All together that is 9 plus 11 plus 5 equals 25 people."
+  ],
+  "steps": [
+   "Add cricket and football first. 13 plus 7 equals 20.",
+   "Add kho-kho and carrom. 8 plus 4 equals 12.",
+   "Put the two sums together. 20 plus 12 equals 32.",
+   "There are 32 children in the class."
+  ]
+ },
+ "G4A_DATA_009": {
+  "q": "In a tally chart, a bundle stands for 5 and a single stroke stands for 1. Which of these shows 23?",
+  "options": [
+   "2 bundles and 3 strokes",
+   "4 bundles and 3 strokes",
+   "5 bundles and 3 strokes",
+   "3 bundles and 4 strokes"
+  ],
+  "hints": [
+   "Think about how many full fives fit into the number, and what is left over.",
+   "Count in fives: 5, 10, 15, 20. How many fives is that, and how many more do you need to reach 23?",
+   "Example: To show 12, count in fives: 5, 10. That is 2 bundles, and 12 minus 10 equals 2 single strokes."
+  ],
+  "steps": [
+   "Four fives make 20. 4 times 5 equals 20.",
+   "Find what is left after 20. 23 minus 20 equals 3.",
+   "So 23 is shown by 4 bundles and 3 strokes."
+  ]
+ },
+ "G4A_DATA_010": {
+  "q": "In a pictograph, each picture of a sun stands for 2 sunny days. January has 5 pictures, February has 8 pictures, March has 6 pictures and April has 9 pictures. Which month had 16 sunny days?",
+  "options": [
+   "January",
+   "March",
+   "April",
+   "February"
+  ],
+  "hints": [
+   "Each picture stands for more than one day, so the number of pictures is not the number of days.",
+   "Work out how many pictures are needed to show 16 days when each picture stands for 2 days.",
+   "Example: Each picture stands for 5 pens. To show 20 pens you need 20 divided by 5 equals 4 pictures, so look for the row with 4 pictures."
+  ],
+  "steps": [
+   "Each picture stands for 2 days, so 16 days need 8 pictures. 16 divided by 2 equals 8.",
+   "The month with 8 pictures is February.",
+   "February had 16 sunny days."
+  ]
+ },
+ "G4A_DATA_011": {
+  "q": "The heights of five plants in centimetres are: Rose 34, Tulsi 28, Neem 41, Mint 19, Lily 37. Which plant is the second tallest?",
+  "options": [
+   "Lily",
+   "Neem",
+   "Rose",
+   "Tulsi"
+  ],
+  "hints": [
+   "Put the numbers in order from biggest to smallest, then pick the one in second place.",
+   "Find the tallest plant first. Which height is the biggest of 34, 28, 41, 19 and 37?",
+   "Example: Asha 22, Bina 30, Charu 26. From biggest to smallest: 30, 26, 22. The second biggest is 26, so Charu is second tallest."
+  ],
+  "steps": [
+   "From biggest to smallest the heights are 41, 37, 34, 28, 19.",
+   "The tallest is 41, Neem. The next is 37.",
+   "37 centimetres is the height of Lily, so the second tallest plant is Lily."
+  ]
+ },
+ "G4A_DATA_012": {
+  "q": "The side of a bar graph is marked 0, 10, 20, 30, 40. The top of Tuesday's bar is exactly halfway between the marks 20 and 30. What number does Tuesday's bar show?",
+  "options": [
+   "20",
+   "30",
+   "25",
+   "50"
+  ],
+  "hints": [
+   "When a bar ends between two marks, its value is between those two numbers.",
+   "Find the number that is exactly in the middle of 20 and 30. How far apart are 20 and 30?",
+   "Example: A bar ends halfway between 40 and 60. The marks are 20 apart, half of 20 is 10, and 40 plus 10 equals 50."
+  ],
+  "steps": [
+   "The marks 20 and 30 are 10 apart. 30 minus 20 equals 10.",
+   "Half of 10 is 5. 10 divided by 2 equals 5.",
+   "Go 5 above 20. 20 plus 5 equals 25.",
+   "Tuesday's bar shows 25."
+  ]
+ },
+ "G4A_DATA_013": {
+  "q": "In a pictograph, each picture stands for 3 kites. Ravi's row has 5 pictures and Meena's row has 8 pictures. How many more kites does Meena have than Ravi?",
+  "options": [
+   "9",
+   "3",
+   "24",
+   "39"
+  ],
+  "hints": [
+   "This is a pictograph comparison. Remember that each picture stands for more than one kite.",
+   "Find how many more pictures Meena has than Ravi: 8 minus 5.",
+   "Example: Each picture stands for 4 balls. Amit has 6 pictures and Sunil has 4 pictures. Amit has 2 more pictures, and 2 times 4 equals 8 more balls."
+  ],
+  "steps": [
+   "Meena has 3 more pictures than Ravi. 8 minus 5 equals 3.",
+   "Each picture stands for 3 kites. 3 times 3 equals 9.",
+   "Meena has 9 more kites than Ravi."
+  ]
+ },
+ "G4A_DATA_014": {
+  "q": "In a pictograph of library books, each picture stands for 5 books. Monday has 4 pictures, Tuesday has 6 pictures and Wednesday has 3 pictures. How many books were borrowed on the three days altogether?",
+  "options": [
+   "13",
+   "65",
+   "18",
+   "60"
+  ],
+  "hints": [
+   "Find the total number of pictures, then change pictures into books.",
+   "Add the pictures for the three days: 4 plus 6 plus 3.",
+   "Example: Each picture stands for 2 pens. Three rows have 3, 5 and 4 pictures. That is 12 pictures, and 12 times 2 equals 24 pens."
+  ],
+  "steps": [
+   "Add the pictures for the three days. 4 plus 6 plus 3 equals 13.",
+   "Each picture stands for 5 books. 13 times 5 equals 65.",
+   "65 books were borrowed altogether."
+  ]
+ },
+ "G4A_DATA_015": {
+  "q": "In a pictograph, each picture stands for 6 eggs. A farmer's chart has 5 pictures for Monday and 3 pictures for Tuesday. He packs all these eggs in boxes of 12. How many boxes does he fill?",
+  "options": [
+   "8",
+   "48",
+   "4",
+   "2"
+  ],
+  "hints": [
+   "There are two parts here: first find the number of eggs, then share them into boxes.",
+   "Find the total number of pictures for the two days, then multiply by 6 to get the eggs.",
+   "Example: Each picture stands for 4 buns. There are 6 pictures, so 24 buns. Packed in bags of 8, that is 24 divided by 8 equals 3 bags."
+  ],
+  "steps": [
+   "Add the pictures. 5 plus 3 equals 8.",
+   "Each picture stands for 6 eggs. 8 times 6 equals 48.",
+   "Put the eggs in boxes of 12. 48 divided by 12 equals 4.",
+   "He fills 4 boxes."
+  ]
+ },
+ "G4A_DATA_016": {
+  "q": "A sweet shop sold 60 laddoos in four days. The table shows: Monday 12, Tuesday 18, Thursday 14, but the number for Wednesday is smudged. How many laddoos were sold on Wednesday?",
+  "options": [
+   "44",
+   "15",
+   "104",
+   "16"
+  ],
+  "hints": [
+   "You know the whole and three of its four parts. Think about how to find the missing part.",
+   "Add the three numbers you can read: 12 plus 18 plus 14.",
+   "Example: Total 50, and three days show 10, 15 and 5. These add to 30, so the missing day is 50 minus 30 equals 20."
+  ],
+  "steps": [
+   "Add the three known days. 12 plus 18 plus 14 equals 44.",
+   "Take this away from the total. 60 minus 44 equals 16.",
+   "16 laddoos were sold on Wednesday."
+  ]
+ },
+ "G4A_DATA_017": {
+  "q": "Tickets sold at a mela: on Saturday, 20 adult tickets and 35 child tickets; on Sunday, 28 adult tickets and 30 child tickets. How many more tickets were sold on Sunday than on Saturday?",
+  "options": [
+   "3",
+   "8",
+   "5",
+   "113"
+  ],
+  "hints": [
+   "Each day has two kinds of ticket. Find each day's total before you compare.",
+   "Add the adult and child tickets for Saturday: 20 plus 35.",
+   "Example: Day 1 has 10 and 12 tickets, total 22. Day 2 has 15 and 14 tickets, total 29. Day 2 sold 29 minus 22 equals 7 more."
+  ],
+  "steps": [
+   "Saturday's total. 20 plus 35 equals 55.",
+   "Sunday's total. 28 plus 30 equals 58.",
+   "Compare the totals. 58 minus 55 equals 3.",
+   "3 more tickets were sold on Sunday."
+  ]
+ },
+ "G4A_DATA_018": {
+  "q": "In a pictograph, each picture stands for 4 children and Monday's row has 6 pictures. The chart is drawn again with each picture standing for 8 children. How many pictures will Monday's row have now?",
+  "options": [
+   "12",
+   "3",
+   "24",
+   "48"
+  ],
+  "hints": [
+   "The number of children stays the same. Only the value of each picture changes.",
+   "Find how many children Monday's row shows: 6 pictures of 4 children each.",
+   "Example: 10 pictures of 2 pens each show 20 pens. If each picture stands for 5 pens, you need 20 divided by 5 equals 4 pictures."
+  ],
+  "steps": [
+   "Find the number of children. 6 times 4 equals 24.",
+   "Each new picture stands for 8 children. 24 divided by 8 equals 3.",
+   "Monday's row will have 3 pictures."
+  ]
+ },
+ "G4A_DATA_019": {
+  "q": "In a pictograph, a full picture stands for 10 coconuts and a half picture stands for 5 coconuts. Monday's row has 3 full pictures and 1 half picture. Tuesday's row has 2 full pictures. How many coconuts were sold on the two days together?",
+  "options": [
+   "50",
+   "60",
+   "55",
+   "15"
+  ],
+  "hints": [
+   "Work out each day's coconuts, counting full pictures and half pictures separately.",
+   "For Monday, find 3 full pictures of 10 and then add 5 for the half picture.",
+   "Example: A full picture is 4 and a half picture is 2. A row with 2 full pictures and 1 half picture shows 8 plus 2 equals 10."
+  ],
+  "steps": [
+   "Monday: 3 full pictures and a half picture. 30 plus 5 equals 35.",
+   "Tuesday: 2 full pictures. 2 times 10 equals 20.",
+   "Add the two days. 35 plus 20 equals 55.",
+   "55 coconuts were sold on the two days."
+  ]
+ },
+ "G4A_DATA_020": {
+  "q": "A tally chart of birds uses bundles of 5 and single strokes. Crows: 2 bundles and 3 strokes. Sparrows: 3 bundles and 1 stroke. Pigeons: 1 bundle and 4 strokes. How many birds were counted in all?",
+  "options": [
+   "14",
+   "30",
+   "8",
+   "38"
+  ],
+  "hints": [
+   "Change each tally row into a number, then add the rows.",
+   "Start with crows: 2 bundles are 10, and 3 strokes more.",
+   "Example: Row one has 1 bundle and 2 strokes, which is 7. Row two has 2 bundles and 1 stroke, which is 11. Together 7 plus 11 equals 18."
+  ],
+  "steps": [
+   "Crows. 10 plus 3 equals 13.",
+   "Sparrows. 15 plus 1 equals 16.",
+   "Pigeons. 5 plus 4 equals 9.",
+   "Add the three rows. 13 plus 16 plus 9 equals 38.",
+   "38 birds were counted in all."
+  ]
+ },
+ "G4A_DATA_021": {
+  "q": "A bar graph shows kites sold: Monday 14, Tuesday 9, Wednesday 17, Thursday 11. Friday's bar is twice as tall as Tuesday's bar. How many kites were sold on the five days altogether?",
+  "options": [
+   "69",
+   "51",
+   "53",
+   "60"
+  ],
+  "hints": [
+   "One value is not given directly. Find it from the clue, then add all five days.",
+   "Find Friday's number first. It is twice Tuesday's number, which is 9.",
+   "Example: Monday 5, Tuesday 8, and Wednesday is twice Monday. Wednesday is 10, and the total is 5 plus 8 plus 10 equals 23."
+  ],
+  "steps": [
+   "Friday is twice Tuesday. 2 times 9 equals 18.",
+   "Add Monday to Thursday. 14 plus 9 plus 17 plus 11 equals 51.",
+   "Add Friday. 51 plus 18 equals 69.",
+   "69 kites were sold altogether."
+  ]
+ },
+ "G4A_DATA_022": {
+  "q": "40 children each chose one favourite game. Cricket was chosen by 16, football by 10 and badminton by 8. All the others chose kabaddi. How many children chose kabaddi?",
+  "options": [
+   "34",
+   "6",
+   "14",
+   "16"
+  ],
+  "hints": [
+   "The whole group is known. The children who are left over after three games chose the fourth game.",
+   "Add the children who chose cricket, football and badminton: 16 plus 10 plus 8.",
+   "Example: 30 children; 12 chose red and 9 chose blue, the rest chose green. 12 plus 9 equals 21, so green got 30 minus 21 equals 9."
+  ],
+  "steps": [
+   "Add the three known games. 16 plus 10 plus 8 equals 34.",
+   "Take this away from all the children. 40 minus 34 equals 6.",
+   "6 children chose kabaddi."
+  ]
+ },
+ "G4A_DATA_023": {
+  "q": "Meera read 12 pages on Monday, 0 pages on Tuesday, 9 pages on Wednesday and 15 pages on Thursday. What is the average number of pages she read per day over these four days?",
+  "options": [
+   "12",
+   "36",
+   "9",
+   "15"
+  ],
+  "hints": [
+   "An average shares the total equally over all the days, even a day when nothing was read.",
+   "Add the pages for all four days: 12 plus 0 plus 9 plus 15.",
+   "Example: Goals in three matches are 4, 0 and 2. The total is 6, and 6 divided by 3 matches equals 2 goals per match."
+  ],
+  "steps": [
+   "Add the pages. 12 plus 0 plus 9 plus 15 equals 36.",
+   "There are 4 days, and Tuesday counts as a day too.",
+   "Share the total equally. 36 divided by 4 equals 9.",
+   "The average is 9 pages per day."
+  ]
+ },
+ "G4A_DATA_024": {
+  "q": "A bar graph shows cups of tea sold: Monday 22, Tuesday 17, Wednesday 25, Thursday 19. Which list puts the days in order from the shortest bar to the tallest bar?",
+  "options": [
+   "Wednesday, Monday, Thursday, Tuesday",
+   "Tuesday, Monday, Thursday, Wednesday",
+   "Monday, Tuesday, Wednesday, Thursday",
+   "Tuesday, Thursday, Monday, Wednesday"
+  ],
+  "hints": [
+   "The shortest bar shows the smallest number and the tallest bar shows the biggest number.",
+   "Find the smallest of 22, 17, 25 and 19. That day comes first.",
+   "Example: Sunday 8, Monday 5, Tuesday 9. From smallest to biggest the numbers are 5, 8, 9, so the order is Monday, Sunday, Tuesday."
+  ],
+  "steps": [
+   "From smallest to biggest the numbers are 17, 19, 22, 25.",
+   "17 is Tuesday, 19 is Thursday, 22 is Monday and 25 is Wednesday.",
+   "The order from shortest to tallest is Tuesday, Thursday, Monday, Wednesday."
+  ]
+ },
+ "G4A_DATA_025": {
+  "q": "A school has three clubs. Art: 9 girls and 6 boys. Music: 7 girls and 11 boys. Chess: 5 girls and 12 boys. Which club has the most children?",
+  "options": [
+   "Music",
+   "Art",
+   "Chess",
+   "All three are equal"
+  ],
+  "hints": [
+   "Each club has girls and boys. Find each club's total before comparing.",
+   "Add the girls and boys in the Art club: 9 plus 6.",
+   "Example: Team P has 4 girls and 9 boys, 13 in all. Team Q has 8 girls and 6 boys, 14 in all. Team Q has more children."
+  ],
+  "steps": [
+   "Art club. 9 plus 6 equals 15.",
+   "Music club. 7 plus 11 equals 18.",
+   "Chess club. 5 plus 12 equals 17.",
+   "18 is the biggest total, so the club with the most children is Music."
+  ]
+ },
+ "G4A_DATA_026": {
+  "q": "Children chose their favourite fruit: Mango 18, Apple 9, Banana 12, Orange 6, Grapes 3. Which fruit was chosen by exactly twice as many children as orange?",
+  "options": [
+   "Mango",
+   "Banana",
+   "Apple",
+   "Grapes"
+  ],
+  "hints": [
+   "Twice as many means two times a number. Find that number, then look for it in the list.",
+   "Orange was chosen by 6 children. Work out 2 times 6.",
+   "Example: Tea 4, Milk 8, Juice 10. Twice as many as tea is 2 times 4 equals 8, and that is milk."
+  ],
+  "steps": [
+   "Orange was chosen by 6 children.",
+   "Twice as many as 6. 2 times 6 equals 12.",
+   "12 children chose banana, so the answer is Banana."
+  ]
+ },
+ "G4A_DATA_027": {
+  "q": "Hardik played 5 cricket matches. His average score was 32 runs per match. How many runs did he score in the 5 matches altogether?",
+  "options": [
+   "37",
+   "27",
+   "160",
+   "64"
+  ],
+  "hints": [
+   "An average tells you what each match would have if the total were shared equally. Here you go back from the average to the total.",
+   "Think of every one of the 5 matches as having 32 runs.",
+   "Example: The average of 4 matches is 20 runs. The total is 4 times 20 equals 80 runs."
+  ],
+  "steps": [
+   "The average is the total shared equally among the matches.",
+   "So the total is the average multiplied by the number of matches. 32 times 5 equals 160.",
+   "He scored 160 runs altogether."
+  ]
+ },
+ "G4A_DATA_028": {
+  "q": "The rainfall in a town, in millimetres, was: Monday 6, Tuesday 10, Wednesday 4, Thursday 12, Friday 8. On how many days was the rainfall more than the average for the five days?",
+  "options": [
+   "3",
+   "8",
+   "4",
+   "2"
+  ],
+  "hints": [
+   "There are two jobs here: find the average first, then compare each day with it.",
+   "Add the five numbers and divide the total by 5 to get the average.",
+   "Example: Values 3, 9, 6. The average is 18 divided by 3 equals 6. Only 9 is more than 6, so 1 value is above the average."
+  ],
+  "steps": [
+   "Add the rainfall. 6 plus 10 plus 4 plus 12 plus 8 equals 40.",
+   "Find the average. 40 divided by 5 equals 8.",
+   "Compare each day with 8: only 10 and 12 are more than 8. Friday's 8 is equal to the average, not more.",
+   "The rainfall was more than the average on 2 days."
+  ]
+ },
+ "G4A_DATA_029": {
+  "q": "Ananya's average mark in 4 tests was 18. After the 5th test, her average for all 5 tests became 20. How many marks did she get in the 5th test?",
+  "options": [
+   "28",
+   "20",
+   "22",
+   "38"
+  ],
+  "hints": [
+   "An average multiplied by the number of tests gives the total. Compare the total before and after.",
+   "Find Ananya's total marks in the first 4 tests: 4 times 18.",
+   "Example: The average of 2 tests is 10, so the total is 20. After a 3rd test the average is 12, so the total is 36. The 3rd test was 36 minus 20 equals 16 marks."
+  ],
+  "steps": [
+   "Total of the first 4 tests. 4 times 18 equals 72.",
+   "Total of all 5 tests. 5 times 20 equals 100.",
+   "The difference is the 5th test. 100 minus 72 equals 28.",
+   "She got 28 marks in the 5th test."
+  ]
+ },
+ "G4A_DATA_030": {
+  "q": "A pictograph shows old newspapers collected by two classes. Class 4 A has 7 pictures and Class 4 B has 4 pictures. Each picture stands for the same number of newspapers. Class 4 A collected 21 more newspapers than Class 4 B. How many newspapers did Class 4 A collect?",
+  "options": [
+   "28",
+   "49",
+   "21",
+   "147"
+  ],
+  "hints": [
+   "The value of one picture is not given. Use the extra pictures and the extra newspapers to find it.",
+   "Class 4 A has 7 minus 4 equals 3 more pictures. These 3 pictures stand for the 21 extra newspapers.",
+   "Example: Row one has 6 pictures, row two has 4, and row one shows 10 more. The 2 extra pictures stand for 10, so each picture is 5 and row one shows 6 times 5 equals 30."
+  ],
+  "steps": [
+   "Class 4 A has 3 more pictures. 7 minus 4 equals 3.",
+   "These 3 pictures stand for 21 newspapers. 21 divided by 3 equals 7.",
+   "Class 4 A has 7 pictures of 7 newspapers each. 7 times 7 equals 49.",
+   "Class 4 A collected 49 newspapers."
+  ]
+ },
+ "G4A_DATA_031": {
+  "q": "Class 4 has 42 children, and 23 of them are girls. 15 children come to school by bus, and 9 of these are girls. How many boys do not come by bus?",
+  "options": [
+   "6",
+   "14",
+   "13",
+   "19"
+  ],
+  "hints": [
+   "Sort the children two ways: girls or boys, and bus or no bus. Find the boys' numbers step by step.",
+   "Find how many boys are in the class: 42 minus 23.",
+   "Example: 30 children, 18 girls, so 12 boys. 10 come by bus and 6 of them are girls, so 4 bus boys. Boys not by bus: 12 minus 4 equals 8."
+  ],
+  "steps": [
+   "Boys in the class. 42 minus 23 equals 19.",
+   "Boys who come by bus. 15 minus 9 equals 6.",
+   "Boys who do not come by bus. 19 minus 6 equals 13.",
+   "13 boys do not come by bus."
+  ]
+ },
+ "G4A_DATA_032": {
+  "q": "Vikram found the average of five numbers to be 20. Then he saw that he had copied one number as 25 when it was really 15. What is the correct average?",
+  "options": [
+   "22",
+   "10",
+   "15",
+   "18"
+  ],
+  "hints": [
+   "A slip in one number changes the total, and the change is shared among all five numbers.",
+   "Find the total Vikram used: 5 times 20.",
+   "Example: The average of 4 numbers is 10, so the total is 40. One number was written as 12 instead of 4, so the true total is 40 minus 8 equals 32 and the true average is 32 divided by 4 equals 8."
+  ],
+  "steps": [
+   "The total Vikram used. 5 times 20 equals 100.",
+   "The number was 10 too big, so take 10 off. 100 minus 10 equals 90.",
+   "Share the correct total among the five numbers. 90 divided by 5 equals 18.",
+   "The correct average is 18."
+  ]
+ },
+ "G4A_DATA_033": {
+  "q": "A shop sold school bags: Monday 14, Tuesday 18, Wednesday 10. On Saturday it sold as many bags as on Monday and Tuesday together. On Sunday it sold half as many bags as on Saturday. How many bags did it sell on these five days altogether?",
+  "options": [
+   "90",
+   "74",
+   "58",
+   "106"
+  ],
+  "hints": [
+   "Two of the five numbers are hidden in clues. Find them one at a time, then add everything.",
+   "Find Saturday's number first: add Monday's 14 and Tuesday's 18.",
+   "Example: Monday 4, Tuesday 6. Saturday equals both together, 10, and Sunday is half of that, 5. The total is 4 plus 6 plus 10 plus 5 equals 25."
+  ],
+  "steps": [
+   "Saturday. 14 plus 18 equals 32.",
+   "Sunday is half of Saturday. 32 divided by 2 equals 16.",
+   "Monday, Tuesday and Wednesday together. 14 plus 18 plus 10 equals 42.",
+   "Add all five days. 42 plus 32 plus 16 equals 90.",
+   "The shop sold 90 bags altogether."
+  ]
+ },
+ "G4A_DATA_034": {
+  "q": "Four friends have 8, 14, 11 and 7 marbles. They share the marbles so that all four have the same number. How many marbles must the friend who had 14 give away?",
+  "options": [
+   "10",
+   "4",
+   "6",
+   "7"
+  ],
+  "hints": [
+   "Sharing equally gives everyone the average. Find what each friend ends up with.",
+   "Add all the marbles: 8 plus 14 plus 11 plus 7.",
+   "Example: Three friends have 1, 9 and 2 sweets. The total is 12, so each gets 12 divided by 3. The friend with 9 keeps that equal share and gives away the other 5 sweets."
+  ],
+  "steps": [
+   "Add all the marbles. 8 plus 14 plus 11 plus 7 equals 40.",
+   "Share equally among 4 friends. 40 divided by 4 equals 10.",
+   "The friend with 14 keeps 10. 14 minus 10 equals 4.",
+   "That friend must give away 4 marbles."
+  ]
+ },
+ "G4A_DATA_035": {
+  "q": "Riya and Kabir each drew a pictograph of their stamps. In Riya's chart each picture stands for 5 stamps and there are 12 pictures. In Kabir's chart each picture stands for 8 stamps and there are 7 pictures. Who has more stamps, and by how many?",
+  "options": [
+   "Kabir, by 4",
+   "Riya, by 5",
+   "Riya, by 4",
+   "Kabir, by 3"
+  ],
+  "hints": [
+   "The two charts use different values for a picture, so you cannot compare the pictures directly.",
+   "Change Riya's pictures into stamps: 12 pictures of 5 stamps each.",
+   "Example: Chart one has 6 pictures of 2, which is 12. Chart two has 3 pictures of 5, which is 15. Chart two shows 15 minus 12 equals 3 more."
+  ],
+  "steps": [
+   "Riya's stamps. 12 times 5 equals 60.",
+   "Kabir's stamps. 7 times 8 equals 56.",
+   "Compare. 60 minus 56 equals 4.",
+   "Riya has more stamps, by 4."
+  ]
+ },
+ "G4A_DATA_036": {
+  "q": "Class 4 A has 20 children and their average mark in a test is 30. Class 4 B has 30 children and their average mark in the same test is 40. What is the average mark of all 50 children together?",
+  "options": [
+   "35",
+   "36",
+   "34",
+   "70"
+  ],
+  "hints": [
+   "An average depends on how many children are in each group. Find the total marks of each class before you find the average of everyone.",
+   "Class 4 A scored 20 times 30 marks in all. Work out the total for Class 4 B in the same way, then add the two totals.",
+   "A similar one: 10 children average 6 and 30 children average 10. The totals are 10 times 6 equals 60 and 30 times 10 equals 300, which make 360. Then 360 divided by 40 equals 9, not the halfway number 8."
+  ],
+  "steps": [
+   "Find the total marks of Class 4 A. 20 times 30 equals 600.",
+   "Find the total marks of Class 4 B. 30 times 40 equals 1200.",
+   "Add to get the total marks of all 50 children. 600 plus 1200 equals 1800.",
+   "Share the total among 50 children. 1800 divided by 50 equals 36.",
+   "The average mark of all 50 children is 36."
+  ]
+ },
+ "G4A_DATA_037": {
+  "q": "A bar graph shows the books sold at a fair. The bottom line of the graph stands for 20 books, not 0, and each square above the bottom line stands for 5 more books. Saturday's bar is 3 squares tall and Sunday's bar is 6 squares tall. How many books were sold on the two days altogether?",
+  "options": [
+   "45",
+   "65",
+   "85",
+   "50"
+  ],
+  "hints": [
+   "Check where the graph starts. A bar's height in squares only tells you how far it is above the bottom line.",
+   "Saturday's bar is 3 squares above a line that already stands for 20 books. Find Saturday's number first, then do the same for Sunday.",
+   "A similar one: the bottom line stands for 10 and each square stands for 2. Bars of 4 squares and 5 squares show 10 plus 8 equals 18 and 10 plus 10 equals 20, so together 18 plus 20 equals 38."
+  ],
+  "steps": [
+   "Saturday's bar is 3 squares above 20. 20 plus 3 times 5 equals 35.",
+   "Sunday's bar is 6 squares above 20. 20 plus 6 times 5 equals 50.",
+   "Add the two days. 35 plus 50 equals 85.",
+   "Altogether 85 books were sold."
+  ]
+ },
+ "G4A_DATA_038": {
+  "q": "In a class of 40 children, 24 like cricket and 20 like football. 6 children like neither game. How many children like both games?",
+  "options": [
+   "4",
+   "6",
+   "16",
+   "10"
+  ],
+  "hints": [
+   "Some children have been counted twice, once for each game. First find how many children like at least one game.",
+   "Take away the 6 children who like neither game from 40. Compare that number with 24 plus 20.",
+   "A similar one: 30 children, 18 like mango, 15 like banana and 5 like neither. So 25 like at least one fruit. The lists have 18 plus 15 equals 33 names, and 33 minus 25 equals 8 children like both."
+  ],
+  "steps": [
+   "Find the children who like at least one game. 40 minus 6 equals 34.",
+   "Add the two lists. 24 plus 20 equals 44.",
+   "The lists have 44 names but only 34 children, so the extra names are children counted twice. 44 minus 34 equals 10.",
+   "10 children like both games."
+  ]
+ },
+ "G4A_DATA_039": {
+  "q": "The average of five whole numbers is 8. Which of these statements is certainly true?",
+  "options": [
+   "At least one of the numbers is exactly 8",
+   "At least one of the numbers is 8 or more",
+   "Three of the numbers are more than 8",
+   "None of the numbers is more than 16"
+  ],
+  "hints": [
+   "A statement is certainly true only if it holds for every possible set of numbers. Try to find a set that breaks each statement.",
+   "The five numbers must add up to 5 times 8 equals 40. Try some unusual sets with this total, such as 0, 0, 0, 0 and 40.",
+   "A similar one: three whole numbers have an average of 5, so they add up to 15. The set 1, 1, 13 has no 5 in it and only one number above 5. But all three cannot be below 5, because then the total would be less than 15."
+  ],
+  "steps": [
+   "The five numbers add up to 40. 5 times 8 equals 40.",
+   "The set 0, 0, 0, 0, 40 has an average of 8. It has no 8 in it, only one number above 8, and a number above 16. So three of the statements can be broken.",
+   "If every number were less than 8, the total would be less than 40. That cannot happen.",
+   "So the statement that is certainly true is: at least one of the numbers is 8 or more."
+  ]
+ },
+ "G4A_DATA_040": {
+  "q": "Riya wants to draw a pictograph for the kites sold on four days: Monday 12, Tuesday 18, Wednesday 30 and Thursday 42. Every picture must stand for the same number of kites, and she will use only whole pictures. She wants to draw as few pictures as possible. How many pictures will she draw altogether?",
+  "options": [
+   "17",
+   "34",
+   "51",
+   "6"
+  ],
+  "hints": [
+   "Fewer pictures means each picture must stand for more kites. But every day's number must be made of whole pictures.",
+   "Look for the largest number that divides 12, 18, 30 and 42 exactly. That is the most one picture can stand for.",
+   "A similar one: for 8, 12 and 20 the largest number that divides all three is 4. With 4 for each picture, the rows have 2, 3 and 5 pictures, so 10 pictures altogether."
+  ],
+  "steps": [
+   "Each picture must stand for a number that divides 12, 18, 30 and 42 exactly. The largest such number is 6.",
+   "Find the pictures for each day. 12 divided by 6 equals 2. 18 divided by 6 equals 3. 30 divided by 6 equals 5. 42 divided by 6 equals 7.",
+   "Add the pictures. 2 plus 3 plus 5 plus 7 equals 17.",
+   "She will draw 17 pictures altogether."
+  ]
+ },
+ "G4A_DATA_041": {
+  "q": "A shop's sales of school bags were: Monday 20, Tuesday 35, Wednesday 25 and Friday 40. Thursday's number is smudged. The owner remembers that Thursday's number was exactly equal to the average of all five days. How many bags were sold on Thursday?",
+  "options": [
+   "24",
+   "25",
+   "30",
+   "40"
+  ],
+  "hints": [
+   "If one day's number is the same as the average, it does not pull the average up or down. Think about what that says about the other four days.",
+   "Add the four numbers you know: 20, 35, 25 and 40. Then think about the average of just these four days.",
+   "A similar one: the known days are 10, 14 and 18 and the missing day equals the average of all four. The three known days total 42, so their average is 14. The missing day is 14, and the check works: 56 divided by 4 equals 14."
+  ],
+  "steps": [
+   "Add the four known days. 20 plus 35 plus 25 plus 40 equals 120.",
+   "A day that equals the average leaves the average unchanged, so Thursday equals the average of the other four days. 120 divided by 4 equals 30.",
+   "Check with all five days. 150 divided by 5 equals 30.",
+   "30 bags were sold on Thursday."
+  ]
+ },
+ "G4A_DATA_042": {
+  "q": "Riya is reading a storybook. The table shows the total number of pages she had read by the end of each day: Monday 12, Tuesday 30, Wednesday 41, Thursday 65, Friday 80. On which day did she read the most pages?",
+  "options": [
+   "Friday",
+   "Tuesday",
+   "Monday",
+   "Thursday"
+  ],
+  "hints": [
+   "The table gives running totals, not the pages read on each day. Think about how to get one day's reading from two totals.",
+   "On Tuesday she went from 12 pages to 30 pages. Subtract to find Tuesday's pages, then do the same for every day.",
+   "A similar one: running totals of 5, 14 and 20 over three days mean 5 pages, then 14 minus 5 equals 9 pages, then 20 minus 14 equals 6 pages. The middle day has the most, even though the last total is the biggest."
+  ],
+  "steps": [
+   "On Monday she read 12 pages.",
+   "Find the pages for Tuesday and Wednesday. 30 minus 12 equals 18. 41 minus 30 equals 11.",
+   "Find the pages for Thursday and Friday. 65 minus 41 equals 24. 80 minus 65 equals 15.",
+   "The largest of 12, 18, 11, 24 and 15 is 24.",
+   "She read the most pages on Thursday."
+  ]
+ },
+ "G4A_DATA_043": {
+  "q": "Kabir took five spelling tests. His average mark in the first three tests was 10. His average mark in the last three tests was 16. His average mark in all five tests was 12. How many marks did he get in the third test?",
+  "options": [
+   "18",
+   "13",
+   "12",
+   "26"
+  ],
+  "hints": [
+   "The third test belongs to both groups: the first three tests and the last three tests. Use totals, not averages.",
+   "Find the total of the first three tests and the total of the last three tests. Then find the total of all five tests.",
+   "A similar one with three tests: the first two average 4, total 8, the last two average 7, total 14, and all three average 5, total 15. The middle test is counted twice in 8 plus 14 equals 22, so it is 22 minus 15 equals 7."
+  ],
+  "steps": [
+   "Find the total of the first three tests. 3 times 10 equals 30.",
+   "Find the total of the last three tests. 3 times 16 equals 48.",
+   "Find the total of all five tests. 5 times 12 equals 60.",
+   "Adding the two groups counts the third test twice. 30 plus 48 equals 78.",
+   "Take away the real total to leave the third test. 78 minus 60 equals 18.",
+   "He got 18 marks in the third test."
+  ]
+ },
+ "G4A_DATA_044": {
+  "q": "Ravi took five tests, each out of 20 marks. In four of them he got 12, 15, 9 and 18. He has forgotten the fifth mark, but he remembers that his average for the five tests was exactly equal to his mark in one of the five tests. What is the forgotten mark?",
+  "options": [
+   "1",
+   "6",
+   "11",
+   "16"
+  ],
+  "hints": [
+   "The average of five marks must come out as a whole number here, because it equals one of the marks. Test the possible totals one at a time.",
+   "The four known marks add up to 54. The total of all five must be a number that 5 divides exactly. Which totals are possible if the fifth mark is 20 or less?",
+   "A similar one: known marks 7, 10 and 4, total 21, with one mark out of 10 missing, and the average of the four equals one of the marks. Totals that 4 divides are 24 and 28. A missing 3 gives an average of 6, which is not one of the marks. A missing 7 gives an average of 7, which is. So the missing mark is 7."
+  ],
+  "steps": [
+   "Add the four known marks. 12 plus 15 plus 9 plus 18 equals 54.",
+   "The total of five marks must divide exactly by 5. With a fifth mark from 0 to 20, the total can be 55, 60, 65 or 70, so the fifth mark is 1, 6, 11 or 16.",
+   "The averages would be 11, 12, 13 or 14.",
+   "Only 12 is one of his marks, and it goes with a total of 60. 60 minus 54 equals 6.",
+   "The forgotten mark is 6."
+  ]
+ },
+ "G4A_DATA_045": {
+  "q": "Each of the 30 children in a class voted for exactly two different fruits out of mango, apple, banana and guava. Mango got 20 votes, apple got 15 votes and banana got 14 votes. How many votes did guava get?",
+  "options": [
+   "19",
+   "10",
+   "30",
+   "11"
+  ],
+  "hints": [
+   "Count votes, not children. Each child gave more than one vote.",
+   "Find the total number of votes: 30 children with 2 votes each. Then add the votes for mango, apple and banana.",
+   "A similar one: 20 children each vote for two games out of three. That makes 40 votes. If cricket gets 18 and football gets 13, then kho-kho gets 40 minus 18 minus 13 equals 9 votes."
+  ],
+  "steps": [
+   "Each child gave 2 votes, so find the total votes. 30 times 2 equals 60.",
+   "Add the votes for the three known fruits. 20 plus 15 plus 14 equals 49.",
+   "The rest of the votes went to guava. 60 minus 49 equals 11.",
+   "Guava got 11 votes."
+  ]
+ },
+ "G4A_DATA_046": {
+  "q": "Five different whole numbers have an average of 11. The greatest of them is 14. What is the smallest value that the smallest number could have?",
+  "options": [
+   "1",
+   "8",
+   "5",
+   "10"
+  ],
+  "hints": [
+   "To make one number as small as possible, make all the others as large as they are allowed to be.",
+   "The five numbers add up to 5 times 11 equals 55. The greatest is 14 and the numbers are all different, so what are the largest values the next three can take?",
+   "A similar one: four different whole numbers have an average of 9 and the greatest is 12. The total is 36. The largest the next two can be is 11 and 10, and 12 plus 11 plus 10 equals 33, so the smallest can go down to 36 minus 33 equals 3."
+  ],
+  "steps": [
+   "Find the total of the five numbers. 5 times 11 equals 55.",
+   "To make the smallest number as small as possible, make the other four as large as possible: 14, 13, 12 and 11. 14 plus 13 plus 12 plus 11 equals 50.",
+   "What is left is the smallest number. 55 minus 50 equals 5.",
+   "The smallest number could be as small as 5."
+  ]
+ },
+ "G4A_DATA_047": {
+  "q": "Asha and Bina each drew a pictograph of their stamps. In Asha's chart each picture stands for 6 stamps. In Bina's chart each picture stands for 4 stamps. Together the two girls drew 22 pictures, and the pictures show 108 stamps altogether. How many pictures did Asha draw?",
+  "options": [
+   "10",
+   "12",
+   "11",
+   "18"
+  ],
+  "hints": [
+   "Try pretending every picture is worth the smaller amount, then see how many stamps are still missing.",
+   "If all 22 pictures stood for 4 stamps, they would show 22 times 4 equals 88 stamps. How many more stamps are needed, and how much extra does each of Asha's pictures bring?",
+   "A similar one: 9 pictures show 33 stamps, some worth 5 and some worth 3. If all were worth 3, that is 27 stamps, which is 6 short. Each picture worth 5 adds 2 extra, so 6 divided by 2 equals 3 pictures are worth 5."
+  ],
+  "steps": [
+   "Suppose all 22 pictures stood for 4 stamps. 22 times 4 equals 88.",
+   "Find how many stamps are still missing. 108 minus 88 equals 20.",
+   "Each of Asha's pictures stands for 2 more stamps than that, so divide. 20 divided by 2 equals 10.",
+   "Check: 10 pictures of 6 stamps and 12 pictures of 4 stamps. 60 plus 48 equals 108.",
+   "Asha drew 10 pictures."
+  ]
+ },
+ "G4A_DATA_048": {
+  "q": "The children of Class 4 were asked how many pets they have at home. The table shows: 0 pets, 6 children; 1 pet, 10 children; 2 pets, 2 children; 3 pets, 2 children. What is the average number of pets per child?",
+  "options": [
+   "5",
+   "1",
+   "20",
+   "6"
+  ],
+  "hints": [
+   "The table has two kinds of numbers: how many pets, and how many children. Decide which numbers to use to count the pets and which to count the children.",
+   "The 2 children with 3 pets have 2 times 3 equals 6 pets between them. Find the pets for each row like this, then add them.",
+   "A similar one: 4 children have 0 books, 2 children have 3 books and 4 children have 6 books. The books are 0 plus 6 plus 24 equals 30 and the children are 4 plus 2 plus 4 equals 10, so the average is 30 divided by 10 equals 3 books."
+  ],
+  "steps": [
+   "Count the pets in each row: children times pets. 6 times 0 equals 0. 10 times 1 equals 10. 2 times 2 equals 4. 2 times 3 equals 6.",
+   "Add to get all the pets. 0 plus 10 plus 4 plus 6 equals 20.",
+   "Count all the children. 6 plus 10 plus 2 plus 2 equals 20.",
+   "Share the pets among the children. 20 divided by 20 equals 1.",
+   "The average is 1 pet per child."
+  ]
+ },
+ "G4A_DATA_049": {
+  "q": "Asha and Bina took the same 5 tests. Asha's average mark was 3 more than Bina's average mark. Asha scored 85 marks altogether. How many marks did Bina score altogether?",
+  "options": [
+   "82",
+   "14",
+   "80",
+   "70"
+  ],
+  "hints": [
+   "A difference in averages is a difference for every test. Think about how that grows over all the tests.",
+   "Being 3 ahead on average over 5 tests means being ahead by 3 marks five times. Find how many marks that is in total.",
+   "A similar one: over 4 tests Ravi's average is 2 more than Sam's, and Ravi's total is 48. Ravi is ahead by 4 times 2 equals 8 marks in total, so Sam scored 48 minus 8 equals 40."
+  ],
+  "steps": [
+   "Asha is 3 marks ahead on average in each of 5 tests. Find her lead in total. 5 times 3 equals 15.",
+   "Take that lead away from Asha's total. 85 minus 15 equals 70.",
+   "Check with averages: Asha's is 17 and Bina's is 14, which is 3 less. 85 divided by 5 equals 17. 70 divided by 5 equals 14.",
+   "Bina scored 70 marks altogether."
+  ]
+ },
+ "G4A_DATA_050": {
+  "q": "On a bar graph of sweets sold, the bar for Monday shows 45 sweets and is 9 centimetres tall. Tuesday's bar is 4 centimetres shorter than Monday's bar. How many sweets does Tuesday's bar show?",
+  "options": [
+   "41",
+   "20",
+   "25",
+   "5"
+  ],
+  "hints": [
+   "Centimetres on the graph and sweets are different units. Find what 1 centimetre stands for before comparing the bars.",
+   "A bar 9 centimetres tall shows 45 sweets. Divide to find how many sweets 1 centimetre stands for.",
+   "A similar one: a bar 8 centimetres tall shows 48 books, so 1 centimetre stands for 6 books. A bar 3 centimetres shorter is 5 centimetres tall and shows 5 times 6 equals 30 books."
+  ],
+  "steps": [
+   "Find what 1 centimetre stands for. 45 divided by 9 equals 5.",
+   "Find the height of Tuesday's bar in centimetres. 9 minus 4 equals 5.",
+   "Change Tuesday's height into sweets. 5 times 5 equals 25.",
+   "Tuesday's bar shows 25 sweets."
+  ]
+ },
+ "G4A_DATA_051": {
+  "q": "A pictograph shows the books read by four friends. Each picture stands for 3 books. Asha's row has 6 pictures, Bala's row has 4 pictures and Charu's row has 9 pictures. Dev's row is torn off. The four friends read 72 books altogether. How many more pictures did Dev's row have than Bala's row?",
+  "options": [
+   "1",
+   "3",
+   "5",
+   "15"
+  ],
+  "hints": [
+   "Work in one unit at a time. The total is in books, but the rows and the question are in pictures.",
+   "The three rows you can see have 6, 4 and 9 pictures. Change the 72 books into pictures so that you can compare.",
+   "A similar one: each picture stands for 5 pens, the rows you can see have 3 and 6 pictures, and the total is 70 pens. 70 pens is 14 pictures, so the hidden row has 14 minus 9 equals 5 pictures. That is 2 more than the row with 3."
+  ],
+  "steps": [
+   "Change the total into pictures. 72 divided by 3 equals 24.",
+   "Count the pictures in the three rows you can see. 6 plus 4 plus 9 equals 19.",
+   "Find the pictures in Dev's row. 24 minus 19 equals 5.",
+   "Compare Dev's row with Bala's row. 5 minus 4 equals 1.",
+   "Dev's row had 1 more picture than Bala's row."
+  ]
+ },
+ "Q_DH_001": {
+  "q": "In a pictograph, one apple picture stands for 5 apples. If Monday shows three apple pictures, how many apples were sold?",
+  "options": [
+   "8",
+   "15",
+   "5",
+   "3"
+  ],
+  "hints": [
+   "This is a pictograph question. Each picture stands for more than one thing, so look at the key first.",
+   "Count how many apple pictures Monday shows. Each one stands for 5 apples.",
+   "A similar example: one star picture stands for 4 books and Tuesday shows 6 stars. 6 times 4 equals 24 books."
+  ],
+  "steps": [
+   "The key says each picture stands for 5 apples.",
+   "Monday shows 3 pictures, so multiply. 3 times 5 equals 15.",
+   "15 apples were sold."
+  ]
+ },
+ "Q_DH_002": {
+  "q": "In a bar graph, the tallest bar represents:",
+  "options": [
+   "the average",
+   "zero",
+   "the largest value",
+   "the smallest value"
+  ],
+  "hints": [
+   "This question is about reading a bar graph. Think about what the height of a bar tells you.",
+   "Imagine a bar graph of marks. A child with more marks gets a taller bar. So what does the tallest bar show?",
+   "A similar example: in a bar graph of rainfall, the shortest bar belongs to the month with the least rain. The height of a bar always matches the size of its value."
+  ],
+  "steps": [
+   "In a bar graph, the height of each bar shows how big its value is.",
+   "A bigger value gets a taller bar.",
+   "So the tallest bar represents the largest value."
+  ]
+ },
+ "Q_DH_004": {
+  "q": "The mean of 12, 15, 18, 21, 24 is:",
+  "options": [
+   "18",
+   "15",
+   "20",
+   "90"
+  ],
+  "hints": [
+   "This asks for the mean, which is another word for average. It is the fair share if the total were split equally.",
+   "First add all five numbers together. Then think about how many numbers there are.",
+   "A similar example: the mean of 4, 6, 8, 10 and 12. Add them: 4 plus 6 plus 8 plus 10 plus 12 equals 40. There are 5 numbers, so 40 divided by 5 equals 8. The mean is 8."
+  ],
+  "steps": [
+   "Add all the numbers. 12 plus 15 plus 18 plus 21 plus 24 equals 90.",
+   "There are 5 numbers, so divide the total by 5. 90 divided by 5 equals 18.",
+   "The mean is 18."
+  ]
+ },
+ "Q_DH_005": {
+  "q": "The mode of 3, 5, 7, 5, 9, 5, 2 is:",
+  "options": [
+   "5",
+   "9",
+   "7",
+   "3"
+  ],
+  "hints": [
+   "This asks for the mode. The mode is the number that appears most often in a list.",
+   "Go through the list and count how many times each number appears. A tally can help.",
+   "A similar example: in 4, 8, 6, 8, 1, 8, 6 the number 8 appears three times and 6 appears twice. Nothing appears more often than 8, so the mode is 8."
+  ],
+  "steps": [
+   "Count how many times each number appears in 3, 5, 7, 5, 9, 5, 2.",
+   "5 appears 3 times. Every other number appears only once.",
+   "The mode is 5."
+  ]
+ },
+ "Q_DH_006": {
+  "q": "The range of 14, 8, 22, 5, 17 is:",
+  "options": [
+   "27",
+   "14",
+   "5",
+   "17"
+  ],
+  "hints": [
+   "This asks for the range. The range tells you how far apart the biggest and smallest numbers are.",
+   "Find the biggest number and the smallest number in the list. You will need both.",
+   "A similar example: the range of 6, 19, 11, 3 and 15. The biggest is 19 and the smallest is 3. 19 minus 3 equals 16, so the range is 16."
+  ],
+  "steps": [
+   "The biggest number is 22 and the smallest is 5.",
+   "Subtract the smallest from the biggest. 22 minus 5 equals 17.",
+   "The range is 17."
+  ]
+ },
+ "Q_DH_007": {
+  "q": "In a pictograph, one smiley face stands for 10 students. Two smiley faces and a half represents:",
+  "options": [
+   "25",
+   "15",
+   "20",
+   "30"
+  ],
+  "hints": [
+   "This is a pictograph question with a half picture. A half picture stands for half of what a full one stands for.",
+   "Count the full pictures first and work out what they stand for. Then find what half a picture is worth.",
+   "A similar example: one picture stands for 8 toys, and a row shows 3 full pictures and a half. 3 times 8 equals 24, and half of 8 is 4. 24 plus 4 equals 28 toys."
+  ],
+  "steps": [
+   "Each full picture stands for 10 students. There are 2 full pictures. 2 times 10 equals 20.",
+   "The half picture stands for half of 10. 10 divided by 2 equals 5.",
+   "Add the two parts. 20 plus 5 equals 25.",
+   "The row represents 25 students."
+  ]
+ },
+ "Q_DH_008": {
+  "q": "Bar A shows 45, Bar B shows 30. The difference is:",
+  "options": [
+   "35",
+   "75",
+   "1.5",
+   "15"
+  ],
+  "hints": [
+   "This asks for the difference between two bars. Difference means how much more one is than the other.",
+   "To find a difference, take the smaller value away from the bigger one.",
+   "A similar example: one bar shows 62 and another shows 40. 62 minus 40 equals 22, so the difference is 22."
+  ],
+  "steps": [
+   "Difference means subtract the smaller value from the bigger one.",
+   "Bar A is 45 and Bar B is 30. 45 minus 30 equals 15.",
+   "The difference is 15."
+  ]
+ },
+ "Q_DH_009": {
+  "q": "If you toss a coin, getting a head is:",
+  "options": [
+   "certain",
+   "equally likely as tails",
+   "impossible",
+   "likely"
+  ],
+  "hints": [
+   "This is about chance. Think about all the things that can happen when you toss a coin.",
+   "A coin has two sides, heads and tails. Is one side more likely to land face up than the other?",
+   "A similar example: a bag has 5 red balls and 5 blue balls. Each colour has the same number of balls, so picking red has the same chance as picking blue."
+  ],
+  "steps": [
+   "A coin has two sides: heads and tails.",
+   "Both sides have the same chance of landing face up.",
+   "So getting a head is equally likely as tails."
+  ]
+ },
+ "Q_DH_010": {
+  "q": "A table shows: Monday 12, Tuesday 15, Wednesday 18, Thursday 10, Friday 20. Total:",
+  "options": [
+   "65",
+   "75",
+   "80",
+   "70"
+  ],
+  "hints": [
+   "This asks for a total from a table. Total means add all the values together.",
+   "Add the numbers a few at a time. Look for pairs that make easy tens, like 12 and 18.",
+   "A similar example: Monday 11, Tuesday 14, Wednesday 9, Thursday 16. Pair them up: 11 plus 9 equals 20 and 14 plus 16 equals 30. Then 20 plus 30 equals 50 in total."
+  ],
+  "steps": [
+   "Pair numbers that make tens. 12 plus 18 equals 30.",
+   "Add the other easy pair. 10 plus 20 equals 30.",
+   "Now add everything. 30 plus 30 plus 15 equals 75.",
+   "The total is 75."
+  ]
+ },
+ "Q_DH_011": {
+  "q": "Average of 5 numbers is 20. Four numbers are 15, 22, 18, 25. Find the 5th.",
+  "options": [
+   "20",
+   "25",
+   "80",
+   "100"
+  ],
+  "hints": [
+   "This is an average problem worked backwards. If you know the average and how many numbers there are, you can find their total.",
+   "First find the total of all five numbers. Multiply the average by how many numbers there are.",
+   "A similar example: the average of 4 numbers is 10, and three of them are 8, 12 and 9. The total must be 4 times 10 equals 40. The three known numbers add up to 29. 40 minus 29 equals 11, so the fourth number is 11."
+  ],
+  "steps": [
+   "The total of all 5 numbers is the average times 5. 5 times 20 equals 100.",
+   "Add the four numbers you know. 15 plus 22 plus 18 plus 25 equals 80.",
+   "The fifth number is what is left. 100 minus 80 equals 20.",
+   "The fifth number is 20."
+  ]
+ },
+ "Q_DH_012": {
+  "q": "An event that will definitely happen is called:",
+  "options": [
+   "uncertain",
+   "impossible",
+   "certain",
+   "unlikely"
+  ],
+  "hints": [
+   "This is about the words we use for chance. Each word tells how sure we are that something will happen.",
+   "Think of something that must happen, like the sun rising tomorrow. Which word says there is no doubt at all?",
+   "A similar example: picking a green ball from a bag that has only red balls can never happen. An event that can never happen is called impossible."
+  ],
+  "steps": [
+   "Some events may or may not happen. Others can never happen.",
+   "An event that will definitely happen has no doubt about it.",
+   "Such an event is called certain."
+  ]
+ },
+ "Q_DH_013": {
+  "q": "In a pie chart, if 'Cricket' takes up one quarter of the circle, the angle is:",
+  "options": [
+   "45 degrees",
+   "180 degrees",
+   "120 degrees",
+   "90 degrees"
+  ],
+  "hints": [
+   "This is about a pie chart. A full circle has 360 degrees at its centre, and each slice takes a share of that.",
+   "The slice is one quarter of the circle. So you need one quarter of the full turn of 360 degrees.",
+   "A similar example: a slice that takes up 1 over 6 of the circle. 360 divided by 6 equals 60, so its angle is 60 degrees."
+  ],
+  "steps": [
+   "A full circle is 360 degrees.",
+   "One quarter means divide by 4. 360 divided by 4 equals 90.",
+   "The angle is 90 degrees."
+  ]
+ },
+ "Q_DH_014": {
+  "q": "Find the median of: 7, 3, 9, 5, 11.",
+  "options": [
+   "3",
+   "5",
+   "9",
+   "7"
+  ],
+  "hints": [
+   "This asks for the median. The median is the middle number once the list is in order.",
+   "First write the numbers from smallest to biggest. Do not pick the middle one until they are in order.",
+   "A similar example: the median of 8, 2, 6, 12 and 4. In order they are 2, 4, 6, 8, 12. The middle one is 6, so the median is 6."
+  ],
+  "steps": [
+   "Put the numbers in order: 3, 5, 7, 9, 11.",
+   "There are 5 numbers, so the middle one is the third.",
+   "The median is 7."
+  ]
+ },
+ "Q_DH_015": {
+  "q": "36 books need to be shown. If each symbol equals 6 books, how many symbols?",
+  "options": [
+   "30",
+   "216",
+   "5",
+   "6"
+  ],
+  "hints": [
+   "This is a pictograph question worked backwards. You know the total and what one symbol stands for, and you need the number of symbols.",
+   "Think of putting the 36 books into equal groups. Each group is one symbol.",
+   "A similar example: 56 pencils are shown and each symbol stands for 8 pencils. 56 divided by 8 equals 7, so 7 symbols are needed."
+  ],
+  "steps": [
+   "Each symbol stands for 6 books. Share 36 books into groups of 6. 36 divided by 6 equals 6.",
+   "Check by multiplying back. 6 times 6 equals 36.",
+   "So 6 symbols are needed."
+  ]
+ },
+ "Q_DH_016": {
+  "q": "A bar graph has scale: 1 centimetre equals 20 students. A bar is 3.5 centimetres tall. Students:",
+  "options": [
+   "3.5",
+   "70",
+   "35",
+   "60"
+  ],
+  "hints": [
+   "This is about the scale of a bar graph. The scale tells you how many students each centimetre of bar stands for.",
+   "Split the height of the bar into 3 whole centimetres and half a centimetre. Work out what each part stands for.",
+   "A similar example: the scale is 1 centimetre equals 10 students and a bar is 4.5 centimetres tall. 4 centimetres stands for 4 times 10 equals 40 students, and half a centimetre stands for 5. 40 plus 5 equals 45 students."
+  ],
+  "steps": [
+   "Each centimetre stands for 20 students. Start with the 3 whole centimetres. 3 times 20 equals 60.",
+   "Half a centimetre stands for half of 20. 20 divided by 2 equals 10.",
+   "Add the two parts. 60 plus 10 equals 70.",
+   "The bar shows 70 students."
+  ]
+ },
+ "Q_DH_018": {
+  "q": "Rolling a 7 on a standard die, 1 to 6, is:",
+  "options": [
+   "impossible",
+   "certain",
+   "unlikely",
+   "likely"
+  ],
+  "hints": [
+   "This is about chance. Think about which numbers a die can show.",
+   "List the numbers on the faces of a standard die. Is 7 one of them?",
+   "A similar example: rolling a number less than 7 on a standard die. Every face shows a number from 1 to 6, so this happens on every roll. That event is certain."
+  ],
+  "steps": [
+   "A standard die has six faces showing 1, 2, 3, 4, 5 and 6.",
+   "There is no face with 7 on it, so a 7 can never come up.",
+   "Rolling a 7 is impossible."
+  ]
+ },
+ "Q_DH_019": {
+  "q": "Marks: 8, 9, 8, 10, 9, 8, 7, 9, 8, 10. Frequency of 8:",
+  "options": [
+   "5",
+   "4",
+   "2",
+   "3"
+  ],
+  "hints": [
+   "This asks for a frequency. Frequency means how many times a value appears in the list.",
+   "Go through the marks one at a time. Put a tick each time you see an 8.",
+   "A similar example: in the marks 7, 2, 7, 7, 3, 7, 7, 2, 7 the mark 7 appears six times. So the frequency of 7 is 6."
+  ],
+  "steps": [
+   "Go through the list and tick each 8: 8, 9, 8, 10, 9, 8, 7, 9, 8, 10.",
+   "The 8s are the first, third, sixth and ninth marks.",
+   "The frequency of 8 is 4."
+  ]
+ },
+ "Q_DH_020": {
+  "q": "Average of 4 numbers is 25. Three numbers are 20, 30, 22. Find the fourth.",
+  "options": [
+   "25",
+   "32",
+   "28",
+   "18"
+  ],
+  "hints": [
+   "This is an average problem worked backwards. The average and the count of numbers together tell you the total.",
+   "First find the total of all four numbers. Multiply the average by how many numbers there are.",
+   "A similar example: the average of 3 numbers is 12, and two of them are 9 and 13. The total must be 3 times 12 equals 36. The two known numbers add up to 22. 36 minus 22 equals 14, so the third number is 14."
+  ],
+  "steps": [
+   "The total of all 4 numbers is the average times 4. 4 times 25 equals 100.",
+   "Add the three numbers you know. 20 plus 30 plus 22 equals 72.",
+   "The fourth number is what is left. 100 minus 72 equals 28.",
+   "The fourth number is 28."
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_032_01": {
+  "q": "The average of 5 numbers is 60. If 4 of the numbers are 54, 59, 49, 54, find the missing number.",
+  "options": [
+   "54",
+   "300",
+   "60",
+   "84"
+  ],
+  "hints": [
+   "First find the total: Average times Number of items.",
+   "Then subtract the known numbers from the total.",
+   "Total should be 60 times 5 equals 300."
+  ],
+  "steps": [
+   "Total equals Average times Count, which is 60 times 5, which is 300",
+   "The missing number equals 300 minus the total of 54 plus 59 plus 49 plus 54. That is 300 minus 216, which is 84"
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_032_02": {
+  "q": "The average of 6 numbers is 50. When a new number 64 is added, what is the new average?",
+  "options": [
+   "57",
+   "52",
+   "50",
+   "64"
+  ],
+  "hints": [
+   "Find the old total first: 50 times 6.",
+   "Add 64 to get the new total.",
+   "Divide new total by 7, the new count."
+  ],
+  "steps": [
+   "Old total equals 50 times 6, which is 300",
+   "New total equals 300 plus 64, which is 364",
+   "New average equals 364 divided by 7, which is 52"
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_032_04": {
+  "q": "Find the average of: 55, 79, 65, 57, 84",
+  "options": [
+   "85",
+   "55",
+   "84",
+   "68"
+  ],
+  "hints": [
+   "Average equals Sum of all numbers divided by Count of numbers.",
+   "Add up all 5 numbers first.",
+   "Then divide the total by 5."
+  ],
+  "steps": [
+   "Sum equals 55 plus 79 plus 65 plus 57 plus 84, which is 340",
+   "Average equals 340 divided by 5, which is 68"
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_032_05": {
+  "q": "Find the average of: 61, 48, 73, 62",
+  "options": [
+   "61",
+   "73",
+   "81",
+   "48"
+  ],
+  "hints": [
+   "Average equals Sum of all numbers divided by Count of numbers.",
+   "Add up all 4 numbers first.",
+   "Then divide the total by 4."
+  ],
+  "steps": [
+   "Sum equals 61 plus 48 plus 73 plus 62, which is 244",
+   "Average equals 244 divided by 4, which is 61"
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_032_05_b2": {
+  "q": "Find the average of: 19, 60, 55, 42, 53, 41",
+  "options": [
+   "60",
+   "45",
+   "19",
+   "54"
+  ],
+  "hints": [
+   "Average equals Sum of all numbers divided by Count of numbers.",
+   "Add up all 6 numbers first.",
+   "Then divide the total by 6."
+  ],
+  "steps": [
+   "Sum equals 19 plus 60 plus 55 plus 42 plus 53 plus 41, which is 270",
+   "Average equals 270 divided by 6, which is 45"
+  ]
+ }
+}

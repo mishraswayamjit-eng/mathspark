@@ -5395,5 +5395,149 @@
    "The square root of x, plus 12, equals 16. So the square root of x equals 4.",
    "x equals 4 squared, which is 16."
   ]
+ },
+ "G5A_SEQUENCES_001": {
+  "q": "What is the 9th term of the sequence 3, 4, 7, 11, 18, 29, and so on?",
+  "options": [
+   "76",
+   "123",
+   "199",
+   "105"
+  ],
+  "hints": [
+   "If the differences do not make a simple pattern, look at how each term is linked to the terms just before it.",
+   "Look at 3, 4, 7. Then look at 4, 7, 11. How could you make the third number from the first two each time?",
+   "Similar problem: 2, 5, 7, 12, 19, 31, and so on. Each term is the sum of the two before it: 2 plus 5 equals 7, and 5 plus 7 equals 12. So the 7th term is 19 plus 31 equals 50 and the 8th term is 31 plus 50 equals 81."
+  ],
+  "steps": [
+   "Each term is the sum of the two terms before it: 3 plus 4 equals 7, 4 plus 7 equals 11, 7 plus 11 equals 18, 11 plus 18 equals 29.",
+   "The 7th term is the sum of the 5th and 6th terms. 18 plus 29 equals 47.",
+   "The 8th term is the sum of the 6th and 7th terms. 29 plus 47 equals 76.",
+   "The 9th term is the sum of the 7th and 8th terms. 47 plus 76 equals 123.",
+   "The 9th term is 123."
+  ]
+ },
+ "G5A_SEQUENCES_002": {
+  "q": "In the sequence 5, 40, 8, 35, 11, 30, 14, 25, and so on, what is the sum of the 15th term and the 16th term?",
+  "options": [
+   "33",
+   "29",
+   "31",
+   "35"
+  ],
+  "hints": [
+   "The terms go up, then down, then up again. Try looking at every second term on its own.",
+   "The 1st, 3rd, 5th and 7th terms are 5, 8, 11, 14. The 2nd, 4th, 6th and 8th terms are 40, 35, 30, 25. Which place in its own pattern does the 15th term have?",
+   "Similar problem: 2, 50, 6, 45, 10, 40, and so on. The odd positions go 2, 6, 10, 14, 18, so the 9th term is 18. The even positions go 50, 45, 40, 35, 30, so the 10th term is 30. Their sum is 48."
+  ],
+  "steps": [
+   "The odd positions hold 5, 8, 11, 14, and so on: add 3. The even positions hold 40, 35, 30, 25, and so on: subtract 5.",
+   "The 15th term is the 8th number of the first pattern, which is 7 steps after 5. 5 plus 7 times 3 equals 26.",
+   "The 16th term is the 8th number of the second pattern, which is 7 steps after 40. 40 minus 7 times 5 equals 5.",
+   "Add them. 26 plus 5 equals 31.",
+   "The sum of the 15th and 16th terms is 31."
+  ]
+ },
+ "G5A_SEQUENCES_003": {
+  "q": "Tara counts aloud like this: 1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1, 2, and so on, going up to 4 and back down to 1 again and again. What is the 100th number she says?",
+  "options": [
+   "2",
+   "3",
+   "1",
+   "4"
+  ],
+  "hints": [
+   "Find the block of numbers that repeats exactly, with no number shared between one block and the next.",
+   "Write out the first 13 numbers and mark where the pattern starts again. Take care: does the 1 belong to the end of one block or the start of the next?",
+   "Similar problem: 1, 2, 3, 2, 1, 2, 3, 2, 1, and so on. The repeating block is 1, 2, 3, 2, which has 4 numbers. For the 50th number, 50 divided by 4 equals 12 remainder 2, so it is the 2nd number of the block, which is 2."
+  ],
+  "steps": [
+   "The repeating block is 1, 2, 3, 4, 3, 2. It has 6 numbers, and after it the next block starts again with 1.",
+   "Find how many whole blocks fit into 100 numbers. 100 divided by 6 equals 16 remainder 4.",
+   "After 16 whole blocks, 96 numbers have been said. The 100th number is the 4th number of the next block.",
+   "The 4th number of the block 1, 2, 3, 4, 3, 2 is 4, so the 100th number is 4."
+  ]
+ },
+ "G5A_SEQUENCES_004": {
+  "q": "A sequence starts 100, 93, 86, 79, and so on, and goes down by 7 each time. How many terms of the sequence are greater than 0?",
+  "options": [
+   "14",
+   "15",
+   "16",
+   "13"
+  ],
+  "hints": [
+   "Work out how many times 7 can be taken away before the terms drop below 0. Then think about how steps and terms are related.",
+   "100 divided by 7 is 14 remainder 2. So after 14 steps down the term is 2. Is that term still greater than 0? And how many terms are there if 14 steps have been taken?",
+   "Similar problem: 50, 44, 38, and so on, going down by 6. 50 divided by 6 is 8 remainder 2, so after 8 steps the term is 2. Counting the first term as well, there are 8 plus 1 equals 9 terms greater than 0."
+  ],
+  "steps": [
+   "See how many 7's can be taken from 100. 100 divided by 7 equals 14 remainder 2.",
+   "So after 14 steps down, the term is 2, which is still greater than 0. One more step would give a number below 0.",
+   "The terms are the starting term and then one term for each step. 14 plus 1 equals 15.",
+   "So 15 terms are greater than 0."
+  ]
+ },
+ "G5A_SEQUENCES_005": {
+  "q": "What is the value of 100 minus 99 plus 98 minus 97 plus 96 minus 95 plus, and so on, plus 4 minus 3 plus 2 minus 1?",
+  "options": [
+   "100",
+   "0",
+   "50",
+   "49"
+  ],
+  "hints": [
+   "Working from left to right would take very long. Look for small groups of neighbouring terms that are easy to work out.",
+   "Put brackets round the terms two at a time: open bracket 100 minus 99 close bracket, plus open bracket 98 minus 97 close bracket, plus, and so on. What is each bracket worth?",
+   "Similar problem: 20 minus 19 plus 18 minus 17 plus, and so on, plus 2 minus 1. Each pair such as open bracket 20 minus 19 close bracket is worth 1. There are 20 numbers, so 10 pairs, and the value is 10."
+  ],
+  "steps": [
+   "Group the terms in pairs: open bracket 100 minus 99 close bracket, plus open bracket 98 minus 97 close bracket, plus, and so on, plus open bracket 4 minus 3 close bracket, plus open bracket 2 minus 1 close bracket.",
+   "Each pair is worth 1.",
+   "There are 100 numbers, so there are 50 pairs.",
+   "Add up the pairs. 50 times 1 equals 50.",
+   "The value is 50."
+  ]
+ },
+ "G5A_SEQUENCES_006": {
+  "q": "In the sequence 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, and so on, each whole number n is written n times. What is the 50th term?",
+  "options": [
+   "10",
+   "9",
+   "11",
+   "7"
+  ],
+  "hints": [
+   "Work out the position where each number is written for the last time. The running total of 1 plus 2 plus 3 plus, and so on, helps.",
+   "The last 1 is at position 1, the last 2 at position 1 plus 2 equals 3, the last 3 at position 1 plus 2 plus 3 equals 6. Keep adding until the total passes 50.",
+   "Similar problem: the 20th term. 1 plus 2 plus 3 plus 4 plus 5 equals 15, so the last 5 is at position 15. The next six positions, 16 to 21, hold 6's. So the 20th term is 6."
+  ],
+  "steps": [
+   "Add 1 plus 2 plus 3 plus, and so on, to find where each number ends. The 9's end at position 45.",
+   "The next ten terms are all 10's. They end at position 55.",
+   "Position 50 lies between 46 and 55.",
+   "So the 50th term is 10."
+  ]
+ },
+ "G5A_SEQUENCES_007": {
+  "q": "A sequence starts with 7. The rule is: if a term is odd, add 5 to get the next term; if a term is even, halve it to get the next term. So the sequence begins 7, 12, 6, 3, and so on. What is the 50th term?",
+  "options": [
+   "3",
+   "6",
+   "8",
+   "1"
+  ],
+  "hints": [
+   "Keep applying the rule until you see a group of terms coming round again. Note exactly where the repeating part begins.",
+   "Carry on from 3: it is odd, so add 5 to get 8. Then 4, then 2, then 1. What comes after 1, and have you seen that number before?",
+   "Similar problem: start with 5; if odd add 3, if even halve. The sequence is 5, 8, 4, 2, 1, 4, 2, 1, and so on. The block 4, 2, 1 repeats from the 3rd term. For the 21st term, 21 minus 2 equals 19 terms lie in the repeating part, and 19 divided by 3 leaves remainder 1, so it is the 1st number of the block, which is 4."
+  ],
+  "steps": [
+   "Continue the sequence: 7, 12, 6, 3, 8, 4, 2, 1, 6, 3, 8, 4, 2, 1, and so on. The block 6, 3, 8, 4, 2, 1 repeats, starting from the 3rd term.",
+   "The first two terms are not in the repeating part, so set them aside. 50 minus 2 equals 48.",
+   "The block has 6 numbers. See how many whole blocks fit into 48 terms. 48 divided by 6 equals 8.",
+   "Exactly 8 whole blocks fit, so the 50th term is the last number of a block.",
+   "The last number of the block 6, 3, 8, 4, 2, 1 is 1, so the 50th term is 1."
+  ]
  }
 }

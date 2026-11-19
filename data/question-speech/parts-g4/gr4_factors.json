@@ -1,0 +1,3033 @@
+{
+ "BOOST_EXT_G4_FP_2017_016_07": {
+  "q": "Find the H C F of 35 and 28.",
+  "options": [
+   "140",
+   "7",
+   "14",
+   "28"
+  ],
+  "hints": [
+   "List the factors of 35 and 28.",
+   "Find the largest number that divides both.",
+   "Try dividing both by small primes."
+  ],
+  "steps": [
+   "Find the factors of 35 and 28.",
+   "The H C F is 7."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2022_027_04": {
+  "q": "Find the H C F of 35 and 14.",
+  "options": [
+   "70",
+   "14",
+   "8",
+   "7"
+  ],
+  "hints": [
+   "List the factors of 35 and 14.",
+   "Find the largest number that divides both.",
+   "Try dividing both by small primes."
+  ],
+  "steps": [
+   "Find the factors of 35 and 14.",
+   "The H C F is 7."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2023_036_04": {
+  "q": "Find the H C F of 105 and 120.",
+  "options": [
+   "30",
+   "105",
+   "840",
+   "15"
+  ],
+  "hints": [
+   "List the factors of 105 and 120.",
+   "Find the largest number that divides both.",
+   "Try dividing both by small primes."
+  ],
+  "steps": [
+   "Find the factors of 105 and 120.",
+   "The H C F is 15."
+  ]
+ },
+ "EXT_G4_FP_2020_007": {
+  "q": "What is the product of the smallest prime greater than 50 and the greatest prime less than 50?",
+  "options": [
+   "2397",
+   "2597",
+   "2491",
+   "2499"
+  ],
+  "hints": [
+   "This uses prime numbers. A prime number has exactly two factors, 1 and itself. Find the two primes first, then multiply.",
+   "Check the numbers just above 50 one at a time: 51, 52, 53. Then check the numbers just below 50: 49, 48, 47. Which are prime?",
+   "A similar example: the smallest prime above 20 is 23, because 21 equals 3 times 7 and 22 equals 2 times 11. The greatest prime below 20 is 19. Their product is 23 times 19, which is 437."
+  ],
+  "steps": [
+   "Just above 50: 51 equals 3 times 17 and 52 is even, so the smallest prime above 50 is 53.",
+   "Just below 50: 49 equals 7 times 7 and 48 is even, so the greatest prime below 50 is 47.",
+   "Multiply them. An easy way is 53 times 50 take away 53 times 3. 2650 minus 159 equals 2491.",
+   "The product is 2491. 53 times 47 equals 2491."
+  ]
+ },
+ "EXT_G4_FP_2020_014": {
+  "q": "Which number is divisible by 9?",
+  "options": [
+   "5776",
+   "5446",
+   "6228",
+   "5969"
+  ],
+  "hints": [
+   "There is a quick test for dividing by 9. You do not need long division. It uses the digits of the number.",
+   "Add up the digits of each number. A number is divisible by 9 when its digit sum is divisible by 9.",
+   "A similar example: is 4725 divisible by 9? Add the digits: 4 plus 7 plus 2 plus 5 equals 18. 18 is divisible by 9, so 4725 is too."
+  ],
+  "steps": [
+   "A number is divisible by 9 if its digits add up to a multiple of 9.",
+   "5776 gives 5 plus 7 plus 7 plus 6, which is 25. 5446 gives 5 plus 4 plus 4 plus 6, which is 19. 5969 gives 5 plus 9 plus 6 plus 9, which is 29. None of these is a multiple of 9.",
+   "6228 gives a digit sum of 18, which is 9 times 2. 6 plus 2 plus 2 plus 8 equals 18.",
+   "So 6228 is divisible by 9."
+  ]
+ },
+ "EXT_G4_FP_2020_015": {
+  "q": "A roll number is not a multiple of 3, is not a perfect square, and the sum of its digits is prime. Which number is it?",
+  "options": [
+   "16",
+   "14",
+   "12",
+   "26"
+  ],
+  "hints": [
+   "This is a puzzle with three clues. Test each number against the clues and cross out any number that breaks one.",
+   "Start with the first clue. Cross out any number that is a multiple of 3. Then check the others for being a perfect square.",
+   "A similar example: which of 9, 21, 23 and 25 is not a multiple of 3, not a perfect square, and has a prime digit sum? 9 and 25 are squares. 21 is a multiple of 3. 23 passes both, and 2 plus 3 equals 5, which is prime. So it is 23."
+  ],
+  "steps": [
+   "12 is a multiple of 3, so cross it out. 3 times 4 equals 12.",
+   "16 is a perfect square, so cross it out. 4 times 4 equals 16.",
+   "For 26, the digits add up to 8, which is not prime. Cross it out. 2 plus 6 equals 8.",
+   "For 14, the digits add up to 5, which is prime. 14 is not a multiple of 3 and not a square. 1 plus 4 equals 5.",
+   "The roll number is 14."
+  ]
+ },
+ "EXT_G4_FP_2020_016": {
+  "q": "Of these four square numbers, one can be written as the sum of two primes in two different ways. Which one?",
+  "options": [
+   "4",
+   "9",
+   "16",
+   "25"
+  ],
+  "hints": [
+   "This uses prime numbers. For each square number, look for pairs of primes that add up to it. You need a number with two different pairs.",
+   "List the small primes: 2, 3, 5, 7, 11, 13, 17, 19, 23. For each square number, take away a prime and see if what is left is also prime.",
+   "A similar example: 10 can be written as a sum of two primes in two ways. 3 plus 7 equals 10 and 5 plus 5 equals 10."
+  ],
+  "steps": [
+   "4 can be made in only one way. 2 plus 2 equals 4.",
+   "9 is odd, so one of the primes must be 2. That gives only one way. 2 plus 7 equals 9.",
+   "25 is odd too, so again there is only one way. 2 plus 23 equals 25.",
+   "16 can be made with 3 and 13. 3 plus 13 equals 16.",
+   "16 can also be made with 5 and 11. That is two different ways. 5 plus 11 equals 16.",
+   "So the number is 16."
+  ]
+ },
+ "EXT_G4_FP_2020_020": {
+  "q": "What is the H C F of 24 and 72?",
+  "options": [
+   "6",
+   "12",
+   "24",
+   "72"
+  ],
+  "hints": [
+   "H C F means highest common factor. It is the biggest number that divides both numbers exactly.",
+   "Check whether the smaller number divides the bigger number exactly. If it does, that tells you something special about the H C F.",
+   "A similar example: the H C F of 15 and 45. 45 divided by 15 equals 3 exactly, so 15 divides both numbers. No factor of 15 is bigger than 15 itself, so the H C F is 15."
+  ],
+  "steps": [
+   "Check whether 24 divides 72 exactly. 72 divided by 24 equals 3.",
+   "So 24 divides both 24 and 72. No number bigger than 24 can divide 24.",
+   "The H C F is 24."
+  ]
+ },
+ "EXT_G4_FP_2020_036": {
+  "q": "How many 2-digit numbers are divisible by 4, 6 and 8?",
+  "options": [
+   "24",
+   "8",
+   "6",
+   "4"
+  ],
+  "hints": [
+   "A number divisible by 4, 6 and 8 must be a multiple of all three. Find their lowest common multiple first.",
+   "Find the L C M of 4, 6 and 8. Then list its multiples that have two digits and count them.",
+   "A similar example: how many 2-digit numbers are divisible by both 5 and 6? The L C M of 5 and 6 is 30. Its 2-digit multiples are 30, 60 and 90. That is 3 numbers."
+  ],
+  "steps": [
+   "Find the L C M of 4, 6 and 8. The multiples of 8 are 8, 16, 24. The first one that 4 and 6 also divide is 24.",
+   "Every number divisible by 4, 6 and 8 is a multiple of 24.",
+   "The 2-digit multiples of 24 are 24, 48, 72 and 96. The next one, 120, has three digits. 24 times 4 equals 96.",
+   "There are 4 such numbers."
+  ]
+ },
+ "EXT_G4_FP_2020_040": {
+  "q": "The number 2, star, 1, star is divisible by 11. The digits at the star places are the same. Which digit is it?",
+  "options": [
+   "6",
+   "5",
+   "8",
+   "7"
+  ],
+  "hints": [
+   "There is a test for dividing by 11. Add the digits in the 1st and 3rd places, add the digits in the 2nd and 4th places, and compare the two sums.",
+   "The 1st and 3rd digits are 2 and 1. The 2nd and 4th digits are both the star. For 11 to divide the number, the two sums must be equal or differ by 11.",
+   "A similar example: 3 star 4 star with the same digit at each star. The 1st and 3rd digits add to 3 plus 4, which is 7. Two equal digits cannot add to 7, so they must add to 7 plus 11, which is 18. 18 divided by 2 equals 9, so the star is 9. Check: 3949 divided by 11 equals 359."
+  ],
+  "steps": [
+   "Add the 1st and 3rd digits. 2 plus 1 equals 3.",
+   "The 2nd and 4th digits are the same, so their sum is double the star. Double a digit is even, so it cannot be 3.",
+   "So the two sums must differ by 11. The two stars add up to 3 plus 11. 3 plus 11 equals 14.",
+   "Halve it to get one star. 14 divided by 2 equals 7.",
+   "Check the number 2717. 2717 divided by 11 equals 247.",
+   "The digit is 7."
+  ]
+ },
+ "EXT_G4_FP_2021_020": {
+  "q": "Which two digits in 73251 should be interchanged to make it divisible by 6?",
+  "options": [
+   "2 and 1",
+   "5 and 1",
+   "2 and 5",
+   "3 and 2"
+  ],
+  "hints": [
+   "A number is divisible by 6 when it is divisible by both 2 and 3. Test each rule on its own.",
+   "Add the digits of 73251 to test for 3. Swapping digits does not change that sum. So think about what the test for 2 needs.",
+   "A similar example: which two digits of 4563 should be swapped to make it divisible by 6? The digits add to 18, so it already passes the test for 3. It needs an even last digit. Swap the 6 and the 3 to get 4536, which ends in 6. Check: 4536 divided by 6 equals 756."
+  ],
+  "steps": [
+   "Test for 3: add the digits. 7 plus 3 plus 2 plus 5 plus 1 equals 18.",
+   "18 is a multiple of 3, and swapping digits keeps the same sum. So the number always passes the test for 3.",
+   "Test for 2: the last digit must be even. The only even digit is 2, so the 2 must move to the end.",
+   "Swapping the 2 and the 1 gives 73152. 73152 divided by 6 equals 12192.",
+   "The digits to interchange are 2 and 1."
+  ]
+ },
+ "EXT_G4_FP_2021_025": {
+  "q": "What is the L C M of 14, 35, 40, 56 and 28?",
+  "options": [
+   "560",
+   "140",
+   "280",
+   "700"
+  ],
+  "hints": [
+   "The L C M is the smallest number that every number in the list divides exactly. Break each number into prime factors and see how many times each prime is needed.",
+   "Write each number as a product of primes, like 14 equals 2 times 7. Then find which number uses the most 2s, the most 5s and the most 7s.",
+   "Example: the L C M of 6, 8 and 12. 6 equals 2 times 3, 8 equals 2 times 2 times 2 and 12 equals 2 times 2 times 3. Take three 2s and one 3: 2 times 2 times 2 times 3 equals 24. The L C M is 24."
+  ],
+  "steps": [
+   "Break each number into primes: 14 equals 2 times 7, 35 equals 5 times 7, 40 equals 2 times 2 times 2 times 5, 56 equals 2 times 2 times 2 times 7 and 28 equals 2 times 2 times 7.",
+   "The most 2s in any one number is three. The most 5s is one. The most 7s is one.",
+   "Multiply these together. 2 times 2 times 2 times 5 times 7 equals 280.",
+   "The L C M is 280."
+  ]
+ },
+ "EXT_G4_FP_2021_040": {
+  "q": "What is the difference between the L C M and the H C F of 45 and 75?",
+  "options": [
+   "120",
+   "30",
+   "240",
+   "210"
+  ],
+  "hints": [
+   "There are two things to find first: the H C F and the L C M of the two numbers. The word difference tells you to subtract at the end.",
+   "Start with the H C F. Break 45 and 75 into prime factors and see which ones they share.",
+   "Example: for 8 and 12, the H C F is 4. The L C M is 24, the first number in both times tables. The difference is 24 minus 4, which is 20."
+  ],
+  "steps": [
+   "45 equals 3 times 3 times 5 and 75 equals 3 times 5 times 5. They share one 3 and one 5, so the H C F is 15.",
+   "For the L C M take two 3s and two 5s. 3 times 3 times 5 times 5 equals 225.",
+   "Subtract the H C F from the L C M. 225 minus 15 equals 210.",
+   "The difference is 210."
+  ]
+ },
+ "EXT_G4_FP_2022_003": {
+  "q": "The H C F of two numbers is 15, and their L C M is 600. One number is 120. Find the other.",
+  "options": [
+   "90",
+   "45",
+   "75",
+   "60"
+  ],
+  "hints": [
+   "This uses a special rule for two numbers: H C F times L C M is equal to the product of the two numbers.",
+   "Multiply the H C F by the L C M. That gives the product of the two numbers. Then think how to get the missing number from it.",
+   "Example: H C F equals 4, L C M equals 48 and one number is 12. 4 times 48 equals 192. Then 192 divided by 12 equals 16. The other number is 16."
+  ],
+  "steps": [
+   "H C F times L C M gives the product of the two numbers. 15 times 600 equals 9000.",
+   "Divide this product by the number you know. 9000 divided by 120 equals 75.",
+   "The other number is 75."
+  ]
+ },
+ "EXT_G4_FP_2022_027": {
+  "q": "What is the greatest digit that can replace each A in 3 A, A 48, so that the number is divisible by 12?",
+  "options": [
+   "3",
+   "9",
+   "7",
+   "8"
+  ],
+  "hints": [
+   "A number divisible by 12 must be divisible by both 3 and 4. Use the two divisibility rules.",
+   "The rule for 4 looks at the last two digits, 48, and they are fine. So use the rule for 3: add up all the digits, counting the missing digit twice.",
+   "Example: 4 N, N 40 with the same digit in both blanks, divisible by 12. The last two digits, 40, are divisible by 4. The known digits add to 4 plus 4 plus 0, which is 8. Try 1: 8 plus 1 plus 1 equals 10, not divisible by 3. Try 2: 8 plus 2 plus 2 equals 12, divisible by 3. So the smallest digit that fits is 2."
+  ],
+  "steps": [
+   "12 equals 3 times 4, so the number must be divisible by 3 and by 4.",
+   "The last two digits are 48, and 48 divided by 4 equals 12. So the rule for 4 is already met.",
+   "The known digits add to 15. The missing digit is added twice. 3 plus 4 plus 8 equals 15.",
+   "Try the greatest digit, 9. The total is 33, and 33 is divisible by 3. 15 plus 9 plus 9 equals 33.",
+   "The greatest digit is 9."
+  ]
+ },
+ "EXT_G4_FP_2022_034": {
+  "q": "What is the difference between the L C M and the H C F of 16 and 36?",
+  "options": [
+   "144",
+   "140",
+   "160",
+   "130"
+  ],
+  "hints": [
+   "Find the H C F and the L C M of the two numbers first. The word difference tells you to subtract at the end.",
+   "Break 16 and 36 into prime factors. The factors they share give the H C F.",
+   "Example: for 10 and 15, the H C F is 5. The L C M is 30, the first number in both times tables. The difference is 30 minus 5, which is 25."
+  ],
+  "steps": [
+   "16 equals 2 times 2 times 2 times 2 and 36 equals 2 times 2 times 3 times 3. They share two 2s, so the H C F is 4. 2 times 2 equals 4.",
+   "For the L C M take four 2s and two 3s. 2 times 2 times 2 times 2 times 3 times 3 equals 144.",
+   "Subtract the H C F from the L C M. 144 minus 4 equals 140.",
+   "The difference is 140."
+  ]
+ },
+ "EXT_G4_FP_2022_036": {
+  "q": "The number 9, star, 3, star is divisible by 11. The digit at each star place is the same. Find the digit.",
+  "options": [
+   "4",
+   "5",
+   "7",
+   "None of these"
+  ],
+  "hints": [
+   "Use the test for 11. Add the 1st and 3rd digits. Add the 2nd and 4th digits. For a multiple of 11 the two sums are equal, or differ by 11.",
+   "The 1st and 3rd digits are 9 and 3. Add them. The two star digits must add up to the same total.",
+   "Example: 3 star 1 star with the same digit in both stars. 3 plus 1 equals 4, so the two stars must add to 4. Each star is 2. Check: 3212 divided by 11 equals 292."
+  ],
+  "steps": [
+   "For 11, the sum of the 1st and 3rd digits and the sum of the 2nd and 4th digits must be equal, or differ by 11.",
+   "Add the 1st and 3rd digits. 9 plus 3 equals 12.",
+   "So the two stars must add to 12. Both stars are the same digit, so each one is 6. 12 divided by 2 equals 6.",
+   "Check by dividing. 9636 divided by 11 equals 876.",
+   "The digit is 6, which is not 4, 5 or 7. So the answer is None of these."
+  ]
+ },
+ "EXT_G4_FP_2022_037": {
+  "q": "Q represents the greatest 2-digit number. Which of these represents the smallest 2-digit prime?",
+  "options": [
+   "Q minus 88",
+   "Q minus 84",
+   "Q minus 89",
+   "None of these"
+  ],
+  "hints": [
+   "First work out the two numbers the question talks about: the greatest 2-digit number and the smallest 2-digit prime.",
+   "Q is 99. Now find the smallest 2-digit prime. Start at 10 and check each number for factors.",
+   "Example: P is the greatest 1-digit number, so P equals 9. The smallest 1-digit prime is 2. Since 9 minus 7 equals 2, the prime can be written as P minus 7."
+  ],
+  "steps": [
+   "The greatest 2-digit number is 99, so Q equals 99.",
+   "10 equals 2 times 5, so 10 is not prime. 11 has only the factors 1 and 11, so 11 is the smallest 2-digit prime.",
+   "Find what must be taken away from 99 to leave 11. 99 minus 11 equals 88.",
+   "So the smallest 2-digit prime is Q minus 88. 99 minus 88 equals 11."
+  ]
+ },
+ "EXT_G4_FP_2023_005": {
+  "q": "What is the sum of the L C M and the H C F of 65 and 91?",
+  "options": [
+   "454",
+   "482",
+   "475",
+   "468"
+  ],
+  "hints": [
+   "Find the H C F and the L C M of the two numbers first. The word sum tells you to add them at the end.",
+   "Break both numbers into prime factors. A clue: both are in the 13 times table.",
+   "Example: 15 and 21. 15 equals 3 times 5 and 21 equals 3 times 7. The H C F is 3. The L C M is 3 times 5 times 7, which is 105. The sum is 105 plus 3, which is 108."
+  ],
+  "steps": [
+   "65 equals 5 times 13 and 91 equals 7 times 13. The factor they share is 13, so the H C F is 13.",
+   "For the L C M use each prime once. 5 times 7 times 13 equals 455.",
+   "Add the L C M and the H C F. 455 plus 13 equals 468.",
+   "The sum is 468."
+  ]
+ },
+ "EXT_G4_FP_2023_018": {
+  "q": "The number 1, A, 9, A, 5 is divisible by 7, and the digit in place of each A is the same. What is A?",
+  "options": [
+   "4",
+   "5",
+   "7",
+   "2"
+  ],
+  "hints": [
+   "There is no quick rule for 7 here, so test the choices. Put each digit in both blanks and divide by 7.",
+   "Pick one choice. Write the 5-digit number it makes and do the long division by 7. If nothing is left over, that digit fits.",
+   "Example: 2 N 6 is divisible by 7, and N is 5 or 6. Try 5: 7 times 36 equals 252, so 256 leaves 4 over. Try 6: 266 divided by 7 equals 38 with nothing left over. So N equals 6."
+  ],
+  "steps": [
+   "Put each digit in both blanks and divide by 7.",
+   "With 4 the number is 14945. 14945 divided by 7 equals 2135.",
+   "Nothing is left over, so 14945 is divisible by 7.",
+   "The other digits give 15955, 17975 and 12925. Each of these leaves a remainder when divided by 7.",
+   "So the digit is 4."
+  ]
+ },
+ "EXT_G4_FP_2023_026": {
+  "q": "What is the sum of the first 10 two-digit prime numbers, in Roman numerals?",
+  "options": [
+   "C C L X I V",
+   "C C X L I V",
+   "C C L X V I",
+   "C C X L V I"
+  ],
+  "hints": [
+   "There are two jobs here. First list the primes and add them. Then write the total in Roman numerals.",
+   "Start listing 2-digit primes from 11: 11, 13, 17, 19 and so on. Keep going until you have ten of them, then add.",
+   "Example: the first three 2-digit primes are 11, 13 and 17. 11 plus 13 plus 17 equals 41. In Roman numerals 40 is X L and 1 is I, so 41 is X L I."
+  ],
+  "steps": [
+   "The first ten 2-digit primes are 11, 13, 17, 19, 23, 29, 31, 37, 41 and 43.",
+   "Add them in pairs: 11 plus 19 equals 30, 13 plus 17 equals 30, 23 plus 37 equals 60, 29 plus 31 equals 60 and 41 plus 43 equals 84.",
+   "Add the pair totals. 30 plus 30 plus 60 plus 60 plus 84 equals 264.",
+   "264 equals 200 plus 60 plus 4. In Roman numerals 200 is C C, 60 is L X and 4 is I V.",
+   "The sum is C C L X I V."
+  ]
+ },
+ "EXT_G4_FP_2023_027": {
+  "q": "The L C M and H C F of two numbers are 2040 and 8. One number is 120. Find the other.",
+  "options": [
+   "192",
+   "128",
+   "136",
+   "144"
+  ],
+  "hints": [
+   "This uses a special rule for two numbers: L C M times H C F is equal to the product of the two numbers.",
+   "Multiply the L C M by the H C F. That gives the product of the two numbers. Then think how to get the missing number from it.",
+   "Example: H C F equals 6, L C M equals 90 and one number is 18. 6 times 90 equals 540. Then 540 divided by 18 equals 30. The other number is 30."
+  ],
+  "steps": [
+   "L C M times H C F gives the product of the two numbers. 2040 times 8 equals 16320.",
+   "Divide this product by the number you know. 16320 divided by 120 equals 136.",
+   "The other number is 136."
+  ]
+ },
+ "EXT_G4_FP_2023_036": {
+  "q": "Which number is divisible by 18?",
+  "options": [
+   "9486",
+   "9672",
+   "9876",
+   "9567"
+  ],
+  "hints": [
+   "18 equals 2 times 9. A number divisible by 18 must pass the test for 2 and the test for 9.",
+   "First cross out any odd number. Then add the digits of each even number and see if the total is in the 9 times table.",
+   "Example: is 3474 divisible by 18? It is even. Its digits add to 3 plus 4 plus 7 plus 4, which is 18, and 18 is in the 9 times table. So 3474 is divisible by 18."
+  ],
+  "steps": [
+   "18 equals 2 times 9, so the number must be even and its digits must add to a multiple of 9.",
+   "9567 is odd, so it is out.",
+   "Add the digits of the others. 9486 gives 9 plus 4 plus 8 plus 6, which is 27. 9672 gives 24. 9876 gives 30.",
+   "Only 27 is a multiple of 9. So 9486 is divisible by 18. 9486 divided by 18 equals 527."
+  ]
+ },
+ "EXT_G4_FP_2023_040": {
+  "q": "Which of these is true?",
+  "options": [
+   "18 plus 18 divided by 2 equals 18",
+   "1 leap year equals 8760 hours",
+   "2816 is divisible by 11",
+   "586 is a square number"
+  ],
+  "hints": [
+   "Check each statement one at a time. Each one uses a different idea: order of operations, time, divisibility and square numbers.",
+   "Start with the statement that has a sum in it. Remember to divide before you add. Then test the others just as carefully.",
+   "Example: is 3729 divisible by 11? Add the 1st and 3rd digits: 3 plus 2 equals 5. Add the 2nd and 4th digits: 7 plus 9 equals 16. The sums differ by 11, so 3729 is divisible by 11."
+  ],
+  "steps": [
+   "Divide before adding: 18 divided by 2 equals 9, then 18 plus 9 equals 27. So the first sum is not 18. 18 plus 18 divided by 2 equals 27.",
+   "A leap year has 366 days. That is 8784 hours, not 8760. 366 times 24 equals 8784.",
+   "24 times 24 equals 576 and 25 times 25 equals 625. 586 lies between them, so it is not a square number.",
+   "For 2816, 2 plus 1 equals 3 and 8 plus 6 equals 14. The sums differ by 11, so 11 divides it. 2816 divided by 11 equals 256.",
+   "The true statement is: 2816 is divisible by 11."
+  ]
+ },
+ "EXT_G4_FP_2024_008": {
+  "q": "What is the square of the sum of the one-digit prime numbers?",
+  "options": [
+   "361",
+   "324",
+   "441",
+   "None of these"
+  ],
+  "hints": [
+   "There are two steps: add the one-digit primes, then square the total. Squaring means multiplying a number by itself.",
+   "List the primes smaller than 10 first. Remember that 1 is not a prime and 9 is not a prime.",
+   "Example: the square of the sum of the first three odd numbers. 1 plus 3 plus 5 equals 9, and 9 times 9 equals 81."
+  ],
+  "steps": [
+   "The one-digit primes are 2, 3, 5 and 7.",
+   "Add them. 2 plus 3 plus 5 plus 7 equals 17.",
+   "Square the sum. 17 times 17 equals 289.",
+   "289 is not 361, 324 or 441. So the answer is None of these."
+  ]
+ },
+ "EXT_G4_FP_2024_010": {
+  "q": "What is the L C M of 36 and 84, divided by the H C F of 36 and 84?",
+  "options": [
+   "14",
+   "16",
+   "18",
+   "21"
+  ],
+  "hints": [
+   "Find the L C M and the H C F of the two numbers first. Then divide the L C M by the H C F.",
+   "Break 36 and 84 into prime factors. The factors they share give the H C F.",
+   "Example: for 8 and 12, the H C F is 4 and the L C M is 24. Then 24 divided by 4 equals 6."
+  ],
+  "steps": [
+   "36 equals 2 times 2 times 3 times 3 and 84 equals 2 times 2 times 3 times 7. They share two 2s and one 3, so the H C F is 12. 2 times 2 times 3 equals 12.",
+   "For the L C M take two 2s, two 3s and one 7. 2 times 2 times 3 times 3 times 7 equals 252.",
+   "Divide the L C M by the H C F. 252 divided by 12 equals 21.",
+   "The answer is 21."
+  ]
+ },
+ "EXT_G4_FP_2024_021": {
+  "q": "The numbers A 59, 5 B 2 and 6 C 9 are each divisible by 9. What is the greatest odd number that can be formed by the digits A, B and C?",
+  "options": [
+   "321",
+   "423",
+   "729",
+   "543"
+  ],
+  "hints": [
+   "A number is divisible by 9 when its digits add up to a multiple of 9. Use this to find each missing digit. Then arrange the three digits.",
+   "Start with the first number: 5 plus 9 equals 14. What must be added to 14 to reach the next multiple of 9? Do the same for the other two numbers.",
+   "Example: 4 P 1 is divisible by 9. 4 plus 1 equals 5, and the next multiple of 9 is 9, so P equals 4. If three digits found this way are 4, 6 and 1, the greatest odd number must end in 1, so it is 641."
+  ],
+  "steps": [
+   "In the first number 5 plus 9 equals 14. The next multiple of 9 is 18, so the missing digit is 4. 18 minus 14 equals 4.",
+   "In the second number 5 plus 2 equals 7. The next multiple of 9 is 9, so the missing digit is 2. 9 minus 7 equals 2.",
+   "In the third number 6 plus 9 equals 15. The next multiple of 9 is 18, so the missing digit is 3. 18 minus 15 equals 3.",
+   "The digits are 4, 2 and 3. An odd number must end in an odd digit, and 3 is the only odd one.",
+   "Put the bigger of the other two digits first. The greatest odd number is 423."
+  ]
+ },
+ "EXT_G4_FP_2024_027": {
+  "q": "The 5-digit number A 048 A is divisible by 11, and the digit at each A place is the same. What is A?",
+  "options": [
+   "6",
+   "3",
+   "1",
+   "None of these"
+  ],
+  "hints": [
+   "Use the test for 11. Add the 1st, 3rd and 5th digits. Add the 2nd and 4th digits. For a multiple of 11 the two sums are equal, or differ by 11.",
+   "The 2nd and 4th digits are 0 and 8. Add them. The 1st, 3rd and 5th digits are the blank, 4 and the blank again, and they must give the same total.",
+   "Example: N 415 N with the same digit in both blanks. The 2nd and 4th digits add to 4 plus 5, which is 9. The others are N, 1 and N, so the two blanks must add to 9 minus 1, which is 8. Each blank is 4. Check: 44154 divided by 11 equals 4014."
+  ],
+  "steps": [
+   "Add the 2nd and 4th digits. 0 plus 8 equals 8.",
+   "The 1st, 3rd and 5th digits are the blank, 4 and the blank. They must also add to 8.",
+   "So the two blanks add to 8 minus 4, which is 4, and each blank is 2. 4 divided by 2 equals 2.",
+   "Check by dividing. 20482 divided by 11 equals 1862.",
+   "The digit is 2, which is not 6, 3 or 1. So the answer is None of these."
+  ]
+ },
+ "EXT_G4_FP_2024_034": {
+  "q": "The L C M of which two numbers is a square number?",
+  "options": [
+   "6 and 15",
+   "8 and 36",
+   "16 and 30",
+   "4 and 18"
+  ],
+  "hints": [
+   "Find the L C M of each pair. Then ask: is this L C M a number times itself, like 5 times 5?",
+   "Take one pair. List the multiples of the bigger number and stop at the first one the smaller number divides. Then check if it is a square.",
+   "Example: 5 and 25. The multiples of 25 are 25, 50 and so on. 5 divides 25, so the L C M is 25. Since 5 times 5 equals 25, this L C M is a square number."
+  ],
+  "steps": [
+   "The L C M of 6 and 15 is 30. The L C M of 8 and 36 is 72. The L C M of 16 and 30 is 240.",
+   "For 4 and 18, the multiples of 18 are 18, 36 and so on. 4 divides 36, so the L C M is 36.",
+   "36 is a square number. 30, 72 and 240 are not. 6 times 6 equals 36.",
+   "The pair is 4 and 18."
+  ]
+ },
+ "EXT_G4_FP_2025_001": {
+  "q": "Add all the one-digit primes, then multiply by the greatest 2-digit number. What is the sum of the face values of the digits of the product?",
+  "options": [
+   "17",
+   "18",
+   "19",
+   "None of these"
+  ],
+  "hints": [
+   "Go one step at a time: add the primes, multiply, then add the digits of the product. The face value of a digit is just the digit itself.",
+   "List the one-digit primes and add them. The greatest 2-digit number is 99. A quick way to multiply by 99 is to multiply by 100 and take the number away once.",
+   "Example: add the first three odd numbers, 1 plus 3 plus 5 equals 9. Multiply by the greatest 1-digit even number: 9 times 8 equals 72. The face values add to 7 plus 2, which is 9."
+  ],
+  "steps": [
+   "The one-digit primes are 2, 3, 5 and 7. 2 plus 3 plus 5 plus 7 equals 17.",
+   "The greatest 2-digit number is 99. 17 times 100 equals 1700, and 1700 minus 17 equals 1683. 17 times 99 equals 1683.",
+   "Add the digits of the product. 1 plus 6 plus 8 plus 3 equals 18.",
+   "The sum of the face values is 18."
+  ]
+ },
+ "EXT_G4_FP_2025_006": {
+  "q": "What is the sum of the square of the greatest one-digit prime and the square of the smallest two-digit prime?",
+  "options": [
+   "164",
+   "181",
+   "170",
+   "202"
+  ],
+  "hints": [
+   "Find the two primes first. Then square each one, which means multiply it by itself, and add the squares.",
+   "List the one-digit primes and pick the biggest. Then look for the first prime after 10.",
+   "Example: the square of the smallest one-digit prime plus the square of the greatest one-digit odd number. 2 times 2 equals 4 and 9 times 9 equals 81. Then 4 plus 81 equals 85."
+  ],
+  "steps": [
+   "The greatest one-digit prime is 7. The smallest two-digit prime is 11.",
+   "Square 7. 7 times 7 equals 49.",
+   "Square 11. 11 times 11 equals 121.",
+   "Add the two squares. 49 plus 121 equals 170.",
+   "The sum is 170."
+  ]
+ },
+ "EXT_G4_FP_2025_008": {
+  "q": "Which pair has a different H C F from the others? 30 and 45, 45 and 60, 15 and 75, or 30 and 90?",
+  "options": [
+   "30 and 45",
+   "45 and 60",
+   "15 and 75",
+   "30 and 90"
+  ],
+  "hints": [
+   "Find the H C F of each pair. Three pairs will have the same H C F. One pair will not.",
+   "Start with 30 and 45. List the factors of each and pick the biggest one they share. Then do the same for the next pair.",
+   "Example: for 12 and 18 the H C F is 6. For 6 and 24 the H C F is 6 too, because 6 divides 24. For 12 and 36 the H C F is 12, because 12 divides 36. So 12 and 36 is the pair with a different H C F."
+  ],
+  "steps": [
+   "30 and 45: both are in the 15 times table, and no bigger number divides both. The H C F is 15.",
+   "45 and 60: the H C F is 15. For 15 and 75, 15 divides 75, so the H C F is 15 again.",
+   "30 and 90: 30 divides 90 exactly, so the H C F is 30. 90 divided by 30 equals 3.",
+   "The pair with a different H C F is 30 and 90."
+  ]
+ },
+ "EXT_G4_FP_2025_022": {
+  "q": "What fraction of the 2-digit numbers are 2-digit primes?",
+  "options": [
+   "5 over 18",
+   "7 over 30",
+   "11 over 30",
+   "7 over 18"
+  ],
+  "hints": [
+   "A fraction needs two counts: how many 2-digit primes there are, and how many 2-digit numbers there are in all. Then simplify.",
+   "First count all the 2-digit numbers, from 10 to 99. Then list the primes between 10 and 99, row by row: the tens, the twenties and so on.",
+   "Example: what fraction of the numbers 1 to 9 are prime? The primes are 2, 3, 5 and 7. That is 4 out of 9, so the fraction is 4 over 9."
+  ],
+  "steps": [
+   "The 2-digit numbers run from 10 to 99, so there are 90 of them. 99 minus 9 equals 90.",
+   "The 2-digit primes are 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89 and 97. That is 21 primes.",
+   "The fraction is 21 out of 90. Divide the top and bottom by 3. 21 over 90 equals 7 over 30.",
+   "The fraction is 7 over 30."
+  ]
+ },
+ "EXT_G4_FP_2025_024": {
+  "q": "A number is divisible by 9. Which of these must be completely true?",
+  "options": [
+   "Divisible by 12",
+   "Divisible by 6",
+   "Divisible by 3",
+   "Divisible by 18"
+  ],
+  "hints": [
+   "Think about what 9 is made of. If a number is in the 9 times table, which other times table must it be in?",
+   "Write 9 as a product: 9 equals 3 times 3. Then test each choice with a small multiple of 9, such as 9 itself or 27.",
+   "Example: every number divisible by 10 is also divisible by 5, because 10 equals 2 times 5. Take 30: 30 divided by 10 equals 3 and 30 divided by 5 equals 6. But 30 is not divisible by 20, so a bigger number does not always work."
+  ],
+  "steps": [
+   "9 equals 3 times 3, so every multiple of 9 is also a multiple of 3.",
+   "Test with 27: 27 divided by 9 equals 3 and 27 divided by 3 equals 9.",
+   "27 is odd, so it is not divisible by 6, 12 or 18. Those are not always true.",
+   "So the number is always divisible by 3."
+  ]
+ },
+ "EXT_G4_FP_2025_025": {
+  "q": "What is the greatest 3-digit number divisible by 12 and 18?",
+  "options": [
+   "972",
+   "984",
+   "968",
+   "936"
+  ],
+  "hints": [
+   "A number divisible by both 12 and 18 is a multiple of their L C M. So find the L C M, then find its biggest multiple below 1000.",
+   "Find the L C M of 12 and 18 first. List the multiples of 18 until you reach one that 12 also divides.",
+   "Example: the greatest 2-digit number divisible by 4 and 6. The L C M is 12. The multiples of 12 go 12, 24 and so on up to 84, 96, 108. The last one with two digits is 96."
+  ],
+  "steps": [
+   "The multiples of 18 are 18, 36 and so on. 12 divides 36, so the L C M is 36.",
+   "Find the biggest multiple of 36 that has three digits. 36 times 27 equals 972.",
+   "The next multiple has four digits, so stop at 972. 36 times 28 equals 1008.",
+   "The number is 972."
+  ]
+ },
+ "EXT_G4_FP_2025_026": {
+  "q": "What is the square of the greatest 2-digit multiple of 13?",
+  "options": [
+   "8971",
+   "8281",
+   "9604",
+   "6084"
+  ],
+  "hints": [
+   "There are two steps. Find the biggest number below 100 in the 13 times table. Then multiply it by itself.",
+   "Count up in 13s, or try 13 times 7 and 13 times 8. Which is the last one that still has two digits?",
+   "Example: the square of the greatest 2-digit multiple of 15. 15 times 6 equals 90 and 15 times 7 equals 105, so the multiple is 90. Then 90 times 90 equals 8100."
+  ],
+  "steps": [
+   "13 times 7 equals 91 and 13 times 8 equals 104. So the greatest 2-digit multiple of 13 is 91.",
+   "To square 91, first multiply 91 by 90. 91 times 90 equals 8190.",
+   "Then add one more 91. 8190 plus 91 equals 8281.",
+   "The square is 8281. 91 times 91 equals 8281."
+  ]
+ },
+ "EXT_G4_FP_2025_030": {
+  "q": "The 5-digit number 25 N 48 is a multiple of 12. What digit does N represent?",
+  "options": [
+   "6",
+   "7",
+   "8",
+   "9"
+  ],
+  "hints": [
+   "A multiple of 12 is divisible by both 3 and 4. Use the two divisibility rules.",
+   "The rule for 4 looks at the last two digits, 48, and they are fine. So use the rule for 3: add up all the digits, with N as one of them.",
+   "Example: 41 K 36 is a multiple of 12, and K is 1, 2 or 3. 36 divided by 4 equals 9, so the rule for 4 is met. The known digits add to 4 plus 1 plus 3 plus 6, which is 14. 14 plus 1 equals 15, which is divisible by 3, but 16 and 17 are not. So K equals 1."
+  ],
+  "steps": [
+   "12 equals 3 times 4, so the number must be divisible by 3 and by 4.",
+   "The last two digits are 48, and 48 divided by 4 equals 12. So the rule for 4 is already met.",
+   "Add the digits you know. 2 plus 5 plus 4 plus 8 equals 19.",
+   "Add each choice to 19: 19 plus 6 equals 25, 19 plus 7 equals 26, 19 plus 8 equals 27 and 19 plus 9 equals 28. Only 27 is divisible by 3.",
+   "N stands for 8."
+  ]
+ },
+ "EXT_G4_FP_2025_040": {
+  "q": "What is the difference between the L C M and the H C F of 24 and 32?",
+  "options": [
+   "104",
+   "90",
+   "88",
+   "84"
+  ],
+  "hints": [
+   "Find the H C F and the L C M of the two numbers first. The word difference tells you to subtract at the end.",
+   "Break 24 and 32 into prime factors. The factors they share give the H C F.",
+   "Example: for 9 and 12, the H C F is 3. The L C M is 36, the first number in both times tables. The difference is 36 minus 3, which is 33."
+  ],
+  "steps": [
+   "24 equals 2 times 2 times 2 times 3 and 32 equals 2 times 2 times 2 times 2 times 2. They share three 2s, so the H C F is 8.",
+   "For the L C M take five 2s and one 3. 2 times 2 times 2 times 2 times 2 times 3 equals 96.",
+   "Subtract the H C F from the L C M. 96 minus 8 equals 88.",
+   "The difference is 88."
+  ]
+ },
+ "G4A_FACTORS_001": {
+  "q": "Which of these numbers is a factor of 36?",
+  "options": [
+   "8",
+   "9",
+   "10",
+   "14"
+  ],
+  "hints": [
+   "A factor of a number divides it exactly, with no remainder.",
+   "Try dividing 36 by each number, or look for 36 in each number's times table.",
+   "A similar one: is 6 a factor of 42? 6 times 7 equals 42, so yes, 6 is a factor of 42."
+  ],
+  "steps": [
+   "A factor divides the number exactly.",
+   "36 divided by 8, 36 divided by 10 and 36 divided by 14 all leave remainders.",
+   "9 times 4 equals 36, so 9 is a factor of 36. 36 divided by 9 equals 4."
+  ]
+ },
+ "G4A_FACTORS_002": {
+  "q": "Which of these numbers is not a multiple of 7?",
+  "options": [
+   "42",
+   "63",
+   "54",
+   "91"
+  ],
+  "hints": [
+   "Multiples of 7 are the numbers in the 7 times table, and the table carries on past 70.",
+   "Divide each number by 7 and see which one leaves a remainder.",
+   "A similar one: is 75 a multiple of 6? 6 times 12 equals 72 and 6 times 13 equals 78, so 75 is not a multiple of 6."
+  ],
+  "steps": [
+   "42 equals 7 times 6 and 63 equals 7 times 9, so both are multiples of 7.",
+   "91 is also a multiple of 7. 7 times 13 equals 91.",
+   "54 lies between 49 and 56, so 54 is not a multiple of 7. 54 divided by 7 equals 7 remainder 5."
+  ]
+ },
+ "G4A_FACTORS_003": {
+  "q": "Which of these is a composite number?",
+  "options": [
+   "39",
+   "23",
+   "29",
+   "37"
+  ],
+  "hints": [
+   "A composite number has more than two factors. A prime number has exactly two: 1 and itself.",
+   "Test each number with small divisors such as 2, 3 and 5. The digit-sum rule for 3 is useful here.",
+   "A similar one: is 51 composite? 5 plus 1 equals 6, which is a multiple of 3, and 51 equals 3 times 17, so 51 is composite."
+  ],
+  "steps": [
+   "A composite number can be divided exactly by a number other than 1 and itself.",
+   "23, 29 and 37 cannot be divided exactly by 2, 3 or 5, so they are prime.",
+   "3 plus 9 equals 12, which is a multiple of 3, so 3 divides 39. This makes 39 a composite number. 39 equals 3 times 13."
+  ]
+ },
+ "G4A_FACTORS_004": {
+  "q": "Which list shows all the factors of 18?",
+  "options": [
+   "1, 2, 3, 6, 9, 18",
+   "1, 2, 3, 6, 9",
+   "2, 3, 6, 9",
+   "1, 2, 3, 4, 6, 9, 18"
+  ],
+  "hints": [
+   "Factors come in pairs that multiply to give the number. Do not forget 1 and the number itself.",
+   "Start with 1 times 18. Then try 2, then 3, and so on, writing down each pair that works.",
+   "A similar one: the factors of 20. The pairs are 1 times 20, 2 times 10 and 4 times 5, so the factors are 1, 2, 4, 5, 10, 20."
+  ],
+  "steps": [
+   "Find pairs of numbers that multiply to give 18. 1 times 18 equals 18.",
+   "A second pair. 2 times 9 equals 18.",
+   "The last pair is 3 times 6. 4 and 5 do not divide 18 exactly. 3 times 6 equals 18.",
+   "All the factors of 18 are 1, 2, 3, 6, 9, 18."
+  ]
+ },
+ "G4A_FACTORS_005": {
+  "q": "A sweet shop packs laddoos 8 in a box, with none left over. Which of these could be the number of laddoos packed?",
+  "options": [
+   "44",
+   "54",
+   "56",
+   "62"
+  ],
+  "hints": [
+   "If boxes of 8 are filled with none left over, the total must be a multiple of 8.",
+   "Check each number against the 8 times table: 40, 48, and so on.",
+   "A similar one: pencils packed 6 in a box with none left over. 42 works because 6 times 7 equals 42, but 44 would leave 2 over."
+  ],
+  "steps": [
+   "With none left over, the total is a multiple of 8.",
+   "44, 54 and 62 are not in the 8 times table.",
+   "56 is a multiple of 8, so 56 laddoos could be packed. 8 times 7 equals 56."
+  ]
+ },
+ "G4A_FACTORS_006": {
+  "q": "Which of these numbers is a common factor of 12 and 20?",
+  "options": [
+   "3",
+   "5",
+   "6",
+   "4"
+  ],
+  "hints": [
+   "A common factor divides both numbers exactly.",
+   "Test each number on 12 first, then test it on 20.",
+   "A similar one: is 3 a common factor of 9 and 15? 9 divided by 3 equals 3 and 15 divided by 3 equals 5, so yes."
+  ],
+  "steps": [
+   "A common factor must divide both 12 and 20 exactly.",
+   "3 and 6 do not divide 20, and 5 does not divide 12.",
+   "4 divides both, so 4 is a common factor of 12 and 20. 12 divided by 4 equals 3."
+  ]
+ },
+ "G4A_FACTORS_007": {
+  "q": "Three decoration lights blink at different speeds: one every 4 seconds, one every 6 seconds and one every 9 seconds. They all blink together now. After how many seconds will they next blink together?",
+  "options": [
+   "18 seconds",
+   "36 seconds",
+   "72 seconds",
+   "216 seconds"
+  ],
+  "hints": [
+   "Each light blinks at multiples of its own number. They blink together at a number that is a multiple of all three.",
+   "List the multiples of 9: 9, 18, 27 and so on. Check each one to see whether 4 and 6 both divide it.",
+   "A similar one: lights blinking every 2, 3 and 5 seconds. The first number all three divide is 30, so they next blink together after 30 seconds."
+  ],
+  "steps": [
+   "The lights blink together at common multiples of 4, 6 and 9.",
+   "Multiples of 9 are 9, 18, 27, 36. Of these, 4 does not divide 9, 18 or 27.",
+   "4 and 6 both divide 36. 36 divided by 4 equals 9.",
+   "The lights next blink together after 36 seconds."
+  ]
+ },
+ "G4A_FACTORS_008": {
+  "q": "A wall panel is 48 centimetres long and 60 centimetres wide. It is to be covered exactly with equal square tiles, with no cutting. What is the side of the largest square tile that can be used?",
+  "options": [
+   "6 centimetres",
+   "12 centimetres",
+   "24 centimetres",
+   "240 centimetres"
+  ],
+  "hints": [
+   "The tile's side must fit a whole number of times along the length and along the width. So it must divide both numbers.",
+   "List the factors of 48 and see which of them also divide 60. Then choose the greatest.",
+   "A similar one: a board 30 centimetres by 45 centimetres. The numbers dividing both are 1, 3, 5 and 15, so the largest square tile has a side of 15 centimetres."
+  ],
+  "steps": [
+   "The side of the tile must be a factor of both 48 and 60.",
+   "Common factors of 48 and 60 are 1, 2, 3, 4, 6 and 12.",
+   "The greatest of these is 12. 48 equals 12 times 4.",
+   "The largest square tile has a side of 12 centimetres."
+  ]
+ },
+ "G4A_FACTORS_009": {
+  "q": "Two prime numbers add up to 30. Which of these numbers cannot be one of the two primes?",
+  "options": [
+   "7",
+   "11",
+   "13",
+   "5"
+  ],
+  "hints": [
+   "For each number, find its partner that makes 30. Both numbers in the pair must be prime.",
+   "Subtract each number from 30 and ask whether the result is a prime number.",
+   "A similar one: two primes add up to 20. Can 3 be one of them? 20 minus 3 equals 17, which is prime, so yes. Can 11? 20 minus 11 equals 9, which is 3 times 3, and is not prime, so no."
+  ],
+  "steps": [
+   "Find the partner of each number: 30 minus 7 equals 23, 30 minus 11 equals 19 and 30 minus 13 equals 17. All three partners are prime.",
+   "The partner of 5 is 25. 30 minus 5 equals 25.",
+   "25, which is 5 times 5, is not prime, so 5 cannot be one of the two primes."
+  ]
+ },
+ "G4A_FACTORS_010": {
+  "q": "A three-digit number has 7 in the hundreds place and 4 in the ones place. Its tens digit is missing. What is the smallest digit that can go in the tens place so that the number is divisible by 3?",
+  "options": [
+   "1",
+   "4",
+   "2",
+   "0"
+  ],
+  "hints": [
+   "A number is divisible by 3 when the sum of its digits is divisible by 3.",
+   "The two known digits add to 7 plus 4, which is 11. Find the next multiple of 3 after 11.",
+   "A similar one: 5 in the hundreds place and 2 in the ones place. 5 plus 2 equals 7, and the next multiple of 3 is 9, so the smallest tens digit is 2, giving 522."
+  ],
+  "steps": [
+   "A number is divisible by 3 when its digits add up to a multiple of 3.",
+   "Add the known digits. 7 plus 4 equals 11.",
+   "The next multiple of 3 is 12, which needs 1 more. 12 minus 11 equals 1.",
+   "The smallest digit is 1, giving the number 714."
+  ]
+ },
+ "G4A_FACTORS_011": {
+  "q": "Which of these numbers is divisible by 6?",
+  "options": [
+   "2,134",
+   "3,471",
+   "4,572",
+   "5,224"
+  ],
+  "hints": [
+   "A number is divisible by 6 when it is divisible by both 2 and 3.",
+   "First leave out any odd number. Then add the digits of each even number to test for 3.",
+   "A similar one: is 1,734 divisible by 6? It is even, and 1 plus 7 plus 3 plus 4 equals 15, which is a multiple of 3, so yes."
+  ],
+  "steps": [
+   "To be divisible by 6, a number must be even and its digits must add to a multiple of 3.",
+   "3,471 is odd, so it is out.",
+   "Digit sums: 2,134 gives 10, 5,224 gives 13, and 4,572 gives 18. 4 plus 5 plus 7 plus 2 equals 18.",
+   "18 is a multiple of 3 and the number is even, so 4,572 is divisible by 6."
+  ]
+ },
+ "G4A_FACTORS_012": {
+  "q": "Which of these numbers has exactly 3 factors?",
+  "options": [
+   "15",
+   "21",
+   "25",
+   "27"
+  ],
+  "hints": [
+   "Factors usually come in pairs, which gives an even count. Think about when a pair is made of the same number twice.",
+   "List the factors of each number and count them.",
+   "A similar one: the factors of 49 are 1, 7 and 49, because 7 times 7 equals 49. So 49 has exactly 3 factors."
+  ],
+  "steps": [
+   "List the factors of each number. 15 has 1, 3, 5, 15, and 21 has 1, 3, 7, 21.",
+   "27 has 1, 3, 9, 27. Each of these three numbers has 4 factors.",
+   "25 has only 1, 5 and 25, because 5 times 5 equals 25. So 25 has exactly 3 factors."
+  ]
+ },
+ "G4A_FACTORS_013": {
+  "q": "How many of the factors of 48 are even numbers?",
+  "options": [
+   "8",
+   "10",
+   "5",
+   "2"
+  ],
+  "hints": [
+   "List all the factors of 48 in pairs first. Then sort them into odd and even.",
+   "Start the pairs: 1 times 48, 2 times 24, 3 times 16, and keep going until the pairs repeat.",
+   "A similar one: the factors of 20 are 1, 2, 4, 5, 10 and 20. The even ones are 2, 4, 10 and 20, so 4 of them are even."
+  ],
+  "steps": [
+   "List the factor pairs of 48: 1 times 48, 2 times 24, 3 times 16, 4 times 12 and 6 times 8.",
+   "So 48 has 10 factors: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48.",
+   "Only 1 and 3 are odd. 10 minus 2 equals 8.",
+   "8 of the factors of 48 are even numbers."
+  ]
+ },
+ "G4A_FACTORS_014": {
+  "q": "A flower seller can string all her marigolds into garlands of 10 flowers or into garlands of 15 flowers, with no flower left over either way. What is the smallest number of marigolds she could have?",
+  "options": [
+   "150",
+   "30",
+   "5",
+   "60"
+  ],
+  "hints": [
+   "The number of flowers must be a multiple of 10 and also a multiple of 15.",
+   "List the multiples of 15: 15, 30, 45 and so on. Find the first that is also a multiple of 10.",
+   "A similar one: bunches of 4 flowers or of 6 flowers with none left over. Multiples of 6 are 6, 12, and 12 is the first that 4 divides, so the smallest number is 12."
+  ],
+  "steps": [
+   "The number must be a common multiple of 10 and 15.",
+   "Multiples of 15 are 15, 30, 45. 15 is not a multiple of 10.",
+   "30 is a multiple of 10. 10 times 3 equals 30.",
+   "The smallest number of marigolds is 30."
+  ]
+ },
+ "G4A_FACTORS_015": {
+  "q": "What is the greatest prime factor of 84?",
+  "options": [
+   "21",
+   "3",
+   "42",
+   "7"
+  ],
+  "hints": [
+   "Break the number down into prime numbers multiplied together. Then pick the greatest prime you used.",
+   "Start by dividing 84 by 2: 84 equals 2 times 42. Keep splitting until every part is prime.",
+   "A similar one: 60 equals 2 times 30, which equals 2 times 2 times 15, which equals 2 times 2 times 3 times 5, so the greatest prime factor of 60 is 5."
+  ],
+  "steps": [
+   "Split 84 into smaller factors. 84 equals 2 times 42.",
+   "Keep splitting until all the parts are prime. 84 equals 2 times 2 times 3 times 7.",
+   "The prime factors are 2, 3 and 7. The greatest prime factor of 84 is 7."
+  ]
+ },
+ "G4A_FACTORS_016": {
+  "q": "What is the smallest number that must be subtracted from 4,729 to get a number that is divisible by 9?",
+  "options": [
+   "5",
+   "2",
+   "9",
+   "4"
+  ],
+  "hints": [
+   "A number is divisible by 9 when the sum of its digits is divisible by 9.",
+   "Add the digits: 4 plus 7 plus 2 plus 9. Compare the total with the nearest multiple of 9 below it.",
+   "A similar one: for 3,152 the digits add to 11, which is 2 more than 9. So subtract 2 to get 3,150, which is divisible by 9."
+  ],
+  "steps": [
+   "Add the digits of 4,729. 4 plus 7 plus 2 plus 9 equals 22.",
+   "The multiple of 9 just below 22 is 18. 22 minus 18 equals 4.",
+   "Taking away 4 gives 4,725, which is divisible by 9. The smallest number to subtract is 4."
+  ]
+ },
+ "G4A_FACTORS_017": {
+  "q": "A staircase has 50 steps, numbered 1 to 50. Anu steps only on every 3rd step, 3, 6, 9 and so on. Biju steps only on every 4th step, 4, 8, 12 and so on. How many steps are touched by neither of them?",
+  "options": [
+   "22",
+   "26",
+   "24",
+   "46"
+  ],
+  "hints": [
+   "Count the steps each child touches, but be careful: some steps are touched by both.",
+   "Anu touches the multiples of 3 up to 50 and Biju the multiples of 4. Steps touched by both are multiples of 12.",
+   "A similar one, with 20 steps and every 2nd and every 5th step: 10 steps and 4 steps, with 2 steps, 10 and 20, counted twice. So 10 plus 4 minus 2, which is 12, are touched, and 20 minus 12, which is 8, are not."
+  ],
+  "steps": [
+   "Anu touches the multiples of 3 up to 50: there are 16. 50 divided by 3 equals 16 remainder 2.",
+   "Biju touches the multiples of 4 up to 50: there are 12. Steps touched by both are the multiples of 12: there are 4.",
+   "Steps touched by at least one child. 16 plus 12 minus 4 equals 24.",
+   "Steps touched by neither. The answer is 26. 50 minus 24 equals 26."
+  ]
+ },
+ "G4A_FACTORS_018": {
+  "q": "From a bus stand, buses to Pune leave every 15 minutes and buses to Nashik leave every 20 minutes. One bus of each kind leaves at 6:00 in the morning. From 6:00 to 10:00 in the morning, counting both of these times, how many times do a Pune bus and a Nashik bus leave together?",
+  "options": [
+   "4",
+   "8",
+   "5",
+   "12"
+  ],
+  "hints": [
+   "First find after how many minutes the two kinds of bus leave together again. Then count the times carefully, including the start.",
+   "Find the smallest number that is a multiple of both 15 and 20.",
+   "A similar one: bells ringing every 10 and 15 minutes, both at 2:00. They ring together every 30 minutes, so from 2:00 to 3:00 that is at 2:00, 2 30 and 3:00, which is 3 times."
+  ],
+  "steps": [
+   "Find the smallest common multiple of 15 and 20. Multiples of 20 are 20, 40, 60, and 15 divides 60. 15 times 4 equals 60.",
+   "So the buses leave together every 60 minutes, that is, every hour.",
+   "The times are 6:00, 7:00, 8:00, 9:00 and 10:00.",
+   "They leave together 5 times."
+  ]
+ },
+ "G4A_FACTORS_019": {
+  "q": "Rohan has some marbles. When he puts them in groups of 4, or groups of 5, or groups of 6, there are always 3 marbles left over. What is the smallest number of marbles he could have, if he has more than 3?",
+  "options": [
+   "63",
+   "60",
+   "123",
+   "57"
+  ],
+  "hints": [
+   "If the 3 extra marbles were put aside, the rest could be grouped exactly in 4s, 5s and 6s.",
+   "Find the smallest number that is a multiple of 4, 5 and 6. Multiples of 6 that end in 0 are worth checking.",
+   "A similar one: groups of 2, 3 or 4 always leave 1 over. The smallest number that 2, 3 and 4 all divide is 12, so the answer is 12 plus 1, which is 13."
+  ],
+  "steps": [
+   "Without the 3 extra marbles, the number is a multiple of 4, 5 and 6.",
+   "Multiples of 6 that are also multiples of 5 are 30, 60 and so on. 4 does not divide 30, but 4 divides 60. 60 divided by 4 equals 15.",
+   "Add the 3 marbles left over. 60 plus 3 equals 63.",
+   "The smallest number of marbles is 63."
+  ]
+ },
+ "G4A_FACTORS_020": {
+  "q": "I am a two-digit number. I am a multiple of 7. I am odd. My two digits add up to 10. Which number am I?",
+  "options": [
+   "91",
+   "28",
+   "73",
+   "49"
+  ],
+  "hints": [
+   "Use one clue to make a short list, then test the other clues on that list.",
+   "Write the two-digit numbers whose digits add up to 10: 19, 28, 37 and so on. Then strike out the even ones.",
+   "A similar one: a two-digit multiple of 9 that is even and has 5 as its tens digit. The only multiple of 9 in the fifties is 54, and it is even, so the number is 54."
+  ],
+  "steps": [
+   "Two-digit numbers with digits adding to 10 are 19, 28, 37, 46, 55, 64, 73, 82 and 91.",
+   "The odd ones are 19, 37, 55, 73 and 91.",
+   "Of these only 91 is a multiple of 7. 7 times 13 equals 91.",
+   "The number is 91."
+  ]
+ },
+ "G4A_FACTORS_021": {
+  "q": "What is the smallest number that has exactly 6 factors?",
+  "options": [
+   "12",
+   "18",
+   "6",
+   "16"
+  ],
+  "hints": [
+   "There is no quick rule here. Test numbers in order, list the factors of each one in pairs, and stop at the first number that has the right count.",
+   "Start with small numbers. The factors of 6 are 1, 2, 3 and 6, which is only four. Keep going with 8, 9, 10 and so on.",
+   "A similar problem: the smallest number with exactly 4 factors. 1 has one factor. 2, 3 and 5 have two each. 4 has three: 1, 2, 4. And 6 has four: 1, 2, 3, 6. So the smallest is 6."
+  ],
+  "steps": [
+   "Numbers up to 11 have at most four factors. For example, 6 has 1, 2, 3, 6, and 10 has 1, 2, 5, 10.",
+   "List the factors of 12 in pairs. 1 times 12, 2 times 6, and 3 times 4.",
+   "That gives 1, 2, 3, 4, 6 and 12, which is six factors.",
+   "No smaller number has six factors, so the smallest such number is 12."
+  ]
+ },
+ "G4A_FACTORS_022": {
+  "q": "How many numbers from 1 to 50 have exactly 3 factors?",
+  "options": [
+   "7",
+   "3",
+   "4",
+   "15"
+  ],
+  "hints": [
+   "Factors usually come in pairs, so most numbers have an even number of factors. Think about which kind of number has a factor that pairs with itself.",
+   "Only square numbers have an odd number of factors. List the square numbers up to 50 and count the factors of each one.",
+   "A similar problem: which numbers from 1 to 10 have exactly 3 factors? The squares are 1, 4 and 9. 1 has one factor, 4 has 1, 2, 4 and 9 has 1, 3, 9. So there are 2 such numbers."
+  ],
+  "steps": [
+   "Only square numbers have an odd number of factors. The squares up to 50 are 1, 4, 9, 16, 25, 36 and 49.",
+   "Count the factors. 1 has one. 4 has three: 1, 2, 4. 9 has three: 1, 3, 9. 16 has five.",
+   "25 has three: 1, 5, 25. 36 has nine. And 49 has three: 1, 7, 49.",
+   "The numbers are 4, 9, 25 and 49. So 4 numbers have exactly 3 factors."
+  ]
+ },
+ "G4A_FACTORS_024": {
+  "q": "Buses to Pune leave a bus stand every 12 minutes, starting at 7:00 in the morning. Buses to Nashik leave every 18 minutes, starting at 7 06 in the morning. At what time do a Pune bus and a Nashik bus first leave at the same moment?",
+  "options": [
+   "7 24",
+   "7 36",
+   "7 42",
+   "8 12"
+  ],
+  "hints": [
+   "The two kinds of bus do not start together, so a common multiple alone will not settle it. Write out the leaving times of each kind and look for the first time on both lists.",
+   "List the Pune times: 7:00, 7 12 and so on. Then list the Nashik times starting from 7 06, adding 18 minutes each time.",
+   "A similar problem: bell P rings every 10 minutes from 9:00 and bell Q rings every 15 minutes from 9 05. P rings at 9:00, 9 10, 9 20, 9 30. Q rings at 9 05, 9 20. The first time on both lists is 9 20."
+  ],
+  "steps": [
+   "Pune buses leave at 7:00, 7 12, 7 24, 7 36 and so on.",
+   "Nashik buses leave at 7 06, 7 24, 7 42 and so on.",
+   "Look for the first time that is on both lists.",
+   "A Pune bus and a Nashik bus first leave together at 7 24."
+  ]
+ },
+ "G4A_FACTORS_025": {
+  "q": "Rina has fewer than 50 sweets. When she packs them in fives, 3 sweets are left over. When she packs them in sevens, 2 sweets are left over. How many sweets does Rina have?",
+  "options": [
+   "23",
+   "37",
+   "33",
+   "38"
+  ],
+  "hints": [
+   "List the numbers that fit one of the two conditions. Then test each number on your list against the other condition.",
+   "Numbers that leave 2 when packed in sevens are 2, 9, 16 and so on. Write these out up to 50, then divide each one by 5.",
+   "A similar problem: fewer than 30 marbles, 1 left over in threes and 2 left over in fives. Numbers leaving 2 in fives: 2, 7, 12, 17, 22, 27. Of these, 7 leaves 1 in threes, and so does 22. If there are fewer than 20, the count is 7."
+  ],
+  "steps": [
+   "List the numbers below 50 that leave 2 when divided by 7: 2, 9, 16, 23, 30, 37, 44.",
+   "Divide each by 5 and look for a remainder of 3.",
+   "Only one of them leaves 3. 23 equals 4 times 5 plus 3.",
+   "Rina has 23 sweets."
+  ]
+ },
+ "G4A_FACTORS_026": {
+  "q": "The children of a class stand in rows for a drill. In rows of 6, the last row has only 5 children. In rows of 8, the last row has only 7 children. There are more than 40 and fewer than 60 children. How many children are there?",
+  "options": [
+   "48",
+   "53",
+   "49",
+   "47"
+  ],
+  "hints": [
+   "Look at how many children are missing from the last row each time. Think about what would happen if one more child joined the class.",
+   "With one more child, the rows of 6 would be complete and the rows of 8 would be complete too. Find a number between 40 and 60 that both 6 and 8 divide exactly.",
+   "A similar problem: in rows of 4 the last row has 3, and in rows of 5 the last row has 4, with between 30 and 50 children. One more child would fill every row, so that number is a common multiple of 4 and 5, which is 40. The class has 40 minus 1, which is 39 children."
+  ],
+  "steps": [
+   "Each time, the last row is 1 child short. With 1 more child, both kinds of row would be full.",
+   "So the number of children plus 1 is a common multiple of 6 and 8. Between 40 and 60 the only one is 48. 6 times 8 divided by 2 equals 24, and 24 times 2 equals 48.",
+   "Take away the extra child. 48 minus 1 equals 47.",
+   "There are 47 children."
+  ]
+ },
+ "G4A_FACTORS_027": {
+  "q": "A prime number has two digits and is less than 50. Its digits add up to 10. When its two digits are swapped, the new number is also a prime number. Which number is it?",
+  "options": [
+   "19",
+   "13",
+   "37",
+   "17"
+  ],
+  "hints": [
+   "Test each condition in turn. For a number that looks prime, try dividing by 2, 3, 5 and 7 before you decide.",
+   "First keep only the choices whose digits add up to 10. Then swap the digits of each one and test the new number by dividing by 3 and by 7.",
+   "A similar problem: a two-digit prime below 20 whose digits add up to 4 and whose swapped number is also prime. 13 is prime and 1 plus 3 equals 4. Swapped it becomes 31, which cannot be divided exactly by 2, 3 or 5, so 31 is prime too. The number is 13."
+  ],
+  "steps": [
+   "The digits must add up to 10. That leaves 19 and 37, because 1 plus 3 equals 4 and 1 plus 7 equals 8.",
+   "Swap the digits of 19 to get 91. This is not a prime number. 91 equals 7 times 13.",
+   "Swap the digits of 37 to get 73. It cannot be divided exactly by 2, 3, 5 or 7, so 73 is a prime number.",
+   "The number is 37."
+  ]
+ },
+ "G4A_FACTORS_028": {
+  "q": "Two prime numbers add up to 25. What is the product of these two prime numbers?",
+  "options": [
+   "154",
+   "46",
+   "66",
+   "156"
+  ],
+  "hints": [
+   "Think about odd and even numbers. What kind of number do you get when you add two odd numbers?",
+   "25 is odd, so the two primes cannot both be odd. One of them must be even. Which prime number is even?",
+   "A similar problem: two primes add up to 15. One of them must be the even prime 2, so the other is 15 minus 2, which is 13, and that is prime. Their product is 2 times 13, which is 26."
+  ],
+  "steps": [
+   "Odd plus odd is even, but 25 is odd. So one of the two primes must be even.",
+   "The only even prime number is 2, so the other prime is 23. 25 minus 2 equals 23.",
+   "23 is a prime number, so the pair is 2 and 23.",
+   "Their product is 46. 2 times 23 equals 46."
+  ]
+ },
+ "G4A_FACTORS_029": {
+  "q": "What is the greatest 3-digit number that can be divided exactly by 6 but cannot be divided exactly by 4?",
+  "options": [
+   "996",
+   "994",
+   "978",
+   "990"
+  ],
+  "hints": [
+   "Start from the greatest 3-digit multiple of 6 and move down one multiple at a time. Test each one against the second condition.",
+   "A number divides by 6 when it is even and its digits add up to a multiple of 3. Find the greatest such 3-digit number, then check its last two digits to see whether 4 divides it.",
+   "A similar problem: the greatest 2-digit number that 6 divides but 4 does not. The multiples of 6 going down are 96, 90. 96 divided by 4 equals 24, so 96 is out. 90 divided by 4 leaves a remainder, so the number is 90."
+  ],
+  "steps": [
+   "The greatest 3-digit multiple of 6 is 996. 996 equals 6 times 166.",
+   "Its last two digits are 96, and 4 divides 96, so 4 divides 996. It does not fit. 96 divided by 4 equals 24.",
+   "The next multiple of 6 going down is 990. Its last two digits are 90, and 4 does not divide 90. 996 minus 6 equals 990.",
+   "The greatest such number is 990."
+  ]
+ },
+ "G4A_FACTORS_030": {
+  "q": "How many numbers from 1 to 100 are multiples of 4 but not multiples of 6?",
+  "options": [
+   "9",
+   "25",
+   "21",
+   "17"
+  ],
+  "hints": [
+   "Count the multiples of 4 first. Then think carefully about which of those are also multiples of 6, because only those need to be removed.",
+   "There are 100 divided by 4 multiples of 4. A number that is a multiple of both 4 and 6 is a multiple of their L C M. Find the L C M of 4 and 6.",
+   "A similar problem: how many numbers from 1 to 60 are multiples of 2 but not of 3? There are 60 divided by 2, which is 30, multiples of 2. Those that are also multiples of 3 are the multiples of 6, and 60 divided by 6 equals 10. So 30 minus 10, which is 20, numbers fit."
+  ],
+  "steps": [
+   "Count the multiples of 4 from 1 to 100. 100 divided by 4 equals 25.",
+   "A multiple of both 4 and 6 is a multiple of 12. Count these: 12, 24, 36, 48, 60, 72, 84, 96. That is 8 numbers.",
+   "Remove them from the multiples of 4. 25 minus 8 equals 17.",
+   "So 17 numbers are multiples of 4 but not multiples of 6."
+  ]
+ },
+ "G4A_FACTORS_031": {
+  "q": "A number is a factor of 60. It is a multiple of 4. It is not a multiple of 3. It is greater than 4. Which number is it?",
+  "options": [
+   "12",
+   "20",
+   "40",
+   "60"
+  ],
+  "hints": [
+   "There are four conditions. A number must pass every one of them, so test each choice against all four.",
+   "First check which of the choices are factors of 60 by dividing 60 by each one. Then test what is left against the other conditions.",
+   "A similar problem: a factor of 30 that is a multiple of 5, not a multiple of 2, and greater than 5. The factors of 30 that are multiples of 5 are 5, 10, 15 and 30. Of these, 10 and 30 are multiples of 2, and 5 is not greater than 5. So the number is 15."
+  ],
+  "steps": [
+   "The factors of 60 are 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30 and 60.",
+   "Of these, the multiples of 4 are 4, 12, 20 and 60.",
+   "12 and 60 are multiples of 3, so they are out. 4 is not greater than 4, so it is out.",
+   "The number is 20."
+  ]
+ },
+ "G4A_FACTORS_032": {
+  "q": "What is the greatest number that divides both 50 and 74 and leaves a remainder of 2 each time?",
+  "options": [
+   "2",
+   "12",
+   "4",
+   "24"
+  ],
+  "hints": [
+   "If a division leaves a remainder, take the remainder away and the division becomes exact. Then use what you know about common factors.",
+   "Take 2 away from each number: 50 minus 2 and 74 minus 2. The number you want must divide both of these exactly.",
+   "A similar problem: the greatest number that divides 23 and 38 leaving a remainder of 3 each time. Take 3 away: 20 and 35. Their H C F is 5, and 23 divided by 5 equals 4 remainder 3, 38 divided by 5 equals 7 remainder 3. So the number is 5."
+  ],
+  "steps": [
+   "Take the remainder away from each number. 50 minus 2 equals 48, and 74 minus 2 equals 72.",
+   "The number wanted must divide 48 and 72 exactly, and be as large as possible. That is their H C F.",
+   "The common factors of 48 and 72 are 1, 2, 3, 4, 6, 8, 12 and 24. 48 equals 24 times 2, and 72 equals 24 times 3.",
+   "Check: 50 equals 24 times 2 plus 2 and 74 equals 24 times 3 plus 2. The greatest such number is 24."
+  ]
+ },
+ "PH3_EXT_G4_FP_2016_003_01": {
+  "q": "How many numbers from 100 to 300 are divisible by 9?",
+  "options": [
+   "23",
+   "22",
+   "31",
+   "33"
+  ],
+  "hints": [
+   "Find the first and last multiples of 9 in the range.",
+   "The first is 108, and the last is 297.",
+   "Count equals last minus first, divided by 9, plus 1."
+  ],
+  "steps": [
+   "The first multiple of 9 that is 100 or more is 108.",
+   "The last multiple of 9 that is 300 or less is 297.",
+   "Count equals 297 minus 108, divided by 9, plus 1. That equals 22."
+  ]
+ },
+ "PH3_EXT_G4_FP_2019_016_01_b": {
+  "q": "How many numbers from 1 to 101 are divisible by 5?",
+  "options": [
+   "20",
+   "21",
+   "19",
+   "25"
+  ],
+  "hints": [
+   "Find the first and last multiples of 5 in the range.",
+   "The first is 5, and the last is 100.",
+   "Count equals last minus first, divided by 5, plus 1."
+  ],
+  "steps": [
+   "The first multiple of 5 that is 1 or more is 5.",
+   "The last multiple of 5 that is 101 or less is 100.",
+   "Count equals 100 minus 5, divided by 5, plus 1. That equals 20."
+  ]
+ },
+ "PH3_EXT_G4_FP_2024_021_01": {
+  "q": "How many numbers from 50 to 250 are divisible by 7?",
+  "options": [
+   "27",
+   "28",
+   "35",
+   "29"
+  ],
+  "hints": [
+   "Find the first and last multiples of 7 in the range.",
+   "The first is 56, and the last is 245.",
+   "Count equals last minus first, divided by 7, plus 1."
+  ],
+  "steps": [
+   "The first multiple of 7 that is 50 or more is 56.",
+   "The last multiple of 7 that is 250 or less is 245.",
+   "Count equals 245 minus 56, divided by 7, plus 1. That equals 28."
+  ]
+ },
+ "PH3_EXT_G4_FP_2024_029_01": {
+  "q": "How many numbers from 50 to 150 are divisible by 9?",
+  "options": [
+   "11",
+   "12",
+   "16",
+   "20"
+  ],
+  "hints": [
+   "Find the first and last multiples of 9 in the range.",
+   "The first is 54, and the last is 144.",
+   "Count equals last minus first, divided by 9, plus 1."
+  ],
+  "steps": [
+   "The first multiple of 9 that is 50 or more is 54.",
+   "The last multiple of 9 that is 150 or less is 144.",
+   "Count equals 144 minus 54, divided by 9, plus 1. That equals 11."
+  ]
+ },
+ "PH3_EXT_G4_FP_2025_004_01": {
+  "q": "How many numbers from 50 to 100 are divisible by 8?",
+  "options": [
+   "12",
+   "7",
+   "6",
+   "14"
+  ],
+  "hints": [
+   "Find the first and last multiples of 8 in the range.",
+   "The first is 56, and the last is 96.",
+   "Count equals last minus first, divided by 8, plus 1."
+  ],
+  "steps": [
+   "The first multiple of 8 that is 50 or more is 56.",
+   "The last multiple of 8 that is 100 or less is 96.",
+   "Count equals 96 minus 56, divided by 8, plus 1. That equals 6."
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH17_009_01": {
+  "q": "How many numbers from 100 to 150 are divisible by 3?",
+  "options": [
+   "17",
+   "16",
+   "50",
+   "20"
+  ],
+  "hints": [
+   "Find the first and last multiples of 3 in the range.",
+   "The first is 102, and the last is 150.",
+   "Count equals last minus first, divided by 3, plus 1."
+  ],
+  "steps": [
+   "The first multiple of 3 that is 100 or more is 102.",
+   "The last multiple of 3 that is 150 or less is 150.",
+   "Count equals 150 minus 102, divided by 3, plus 1. That equals 17."
+  ]
+ },
+ "PYQ_2016_Q03": {
+  "q": "In how many ways can the number 98 be expressed as a product of two numbers?",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "6"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 3.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 3."
+  ]
+ },
+ "PYQ_2016_Q06": {
+  "q": "A typist types all the Prime Numbers between 1 to 100. How many times did she press the number key having 2 on it?",
+  "options": [
+   "1",
+   "3",
+   "7",
+   "19"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 6.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 2, which is 3."
+  ]
+ },
+ "PYQ_2016_Q13": {
+  "q": "The three digit numbers, 5 star 7, 5 7 heart, and psi 5 9, are all divisible by 11. What is the greatest number formed by the values of star, heart and psi?",
+  "options": [
+   "723",
+   "721",
+   "972",
+   "729"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 13.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 2, which is 721."
+  ]
+ },
+ "PYQ_2016_Q15": {
+  "q": "The H C F of 65 and 91 is:",
+  "options": [
+   "17",
+   "1",
+   "13",
+   "15"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 15.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 13."
+  ]
+ },
+ "PYQ_2016_Q28": {
+  "q": "The L C M of which two numbers is the greatest?",
+  "options": [
+   "15 and 25",
+   "15 and 20",
+   "15 and 18",
+   "15 and 12"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 28.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 15 and 18."
+  ]
+ },
+ "PYQ_2016_Q36": {
+  "q": "How many factors does 84 have?",
+  "options": [
+   "12",
+   "8",
+   "10",
+   "14"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 36.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 12."
+  ]
+ },
+ "PYQ_2017_Q01": {
+  "q": "Which of the following is not the sum of two prime numbers?",
+  "options": [
+   "5",
+   "7",
+   "11",
+   "12"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 1.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 11."
+  ]
+ },
+ "PYQ_2017_Q06": {
+  "q": "Ajay rolls three six-sided dice. The product of the three numbers is 90. What is the sum of the three numbers?",
+  "options": [
+   "14",
+   "18",
+   "10",
+   "Data insufficient"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 6.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 14."
+  ]
+ },
+ "PYQ_2017_Q16": {
+  "q": "What smallest number should be added to the product of 267 times 348 to make it divisible by 5?",
+  "options": [
+   "4",
+   "5",
+   "7",
+   "None of these"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 16.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 4."
+  ]
+ },
+ "PYQ_2017_Q19": {
+  "q": "The L C M of 48 and 54 is:",
+  "options": [
+   "432",
+   "216",
+   "480",
+   "540"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 19.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 432."
+  ]
+ },
+ "PYQ_2018_Q01": {
+  "q": "Mrs. Geeta has two pieces of ribbons. One piece of ribbon is 84 meters long and the other is 108 meters long. She wants to cut the two ribbons into pieces of equal length with no ribbon left over. What is the greatest possible length of each piece of ribbon?",
+  "options": [
+   "6",
+   "14",
+   "12",
+   "18"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 1.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 12."
+  ]
+ },
+ "PYQ_2018_Q02": {
+  "q": "How many factors does 30 have?",
+  "options": [
+   "6",
+   "4",
+   "10",
+   "8"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 2.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The correct answer is option 4, which is 8."
+  ]
+ },
+ "PYQ_2018_Q16": {
+  "q": "A four digit number, 8, star, 2, star, is divisible by 9. The same digit is represented by each star. Find the digit represented by the star.",
+  "options": [
+   "8",
+   "4",
+   "5",
+   "3"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 16.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The correct answer is option 2, which is 4."
+  ]
+ },
+ "PYQ_2018_Q30": {
+  "q": "What is the sum of the L C M and H C F of the numbers 24 and 32?",
+  "options": [
+   "96",
+   "104",
+   "100",
+   "108"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 30.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The correct answer is option 2, which is 104."
+  ]
+ },
+ "PYQ_2019_Q04": {
+  "q": "In writing all the prime numbers between 1 and 100, how many times would the digit 2 be used?",
+  "options": [
+   "3",
+   "2",
+   "19",
+   "0"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 4.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 3."
+  ]
+ },
+ "PYQ_2019_Q11": {
+  "q": "Using all the one digit prime numbers form the greatest odd number?",
+  "options": [
+   "97523",
+   "7523",
+   "7325",
+   "9753"
+  ],
+  "hints": [
+   "First decide which digits you may use: the prime numbers below 10. Then arrange them to make the biggest number that is still odd.",
+   "List the one-digit primes. An odd number must end in an odd digit, so think about which digit to keep for the ones place.",
+   "Example: the greatest odd number using 2, 4, 5 and 9. The ones digit must be odd. Keep the smaller odd digit, 5, for the ones place and write the rest biggest first: 9425."
+  ],
+  "steps": [
+   "The one-digit primes are 2, 3, 5 and 7. 9 is not prime, because 3 times 3 equals 9.",
+   "For the greatest number put the biggest digits first: 7, then 5.",
+   "The number must be odd, so it cannot end in 2. Put 2 in the tens place and 3 in the ones place.",
+   "The greatest odd number is 7523."
+  ]
+ },
+ "PYQ_2019_Q12": {
+  "q": "Which two digits in the number 73251 should be interchanged so that it becomes completely divisible by 6?",
+  "options": [
+   "2 and 1",
+   "5 and 1",
+   "2 and 5",
+   "3 and 2"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 12.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 2 and 1."
+  ]
+ },
+ "PYQ_2019_Q21": {
+  "q": "A four digit number, 9, star, 8, star, is divisible by 9, and each star represents the same digit. Find the digit at the star place.",
+  "options": [
+   "5",
+   "4",
+   "3",
+   "1"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 21.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "The correct answer is option 1, which is 5."
+  ]
+ },
+ "PYQ_2019_Q22": {
+  "q": "In how many ways can the number 136 be written as the product of two numbers?",
+  "options": [
+   "6",
+   "3",
+   "4",
+   "5"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 22.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 4."
+  ]
+ },
+ "PYQ_2019_Q35": {
+  "q": "Ajay writes all the multiples of 4 up to 100 and Vijay writes all the multiples of 5 up to 100, in their notebooks. How many common numbers could you find in both their notebooks?",
+  "options": [
+   "15",
+   "5",
+   "10",
+   "20"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 35.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "The correct answer is option 2, which is 5."
+  ]
+ },
+ "PYQ_2019_Q39": {
+  "q": "The H C F of 39 and 65 is:",
+  "options": [
+   "26",
+   "19",
+   "13",
+   "5"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 39.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "The correct answer is option 3, which is 13."
+  ]
+ },
+ "Q_CH01_026": {
+  "q": "What is the 8th multiple of 9?",
+  "options": [
+   "81",
+   "89",
+   "63",
+   "72"
+  ],
+  "hints": [
+   "The multiples of a number are the answers in its times table. The 8th multiple is the 8th number in that table.",
+   "Count along the 9 times table: 9, 18, 27 and so on, until you reach the 8th number. Or multiply 9 by 8.",
+   "Example: the 6th multiple of 7 is 7 times 6, which is 42."
+  ],
+  "steps": [
+   "The multiples of 9 are 9 times 1, 9 times 2, 9 times 3 and so on.",
+   "The 8th multiple is 9 times 8. 9 times 8 equals 72.",
+   "The 8th multiple of 9 is 72."
+  ]
+ },
+ "Q_CH06_001": {
+  "q": "How many factors does 12 have?",
+  "options": [
+   "4",
+   "12",
+   "5",
+   "6"
+  ],
+  "hints": [
+   "List all factors: numbers that divide 12 exactly.",
+   "1, 2, 3, 4, 6, 12.",
+   "Count them: 6 factors."
+  ],
+  "steps": [
+   "The factors of 12 are 1, 2, 3, 4, 6 and 12."
+  ]
+ },
+ "Q_CH06_002": {
+  "q": "Which of the following is a prime number?",
+  "options": [
+   "29",
+   "35",
+   "21",
+   "15"
+  ],
+  "hints": [
+   "Prime means divisible only by 1 and itself.",
+   "15 equals 3 times 5, 21 equals 3 times 7, 35 equals 5 times 7. Only 29 has no factors other than 1 and 29.",
+   "29 is prime."
+  ],
+  "steps": [
+   "29 is not divisible by 2, 3 or 5. The square root of 29 is about 5.4. Check 2, 3 and 5: none divide 29."
+  ]
+ },
+ "Q_CH06_003": {
+  "q": "Which number is divisible by 3?",
+  "options": [
+   "7,251",
+   "5,123",
+   "4,532",
+   "8,206"
+  ],
+  "hints": [
+   "If the sum of the digits is divisible by 3, the number is divisible by 3.",
+   "A: 4 plus 5 plus 3 plus 2 equals 14, no. B: 7 plus 2 plus 5 plus 1 equals 15, yes. C: 8 plus 2 plus 0 plus 6 equals 16, no. D: 5 plus 1 plus 2 plus 3 equals 11, no.",
+   "7,251 is divisible by 3."
+  ],
+  "steps": [
+   "7 plus 2 plus 5 plus 1 equals 15. 15 divided by 3 equals 5."
+  ]
+ },
+ "Q_CH06_004": {
+  "q": "Which number is divisible by 4?",
+  "options": [
+   "2,316",
+   "5,634",
+   "7,531",
+   "3,718"
+  ],
+  "hints": [
+   "For divisibility by 4, check if the last 2 digits form a number divisible by 4.",
+   "18 divided by 4 equals 4.5, no. 34 divided by 4 equals 8.5, no. 16 divided by 4 equals 4, yes. 31 divided by 4 equals 7.75, no.",
+   "2,316 is divisible by 4."
+  ],
+  "steps": [
+   "The last 2 digits are 16. 16 divided by 4 equals 4."
+  ]
+ },
+ "Q_CH06_005": {
+  "q": "The H C F of 12 and 18 is:",
+  "options": [
+   "6",
+   "2",
+   "3",
+   "36"
+  ],
+  "hints": [
+   "The factors of 12 are 1, 2, 3, 4, 6 and 12. The factors of 18 are 1, 2, 3, 6, 9 and 18.",
+   "The common factors are 1, 2, 3 and 6. The highest is 6.",
+   "The H C F is 6."
+  ],
+  "steps": [
+   "The common factors are 1, 2, 3 and 6.",
+   "The H C F is 6."
+  ]
+ },
+ "Q_CH06_006": {
+  "q": "The L C M of 6 and 8 is:",
+  "options": [
+   "14",
+   "24",
+   "2",
+   "48"
+  ],
+  "hints": [
+   "The multiples of 6 are 6, 12, 18, 24, 30 and so on. The multiples of 8 are 8, 16, 24, 32 and so on.",
+   "The first common multiple is 24.",
+   "The L C M is 24."
+  ],
+  "steps": [
+   "The L C M of 6 and 8 is 24."
+  ]
+ },
+ "Q_CH06_007": {
+  "q": "The prime factorization of 60 is:",
+  "options": [
+   "2 times 3 times 10",
+   "2 times 2 times 15",
+   "2 times 2 times 3 times 5",
+   "4 times 15"
+  ],
+  "hints": [
+   "60 equals 2 times 30, which equals 2 times 2 times 15, which equals 2 times 2 times 3 times 5.",
+   "All the factors must be prime. 10, 15, and 4 are not prime.",
+   "60 equals 2 squared, times 3, times 5."
+  ],
+  "steps": [
+   "60 equals 2 times 30, which equals 2 times 2 times 15, which equals 2 times 2 times 3 times 5.",
+   "That equals 2 times 2 times 3 times 5."
+  ]
+ },
+ "Q_CH06_008": {
+  "q": "A number divisible by 6 must be divisible by:",
+  "options": [
+   "2 and 4",
+   "2 and 3",
+   "1 and 6 only",
+   "3 and 4"
+  ],
+  "hints": [
+   "Think about which smaller numbers multiply to make 6. Every multiple of 6 is also a multiple of those numbers.",
+   "Write 6 as a product of two smaller numbers. Then test your idea with a multiple of 6, such as 18.",
+   "Example: 10 equals 2 times 5, so a number divisible by 10 must be divisible by 2 and by 5. Check with 30: 30 divided by 2 equals 15 and 30 divided by 5 equals 6."
+  ],
+  "steps": [
+   "Write 6 as a product. 2 times 3 equals 6.",
+   "So every multiple of 6 is a multiple of 2 and also of 3. Check with 18: 18 divided by 2 equals 9 and 18 divided by 3 equals 6.",
+   "A number divisible by 6 must be divisible by 2 and 3."
+  ]
+ },
+ "Q_CH06_009": {
+  "q": "Which pair of numbers is co-prime?",
+  "options": [
+   "8 and 12",
+   "15 and 35",
+   "9 and 16",
+   "6 and 9"
+  ],
+  "hints": [
+   "Co-prime means the H C F is 1: no common factor except 1.",
+   "8 and 12: the H C F is 4. 15 and 35: the H C F is 5. 6 and 9: the H C F is 3. 9 and 16: the factors of 9 are 1, 3, 9, and the factors of 16 are 1, 2, 4, 8, 16. The only common factor is 1.",
+   "9 and 16 are co-prime."
+  ],
+  "steps": [
+   "The H C F of 9 and 16 is 1."
+  ]
+ },
+ "Q_CH06_010": {
+  "q": "Is 4,518 divisible by 9?",
+  "options": [
+   "No, the digit sum is 18",
+   "Yes, the digit sum is 18",
+   "Yes, the digit sum is 9",
+   "No, the digit sum is 17"
+  ],
+  "hints": [
+   "Digit sum: 4 plus 5 plus 1 plus 8 equals 18. Is 18 divisible by 9?",
+   "18 divided by 9 equals 2. Yes!",
+   "4,518 is divisible by 9."
+  ],
+  "steps": [
+   "4 plus 5 plus 1 plus 8 equals 18. 18 divided by 9 equals 2."
+  ]
+ },
+ "Q_CH06_011": {
+  "q": "The smallest composite number is:",
+  "options": [
+   "9",
+   "2",
+   "1",
+   "4"
+  ],
+  "hints": [
+   "Composite means it has more than 2 factors. 1 is neither. 2 and 3 are prime.",
+   "4 equals 2 times 2. It has the factors 1, 2 and 4. More than 2 factors!",
+   "4 is the smallest composite."
+  ],
+  "steps": [
+   "4 has the factors 1, 2 and 4. 3 factors is more than 2."
+  ]
+ },
+ "Q_CH06_012": {
+  "q": "Is 8,294 divisible by 11?",
+  "options": [
+   "Yes",
+   "Cannot determine",
+   "No",
+   "Only if divided by 2 first"
+  ],
+  "hints": [
+   "The rule for 11 uses the alternating sum of the digits. Add 8 plus 9, then take away 2 plus 4. That is 17 minus 6, which equals 11.",
+   "11 is divisible by 11. So yes!",
+   "8294 divided by 11 equals 754."
+  ],
+  "steps": [
+   "Add 8 plus 9, then take away 2 plus 4. That is 17 minus 6, which equals 11. 11 divided by 11 equals 1.",
+   "It is divisible by 11."
+  ]
+ },
+ "Q_CH06_013": {
+  "q": "Two bells ring every 12 and 18 minutes. If they ring together at 9:00 a m, when will they ring together again?",
+  "options": [
+   "9 18 a m",
+   "9 30 a m",
+   "10:00 a m",
+   "9 36 a m"
+  ],
+  "hints": [
+   "Find the L C M of 12 and 18.",
+   "12 equals 2 squared times 3, and 18 equals 2 times 3 squared. The L C M is 2 squared times 3 squared, which is 36 minutes.",
+   "9:00, plus 36 minutes, is 9 36 a m."
+  ],
+  "steps": [
+   "The L C M of 12 and 18 is 36.",
+   "9:00, plus 36 minutes, is 9 36 a m."
+  ]
+ },
+ "Q_CH06_014": {
+  "q": "48 apples and 36 oranges are to be packed in boxes. Each box must have the same number of fruits, all of the same type. What is the maximum number of fruits in each box?",
+  "options": [
+   "24",
+   "12",
+   "6",
+   "4"
+  ],
+  "hints": [
+   "We need the largest number that divides both 48 and 36. That is the H C F.",
+   "48 equals 2 to the fourth power, times 3. 36 equals 2 squared times 3 squared. The H C F is 2 squared times 3, which is 12.",
+   "Maximum 12 fruits per box."
+  ],
+  "steps": [
+   "The H C F of 48 and 36 is 12."
+  ]
+ },
+ "Q_CH06_015": {
+  "q": "Which of these is a pair of twin primes?",
+  "options": [
+   "13 and 17",
+   "3 and 7",
+   "11 and 13",
+   "7 and 13"
+  ],
+  "hints": [
+   "Twin primes are two prime numbers that are exactly 2 apart.",
+   "For each pair, check two things. Are both numbers prime? Is their difference 2?",
+   "Example: 5 and 7 are both prime and 7 minus 5 equals 2, so they are twin primes. 7 and 9 are also 2 apart, but 9, which is 3 times 3, is not prime, so they are not twin primes."
+  ],
+  "steps": [
+   "Twin primes are two primes with a difference of 2.",
+   "Find each difference: 17 minus 13 equals 4, 7 minus 3 equals 4, 13 minus 11 equals 2 and 13 minus 7 equals 6.",
+   "Only one pair is 2 apart, and both of its numbers are prime.",
+   "The twin primes are 11 and 13."
+  ]
+ },
+ "Q_CH06_016": {
+  "q": "Which number is divisible by 8?",
+  "options": [
+   "3,214",
+   "7,234",
+   "5,648",
+   "9,342"
+  ],
+  "hints": [
+   "For 8, check if the last 3 digits are divisible by 8.",
+   "214 divided by 8 equals 26.75, no. 648 divided by 8 equals 81, yes. 234 divided by 8 equals 29.25, no. 342 divided by 8 equals 42.75, no.",
+   "5,648 is divisible by 8."
+  ],
+  "steps": [
+   "The last 3 digits are 648. 648 divided by 8 equals 81."
+  ]
+ },
+ "Q_CH06_017": {
+  "q": "A number has exactly 2 factors. This number must be:",
+  "options": [
+   "composite",
+   "1",
+   "even",
+   "prime"
+  ],
+  "hints": [
+   "Numbers get different names depending on how many factors they have. Think about which name goes with exactly two.",
+   "Try a few small numbers. Write all the factors of 5, of 6 and of 1, and count them.",
+   "Example: 7 has the factors 1 and 7, which is exactly two. 8 has the factors 1, 2, 4 and 8, which is four. So 7 and 8 are different kinds of number."
+  ],
+  "steps": [
+   "A number with exactly 2 factors can be divided only by 1 and by itself.",
+   "For example, 5 has just the factors 1 and 5.",
+   "A number like this is called prime."
+  ]
+ },
+ "Q_CH06_018": {
+  "q": "6 is called a perfect number because:",
+  "options": [
+   "it has exactly 4 factors",
+   "it's the smallest composite",
+   "it equals the sum of its factors, excluding itself: 1 plus 2 plus 3 equals 6",
+   "it's even"
+  ],
+  "hints": [
+   "A perfect number equals the sum of its proper divisors: all its factors except itself.",
+   "The factors of 6 are 1, 2, 3 and 6. The proper divisors are 1, 2 and 3. Their sum is 1 plus 2 plus 3, which equals 6.",
+   "6 is perfect!"
+  ],
+  "steps": [
+   "1 plus 2 plus 3 equals 6, which is the number itself."
+  ]
+ },
+ "Q_CH06_019": {
+  "q": "A number is divisible by 5 if its last digit is:",
+  "options": [
+   "0 or 5",
+   "any even number",
+   "0 only",
+   "5 only"
+  ],
+  "hints": [
+   "Look at the 5 times table and watch the last digit of each answer.",
+   "Write out the first few multiples of 5: 5, 10, 15, 20 and so on. What do you notice about the ones digit?",
+   "Example: the rule for 2. The multiples of 2 are 2, 4, 6, 8, 10, 12 and so on. Their last digits are always 0, 2, 4, 6 or 8. So 134 is divisible by 2 and 137 is not."
+  ],
+  "steps": [
+   "The multiples of 5 are 5, 10, 15, 20, 25, 30 and so on.",
+   "Their last digits go 5, 0, 5, 0, again and again.",
+   "So a number is divisible by 5 if its last digit is 0 or 5."
+  ]
+ },
+ "Q_CH06_020": {
+  "q": "The first three common multiples of 4 and 6 are:",
+  "options": [
+   "12, 24, 36",
+   "24, 48, 72",
+   "12, 18, 24",
+   "4, 6, 12"
+  ],
+  "hints": [
+   "A common multiple is a number that is in both times tables. You need the first three of them.",
+   "Write the multiples of 4 in one row and the multiples of 6 in another. Circle the numbers that appear in both rows.",
+   "Example: 2 and 5. The multiples of 5 are 5, 10, 15, 20, 25, 30. The ones that are also in the 2 times table are 10, 20 and 30. Those are the first three common multiples."
+  ],
+  "steps": [
+   "Multiples of 4: 4, 8, 12, 16, 20, 24, 28, 32, 36.",
+   "Multiples of 6: 6, 12, 18, 24, 30, 36.",
+   "Look for the numbers that are in both lists.",
+   "The first three common multiples are 12, 24, 36."
+  ]
+ },
+ "Q_CH06_021": {
+  "q": "If the H C F of two numbers is 6 and their L C M is 36, and one number is 12, find the other.",
+  "options": [
+   "18",
+   "36",
+   "24",
+   "6"
+  ],
+  "hints": [
+   "This uses a special rule for two numbers: H C F times L C M is equal to the product of the two numbers.",
+   "Multiply the H C F by the L C M. That gives the product of the two numbers. Then think how to get the missing number from it.",
+   "Example: H C F equals 5, L C M equals 60 and one number is 15. 5 times 60 equals 300. Then 300 divided by 15 equals 20. The other number is 20."
+  ],
+  "steps": [
+   "H C F times L C M gives the product of the two numbers. 6 times 36 equals 216.",
+   "Divide this product by the number you know. 216 divided by 12 equals 18.",
+   "The other number is 18."
+  ]
+ },
+ "Q_CH06_022": {
+  "q": "Which number is divisible by 10?",
+  "options": [
+   "7,105",
+   "8,901",
+   "4,055",
+   "3,200"
+  ],
+  "hints": [
+   "There is a quick test for 10. You only need to look at one digit of each number.",
+   "Think of the 10 times table: 10, 20, 30 and so on. What is the last digit every time? Check the last digit of each choice.",
+   "Example: 4,570 ends in 0, so it is divisible by 10. 4,575 ends in 5, so it is not."
+  ],
+  "steps": [
+   "A number is divisible by 10 when its last digit is 0.",
+   "7,105 ends in 5. 8,901 ends in 1. 4,055 ends in 5.",
+   "3,200 ends in 0. So 3,200 is divisible by 10. 3200 divided by 10 equals 320."
+  ]
+ },
+ "Q_CH06_023": {
+  "q": "How many prime numbers are there between 10 and 20?",
+  "options": [
+   "3",
+   "4",
+   "5",
+   "2"
+  ],
+  "hints": [
+   "A prime number has exactly two factors: 1 and itself. Check each number between 10 and 20.",
+   "Cross out the even numbers first, since 2 divides them. Then test the odd numbers that are left with 3 and 5.",
+   "Example: the primes between 90 and 100. The even numbers are out. 91 equals 7 times 13, 93 equals 3 times 31, 95 equals 5 times 19 and 99 equals 9 times 11. Only 97 is left, so there is 1 prime."
+  ],
+  "steps": [
+   "Look at the numbers from 11 to 19.",
+   "12, 14, 16 and 18 are even, and 15 equals 3 times 5. None of these is prime.",
+   "11, 13, 17 and 19 have no factors other than 1 and themselves.",
+   "There are 4 prime numbers."
+  ]
+ },
+ "Q_CH06_024": {
+  "q": "The only even prime number is:",
+  "options": [
+   "6",
+   "4",
+   "2",
+   "0"
+  ],
+  "hints": [
+   "A prime number has exactly two factors. Even numbers are the ones in the 2 times table.",
+   "List the factors of each choice. Look for the one whose only factors are 1 and itself.",
+   "Example: is 9 prime? 9 equals 3 times 3, so 9 has the factors 1, 3 and 9. That is three factors, so 9 is not prime."
+  ],
+  "steps": [
+   "A prime number has exactly two factors: 1 and itself.",
+   "2 has only the factors 1 and 2, so 2 is prime.",
+   "Every other even number can be divided by 2 as well as by 1 and itself. So it has more than two factors.",
+   "The only even prime number is 2."
+  ]
+ },
+ "Q_CH06_025": {
+  "q": "In the Sieve of Eratosthenes, after crossing out multiples of 2, 3, 5, and 7, all remaining numbers up to 50 are:",
+  "options": [
+   "prime numbers",
+   "composite numbers",
+   "multiples of 11",
+   "even numbers"
+  ],
+  "hints": [
+   "The Sieve of Eratosthenes is a way of sorting numbers. Think about what kind of number gets crossed out.",
+   "A number that is crossed out is a multiple of a smaller number, so it has extra factors. What do we call numbers that have no extra factors?",
+   "Example: on a grid from 2 to 10, keep 2 and cross out its other multiples: 4, 6, 8 and 10. Keep 3 and cross out 9. The numbers left are 2, 3, 5 and 7. Each has only two factors."
+  ],
+  "steps": [
+   "In the sieve we keep 2, 3, 5 and 7 and cross out all their other multiples.",
+   "Every composite number up to 50 is a multiple of 2, 3, 5 or 7, so it gets crossed out.",
+   "The numbers left are prime numbers."
+  ]
+ },
+ "Q_CH16_012": {
+  "q": "Which number does not belong to the group: 31, 41, 51, 61, 71?",
+  "options": [
+   "61",
+   "51",
+   "71",
+   "31"
+  ],
+  "hints": [
+   "Look at whether these numbers are prime or not.",
+   "31 is prime. 41 is prime. 51 equals 3 times 17, so it is not prime. 61 is prime. 71 is prime.",
+   "51 is the only composite number, so it doesn't belong!"
+  ],
+  "steps": [
+   "Check each number for primality.",
+   "51 equals 3 times 17. It's composite, not prime!",
+   "51 doesn't belong. It's the only non-prime."
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_013_01": {
+  "q": "Find the L C M of 15 and 9.",
+  "options": [
+   "15",
+   "135",
+   "24",
+   "45"
+  ],
+  "hints": [
+   "The L C M is the smallest number divisible by both 15 and 9.",
+   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
+   "First find the H C F of 15 and 9."
+  ],
+  "steps": [
+   "L C M times H C F equals 15 times 9, which is 135.",
+   "The H C F of 15 and 9 is 3, so the L C M is 135 divided by 3, which is 45."
+  ]
+ },
+ "VAR_EXT_G4_FP_2017_016_01": {
+  "q": "Find the L C M of 9 and 3.",
+  "options": [
+   "27",
+   "10",
+   "9",
+   "12"
+  ],
+  "hints": [
+   "The L C M is the smallest number divisible by both 9 and 3.",
+   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
+   "First find the H C F of 9 and 3."
+  ],
+  "steps": [
+   "L C M times H C F equals 9 times 3, which is 27.",
+   "The H C F of 9 and 3 is 3, so the L C M is 27 divided by 3, which is 9."
+  ]
+ },
+ "VAR_EXT_G4_FP_2018_001_01": {
+  "q": "Find the L C M of 12 and 10.",
+  "options": [
+   "12",
+   "120",
+   "22",
+   "60"
+  ],
+  "hints": [
+   "The L C M is the smallest number divisible by both 12 and 10.",
+   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
+   "First find the H C F of 12 and 10."
+  ],
+  "steps": [
+   "L C M times H C F equals 12 times 10, which is 120.",
+   "The H C F of 12 and 10 is 2, so the L C M is 120 divided by 2, which is 60."
+  ]
+ },
+ "VAR_EXT_G4_FP_2018_001_04": {
+  "q": "Find the L C M of 12 and 6.",
+  "options": [
+   "72",
+   "13",
+   "12",
+   "18"
+  ],
+  "hints": [
+   "The L C M is the smallest number divisible by both 12 and 6.",
+   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
+   "First find the H C F of 12 and 6."
+  ],
+  "steps": [
+   "L C M times H C F equals 12 times 6, which is 72.",
+   "The H C F of 12 and 6 is 6, so the L C M is 72 divided by 6, which is 12."
+  ]
+ },
+ "VAR_EXT_G4_FP_2019_021_04_b2": {
+  "q": "Find the H C F of 72 and 60.",
+  "options": [
+   "60",
+   "360",
+   "24",
+   "12"
+  ],
+  "hints": [
+   "List the factors of 72 and 60.",
+   "Find the largest number that divides both.",
+   "Try dividing both by small primes."
+  ],
+  "steps": [
+   "Find the factors of 72 and 60.",
+   "The H C F is 12."
+  ]
+ },
+ "VAR_EXT_G4_FP_2020_011_03_b2": {
+  "q": "Find the L C M of 18 and 9.",
+  "options": [
+   "19",
+   "18",
+   "162",
+   "27"
+  ],
+  "hints": [
+   "The L C M is the smallest number divisible by both 18 and 9.",
+   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
+   "First find the H C F of 18 and 9."
+  ],
+  "steps": [
+   "L C M times H C F equals 18 times 9, which is 162.",
+   "The H C F of 18 and 9 is 9, so the L C M is 162 divided by 9, which is 18."
+  ]
+ },
+ "VAR_EXT_G4_FP_2020_014_03": {
+  "q": "Find the H C F of 65 and 91.",
+  "options": [
+   "65",
+   "13",
+   "26",
+   "455"
+  ],
+  "hints": [
+   "List the factors of 65 and 91.",
+   "Find the largest number that divides both.",
+   "Try dividing both by small primes."
+  ],
+  "steps": [
+   "Find the factors of 65 and 91.",
+   "The H C F is 13."
+  ]
+ },
+ "VAR_EXT_G4_FP_2020_020_02_b2": {
+  "q": "Find the H C F of 6 and 4.",
+  "options": [
+   "3",
+   "4",
+   "2",
+   "12"
+  ],
+  "hints": [
+   "List the factors of 6 and 4.",
+   "Find the largest number that divides both.",
+   "Try dividing both by small primes."
+  ],
+  "steps": [
+   "Find the factors of 6 and 4.",
+   "The H C F is 2."
+  ]
+ },
+ "VAR_EXT_G4_FP_2021_040_04": {
+  "q": "Find the L C M of 20 and 10.",
+  "options": [
+   "30",
+   "200",
+   "21",
+   "20"
+  ],
+  "hints": [
+   "The L C M is the smallest number divisible by both 20 and 10.",
+   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
+   "First find the H C F of 20 and 10."
+  ],
+  "steps": [
+   "L C M times H C F equals 20 times 10, which is 200.",
+   "The H C F of 20 and 10 is 10, so the L C M is 200 divided by 10, which is 20."
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_003_01_b2": {
+  "q": "Find the L C M of 16 and 9.",
+  "options": [
+   "16",
+   "144",
+   "145",
+   "25"
+  ],
+  "hints": [
+   "The L C M is the smallest number divisible by both 16 and 9.",
+   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
+   "First find the H C F of 16 and 9."
+  ],
+  "steps": [
+   "L C M times H C F equals 16 times 9, which is 144.",
+   "The H C F of 16 and 9 is 1, so the L C M is 144 divided by 1, which is 144."
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_027_03": {
+  "q": "Find the H C F of 26 and 91.",
+  "options": [
+   "14",
+   "182",
+   "26",
+   "13"
+  ],
+  "hints": [
+   "List the factors of 26 and 91.",
+   "Find the largest number that divides both.",
+   "Try dividing both by small primes."
+  ],
+  "steps": [
+   "Find the factors of 26 and 91.",
+   "The H C F is 13."
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_034_01": {
+  "q": "Find the L C M of 4 and 12.",
+  "options": [
+   "48",
+   "13",
+   "16",
+   "12"
+  ],
+  "hints": [
+   "The L C M is the smallest number divisible by both 4 and 12.",
+   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
+   "First find the H C F of 4 and 12."
+  ],
+  "steps": [
+   "L C M times H C F equals 4 times 12, which is 48.",
+   "The H C F of 4 and 12 is 4, so the L C M is 48 divided by 4, which is 12."
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_005_03": {
+  "q": "Find the H C F of 16 and 20.",
+  "options": [
+   "8",
+   "80",
+   "16",
+   "4"
+  ],
+  "hints": [
+   "List the factors of 16 and 20.",
+   "Find the largest number that divides both.",
+   "Try dividing both by small primes."
+  ],
+  "steps": [
+   "Find the factors of 16 and 20.",
+   "The H C F is 4."
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_027_04_b2": {
+  "q": "Find the H C F of 30 and 45.",
+  "options": [
+   "16",
+   "90",
+   "30",
+   "15"
+  ],
+  "hints": [
+   "List the factors of 30 and 45.",
+   "Find the largest number that divides both.",
+   "Try dividing both by small primes."
+  ],
+  "steps": [
+   "Find the factors of 30 and 45.",
+   "The H C F is 15."
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_021_01": {
+  "q": "Find the L C M of 12 and 5.",
+  "options": [
+   "61",
+   "17",
+   "60",
+   "12"
+  ],
+  "hints": [
+   "The L C M is the smallest number divisible by both 12 and 5.",
+   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
+   "First find the H C F of 12 and 5."
+  ],
+  "steps": [
+   "L C M times H C F equals 12 times 5, which is 60.",
+   "The H C F of 12 and 5 is 1, so the L C M is 60 divided by 1, which is 60."
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_027_03": {
+  "q": "Find the H C F of 24 and 60.",
+  "options": [
+   "24",
+   "120",
+   "12",
+   "13"
+  ],
+  "hints": [
+   "List the factors of 24 and 60.",
+   "Find the largest number that divides both.",
+   "Try dividing both by small primes."
+  ],
+  "steps": [
+   "Find the factors of 24 and 60.",
+   "The H C F is 12."
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_027_03_b2": {
+  "q": "Find the H C F of 55 and 44.",
+  "options": [
+   "220",
+   "22",
+   "11",
+   "44"
+  ],
+  "hints": [
+   "List the factors of 55 and 44.",
+   "Find the largest number that divides both.",
+   "Try dividing both by small primes."
+  ],
+  "steps": [
+   "Find the factors of 55 and 44.",
+   "The H C F is 11."
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_024_03_b2": {
+  "q": "Find the L C M of 14 and 6.",
+  "options": [
+   "14",
+   "84",
+   "20",
+   "42"
+  ],
+  "hints": [
+   "The L C M is the smallest number divisible by both 14 and 6.",
+   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
+   "First find the H C F of 14 and 6."
+  ],
+  "steps": [
+   "L C M times H C F equals 14 times 6, which is 84.",
+   "The H C F of 14 and 6 is 2, so the L C M is 84 divided by 2, which is 42."
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_040_04_b2": {
+  "q": "Find the H C F of 12 and 10.",
+  "options": [
+   "60",
+   "2",
+   "4",
+   "10"
+  ],
+  "hints": [
+   "List the factors of 12 and 10.",
+   "Find the largest number that divides both.",
+   "Try dividing both by small primes."
+  ],
+  "steps": [
+   "Find the factors of 12 and 10.",
+   "The H C F is 2."
+  ]
+ },
+ "VAR_G4_vary_factors_V134": {
+  "q": "How many factors does 24 have?",
+  "options": [
+   "6",
+   "8",
+   "9",
+   "10"
+  ],
+  "hints": [
+   "Factors come in pairs that multiply to give the number. Find every pair, then count all the numbers in them.",
+   "Start with 1 times 24. Then try 2, 3, 4 and so on, and write down each pair that works. Stop when the pairs start to repeat.",
+   "Example: 10. The factor pairs are 1 times 10 and 2 times 5. That is 2 pairs, so 10 has 4 factors: 1, 2, 5 and 10."
+  ],
+  "steps": [
+   "Write the factor pairs of 24 in order: 1 times 24, 2 times 12, 3 times 8 and 4 times 6.",
+   "That is 4 pairs, and each pair gives 2 factors. 4 times 2 equals 8.",
+   "24 has 8 factors."
+  ]
+ },
+ "VAR_G4_vary_factors_V18": {
+  "q": "How many factors does 42 have?",
+  "options": [
+   "10",
+   "8",
+   "9",
+   "6"
+  ],
+  "hints": [
+   "Factors come in pairs that multiply to give the number. Find every pair, then count all the numbers in them.",
+   "Start with 1 times 42. Then try 2, 3, 4 and so on, and write down each pair that works. Stop when the pairs start to repeat.",
+   "Example: 10. The factor pairs are 1 times 10 and 2 times 5. That is 2 pairs, so 10 has 4 factors: 1, 2, 5 and 10."
+  ],
+  "steps": [
+   "Write the factor pairs of 42 in order: 1 times 42, 2 times 21, 3 times 14 and 6 times 7.",
+   "That is 4 pairs, and each pair gives 2 factors. 4 times 2 equals 8.",
+   "42 has 8 factors."
+  ]
+ },
+ "VAR_G4_vary_factors_V19": {
+  "q": "How many factors does 96 have?",
+  "options": [
+   "14",
+   "10",
+   "13",
+   "12"
+  ],
+  "hints": [
+   "Factors come in pairs that multiply to give the number. Find every pair, then count all the numbers in them.",
+   "Start with 1 times 96. Then try 2, 3, 4 and so on, and write down each pair that works. Stop when the pairs start to repeat.",
+   "Example: 10. The factor pairs are 1 times 10 and 2 times 5. That is 2 pairs, so 10 has 4 factors: 1, 2, 5 and 10."
+  ],
+  "steps": [
+   "Write the factor pairs of 96 in order: 1 times 96, 2 times 48, 3 times 32, 4 times 24, 6 times 16 and 8 times 12.",
+   "That is 6 pairs, and each pair gives 2 factors. 6 times 2 equals 12.",
+   "96 has 12 factors."
+  ]
+ },
+ "VAR_G4_vary_factors_V44": {
+  "q": "How many factors does 36 have?",
+  "options": [
+   "7",
+   "11",
+   "9",
+   "10"
+  ],
+  "hints": [
+   "Factors come in pairs that multiply to give the number. Find every pair, then count all the numbers in them.",
+   "Start with 1 times 36. Then try 2, 3, 4 and so on, and write down each pair that works. Stop when the pairs start to repeat.",
+   "Example: 16. The factor pairs are 1 times 16, 2 times 8 and 4 times 4. The pair 4 times 4 gives only one factor, 4. So 16 has 5 factors: 1, 2, 4, 8 and 16."
+  ],
+  "steps": [
+   "Write the factor pairs of 36 in order: 1 times 36, 2 times 18, 3 times 12, 4 times 9 and 6 times 6.",
+   "The first 4 pairs give 2 factors each. The pair 6 times 6 gives just one factor, 6. 4 times 2 plus 1 equals 9.",
+   "36 has 9 factors."
+  ]
+ },
+ "VAR_G4_vary_factors_V45": {
+  "q": "How many factors does 120 have?",
+  "options": [
+   "18",
+   "16",
+   "14",
+   "17"
+  ],
+  "hints": [
+   "Factors come in pairs that multiply to give the number. Find every pair, then count all the numbers in them.",
+   "Start with 1 times 120. Then try 2, 3, 4 and so on, and write down each pair that works. Stop when the pairs start to repeat.",
+   "Example: 10. The factor pairs are 1 times 10 and 2 times 5. That is 2 pairs, so 10 has 4 factors: 1, 2, 5 and 10."
+  ],
+  "steps": [
+   "Write the factor pairs of 120 in order: 1 times 120, 2 times 60, 3 times 40, 4 times 30, 5 times 24, 6 times 20, 8 times 15 and 10 times 12.",
+   "That is 8 pairs, and each pair gives 2 factors. 8 times 2 equals 16.",
+   "120 has 16 factors."
+  ]
+ },
+ "VAR_G4_vary_factors_V92": {
+  "q": "How many factors does 72 have?",
+  "options": [
+   "14",
+   "12",
+   "10",
+   "13"
+  ],
+  "hints": [
+   "Factors come in pairs that multiply to give the number. Find every pair, then count all the numbers in them.",
+   "Start with 1 times 72. Then try 2, 3, 4 and so on, and write down each pair that works. Stop when the pairs start to repeat.",
+   "Example: 10. The factor pairs are 1 times 10 and 2 times 5. That is 2 pairs, so 10 has 4 factors: 1, 2, 5 and 10."
+  ],
+  "steps": [
+   "Write the factor pairs of 72 in order: 1 times 72, 2 times 36, 3 times 24, 4 times 18, 6 times 12 and 8 times 9.",
+   "That is 6 pairs, and each pair gives 2 factors. 6 times 2 equals 12.",
+   "72 has 12 factors."
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V118": {
+  "q": "Find the L C M of 24 and 56.",
+  "options": [
+   "1344",
+   "168",
+   "8",
+   "167"
+  ],
+  "hints": [
+   "The L C M is the smallest number that is in both times tables.",
+   "Write out the multiples of the bigger number, 56. After each one, ask: does 24 divide it exactly?",
+   "Example: the L C M of 4 and 10. The multiples of 10 are 10, 20 and so on. 4 does not divide 10, but 4 divides 20. So the L C M is 20."
+  ],
+  "steps": [
+   "List the multiples of the bigger number, 56: 56, 112, 168.",
+   "Look for the first one that 24 also divides. 24 does not divide 56 or 112 exactly, but 168 divided by 24 equals 7.",
+   "The L C M is 168."
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V131": {
+  "q": "Find the L C M of 9 and 15.",
+  "options": [
+   "46",
+   "3",
+   "135",
+   "45"
+  ],
+  "hints": [
+   "The L C M is the smallest number that is in both times tables.",
+   "Write out the multiples of the bigger number, 15. After each one, ask: does 9 divide it exactly?",
+   "Example: the L C M of 6 and 8. The multiples of 8 are 8, 16, 24 and so on. 6 does not divide 8 or 16, but 6 divides 24. So the L C M is 24."
+  ],
+  "steps": [
+   "List the multiples of the bigger number, 15: 15, 30, 45.",
+   "Look for the first one that 9 also divides. 9 does not divide 15 or 30 exactly, but 45 divided by 9 equals 5.",
+   "The L C M is 45."
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V14": {
+  "q": "Find the H C F of 40 and 48.",
+  "options": [
+   "8",
+   "9",
+   "240",
+   "1920"
+  ],
+  "hints": [
+   "The H C F is the biggest number that divides both numbers exactly.",
+   "List all the factors of 40. Then list all the factors of 48. Look for the numbers that are in both lists.",
+   "Example: the H C F of 10 and 25. The factors of 10 are 1, 2, 5 and 10. The factors of 25 are 1, 5 and 25. The biggest number in both lists is 5, so the H C F is 5."
+  ],
+  "steps": [
+   "The factors of 40 are 1, 2, 4, 5, 8, 10, 20 and 40.",
+   "The factors of 48 are 1, 2, 3, 4, 6, 8, 12, 16, 24 and 48.",
+   "The numbers in both lists are 1, 2, 4 and 8. The biggest is 8.",
+   "The H C F is 8."
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V154": {
+  "q": "Find the L C M of 24 and 40.",
+  "options": [
+   "960",
+   "8",
+   "112",
+   "120"
+  ],
+  "hints": [
+   "The L C M is the smallest number that is in both times tables.",
+   "Write out the multiples of the bigger number, 40. After each one, ask: does 24 divide it exactly?",
+   "Example: the L C M of 4 and 10. The multiples of 10 are 10, 20 and so on. 4 does not divide 10, but 4 divides 20. So the L C M is 20."
+  ],
+  "steps": [
+   "List the multiples of the bigger number, 40: 40, 80, 120.",
+   "Look for the first one that 24 also divides. 24 does not divide 40 or 80 exactly, but 120 divided by 24 equals 5.",
+   "The L C M is 120."
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V162": {
+  "q": "Find the L C M of 20 and 35.",
+  "options": [
+   "140",
+   "700",
+   "5",
+   "145"
+  ],
+  "hints": [
+   "The L C M is the smallest number that is in both times tables.",
+   "Write out the multiples of the bigger number, 35. After each one, ask: does 20 divide it exactly?",
+   "Example: the L C M of 6 and 8. The multiples of 8 are 8, 16, 24 and so on. 6 does not divide 8 or 16, but 6 divides 24. So the L C M is 24."
+  ],
+  "steps": [
+   "List the multiples of the bigger number, 35: 35, 70, 105, 140.",
+   "Look for the first one that 20 also divides. 20 does not divide 35, 70 or 105 exactly, but 140 divided by 20 equals 7.",
+   "The L C M is 140."
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V166": {
+  "q": "Find the L C M of 36 and 84.",
+  "options": [
+   "12",
+   "253",
+   "252",
+   "3024"
+  ],
+  "hints": [
+   "The L C M is the smallest number that is in both times tables.",
+   "Write out the multiples of the bigger number, 84. After each one, ask: does 36 divide it exactly?",
+   "Example: the L C M of 6 and 8. The multiples of 8 are 8, 16, 24 and so on. 6 does not divide 8 or 16, but 6 divides 24. So the L C M is 24."
+  ],
+  "steps": [
+   "List the multiples of the bigger number, 84: 84, 168, 252.",
+   "Look for the first one that 36 also divides. 36 does not divide 84 or 168 exactly, but 252 divided by 36 equals 7.",
+   "The L C M is 252."
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V38": {
+  "q": "Find the H C F of 12 and 15.",
+  "options": [
+   "60",
+   "180",
+   "3",
+   "4"
+  ],
+  "hints": [
+   "The H C F is the biggest number that divides both numbers exactly.",
+   "List all the factors of 12. Then list all the factors of 15. Look for the numbers that are in both lists.",
+   "Example: the H C F of 10 and 25. The factors of 10 are 1, 2, 5 and 10. The factors of 25 are 1, 5 and 25. The biggest number in both lists is 5, so the H C F is 5."
+  ],
+  "steps": [
+   "The factors of 12 are 1, 2, 3, 4, 6 and 12.",
+   "The factors of 15 are 1, 3, 5 and 15.",
+   "The numbers in both lists are 1 and 3. The biggest is 3.",
+   "The H C F is 3."
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V41": {
+  "q": "Find the H C F of 14 and 21.",
+  "options": [
+   "294",
+   "14",
+   "42",
+   "7"
+  ],
+  "hints": [
+   "The H C F is the biggest number that divides both numbers exactly.",
+   "List all the factors of 14. Then list all the factors of 21. Look for the numbers that are in both lists.",
+   "Example: the H C F of 10 and 25. The factors of 10 are 1, 2, 5 and 10. The factors of 25 are 1, 5 and 25. The biggest number in both lists is 5, so the H C F is 5."
+  ],
+  "steps": [
+   "The factors of 14 are 1, 2, 7 and 14.",
+   "The factors of 21 are 1, 3, 7 and 21.",
+   "The numbers in both lists are 1 and 7. The biggest is 7.",
+   "The H C F is 7."
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V42": {
+  "q": "Find the H C F of 30 and 36.",
+  "options": [
+   "180",
+   "12",
+   "6",
+   "1080"
+  ],
+  "hints": [
+   "The H C F is the biggest number that divides both numbers exactly.",
+   "List all the factors of 30. Then list all the factors of 36. Look for the numbers that are in both lists.",
+   "Example: the H C F of 10 and 25. The factors of 10 are 1, 2, 5 and 10. The factors of 25 are 1, 5 and 25. The biggest number in both lists is 5, so the H C F is 5."
+  ],
+  "steps": [
+   "The factors of 30 are 1, 2, 3, 5, 6, 10, 15 and 30.",
+   "The factors of 36 are 1, 2, 3, 4, 6, 9, 12, 18 and 36.",
+   "The numbers in both lists are 1, 2, 3 and 6. The biggest is 6.",
+   "The H C F is 6."
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V73": {
+  "q": "Find the L C M of 6 and 9.",
+  "options": [
+   "3",
+   "19",
+   "54",
+   "18"
+  ],
+  "hints": [
+   "The L C M is the smallest number that is in both times tables.",
+   "Write out the multiples of the bigger number, 9. After each one, ask: does 6 divide it exactly?",
+   "Example: the L C M of 4 and 10. The multiples of 10 are 10, 20 and so on. 4 does not divide 10, but 4 divides 20. So the L C M is 20."
+  ],
+  "steps": [
+   "List the multiples of the bigger number, 9: 9, 18.",
+   "Look for the first one that 6 also divides. 6 does not divide 9 exactly, but 18 divided by 6 equals 3.",
+   "The L C M is 18."
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V82": {
+  "q": "Find the H C F of 9 and 21.",
+  "options": [
+   "63",
+   "189",
+   "3",
+   "6"
+  ],
+  "hints": [
+   "The H C F is the biggest number that divides both numbers exactly.",
+   "List all the factors of 9. Then list all the factors of 21. Look for the numbers that are in both lists.",
+   "Example: the H C F of 10 and 25. The factors of 10 are 1, 2, 5 and 10. The factors of 25 are 1, 5 and 25. The biggest number in both lists is 5, so the H C F is 5."
+  ],
+  "steps": [
+   "The factors of 9 are 1, 3 and 9.",
+   "The factors of 21 are 1, 3, 7 and 21.",
+   "The numbers in both lists are 1 and 3. The biggest is 3.",
+   "The H C F is 3."
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V84": {
+  "q": "Find the L C M of 20 and 25.",
+  "options": [
+   "500",
+   "5",
+   "95",
+   "100"
+  ],
+  "hints": [
+   "The L C M is the smallest number that is in both times tables.",
+   "Write out the multiples of the bigger number, 25. After each one, ask: does 20 divide it exactly?",
+   "Example: the L C M of 6 and 8. The multiples of 8 are 8, 16, 24 and so on. 6 does not divide 8 or 16, but 6 divides 24. So the L C M is 24."
+  ],
+  "steps": [
+   "List the multiples of the bigger number, 25: 25, 50, 75, 100.",
+   "Look for the first one that 20 also divides. 20 does not divide 25, 50 or 75 exactly, but 100 divided by 20 equals 5.",
+   "The L C M is 100."
+  ]
+ }
+}

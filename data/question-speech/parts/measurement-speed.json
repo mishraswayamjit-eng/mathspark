@@ -2366,5 +2366,615 @@
    "Total time equals 7 hours.",
    "Average speed equals 28 divided by 7, which is 4 kilometres per hour."
   ]
+ },
+ "G5A_MEASUREMENT_001": {
+  "q": "A carpenter saws a log 3 metres 60 centimetres long into pieces of 45 centimetres each. Every cut takes him 4 minutes, and he rests for 1 minute between one cut and the next. How long does the whole job take, from the start of the first cut to the end of the last cut?",
+  "options": [
+   "40 minutes",
+   "35 minutes",
+   "34 minutes",
+   "39 minutes"
+  ],
+  "hints": [
+   "Find the number of pieces first. Then picture the log: how many cuts make that many pieces, and how many rests fall between the cuts?",
+   "Change 3 metres 60 centimetres to 360 centimetres and divide by 45 to find the number of pieces. The number of cuts is one less than the number of pieces.",
+   "A similar job: a 2 metre pole cut into 50 centimetre pieces gives 4 pieces. That needs 3 cuts, with 2 rests between them. At 5 minutes a cut and 2 minutes a rest, the time is 3 times 5 plus 2 times 2 equals 19 minutes."
+  ],
+  "steps": [
+   "Change the length to centimetres: 3 metres 60 centimetres equals 360 centimetres.",
+   "Find the number of pieces. 360 divided by 45 equals 8.",
+   "The last piece is simply what remains, so 8 pieces need 7 cuts. Rests come only between cuts, so there are 6 rests.",
+   "Add the cutting time and the resting time: the job takes 34 minutes."
+  ]
+ },
+ "G5A_MEASUREMENT_002": {
+  "q": "Riya glues 8 strips of paper end to end to make one long strip. Each strip is 25 centimetres long, and at every join the two strips overlap by 15 millimetres. How long is the finished strip?",
+  "options": [
+   "189 centimetres 5 millimetres",
+   "188 centimetres",
+   "95 centimetres",
+   "200 centimetres"
+  ],
+  "hints": [
+   "Two things need care here: the two lengths are in different units, and the number of joins is not the number of strips.",
+   "Write 25 centimetres as 250 millimetres. Then count the joins when 8 strips are placed in a row.",
+   "A similar chain: 5 strips of 20 centimetres with a 10 millimetre overlap at each join. There are 4 joins, so the length is 5 times 200 minus 4 times 10 equals 960 millimetres, which is 96 centimetres."
+  ],
+  "steps": [
+   "Work in millimetres: each strip is 250 millimetres, so 8 strips laid end to end would be 2000 millimetres.",
+   "8 strips in a row have 7 joins, and each join hides 15 millimetres.",
+   "Take away the hidden length. 2000 minus 7 times 15 equals 1895.",
+   "1895 millimetres is 189 centimetres 5 millimetres, so the finished strip is 189 centimetres 5 millimetres long."
+  ]
+ },
+ "G5A_MEASUREMENT_003": {
+  "q": "A rectangular garden is 12 metres long and 7 metres 50 centimetres wide. Posts are put all the way round its boundary, 1 metre 50 centimetres apart, with a post at every corner. How many posts are needed?",
+  "options": [
+   "30",
+   "27",
+   "13",
+   "26"
+  ],
+  "hints": [
+   "Think of walking once round the whole boundary from one post to the next until you are back at the start.",
+   "Find the distance all the way round the garden in centimetres, then see how many gaps of 150 centimetres fit into it.",
+   "A similar garden: a square of side 6 metres with posts 2 metres apart. The boundary is 24 metres, so there are 24 divided by 2 equals 12 gaps and, because the boundary closes up, 12 posts."
+  ],
+  "steps": [
+   "Change to centimetres: the garden is 1200 centimetres by 750 centimetres.",
+   "Find the distance all the way round. 2 times open bracket 1200 plus 750 close bracket, equals 3900.",
+   "Find the number of gaps. 3900 divided by 150 equals 26.",
+   "Going round a closed boundary, the last gap ends at the first post, so the number of posts equals the number of gaps: 26 posts."
+  ]
+ },
+ "G5A_MEASUREMENT_004": {
+  "q": "An empty drum can hold 100 litres. Every morning Ravi pours 40 litres of water into it, and every night 25 litres leak out. On which morning does the drum become full for the first time?",
+  "options": [
+   "On the 7th morning",
+   "On the 5th morning",
+   "On the 6th morning",
+   "On the 3rd morning"
+  ],
+  "hints": [
+   "The water level goes up and then down each day. Ask yourself at which moment of the day the drum holds the most.",
+   "Write the level after each morning and after each night for the first two days, and look at how the morning levels grow.",
+   "A similar drum: it holds 50 litres, gains 20 litres each morning and loses 10 litres each night. Morning levels are 20, 30, 40, 50, so it is full on the 4th morning, not the 5th."
+  ],
+  "steps": [
+   "After each full day and night the drum gains 40 minus 25 equals 15 litres.",
+   "The level just after each morning's pouring is 40, then 55, then 70, then 85 litres on the first four mornings.",
+   "After the 4th night the drum holds 85 minus 25 equals 60 litres.",
+   "The next morning's 40 litres bring it to 100 litres, so the drum is full on the 5th morning."
+  ]
+ },
+ "G5A_MEASUREMENT_005": {
+  "q": "A bottle full of juice weighs 1 kilogram 350 grams. When half of the juice has been drunk, the bottle and the remaining juice weigh 800 grams. What does the empty bottle weigh?",
+  "options": [
+   "550 grams",
+   "250 grams",
+   "675 grams",
+   "400 grams"
+  ],
+  "hints": [
+   "Compare the two weighings. What exactly was removed between the first and the second?",
+   "Write 1 kilogram 350 grams as 1350 grams. The drop from 1350 grams to 800 grams is the weight of half of the juice.",
+   "A similar bottle: full it weighs 900 grams, and with half the oil used it weighs 600 grams. Half the oil is 300 grams, all the oil is 600 grams, so the bottle is 900 minus 600 equals 300 grams."
+  ],
+  "steps": [
+   "Write the first weight in grams: 1 kilogram 350 grams equals 1350 grams.",
+   "The weight that went away is half of the juice. 1350 minus 800 equals 550.",
+   "So all of the juice weighs twice as much. 2 times 550 equals 1100.",
+   "Take the juice away from the full bottle: the empty bottle weighs 250 grams."
+  ]
+ },
+ "G5A_MEASUREMENT_006": {
+  "q": "A plane leaves Mumbai when the clocks in Mumbai show 11 40 p m. It lands in Dubai when the clocks in Dubai show 1 25 a m. Dubai clocks are always 1 hour 30 minutes behind Mumbai clocks. How long was the flight?",
+  "options": [
+   "1 hour 45 minutes",
+   "15 minutes",
+   "3 hours 45 minutes",
+   "3 hours 15 minutes"
+  ],
+  "hints": [
+   "The two times were read on clocks in different cities. Before finding the gap, put both times on the same city's clock.",
+   "When Dubai clocks show 1 25 a m, Mumbai clocks show 1 hour 30 minutes more. Find that Mumbai time first.",
+   "A similar trip: a plane leaves town P at 10:00 p m by P's clocks and lands in town Q at 11:00 p m by Q's clocks, and Q's clocks are 2 hours behind P's. In P's time it lands at 1:00 a m, so the flight took 3 hours."
+  ],
+  "steps": [
+   "Change the landing time to Mumbai time: 1 25 a m in Dubai is 1 hour 30 minutes later in Mumbai, which is 2 55 a m.",
+   "From 11 40 p m to midnight is 20 minutes.",
+   "From midnight to 2 55 a m is 2 hours 55 minutes.",
+   "20 minutes and 2 hours 55 minutes make 3 hours 15 minutes, so the flight took 3 hours 15 minutes."
+  ]
+ },
+ "G5A_MEASUREMENT_007": {
+  "q": "Meena's watch gains 5 minutes in every real hour. She sets it to the right time at 6:00 a m. Later the same day her watch shows 7:00 p m. What is the real time then?",
+  "options": [
+   "6:00 p m",
+   "5 55 p m",
+   "8:05 p m",
+   "6 55 p m"
+  ],
+  "hints": [
+   "The watch gains 5 minutes for each real hour that passes, so think about how far the watch moves during one real hour.",
+   "In one real hour the watch moves 65 minutes. Find how many minutes the watch has moved from 6:00 a m to 7:00 p m.",
+   "A similar watch gains 10 minutes every real hour and is set right at 8:00 a m. When it shows 3:00 p m it has moved 420 minutes, which is 420 divided by 70 equals 6 real hours, so the real time is 2:00 p m."
+  ],
+  "steps": [
+   "From 6:00 a m to 7:00 p m the watch has moved 13 hours, which is 780 minutes.",
+   "In each real hour the watch moves 60 plus 5 equals 65 minutes.",
+   "Find how many real hours have passed. 780 divided by 65 equals 12.",
+   "12 real hours after 6:00 a m is 6:00 p m, so the real time is 6:00 p m."
+  ]
+ },
+ "G5A_MEASUREMENT_008": {
+  "q": "Buses leave a depot every 25 minutes. The first bus of the day leaves at 6 40 a m. How many buses leave the depot before 1:00 p m?",
+  "options": [
+   "15",
+   "14",
+   "16",
+   "13"
+  ],
+  "hints": [
+   "Find how long it is from the first bus until 1:00 p m, taking care as the time passes noon. Then think about whether you are counting gaps or buses.",
+   "From 6 40 a m to 12 40 p m is 6 hours, and 20 minutes more reaches 1:00 p m. Change this time to minutes.",
+   "A similar depot: buses every 20 minutes, the first at 9:00 a m. Before 10 10 a m there are 70 minutes, which hold 3 whole gaps, so buses leave at 9:00, 9 20, 9 40 and 10:00: that is 4 buses."
+  ],
+  "steps": [
+   "From 6 40 a m to 1:00 p m is 6 hours 20 minutes, which is 380 minutes.",
+   "See how many whole gaps of 25 minutes fit. 15 times 25 equals 375.",
+   "So the last bus before 1:00 p m leaves 375 minutes after the first, at 12 55 p m.",
+   "There are 15 gaps, and the first bus leaves at the start of the first gap, so 15 plus 1 equals 16 buses leave."
+  ]
+ },
+ "G5A_MEASUREMENT_009": {
+  "q": "A model of a tower is made so that 1 centimetre on the model stands for 6 metres of the real tower. The model is 15 centimetres tall. A second model of the same tower is made so that 1 centimetre stands for 4 metres. How tall is the second model?",
+  "options": [
+   "22 centimetres 5 millimetres",
+   "10 centimetres",
+   "13 centimetres",
+   "60 centimetres"
+  ],
+  "hints": [
+   "Both models show the same real tower. Find the one thing that does not change, and use it as a bridge between the two models.",
+   "Use the first model to find the height of the real tower in metres: 15 lots of 6 metres.",
+   "A similar pair: a model 8 centimetres tall where 1 centimetre stands for 5 metres shows a 40 metre tower. If 1 centimetre stands for 2 metres instead, the model must be 40 divided by 2 equals 20 centimetres tall, which is taller than before."
+  ],
+  "steps": [
+   "Find the real height from the first model. 15 times 6 equals 90.",
+   "The real tower is 90 metres tall, and in the second model each centimetre stands for 4 metres.",
+   "Find how many centimetres are needed. 90 divided by 4 equals 22.5.",
+   "22.5 centimetres is 22 centimetres 5 millimetres, so the second model is 22 centimetres 5 millimetres tall."
+  ]
+ },
+ "G5A_MEASUREMENT_010": {
+  "q": "A carpenter has 6 planks, each 2 metres long. He needs pieces that are exactly 35 centimetres long, and each piece must be cut from a single plank. What is the greatest number of pieces he can cut?",
+  "options": [
+   "34",
+   "35",
+   "30",
+   "36"
+  ],
+  "hints": [
+   "Think about one plank on its own before thinking about all six. What happens to the bit left at the end of a plank?",
+   "Change 2 metres to 200 centimetres and find how many whole pieces of 35 centimetres come from one plank, and how much is left over.",
+   "A similar job: 4 rods of 100 centimetres cut into 40 centimetre pieces. One rod gives 2 pieces with 20 centimetres left over, so 4 rods give 4 times 2 equals 8 pieces, even though 400 divided by 40 is 10."
+  ],
+  "steps": [
+   "Each plank is 200 centimetres long.",
+   "See how many whole pieces one plank gives. 5 times 35 equals 175.",
+   "One plank gives 5 pieces and has 25 centimetres left over, which is too short for another piece.",
+   "Six planks give six times as many, so the greatest number is 30 pieces."
+  ]
+ },
+ "G5A_MEASUREMENT_011": {
+  "q": "A sheet of card is 32 centimetres long and 22 centimetres wide. Asha cuts small rectangular cards from it, each 80 millimetres by 50 millimetres. All the cards are placed the same way round, with their edges along the edges of the sheet. What is the greatest number of cards she can cut?",
+  "options": [
+   "17",
+   "16",
+   "12",
+   "8"
+  ],
+  "hints": [
+   "Whole cards must fit along the length and along the width. Think about rows and columns rather than area, and remember the card can be turned.",
+   "Write the card as 8 centimetres by 5 centimetres. With the 8 centimetre side along the 32 centimetre edge, find how many cards fit along each edge.",
+   "A similar sheet: 20 centimetres by 13 centimetres, with cards 6 centimetres by 4 centimetres. One way gives 3 along and 3 up, which is 9 cards; turned, it gives 5 along and 2 up, which is 10 cards. So the most is 10, although the areas suggest more."
+  ],
+  "steps": [
+   "The card is 8 centimetres by 5 centimetres.",
+   "With the 8 centimetre side along the 32 centimetre edge: 4 cards fit along the length and 4 rows fit in the 22 centimetre width, which makes 16 cards.",
+   "Turned round, with the 5 centimetre side along the 32 centimetre edge: 6 cards fit along the length but only 2 rows fit in the width, which makes 12 cards.",
+   "The first way is better, so the greatest number of cards is 16."
+  ]
+ },
+ "G5A_MEASUREMENT_012": {
+  "q": "3 mangoes and 2 guavas together weigh 1 kilogram 150 grams. 2 mangoes and 3 guavas together weigh 1 kilogram 50 grams. All the mangoes weigh the same and all the guavas weigh the same. What does one mango weigh?",
+  "options": [
+   "230 grams",
+   "170 grams",
+   "220 grams",
+   "270 grams"
+  ],
+  "hints": [
+   "A mango and a guava do not weigh the same, so sharing equally will not do. Look at what you get by putting the two weighings together, and by comparing them.",
+   "Add the two weighings: you then have 5 mangoes and 5 guavas. What do one mango and one guava weigh together?",
+   "A similar puzzle: 2 apples and 1 pear weigh 500 grams, and 1 apple and 2 pears weigh 400 grams. Together that is 3 apples and 3 pears for 900 grams, so one of each is 300 grams. Swapping a pear for an apple adds 100 grams, so an apple is 200 grams and a pear is 100 grams."
+  ],
+  "steps": [
+   "In grams the two weighings are 1150 grams and 1050 grams. Together, 5 mangoes and 5 guavas weigh 2200 grams, so one mango and one guava weigh 440 grams.",
+   "The first weighing has one mango in place of a guava and is 100 grams heavier, so a mango weighs 100 grams more than a guava.",
+   "Two mangoes weigh 440 grams and 100 grams more. 440 plus 100 equals 540.",
+   "Halve it: one mango weighs 270 grams."
+  ]
+ },
+ "G5A_MEASUREMENT_013": {
+  "q": "A candle 24 centimetres tall burns down by 3 millimetres every 5 minutes. It is lit at 10 50 a m. At what time will the candle be exactly 6 centimetres tall?",
+  "options": [
+   "12 30 p m",
+   "5 30 p m",
+   "3 50 p m",
+   "1 50 p m"
+  ],
+  "hints": [
+   "Read carefully what the 6 centimetres is: the part that has burned, or the part that is still standing?",
+   "Find how much of the candle must burn away, and write it in millimetres so that it matches the 3 millimetres.",
+   "A similar candle: 10 centimetres tall, burning 2 millimetres every 3 minutes, lit at 11 30 a m. To be 4 centimetres tall it must lose 60 millimetres, which is 30 lots of 2 millimetres and takes 90 minutes, so the time is 1:00 p m."
+  ],
+  "steps": [
+   "Find how much must burn away, in centimetres. 24 minus 6 equals 18.",
+   "18 centimetres is 180 millimetres. Find how many lots of 3 millimetres that is. 180 divided by 3 equals 60.",
+   "Each lot takes 5 minutes. 60 times 5 equals 300.",
+   "300 minutes is 5 hours, and 5 hours after 10 50 a m is 3 50 p m, so the candle is 6 centimetres tall at 3 50 p m."
+  ]
+ },
+ "G5A_MEASUREMENT_014": {
+  "q": "Asha's steps are 60 centimetres long and her father's steps are 90 centimetres long. They start with their heels on the same line and walk 36 metres in the same straight direction. Counting the starting line, at how many places do their heel marks fall on the same spot?",
+  "options": [
+   "21",
+   "20",
+   "24",
+   "40"
+  ],
+  "hints": [
+   "Asha's heel lands on multiples of one number and her father's on multiples of another. Where can both land?",
+   "List Asha's first few marks, 60 centimetres, 120 centimetres, 180 centimetres, and her father's, 90 centimetres, 180 centimetres, to find the first spot they share after the start.",
+   "A similar walk: steps of 40 centimetres and 60 centimetres over 6 metres. The marks meet every 120 centimetres, at 0, 120, 240, 360, 480 and 600 centimetres. That is 600 divided by 120 equals 5 gaps, so 6 shared places."
+  ],
+  "steps": [
+   "Asha's marks are at multiples of 60 centimetres and her father's at multiples of 90 centimetres. The first distance in both lists is 180 centimetres.",
+   "So their marks fall together every 180 centimetres. The walk is 36 metres, which is 3600 centimetres.",
+   "Find how many gaps of 180 centimetres there are. 3600 divided by 180 equals 20.",
+   "The shared marks are at the start of the first gap and at the end of every gap, so there are 20 plus 1 equals 21 places."
+  ]
+ },
+ "G5A_MEASUREMENT_015": {
+  "q": "Kiran drank half of the juice in a jug and then 150 millilitres more. Later his sister drank half of what was left and then 100 millilitres more. Now 200 millilitres of juice is left in the jug. How much juice was in the jug at the start?",
+  "options": [
+   "1 litre 150 millilitres",
+   "900 millilitres",
+   "1 litre 50 millilitres",
+   "1 litre 500 millilitres"
+  ],
+  "hints": [
+   "The end is known and the start is not, so begin from the 200 millilitres and undo each thing that happened, the latest first.",
+   "Just before the sister drank her last 100 millilitres, the jug held 200 plus 100 equals 300 millilitres. That 300 millilitres was half of what she found in the jug.",
+   "A similar story: Tara spent half her money and then 20 rupees more, and has 30 rupees left. Before the 20 rupees she had 50 rupees, and that was half, so she began with 100 rupees."
+  ],
+  "steps": [
+   "Put back the sister's last 100 millilitres. 200 plus 100 equals 300.",
+   "That was half of what she found, so double it. 300 times 2 equals 600.",
+   "Put back Kiran's extra 150 millilitres. 600 plus 150 equals 750.",
+   "That was half of the juice at the start, so double it: the jug held 1500 millilitres, which is 1 litre 500 millilitres."
+  ]
+ },
+ "G5A_MEASUREMENT_016": {
+  "q": "A wall clock takes 6 seconds to strike 4 o'clock, timed from the first strike to the last. The gaps between strikes are always equal. How long does the clock take to strike 10 o'clock?",
+  "options": [
+   "15 seconds",
+   "18 seconds",
+   "20 seconds",
+   "12 seconds"
+  ],
+  "hints": [
+   "The timing starts on the first strike and stops on the last. Think about what fills the time in between.",
+   "Draw 4 dots in a row for the 4 strikes and count the gaps between them. The 6 seconds are shared among those gaps.",
+   "A similar clock takes 8 seconds to strike 3 o'clock. Three strikes have 2 gaps, so a gap is 4 seconds. Striking 6 o'clock has 5 gaps and takes 5 times 4 equals 20 seconds."
+  ],
+  "steps": [
+   "Four strikes have 3 gaps between them.",
+   "Find the length of one gap. 6 divided by 3 equals 2.",
+   "Ten strikes have 9 gaps between them.",
+   "Nine gaps of 2 seconds: the clock takes 18 seconds."
+  ]
+ },
+ "G5A_MEASUREMENT_017": {
+  "q": "A machine is switched on at 9 40 p m on Thursday and runs without stopping for exactly 75 hours. On which day and at what time does it stop?",
+  "options": [
+   "Sunday, 12 40 a m",
+   "Monday, 12 40 a m",
+   "Monday, 12 40 p m",
+   "Sunday, 9 40 p m"
+  ],
+  "hints": [
+   "Break the 75 hours into whole days and some hours left over. Whole days bring you back to the same clock time.",
+   "72 hours is exactly 3 days. Find the day and time 3 days after Thursday 9 40 p m, then see what the remaining hours do.",
+   "A similar run: a pump starts at 10 30 p m on Monday and runs for 50 hours. 48 hours later it is Wednesday 10 30 p m, and 2 more hours pass midnight, so it stops on Thursday at half past midnight."
+  ],
+  "steps": [
+   "Split the 75 hours into whole days and extra hours. 75 equals 3 times 24 plus 3.",
+   "Three days after Thursday 9 40 p m is Sunday 9 40 p m.",
+   "Three more hours: 2 hours 20 minutes reach midnight, when Monday begins, and 40 minutes remain.",
+   "So the machine stops on Monday at 12 40 a m."
+  ]
+ },
+ "G5A_MEASUREMENT_019": {
+  "q": "A sports camp runs every day from 25 January 2024 to 5 March 2024, counting both the first day and the last day. For how many days does the camp run?",
+  "options": [
+   "41",
+   "40",
+   "39",
+   "42"
+  ],
+  "hints": [
+   "Count the days month by month, and look closely at the year before deciding how long February is.",
+   "In January the camp runs on the 25th, 26th, 27th, 28th, 29th, 30th and 31st. Count them, then think about February 2024.",
+   "A similar count: from 20 February 2020 to 3 March 2020, both days included. 2020 is a leap year, so February gives 10 days, 20th to 29th, and March gives 3, which is 13 days."
+  ],
+  "steps": [
+   "January: from the 25th to the 31st, both included, is 7 days.",
+   "February: 2024 can be divided exactly by 4, so it is a leap year and February has 29 days.",
+   "March: from the 1st to the 5th is 5 days.",
+   "Add the three parts: the camp runs for 41 days."
+  ]
+ },
+ "G5A_MEASUREMENT_020": {
+  "q": "A pile of 200 sheets of paper is 1 centimetre 6 millimetres thick. A book made of this paper has 350 numbered pages, with one page on each side of every sheet, and two covers that are each 1.5 millimetres thick. How thick is the book?",
+  "options": [
+   "31 millimetres",
+   "14 millimetres",
+   "17 millimetres",
+   "15.5 millimetres"
+  ],
+  "hints": [
+   "Pages and sheets are not the same thing. Decide how many sheets of paper the book really has before working out any thickness.",
+   "Each sheet has a page on its front and a page on its back, so halve 350 to find the number of sheets. Then compare that with the pile of 200 sheets.",
+   "A similar book: 100 sheets make a pile 9 millimetres thick. A book of 400 pages has 200 sheets, which are 18 millimetres thick, and two covers of 1 millimetre each bring it to 20 millimetres."
+  ],
+  "steps": [
+   "Find the number of sheets in the book. 350 divided by 2 equals 175.",
+   "The pile of 200 sheets is 16 millimetres thick, so 25 sheets are 2 millimetres thick.",
+   "175 sheets are 7 lots of 25 sheets. 7 times 2 equals 14.",
+   "Add the two covers: the book is 17 millimetres thick."
+  ]
+ },
+ "G5A_MEASUREMENT_021": {
+  "q": "Two clocks are set to the right time at 12 noon. One gains 3 minutes every hour and the other loses 2 minutes every hour. What time does the fast clock show when the two clocks are exactly 1 hour apart for the first time?",
+  "options": [
+   "12 36 a m",
+   "12:00 midnight",
+   "11 36 p m",
+   "9:00 a m"
+  ],
+  "hints": [
+   "Think about how quickly the two clocks move apart from each other, then about what the question finally asks you to read.",
+   "Each hour one clock goes 3 minutes ahead and the other falls 2 minutes behind, so the gap between them grows by 5 minutes an hour.",
+   "A similar pair, set right at 6:00 a m: one gains 4 minutes an hour and one loses 1 minute an hour. They are 20 minutes apart after 20 divided by 5 equals 4 hours, at a real time of 10:00 a m, when the fast clock shows 10 16 a m."
+  ],
+  "steps": [
+   "Find how fast the gap between the clocks grows each hour. 3 plus 2 equals 5.",
+   "Find how many hours it takes for the gap to reach 60 minutes. 60 divided by 5 equals 12.",
+   "12 hours after 12 noon the real time is 12 midnight.",
+   "By then the fast clock has gained 36 minutes, so it shows 12 36 a m."
+  ]
+ },
+ "G5A_MEASUREMENT_022": {
+  "q": "A bottle holds 75 millilitres of cough syrup. Anu takes 5 millilitres every morning and 5 millilitres every night. Her first dose is on Monday night. When does she take the last dose from the bottle?",
+  "options": [
+   "On the next Monday morning",
+   "On the next Tuesday morning",
+   "On the next Monday night",
+   "On Sunday night"
+  ],
+  "hints": [
+   "Count doses rather than days, and notice that the first day is not a full day of medicine.",
+   "Find how many 5 millilitre doses the bottle holds. One of them is used on the first Monday night, and after that she takes two every day.",
+   "A similar bottle holds 35 millilitres and gives 7 doses of 5 millilitres. If the first dose is on Friday night, the other 6 doses fill Saturday, Sunday and Monday, so the last dose is on Monday night."
+  ],
+  "steps": [
+   "Find the number of doses in the bottle. 75 divided by 5 equals 15.",
+   "The first dose is on Monday night, which leaves 14 doses.",
+   "At 2 doses a day, find how many whole days they last. 14 divided by 2 equals 7.",
+   "Those 7 days are Tuesday to the next Monday, and each ends with a night dose, so the last dose is on the next Monday night."
+  ]
+ },
+ "G5A_SPEED_001": {
+  "q": "Asha cycles at a steady speed of 12 kilometres per hour. How far does she cycle in 3 hours?",
+  "options": [
+   "15 kilometres",
+   "36 kilometres",
+   "4 kilometres",
+   "9 kilometres"
+  ],
+  "hints": [
+   "Speed tells you how far something goes in one hour. Distance is speed multiplied by time.",
+   "Asha goes 12 kilometres in the first hour, 12 kilometres in the second and 12 kilometres in the third.",
+   "A similar one: a cyclist going 10 kilometres per hour for 2 hours covers 10 times 2 equals 20 kilometres."
+  ],
+  "steps": [
+   "Distance is speed multiplied by time.",
+   "Multiply 12 kilometres per hour by 3 hours. 12 times 3 equals 36.",
+   "Asha cycles 36 kilometres."
+  ]
+ },
+ "G5A_SPEED_002": {
+  "q": "A snail crawls 5 centimetres every minute. How far does it crawl in 8 minutes?",
+  "options": [
+   "13 centimetres",
+   "3 centimetres",
+   "45 centimetres",
+   "40 centimetres"
+  ],
+  "hints": [
+   "The snail covers the same distance every minute. Distance is speed multiplied by time.",
+   "The speed is 5 centimetres each minute and the time is 8 minutes. Multiply them.",
+   "A similar one: an ant that walks 4 centimetres every minute walks 4 times 6 equals 24 centimetres in 6 minutes."
+  ],
+  "steps": [
+   "Distance is speed multiplied by time.",
+   "Multiply 5 centimetres each minute by 8 minutes. 5 times 8 equals 40.",
+   "The snail crawls 40 centimetres."
+  ]
+ },
+ "G5A_SPEED_003": {
+  "q": "Ravi swims at a steady speed of 2 metres every second. How long does he take to swim 50 metres?",
+  "options": [
+   "25 seconds",
+   "100 seconds",
+   "52 seconds",
+   "48 seconds"
+  ],
+  "hints": [
+   "Time is distance divided by speed.",
+   "Ask how many lots of 2 metres fit into 50 metres. Each lot takes 1 second.",
+   "A similar one: a swimmer who covers 2 metres every second swims 30 metres in 30 divided by 2 equals 15 seconds."
+  ],
+  "steps": [
+   "Time is distance divided by speed.",
+   "Divide 50 metres by 2 metres each second. 50 divided by 2 equals 25.",
+   "Ravi takes 25 seconds."
+  ]
+ },
+ "G5A_SPEED_004": {
+  "q": "Rahul walks at a steady speed of 4 kilometres per hour. How long does he take to walk 12 kilometres?",
+  "options": [
+   "48 hours",
+   "16 hours",
+   "3 hours",
+   "8 hours"
+  ],
+  "hints": [
+   "Time is distance divided by speed.",
+   "Ask how many lots of 4 kilometres fit into 12 kilometres. Each lot takes 1 hour.",
+   "A similar one: walking at 5 kilometres per hour, a walk of 10 kilometres takes 10 divided by 5 equals 2 hours."
+  ],
+  "steps": [
+   "Time is distance divided by speed.",
+   "Divide 12 kilometres by 4 kilometres per hour. 12 divided by 4 equals 3.",
+   "Rahul takes 3 hours."
+  ]
+ },
+ "G5A_SPEED_005": {
+  "q": "A boat travels 45 kilometres along a river in 3 hours at a steady speed. What is the speed of the boat?",
+  "options": [
+   "135 kilometres per hour",
+   "48 kilometres per hour",
+   "15 kilometres per hour",
+   "42 kilometres per hour"
+  ],
+  "hints": [
+   "Speed is the distance covered in one unit of time. Speed is distance divided by time.",
+   "The boat covers 45 kilometres in 3 hours. Share 45 kilometres equally among the 3 hours.",
+   "A similar one: a boat that travels 40 kilometres in 4 hours has a speed of 40 divided by 4 equals 10 kilometres per hour."
+  ],
+  "steps": [
+   "Speed is distance divided by time.",
+   "Divide 45 kilometres by 3 hours. 45 divided by 3 equals 15.",
+   "The speed of the boat is 15 kilometres per hour."
+  ]
+ },
+ "G5A_SPEED_006": {
+  "q": "A horse gallops 600 metres in 2 minutes at a steady speed. How many metres does it gallop in one minute?",
+  "options": [
+   "300 metres",
+   "1,200 metres",
+   "602 metres",
+   "598 metres"
+  ],
+  "hints": [
+   "The distance covered in one minute is the speed. Speed is distance divided by time.",
+   "The horse covers 600 metres in 2 minutes. Share 600 metres equally between the 2 minutes.",
+   "A similar one: a horse that gallops 800 metres in 2 minutes covers 800 divided by 2 equals 400 metres in one minute."
+  ],
+  "steps": [
+   "Speed is distance divided by time.",
+   "Divide 600 metres by 2 minutes. 600 divided by 2 equals 300.",
+   "The horse gallops 300 metres in one minute."
+  ]
+ },
+ "G5A_SPEED_007": {
+  "q": "A toy car moves 10 centimetres every second. How long does it take to move 80 centimetres?",
+  "options": [
+   "800 seconds",
+   "90 seconds",
+   "70 seconds",
+   "8 seconds"
+  ],
+  "hints": [
+   "Time is distance divided by speed.",
+   "Ask how many lots of 10 centimetres fit into 80 centimetres. Each lot takes 1 second.",
+   "A similar one: a toy car that moves 10 centimetres every second takes 60 divided by 10 equals 6 seconds to move 60 centimetres."
+  ],
+  "steps": [
+   "Time is distance divided by speed.",
+   "Divide 80 centimetres by 10 centimetres each second. 80 divided by 10 equals 8.",
+   "The toy car takes 8 seconds."
+  ]
+ },
+ "G5A_SPEED_008": {
+  "q": "Kavya walks 100 metres in 50 seconds at a steady speed. What is her speed in metres per second?",
+  "options": [
+   "5,000 metres per second",
+   "2 metres per second",
+   "150 metres per second",
+   "50 metres per second"
+  ],
+  "hints": [
+   "Speed is the distance covered in one unit of time. Speed is distance divided by time.",
+   "Kavya covers 100 metres in 50 seconds. Share 100 metres equally among the 50 seconds.",
+   "A similar one: someone who walks 90 metres in 30 seconds has a speed of 90 divided by 30 equals 3 metres per second."
+  ],
+  "steps": [
+   "Speed is distance divided by time.",
+   "Divide 100 metres by 50 seconds. 100 divided by 50 equals 2.",
+   "Kavya's speed is 2 metres per second."
+  ]
+ },
+ "G5A_SPEED_009": {
+  "q": "A lorry travels at a steady speed of 40 kilometres per hour for 5 hours. What distance does it cover?",
+  "options": [
+   "45 kilometres",
+   "200 kilometres",
+   "8 kilometres",
+   "35 kilometres"
+  ],
+  "hints": [
+   "Speed tells you how far something goes in one hour. Distance is speed multiplied by time.",
+   "The lorry goes 40 kilometres in every one of the 5 hours. Multiply 40 by 5.",
+   "A similar one: a lorry going 30 kilometres per hour for 4 hours covers 30 times 4 equals 120 kilometres."
+  ],
+  "steps": [
+   "Distance is speed multiplied by time.",
+   "Multiply 40 kilometres per hour by 5 hours. 40 times 5 equals 200.",
+   "The lorry covers 200 kilometres."
+  ]
+ },
+ "G5A_SPEED_010": {
+  "q": "Four friends each cycled for exactly 1 hour. Ravi covered 14 kilometres, Sana covered 11 kilometres, Tina covered 16 kilometres and Uday covered 9 kilometres. Who cycled at the greatest speed?",
+  "options": [
+   "Ravi",
+   "Sana",
+   "Uday",
+   "Tina"
+  ],
+  "hints": [
+   "When everyone travels for the same time, the fastest is the one who goes the furthest.",
+   "Each friend cycled for 1 hour, so the distance each one covered is also the speed in kilometres per hour. Compare the four distances.",
+   "A similar one: in 1 hour Meena walks 5 kilometres and Arjun walks 4 kilometres. Meena covers more in the same time, so Meena is faster."
+  ],
+  "steps": [
+   "All four cycled for the same time, 1 hour, so compare the distances.",
+   "The distances are 14 kilometres, 11 kilometres, 16 kilometres and 9 kilometres. The greatest is 16 kilometres.",
+   "So Tina cycled at the greatest speed."
+  ]
  }
 }

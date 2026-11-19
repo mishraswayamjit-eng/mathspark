@@ -1,0 +1,1221 @@
+{
+ "EXT_G4_FP_2020_001": {
+  "q": "25 trays. Each has a cup only, or a plate only, or both. 15 have cups, 21 have plates. How many have both?",
+  "options": [
+   "4",
+   "11",
+   "15",
+   "6"
+  ],
+  "hints": [
+   "Some trays are counted twice, once for the cup and once for the plate. Think about what happens when you add the two groups.",
+   "Add the trays with cups and the trays with plates. Then compare that total with the real number of trays.",
+   "Here is a similar one: 30 children each like mango, banana or both. 18 like mango and 20 like banana. 18 plus 20 equals 38. That is 8 more than 30, so 8 children like both."
+  ],
+  "steps": [
+   "Add the trays with cups and the trays with plates. 15 plus 21 equals 36.",
+   "There are only 25 trays. The extra ones were counted twice, because they have both a cup and a plate. 36 minus 25 equals 11.",
+   "So 11 trays have both a cup and a plate."
+  ]
+ },
+ "EXT_G4_FP_2020_010": {
+  "q": "Teacher's 3-digit odd number. The hundreds digit is greater than 8. The tens digit is 4 more than the ones. What is the sum of the digits?",
+  "options": [
+   "11",
+   "13",
+   "15",
+   "17"
+  ],
+  "hints": [
+   "This is a digit clue puzzle. Use one clue at a time to pin down each digit.",
+   "Start with the hundreds digit. Which single digit is more than 8?",
+   "Here is a similar one: a 3-digit number has a hundreds digit more than 8, a ones digit of 4, and a tens digit that is 2 more than the ones digit. The digits are 9, 6 and 4, so the number is 964. Sum of digits: 9 plus 6 plus 4 equals 19."
+  ],
+  "steps": [
+   "The only digit more than 8 is 9. So the hundreds digit is 9.",
+   "The number is odd, so the ones digit is odd. The tens digit is 4 more and must still be a single digit. So the ones digit can only be 1, 3 or 5.",
+   "Try ones digit 1. Then the tens digit is 5 and the number is 951. 1 plus 4 equals 5.",
+   "Add the digits of 951. 9 plus 5 plus 1 equals 15.",
+   "The other two numbers, 973 and 995, give 19 and 23, which are not among the choices. So the sum of the digits is 15."
+  ]
+ },
+ "EXT_G4_FP_2020_011": {
+  "q": "A 5-digit number, 213 a b, leaves a remainder less than 10 when divided by 100. The sum of all its digits equals 13. Find b.",
+  "options": [
+   "5",
+   "6",
+   "7",
+   "8"
+  ],
+  "hints": [
+   "This puzzle gives two clues about the digits. One is about dividing by 100 and the other is about adding the digits.",
+   "When you divide by 100, the remainder is made of the last two digits. If that remainder is less than 10, what must the tens digit a be?",
+   "Here is a similar one: 521 a b leaves a remainder less than 10 when divided by 100, and its digits add up to 11. So a equals 0. Then 5 plus 2 plus 1 plus 0 equals 8, and b equals 11 minus 8, which is 3."
+  ],
+  "steps": [
+   "When you divide by 100, the remainder is the last two digits, a b.",
+   "The remainder is less than 10, so the tens digit a must be 0.",
+   "Add the digits you know. 2 plus 1 plus 3 plus 0 equals 6.",
+   "All five digits add up to 13, so b is what is left. 13 minus 6 equals 7.",
+   "So b equals 7."
+  ]
+ },
+ "EXT_G4_FP_2021_006": {
+  "q": "The product of blank blank 7, and blank blank 8, where the blanks are not the same?",
+  "options": [
+   "10552",
+   "9786",
+   "308256",
+   "9950006"
+  ],
+  "hints": [
+   "Some digits are hidden, so you cannot work out one exact product. Look for clues that every such product must obey.",
+   "Multiply the two ones digits you can see, 7 and 8. The product must end in the same digit as that.",
+   "Here is a similar one: blank 3, times blank 4, two 2-digit numbers. 3 times 4 equals 12, so the product ends in 2. The smallest it can be is 13 times 14 equals 182 and the largest is 93 times 94 equals 8742."
+  ],
+  "steps": [
+   "Look at the ones digits. The product must end in 6. 7 times 8 equals 56.",
+   "Both numbers have 3 digits. The smallest product is 107 times 108. 107 times 108 equals 11556.",
+   "The largest product is 997 times 998. 997 times 998 equals 995006.",
+   "10552 and 9786 are too small. 9950006 is too big.",
+   "Only 308256 ends in 6 and is the right size. For example, 507 times 608 equals 308256. So the product can be 308256."
+  ]
+ },
+ "EXT_G4_FP_2021_034": {
+  "q": "Magic square. Top row: 4, 5, 7. Middle row: 2, 2, 2. Bottom row: 64,100, A. Find A.",
+  "options": [
+   "169",
+   "225",
+   "81",
+   "196"
+  ],
+  "hints": [
+   "Look for one rule that links the numbers going down each column. The same rule must work in every column.",
+   "Look at the first column: 4, 2 and 64. Multiply the top two numbers, and see how the result is linked to 64.",
+   "Here is a similar one: a column holds 3, 2 and 36. 3 times 2 equals 6 and 6 times 6 equals 36. With the same rule, a column that starts 6, 2 ends in 12 times 12 equals 144."
+  ],
+  "steps": [
+   "First column: 4 times 2 equals 8, and 8 times 8 equals 64.",
+   "Second column: 5 times 2 equals 10, and 10 times 10 equals 100. The rule works again.",
+   "Third column: multiply the top two numbers. 7 times 2 equals 14.",
+   "Now multiply 14 by itself. So A equals 196."
+  ]
+ },
+ "EXT_G4_FP_2022_005": {
+  "q": "A 2-digit number times a 3-digit number: star 8, times star star 7. Which can be the product?",
+  "options": [
+   "977006",
+   "97706",
+   "1506",
+   "97704"
+  ],
+  "hints": [
+   "Some digits are hidden, so you cannot work out one exact product. Look for clues that every such product must obey.",
+   "Multiply the two ones digits you can see, 8 and 7. The product must end in the same digit as that.",
+   "Here is a similar one: blank 2, times blank blank 3, a 2-digit number times a 3-digit number. 2 times 3 equals 6, so the product ends in 6. The smallest it can be is 12 times 103 equals 1236 and the largest is 92 times 993 equals 91356."
+  ],
+  "steps": [
+   "Look at the ones digits. The product must end in 6. 8 times 7 equals 56.",
+   "The smallest product is 18 times 107. 18 times 107 equals 1926.",
+   "The largest product is 98 times 997. 98 times 997 equals 97706.",
+   "977006 is too big and 1506 is too small. 97704 ends in 4, not 6.",
+   "Only 97706 fits. It is the largest product, 98 times 997. So the product can be 97706."
+  ]
+ },
+ "EXT_G4_FP_2022_028": {
+  "q": "Look at this square of numbers. Top row: 7, 13, 24. Middle row: 3, 6, Z. Bottom row: 16, 49, 169. The numbers going down each column follow the same rule. Which number is in place of Z?",
+  "options": [
+   "13",
+   "15",
+   "11",
+   "8"
+  ],
+  "hints": [
+   "Read each column from top to bottom. See how the top two numbers can be used to make the bottom number.",
+   "Look at the first column: 7, 3, 16. Find 7 minus 3, then think how that answer is linked to 16. Check the idea on the second column.",
+   "Similar example: a column reads 9, 4, 25. 9 minus 4 equals 5 and 5 times 5 equals 25. If another column reads 15, blank, 64, then 8 times 8 equals 64, so the difference is 8 and the missing number is 15 minus 8 equals 7."
+  ],
+  "steps": [
+   "First column: subtract the middle number from the top number, then multiply the answer by itself. 7 minus 3 equals 4. 4 times 4 equals 16.",
+   "The second column follows the same rule. 13 minus 6 equals 7. 7 times 7 equals 49.",
+   "Third column: the bottom number is 169, and 13 times 13 is 169. So 24 minus Z must be 13.",
+   "So Z is 11. 24 minus 13 equals 11."
+  ]
+ },
+ "EXT_G4_FP_2023_007": {
+  "q": "Which of the following can be the product of star star 6, and star 9, where star denotes digits, not necessarily the same?",
+  "options": [
+   "1854",
+   "986004",
+   "51684",
+   "40548"
+  ],
+  "hints": [
+   "You cannot know the hidden digits, but you can still check two things about the product: its last digit and its size.",
+   "Multiply the last digits, 6 times 9, to find what the product must end in. Then think how small and how big a 3-digit number times a 2-digit number can be.",
+   "Similar example: star star 3, times star 7. 3 times 7 equals 21, so the product ends in 1. The smallest it can be is 103 times 17 equals 1751 and the largest is 993 times 97 equals 96321. So 1231 is too small, but 10011 fits, because 213 times 47 equals 10011."
+  ],
+  "steps": [
+   "Multiply the last digits to find the last digit of the product. It must end in 4. 6 times 9 equals 54.",
+   "All four choices end in 4, so check the size next. The smallest possible product is 106 times 19. 106 times 19 equals 2014.",
+   "The largest possible product is 996 times 99. So 1854 is too small and 986004 is too big. 996 times 99 equals 98604.",
+   "For 40548, a 2-digit number ending in 9 would have to divide it exactly. None of 19, 29, 39, 49, 59, 69, 79, 89 or 99 does.",
+   "For the choice that is left, 876 times 59 fits the pattern. So the product can be 51684."
+  ]
+ },
+ "EXT_G4_FP_2023_029": {
+  "q": "Look at this square of numbers. Top row: 3, 7, 8. Middle row: 9, 21, 24. Bottom row: 81, 441, Q. The numbers going down each column follow the same rule. Find Q.",
+  "options": [
+   "196",
+   "576",
+   "484",
+   "676"
+  ],
+  "hints": [
+   "Read each column from top to bottom. Find how the top number becomes the middle number, and how the middle number becomes the bottom number.",
+   "Look at the first column: 3, 9, 81. What do you do to 3 to get 9? What do you do to 9 to get 81? Check that the second column works the same way.",
+   "Similar example: a column reads 2, 6, 36. The top number is multiplied by 3 to get 6, and 6 is multiplied by itself to get 36. A column starting with 5 would then read 5, 15, 225."
+  ],
+  "steps": [
+   "First column: 3 becomes 9, then 9 becomes 81. 3 times 3 equals 9. 9 times 9 equals 81.",
+   "The second column follows the same rule: multiply by 3, then multiply the result by itself. 7 times 3 equals 21. 21 times 21 equals 441.",
+   "Third column: 8 times 3 is 24, so Q is 24 times 24.",
+   "So Q is 576. 24 times 24 equals 576."
+  ]
+ },
+ "EXT_G4_FP_2024_015": {
+  "q": "Magic square. Top row: n, blank, 6. Middle row: 4, x, m. Bottom row: 16, blank, blank. Find m plus n.",
+  "options": [
+   "31",
+   "22",
+   "28",
+   "34"
+  ],
+  "hints": [
+   "In a magic square every row, every column and both diagonals add up to the same total. Look for two lines that share a square.",
+   "The middle row 4, x, m and the diagonal 6, x, 16 both pass through x. So the other two numbers in each line must add up to the same amount.",
+   "Here is a similar one: in a magic square the middle row is 3, x, m and a diagonal is 5, x, 9. Both lines hold x, so 3 plus m equals 5 plus 9, which is 14. That gives m equals 14 minus 3, which is 11."
+  ],
+  "steps": [
+   "The middle row 4, x, m and the diagonal 6, x, 16 share x. So 4 plus m must equal 6 plus 16. 6 plus 16 equals 22.",
+   "Find m. 22 minus 4 equals 18.",
+   "In a 3 by 3 magic square, each line adds up to 3 times the middle number. The diagonal is 22 plus x, so 22 is 2 times x. That makes x equal to 11, and each line adds up to 33.",
+   "The first column is n, 4 and 16. Find n. 33 minus 4 minus 16 equals 13.",
+   "Add m and n. So m plus n equals 31."
+  ]
+ },
+ "EXT_G4_FP_2024_018": {
+  "q": "The product of star star 8, and star 6, where the stars are not the same?",
+  "options": [
+   "1658",
+   "980808",
+   "87604",
+   "43928"
+  ],
+  "hints": [
+   "Some digits are hidden, so you cannot work out one exact product. Look for clues that every such product must obey.",
+   "Multiply the two ones digits you can see, 8 and 6. The product must end in the same digit as that.",
+   "Here is a similar one: blank blank 3, times blank 4, a 3-digit number times a 2-digit number. 3 times 4 equals 12, so the product ends in 2. The smallest it can be is 103 times 14 equals 1442 and the largest is 993 times 94 equals 93342."
+  ],
+  "steps": [
+   "Look at the ones digits. The product must end in 8. 8 times 6 equals 48.",
+   "The smallest product is 108 times 16. So 1658 is too small. 108 times 16 equals 1728.",
+   "The largest product is 998 times 96. So 980808 is too big. 998 times 96 equals 95808.",
+   "87604 ends in 4, not 8.",
+   "Only 43928 fits. For example, 578 times 76 equals 43928. So the product can be 43928."
+  ]
+ },
+ "EXT_G4_FP_2024_035": {
+  "q": "A queue of 63 students. You are 13th from the beginning, and your friend is 19th from the end. How many students are between you?",
+  "options": [
+   "31",
+   "29",
+   "32",
+   "30"
+  ],
+  "hints": [
+   "The two places are counted from different ends of the queue. Count both from the same end before you compare them.",
+   "Find your friend's place from the beginning. There are 18 students standing behind your friend.",
+   "Here is a similar one: 50 students in a queue. You are 10th from the beginning and your friend is 12th from the end. 11 students are behind your friend, so your friend is 50 minus 11 equals 39th. Between you: 39 minus 10 minus 1 equals 28 students."
+  ],
+  "steps": [
+   "Your friend is 19th from the end, so 18 students stand behind your friend. Find your friend's place from the beginning. 63 minus 18 equals 45.",
+   "You are 13th and your friend is 45th. The students between you stand in places 14 to 44.",
+   "Count them. So 31 students are between you. 45 minus 13 minus 1 equals 31."
+  ]
+ },
+ "EXT_G4_FP_2025_021": {
+  "q": "The product of star star 4, and star star 8, where the stars are not the same?",
+  "options": [
+   "672672",
+   "564976",
+   "9092012",
+   "10992"
+  ],
+  "hints": [
+   "Some digits are hidden, so you cannot work out one exact product. Look for clues that every such product must obey.",
+   "Multiply the two ones digits you can see, 4 and 8. The product must end in the same digit as that.",
+   "Here is a similar one: blank blank 3, times blank blank 5, two 3-digit numbers. 3 times 5 equals 15, so the product ends in 5. The smallest it can be is 103 times 105 equals 10815 and the largest is 993 times 995 equals 988035."
+  ],
+  "steps": [
+   "Look at the ones digits. The product must end in 2. 4 times 8 equals 32.",
+   "Both numbers have 3 digits. The smallest product is 104 times 108. So 10992 is too small. 104 times 108 equals 11232.",
+   "The largest product is 994 times 998. So 9092012 is too big. 994 times 998 equals 992012.",
+   "564976 ends in 6, not 2.",
+   "Only 672672 fits. For example, 784 times 858 equals 672672. So the product can be 672672."
+  ]
+ },
+ "EXT_G4_WS2_CH15_002": {
+  "q": "A 3 by 3 magic square has top row 4, 3, 8 and middle row 9, 5, 1. The bottom row is still empty. When the magic square is completed, which of these numbers will not be used?",
+  "options": [
+   "3",
+   "6",
+   "9",
+   "11"
+  ],
+  "hints": [
+   "In a magic square every row and every column adds up to the same total. Find the total from a full row, then fill in the empty row.",
+   "Add the top row: 4 plus 3 plus 8. Each column must reach the same total, so work out what is missing under 4 and 9, under 3 and 5, and under 8 and 1.",
+   "Similar example: a magic square has top row 2, 7, 6 and middle row 9, 5, 1. Each line adds up to 15. The first column has 2 plus 9, so it needs 4. The second has 7 plus 5, so it needs 3. The third has 6 plus 1, so it needs 8. The bottom row is 4, 3, 8."
+  ],
+  "steps": [
+   "Find the total of a full row. 4 plus 3 plus 8 equals 15.",
+   "Each column must also add up to 15. The first column already has 4 and 9. 15 minus 4 minus 9 equals 2.",
+   "Do the same for the second and third columns. 15 minus 3 minus 5 equals 7. 15 minus 8 minus 1 equals 6.",
+   "The bottom row is 2, 7, 6. The finished square uses the numbers 1 to 9, once each.",
+   "3, 6 and 9 are all in the square. The number that will not be used is 11."
+  ]
+ },
+ "G4A_PUZZLES_001": {
+  "q": "In this magic square, every row, every column and both diagonals add up to the same total. Row 1: 9, 2, 7. Row 2: 4, 6, 8. Row 3: 5, blank, 3. Which number is missing?",
+  "options": [
+   "9",
+   "10",
+   "11",
+   "8"
+  ],
+  "hints": [
+   "In a magic square every line has the same total. Find that total from a line with no number missing.",
+   "Add the numbers in Row 1 to find the magic total. Then see what Row 3 still needs.",
+   "A similar problem: a magic square has rows 8, 1, 6 and 3, 5, 7 and 4, blank, 2. Row 1 adds to 15. Row 3 has 4 plus 2 equals 6, so the missing number is 15 minus 6 equals 9."
+  ],
+  "steps": [
+   "Find the magic total from Row 1. 9 plus 2 plus 7 equals 18.",
+   "Row 3 must also add up to 18. 18 minus 5 minus 3 equals 10.",
+   "The missing number is 10."
+  ]
+ },
+ "G4A_PUZZLES_002": {
+  "q": "I am a 2-digit number. My tens digit is 4. My two digits add up to 11. Which number am I?",
+  "options": [
+   "47",
+   "74",
+   "41",
+   "56"
+  ],
+  "hints": [
+   "Use one clue at a time. The first clue fixes one digit, and the second clue gives the other.",
+   "The tens digit is 4. What must the ones digit be so that the two digits add up to 11?",
+   "A similar problem: a 2-digit number has tens digit 3 and its digits add up to 8. The ones digit is 8 minus 3 equals 5, so the number is 35."
+  ],
+  "steps": [
+   "The tens digit is 4.",
+   "Find the ones digit. 11 minus 4 equals 7.",
+   "The number is 47."
+  ]
+ },
+ "G4A_PUZZLES_003": {
+  "q": "In the sum 4 P plus 25 equals 71, the letter P stands for one digit, so 4 P is a two-digit number. Which digit is P?",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "hints": [
+   "A missing number in an addition can be found by working backwards with subtraction.",
+   "Find the number that must be added to 25 to make 71. Its ones digit is P.",
+   "A similar problem: in 3 R plus 14 equals 52, the first number is 52 minus 14 equals 38. So 3 R is 38 and R is 8."
+  ],
+  "steps": [
+   "Work backwards to find the two-digit number 4 P. 71 minus 25 equals 46.",
+   "So 4 P is 46.",
+   "P is 6."
+  ]
+ },
+ "G4A_PUZZLES_004": {
+  "q": "In a picture puzzle, a star plus a star makes 14. A star plus a moon makes 10. What is the moon worth?",
+  "options": [
+   "7",
+   "4",
+   "5",
+   "3"
+  ],
+  "hints": [
+   "Start with the clue that has only one kind of shape. Once you know that shape, use it in the other clue.",
+   "Two stars make 14. Find what one star is worth.",
+   "A similar problem: a sun plus a sun makes 12, so a sun is 6. A sun plus a cloud makes 8, so the cloud is 8 minus 6 equals 2."
+  ],
+  "steps": [
+   "Two equal stars make 14, so find one star. 14 divided by 2 equals 7.",
+   "A star plus a moon makes 10. 10 minus 7 equals 3.",
+   "The moon is worth 3."
+  ]
+ },
+ "G4A_PUZZLES_005": {
+  "q": "Amit is taller than Bina. Bina is taller than Chetan. Divya is shorter than Chetan. Who is the tallest of the four?",
+  "options": [
+   "Bina",
+   "Chetan",
+   "Amit",
+   "Divya"
+  ],
+  "hints": [
+   "Put the children in order of height, using one clue at a time.",
+   "Write the names in a line from tallest to shortest. Start with Amit and Bina, then fit Chetan in.",
+   "A similar problem: Ria is taller than Sam, and Sam is taller than Tia. From tallest to shortest the order is Ria, Sam, Tia, so Ria is the tallest."
+  ],
+  "steps": [
+   "Amit is taller than Bina, and Bina is taller than Chetan. So the order is Amit, Bina, Chetan.",
+   "Divya is shorter than Chetan, so she comes last: Amit, Bina, Chetan, Divya.",
+   "The tallest is Amit."
+  ]
+ },
+ "G4A_PUZZLES_006": {
+  "q": "In a magic square, every row adds up to 21. One row has the numbers 4 and 11 and one missing number. What is the missing number?",
+  "options": [
+   "6",
+   "7",
+   "15",
+   "36"
+  ],
+  "hints": [
+   "The three numbers in the row must add up to the magic total. Two of them are known.",
+   "Add 4 and 11. Then find how much more is needed to reach 21.",
+   "A similar problem: a row must add up to 15 and has 2 and 9. Those make 11, so the missing number is 15 minus 11 equals 4."
+  ],
+  "steps": [
+   "Add the two numbers you know. 4 plus 11 equals 15.",
+   "Find what is needed to reach 21. 21 minus 15 equals 6.",
+   "The missing number is 6."
+  ]
+ },
+ "G4A_PUZZLES_007": {
+  "q": "Two signs are missing: 8 blank 4 blank 2 equals 10. Which two signs, in this order, make it true?",
+  "options": [
+   "minus then plus",
+   "plus then plus",
+   "times then minus",
+   "plus then minus"
+  ],
+  "hints": [
+   "Try each pair of signs in turn and work out the answer it gives.",
+   "The answer 10 is a little more than 8. Think about which first sign makes 8 bigger, and what the second sign must then do.",
+   "A similar problem: for 9 blank 3 blank 2 equals 8, the answer is a little less than 9, so try minus first: 9 minus 3 equals 6. Then 6 must become 8, so add 2. The signs there are minus then plus."
+  ],
+  "steps": [
+   "Try plus first. 8 plus 4 equals 12.",
+   "Now 12 must become 10, so subtract 2. 12 minus 2 equals 10.",
+   "The signs are plus then minus."
+  ]
+ },
+ "G4A_PUZZLES_008": {
+  "q": "A palindrome number reads the same forwards and backwards, like 353. Which of these is a palindrome number?",
+  "options": [
+   "1212",
+   "1221",
+   "1122",
+   "2121"
+  ],
+  "hints": [
+   "Read each number from right to left and compare it with the number read from left to right.",
+   "In a 4-digit palindrome, the first digit matches the last digit and the second digit matches the third. Check each number for this.",
+   "A similar problem: 4004 read backwards is 4004, so it is a palindrome. 4040 read backwards is 0404, so it is not."
+  ],
+  "steps": [
+   "Write each number backwards: 1212 becomes 2121, 1122 becomes 2211, and 2121 becomes 1212. These all change.",
+   "1221 written backwards is still 1221.",
+   "The palindrome number is 1221."
+  ]
+ },
+ "G4A_PUZZLES_009": {
+  "q": "In this magic square, every row, every column and both diagonals add up to the same total. Row 1: 16, 2, P. Row 2: 6, Q, 14. Row 3: 8, 18, 4. What is P plus Q?",
+  "options": [
+   "24",
+   "30",
+   "20",
+   "22"
+  ],
+  "hints": [
+   "Find the magic total from a line that has no letter in it. Then use it on the lines that have a letter.",
+   "Row 3 has no letter. Add its numbers to find the magic total, then look at Row 1.",
+   "A similar problem: a magic square has rows 8, 1, R and 3, S, 7 and 4, 9, 2. Row 3 adds to 15. So R equals 15 minus 8 minus 1, which is 6 and S equals 15 minus 3 minus 7, which is 5, and R plus S equals 11."
+  ],
+  "steps": [
+   "Find the magic total from Row 3. 8 plus 18 plus 4 equals 30.",
+   "Use Row 1 to find P. 30 minus 16 minus 2 equals 12.",
+   "Use Row 2 to find Q. 30 minus 6 minus 14 equals 10.",
+   "Add P and Q. 12 plus 10 equals 22.",
+   "P plus Q equals 22."
+  ]
+ },
+ "G4A_PUZZLES_010": {
+  "q": "In the sum 3 P plus P 8 equals 82, the letter P stands for the same digit both times. 3 P and P 8 are two-digit numbers. Which digit is P?",
+  "options": [
+   "4",
+   "5",
+   "3",
+   "6"
+  ],
+  "hints": [
+   "Look at the ones column first. The ones digits must add up to a number that ends in the ones digit of the answer.",
+   "In the ones column, P plus 8 must end in 2. Which digit added to 8 gives a number ending in 2?",
+   "A similar problem: in 1 R plus R 6 equals 49, the ones column says R plus 6 must end in 9, so R is 3. Check the whole sum: 13 plus 36 equals 49. It is true, so R is 3."
+  ],
+  "steps": [
+   "In the ones column, P plus 8 must end in 2. Since 4 plus 8 equals 12, P could be 4.",
+   "Check the whole sum with P as 4. 34 plus 48 equals 82.",
+   "The sum is true, so P is 4."
+  ]
+ },
+ "G4A_PUZZLES_011": {
+  "q": "P and Q are digits. The two-digit numbers P Q and Q P add up to 77, and P is 1 more than Q. What is the number P Q?",
+  "options": [
+   "34",
+   "43",
+   "52",
+   "61"
+  ],
+  "hints": [
+   "When a two-digit number is added to its reverse, each column adds the same two digits. Find what the two digits add up to.",
+   "In the ones column, Q plus P must give 7. Now find two digits that add up to 7 where one is 1 more than the other.",
+   "A similar problem: R S plus S R equals 99 and R is 1 more than S. The digits add up to 9, so they are 5 and 4. R is the bigger one, so R S is 54."
+  ],
+  "steps": [
+   "In each column the digits P and Q are added, and the total is 77, so P plus Q equals 7.",
+   "Two digits that add up to 7 and differ by 1 are 4 and 3.",
+   "P is the bigger digit, so P is 4 and Q is 3.",
+   "Check the sum. 43 plus 34 equals 77.",
+   "The number P Q is 43."
+  ]
+ },
+ "G4A_PUZZLES_012": {
+  "q": "I think of a number. I double it and then add 3. The answer is 17. What number did I think of?",
+  "options": [
+   "10",
+   "14",
+   "7",
+   "37"
+  ],
+  "hints": [
+   "Work backwards from the answer, undoing each step in the opposite order.",
+   "The last thing done was adding 3. Undo that first by taking 3 away from 17.",
+   "A similar problem: I double a number and add 5 to get 25. Undo the adding: 25 minus 5 equals 20. Undo the doubling: 20 divided by 2 equals 10. The number was 10."
+  ],
+  "steps": [
+   "Undo the adding of 3. 17 minus 3 equals 14.",
+   "Undo the doubling. 14 divided by 2 equals 7.",
+   "Check. 7 times 2 plus 3 equals 17.",
+   "The number was 7."
+  ]
+ },
+ "G4A_PUZZLES_013": {
+  "q": "Isha, Jay, Kiran and Lata each have one pet: a cat, a dog, a parrot and a rabbit. Jay has the cat. Kiran has the rabbit. Isha does not have the dog. Which pet does Lata have?",
+  "options": [
+   "parrot",
+   "cat",
+   "rabbit",
+   "dog"
+  ],
+  "hints": [
+   "Cross off the pets that are already taken, then use the last clue to decide between the pets that are left.",
+   "Jay and Kiran have the cat and the rabbit. Which two pets are left for Isha and Lata?",
+   "A similar problem: Om, Pia and Raj have a ball, a kite and a top. Om has the ball. Pia does not have the kite. So Pia has the top, and Raj has the kite."
+  ],
+  "steps": [
+   "Jay has the cat and Kiran has the rabbit, so the dog and the parrot are left for Isha and Lata.",
+   "Isha does not have the dog, so Isha has the parrot.",
+   "The only pet left for Lata is the dog."
+  ]
+ },
+ "G4A_PUZZLES_014": {
+  "q": "I am a 2-digit number less than 50. I am a multiple of 7. My digits add up to 6. Which number am I?",
+  "options": [
+   "42",
+   "24",
+   "35",
+   "33"
+  ],
+  "hints": [
+   "Use the clue that leaves the fewest numbers first, list them, then test each with the other clue.",
+   "List the 2-digit multiples of 7 that are less than 50. Then add the digits of each one.",
+   "A similar problem: a 2-digit multiple of 9 less than 40 whose digits differ by 5. The multiples are 18, 27 and 36. Only 27 has digits that differ by 5, so the number is 27."
+  ],
+  "steps": [
+   "The 2-digit multiples of 7 below 50 are 14, 21, 28, 35, 42 and 49.",
+   "Their digit totals are 5, 3, 10, 8, 6 and 13.",
+   "Only one has digits adding up to 6. The number is 42."
+  ]
+ },
+ "G4A_PUZZLES_015": {
+  "q": "A pencil and an eraser together cost 12 rupees. Two pencils and an eraser together cost 19 rupees. How much does the eraser cost?",
+  "options": [
+   "7 rupees",
+   "5 rupees",
+   "6 rupees",
+   "4 rupees"
+  ],
+  "hints": [
+   "Compare the two purchases. Look at what the second one has that the first one does not.",
+   "The second purchase has exactly one more pencil than the first. Find how much more it costs.",
+   "A similar problem: a pen and a cap cost 10 rupees, and two pens and a cap cost 16 rupees. The extra pen costs 16 minus 10 equals 6 rupees, so the cap costs 10 minus 6 equals 4 rupees."
+  ],
+  "steps": [
+   "The second purchase has one extra pencil. Find its cost. 19 minus 12 equals 7.",
+   "A pencil and an eraser cost 12 rupees together. 12 minus 7 equals 5.",
+   "The eraser costs 5 rupees."
+  ]
+ },
+ "G4A_PUZZLES_016": {
+  "q": "The three-digit number 2 R 5 is multiplied by 3 and the answer is 735. R stands for one digit. Which digit is R?",
+  "options": [
+   "3",
+   "5",
+   "4",
+   "2"
+  ],
+  "hints": [
+   "A multiplication can be undone by division. Find the whole number first, then read off the hidden digit.",
+   "Divide 735 by 3 to find the number 2 R 5.",
+   "A similar problem: 1 R 4 times 2 equals 368. Dividing, 368 divided by 2 equals 184, so 1 R 4 is 184 and R is 8."
+  ],
+  "steps": [
+   "Undo the multiplication. 735 divided by 3 equals 245.",
+   "So 2 R 5 is 245, and R is the tens digit.",
+   "R is 4."
+  ]
+ },
+ "G4A_PUZZLES_017": {
+  "q": "Five children ran a race. Dev finished after Farah but before Esha. Hari finished between Dev and Esha. Gita finished last. Who came second?",
+  "options": [
+   "Farah",
+   "Hari",
+   "Esha",
+   "Dev"
+  ],
+  "hints": [
+   "Draw five blanks for the five places and fit the children in, one clue at a time.",
+   "Start with the first clue: Farah is ahead of Dev, and Dev is ahead of Esha. Then find where Hari fits.",
+   "A similar problem: in a race of three, Mina finished before Nitu, and Omar finished before Mina. The order is Omar, Mina, Nitu, so Mina came second."
+  ],
+  "steps": [
+   "From the first clue, the order is Farah, then Dev, then Esha.",
+   "Hari is between Dev and Esha: Farah, Dev, Hari, Esha.",
+   "Gita is last: Farah, Dev, Hari, Esha, Gita.",
+   "The child who came second is Dev."
+  ]
+ },
+ "G4A_PUZZLES_018": {
+  "q": "On a dice, the dots on opposite faces always add up to 7. Neha can see three faces showing 1, 2 and 3. What is the total of the dots on the three faces she cannot see?",
+  "options": [
+   "18",
+   "15",
+   "6",
+   "21"
+  ],
+  "hints": [
+   "Each face Neha can see has a hidden face opposite it. Use the rule for opposite faces.",
+   "The face opposite 1 must make 7 with it. Find that face, then do the same for 2 and 3.",
+   "A similar problem: if the faces seen are 2, 4 and 6, the hidden faces are 7 minus 2 equals 5, 7 minus 4 equals 3 and 7 minus 6 equals 1. Their total is 5 plus 3 plus 1 equals 9."
+  ],
+  "steps": [
+   "Find the face opposite each face she can see. 7 minus 1 equals 6, 7 minus 2 equals 5, 7 minus 3 equals 4.",
+   "Add the hidden faces. 6 plus 5 plus 4 equals 15.",
+   "The hidden faces total 15."
+  ]
+ },
+ "G4A_PUZZLES_019": {
+  "q": "In this magic square, every row, every column and both diagonals add up to the same total. Some boxes are blank. Row 1: P, 16, 9. Row 2: blank, 11, blank. Row 3: 13, blank, Q. What is the value of Q?",
+  "options": [
+   "8",
+   "14",
+   "12",
+   "6"
+  ],
+  "hints": [
+   "Look for a line of three boxes that has no blank and no letter. It may be a diagonal. That line gives the magic total.",
+   "The diagonal from the top right corner to the bottom left corner is 9, 11, 13. Add these to find the magic total, then use Row 1 to find P.",
+   "A similar problem: Row 1 is R, 7, 6. Row 2 is blank, 5, blank. Row 3 is 4, blank, S. The diagonal 6, 5, 4 gives a total of 15. So R equals 15 minus 7 minus 6, which is 2, and the other diagonal gives S equals 15 minus 2 minus 5, which is 8."
+  ],
+  "steps": [
+   "The diagonal 9, 11, 13 is complete. Find the magic total. 9 plus 11 plus 13 equals 33.",
+   "Use Row 1 to find P. 33 minus 16 minus 9 equals 8.",
+   "The other diagonal is P, 11, Q. Use it to find Q. 33 minus 8 minus 11 equals 14.",
+   "Q is 14."
+  ]
+ },
+ "G4A_PUZZLES_020": {
+  "q": "A two-digit number ending in 3 is multiplied by a two-digit number ending in 4. Which of these can be the product?",
+  "options": [
+   "1037",
+   "9872",
+   "1032",
+   "172"
+  ],
+  "hints": [
+   "You cannot find the exact numbers, so test each choice instead. Check its last digit, and check whether its size is possible.",
+   "The last digit of the product comes from 3 times 4. Which choices end in the right digit? Then think about the smallest and largest products possible.",
+   "A similar problem: a two-digit number ending in 2 times a two-digit number ending in 6 must end in 2, because 2 times 6 equals 12. The smallest such product is 12 times 16 equals 192 and the largest is 92 times 96 equals 8832. So 1472 is possible, it is 32 times 46, but 9992 is too big."
+  ],
+  "steps": [
+   "Find the last digit of the product. 3 times 4 equals 12.",
+   "So the product ends in 2. This rules out 1037.",
+   "Find the smallest and largest possible products. 13 times 14 equals 182, 93 times 94 equals 8742.",
+   "172 is smaller than 182 and 9872 is bigger than 8742, so neither is possible.",
+   "The one left is possible. 43 times 24 equals 1032.",
+   "The product can be 1032."
+  ]
+ },
+ "G4A_PUZZLES_021": {
+  "q": "In the sum P plus P plus P equals Q P, the letters P and Q stand for two different digits, and Q P is a two-digit number. What is P plus Q?",
+  "options": [
+   "5",
+   "15",
+   "7",
+   "6"
+  ],
+  "hints": [
+   "Look at the ones digit. Three times the digit P gives a number that ends in P again. Very few digits can do that.",
+   "Test the digits one by one: 3 times 1 equals 3, 3 times 2 equals 6, and so on. Look for a two-digit answer whose ones digit is the digit you started with.",
+   "A similar problem: R plus R plus R plus R plus R plus R equals 2 R, where 2 R is a two-digit number that starts with 2. Six times R must end in R and lie in the twenties. Since 6 times 4 equals 24, R is 4."
+  ],
+  "steps": [
+   "Three times P must end in the digit P and must be a two-digit number.",
+   "Testing the digits, only 5 works. 5 plus 5 plus 5 equals 15.",
+   "So P is 5 and Q P is 15, which makes Q equal to 1.",
+   "Add the two digits. 5 plus 1 equals 6.",
+   "P plus Q equals 6."
+  ]
+ },
+ "G4A_PUZZLES_022": {
+  "q": "I am a 3-digit number. My hundreds digit is double my ones digit. My tens digit equals my hundreds digit plus my ones digit. My three digits add up to 12. Which number am I?",
+  "options": [
+   "462",
+   "264",
+   "642",
+   "231"
+  ],
+  "hints": [
+   "Every digit can be described using the ones digit. Try small values for the ones digit and see which one fits all the clues.",
+   "If the ones digit is 1, the hundreds digit is 2 and the tens digit is 2 plus 1 equals 3. Do these digits add up to 12? If not, try ones digit 2.",
+   "A similar problem: the hundreds digit is three times the ones digit, the tens digit is their total, and the digits add up to 8. With ones digit 1, the hundreds digit is 3 and the tens digit is 4. Since 3 plus 4 plus 1 equals 8, the number is 341."
+  ],
+  "steps": [
+   "Try ones digit 1: hundreds digit 2, tens digit 3. The digits add up to 6, which is too small.",
+   "Try ones digit 2: hundreds digit 4, tens digit 6. 4 plus 6 plus 2 equals 12.",
+   "All the clues fit.",
+   "The number is 462."
+  ]
+ },
+ "G4A_PUZZLES_023": {
+  "q": "A farmer has hens and goats. Together they have 10 heads and 28 legs. How many goats does the farmer have?",
+  "options": [
+   "6",
+   "4",
+   "7",
+   "14"
+  ],
+  "hints": [
+   "Each animal has one head, so you know how many animals there are. Suppose they were all hens and see how many legs are missing.",
+   "There are 10 animals. If all 10 were hens, how many legs would there be? Compare that with 28.",
+   "A similar problem: 5 heads and 14 legs. If all 5 were hens there would be 10 legs. The 4 extra legs come from goats, which have 2 more legs each, so there are 4 divided by 2 equals 2 goats."
+  ],
+  "steps": [
+   "There are 10 animals. Suppose all were hens with 2 legs each. 10 times 2 equals 20.",
+   "Find the extra legs. 28 minus 20 equals 8.",
+   "Each goat has 2 more legs than a hen. 8 divided by 2 equals 4.",
+   "Check with 4 goats and 6 hens. 4 times 4 plus 6 times 2 equals 28.",
+   "The farmer has 4 goats."
+  ]
+ },
+ "G4A_PUZZLES_024": {
+  "q": "The digits of a 2-digit number add up to 9. When the two digits swap places, the new number is 27 more than the first number. What is the first number?",
+  "options": [
+   "63",
+   "27",
+   "36",
+   "45"
+  ],
+  "hints": [
+   "List the 2-digit numbers that fit the first clue. Then test each one with the second clue.",
+   "Numbers whose digits add up to 9 are 18, 27, and so on. The swapped number is bigger, so the first number has the smaller digit in the tens place. Test each by swapping and subtracting.",
+   "A similar problem: the digits add up to 7 and the swapped number is 9 more. Test 16: 61 minus 16 equals 45. Test 25: 52 minus 25 equals 27. Test 34: 43 minus 34 equals 9. So the number is 34."
+  ],
+  "steps": [
+   "Numbers with digits adding up to 9 and a smaller tens digit are 18, 27, 36 and 45.",
+   "Swap the digits of each and subtract. 81 minus 18 equals 63, 72 minus 27 equals 45, 63 minus 36 equals 27, 54 minus 45 equals 9.",
+   "Only one of them grows by 27 when its digits swap.",
+   "The first number is 36."
+  ]
+ },
+ "G4A_PUZZLES_025": {
+  "q": "A laddoo is hidden in one of three boxes. Each box has a label. The label on Box 1 says: The laddoo is in this box. The label on Box 2 says: The laddoo is not in this box. The label on Box 3 says: The laddoo is not in Box 1. Only one of the three labels is true. Where is the laddoo?",
+  "options": [
+   "Box 1",
+   "Box 3",
+   "It cannot be worked out",
+   "Box 2"
+  ],
+  "hints": [
+   "Suppose the laddoo is in one box, and count how many labels would then be true. Do this for each box in turn.",
+   "Suppose the laddoo is in Box 1. Is the label on Box 1 true? Is the label on Box 2 true? Count the true labels and compare with what the question says.",
+   "A similar problem: a coin is in one of two tins, and you are told that both labels are untrue. The label on Tin 1 says: The coin is in Tin 2. The label on Tin 2 says: The coin is in this tin. If the coin were in Tin 2, both labels would be true. If it is in Tin 1, both labels are untrue, just as you were told. So the coin is in Tin 1."
+  ],
+  "steps": [
+   "If the laddoo is in Box 1: the labels on Box 1 and Box 2 are both true. That is two true labels, so this does not fit.",
+   "If the laddoo is in Box 3: the labels on Box 2 and Box 3 are both true. That is two true labels again.",
+   "If the laddoo is in Box 2: the label on Box 1 is untrue, the label on Box 2 is untrue, and the label on Box 3 is true. Exactly one label is true.",
+   "The laddoo is in Box 2."
+  ]
+ },
+ "PYQ_2018_Q24": {
+  "q": "A boy has six number cards: 4, 4, 4, 9, 9, 9. He uses 5 of the cards to make a 3-digit number and a 2-digit number. Which of these can be the difference between the 3-digit number and the 2-digit number?",
+  "options": [
+   "359",
+   "450",
+   "550",
+   "150"
+  ],
+  "hints": [
+   "Every digit must be a 4 or a 9. Think about how big or small the two numbers can be, and what the last digit of their difference can be.",
+   "Look at the ones place first. 4 minus 4 and 9 minus 9 give 0, 9 minus 4 gives 5, and 14 minus 9 gives 5. So the difference must end in 0 or 5. Which choices are still possible?",
+   "Similar example: with cards 3, 3, 3, 8, 8, 8, can the difference be 350? Try 388 minus 38 equals 350. It uses the cards 3, 8, 8, 3, 8, which is two 3s and three 8s, so it can be made."
+  ],
+  "steps": [
+   "The 3-digit number starts with 4 or 9, so it is between 444 and 499, or between 944 and 999. The 2-digit number is between 44 and 99.",
+   "Taking away a number from 44 to 99 leaves a difference from 345 to 455, or from 845 to 955. So 150 and 550 cannot be made. 444 minus 99 equals 345. 499 minus 44 equals 455.",
+   "With only 4s and 9s, the ones digit of the difference is 0 or 5. So 359 cannot be made. 9 minus 9 equals 0. 4 minus 4 equals 0. 9 minus 4 equals 5. 14 minus 9 equals 5.",
+   "Check the choice that is left. 499 minus 49 uses the cards 4, 9, 9, 4, 9, which is two 4s and three 9s. 499 minus 49 equals 450.",
+   "So the difference can be 450."
+  ]
+ },
+ "PYQ_2018_Q33": {
+  "q": "A palindrome number is a number which remains the same when read backwards. A three digit palindrome number is added to 2018 to get a 4-digit palindrome number. What is the sum of the digits of the three digit palindrome number?",
+  "options": [
+   "9",
+   "10",
+   "12",
+   "8"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 33.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The correct answer is option 2: 10"
+  ]
+ },
+ "PYQ_2019_Q31": {
+  "q": "The sum of the numbers horizontally, vertically or diagonally add up 54 in a magic square of 3 by 3 boxes. Which of the following numbers can be in the central box?",
+  "options": [
+   "14",
+   "16",
+   "18",
+   "27"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 31.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "The correct answer is option 3: 18"
+  ]
+ },
+ "Q_CH15_001": {
+  "q": "In a 3 by 3 magic square, the sums of each row, column, and diagonal are:",
+  "options": [
+   "equal",
+   "different",
+   "always 9",
+   "always 15"
+  ],
+  "hints": [
+   "What makes a magic square 'magic'?",
+   "The special property is that every row, every column, and both diagonals add up to the same number.",
+   "This same number is called the 'magic constant.' It's equal in all directions!"
+  ],
+  "steps": [
+   "A magic square has a special property: all rows, columns, and diagonals have the same sum.",
+   "This sum is called the magic constant. It's equal in all directions."
+  ]
+ },
+ "Q_CH15_002": {
+  "q": "In a 3 by 3 magic square, the magic constant, sum of each row, equals:",
+  "options": [
+   "2 times central box number",
+   "3 times central box number",
+   "central box number plus 9",
+   "9 times central box number"
+  ],
+  "hints": [
+   "There's a special relationship between the magic constant and the centre number.",
+   "Look at any magic square: if the centre is 5, the magic constant is 15. If centre is 8, constant is 24.",
+   "The pattern: magic constant equals 3 times centre number"
+  ],
+  "steps": [
+   "In a 3 by 3 magic square, the magic constant equals 3 times centre number.",
+   "Example: centre equals 5, constant equals 15. Centre equals 10, constant equals 30.",
+   "Answer: 3 times the central box number."
+  ]
+ },
+ "Q_CH15_003": {
+  "q": "In a 3 by 3 magic square, the sum of all nine numbers equals:",
+  "options": [
+   "6 times central box number",
+   "3 times central box number",
+   "central box number squared",
+   "9 times central box number"
+  ],
+  "hints": [
+   "There are 3 rows. Each row sums to the magic constant. So total equals 3 times magic constant.",
+   "Magic constant equals 3 times centre. So total equals 3 times, 3 times centre, which is 9 times centre.",
+   "Sum of all 9 numbers equals 9 times central box number."
+  ],
+  "steps": [
+   "Total equals 3 rows times magic constant per row",
+   "Magic constant equals 3 times centre. So total equals 3 times 3 times centre, which is 9 times centre.",
+   "Sum of all 9 numbers equals 9 times central box number."
+  ]
+ },
+ "Q_CH15_004": {
+  "q": "In this magic square, find A and B. Top row: 9, 15, 6. Middle row: A, 10, 13. Bottom row: 14, 5, B.",
+  "options": [
+   "A equals 11, B equals 7",
+   "A equals 8, B equals 12",
+   "A equals 7, B equals 12",
+   "A equals 7, B equals 11"
+  ],
+  "hints": [
+   "First find the magic constant. Use any complete row or column. Row 1: 9 plus 15 plus 6 equals what?",
+   "Magic constant equals 30. Centre equals 10, and 3 times 10 equals 30. Now use this to find A and B.",
+   "Row 2: A plus 10 plus 13 equals 30, so A equals 7. Row 3: 14 plus 5 plus B equals 30, so B equals 11."
+  ],
+  "steps": [
+   "Find magic constant from Row 1: 9 plus 15 plus 6 equals 30",
+   "Row 2: A plus 10 plus 13 equals 30. A plus 23 equals 30. A equals 7.",
+   "Row 3: 14 plus 5 plus B equals 30. 19 plus B equals 30. B equals 11.",
+   "A equals 7, B equals 11"
+  ]
+ },
+ "Q_CH15_006": {
+  "q": "A magic square has 4, blank, 8 in the top row and 5 in the centre. Top row: 4, blank, 8. Middle row: blank, 5, blank. Bottom row: blank, blank, blank. When completed, which of these numbers will not be used?",
+  "options": [
+   "3",
+   "11",
+   "9",
+   "6"
+  ],
+  "hints": [
+   "Centre equals 5. Magic constant equals 3 times 5, which is 15.",
+   "Row 1: 4 plus what number plus 8 equals 15, so the missing number equals 3. This uses numbers from a set around 5.",
+   "Sum of all 9 numbers equals 9 times 5, which is 45. The standard 1 to 9 magic square uses numbers 1 through 9. Number 11 is outside this range!"
+  ],
+  "steps": [
+   "Centre equals 5. Magic constant equals 3 times 5, which is 15.",
+   "Sum of all 9 equals 9 times 5, which is 45. Numbers 1 to 9 sum to 45.",
+   "The magic square uses numbers 1 through 9. 11 is not in this range."
+  ]
+ },
+ "Q_CH15_007": {
+  "q": "Nine consecutive natural numbers from 3 to 11 are used to form a magic square. Which number will be placed in the central box?",
+  "options": [
+   "11",
+   "3",
+   "7",
+   "9"
+  ],
+  "hints": [
+   "For 9 consecutive numbers, the centre of a magic square is always the middle number.",
+   "Numbers 3 to 11: 3, 4, 5, 6, 7, 8, 9, 10, 11. The middle, 5th, number is 7.",
+   "Also verify: sum equals 9 times 7, which is 63. Constant equals 63 over 3, which is 21. Row check: any row sums to 21"
+  ],
+  "steps": [
+   "List the numbers: 3, 4, 5, 6, 7, 8, 9, 10, 11. Nine numbers.",
+   "The middle number equals 7, 5th out of 9.",
+   "For consecutive numbers, the centre of the magic square is always the middle number.",
+   "Verify: sum equals 63, constant equals 21."
+  ]
+ },
+ "Q_CH15_008": {
+  "q": "A 3 by 3 magic square has 8 in the centre. What is the magic constant?",
+  "options": [
+   "24",
+   "16",
+   "72",
+   "11"
+  ],
+  "hints": [
+   "Remember the formula: magic constant equals 3 times centre number.",
+   "Centre equals 8. So constant equals 3 times 8.",
+   "3 times 8 equals 24"
+  ],
+  "steps": [
+   "Use the formula: magic constant equals 3 times centre",
+   "That equals 24"
+  ]
+ },
+ "Q_CH15_009": {
+  "q": "In this magic square with fractions, every row, every column and both diagonals add up to the same total. Top row: 2, 7 over 3, 2 over 3. Middle row: 1 over 3, blank, 3. Bottom row: 8 over 3, 1, 4 over 3. Find the number in place of the question mark.",
+  "options": [
+   "15",
+   "5",
+   "6 over 3",
+   "5 over 3"
+  ],
+  "hints": [
+   "In a magic square every row, column and diagonal has the same total. Find that total from a line that is complete, then use it on the line with the missing number.",
+   "Add the top row: 2 plus 7 over 3 plus 2 over 3. It helps to write 2 as 6 over 3 so that everything is in thirds.",
+   "Similar example: a magic square has top row 3, 7 over 2, 1 and middle row 1 over 2, blank, 9 over 2. The top row adds up to 6 over 2 plus 7 over 2 plus 2 over 2 equals 15 over 2. The middle row must match, and 1 over 2 plus 9 over 2 equals 10 over 2, so the missing number is 15 over 2 minus 10 over 2 equals 5 over 2."
+  ],
+  "steps": [
+   "Add the top row. Write 2 as 6 over 3 so that everything is in thirds. 6 over 3 plus 7 over 3 plus 2 over 3 equals 15 over 3, which is 5.",
+   "So every row, column and diagonal must add up to 5.",
+   "In the middle row, add the two numbers you know. Write 3 as 9 over 3. 1 over 3 plus 9 over 3 equals 10 over 3.",
+   "Take this away from the total of 5, which is 15 over 3. The missing number is 5 over 3. 15 over 3 minus 10 over 3 equals 5 over 3."
+  ]
+ },
+ "Q_CH15_010": {
+  "q": "In this array, each row, column, and diagonal has equal sum. Find X plus Y plus Z. Top row: Z, blank, 4. Middle row: blank, Y, 15. Bottom row: X, blank, 8.",
+  "options": [
+   "33",
+   "32",
+   "35",
+   "none of these"
+  ],
+  "hints": [
+   "The diagonal from top-right to bottom-left is: 4, Y, X. The other diagonal is: Z, Y, 8.",
+   "Y is the centre. Magic constant equals 3 times Y. Also look at column 3: 4 plus 15 plus 8 equals 27. So constant equals 27.",
+   "Y equals 27 over 3, which is 9. Diagonal: Z plus 9 plus 8 equals 27, so Z equals 10. Other diagonal: 4 plus 9 plus X equals 27, so X equals 14. X plus Y plus Z equals 14 plus 9 plus 10, which is 33."
+  ],
+  "steps": [
+   "Column 3: 4 plus 15 plus 8 equals 27. Magic constant equals 27.",
+   "Y is the centre: Y equals 27 over 3, which is 9",
+   "Diagonal Z plus Y plus 8 equals 27: Z equals 27 minus 9 minus 8, which is 10",
+   "Diagonal 4 plus Y plus X equals 27: X equals 27 minus 9 minus 4, which is 14",
+   "X plus Y plus Z equals 14 plus 9 plus 10, which is 33"
+  ]
+ },
+ "Q_CH15_011": {
+  "q": "Find the missing number. Top row: 4, 6, 8. Middle row: 3, 4, blank. Bottom row: 49, 100, 169.",
+  "options": [
+   "10",
+   "5",
+   "6",
+   "12"
+  ],
+  "hints": [
+   "Look at each column. Is there a pattern between the rows?",
+   "Column 1: 4 plus 3 equals 7, and 7 squared equals 49. Column 2: 6 plus 4 equals 10, and 10 squared equals 100. Check: is the 3rd row equal to row 1 plus row 2, all squared?",
+   "Column 3: 8 plus what number equals the square root of 169, which is 13. So the missing number equals 13 minus 8, which is 5."
+  ],
+  "steps": [
+   "Find the pattern. Row 3 equals Row 1 plus Row 2, all squared.",
+   "Check column 2: 6 plus 4, all squared, equals 10 squared, which is 100.",
+   "Column 3: 8 plus what number, all squared, equals 169. The square root of 169 equals 13. So 8 plus the missing number equals 13.",
+   "Missing number equals 5"
+  ]
+ },
+ "Q_CH15_013": {
+  "q": "Find the missing number. Top row: 3, 4, 25. Middle row: 5, 7, 71. Bottom row: 6, 8, blank.",
+  "options": [
+   "100",
+   "14",
+   "48",
+   "97"
+  ],
+  "hints": [
+   "Look at the relationship between columns 1, 2, and 3 in each row.",
+   "Row 1: 3, 4, 25. Is 25 equal to 3 squared plus 4 squared? 9 plus 16 equals 25! Row 2: 5 squared plus 7 squared? No. 25 plus 49 equals 74, not 71. Try: 3 times 4 times 2 plus 1 equals 25. 5 times 7 times 2 plus 1 equals 71!",
+   "Pattern: column 3 equals column 1 times column 2, times 2, plus 1. So the missing number equals 6 times 8 times 2 plus 1, which is 97."
+  ],
+  "steps": [
+   "Find the pattern: Row 1: 3 times 4 times 2 plus 1 equals 24 plus 1, which is 25",
+   "Row 2: 5 times 7 times 2 plus 1 equals 70 plus 1, which is 71",
+   "Row 3: 6 times 8 times 2 plus 1 equals 96 plus 1, which is 97",
+   "Missing number equals 97"
+  ]
+ },
+ "Q_CH15_014": {
+  "q": "What number should replace the question mark? 5 plus 3 equals 28. 9 plus 1 equals 810. 8 plus 6 equals 214. 5 plus 4 equals what?",
+  "options": [
+   "120",
+   "19",
+   "91",
+   "9"
+  ],
+  "hints": [
+   "These aren't normal addition! Look at the pattern. 5 plus 3 equals 28. What operation on 5 and 3 gives 28?",
+   "5 minus 3 equals 2, 5 plus 3 equals 8, so write side by side: 28! 9 minus 1 equals 8, 9 plus 1 equals 10, so 810! 8 minus 6 equals 2, 8 plus 6 equals 14, so 214!",
+   "5 minus 4 equals 1, 5 plus 4 equals 9, so 19"
+  ],
+  "steps": [
+   "Pattern: the result is a minus b, joined with a plus b.",
+   "Check: 9 minus 1, joined with 9 plus 1, gives 8 and 10, which makes 810.",
+   "Apply: 5 minus 4, joined with 5 plus 4, gives 1 and 9, which makes 19."
+  ]
+ },
+ "Q_CH15_017": {
+  "q": "Numbers 11 to 19 are placed in a 3 by 3 magic square. What is the magic constant?",
+  "options": [
+   "30",
+   "135",
+   "57",
+   "45"
+  ],
+  "hints": [
+   "For 9 consecutive numbers, the centre equals middle number.",
+   "Middle of 11 to 19 is 15. Magic constant equals 3 times centre.",
+   "3 times 15 equals 45"
+  ],
+  "steps": [
+   "Numbers: 11, 12, 13, 14, 15, 16, 17, 18, 19. Middle equals 15.",
+   "Magic constant equals 3 times 15, which is 45",
+   "Verify: sum equals 9 times 15, which is 135. 135 over 3 equals 45"
+  ]
+ },
+ "Q_CH15_020": {
+  "q": "If blue, blue, blue equals red, red, and red equals green, green, green, then blue, blue, blue equals how many greens?",
+  "options": [
+   "3",
+   "6",
+   "2",
+   "9"
+  ],
+  "hints": [
+   "3 blues equals 2 reds. And 1 red equals 3 greens.",
+   "Replace each red with 3 greens: 2 reds equals 2 times 3 greens, which is 6 greens.",
+   "So 3 blues equals 6 greens."
+  ],
+  "steps": [
+   "3 B equals 2 R, and R equals 3 G.",
+   "Replace R: 3 B equals 2 times 3 G, which is 6 G",
+   "3 blues equals 6 greens"
+  ]
+ },
+ "Q_CH15_021": {
+  "q": "The sum of all numbers in a 3 by 3 magic square is 72. What is the centre number?",
+  "options": [
+   "9",
+   "24",
+   "36",
+   "8"
+  ],
+  "hints": [
+   "Sum of all 9 numbers equals 9 times centre. So centre equals sum divided by 9.",
+   "72 divided by 9 equals what?",
+   "Centre equals 8"
+  ],
+  "steps": [
+   "Sum equals 9 times centre",
+   "Centre equals 72 divided by 9, which is 8",
+   "Verify: magic constant equals 72 over 3, which is 24, which is 3 times 8"
+  ]
+ },
+ "Q_CH15_022": {
+  "q": "In a cross pattern, 5 is in the centre. The numbers 1, 3, 7, 9 are placed at the four ends so that both lines through the centre have the same sum. Which number is opposite to 1?",
+  "options": [
+   "5",
+   "3",
+   "9",
+   "7"
+  ],
+  "hints": [
+   "If a number is at one end, the other end of the same line plus the centre must equal the same sum for both lines.",
+   "Total of all 5 numbers equals 1 plus 3 plus 5 plus 7 plus 9, which is 25. Two lines share the centre. Each line: end plus 5 plus end equals sum. Both sums equal.",
+   "Sum of each line equals 25 plus 5, divided by 2, which is 15. Line with 1: 1 plus 5 plus what number equals 15. So the missing number equals 9."
+  ],
+  "steps": [
+   "Total equals 1 plus 3 plus 5 plus 7 plus 9, which is 25",
+   "Each line equals total plus centre, divided by 2. That is 25 plus 5, over 2, which is 15.",
+   "Line with 1: 1 plus 5 plus what number equals 15, so the missing number equals 9",
+   "Opposite to 1 is 9."
+  ]
+ },
+ "Q_CH15_023": {
+  "q": "A magic square has this first row: 6, 15, 3. What is the magic constant and the centre number?",
+  "options": [
+   "Constant equals 18, Centre equals 6",
+   "Constant equals 24, Centre equals 24",
+   "Constant equals 24, Centre equals 8",
+   "Constant equals 24, Centre equals 12"
+  ],
+  "hints": [
+   "Magic constant equals sum of any row. Row 1: 6 plus 15 plus 3 equals what?",
+   "Constant equals 24. Centre equals constant divided by 3.",
+   "Centre equals 24 divided by 3, which is 8"
+  ],
+  "steps": [
+   "Constant equals 6 plus 15 plus 3, which is 24",
+   "Centre equals 24 divided by 3, which is 8",
+   "Magic constant equals 24, Centre equals 8"
+  ]
+ },
+ "Q_CH15_024": {
+  "q": "A, B, and C are three numbers. A plus B equals 10, B plus C equals 15, A plus C equals 11. What is the value of A plus B plus C?",
+  "options": [
+   "36",
+   "18",
+   "12",
+   "15"
+  ],
+  "hints": [
+   "Add all three equations together: A plus B, plus B plus C, plus A plus C, equals 10 plus 15 plus 11.",
+   "Left side: 2 A plus 2 B plus 2 C equals 36. So 2 times, A plus B plus C, equals 36.",
+   "A plus B plus C equals 36 divided by 2, which is 18."
+  ],
+  "steps": [
+   "Add all three equations. A plus B, plus B plus C, plus A plus C, equals 10 plus 15 plus 11, which is 36.",
+   "Left side equals 2 A plus 2 B plus 2 C, which is 2 times, A plus B plus C.",
+   "A plus B plus C equals 18"
+  ]
+ },
+ "Q_CH15_025": {
+  "q": "Rohan makes a 3 by 3 magic square using 9 consecutive odd numbers starting from 5. What is the number in the centre?",
+  "options": [
+   "11",
+   "13",
+   "15",
+   "9"
+  ],
+  "hints": [
+   "List the 9 consecutive odd numbers starting from 5.",
+   "5, 7, 9, 11, 13, 15, 17, 19, 21. That's 9 numbers.",
+   "The centre of a magic square with consecutive numbers is always the middle number, which is 13."
+  ],
+  "steps": [
+   "List: 5, 7, 9, 11, 13, 15, 17, 19, 21",
+   "9 numbers, so middle, 5th, number equals 13",
+   "Centre equals 13. Constant equals 3 times 13, which is 39."
+  ]
+ },
+ "Q_CH16_019": {
+  "q": "If A equals 1, B equals 2, C equals 3, and so on, what is the sum of the letters in the word MATH?",
+  "options": [
+   "44",
+   "42",
+   "38",
+   "40"
+  ],
+  "hints": [
+   "Find the number value of each letter: M equals 13, A equals 1, T equals 20, H equals 8.",
+   "Add them up: 13 plus 1 plus 20 plus 8",
+   "That equals 42"
+  ],
+  "steps": [
+   "M equals 13, A equals 1, T equals 20, H equals 8",
+   "Sum equals 13 plus 1 plus 20 plus 8, which is 42"
+  ]
+ }
+}

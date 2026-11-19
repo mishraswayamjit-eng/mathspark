@@ -1,0 +1,1366 @@
+{
+ "EXT_G4_FP_2020_034": {
+  "q": "8 squared plus 15 squared equals x squared. Find x.",
+  "options": [
+   "23",
+   "17",
+   "25",
+   "15"
+  ],
+  "hints": [
+   "A small 2 above a number means multiply the number by itself. Work out the left side first, then find the number whose square matches it.",
+   "Find 8 times 8 and 15 times 15 and add them. Then look for a number that gives that total when it is multiplied by itself.",
+   "Similar example: 6 squared plus 8 squared equals n squared. 6 times 6 equals 36 and 8 times 8 equals 64, and 36 plus 64 equals 100. Since 10 times 10 equals 100, n is 10."
+  ],
+  "steps": [
+   "Square 8. 8 times 8 equals 64.",
+   "Square 15. 15 times 15 equals 225.",
+   "Add the two squares. 64 plus 225 equals 289.",
+   "Find the number that multiplies by itself to make 289. So x is 17. 17 times 17 equals 289."
+  ]
+ },
+ "EXT_G4_FP_2021_003": {
+  "q": "5 squared plus 12 squared equals M squared. M equals what?",
+  "options": [
+   "13",
+   "7",
+   "169",
+   "12"
+  ],
+  "hints": [
+   "A small 2 above a number means multiply the number by itself. Work out the left side first, then find the number whose square matches it.",
+   "Find 5 times 5 and 12 times 12 and add them. Then look for a number that gives that total when it is multiplied by itself.",
+   "Similar example: 3 squared plus 4 squared equals n squared. 3 times 3 equals 9 and 4 times 4 equals 16, and 9 plus 16 equals 25. Since 5 times 5 equals 25, n is 5."
+  ],
+  "steps": [
+   "Square 5. 5 times 5 equals 25.",
+   "Square 12. 12 times 12 equals 144.",
+   "Add the two squares. 25 plus 144 equals 169.",
+   "Find the number that multiplies by itself to make 169. So M is 13. 13 times 13 equals 169."
+  ]
+ },
+ "EXT_G4_FP_2021_005": {
+  "q": "In a hall, the chairs are arranged so that the number of rows is equal to the number of chairs in each row. One man sits on each chair and every chair is filled. Which of these can be the number of men in the hall?",
+  "options": [
+   "131",
+   "325",
+   "275",
+   "324"
+  ],
+  "hints": [
+   "When the number of rows equals the number of chairs in each row, the total is a number multiplied by itself. Think about what kind of number that makes.",
+   "The number of men must be a perfect square. Find square numbers close to each choice and see which choice is exactly a number times itself.",
+   "Similar example: could 225 children sit this way? 15 times 15 equals 225, so yes, in 15 rows of 15. Could 226? 15 times 15 equals 225 and 16 times 16 equals 256, and 226 lies between them, so no."
+  ],
+  "steps": [
+   "The rows and the chairs in each row are equal, so the number of men is a number times itself, a perfect square.",
+   "Find square numbers near the choices. 11 times 11 equals 121, 12 times 12 equals 144, 16 times 16 equals 256, 17 times 17 equals 289.",
+   "131 lies between 121 and 144, and 275 lies between 256 and 289, so neither is a perfect square.",
+   "Now try 18. 18 times 18 equals 324.",
+   "325 is one more than 324, so it is not a perfect square. The number of men can be 324."
+  ]
+ },
+ "EXT_G4_FP_2021_018": {
+  "q": "Sum of which pair gives square number?",
+  "options": [
+   "91 and 19.",
+   "157 and 68.",
+   "59 and 52.",
+   "76 and 78."
+  ],
+  "hints": [
+   "A square number is a number times itself, like 49 or 100. Add each pair and see which total is a square number.",
+   "Start by adding the first pair, 91 and 19. Then check whether the total sits exactly on a square, such as 10 times 10 or 11 times 11.",
+   "Similar example: is 87 plus 57 a square number? 87 plus 57 equals 144, and 12 times 12 equals 144, so yes. Is 60 plus 30 a square? 60 plus 30 equals 90, which lies between 9 times 9, which is 81, and 10 times 10, which is 100, so no."
+  ],
+  "steps": [
+   "Add the first pair. 110 lies between 100 and 121, so it is not a square. 91 plus 19 equals 110.",
+   "Add the second pair. 157 plus 68 equals 225.",
+   "225 is a square number. 15 times 15 equals 225.",
+   "The other two pairs give 59 plus 52, which is 111, and 76 plus 78, which is 154. Neither is a square number.",
+   "So the pair whose sum is a square number is 157 and 68."
+  ]
+ },
+ "EXT_G4_FP_2021_023": {
+  "q": "Compare: 29 squared, blank, 31 squared minus 10 squared?",
+  "options": [
+   "is less than",
+   "is greater than",
+   "is equal to",
+   "None of these."
+  ],
+  "hints": [
+   "To compare, work out the value of each side first. Then see which side is bigger.",
+   "Find 29 times 29 for the left side. For the right side, find 31 times 31 and 10 times 10, then subtract.",
+   "Similar example: compare 12 squared with 13 squared minus 6 squared. The left side is 12 times 12, which is 144. On the right, 13 times 13 equals 169 and 6 times 6 equals 36, and 169 minus 36 equals 133. 144 is more than 133, so the sign is greater than."
+  ],
+  "steps": [
+   "Work out the left side. 29 times 29 equals 841.",
+   "On the right side, square 31. 31 times 31 equals 961.",
+   "Square 10 to get 100, and subtract it. 961 minus 100 equals 861.",
+   "841 is smaller than 861, so the left side is less than the right side. The sign is less than."
+  ]
+ },
+ "EXT_G4_FP_2021_032": {
+  "q": "By what smallest number must 28 be multiplied to get a perfect square?",
+  "options": [
+   "12",
+   "10",
+   "7",
+   "5"
+  ],
+  "hints": [
+   "A perfect square is made of matching pairs of factors. Break the number into its prime factors and look for a factor that has no partner.",
+   "Break 28 into prime factors: 28 equals 2 times 2 times 7. Which factor is in a pair, and which one is alone?",
+   "Similar example: 12 equals 2 times 2 times 3. The 2s make a pair but the 3 is alone. Multiply by 3: 12 times 3 equals 36, and 36 equals 6 times 6, a perfect square."
+  ],
+  "steps": [
+   "Break 28 into prime factors. 28 equals 2 times 2 times 7.",
+   "The two 2s make a pair. The 7 has no partner, so one more 7 is needed.",
+   "Multiply 28 by 7 and check. 28 times 7 equals 196, which is 14 times 14.",
+   "196 is a perfect square, so the smallest number to multiply by is 7."
+  ]
+ },
+ "EXT_G4_FP_2022_009": {
+  "q": "Sum of squares of which two gives square?",
+  "options": [
+   "10 and 15.",
+   "7 and 24.",
+   "8 and 45.",
+   "9 and 25."
+  ],
+  "hints": [
+   "Square each number in a pair, add the two squares, and see whether the total is itself a square number.",
+   "Start with the first pair: find 10 times 10 and 15 times 15 and add them. Then check if that total is some number times itself.",
+   "Similar example: 9 and 12. 9 times 9 equals 81 and 12 times 12 equals 144, and 81 plus 144 equals 225. Since 15 times 15 equals 225, the sum of the squares is a square number."
+  ],
+  "steps": [
+   "Try 10 and 15. 325 is one more than 18 times 18, so it is not a square. 100 plus 225 equals 325.",
+   "Try 7 and 24. Square each and add. 49 plus 576 equals 625.",
+   "625 is a square number. 25 times 25 equals 625.",
+   "The other two pairs give 64 plus 2025, which is 2089, and 81 plus 625, which is 706. Neither is a square number.",
+   "So the pair is 7 and 24."
+  ]
+ },
+ "EXT_G4_FP_2022_022": {
+  "q": "Least number by which 588 should be multiplied to make a perfect square?",
+  "options": [
+   "2",
+   "6",
+   "4",
+   "None of these."
+  ],
+  "hints": [
+   "A perfect square is made of factors that all come in pairs. Break 588 into small factors and look for one without a partner.",
+   "Start dividing 588 by 2, then by 2 again, and keep going with small prime numbers. Write 588 as a product of primes.",
+   "Similar example: 180. Its prime factors are 2 times 2 times 3 times 3 times 5, which is 180. The 2s pair up and the 3s pair up, but 5 is alone. Multiply by 5: 180 times 5 equals 900, and 30 times 30 equals 900."
+  ],
+  "steps": [
+   "Break 588 into prime factors. 588 equals 2 times 2 times 3 times 7 times 7.",
+   "The two 2s make a pair and the two 7s make a pair. The 3 has no partner.",
+   "Multiply by 3 to give it a partner. 588 times 3 equals 1764.",
+   "Check that 1764 is a perfect square. 42 times 42 equals 1764.",
+   "The least number is 3, which is not among the numbers given. So the answer is None of these."
+  ]
+ },
+ "EXT_G4_FP_2023_022": {
+  "q": "What number added to 1234 gives a square number?",
+  "options": [
+   "45",
+   "25",
+   "57",
+   "62"
+  ],
+  "hints": [
+   "Find the square numbers that sit close to 1234. The number to add is the gap up to a square above it.",
+   "Try 35 times 35 and 36 times 36. See which one is just above 1234.",
+   "Similar example: what must be added to 380 to get a square number? 19 times 19 equals 361, which is too small, and 20 times 20 equals 400, which is the next square. 400 minus 380 equals 20, so add 20."
+  ],
+  "steps": [
+   "35 times 35 is a little less than 1234. 35 times 35 equals 1225.",
+   "So the next square above 1234 is 36 times 36. 36 times 36 equals 1296.",
+   "Find the gap from 1234 up to 1296. The number to add is 62."
+  ]
+ },
+ "EXT_G4_FP_2023_032": {
+  "q": "Sum of which two numbers gives a square? 159 and 165, 198 and 145, 189 and 330, or none.",
+  "options": [
+   "159 and 165.",
+   "198 and 145.",
+   "189 and 330.",
+   "None of these."
+  ],
+  "hints": [
+   "A square number is a number times itself, like 49 or 100. Add each pair and see which total is a square number.",
+   "Start by adding the first pair, 159 and 165. Then check whether the total is some number times itself. Try numbers near 18.",
+   "Similar example: is 130 plus 126 a square number? 130 plus 126 equals 256, and 16 times 16 equals 256, so yes. Is 75 plus 50 a square? 75 plus 50 equals 125, which lies between 11 times 11, which is 121, and 12 times 12, which is 144, so no."
+  ],
+  "steps": [
+   "Add the first pair. 159 plus 165 equals 324.",
+   "324 is a square number. 18 times 18 equals 324.",
+   "The other pairs give 198 plus 145, which is 343, and 189 plus 330, which is 519. Neither is a square number.",
+   "So the pair whose sum is a square is 159 and 165."
+  ]
+ },
+ "EXT_G4_FP_2024_019": {
+  "q": "Quotient: smallest 4-digit square divided by greatest 2-digit even square?",
+  "options": [
+   "20",
+   "18",
+   "15",
+   "16"
+  ],
+  "hints": [
+   "There are two numbers to find before dividing: the smallest square with 4 digits, and the biggest even square with 2 digits.",
+   "For the first number, try 31 times 31 and 32 times 32 and see which one first reaches 4 digits. For the second, list the 2-digit squares and pick the biggest even one.",
+   "Similar example: divide the smallest 3-digit square by the greatest 1-digit even square. 10 times 10 equals 100, which is the smallest 3-digit square. The 1-digit squares are 1, 4 and 9, so the greatest even one is 4. 100 divided by 4 equals 25."
+  ],
+  "steps": [
+   "31 times 31 has only 3 digits. 31 times 31 equals 961.",
+   "So the smallest 4-digit square is 32 times 32. 32 times 32 equals 1024.",
+   "The 2-digit squares are 16, 25, 36, 49, 64 and 81. The greatest even one is 64.",
+   "Divide. The quotient is 16. 1024 divided by 64 equals 16."
+  ]
+ },
+ "EXT_G4_FP_2025_009": {
+  "q": "Remainder when greatest 2-digit square divided by smallest 2-digit square?",
+  "options": [
+   "3",
+   "1",
+   "4",
+   "11"
+  ],
+  "hints": [
+   "First find the two square numbers the question describes. Then divide the bigger by the smaller and see what is left over.",
+   "List the squares that have 2 digits, starting from 4 times 4. The first one in your list and the last one are the two numbers you need.",
+   "Similar example: find the remainder when the greatest 3-digit square is divided by the smallest 3-digit square. They are 31 times 31, which is 961, and 10 times 10, which is 100. Nine 100s make 900, and 961 minus 900 equals 61. The remainder is 61."
+  ],
+  "steps": [
+   "The 2-digit squares are 16, 25, 36, 49, 64 and 81. The greatest is 81 and the smallest is 16.",
+   "See how many 16s fit into 81. Five of them fit. 5 times 16 equals 80.",
+   "Find what is left over. The remainder is 1. 81 minus 80 equals 1."
+  ]
+ },
+ "EXT_G4_WS2_CH16_013": {
+  "q": "Find the odd one out: 144, 169, 196, 256, 324, 400.",
+  "options": [
+   "144",
+   "169",
+   "196",
+   "324"
+  ],
+  "hints": [
+   "All the numbers look alike in one way, so look for a second property that one number does not share.",
+   "Find which number each one is the square of. Then look at whether each number is even or odd.",
+   "Similar example: 9, 25, 36, 49, 81. These are the squares of 3, 5, 6, 7 and 9. All of them are odd except 36, so 36 is the odd one out."
+  ],
+  "steps": [
+   "These are all square numbers: the squares of 12, 13, 14, 16, 18 and 20.",
+   "144, 196, 256, 324 and 400 are all even numbers.",
+   "169 is the square of 13, and it is an odd number. 13 times 13 equals 169.",
+   "So the odd one out is 169."
+  ]
+ },
+ "EXT_G4_WS2_CH16_014": {
+  "q": "Which number does not belong to the group? 81, 121, 169, 289, 361, 529.",
+  "options": [
+   "81",
+   "529",
+   "121",
+   "289"
+  ],
+  "hints": [
+   "All the numbers look alike in one way, so look for a second property that one number does not share.",
+   "Find which number each one is the square of. Then ask what kind of numbers 11, 13, 17, 19 and 23 are.",
+   "Similar example: 4, 9, 25, 36, 49. These are the squares of 2, 3, 5, 6 and 7. All of those are prime except 6, because 2 times 3 equals 6. So 36 does not belong."
+  ],
+  "steps": [
+   "These are the squares of 9, 11, 13, 17, 19 and 23.",
+   "11, 13, 17, 19 and 23 are prime numbers. Each can be divided only by 1 and itself.",
+   "9 is not prime, because it is 3 times 3.",
+   "So the number that does not belong is 81."
+  ]
+ },
+ "G4A_SQUARES_001": {
+  "q": "What is the square of 12?",
+  "options": [
+   "144",
+   "24",
+   "104",
+   "122"
+  ],
+  "hints": [
+   "The square of a number is the number multiplied by itself.",
+   "Here you need 12 times 12. Try splitting it into 12 times 10 and 12 times 2.",
+   "Example: the square of 11 is 11 times 11. 11 times 10 equals 110 and 11 times 1 equals 11, so 110 plus 11 equals 121."
+  ],
+  "steps": [
+   "The square of 12 means 12 multiplied by itself.",
+   "12 times 10 equals 120 and 12 times 2 equals 24.",
+   "120 plus 24 equals 144, so the square of 12 is 144. 12 times 12 equals 144."
+  ]
+ },
+ "G4A_SQUARES_002": {
+  "q": "Which of these numbers is a perfect square?",
+  "options": [
+   "48",
+   "64",
+   "56",
+   "72"
+  ],
+  "hints": [
+   "A perfect square is what you get when a whole number is multiplied by itself. Run through the squares you know.",
+   "Try the squares near these numbers: 6 times 6, 7 times 7, 8 times 8 and 9 times 9. Does any of them match a number in the list?",
+   "Example: among 30, 36, 40 and 42, only 36 is a perfect square, because 6 times 6 equals 36."
+  ],
+  "steps": [
+   "List the squares near these numbers: 6 times 6 equals 36, 7 times 7 equals 49, 8 times 8 equals 64 and 9 times 9 equals 81.",
+   "48, 56 and 72 are not in that list.",
+   "64 is 8 times 8, so the perfect square is 64."
+  ]
+ },
+ "G4A_SQUARES_003": {
+  "q": "A square carrom board is marked with 81 small squares, in equal rows and columns. How many small squares are there in each row?",
+  "options": [
+   "27",
+   "18",
+   "9",
+   "8"
+  ],
+  "hints": [
+   "When the rows and columns are equal, the total is a number multiplied by itself. You are looking for that number.",
+   "Ask yourself: which number times itself makes 81? Try 8 times 8 and 9 times 9.",
+   "Example: 49 tiles laid in equal rows and columns have 7 in each row, because 7 times 7 equals 49."
+  ],
+  "steps": [
+   "Equal rows and columns means the number in each row, multiplied by itself, is 81.",
+   "8 times 8 equals 64, which is too small, and 9 times 9 equals 81, which fits.",
+   "So there are 9 small squares in each row. 9 times 9 equals 81."
+  ]
+ },
+ "G4A_SQUARES_004": {
+  "q": "A number ends in the digit 7. Which digit does its square end in?",
+  "options": [
+   "7",
+   "4",
+   "1",
+   "9"
+  ],
+  "hints": [
+   "The last digit of a square depends only on the last digit of the number being squared.",
+   "So you only need to work out 7 times 7 and look at its last digit.",
+   "Example: a number ending in 4, such as 14 or 24, has a square ending in 6, because 4 times 4 equals 16."
+  ],
+  "steps": [
+   "Only the last digit matters, so look at 7 times 7.",
+   "7 times 7 equals 49, which ends in 9.",
+   "Check with 17: 17 times 17 equals 289, which also ends in 9. So the square ends in 9."
+  ]
+ },
+ "G4A_SQUARES_005": {
+  "q": "What is the next perfect square after 49?",
+  "options": [
+   "64",
+   "56",
+   "50",
+   "81"
+  ],
+  "hints": [
+   "Perfect squares come from squaring the counting numbers in order: 1 times 1, 2 times 2, 3 times 3 and so on.",
+   "First find which number is squared to give 49. Then square the next counting number.",
+   "Example: 25 is 5 times 5, so the next perfect square after 25 is 6 times 6, which is 36."
+  ],
+  "steps": [
+   "49 is 7 times 7.",
+   "The next counting number after 7 is 8.",
+   "8 times 8 equals 64, so the next perfect square after 49 is 64."
+  ]
+ },
+ "G4A_SQUARES_006": {
+  "q": "Ravi plants mango saplings in a square field: 11 rows with 11 saplings in each row. How many saplings does he plant?",
+  "options": [
+   "22",
+   "121",
+   "111",
+   "44"
+  ],
+  "hints": [
+   "Rows of equal size are counted by multiplying the number of rows by the number in each row.",
+   "Here you need 11 times 11. Try 11 times 10 first, then add one more 11.",
+   "Example: 13 rows with 13 plants in each row have 13 times 13 plants. 13 times 10 equals 130 and 13 times 3 equals 39, so 130 plus 39 equals 169."
+  ],
+  "steps": [
+   "Saplings equals rows, times saplings in each row. 11 times 11.",
+   "11 times 10 equals 110, and one more 11 makes 110 plus 11, which is 121.",
+   "So Ravi plants 121 saplings."
+  ]
+ },
+ "G4A_SQUARES_007": {
+  "q": "What is 5 squared plus 3 squared?",
+  "options": [
+   "64",
+   "16",
+   "34",
+   "28"
+  ],
+  "hints": [
+   "The small 2 means the number is multiplied by itself. Square each number first, then add.",
+   "Work out 5 times 5 and 3 times 3 separately.",
+   "Example: 4 squared plus 2 squared is 16 plus 4, which is 20."
+  ],
+  "steps": [
+   "5 squared means 5 times 5, which is 25.",
+   "3 squared means 3 times 3, which is 9.",
+   "25 plus 9 equals 34, so 5 squared plus 3 squared equals 34."
+  ]
+ },
+ "G4A_SQUARES_008": {
+  "q": "What is the square of 30?",
+  "options": [
+   "60",
+   "90",
+   "9000",
+   "900"
+  ],
+  "hints": [
+   "To square a number that ends in zero, square the front digit and remember that each zero appears twice.",
+   "30 times 30 is 3 times 3 with two zeros placed after it.",
+   "Example: the square of 20 is 20 times 20. 2 times 2 equals 4, and then two zeros give 400."
+  ],
+  "steps": [
+   "The square of 30 is 30 times 30.",
+   "3 times 3 equals 9.",
+   "One zero from each 30 gives two zeros, so 30 times 30 equals 900."
+  ]
+ },
+ "G4A_SQUARES_009": {
+  "q": "What is the greatest two-digit perfect square?",
+  "options": [
+   "81",
+   "99",
+   "64",
+   "100"
+  ],
+  "hints": [
+   "List the perfect squares in order and look for the last one that still has two digits.",
+   "Try 9 times 9 and 10 times 10. Which of them has two digits?",
+   "Example: the greatest one-digit perfect square is 9, because 3 times 3 equals 9 and the next one, 4 times 4 equals 16, has two digits."
+  ],
+  "steps": [
+   "9 times 9 equals 81, which has two digits.",
+   "10 times 10 equals 100, which has three digits.",
+   "So the greatest two-digit perfect square is 81."
+  ]
+ },
+ "G4A_SQUARES_010": {
+  "q": "What is the smallest number that must be taken away from 30 to leave a perfect square?",
+  "options": [
+   "6",
+   "5",
+   "14",
+   "21"
+  ],
+  "hints": [
+   "Taking away makes the number smaller, so look for the nearest perfect square below the number.",
+   "Which perfect square is just below 30? Try 5 times 5 and 6 times 6.",
+   "Example: for 70, the nearest perfect square below is 8 times 8, which is 64, so 70 minus 64, which is 6, must be taken away."
+  ],
+  "steps": [
+   "5 times 5 equals 25, which is below 30, and 6 times 6 equals 36, which is above 30.",
+   "The nearest perfect square below 30 is 25.",
+   "30 minus 25 equals 5, so 5 must be taken away."
+  ]
+ },
+ "G4A_SQUARES_011": {
+  "q": "Which of these numbers is the square of an odd number?",
+  "options": [
+   "36",
+   "64",
+   "49",
+   "100"
+  ],
+  "hints": [
+   "Find which number was squared to make each one, then check whether that number is odd or even.",
+   "36 is 6 times 6 and 64 is 8 times 8. Now find the numbers for 49 and 100.",
+   "Example: among 16, 25 and 144, the square of an odd number is 25, because 25 is 5 times 5 and 5 is odd."
+  ],
+  "steps": [
+   "36 is 6 times 6, 64 is 8 times 8 and 100 is 10 times 10. The numbers 6, 8 and 10 are even.",
+   "49 is 7 times 7, and 7 is odd.",
+   "So the square of an odd number is 49."
+  ]
+ },
+ "G4A_SQUARES_012": {
+  "q": "What is the difference between the square of 6 and the number 6 itself?",
+  "options": [
+   "6",
+   "42",
+   "36",
+   "30"
+  ],
+  "hints": [
+   "First find the square. Then the word difference tells you to subtract.",
+   "Work out 6 times 6 first.",
+   "Example: for 5, the square is 5 times 5, which is 25, and the difference is 25 minus 5, which is 20."
+  ],
+  "steps": [
+   "The square of 6 is 6 times 6, which is 36.",
+   "Difference means subtract: 36 minus 6 equals 30.",
+   "So the difference is 30."
+  ]
+ },
+ "G4A_SQUARES_013": {
+  "q": "How many perfect squares are there between 50 and 150?",
+  "options": [
+   "5",
+   "4",
+   "6",
+   "100"
+  ],
+  "hints": [
+   "List the perfect squares in order and pick out the ones that lie between the two numbers.",
+   "The first square above 50 is 8 times 8, which is 64. Keep going with 9 times 9, 10 times 10 and so on, until you pass 150.",
+   "Example: between 10 and 40 the perfect squares are 16, 25 and 36, so there are 3 of them."
+  ],
+  "steps": [
+   "7 times 7 equals 49, which is just below 50, so start from 8 times 8, which is 64.",
+   "Carry on: 81, 100, 121, 144.",
+   "13 times 13 equals 169, which is more than 150, so stop there.",
+   "The squares are 64, 81, 100, 121 and 144, so there are 5."
+  ]
+ },
+ "G4A_SQUARES_014": {
+  "q": "Which of these digits can never be the last digit of a perfect square?",
+  "options": [
+   "4",
+   "7",
+   "5",
+   "6"
+  ],
+  "hints": [
+   "The last digit of a square depends only on the last digit of the number squared, so there are just ten cases to check.",
+   "Square each digit from 0 to 9 and write down the last digit each time: 0, 1, 4, 9, and so on.",
+   "Example: can a perfect square end in 3? The squares of 0 to 9 end in 0, 1, 4, 9, 6, 5, 6, 9, 4 and 1. There is no 3, so a perfect square never ends in 3."
+  ],
+  "steps": [
+   "Square the digits 0 to 9: 0, 1, 4, 9, 16, 25, 36, 49, 64, 81.",
+   "Their last digits are 0, 1, 4, 9, 6, 5, 6, 9, 4 and 1.",
+   "4, 5 and 6 are in this list, but 7 is not.",
+   "So a perfect square can never end in 7."
+  ]
+ },
+ "G4A_SQUARES_015": {
+  "q": "What is 10 squared minus 6 squared?",
+  "options": [
+   "16",
+   "8",
+   "64",
+   "136"
+  ],
+  "hints": [
+   "Square each number first, then subtract. Do not subtract first.",
+   "Work out 10 times 10 and 6 times 6.",
+   "Example: 7 squared minus 3 squared is 49 minus 9, which is 40."
+  ],
+  "steps": [
+   "10 squared means 10 times 10, which is 100.",
+   "6 squared means 6 times 6, which is 36.",
+   "100 minus 36 equals 64, so 10 squared minus 6 squared equals 64."
+  ]
+ },
+ "G4A_SQUARES_016": {
+  "q": "The sum 1 plus 3 plus 5 plus 7 plus 9 plus 11 is the square of which number?",
+  "options": [
+   "36",
+   "11",
+   "5",
+   "6"
+  ],
+  "hints": [
+   "Add the odd numbers, then ask which number times itself gives that total.",
+   "Add in pairs: 1 with 11, 3 with 9, and 5 with 7.",
+   "Example: 1 plus 3 plus 5 plus 7 equals 16, and 16 is 4 times 4, so that sum is the square of 4. Notice that there were 4 odd numbers."
+  ],
+  "steps": [
+   "1 plus 11 equals 12, 3 plus 9 equals 12 and 5 plus 7 equals 12.",
+   "The total is 12 plus 12 plus 12, which is 36.",
+   "36 is 6 times 6.",
+   "So the sum is the square of 6."
+  ]
+ },
+ "G4A_SQUARES_017": {
+  "q": "A teacher has 150 children on the playground. She makes them stand in the biggest possible square, with the same number in every row and every column. How many children are left out?",
+  "options": [
+   "6",
+   "12",
+   "19",
+   "29"
+  ],
+  "hints": [
+   "The children standing in the square make a perfect square number. Find the biggest perfect square that is not more than the number of children.",
+   "Try 12 times 12 and 13 times 13. Which one is still no more than 150?",
+   "Example: with 90 children, the biggest square is 9 times 9, which is 81, so 90 minus 81, which is 9 children, are left out."
+  ],
+  "steps": [
+   "12 times 12 equals 144 and 13 times 13 equals 169.",
+   "169 is more than 150, so the biggest square uses 144 children.",
+   "150 minus 144 equals 6, so 6 children are left out."
+  ]
+ },
+ "G4A_SQUARES_018": {
+  "q": "A gardener has 200 rose plants. He wants to plant all of them in a square, with the same number in every row and every column. What is the least number of extra plants he must buy?",
+  "options": [
+   "4",
+   "25",
+   "15",
+   "56"
+  ],
+  "hints": [
+   "He is adding plants, so look for the nearest perfect square above the number he has.",
+   "Try 14 times 14 and 15 times 15. Which is the first one above 200?",
+   "Example: with 90 plants, the next perfect square is 10 times 10, which is 100, so he must buy 100 minus 90, which is 10 more."
+  ],
+  "steps": [
+   "14 times 14 equals 196, which is less than 200, so it cannot hold all the plants.",
+   "15 times 15 equals 225, which is the first perfect square above 200.",
+   "225 minus 200 equals 25, so he must buy 25 extra plants."
+  ]
+ },
+ "G4A_SQUARES_019": {
+  "q": "What is the square root of 400 added to the square root of 49?",
+  "options": [
+   "449",
+   "207",
+   "27",
+   "21"
+  ],
+  "hints": [
+   "Find each square root on its own first, then add them.",
+   "Which number times itself gives 400? Think of 2 times 2 equals 4 and the zeros.",
+   "Example: the square root of 900 is 30 and the square root of 16 is 4, so together they make 30 plus 4, which is 34."
+  ],
+  "steps": [
+   "20 times 20 equals 400, so the square root of 400 is 20.",
+   "7 times 7 equals 49, so the square root of 49 is 7.",
+   "20 plus 7 equals 27, so the sum is 27."
+  ]
+ },
+ "G4A_SQUARES_020": {
+  "q": "441 soldiers stand in a square, with the same number in each row and each column. Every soldier in the front row holds a flag. How many flags are there?",
+  "options": [
+   "147",
+   "84",
+   "20",
+   "21"
+  ],
+  "hints": [
+   "The front row has as many soldiers as the side of the square. Find the number that times itself gives the total.",
+   "20 times 20 equals 400, which is a little too small. The total ends in 1, so try a number ending in 1.",
+   "Example: 169 soldiers in a square stand 13 in each row, because 13 times 13 equals 169, so the front row would hold 13 flags."
+  ],
+  "steps": [
+   "The number in each row, multiplied by itself, is 441.",
+   "20 times 20 equals 400, which is too small, so try the next number.",
+   "21 times 21 equals 441.",
+   "The front row has 21 soldiers, so there are 21 flags."
+  ]
+ },
+ "G4A_SQUARES_021": {
+  "q": "Which of these numbers is not a perfect square?",
+  "options": [
+   "164",
+   "121",
+   "144",
+   "196"
+  ],
+  "hints": [
+   "Check each number: is there a whole number that, multiplied by itself, gives it?",
+   "Work out the squares from 11 times 11 to 14 times 14 and tick off the ones in the list.",
+   "Example: among 81, 90 and 100, the one that is not a perfect square is 90, since 9 times 9 equals 81 and 10 times 10 equals 100 and nothing falls in between."
+  ],
+  "steps": [
+   "11 times 11 equals 121, 12 times 12 equals 144, 13 times 13 equals 169 and 14 times 14 equals 196.",
+   "121, 144 and 196 are in this list.",
+   "164 falls between 144 and 169, so 164 is not a perfect square."
+  ]
+ },
+ "G4A_SQUARES_022": {
+  "q": "The squares of two numbers that come one after the other are 144 and 169. What is the sum of the two numbers?",
+  "options": [
+   "313",
+   "25",
+   "24",
+   "26"
+  ],
+  "hints": [
+   "Work backwards from each square to the number that was squared. Then add those numbers.",
+   "Which number times itself gives 144? Try 12.",
+   "Example: if the squares are 81 and 100, the numbers are 9 and 10, and their sum is 9 plus 10, which is 19."
+  ],
+  "steps": [
+   "12 times 12 equals 144, so the first number is 12.",
+   "13 times 13 equals 169, so the second number is 13.",
+   "12 plus 13 equals 25, so the sum of the two numbers is 25."
+  ]
+ },
+ "G4A_SQUARES_023": {
+  "q": "Only one of these numbers is a perfect square. Use the last digits to find it.",
+  "options": [
+   "1232",
+   "1443",
+   "1521",
+   "1687"
+  ],
+  "hints": [
+   "A perfect square can end only in 0, 1, 4, 5, 6 or 9. Any number ending in 2, 3, 7 or 8 can be ruled out straight away.",
+   "Look at the last digit of each number. Which ones end in 2, 3, 7 or 8?",
+   "Example: among 352, 361, 377 and 388, only 361 can be a perfect square, and indeed 19 times 19 equals 361."
+  ],
+  "steps": [
+   "1232 ends in 2, 1443 ends in 3 and 1687 ends in 7.",
+   "No perfect square ends in 2, 3 or 7, so these three are ruled out.",
+   "1521 ends in 1, and 39 times 39 equals 1521.",
+   "So the perfect square is 1521."
+  ]
+ },
+ "G4A_SQUARES_024": {
+  "q": "What is 1 squared plus 2 squared plus 3 squared plus 4 squared?",
+  "options": [
+   "10",
+   "20",
+   "100",
+   "30"
+  ],
+  "hints": [
+   "Square each number on its own, then add the four squares.",
+   "Write the squares in a row: 1, 4, and then 3 times 3 and 4 times 4.",
+   "Example: 1 squared plus 2 squared plus 3 squared is 1 plus 4 plus 9, which is 14."
+  ],
+  "steps": [
+   "The squares are 1, 4, 9 and 16.",
+   "Add them: 1 plus 4 plus 9 plus 16 equals 30.",
+   "So 1 squared plus 2 squared plus 3 squared plus 4 squared equals 30."
+  ]
+ },
+ "G4A_SQUARES_025": {
+  "q": "Tara has made a square with 64 small tiles. She wants to add tiles to make the next bigger square. How many more tiles does she need?",
+  "options": [
+   "17",
+   "16",
+   "1",
+   "36"
+  ],
+  "hints": [
+   "Find the side of the square she has, make the side one tile longer, and compare the two totals.",
+   "64 is 8 times 8, so her square has 8 tiles on each side. The next bigger square has 9 tiles on each side.",
+   "Example: going from a 5 by 5 square of 25 tiles to a 6 by 6 square of 36 tiles needs 36 minus 25, which is 11 more tiles."
+  ],
+  "steps": [
+   "64 is 8 times 8, so the square has 8 tiles on each side.",
+   "The next bigger square has 9 tiles on each side: 9 times 9 equals 81.",
+   "81 minus 64 equals 17, so she needs 17 more tiles."
+  ]
+ },
+ "G4A_SQUARES_026": {
+  "q": "The square of a number is 225. What is the square of the number that is 1 more?",
+  "options": [
+   "226",
+   "256",
+   "196",
+   "16"
+  ],
+  "hints": [
+   "First find the number whose square is given. Then add 1 to that number and square it.",
+   "Which number times itself gives 225? It ends in 5, so try 15.",
+   "Example: if the square of a number is 100, the number is 10, and the square of 11 is 11 times 11, which is 121."
+  ],
+  "steps": [
+   "15 times 15 equals 225, so the number is 15.",
+   "One more than 15 is 16.",
+   "16 times 16 equals 256, so the square is 256."
+  ]
+ },
+ "G4A_SQUARES_027": {
+  "q": "How many perfect squares are there from 1 to 100, counting both 1 and 100?",
+  "options": [
+   "9",
+   "50",
+   "10",
+   "11"
+  ],
+  "hints": [
+   "Each perfect square comes from one counting number. Count how many counting numbers have a square that is not more than the limit.",
+   "1 times 1 equals 1, which is the first one. Which number squared gives exactly 100?",
+   "Example: from 1 to 50 the perfect squares are 1, 4, 9, 16, 25, 36 and 49. They are the squares of 1 to 7, so there are 7."
+  ],
+  "steps": [
+   "1 times 1 equals 1 and 10 times 10 equals 100.",
+   "So the squares of 1, 2, 3 and so on, up to 10, all lie from 1 to 100.",
+   "That makes 10 perfect squares."
+  ]
+ },
+ "G4A_SQUARES_028": {
+  "q": "What is 51 squared minus 49 squared?",
+  "options": [
+   "4",
+   "2",
+   "100",
+   "200"
+  ],
+  "hints": [
+   "Square each number, then subtract. Splitting each number around 50 makes the squaring easier.",
+   "51 times 51 is 51 times 50 and one more 51. Work that out first.",
+   "Example: 21 squared minus 19 squared is 441 minus 361, which is 80."
+  ],
+  "steps": [
+   "51 times 51 is 51 times 50 plus 51: 2550 plus 51 equals 2601. 51 times 51 equals 2601.",
+   "49 times 49 is 49 times 50 minus 49: 2450 minus 49 equals 2401. 49 times 49 equals 2401.",
+   "2601 minus 2401 equals 200, so 51 squared minus 49 squared equals 200."
+  ]
+ },
+ "G4A_SQUARES_029": {
+  "q": "What is the smallest number by which 48 must be divided so that the result is a perfect square?",
+  "options": [
+   "3",
+   "2",
+   "4",
+   "12"
+  ],
+  "hints": [
+   "Try dividing by small numbers in order, and check each result against the perfect squares you know.",
+   "Start with 48 divided by 2, which is 24. Is 24 a perfect square? If not, try the next number.",
+   "Example: for 50, try 50 divided by 2, which is 25. Since 25 is 5 times 5, the smallest number to divide 50 by is 2."
+  ],
+  "steps": [
+   "48 itself is not a perfect square, so dividing by 1 is no help.",
+   "48 divided by 2 equals 24, and 24 is not a perfect square.",
+   "48 divided by 3 equals 16, and 16 is 4 times 4, a perfect square.",
+   "So the smallest number to divide by is 3."
+  ]
+ },
+ "G4A_SQUARES_030": {
+  "q": "What is the smallest number that must be subtracted from 1000 to get a perfect square?",
+  "options": [
+   "24",
+   "39",
+   "31",
+   "100"
+  ],
+  "hints": [
+   "Subtracting makes the number smaller, so find the largest perfect square below the number.",
+   "30 times 30 equals 900. Now try 31 times 31 and 32 times 32 to see which is the last one below 1000.",
+   "Example: for 500, 22 times 22 equals 484, which is the largest perfect square below it, so 500 minus 484, which is 16, must be subtracted."
+  ],
+  "steps": [
+   "31 times 31 equals 961 and 32 times 32 equals 1024.",
+   "1024 is more than 1000, so the largest perfect square below 1000 is 961.",
+   "1000 minus 961 equals 39, so 39 must be subtracted."
+  ]
+ },
+ "G4A_SQUARES_031": {
+  "q": "How many whole numbers lie between 15 squared and 16 squared?",
+  "options": [
+   "1",
+   "31",
+   "30",
+   "32"
+  ],
+  "hints": [
+   "Work out the two squares, then count the numbers strictly between them. The two squares themselves are not counted.",
+   "15 times 15 equals 225 and 16 times 16 equals 256. Now count from 226 up to 255.",
+   "Example: between 3 times 3, which is 9, and 4 times 4, which is 16, lie 10, 11, 12, 13, 14 and 15. That is 6 numbers, one less than 16 minus 9, which is 7."
+  ],
+  "steps": [
+   "15 times 15 equals 225 and 16 times 16 equals 256.",
+   "The gap is 256 minus 225, which is 31.",
+   "The numbers in between run from 226 to 255, which is one fewer than the gap.",
+   "31 minus 1 equals 30, so 30 whole numbers lie between them."
+  ]
+ },
+ "G4A_SQUARES_032": {
+  "q": "A farmer plants his young trees in a square, with the same number in each row and each column, and has 5 trees left over. To make the next bigger square he would need 20 more trees. How many trees does he have?",
+  "options": [
+   "144",
+   "169",
+   "164",
+   "149"
+  ],
+  "hints": [
+   "His trees lie between two perfect squares that come one after the other. Work out how far apart those two squares are.",
+   "He is 5 above one square and 20 below the next, so the two squares are 5 plus 20, which is 25 apart. Which two neighbouring squares differ by 25?",
+   "Example: with 3 left over and 4 short of the next square, the squares are 3 plus 4, which is 7 apart. 9 and 16 differ by 7, so there are 9 plus 3, which is 12 trees."
+  ],
+  "steps": [
+   "The two squares are 5 plus 20, which is 25 apart.",
+   "12 times 12 equals 144 and 13 times 13 equals 169, and 169 minus 144 equals 25.",
+   "He has 5 more than the smaller square, 144.",
+   "144 plus 5 equals 149, so he has 149 trees."
+  ]
+ },
+ "G4A_SQUARES_033": {
+  "q": "Asha has two square sheets of stamps. One sheet has 9 rows of 9 stamps and the other has 12 rows of 12 stamps. She rearranges all the stamps into one big square. How many stamps are in each row of the big square?",
+  "options": [
+   "15",
+   "21",
+   "225",
+   "108"
+  ],
+  "hints": [
+   "Count all the stamps first. Then find the number that, multiplied by itself, gives that total.",
+   "The first sheet has 9 times 9 stamps and the second has 12 times 12. Add the two.",
+   "Example: sheets of 3 rows of 3 and 4 rows of 4 hold 9 plus 16, which is 25 stamps, and 25 is 5 times 5, so the big square has 5 in each row."
+  ],
+  "steps": [
+   "9 times 9 equals 81 and 12 times 12 equals 144.",
+   "81 plus 144 equals 225 stamps in all.",
+   "15 times 15 equals 225.",
+   "So the big square has 15 stamps in each row."
+  ]
+ },
+ "G4A_SQUARES_034": {
+  "q": "I am a two-digit perfect square. The sum of my two digits is 13. Which number am I?",
+  "options": [
+   "67",
+   "49",
+   "94",
+   "64"
+  ],
+  "hints": [
+   "List all the two-digit perfect squares, then add the digits of each one.",
+   "The two-digit perfect squares are 16, 25, 36, 49, 64 and 81. Start adding their digits: 1 plus 6 equals 7, 2 plus 5 equals 7, and carry on.",
+   "Example: the two-digit perfect square whose digits add up to 10 is 64, because 6 plus 4 equals 10 and 8 times 8 equals 64."
+  ],
+  "steps": [
+   "The two-digit perfect squares are 16, 25, 36, 49, 64 and 81.",
+   "Their digit sums are 7, 7, 9, 13, 10 and 9.",
+   "Only one of them has digits adding to 13: 4 plus 9 equals 13.",
+   "So the number is 49."
+  ]
+ },
+ "G4A_SQUARES_035": {
+  "q": "What is the smallest perfect square that can be divided exactly by both 6 and 8?",
+  "options": [
+   "24",
+   "48",
+   "144",
+   "576"
+  ],
+  "hints": [
+   "The number must be in both times tables and also be a number times itself. Go through the perfect squares in order and test each one.",
+   "Squares of odd numbers cannot be divided by 8, so test the even ones: 4, 16, 36, 64, 100 and onward. Can 36 be divided by 8? Can 64 be divided by 6?",
+   "Example: the smallest perfect square that can be divided exactly by both 2 and 3 is 36, because 4, 9, 16 and 25 each miss one of them."
+  ],
+  "steps": [
+   "Test the even perfect squares in order: 4, 16, 36, 64, 100, 144.",
+   "36 divided by 6 equals 6, but 36 cannot be divided exactly by 8. 64 divided by 8 equals 8, but 64 cannot be divided exactly by 6.",
+   "4, 16 and 100 cannot be divided exactly by 6.",
+   "144 divided by 6 equals 24 and 144 divided by 8 equals 18, so the smallest such perfect square is 144."
+  ]
+ },
+ "G4A_SQUARES_036": {
+  "q": "Most numbers have an even number of factors. For example, 12 has six factors: 1, 2, 3, 4, 6 and 12. How many numbers from 1 to 50 have an odd number of factors?",
+  "options": [
+   "15",
+   "25",
+   "8",
+   "7"
+  ],
+  "hints": [
+   "Factors come in pairs that multiply to give the number. Think about when a factor is paired with itself.",
+   "For 12 the pairs are 1 and 12, 2 and 6, 3 and 4. Now try 16: the pairs are 1 and 16, 2 and 8, and then 4 with itself. What kind of number has a factor paired with itself?",
+   "A similar one, from 1 to 20: only 1, 4, 9 and 16 have a factor that pairs with itself, so 4 numbers have an odd number of factors."
+  ],
+  "steps": [
+   "Factors come in pairs, such as 2 and 6 for 12, so most numbers have an even number of factors.",
+   "A pair has the same number twice only when the number is a perfect square, such as 4 times 4 for 16. Then the count of factors is odd.",
+   "List the perfect squares from 1 to 50: 1, 4, 9, 16, 25, 36 and 49.",
+   "So 7 numbers from 1 to 50 have an odd number of factors."
+  ]
+ },
+ "G4A_SQUARES_037": {
+  "q": "Look at the pattern: 1 plus 3 equals 4, 1 plus 3 plus 5 equals 9, 1 plus 3 plus 5 plus 7 equals 16. What is the sum of all the odd numbers from 1 to 39?",
+  "options": [
+   "361",
+   "400",
+   "1521",
+   "780"
+  ],
+  "hints": [
+   "Each sum in the pattern is a perfect square. Work out which square goes with how many odd numbers are added.",
+   "Two odd numbers give 2 times 2, three give 3 times 3, four give 4 times 4. So count how many odd numbers there are from 1 to 39.",
+   "A similar one: the odd numbers from 1 to 19. There are 10 of them, because 19 plus 1 equals 20 and half of 20 is 10. So the sum is 10 times 10, which is 100."
+  ],
+  "steps": [
+   "In the pattern, adding the first 2, 3 or 4 odd numbers gives 2 times 2, 3 times 3 or 4 times 4. The sum is the count of odd numbers multiplied by itself.",
+   "Count the odd numbers from 1 to 39. Add 1 to the last number and halve. 40 divided by 2 equals 20.",
+   "Multiply the count by itself. 20 times 20 equals 400.",
+   "The sum is 400."
+  ]
+ },
+ "G4A_SQUARES_038": {
+  "q": "The squares of two numbers that come one after the other differ by 37. What is the larger of the two numbers?",
+  "options": [
+   "19",
+   "18",
+   "37",
+   "6"
+  ],
+  "hints": [
+   "Look at how far apart neighbouring squares are: 1, 4, 9, 16, 25. Find a rule that links the gap to the two numbers.",
+   "The gap between 3 times 3 and 4 times 4 is 7, which is 3 plus 4. The gap between 4 times 4 and 5 times 5 is 9, which is 4 plus 5. Which two neighbouring numbers add up to 37?",
+   "A similar one: two neighbouring squares differ by 21. The two numbers add up to 21, so they are 10 and 11. Check: 121 minus 100 equals 21. The larger is 11."
+  ],
+  "steps": [
+   "Neighbouring squares differ by the sum of the two numbers. For example, 25 minus 16 equals 9 and 4 plus 5 equals 9.",
+   "So the two numbers add up to 37 and are next to each other. 18 plus 19 equals 37.",
+   "Check with the squares. 361 minus 324 equals 37.",
+   "The larger number is 19."
+  ]
+ },
+ "G4A_SQUARES_039": {
+  "q": "144 children stand in a square formation, with the same number in every row and every column. Each child standing on the outside edge of the square holds a flag. How many children hold a flag?",
+  "options": [
+   "48",
+   "40",
+   "44",
+   "12"
+  ],
+  "hints": [
+   "Find how many children stand in each row. Then count the edge carefully: the corner children belong to two sides.",
+   "144 is 12 times 12, so each side has 12 children. If you add four sides of 12, which children get counted twice?",
+   "A similar one: 25 children in a square stand 5 to a side. Four sides of 5 make 20, but the 4 corner children were counted twice, so 20 minus 4, which is 16 children, are on the edge."
+  ],
+  "steps": [
+   "Find the number of children on each side. 12 times 12 equals 144.",
+   "Four sides of 12 would count each corner child twice. 4 times 12 equals 48.",
+   "Take away the 4 corners that were counted twice. 48 minus 4 equals 44.",
+   "44 children hold a flag."
+  ]
+ },
+ "G4A_SQUARES_040": {
+  "q": "A square floor is covered with 225 tiles, in equal rows and columns. The tiles along both diagonals, from each corner to the opposite corner, are red, and all the other tiles are white. How many red tiles are there?",
+  "options": [
+   "29",
+   "30",
+   "15",
+   "60"
+  ],
+  "hints": [
+   "Find how many tiles are in each row. Then think about whether the two diagonals share a tile.",
+   "225 is 15 times 15. Each diagonal has 15 tiles. With an odd number like 15, the two diagonals cross on one tile in the middle.",
+   "A similar one: a floor of 7 rows of 7 tiles. Each diagonal has 7 tiles and they share the middle tile, so there are 7 plus 7 minus 1, which is 13 red tiles."
+  ],
+  "steps": [
+   "Find the number of tiles in each row. 15 times 15 equals 225.",
+   "Each diagonal has 15 tiles. 15 plus 15 equals 30.",
+   "Because 15 is odd, the diagonals cross on the middle tile, which was counted twice. 30 minus 1 equals 29.",
+   "There are 29 red tiles."
+  ]
+ },
+ "G4A_SQUARES_041": {
+  "q": "Some numbers can be made by adding two perfect squares. For example, 13 equals 4 plus 9. Which of these numbers can not be made by adding two perfect squares?",
+  "options": [
+   "20",
+   "34",
+   "29",
+   "21"
+  ],
+  "hints": [
+   "For each number, try taking away each perfect square that is smaller than it. See whether what is left is also a perfect square.",
+   "The perfect squares to use are 1, 4, 9, 16 and 25. For 20, try 20 minus 16, which is 4. Is 4 a perfect square? Test the other numbers in the same way.",
+   "A similar one: can 11 be made? 11 minus 1 equals 10, 11 minus 4 equals 7 and 11 minus 9 equals 2, and none of 10, 7 and 2 is a perfect square. So 11 cannot be made, but 10 can, because 1 plus 9 equals 10."
+  ],
+  "steps": [
+   "The perfect squares to use are 1, 4, 9, 16 and 25.",
+   "Three of the numbers can be made. 4 plus 16 equals 20, 4 plus 25 equals 29, 9 plus 25 equals 34.",
+   "For 21, take away each square: 20, 17, 12 and 5 are left. None of these is a perfect square.",
+   "The number that cannot be made is 21."
+  ]
+ },
+ "G4A_SQUARES_042": {
+  "q": "Soldiers stand in a square formation, with the same number in every row and every column. Then 3 full rows and 3 full columns of soldiers march away, and the soldiers who remain still form a square. In all, 69 soldiers marched away. How many soldiers were there at first?",
+  "options": [
+   "529",
+   "144",
+   "169",
+   "196"
+  ],
+  "hints": [
+   "The soldiers who leave are the difference between a big square and a smaller square. Test square numbers.",
+   "If each side had 10 soldiers, the square left would have sides of 7, and 100 minus 49, which is 51, would leave. That is too few, so try bigger squares.",
+   "A similar one: 2 rows and 2 columns leave, 36 soldiers in all. Try sides of 10 and 8: 100 minus 64 equals 36. So there were 100 soldiers at first."
+  ],
+  "steps": [
+   "The square at first has some number on each side, and the square left has 3 fewer on each side.",
+   "Test sides of 12 and 9. 144 minus 81 equals 63.",
+   "Test sides of 13 and 10. 169 minus 100 equals 69.",
+   "This matches the 69 soldiers who marched away.",
+   "There were 169 soldiers at first."
+  ]
+ },
+ "G4A_SQUARES_043": {
+  "q": "In each of these, the two numbers add up to 60. Which product is the greatest?",
+  "options": [
+   "29 times 31.",
+   "30 times 30.",
+   "28 times 32.",
+   "27 times 33."
+  ],
+  "hints": [
+   "Compare each product with the one where the two numbers are equal. Try the same idea with small numbers first.",
+   "Try numbers that add up to 10: 5 times 5 equals 25, 4 times 6 equals 24, 3 times 7 equals 21. What happens to the product as the two numbers move further apart?",
+   "A similar one with numbers that add up to 20: 10 times 10 equals 100, 9 times 11 equals 99, 8 times 12 equals 96 and 7 times 13 equals 91. The equal pair gives the greatest product, and each step apart makes it smaller."
+  ],
+  "steps": [
+   "All four pairs add up to 60, so compare how far apart the two numbers are.",
+   "With small numbers that add up to 10, the products get smaller as the numbers move apart. 5 times 5 equals 25, 4 times 6 equals 24, 3 times 7 equals 21.",
+   "The same happens here. 30 times 30 equals 900, 29 times 31 equals 899, 28 times 32 equals 896, 27 times 33 equals 891.",
+   "The greatest product is 30 times 30."
+  ]
+ },
+ "G4A_SQUARES_044": {
+  "q": "Look at the pattern: 11 times 11 equals 121, 111 times 111 equals 12321, 1111 times 1111 equals 1234321. What is the sum of the digits of 11111 times 11111?",
+  "options": [
+   "15",
+   "9",
+   "25",
+   "45"
+  ],
+  "hints": [
+   "Look at how the digits in each answer climb up and come back down. Predict the next answer before adding its digits.",
+   "The answers climb to 2, then 3, then 4, and come back down to 1. Write the answer that climbs to 5, then add all its digits.",
+   "A similar one: 1111 times 1111 equals 1234321. Its digits add up to 1 plus 2 plus 3 plus 4 plus 3 plus 2 plus 1, which makes 16, and that is 4 times 4."
+  ],
+  "steps": [
+   "The answers climb by one digit each time and come back down: 121, 12321, 1234321.",
+   "So the next answer climbs to 5 and comes back down. 11111 times 11111 equals 123454321.",
+   "Add the digits going up, then the digits going down. 1 plus 2 plus 3 plus 4 plus 5 equals 15, 4 plus 3 plus 2 plus 1 equals 10.",
+   "Add the two parts. 15 plus 10 equals 25.",
+   "The sum of the digits is 25."
+  ]
+ },
+ "G4A_SQUARES_045": {
+  "q": "Kabir's age this year is a perfect square. Nine years from now, his age will be a perfect square again. How old is Kabir this year?",
+  "options": [
+   "9",
+   "16",
+   "25",
+   "36"
+  ],
+  "hints": [
+   "Write out the perfect squares in order and look at the gaps between neighbours.",
+   "The squares are 1, 4, 9, 16, 25, 36, 49. Test each one as Kabir's age: add 9 and see whether you land on another square.",
+   "A similar one with a gap of 5: 1 plus 5 equals 6, which is not a square, but 4 plus 5 equals 9, which is. So the age would be 4."
+  ],
+  "steps": [
+   "List the perfect squares: 1, 4, 9, 16, 25, 36, 49.",
+   "Add 9 to each and look for another square: 10, 13, 18, 25, 34, 45, 58.",
+   "Only 25 is a perfect square, and it comes from 16. 16 plus 9 equals 25.",
+   "After 16 the gaps between squares are more than 9, so there is no other answer.",
+   "Kabir is 16 years old this year."
+  ]
+ },
+ "G4A_SQUARES_046": {
+  "q": "By which smallest number must 12 be multiplied so that the answer is a perfect square greater than 100?",
+  "options": [
+   "3",
+   "9",
+   "27",
+   "12"
+  ],
+  "hints": [
+   "First find the smallest multiplier that gives any perfect square. Then check the extra condition, and look for the next multiplier if you need to.",
+   "12 is 2 times 2 times 3. Multiplying by 3 gives 36, a perfect square, but 36 is not greater than 100. To keep a perfect square, multiply 36 by another perfect square.",
+   "A similar one: the smallest multiplier of 8 that gives a square greater than 50. Multiplying 8 by 2 gives the square of 4, which is too small. Multiply that by 4 and you have 8 times 8, which is 64, and that is greater than 50. So the multiplier is 8."
+  ],
+  "steps": [
+   "12 is 2 times 2 times 3, so it needs one more 3 to become a perfect square. 12 times 3 equals 36.",
+   "36 is not greater than 100. To stay a perfect square, multiply 36 by the next perfect square, 4. 36 times 4 equals 144.",
+   "Find the multiplier of 12 that gives 144. 144 divided by 12 equals 12.",
+   "The smallest number to multiply by is 12."
+  ]
+ },
+ "G4A_SQUARES_047": {
+  "q": "Anu picks any odd number greater than 1, squares it and then subtracts 1. What is the greatest number that will always divide her answer exactly, whatever odd number she picks?",
+  "options": [
+   "8",
+   "4",
+   "24",
+   "16"
+  ],
+  "hints": [
+   "Try several odd numbers, not just one. Look for what all the answers have in common.",
+   "With 3 the answer is 9 minus 1, which is 8. With 5 it is 25 minus 1, which is 24. Try 7 and 9 too, then look for the greatest number that divides every answer.",
+   "A similar one: pick any even number, square it, and ask what always divides the answer. From 2, 4 and 6 you get 4, 16 and 36. The greatest number dividing all of these is 4."
+  ],
+  "steps": [
+   "Try the first few odd numbers. 3 times 3 minus 1 equals 8, 5 times 5 minus 1 equals 24, 7 times 7 minus 1 equals 48, 9 times 9 minus 1 equals 80.",
+   "Look for numbers that divide 8, 24, 48 and 80 exactly. The divisor cannot be more than 8, because the first answer is 8.",
+   "8 divides all four. 24 divided by 8 equals 3, 48 divided by 8 equals 6, 80 divided by 8 equals 10.",
+   "The greatest number that always divides her answer is 8."
+  ]
+ },
+ "G4A_SQUARES_048": {
+  "q": "The year 2025 is a perfect square, because 45 times 45 equals 2025. How many years after 2025 is the next year that is a perfect square?",
+  "options": [
+   "90",
+   "91",
+   "46",
+   "100"
+  ],
+  "hints": [
+   "The next perfect square comes from the next whole number. You do not need to multiply it out if you know how far apart neighbouring squares are.",
+   "The next square is 46 times 46. The gap between the squares of two neighbouring numbers is the sum of those two numbers. Which two numbers do you add here?",
+   "A similar one: 20 times 20 equals 400. The next square is 21 times 21, and the gap is 20 plus 21, which is 41, so the next square is 441."
+  ],
+  "steps": [
+   "The next perfect square after 45 times 45 is 46 times 46.",
+   "Neighbouring squares differ by the sum of the two numbers. 45 plus 46 equals 91.",
+   "Check by multiplying. 46 times 46 equals 2116, 2116 minus 2025 equals 91.",
+   "The next perfect-square year is 91 years after 2025."
+  ]
+ },
+ "PYQ_2016_Q31": {
+  "q": "The number of chairs in the rows is the same as the number of chairs in a column in a hall. On a certain day the hall was completely filled by men. Which of the following can be the number of men in the hall that day?",
+  "options": [
+   "131",
+   "325",
+   "275",
+   "324"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 31.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: option 4, 324."
+  ]
+ },
+ "PYQ_2017_Q34": {
+  "q": "The sum of the squares of which two numbers from the following would result in a square number?",
+  "options": [
+   "2 and 3.",
+   "5 and 6.",
+   "4 and 6.",
+   "6 and 8."
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 34.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: option 4, 6 and 8."
+  ]
+ },
+ "PYQ_2017_Q38": {
+  "q": "How many even two digit square numbers are there in all?",
+  "options": [
+   "3",
+   "1",
+   "2",
+   "6"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 38.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "Correct answer: option 1, 3."
+  ]
+ },
+ "PYQ_2018_Q36": {
+  "q": "The sum of which two numbers of the following results in a square number?",
+  "options": [
+   "91 and 19.",
+   "157 and 68.",
+   "59 and 52.",
+   "76 and 78."
+  ],
+  "hints": [
+   "A square number is a number times itself, like 49 or 100. Add each pair and see which total is a square number.",
+   "Start by adding the first pair, 91 and 19. Then check whether the total sits exactly on a square, such as 10 times 10 or 11 times 11.",
+   "Similar example: is 113 plus 83 a square number? 113 plus 83 equals 196, and 14 times 14 equals 196, so yes. Is 45 plus 25 a square? 45 plus 25 equals 70, which lies between 8 times 8, which is 64, and 9 times 9, which is 81, so no."
+  ],
+  "steps": [
+   "Add the first pair. 110 lies between 100 and 121, so it is not a square. 91 plus 19 equals 110.",
+   "Add the second pair. 157 plus 68 equals 225.",
+   "225 is a square number. 15 times 15 equals 225.",
+   "The other two pairs give 59 plus 52, which is 111, and 76 plus 78, which is 154. Neither is a square number.",
+   "So the pair whose sum is a square number is 157 and 68."
+  ]
+ },
+ "PYQ_2019_Q26": {
+  "q": "What number should be added to 710 so that the result is a square number?",
+  "options": [
+   "19",
+   "15",
+   "25",
+   "31"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 26.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "Correct answer: option 1, 19."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_031_01": {
+  "q": "Find the square root of 576.",
+  "options": [
+   "25",
+   "288",
+   "24",
+   "23"
+  ],
+  "hints": [
+   "Square root asks: what number times itself gives this?",
+   "Try numbers: is it 23? 23 times 23 equals 529. No.",
+   "Try 24: 24 times 24 equals 576. Yes!"
+  ],
+  "steps": [
+   "We need: what number times itself equals 576?",
+   "The square root of 576 is 24, because 24 times 24 equals 576."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_003_01": {
+  "q": "Find the square root of 16.",
+  "options": [
+   "3",
+   "8",
+   "4",
+   "5"
+  ],
+  "hints": [
+   "Square root asks: what number times itself gives this?",
+   "Try numbers: is it 3? 3 times 3 equals 9. No.",
+   "Try 4: 4 times 4 equals 16. Yes!"
+  ],
+  "steps": [
+   "We need: what number times itself equals 16?",
+   "The square root of 16 is 4, because 4 times 4 equals 16."
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH16_013_04": {
+  "q": "Find the square of 23.",
+  "options": [
+   "46",
+   "552",
+   "529",
+   "528"
+  ],
+  "hints": [
+   "Squaring means multiplying a number by itself.",
+   "So 23 squared equals 23 times 23.",
+   "Multiply carefully!"
+  ],
+  "steps": [
+   "The square of 23 equals 23 times 23.",
+   "That equals 529."
+  ]
+ }
+}

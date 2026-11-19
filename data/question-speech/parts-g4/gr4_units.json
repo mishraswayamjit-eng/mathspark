@@ -1,0 +1,1977 @@
+{
+ "BOOST_EXT_G4_FP_2016_023_05": {
+  "q": "Isha has 5 bags of rice, each weighing 8 kilograms 500 grams. What is the total weight in grams?",
+  "options": [
+   "43500",
+   "8500",
+   "40000",
+   "42500"
+  ],
+  "hints": [
+   "First convert 8 kilograms 500 grams to grams.",
+   "8 kilograms is 8000 grams, and 500 grams more makes 8500 grams.",
+   "Then multiply by 5 bags."
+  ],
+  "steps": [
+   "One bag is 8 kilograms 500 grams, which is 8500 grams.",
+   "The total is 8500 times 5, which is 42500 grams."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2021_012_05": {
+  "q": "Riya has 2 bags of sugar, each weighing 5 kilograms 750 grams. What is the total weight in grams?",
+  "options": [
+   "5750",
+   "11500",
+   "10000",
+   "12500"
+  ],
+  "hints": [
+   "First convert 5 kilograms 750 grams to grams.",
+   "5 kilograms is 5000 grams, and 750 grams more makes 5750 grams.",
+   "Then multiply by 2 bags."
+  ],
+  "steps": [
+   "One bag is 5 kilograms 750 grams, which is 5750 grams.",
+   "The total is 5750 times 2, which is 11500 grams."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2022_033_05": {
+  "q": "Ananya has 4 bags of sugar, each weighing 3 kilograms 500 grams. What is the total weight in grams?",
+  "options": [
+   "14000",
+   "12000",
+   "15000",
+   "3500"
+  ],
+  "hints": [
+   "First convert 3 kilograms 500 grams to grams.",
+   "3 kilograms is 3000 grams, and 500 grams more makes 3500 grams.",
+   "Then multiply by 4 bags."
+  ],
+  "steps": [
+   "One bag is 3 kilograms 500 grams, which is 3500 grams.",
+   "The total is 3500 times 4, which is 14000 grams."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2023_001_05": {
+  "q": "Ananya has 2 bags of wheat, each weighing 2 kilograms 750 grams. What is the total weight in grams?",
+  "options": [
+   "5500",
+   "6500",
+   "4000",
+   "2750"
+  ],
+  "hints": [
+   "First convert 2 kilograms 750 grams to grams.",
+   "2 kilograms is 2000 grams, and 750 grams more makes 2750 grams.",
+   "Then multiply by 2 bags."
+  ],
+  "steps": [
+   "One bag is 2 kilograms 750 grams, which is 2750 grams.",
+   "The total is 2750 times 2, which is 5500 grams."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2023_012_05": {
+  "q": "Riya has 3 bags of flour, each weighing 5 kilograms 500 grams. What is the total weight in grams?",
+  "options": [
+   "16500",
+   "15000",
+   "17500",
+   "5500"
+  ],
+  "hints": [
+   "First convert 5 kilograms 500 grams to grams.",
+   "5 kilograms is 5000 grams, and 500 grams more makes 5500 grams.",
+   "Then multiply by 3 bags."
+  ],
+  "steps": [
+   "One bag is 5 kilograms 500 grams, which is 5500 grams.",
+   "The total is 5500 times 3, which is 16500 grams."
+  ]
+ },
+ "BOOST_EXT_G4_FP_2025_015_07": {
+  "q": "Kavya has 2 bags of sugar, each weighing 3 kilograms 500 grams. What is the total weight in grams?",
+  "options": [
+   "6000",
+   "7000",
+   "3500",
+   "8000"
+  ],
+  "hints": [
+   "First convert 3 kilograms 500 grams to grams.",
+   "3 kilograms is 3000 grams, and 500 grams more makes 3500 grams.",
+   "Then multiply by 2 bags."
+  ],
+  "steps": [
+   "One bag is 3 kilograms 500 grams, which is 3500 grams.",
+   "The total is 3500 times 2, which is 7000 grams."
+  ]
+ },
+ "EXT_G4_FP_2020_029": {
+  "q": "A gold ring weighs 5 grams 15 milligrams. What is that as a decimal, in grams?",
+  "options": [
+   "5.0015 grams",
+   "5.15 grams",
+   "0.515 grams",
+   "5.015 grams"
+  ],
+  "hints": [
+   "Grams and milligrams are linked by thousands. Change the milligrams into a part of a gram, then join it to the whole grams.",
+   "1 gram is 1000 milligrams, so 1 milligram is one thousandth of a gram. Write 15 milligrams as a decimal with three places after the point.",
+   "Similar example: 3 grams 45 milligrams. Since 1000 milligrams make 1 gram, 45 milligrams is 45 thousandths of a gram, written 0.045 grams. So 3 grams 45 milligrams is 3 plus 0.045, which is 3.045 grams."
+  ],
+  "steps": [
+   "1000 milligrams make 1 gram.",
+   "Change 15 milligrams into grams by dividing by 1000. 15 divided by 1000 equals 0.015.",
+   "Add this to the 5 whole grams. The ring weighs 5.015 grams. 5 plus 0.015 equals 5.015."
+  ]
+ },
+ "EXT_G4_FP_2021_009": {
+  "q": "What is 2 metres, plus 2 decimetres, plus 15 centimetres?",
+  "options": [
+   "2215 centimetres",
+   "225 centimetres",
+   "235 centimetres",
+   "212 centimetres"
+  ],
+  "hints": [
+   "The three lengths are in different units. Change them all into centimetres before adding.",
+   "1 metre is 100 centimetres and 1 decimetre is 10 centimetres. Change 2 metres and 2 decimetres into centimetres first.",
+   "Similar example: 3 metres, plus 4 decimetres, plus 12 centimetres. 3 metres is 3 times 100, which is 300 centimetres. And 4 decimetres is 4 times 10, which is 40 centimetres. Then 300 plus 40, plus 12, equals 352 centimetres."
+  ],
+  "steps": [
+   "Change 2 metres into centimetres. 2 times 100 equals 200.",
+   "Change 2 decimetres into centimetres. 2 times 10 equals 20.",
+   "Add all three lengths. The total is 235 centimetres. 200 plus 20, plus 15, equals 235."
+  ]
+ },
+ "EXT_G4_FP_2021_017": {
+  "q": "In a bag of beans, each bean weighs 2.5 grams. The weight of the beans is 0.5 kilograms. How many beans are there?",
+  "options": [
+   "200",
+   "500",
+   "750",
+   "1000"
+  ],
+  "hints": [
+   "The two weights are in different units. Change the kilograms to grams, then see how many beans fit.",
+   "Half a kilogram is 500 grams. Now think how many beans of 2.5 grams make up 500 grams.",
+   "Similar example: each marble weighs 2.5 grams and the bag weighs 100 grams. Two marbles weigh 5 grams, and 100 divided by 5 equals 20 pairs. So there are 20 times 2, which is 40 marbles."
+  ],
+  "steps": [
+   "Change 0.5 kilograms into grams. 0.5 times 1000 equals 500.",
+   "Two beans weigh 5 grams together. 2.5 times 2 equals 5.",
+   "Find how many pairs of beans make 500 grams. 500 divided by 5 equals 100.",
+   "Each pair is 2 beans. There are 200 beans. 100 times 2 equals 200."
+  ]
+ },
+ "EXT_G4_FP_2022_031": {
+  "q": "Express 11 kilograms and 11 grams as a decimal, in kilograms.",
+  "options": [
+   "11.11 kilograms",
+   "11.011 kilograms",
+   "110.11 kilograms",
+   "11.101 kilograms"
+  ],
+  "hints": [
+   "Kilograms and grams are linked by thousands. Change the grams into a part of a kilogram, then join it to the whole kilograms.",
+   "1 kilogram is 1000 grams, so 1 gram is one thousandth of a kilogram. Write 11 grams as a decimal with three places after the point.",
+   "Similar example: 7 kilograms 25 grams. Since 1000 grams make 1 kilogram, 25 grams is 25 thousandths of a kilogram, written 0.025 kilograms. So 7 kilograms 25 grams is 7 plus 0.025, which is 7.025 kilograms."
+  ],
+  "steps": [
+   "1000 grams make 1 kilogram.",
+   "Change 11 grams into kilograms by dividing by 1000. 11 divided by 1000 equals 0.011.",
+   "Add this to the 11 whole kilograms. The weight is 11.011 kilograms. 11 plus 0.011 equals 11.011."
+  ]
+ },
+ "EXT_G4_FP_2022_039": {
+  "q": "The juice of 4 mangoes is 250 millilitres. The juice of how many mangoes is 1 decalitre?",
+  "options": [
+   "40",
+   "80",
+   "120",
+   "160"
+  ],
+  "hints": [
+   "First find out how much a decalitre is in millilitres. Then see how many lots of 250 millilitres fit into it.",
+   "Deca means ten, so 1 decalitre is 10 litres. Change 10 litres into millilitres.",
+   "Similar example: 3 lemons give 100 millilitres of juice. How many lemons give 1 litre? 1 litre is 1000 millilitres, and 1000 divided by 100 equals 10 lots. Each lot needs 3 lemons, so 10 times 3 equals 30 lemons."
+  ],
+  "steps": [
+   "1 decalitre is 10 litres. Change it to millilitres. 10 times 1000 equals 10000.",
+   "Find how many lots of 250 millilitres fit in 10000 millilitres. 10000 divided by 250 equals 40.",
+   "Each lot needs 4 mangoes. So 160 mangoes are needed. 40 times 4 equals 160."
+  ]
+ },
+ "EXT_G4_FP_2023_024": {
+  "q": "100 decigrams plus 300 decagrams equals how many grams?",
+  "options": [
+   "310",
+   "3100",
+   "3000",
+   "None of these"
+  ],
+  "hints": [
+   "Deci and deca sound alike but mean very different things. Change each amount into grams before adding.",
+   "A decigram is one tenth of a gram, so 10 decigrams make 1 gram. A decagram is 10 grams. Change 100 decigrams into grams first.",
+   "Similar example: 50 decigrams plus 20 decagrams. 50 divided by 10 equals 5 grams, and 20 times 10 equals 200 grams. Together that is 5 plus 200, which is 205 grams."
+  ],
+  "steps": [
+   "10 decigrams make 1 gram. Change 100 decigrams into grams. 100 divided by 10 equals 10.",
+   "1 decagram is 10 grams. Change 300 decagrams into grams. 300 times 10 equals 3000.",
+   "Add the two amounts. 10 plus 3000 equals 3010.",
+   "The total is 3010 grams, which is not listed. So the answer is none of these."
+  ]
+ },
+ "EXT_G4_FP_2024_014": {
+  "q": "A shopkeeper sells 1 gross of eggs for 864 rupees. What is the cost of 1 score?",
+  "options": [
+   "160 rupees",
+   "132 rupees",
+   "120 rupees",
+   "140 rupees"
+  ],
+  "hints": [
+   "Gross and score are names for fixed counts. Find the price of one egg, then the price of the smaller group.",
+   "A gross is 12 dozen, which is 144, and a score is 20. Divide 864 rupees by 144 to get the price of one egg.",
+   "Similar example: 1 score of pens costs 100 rupees. A score is 20, so one pen costs 100 divided by 20, which is 5 rupees. A dozen is 12, so a dozen pens cost 12 times 5, which is 60 rupees."
+  ],
+  "steps": [
+   "A gross is 12 dozen. 12 times 12 equals 144.",
+   "Find the price of one egg in rupees. 864 divided by 144 equals 6.",
+   "A score is 20. Find the price of 20 eggs. 20 times 6 equals 120.",
+   "So 1 score of eggs costs 120 rupees."
+  ]
+ },
+ "EXT_G4_FP_2024_040": {
+  "q": "Convert 29 decameters to centimeters.",
+  "options": [
+   "2900",
+   "29000",
+   "290000",
+   "290"
+  ],
+  "hints": [
+   "Change the length one unit at a time: decameters to metres, then metres to centimetres.",
+   "Deca means ten, so 1 decameter is 10 metres. Change 29 decameters into metres first.",
+   "Similar example: 7 decameters. 7 times 10 equals 70 metres, and 70 times 100 equals 7000 centimetres."
+  ],
+  "steps": [
+   "1 decameter is 10 metres. 29 times 10 equals 290.",
+   "1 metre is 100 centimetres. 290 times 100 equals 29000.",
+   "So 29 decameters is 29000 centimeters."
+  ]
+ },
+ "EXT_G4_FP_2025_023": {
+  "q": "1 score of oranges costs 130 rupees, and 1 dozen apples cost 180 rupees. You buy 12 oranges and 17 apples. What is the cost?",
+  "options": [
+   "349.50 rupees",
+   "356.50 rupees",
+   "330 rupees",
+   "None"
+  ],
+  "hints": [
+   "Score and dozen are names for fixed counts. Find the price of one orange and one apple, then work out the cost of what is bought.",
+   "A score is 20 and a dozen is 12. Divide 130 rupees by 20 to find the price of one orange.",
+   "Similar example: 1 score of bananas costs 90 rupees and 1 dozen pears cost 120 rupees. One banana costs 90 divided by 20, which is 4.50 rupees. One pear costs 120 divided by 12, which is 10 rupees. So 10 bananas cost 45 rupees and 5 pears cost 50 rupees. Together that is 45 plus 50, which is 95 rupees."
+  ],
+  "steps": [
+   "A score is 20. Find the price of one orange in rupees. 130 divided by 20 equals 6.50.",
+   "Find the cost of 12 oranges. 12 times 6.50 equals 78.",
+   "A dozen is 12. Find the price of one apple. 180 divided by 12 equals 15.",
+   "Find the cost of 17 apples. 17 times 15 equals 255.",
+   "Add the two costs. 78 plus 255 equals 333.",
+   "The cost is 333 rupees, which is not listed. So the answer is None."
+  ]
+ },
+ "EXT_G4_FP_2025_034": {
+  "q": "160 hectograms of rice is distributed among 25 people. Each gets how many grams?",
+  "options": [
+   "680",
+   "720",
+   "600",
+   "None of these"
+  ],
+  "hints": [
+   "The rice is given in hectograms but the answer is wanted in grams. Change the unit first, then share equally.",
+   "Hecto means hundred, so 1 hectogram is 100 grams. Change 160 hectograms into grams.",
+   "Similar example: 90 hectograms of sugar shared among 20 people. 1 hectogram is 100 grams, so 90 times 100 equals 9000 grams. Each person gets 9000 divided by 20, which is 450 grams."
+  ],
+  "steps": [
+   "1 hectogram is 100 grams. Change 160 hectograms into grams. 160 times 100 equals 16000.",
+   "Share 16000 grams equally among 25 people. 16000 divided by 25 equals 640.",
+   "Each person gets 640 grams, which is not listed. So the answer is None of these."
+  ]
+ },
+ "EXT_G4_WS2_CH12_001": {
+  "q": "To measure the perimeter of a classroom, which unit is suitable?",
+  "options": [
+   "Litre",
+   "Metre",
+   "Kilogram",
+   "Any of these"
+  ],
+  "hints": [
+   "Different things are measured with different units. Decide what kind of thing a perimeter is: a length, a weight or an amount of liquid.",
+   "The perimeter is the distance all the way round the classroom. Think about which unit measures distance.",
+   "Similar example: which unit suits the milk in a jug? Milk is a liquid, and the amount of a liquid is measured in litres. So the litre is the suitable unit."
+  ],
+  "steps": [
+   "The perimeter of a classroom is the distance all the way round its walls. It is a length.",
+   "Litres measure liquids and kilograms measure weight. Neither can measure a length.",
+   "Lengths of rooms are measured in metres. So the suitable unit is the metre."
+  ]
+ },
+ "G4A_UNITS_001": {
+  "q": "A cycle track is 4 kilometres 75 metres long. What is its length in kilometres?",
+  "options": [
+   "4.075 kilometres",
+   "4.75 kilometres",
+   "4.0075 kilometres",
+   "47.5 kilometres"
+  ],
+  "hints": [
+   "Kilometres are bigger than metres, so the metres become a decimal part of a kilometre. Remember how many metres make 1 kilometre.",
+   "1 kilometre equals 1000 metres, so divide the 75 metres by 1000 to turn it into kilometres. Then join it to the 4 kilometres.",
+   "A similar one: 2 kilometres 40 metres. 40 divided by 1000 equals 0.04, so 2 kilometres 40 metres equals 2.04 kilometres."
+  ],
+  "steps": [
+   "1 kilometre equals 1000 metres, so to change metres into kilometres we divide by 1000.",
+   "Change the 75 metres into kilometres. 75 divided by 1000 equals 0.075.",
+   "Add the 4 whole kilometres. The track is 4.075 kilometres long. 4 plus 0.075 equals 4.075."
+  ]
+ },
+ "G4A_UNITS_002": {
+  "q": "Meera's water bottle holds 1.2 litres. She drinks 350 millilitres. How many millilitres of water are left in the bottle?",
+  "options": [
+   "1550 millilitres",
+   "670 millilitres",
+   "850 millilitres",
+   "950 millilitres"
+  ],
+  "hints": [
+   "The two amounts are in different units. Make the units the same before you subtract.",
+   "Change 1.2 litres into millilitres: multiply by 1000. Then take away what Meera drank.",
+   "A similar one: a jug holds 1.5 litres and 400 millilitres is poured out. 1.5 litres equals 1500 millilitres, and 1500 minus 400 equals 1100 millilitres are left."
+  ],
+  "steps": [
+   "Change litres into millilitres: 1 litre equals 1000 millilitres. 1.2 times 1000 equals 1200.",
+   "Take away the 350 millilitres that Meera drank. 1200 minus 350 equals 850.",
+   "850 millilitres of water are left in the bottle."
+  ]
+ },
+ "G4A_UNITS_003": {
+  "q": "A new pencil is 14 centimetres 6 millimetres long. After a month of sharpening it is 12 centimetres 9 millimetres long. How many millimetres shorter has it become?",
+  "options": [
+   "23 millimetres",
+   "27 millimetres",
+   "3 millimetres",
+   "17 millimetres"
+  ],
+  "hints": [
+   "Both lengths mix centimetres and millimetres. It is easiest to write each one in millimetres only.",
+   "1 centimetre equals 10 millimetres, so 14 centimetres 6 millimetres equals 140 millimetres plus 6 millimetres. Do the same for the other length, then subtract.",
+   "A similar one: 9 centimetres 2 millimetres minus 7 centimetres 8 millimetres. That is 92 millimetres minus 78 millimetres, which is 14 millimetres."
+  ],
+  "steps": [
+   "Change the first length into millimetres. 14 times 10, plus 6, equals 146.",
+   "Change the second length into millimetres. 12 times 10, plus 9, equals 129.",
+   "Subtract. The pencil has become 17 millimetres shorter. 146 minus 129 equals 17."
+  ]
+ },
+ "G4A_UNITS_004": {
+  "q": "Amma buys 1 kilogram 750 grams of potatoes and 2 kilograms 400 grams of onions. What is the total weight of the vegetables in kilograms?",
+  "options": [
+   "3.15 kilograms",
+   "4.15 kilograms",
+   "4.015 kilograms",
+   "3.115 kilograms"
+  ],
+  "hints": [
+   "Add kilograms to kilograms and grams to grams. Watch out if the grams come to more than 1000.",
+   "750 grams plus 400 grams equals 1150 grams. Think about how many kilograms and grams that is.",
+   "A similar one: 2 kilograms 600 grams plus 1 kilogram 900 grams. The grams make 1500 grams, which is 1 kilogram 500 grams, so the total is 4 kilograms 500 grams, which is 4.5 kilograms."
+  ],
+  "steps": [
+   "Add the grams. 750 plus 400 equals 1150.",
+   "1150 grams is 1 kilogram 150 grams. Add the kilograms, with the 1 kilogram carried over. 1 plus 2, plus 1, equals 4.",
+   "The total is 4 kilograms 150 grams. Since 150 grams equals 0.15 kilograms, the vegetables weigh 4.15 kilograms."
+  ]
+ },
+ "G4A_UNITS_005": {
+  "q": "A fruit seller has 7 dozen bananas. He sells 3 score bananas. How many bananas are left?",
+  "options": [
+   "48",
+   "24",
+   "54",
+   "144"
+  ],
+  "hints": [
+   "Dozen and score are names for fixed numbers. Change both into plain numbers of bananas first.",
+   "1 dozen equals 12, so find 7 times 12. 1 score equals 20, so find 3 times 20.",
+   "A similar one: 5 dozen eggs, and 2 score are sold. 5 times 12 equals 60 and 2 times 20 equals 40, so 60 minus 40 equals 20 eggs are left."
+  ],
+  "steps": [
+   "1 dozen equals 12. 7 times 12 equals 84.",
+   "1 score equals 20. 3 times 20 equals 60.",
+   "Subtract the bananas sold. 24 bananas are left. 84 minus 60 equals 24."
+  ]
+ },
+ "G4A_UNITS_006": {
+  "q": "A box holds 1 gross of pencils. A teacher takes pencils from it and gives 2 pencils to each of 54 children. How many pencils remain in the box?",
+  "options": [
+   "90",
+   "12",
+   "46",
+   "36"
+  ],
+  "hints": [
+   "A gross is a fixed number, like a dozen. Find how many pencils are in the box and how many are given out.",
+   "1 gross equals 12 dozen, which is 144. Now work out 54 times 2.",
+   "A similar one: from 1 gross of erasers, 3 are given to each of 40 children. 40 times 3 equals 120, and 144 minus 120 equals 24 remain."
+  ],
+  "steps": [
+   "1 gross equals 12 dozen. 12 times 12 equals 144.",
+   "Pencils given to the children. 54 times 2 equals 108.",
+   "Subtract. 36 pencils remain in the box. 144 minus 108 equals 36."
+  ]
+ },
+ "G4A_UNITS_007": {
+  "q": "A milkman pours 750 millilitres of milk into each of 6 packets. How many litres of milk does he use?",
+  "options": [
+   "4.5 litres",
+   "45 litres",
+   "0.45 litres",
+   "4500 litres"
+  ],
+  "hints": [
+   "First find the total in millilitres, then change it into litres.",
+   "Work out 6 times 750. Then remember that 1000 millilitres make 1 litre.",
+   "A similar one: 8 cups of 250 millilitres each. 8 times 250 equals 2000 millilitres, and 2000 divided by 1000 equals 2 litres."
+  ],
+  "steps": [
+   "Find the total milk in millilitres. 6 times 750 equals 4500.",
+   "Change into litres: 1000 millilitres equals 1 litre. 4500 divided by 1000 equals 4.5.",
+   "The milkman uses 4.5 litres of milk."
+  ]
+ },
+ "G4A_UNITS_008": {
+  "q": "Ravi's school is 850 metres from his home. He walks to school and back on each of the 5 school days. How many kilometres does he walk in the week?",
+  "options": [
+   "4.25 kilometres",
+   "85 kilometres",
+   "8.5 kilometres",
+   "1.7 kilometres"
+  ],
+  "hints": [
+   "Find how far Ravi walks in one day, then in five days. Change to kilometres at the end.",
+   "To school and back is 850 metres two times. Work out 850 times 2 first.",
+   "A similar one: a park is 600 metres away and Tara goes there and back on 4 days. 600 times 2 equals 1200 metres a day, and 1200 times 4 equals 4800 metres, which is 4.8 kilometres."
+  ],
+  "steps": [
+   "Distance in one day, there and back. 850 times 2 equals 1700.",
+   "Distance in 5 days. 1700 times 5 equals 8500.",
+   "Change metres into kilometres. Ravi walks 8.5 kilometres in the week. 8500 divided by 1000 equals 8.5."
+  ]
+ },
+ "G4A_UNITS_009": {
+  "q": "A carpenter cuts a plank 3 metres long into 8 equal pieces. How long is each piece in centimetres?",
+  "options": [
+   "3.75 centimetres",
+   "375 centimetres",
+   "37.5 centimetres",
+   "24 centimetres"
+  ],
+  "hints": [
+   "The answer is wanted in centimetres, so change the plank's length into centimetres before sharing it.",
+   "3 metres equals 300 centimetres. Now divide 300 by 8.",
+   "A similar one: a 2 metre ribbon cut into 8 equal pieces. 2 metres equals 200 centimetres, and 200 divided by 8 equals 25 centimetres each."
+  ],
+  "steps": [
+   "Change metres into centimetres: 1 metre equals 100 centimetres. 3 times 100 equals 300.",
+   "Share equally among 8 pieces. 300 divided by 8 equals 37.5.",
+   "Each piece is 37.5 centimetres long."
+  ]
+ },
+ "G4A_UNITS_010": {
+  "q": "A stack of 40 equal coins is 6 centimetres tall. How thick is one coin, in millimetres?",
+  "options": [
+   "1.5 millimetres",
+   "15 millimetres",
+   "0.15 millimetres",
+   "2.4 millimetres"
+  ],
+  "hints": [
+   "All 40 coins together make the height of the stack. Change the height into millimetres, then share it.",
+   "6 centimetres equals 60 millimetres. Now divide 60 by 40.",
+   "A similar one: 20 coins make a stack 5 centimetres tall. 5 centimetres equals 50 millimetres, and 50 divided by 20 equals 2.5 millimetres for each coin."
+  ],
+  "steps": [
+   "Change centimetres into millimetres: 1 centimetre equals 10 millimetres. 6 times 10 equals 60.",
+   "Share the height among 40 coins. 60 divided by 40 equals 1.5.",
+   "One coin is 1.5 millimetres thick."
+  ]
+ },
+ "G4A_UNITS_011": {
+  "q": "Which of these lengths is the greatest?",
+  "options": [
+   "1.08 kilometres",
+   "1 kilometre 800 metres",
+   "1008 metres",
+   "10800 centimetres"
+  ],
+  "hints": [
+   "Lengths can be compared only when they are in the same unit. Metres is a good choice here.",
+   "Change each length into metres. For example, 1.08 kilometres equals 1.08 times 1000 metres.",
+   "A similar one: which is greater, 2.5 kilometres or 2 kilometres 60 metres? 2.5 kilometres equals 2500 metres and 2 kilometres 60 metres equals 2060 metres, so 2.5 kilometres is greater."
+  ],
+  "steps": [
+   "Change each length into metres: 1.08 kilometres equals 1080 metres and 1 kilometre 800 metres equals 1800 metres.",
+   "1008 metres is already in metres, and 10800 centimetres equals 108 metres. 10800 divided by 100 equals 108.",
+   "Compare 1080, 1800, 1008 and 108. The greatest is 1800 metres, which is 1 kilometre 800 metres."
+  ]
+ },
+ "G4A_UNITS_012": {
+  "q": "One tablet contains 250 milligrams of medicine. How many grams of medicine are there in a strip of 10 tablets?",
+  "options": [
+   "25 grams",
+   "0.25 grams",
+   "2500 grams",
+   "2.5 grams"
+  ],
+  "hints": [
+   "Find the total in milligrams first, then change it into grams.",
+   "10 times 250 equals 2500 milligrams. Remember that 1000 milligrams make 1 gram.",
+   "A similar one: 4 tablets of 500 milligrams each. 4 times 500 equals 2000 milligrams, and 2000 divided by 1000 equals 2 grams."
+  ],
+  "steps": [
+   "Medicine in 10 tablets, in milligrams. 10 times 250 equals 2500.",
+   "Change milligrams into grams: 1000 milligrams equals 1 gram. 2500 divided by 1000 equals 2.5.",
+   "The strip contains 2.5 grams of medicine."
+  ]
+ },
+ "G4A_UNITS_013": {
+  "q": "A tailor has 5 metres of cloth. He uses 2 metres 35 centimetres to stitch a kurta. How much cloth is left?",
+  "options": [
+   "3 metres 35 centimetres",
+   "3 metres 65 centimetres",
+   "7 metres 35 centimetres",
+   "2 metres 65 centimetres"
+  ],
+  "hints": [
+   "This is a subtraction of lengths. It helps to write both lengths in centimetres.",
+   "5 metres equals 500 centimetres and 2 metres 35 centimetres equals 235 centimetres. Now subtract.",
+   "A similar one: 4 metres minus 1 metre 20 centimetres. That is 400 centimetres minus 120 centimetres, which is 280 centimetres, which is 2 metres 80 centimetres."
+  ],
+  "steps": [
+   "Write both lengths in centimetres: 5 metres equals 500 centimetres and 2 metres 35 centimetres equals 235 centimetres.",
+   "Subtract. 500 minus 235 equals 265.",
+   "265 centimetres is 2 metres 65 centimetres. So 2 metres 65 centimetres of cloth is left."
+  ]
+ },
+ "G4A_UNITS_014": {
+  "q": "A running track is 4 hectometres long. Sunil runs 5 rounds of the track. How many kilometres does he run?",
+  "options": [
+   "20 kilometres",
+   "2 kilometres",
+   "0.2 kilometres",
+   "200 kilometres"
+  ],
+  "hints": [
+   "Change hectometres into metres first. 'Hecto' means one hundred.",
+   "1 hectometre equals 100 metres, so one round is 4 times 100 metres. Then find 5 rounds.",
+   "A similar one: a path is 3 hectometres long and Riya walks it 10 times. 3 times 100 equals 300 metres, and 300 times 10 equals 3000 metres, which is 3 kilometres."
+  ],
+  "steps": [
+   "1 hectometre equals 100 metres. Find the length of one round in metres. 4 times 100 equals 400.",
+   "Distance for 5 rounds. 400 times 5 equals 2000.",
+   "Change metres into kilometres. Sunil runs 2 kilometres. 2000 divided by 1000 equals 2."
+  ]
+ },
+ "G4A_UNITS_015": {
+  "q": "Rina needs 150 laddoos for a function. The shop sells laddoos only in boxes of one dozen. What is the least number of boxes she must buy?",
+  "options": [
+   "12",
+   "15",
+   "13",
+   "14"
+  ],
+  "hints": [
+   "A dozen is 12. Find how many lots of 12 are needed to reach at least 150.",
+   "Divide 150 by 12 and look at the remainder. Think about what the remainder means for Rina.",
+   "A similar one: 100 cups are needed and they come in packs of a dozen. 100 divided by 12 equals 8 remainder 4, so 8 packs are not enough and 9 packs are needed."
+  ],
+  "steps": [
+   "1 dozen equals 12. Divide 150 by 12. 150 divided by 12 equals 12 remainder 6.",
+   "12 boxes hold 144 laddoos, so 6 more laddoos are still needed. 12 times 12 equals 144.",
+   "One more box is needed. Rina must buy 13 boxes."
+  ]
+ },
+ "G4A_UNITS_016": {
+  "q": "On a trek, Arjun walks 2 kilometres 75 metres before breakfast, 850 metres before lunch and 1.5 kilometres in the evening. How many kilometres does he walk in all?",
+  "options": [
+   "4.425 kilometres",
+   "5.1 kilometres",
+   "12.075 kilometres",
+   "2.925 kilometres"
+  ],
+  "hints": [
+   "The three distances are written in three different ways. Change them all into metres, add, then change back.",
+   "2 kilometres 75 metres equals 2075 metres and 1.5 kilometres equals 1500 metres. Now add these to 850 metres.",
+   "A similar one: 1 kilometre 40 metres plus 700 metres plus 2.5 kilometres. In metres that is 1040 plus 700, plus 2500, which is 4240 metres, which is 4.24 kilometres."
+  ],
+  "steps": [
+   "Write each distance in metres: 2 kilometres 75 metres equals 2075 metres, and 1.5 kilometres equals 1500 metres.",
+   "Add the three distances. 2075 plus 850, plus 1500, equals 4425.",
+   "Change metres into kilometres. Arjun walks 4.425 kilometres in all. 4425 divided by 1000 equals 4.425."
+  ]
+ },
+ "G4A_UNITS_017": {
+  "q": "An empty basket weighs 600 grams. When 12 mangoes of equal weight are put in it, the basket weighs 4 kilograms 200 grams. What is the weight of one mango?",
+  "options": [
+   "300 grams",
+   "350 grams",
+   "400 grams",
+   "30 grams"
+  ],
+  "hints": [
+   "The weight given includes the basket. Find the weight of the mangoes alone first.",
+   "4 kilograms 200 grams equals 4200 grams. Take away the 600 gram basket to get the weight of the 12 mangoes.",
+   "A similar one: a 500 gram box with 10 equal apples weighs 2 kilograms 500 grams. The apples weigh 2500 minus 500, which is 2000 grams, so each apple weighs 2000 divided by 10, which is 200 grams."
+  ],
+  "steps": [
+   "Change to grams: 4 kilograms 200 grams equals 4200 grams.",
+   "Take away the weight of the basket. 4200 minus 600 equals 3600.",
+   "Share among 12 mangoes. One mango weighs 300 grams. 3600 divided by 12 equals 300."
+  ]
+ },
+ "G4A_UNITS_018": {
+  "q": "A leaking tap drips 5 millilitres of water every minute. How many litres of water does it waste in one full day?",
+  "options": [
+   "0.3 litres",
+   "72 litres",
+   "7.2 litres",
+   "0.12 litres"
+  ],
+  "hints": [
+   "Go step by step: one minute, then one hour, then one day. Change to litres at the end.",
+   "An hour has 60 minutes, so the tap loses 5 times 60 millilitres in an hour. Then use 24 hours in a day.",
+   "A similar one: a tap drips 10 millilitres a minute. In an hour that is 10 times 60, which is 600 millilitres, and in 5 hours it is 600 times 5, which is 3000 millilitres, which is 3 litres."
+  ],
+  "steps": [
+   "Water lost in one hour. 5 times 60 equals 300.",
+   "Water lost in 24 hours. 300 times 24 equals 7200.",
+   "Change millilitres into litres. The tap wastes 7.2 litres in a day. 7200 divided by 1000 equals 7.2."
+  ]
+ },
+ "G4A_UNITS_019": {
+  "q": "A snail crawls 3 centimetres 5 millimetres every minute. How many minutes does it take to crawl 2.1 metres?",
+  "options": [
+   "6 minutes",
+   "600 minutes",
+   "70 minutes",
+   "60 minutes"
+  ],
+  "hints": [
+   "Write both lengths in the same small unit, then see how many times one fits into the other.",
+   "3 centimetres 5 millimetres equals 35 millimetres. Now change 2.1 metres into millimetres.",
+   "A similar one: an ant moves 2 centimetres 5 millimetres a minute and must go 1 metre. That is 25 millimetres a minute and 1000 millimetres in all, so it takes 1000 divided by 25, which is 40 minutes."
+  ],
+  "steps": [
+   "Change the snail's distance each minute into millimetres. 3 times 10, plus 5, equals 35.",
+   "Change 2.1 metres into millimetres: 1 metre equals 1000 millimetres. 2.1 times 1000 equals 2100.",
+   "Divide. The snail takes 60 minutes. 2100 divided by 35 equals 60."
+  ]
+ },
+ "G4A_UNITS_020": {
+  "q": "Pencils are sold only in packets of a dozen, and erasers only in packets of a score. Asha wants to buy exactly as many pencils as erasers. What is the smallest number of pencils she can buy?",
+  "options": [
+   "240",
+   "60",
+   "120",
+   "32"
+  ],
+  "hints": [
+   "The number of pencils is a multiple of 12 and the number of erasers is a multiple of 20. You need a number that is both.",
+   "List the multiples of 20: 20, 40, and so on. Check which is the first one that 12 also divides exactly.",
+   "A similar one: plates in packs of 6 and cups in packs of 8. Multiples of 8 are 8, 16, 24, and 24 is the first that 6 divides, so the smallest equal number is 24."
+  ],
+  "steps": [
+   "A dozen is 12 and a score is 20, so we need the smallest number that is a multiple of both.",
+   "Multiples of 20 are 20, 40, 60. Of these, 12 does not divide 20 or 40.",
+   "12 divides 60 exactly, so 60 is the smallest common multiple. 12 times 5 equals 60.",
+   "The smallest number of pencils Asha can buy is 60."
+  ]
+ },
+ "G4A_UNITS_021": {
+  "q": "Posts are fixed along a straight fence 20 metres long. There is a post at each end, and the posts are 2 metres 50 centimetres apart. How many posts are there?",
+  "options": [
+   "8",
+   "9",
+   "10",
+   "7"
+  ],
+  "hints": [
+   "First find how many gaps fit along the fence. Then think about how the number of posts compares with the number of gaps.",
+   "20 metres equals 2000 centimetres and 2 metres 50 centimetres equals 250 centimetres. Divide to find the number of gaps.",
+   "A similar one: a 12 metre fence with posts 3 metres apart and a post at each end. 12 divided by 3 equals 4 gaps, so there are 4 plus 1, which is 5 posts."
+  ],
+  "steps": [
+   "Write both lengths in centimetres: 20 metres equals 2000 centimetres and 2 metres 50 centimetres equals 250 centimetres.",
+   "Find the number of gaps. 2000 divided by 250 equals 8.",
+   "With a post at each end, the posts are one more than the gaps. 8 plus 1 equals 9.",
+   "There are 9 posts."
+  ]
+ },
+ "G4A_UNITS_022": {
+  "q": "Amma pours 1 litre 200 millilitres of juice equally into 8 glasses. The children drink 3 of the glasses. How many litres of juice are left?",
+  "options": [
+   "0.45 litres",
+   "7.5 litres",
+   "0.6 litres",
+   "0.75 litres"
+  ],
+  "hints": [
+   "Find how much juice is in one glass, then how many glasses are still full.",
+   "1 litre 200 millilitres equals 1200 millilitres. Divide by 8 to find the juice in one glass.",
+   "A similar one: 2 litres shared equally into 10 cups, and 4 cups are drunk. Each cup has 200 millilitres, 6 cups are left, and 6 times 200 equals 1200 millilitres, which is 1.2 litres."
+  ],
+  "steps": [
+   "Change to millilitres: 1 litre 200 millilitres equals 1200 millilitres.",
+   "Juice in one glass. 1200 divided by 8 equals 150.",
+   "Glasses left: 8 minus 3 equals 5. Juice left in them. 5 times 150 equals 750.",
+   "750 millilitres equals 0.75 litres, so 0.75 litres of juice are left."
+  ]
+ },
+ "G4A_UNITS_023": {
+  "q": "Each step Anu takes is 60 centimetres long. How many steps does she take to walk 1.5 kilometres?",
+  "options": [
+   "2500",
+   "250",
+   "25",
+   "25000"
+  ],
+  "hints": [
+   "The step is in centimetres and the walk is in kilometres. Bring both to the same unit before dividing.",
+   "1.5 kilometres equals 1500 metres. Now change 1500 metres into centimetres.",
+   "A similar one: steps of 50 centimetres over 2 kilometres. 2 kilometres equals 2000 metres, which is 200000 centimetres, and 200000 divided by 50 equals 4000 steps."
+  ],
+  "steps": [
+   "Change kilometres into metres. 1.5 times 1000 equals 1500.",
+   "Change metres into centimetres. 1500 times 100 equals 150000.",
+   "Divide by the length of one step. Anu takes 2500 steps. 150000 divided by 60 equals 2500."
+  ]
+ },
+ "G4A_UNITS_024": {
+  "q": "A shopkeeper buys 1 gross of pens for 720 rupees and sells them at 8 rupees each. How much money does he gain on one score of pens?",
+  "options": [
+   "36 rupees",
+   "160 rupees",
+   "60 rupees",
+   "100 rupees"
+  ],
+  "hints": [
+   "Find what one pen cost him. Then compare it with the selling price of one pen.",
+   "1 gross equals 144 pens, so one pen cost 720 divided by 144 rupees.",
+   "A similar one: 1 gross of buttons costs 288 rupees and each sells for 3 rupees. One button cost 288 divided by 144, which is 2 rupees, the gain is 1 rupee each, so on a dozen the gain is 12 rupees."
+  ],
+  "steps": [
+   "1 gross equals 144. Find the cost of one pen. 720 divided by 144 equals 5.",
+   "Gain on one pen. 8 minus 5 equals 3.",
+   "1 score equals 20 pens. 20 times 3 equals 60.",
+   "He gains 60 rupees on one score of pens."
+  ]
+ },
+ "G4A_UNITS_025": {
+  "q": "A frog is at the bottom of a well 2 metres 60 centimetres deep. Each day it climbs up 50 centimetres, and each night it slips back 20 centimetres. On which day does the frog climb out of the well?",
+  "options": [
+   "9th day",
+   "6th day",
+   "8th day",
+   "13th day"
+  ],
+  "hints": [
+   "In one full day and night the frog gains a little. But think carefully about the last day: once it reaches the top, it does not slip back.",
+   "The well is 260 centimetres deep, and each day and night together the frog gains 50 minus 20, which is 30 centimetres. Find when the frog is within one 50 centimetre climb of the top.",
+   "A similar one: a well 1 metre deep, climbing 30 centimetres by day and slipping 10 centimetres by night. After 4 days and nights the frog is at 80 centimetres, and on the 5th day it climbs to 110 centimetres, so it is out on the 5th day."
+  ],
+  "steps": [
+   "The well is 2 metres 60 centimetres, which is 260 centimetres deep. In each full day and night the frog gains 30 centimetres. 50 minus 20 equals 30.",
+   "After 7 days and nights the frog is 210 centimetres up. 7 times 30 equals 210.",
+   "On the next day it climbs 50 centimetres and reaches the top. 210 plus 50 equals 260.",
+   "The frog climbs out on the 8th day."
+  ]
+ },
+ "G4A_UNITS_026": {
+  "q": "Three parcels weigh 2.4 kilograms, 2 kilograms 50 grams and 2450 grams. The lightest parcel and the heaviest parcel are put on a weighing scale together. What does the scale show?",
+  "options": [
+   "4.9 kilograms",
+   "4.85 kilograms",
+   "4.5 kilograms",
+   "4.45 kilograms"
+  ],
+  "hints": [
+   "The three weights are written in three different ways. Change them all into the same unit before you decide which is lightest and which is heaviest.",
+   "Change every weight into grams. Remember that 1 kilogram is 1000 grams, so think carefully about what 2 kilograms 50 grams becomes.",
+   "A similar problem: parcels of 1.3 kilograms, 1 kilogram 30 grams and 1250 grams. In grams these are 1300, 1030 and 1250. The lightest is 1030 grams and the heaviest is 1300 grams. Together they weigh 2330 grams, which is 2.33 kilograms."
+  ],
+  "steps": [
+   "Change each weight into grams. 2.4 kilograms equals 2400 grams. 2 kilograms 50 grams equals 2050 grams.",
+   "The three weights are 2400 grams, 2050 grams and 2450 grams. The lightest is 2050 grams and the heaviest is 2450 grams.",
+   "Add the lightest and the heaviest. 2050 plus 2450 equals 4500.",
+   "4500 grams is the same as 4.5 kilograms, so the scale shows 4.5 kilograms."
+  ]
+ },
+ "G4A_UNITS_027": {
+  "q": "A plumber cuts a pipe 12 metres long into pieces that are each 1 metre 50 centimetres long. Each cut takes him 4 minutes. How many minutes does all the cutting take?",
+  "options": [
+   "32",
+   "28",
+   "36",
+   "24"
+  ],
+  "hints": [
+   "Find the number of pieces first. Then think about how many cuts are needed to make that many pieces. Picture a short pipe if it helps.",
+   "Change both lengths into centimetres and divide to find the number of pieces. Then picture cutting a pipe into just 2 pieces: how many cuts is that?",
+   "A similar problem: a 6 metre rod is cut into pieces of 1 metre 20 centimetres, and each cut takes 3 minutes. 600 divided by 120 equals 5 pieces. Five pieces need 4 cuts, so the time is 4 times 3, which is 12 minutes."
+  ],
+  "steps": [
+   "Change the lengths into centimetres and find the number of pieces. 1200 divided by 150 equals 8.",
+   "To get 8 pieces, the plumber makes one cut fewer than the number of pieces. 8 minus 1 equals 7.",
+   "Each cut takes 4 minutes. 7 times 4 equals 28.",
+   "All the cutting takes 28 minutes."
+  ]
+ },
+ "G4A_UNITS_028": {
+  "q": "Six strips of paper, each 25 centimetres long, are glued end to end to make one long strip. At every join, the two strips overlap by 15 millimetres. How long is the finished strip?",
+  "options": [
+   "142.5 centimetres",
+   "141 centimetres",
+   "75 centimetres",
+   "150 centimetres"
+  ],
+  "hints": [
+   "Each overlap makes the finished strip a little shorter. Count the joins carefully, and make sure all the lengths are in the same unit.",
+   "Picture the six strips in a row and count the places where two strips meet. Then change 15 millimetres into centimetres.",
+   "A similar problem: four strips of 30 centimetres are glued with a 20 millimetre overlap at each join. Four strips have 3 joins. 20 millimetres is 2 centimetres, so the overlaps take away 3 times 2, which is 6 centimetres. The finished strip is 120 minus 6, which is 114 centimetres long."
+  ],
+  "steps": [
+   "Without any overlap the six strips would be this long. 6 times 25 equals 150 centimetres.",
+   "Six strips in a row have 5 joins, and each overlap is 15 millimetres, which is 1.5 centimetres. 5 times 1.5 equals 7.5 centimetres.",
+   "Take the overlaps away. 150 minus 7.5 equals 142.5.",
+   "The finished strip is 142.5 centimetres long."
+  ]
+ },
+ "G4A_UNITS_029": {
+  "q": "An empty tank holds 50 litres. A tap pours 4 litres of water into it every minute. After 5 minutes a drain at the bottom is opened as well, and it lets out 1 litre 500 millilitres every minute while the tap keeps running. How many minutes after the tap was turned on is the tank full?",
+  "options": [
+   "12",
+   "20",
+   "13",
+   "17"
+  ],
+  "hints": [
+   "Split the story into two parts: the time when only the tap is running, and the time when the drain is open too. Work out each part, then think about what the question asks for.",
+   "Find how much water is in the tank after the first 5 minutes. Then find how much the water rises each minute once the drain is open.",
+   "A similar problem: a 30 litre tub fills at 3 litres a minute. After 4 minutes a hole lets out 1 litre a minute. After 4 minutes there are 12 litres, so 18 litres are still needed. Now the water rises 3 minus 1, which is 2 litres a minute, which takes 9 minutes. In all that is 4 plus 9, which is 13 minutes."
+  ],
+  "steps": [
+   "Find the water in the tank after the first 5 minutes. 5 times 4 equals 20 litres.",
+   "Find how much more is needed, and how fast the water rises with the drain open. 50 minus 20 equals 30. 4 minus 1.5 equals 2.5.",
+   "Rising 2.5 litres a minute means 5 litres every 2 minutes. Find the time for the remaining 30 litres. 30 divided by 5 equals 6. 6 times 2 equals 12.",
+   "Add the first 5 minutes. The tank is full 17 minutes after the tap was turned on. 5 plus 12 equals 17."
+  ]
+ },
+ "G4A_UNITS_030": {
+  "q": "A baker needs 14 dozen eggs. Eggs are sold only in trays of 30. He buys the smallest number of trays that gives him enough eggs. How many eggs are left over after he has used the eggs he needs?",
+  "options": [
+   "18",
+   "6",
+   "10",
+   "12"
+  ],
+  "hints": [
+   "Find how many eggs he needs and how many he has to buy. These are not the same, because he can only buy whole trays.",
+   "A dozen is 12, so find 14 times 12. Then find how many whole trays of 30 give at least that many eggs.",
+   "A similar problem: 7 dozen eggs are needed, which is 84 eggs, and trays hold 20. Four trays give only 80, so 5 trays are bought, which is 100 eggs. Left over: 100 minus 84 equals 16 eggs."
+  ],
+  "steps": [
+   "Find how many eggs the baker needs. 14 times 12 equals 168.",
+   "Five trays give 150 eggs, which is not enough. Six trays give 180 eggs. 6 times 30 equals 180.",
+   "Take away the eggs he needs. 180 minus 168 equals 12.",
+   "So 12 eggs are left over."
+  ]
+ },
+ "G4A_UNITS_031": {
+  "q": "Four shops sell the same milk. Shop P sells 500 millilitres for 28 rupees. Shop Q sells 1.5 litres for 81 rupees. Shop R sells 250 millilitres for 15 rupees. Shop S sells 2 litres for 110 rupees. In which shop does one litre of milk cost the least?",
+  "options": [
+   "Shop P",
+   "Shop Q",
+   "Shop R",
+   "Shop S"
+  ],
+  "hints": [
+   "The shops sell different amounts, so the prices on their own tell you nothing. Find what each shop charges for the same amount of milk.",
+   "Work out the price of 1 litre in each shop. For Shop P, 500 millilitres is half a litre, so double its price.",
+   "A similar problem: Shop X sells 250 millilitres of juice for 20 rupees and Shop Y sells 2 litres for 150 rupees. One litre at X costs 4 times 20, which is 80 rupees. One litre at Y costs 150 divided by 2, which is 75 rupees. So Y is cheaper, even though its price looks bigger."
+  ],
+  "steps": [
+   "Shop P: 500 millilitres is half a litre. 28 times 2 equals 56.",
+   "Shop R: 250 millilitres is a quarter of a litre. Shop S: 2 litres. 15 times 4 equals 60. 110 divided by 2 equals 55.",
+   "Shop Q: 1.5 litres is three half-litres, so a half-litre costs 27 rupees. 81 divided by 3 equals 27. 27 times 2 equals 54.",
+   "One litre costs 56 rupees, 54 rupees, 60 rupees and 55 rupees. The least is at Shop Q."
+  ]
+ },
+ "G4A_UNITS_032": {
+  "q": "A box holding 12 tins of the same weight weighs 5 kilograms 100 grams. When 4 of the tins are taken out, the box with the remaining tins weighs 3 kilograms 500 grams. What is the weight of the empty box?",
+  "options": [
+   "300 grams",
+   "400 grams",
+   "1 kilogram 600 grams",
+   "425 grams"
+  ],
+  "hints": [
+   "Compare the two weighings. Think about exactly what was removed between the first weighing and the second.",
+   "Change both weights into grams and subtract. The difference is the weight of the 4 tins that were taken out.",
+   "A similar problem: a crate with 10 equal bottles weighs 6 kilograms 500 grams, and with 5 bottles taken out it weighs 3 kilograms 500 grams. The 5 bottles weigh 3000 grams, so each is 600 grams. All 10 weigh 6000 grams, so the empty crate weighs 6500 minus 6000, which is 500 grams."
+  ],
+  "steps": [
+   "The difference between the two weighings is the weight of 4 tins. 5100 minus 3500 equals 1600.",
+   "Find the weight of one tin. 1600 divided by 4 equals 400.",
+   "Find the weight of all 12 tins. 12 times 400 equals 4800.",
+   "Take the tins away from the first weighing. The empty box weighs 300 grams. 5100 minus 4800 equals 300."
+  ]
+ },
+ "G4A_UNITS_033": {
+  "q": "The pages of a book are numbered from 1 to 300. Each sheet of paper carries two pages, one on each side, and is 0.1 millimetres thick. The book also has two covers, and each cover is 2 millimetres thick. How thick is the book?",
+  "options": [
+   "3.4 centimetres",
+   "1.7 centimetres",
+   "19 centimetres",
+   "1.9 centimetres"
+  ],
+  "hints": [
+   "Thickness comes from sheets of paper, not from page numbers. Work out how many sheets there are, then remember everything else that adds to the thickness.",
+   "Each sheet has a page on the front and a page on the back. Find how many sheets carry 300 pages.",
+   "A similar problem: a notebook has pages numbered 1 to 200, each sheet is 0.1 millimetres thick, and each of its two covers is 1 millimetre thick. There are 100 sheets, which are 10 millimetres thick. With the covers it is 10 plus 2, which is 12 millimetres, which is 1.2 centimetres."
+  ],
+  "steps": [
+   "Each sheet carries two pages, so find the number of sheets. 300 divided by 2 equals 150.",
+   "Find the thickness of the sheets. 150 times 0.1 equals 15 millimetres.",
+   "Add the two covers. 15, plus 2 times 2, equals 19 millimetres.",
+   "19 millimetres is the same as 1.9 centimetres, so the book is 1.9 centimetres thick."
+  ]
+ },
+ "G4A_UNITS_034": {
+  "q": "Rani needs 3 metres of lace to go around a tablecloth. She has three pieces of lace that are 1 metre 20 centimetres, 85 centimetres and 600 millimetres long. How many more centimetres of lace does she need?",
+  "options": [
+   "265 centimetres",
+   "95 centimetres",
+   "35 centimetres",
+   "89 centimetres"
+  ],
+  "hints": [
+   "Put every length into the same unit before adding. Then read the question again to see what it asks for.",
+   "Change all three pieces into centimetres. Remember that 10 millimetres make 1 centimetre, so think about what 600 millimetres becomes.",
+   "A similar problem: Mala needs 2 metres of ribbon and has pieces of 1 metre 10 centimetres, 40 centimetres and 300 millimetres. In centimetres these are 110, 40 and 30, which make 180 centimetres. She needs 200 minus 180, which is 20 centimetres more."
+  ],
+  "steps": [
+   "Change each piece into centimetres. 1 metre 20 centimetres equals 120 centimetres. 600 millimetres equals 60 centimetres.",
+   "Add the three pieces. 120 plus 85, plus 60, equals 265.",
+   "Rani needs 3 metres, which is 300 centimetres. Find how much more she needs. 300 minus 265 equals 35.",
+   "She needs 35 centimetres more lace."
+  ]
+ },
+ "G4A_UNITS_035": {
+  "q": "3 metres equals how many centimetres?",
+  "options": [
+   "30",
+   "300",
+   "3000",
+   "3"
+  ],
+  "hints": [
+   "Think about how many centimetres make one metre.",
+   "One metre is 100 centimetres. So 3 metres is 3 lots of 100 centimetres.",
+   "A similar problem: 7 metres in centimetres. Each metre is 100 centimetres, so 7 times 100 equals 700 centimetres."
+  ],
+  "steps": [
+   "One metre is 100 centimetres.",
+   "Multiply the number of metres by 100. So 3 metres is 300 centimetres. 3 times 100 equals 300."
+  ]
+ },
+ "G4A_UNITS_036": {
+  "q": "A bag of rice weighs 5 kilograms. How many grams is that?",
+  "options": [
+   "500 grams",
+   "50 grams",
+   "5000 grams",
+   "50000 grams"
+  ],
+  "hints": [
+   "Think about how many grams make one kilogram.",
+   "One kilogram is 1000 grams. So 5 kilograms is 5 lots of 1000 grams.",
+   "A similar problem: 2 kilograms in grams. Each kilogram is 1000 grams, so 2 times 1000 equals 2000 grams."
+  ],
+  "steps": [
+   "One kilogram is 1000 grams.",
+   "Multiply the number of kilograms by 1000. The bag weighs 5000 grams. 5 times 1000 equals 5000."
+  ]
+ },
+ "G4A_UNITS_037": {
+  "q": "A jug holds 2000 millilitres of water. How many litres is that?",
+  "options": [
+   "2 litres",
+   "20 litres",
+   "200 litres",
+   "4 litres"
+  ],
+  "hints": [
+   "Think about how many millilitres make one litre.",
+   "One litre is 1000 millilitres. Ask yourself how many lots of 1000 there are in 2000.",
+   "A similar problem: 5000 millilitres in litres. Each litre is 1000 millilitres, so 5000 divided by 1000 equals 5 litres."
+  ],
+  "steps": [
+   "One litre is 1000 millilitres.",
+   "Divide the number of millilitres by 1000. The jug holds 2 litres. 2000 divided by 1000 equals 2."
+  ]
+ },
+ "G4A_UNITS_038": {
+  "q": "How many eggs are there in 2 dozen?",
+  "options": [
+   "12",
+   "20",
+   "24",
+   "22"
+  ],
+  "hints": [
+   "Think about how many things make one dozen.",
+   "One dozen is 12. Two dozen means 2 lots of 12.",
+   "A similar problem: 3 dozen bananas. One dozen is 12, so 3 times 12 equals 36 bananas."
+  ],
+  "steps": [
+   "One dozen is 12.",
+   "Multiply by 2. There are 24 eggs in 2 dozen. 2 times 12 equals 24."
+  ]
+ },
+ "G4A_UNITS_039": {
+  "q": "Amma buys half a dozen bananas. How many bananas does she buy?",
+  "options": [
+   "6",
+   "12",
+   "2",
+   "5"
+  ],
+  "hints": [
+   "Think about how many things make one dozen, then take half of it.",
+   "One dozen is 12. Half a dozen is 12 shared into 2 equal parts.",
+   "A similar problem: half of a score of pencils. A score is 20, so half of it is 20 divided by 2, which is 10 pencils."
+  ],
+  "steps": [
+   "One dozen is 12.",
+   "Half a dozen is 12 divided by 2. Amma buys 6 bananas."
+  ]
+ },
+ "G4A_UNITS_040": {
+  "q": "Riya buys 250 grams of sugar and 500 grams of flour. What is the total weight of what she buys?",
+  "options": [
+   "700 grams",
+   "250 grams",
+   "850 grams",
+   "750 grams"
+  ],
+  "hints": [
+   "Both weights are in grams, so they can be put together straight away.",
+   "Add the two weights: 250 grams and 500 grams.",
+   "A similar problem: 300 grams of dal and 400 grams of rice. Both are in grams, so the total is 300 plus 400, which is 700 grams."
+  ],
+  "steps": [
+   "Both weights are in grams, so add them. 250 plus 500 equals 750.",
+   "The total weight is 750 grams."
+  ]
+ },
+ "G4A_UNITS_041": {
+  "q": "A rope is 8 metres long. Ravi cuts off a piece 3 metres long. How long is the rope that is left?",
+  "options": [
+   "11 metres",
+   "6 metres",
+   "4 metres",
+   "5 metres"
+  ],
+  "hints": [
+   "When a piece is cut off, the rope gets shorter.",
+   "Take the 3 metre piece away from the 8 metre rope.",
+   "A similar problem: a ribbon is 9 metres long and 2 metres is cut off. The ribbon left is 9 minus 2, which is 7 metres long."
+  ],
+  "steps": [
+   "Take the piece that was cut off away from the whole rope. 8 minus 3 equals 5.",
+   "The rope that is left is 5 metres long."
+  ]
+ },
+ "G4A_UNITS_042": {
+  "q": "Which unit is best for measuring the weight of a watermelon?",
+  "options": [
+   "Litre",
+   "Kilogram",
+   "Centimetre",
+   "Millilitre"
+  ],
+  "hints": [
+   "Think about what each unit measures: how heavy, how long, or how much liquid.",
+   "A watermelon is put on a weighing scale. Which of these units appears on a weighing scale?",
+   "A similar problem: for the length of a table we use a unit of length, the centimetre or the metre, because we measure it with a ruler or a tape."
+  ],
+  "steps": [
+   "Weight tells us how heavy something is. Units of weight are the gram and the kilogram.",
+   "Litres and millilitres measure liquids, and centimetres measure length.",
+   "So the best unit for the weight of a watermelon is the kilogram."
+  ]
+ },
+ "G4A_UNITS_043": {
+  "q": "Which of these lengths is the longest?",
+  "options": [
+   "1 centimetre",
+   "1 metre",
+   "1 millimetre",
+   "1 kilometre"
+  ],
+  "hints": [
+   "Think about each unit of length and what you would measure with it.",
+   "Put the four units in order from the smallest to the biggest: millimetre, centimetre, and so on.",
+   "A similar problem: which is heaviest, 1 gram or 1 kilogram? One kilogram is 1000 grams, so 1 kilogram is heavier."
+  ],
+  "steps": [
+   "From smallest to biggest the units are millimetre, centimetre, metre, kilometre.",
+   "One kilometre is 1000 metres, so it is far longer than the others.",
+   "The longest length is 1 kilometre."
+  ]
+ },
+ "G4A_UNITS_044": {
+  "q": "A shopkeeper has 4 bottles of juice. Each bottle holds 2 litres. How many litres of juice does he have in all?",
+  "options": [
+   "6 litres",
+   "2 litres",
+   "8 litres",
+   "42 litres"
+  ],
+  "hints": [
+   "There are several bottles and each holds the same amount. Think about which operation puts equal amounts together.",
+   "There are 4 bottles with 2 litres in each. Find 4 lots of 2 litres.",
+   "A similar problem: 3 cans with 5 litres in each hold 3 times 5, which is 15 litres in all."
+  ],
+  "steps": [
+   "There are 4 bottles with 2 litres in each, so multiply. 4 times 2 equals 8.",
+   "He has 8 litres of juice in all."
+  ]
+ },
+ "G4A_UNITS_045": {
+  "q": "A pencil is 15 centimetres long and an eraser is 5 centimetres long. They are placed end to end in a straight line. How long is the line they make?",
+  "options": [
+   "20 centimetres",
+   "10 centimetres",
+   "75 centimetres",
+   "25 centimetres"
+  ],
+  "hints": [
+   "When two things are placed end to end, their lengths are put together.",
+   "Both lengths are in centimetres. Add 15 centimetres and 5 centimetres.",
+   "A similar problem: a crayon 8 centimetres long and a chalk 6 centimetres long, end to end, make a line 8 plus 6, which is 14 centimetres long."
+  ],
+  "steps": [
+   "Placed end to end, the two lengths are added. 15 plus 5 equals 20.",
+   "The line they make is 20 centimetres long."
+  ]
+ },
+ "G4A_UNITS_046": {
+  "q": "A fruit seller has 36 bananas. How many dozen bananas is that?",
+  "options": [
+   "4 dozen",
+   "3 dozen",
+   "6 dozen",
+   "2 dozen"
+  ],
+  "hints": [
+   "Think about how many things make one dozen.",
+   "One dozen is 12. Find how many lots of 12 there are in 36.",
+   "A similar problem: 60 eggs in dozens. One dozen is 12, and 60 divided by 12 equals 5, so that is 5 dozen."
+  ],
+  "steps": [
+   "One dozen is 12.",
+   "Divide 36 by 12. The seller has 3 dozen bananas."
+  ]
+ },
+ "PYQ_2016_Q38": {
+  "q": "Which of the following is equal to 11.11 kilograms?",
+  "options": [
+   "11 kilograms 11 grams",
+   "1111 grams",
+   "11 kilograms 110 grams",
+   "11 kilograms 11 milligrams"
+  ],
+  "hints": [
+   "This is from the 2016 I P M exam, question 38.",
+   "Think carefully about what the question is asking.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 3, 11 kilograms 110 grams."
+  ]
+ },
+ "PYQ_2017_Q04": {
+  "q": "A ream of paper containing 500 sheets is 5 centimetres thick. On a month end stock taking day Mr. Deepak measured the thickness of the stack. The thickness of the stack measured 1 metre 22.5 centimetres. How many sheets were there in all?",
+  "options": [
+   "10250",
+   "12250",
+   "17750",
+   "10750"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 4.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 2, 12250."
+  ]
+ },
+ "PYQ_2017_Q15": {
+  "q": "What is 2 metres, plus 2 decimetres, plus 15 centimetres?",
+  "options": [
+   "2215 centimetres",
+   "225 centimetres",
+   "235 centimetres",
+   "212 centimetres"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 15.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 3, 235 centimetres."
+  ]
+ },
+ "PYQ_2017_Q30": {
+  "q": "Express 7 kilograms 70 grams as a decimal equivalent in kilograms.",
+  "options": [
+   "7.70 kilograms",
+   "70.7 kilograms",
+   "7.07 kilograms",
+   "7.007 kilograms"
+  ],
+  "hints": [
+   "This is from the 2017 I P M exam, question 30.",
+   "Think step by step.",
+   "Try working backwards from the options."
+  ],
+  "steps": [
+   "The correct answer is option 3, 7.07 kilograms."
+  ]
+ },
+ "PYQ_2018_Q09": {
+  "q": "The weight 8.05 kilograms is the decimal representation of which of the following?",
+  "options": [
+   "8 kilograms 500 grams",
+   "8 kilograms 50 grams",
+   "8 kilograms 5 grams",
+   "805 grams"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 9.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The correct answer is option 2, 8 kilograms 50 grams."
+  ]
+ },
+ "PYQ_2018_Q26": {
+  "q": "Twelve dozens of notebooks are piled up. Each notebook is 5 millimetres thick. What is the height of the pile of notebooks?",
+  "options": [
+   "72 centimetres",
+   "620 millimetres",
+   "7 metres 20 centimetres",
+   "None of these"
+  ],
+  "hints": [
+   "This is from the 2018 I P M exam, question 26.",
+   "Break the problem into smaller steps.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The correct answer is option 1, 72 centimetres."
+  ]
+ },
+ "PYQ_2018_Q34": {
+  "q": "In a bag of beans, each bean weighs 2.5 grams. If the weight of the beans in the bag is half a kilogram, how many beans are there in the bag?",
+  "options": [
+   "200",
+   "500",
+   "750",
+   "1000"
+  ],
+  "hints": [
+   "The two weights are in different units. Change the kilograms to grams, then see how many beans fit.",
+   "Half a kilogram is 500 grams. Now think how many beans of 2.5 grams make up 500 grams.",
+   "Similar example: each button weighs 2.5 grams and the box of buttons weighs 150 grams. Two buttons weigh 5 grams, and 150 divided by 5 equals 30 pairs. So there are 30 times 2, which is 60 buttons."
+  ],
+  "steps": [
+   "Half a kilogram is half of 1000 grams. 1000 divided by 2 equals 500.",
+   "Two beans weigh 5 grams together. 2.5 times 2 equals 5.",
+   "Find how many pairs of beans make 500 grams. 500 divided by 5 equals 100.",
+   "Each pair is 2 beans. There are 200 beans. 100 times 2 equals 200."
+  ]
+ },
+ "PYQ_2019_Q37": {
+  "q": "Express 7 kilograms 70 grams as a decimal.",
+  "options": [
+   "7.007 kilograms",
+   "700.7 kilograms",
+   "7.07 kilograms",
+   "7.70 kilograms"
+  ],
+  "hints": [
+   "This is from the 2019 I P M exam, question 37.",
+   "Identify the key concept first.",
+   "Eliminate obviously wrong options."
+  ],
+  "steps": [
+   "The correct answer is option 3, 7.07 kilograms."
+  ]
+ },
+ "Q_CH11_018": {
+  "q": "A ribbon is 6.9 metres long. How many pieces of 3 centimetres each can be cut from it?",
+  "options": [
+   "23",
+   "2.3",
+   "230",
+   "2300"
+  ],
+  "hints": [
+   "First, convert everything to the same unit. 6.9 metres equals how many centimetres?",
+   "6.9 metres equals 6.9 times 100, which is 690 centimetres. Now divide by 3 centimetres.",
+   "690 divided by 3 equals 230 pieces."
+  ],
+  "steps": [
+   "Convert metres to centimetres: 6.9 metres equals 690 centimetres. 6.9 times 100 equals 690 centimetres.",
+   "Divide by the piece length: 690 divided by 3. And 690 divided by 3 is 230.",
+   "230 pieces can be cut."
+  ]
+ },
+ "Q_CH11_019": {
+  "q": "If one bottle can hold 125 millilitres of oil, how many such bottles are needed to fill 2.5 litres of oil?",
+  "options": [
+   "200",
+   "25",
+   "20",
+   "100"
+  ],
+  "hints": [
+   "First convert litres to millilitres. 1 litre equals 1000 millilitres. So 2.5 litres equals what?",
+   "2.5 litres equals 2500 millilitres. Now divide by 125 millilitres per bottle.",
+   "2500 divided by 125 equals 20 bottles."
+  ],
+  "steps": [
+   "Convert litres to millilitres. 2.5 litres equals 2.5 times 1000, which is 2500 millilitres.",
+   "Divide the total millilitres by the millilitres per bottle. 2500 divided by 125.",
+   "2500 divided by 125 equals 20."
+  ]
+ },
+ "Q_CH12_001": {
+  "q": "To measure the perimeter of a classroom, which of the following units is suitable?",
+  "options": [
+   "Metre",
+   "Any of these",
+   "Litre",
+   "Kilogram"
+  ],
+  "hints": [
+   "Perimeter means the distance around something. Which unit measures distance?",
+   "Litre measures liquids, kilogram measures weight. What measures length?",
+   "Metre is the unit for measuring length and distance."
+  ],
+  "steps": [
+   "Perimeter is the total length around a shape.",
+   "Litre is for capacity or volume, kilogram is for mass or weight, and metre is for length.",
+   "So metre is the suitable unit."
+  ]
+ },
+ "Q_CH12_003": {
+  "q": "How do we convert decametre to decimetre?",
+  "options": [
+   "Multiply by 100",
+   "Divide by 100",
+   "Divide by 1000",
+   "Multiply by 10"
+  ],
+  "hints": [
+   "Use the metric ladder: Kilo, Hecto, Deca, Unit, Deci, Centi, Milli. Count the steps!",
+   "Deca is 2 steps above Deci. Moving down the ladder means multiplying by 10 each step.",
+   "2 steps down means multiply by 10 times 10, which is 100."
+  ],
+  "steps": [
+   "Place them on the metric ladder: Deca is above the unit, Deci is below.",
+   "Deca to Deci is 2 steps down, so multiply by 10 times 10. 10 times 10 equals 100.",
+   "So multiply by 100."
+  ]
+ },
+ "Q_CH12_004": {
+  "q": "In which of the following pairs is one unit 1 over 100 times the other?",
+  "options": [
+   "Kilogram and tonne",
+   "Centilitre and litre",
+   "Metre and kilometre",
+   "Gram and decagram"
+  ],
+  "hints": [
+   "1 over 100 means one unit is 100 times smaller than the other. Which prefix means 1 over 100?",
+   "Centi means 1 over 100. So a centilitre is 1 over 100 of a litre!",
+   "1 centilitre equals 1 over 100 of a litre. That's the 1 over 100 relationship."
+  ],
+  "steps": [
+   "We need a pair where one is exactly 1 over 100 of the other.",
+   "Check each: a metre is 1 over 1000 of a kilometre, not 1 over 100. A gram is 1 over 10 of a decagram, not 1 over 100. A kilogram is 1 over 1000 of a tonne, not 1 over 100.",
+   "A centilitre is 1 over 100 of a litre. Centi literally means hundredth!"
+  ]
+ },
+ "Q_CH12_005": {
+  "q": "125 millilitres equals how many litres?",
+  "options": [
+   "12.5",
+   "1.25",
+   "1 over 125",
+   "1 over 8"
+  ],
+  "hints": [
+   "1 litre equals 1000 millilitres. To convert millilitres to litres, divide by 1000.",
+   "125 divided by 1000 equals 0.125. Now simplify 0.125 as a fraction.",
+   "0.125 equals 125 over 1000, which is 1 over 8."
+  ],
+  "steps": [
+   "Convert millilitres to litres: divide by 1000. 125 divided by 1000 equals 0.125 litres.",
+   "Express as a fraction: 125 over 1000.",
+   "Simplify: divide both by 125. 125 divided by 125, over 1000 divided by 125, equals 1 over 8."
+  ]
+ },
+ "Q_CH12_006": {
+  "q": "37.02 kilograms equals what?",
+  "options": [
+   "37 kilograms 20 grams",
+   "37 kilograms 2 grams",
+   "37 and 2 over 100 grams",
+   "3702 grams"
+  ],
+  "hints": [
+   "Think about what 0.02 kilograms means in grams. 1 kilogram equals 1000 grams.",
+   "0.02 kilograms equals 0.02 times 1000, which is 20 grams. So 37.02 kilograms equals 37 kilograms and 20 grams.",
+   "37 kilograms 20 grams is the correct way to express it."
+  ],
+  "steps": [
+   "Split: 37.02 kilograms equals 37 kilograms plus 0.02 kilograms.",
+   "Convert 0.02 kilograms to grams: 0.02 times 1000 equals 20 grams.",
+   "So 37.02 kilograms equals 37 kilograms 20 grams."
+  ]
+ },
+ "Q_CH12_007": {
+  "q": "How many articles make 0.3 score?",
+  "options": [
+   "5",
+   "6",
+   "30",
+   "3"
+  ],
+  "hints": [
+   "First, how many articles are in 1 score?",
+   "1 score equals 20 articles. So 0.3 score equals 0.3 times 20.",
+   "0.3 times 20 equals 6 articles."
+  ],
+  "steps": [
+   "1 score equals 20 articles.",
+   "0.3 score is 0.3 times 20. And 0.3 times 20 is 6.",
+   "So 0.3 score equals 6 articles."
+  ]
+ },
+ "Q_CH12_008": {
+  "q": "How many gross make a dozen?",
+  "options": [
+   "0.12",
+   "1 over 12",
+   "144",
+   "12"
+  ],
+  "hints": [
+   "1 gross equals 12 dozens, which is 144 articles. 1 dozen equals 12 articles.",
+   "We need to know how many gross equal 1 dozen. We know that 1 gross equals 12 dozens.",
+   "1 dozen equals 1 over 12 of a gross."
+  ],
+  "steps": [
+   "1 gross equals 12 dozens, which is 144 articles.",
+   "So 1 dozen equals 1 over 12 of a gross.",
+   "1 over 12 of a gross makes a dozen."
+  ]
+ },
+ "Q_CH12_009": {
+  "q": "4 kilometres, plus 40 metres, plus 400 centimetres, equals how many metres?",
+  "options": [
+   "40404",
+   "4.404",
+   "4440",
+   "4044"
+  ],
+  "hints": [
+   "Convert everything to metres first. 1 kilometre equals how many metres? And 1 centimetre equals how many metres?",
+   "4 kilometres equals 4000 metres. 400 centimetres equals 4 metres. Now add all three.",
+   "4000 plus 40, plus 4, equals 4044 metres."
+  ],
+  "steps": [
+   "Convert kilometres to metres: 4 kilometres equals 4 times 1000, which is 4000 metres.",
+   "Convert centimetres to metres: 400 centimetres equals 400 divided by 100, which is 4 metres.",
+   "Add: 4000 plus 40, plus 4, equals 4044 metres."
+  ]
+ },
+ "Q_CH12_010": {
+  "q": "How many pieces each of 3 centimetres can be cut from a ribbon that is 6.9 metres long?",
+  "options": [
+   "3.9",
+   "230",
+   "23",
+   "2.3"
+  ],
+  "hints": [
+   "The ribbon is in metres but pieces are in centimetres. Convert to the same unit first!",
+   "6.9 metres equals 6.9 times 100, which is 690 centimetres. Now divide by 3 centimetres.",
+   "690 divided by 3 equals 230 pieces."
+  ],
+  "steps": [
+   "Convert the ribbon to centimetres: 6.9 metres equals 690 centimetres. 6.9 times 100 equals 690 centimetres.",
+   "Divide by the piece length: 690 divided by 3. And 690 divided by 3 is 230.",
+   "230 pieces can be cut."
+  ]
+ },
+ "Q_CH12_012": {
+  "q": "5 hectometres equals how many decimetres?",
+  "options": [
+   "500",
+   "50000",
+   "5000",
+   "50"
+  ],
+  "hints": [
+   "Use the metric ladder: hecto is 3 steps above deci.",
+   "Each step down means multiply by 10. So 3 steps means 10 times 10, times 10, which is 1000.",
+   "5 hectometres times 1000 equals 5000 decimetres."
+  ],
+  "steps": [
+   "Count the steps: Hecto, then Deca, then Unit, then Deci. That is 3 steps down.",
+   "Multiply by 10 cubed, which is 1000. 5 times 1000 equals 5000.",
+   "5 hectometres equals 5000 decimetres."
+  ]
+ },
+ "Q_CH12_013": {
+  "q": "800 grams equals how many kilograms?",
+  "options": [
+   "80",
+   "0.08",
+   "8",
+   "0.8"
+  ],
+  "hints": [
+   "To go from grams to kilograms, we go up the metric ladder. Do we multiply or divide?",
+   "Going from a smaller unit to a larger unit means divide. 1 kilogram equals 1000 grams.",
+   "800 divided by 1000 equals 0.8 kilograms."
+  ],
+  "steps": [
+   "To convert grams to kilograms, divide by 1000.",
+   "800 divided by 1000 equals 0.8.",
+   "800 grams equals 0.8 kilograms."
+  ]
+ },
+ "Q_CH12_014": {
+  "q": "80 metres equals how many kilometres?",
+  "options": [
+   "0.08",
+   "0.008",
+   "8",
+   "0.8"
+  ],
+  "hints": [
+   "1 kilometre equals 1000 metres. To convert metres to kilometres, divide by 1000.",
+   "What is 80 divided by 1000?",
+   "80 divided by 1000 equals 0.08 kilometres."
+  ],
+  "steps": [
+   "1 kilometre equals 1000 metres. Divide metres by 1000 to get kilometres. 80 divided by 1000.",
+   "Move the decimal 3 places left: 80 becomes 8.0, then 0.80, then 0.080. So 80 divided by 1000 equals 0.08.",
+   "80 metres equals 0.08 kilometres."
+  ]
+ },
+ "Q_CH12_015": {
+  "q": "5 milligrams equals how many grams?",
+  "options": [
+   "0.005",
+   "0.5",
+   "0.05",
+   "5000"
+  ],
+  "hints": [
+   "1 gram equals 1000 milligrams. So to go from milligrams to grams, divide by 1000.",
+   "What is 5 divided by 1000?",
+   "5 divided by 1000 equals 0.005 grams."
+  ],
+  "steps": [
+   "1 gram equals 1000 milligrams.",
+   "5 milligrams equals 5 divided by 1000 grams. 5 over 1000 equals 0.005.",
+   "5 milligrams equals 0.005 grams."
+  ]
+ },
+ "Q_CH12_016": {
+  "q": "3 metres 7 decimetres equals how many centimetres?",
+  "options": [
+   "370",
+   "37",
+   "3070",
+   "307"
+  ],
+  "hints": [
+   "Convert metres and decimetres separately to centimetres, then add.",
+   "1 metre equals 100 centimetres. 1 decimetre equals 10 centimetres.",
+   "3 metres equals 300 centimetres. 7 decimetres equals 70 centimetres. The total is 300 plus 70, which is 370 centimetres."
+  ],
+  "steps": [
+   "Convert 3 metres to centimetres: 3 times 100 equals 300 centimetres.",
+   "Convert 7 decimetres to centimetres: 7 times 10 equals 70 centimetres.",
+   "Add: 300 plus 70 equals 370 centimetres."
+  ]
+ },
+ "Q_CH12_017": {
+  "q": "3 metres 7 centimetres equals how many decimetres?",
+  "options": [
+   "30.7",
+   "307",
+   "3.7",
+   "37"
+  ],
+  "hints": [
+   "Convert everything to decimetres. 1 metre equals 10 decimetres. 1 centimetre equals 0.1 decimetres.",
+   "3 metres equals 30 decimetres. 7 centimetres equals 7 divided by 10, which is 0.7 decimetres.",
+   "30 plus 0.7 equals 30.7 decimetres."
+  ],
+  "steps": [
+   "Convert 3 metres to decimetres: 3 times 10 equals 30 decimetres.",
+   "Convert 7 centimetres to decimetres: 7 divided by 10 equals 0.7 decimetres.",
+   "Add: 30 plus 0.7 equals 30.7 decimetres."
+  ]
+ },
+ "Q_CH12_018": {
+  "q": "2.5 kilograms equals how many kilograms, and how many grams?",
+  "options": [
+   "25 kilograms 0 grams",
+   "2 kilograms 5 grams",
+   "2 kilograms 500 grams",
+   "2 kilograms 50 grams"
+  ],
+  "hints": [
+   "The whole number part stays as kilograms. The decimal part needs to be converted to grams.",
+   "0.5 kilograms equals 0.5 times 1000 grams, which is what?",
+   "0.5 times 1000 equals 500 grams. So 2.5 kilograms equals 2 kilograms 500 grams."
+  ],
+  "steps": [
+   "Split: 2.5 kilograms equals 2 kilograms plus 0.5 kilograms.",
+   "Convert 0.5 kilograms to grams: 0.5 times 1000 equals 500 grams.",
+   "2.5 kilograms equals 2 kilograms 500 grams."
+  ]
+ },
+ "Q_CH12_019": {
+  "q": "2.05 litres equals how many litres, and how many millilitres?",
+  "options": [
+   "2 litres 0.5 millilitres",
+   "2 litres 5 millilitres",
+   "2 litres 50 millilitres",
+   "2 litres 500 millilitres"
+  ],
+  "hints": [
+   "2 litres stays as litres. Convert 0.05 litres to millilitres.",
+   "1 litre equals 1000 millilitres. So 0.05 times 1000 equals what?",
+   "0.05 times 1000 equals 50 millilitres."
+  ],
+  "steps": [
+   "Split: 2.05 litres equals 2 litres plus 0.05 litres.",
+   "Convert 0.05 litres to millilitres: 0.05 times 1000 equals 50 millilitres.",
+   "2.05 litres equals 2 litres 50 millilitres."
+  ]
+ },
+ "Q_CH12_020": {
+  "q": "2.05 metres equals how many metres, and how many centimetres?",
+  "options": [
+   "2 metres 0.5 centimetres",
+   "2 metres 5 centimetres",
+   "20 metres 5 centimetres",
+   "2 metres 50 centimetres"
+  ],
+  "hints": [
+   "2 metres stays. Convert 0.05 metres to centimetres. Remember: 1 metre equals 100 centimetres.",
+   "What is 0.05 times 100?",
+   "0.05 times 100 equals 5 centimetres. So 2.05 metres equals 2 metres 5 centimetres."
+  ],
+  "steps": [
+   "Split: 2.05 metres equals 2 metres plus 0.05 metres.",
+   "Convert 0.05 metres to centimetres: 0.05 times 100 equals 5 centimetres.",
+   "2.05 metres equals 2 metres 5 centimetres."
+  ]
+ },
+ "Q_CH12_021": {
+  "q": "30 kilograms equals how many tonnes?",
+  "options": [
+   "0.3",
+   "0.03",
+   "0.003",
+   "3"
+  ],
+  "hints": [
+   "1 tonne equals 1000 kilograms. To convert kilograms to tonnes, divide by 1000.",
+   "What is 30 divided by 1000?",
+   "30 divided by 1000 equals 0.03 tonne."
+  ],
+  "steps": [
+   "1 tonne equals 1000 kilograms.",
+   "30 divided by 1000 equals 0.03.",
+   "30 kilograms equals 0.03 tonne."
+  ]
+ },
+ "Q_CH12_024": {
+  "q": "A shopkeeper has 5.4 kilograms of rice. He sells 2 kilograms 750 grams. How much rice is left?",
+  "options": [
+   "3 kilograms 350 grams",
+   "3.65 kilograms",
+   "2.75 kilograms",
+   "2 kilograms 650 grams"
+  ],
+  "hints": [
+   "Both amounts must be in the same unit before you subtract. Change them both to grams, or both to kilograms.",
+   "Change 5.4 kilograms into grams. Remember that 1 kilogram is 1000 grams, so 0.4 kilograms is 400 grams.",
+   "Similar example: 6.2 kilograms take away 3 kilograms 500 grams. 6.2 kilograms is 6200 grams and 3 kilograms 500 grams is 3500 grams. 6200 minus 3500 equals 2700 grams, which is 2 kilograms 700 grams."
+  ],
+  "steps": [
+   "Change 5.4 kilograms to grams. 5.4 kilograms is 5400 grams. 5.4 times 1000 equals 5400.",
+   "Change 2 kilograms 750 grams to grams. 2000 plus 750 equals 2750.",
+   "Subtract the rice that was sold. 5400 minus 2750 equals 2650.",
+   "2650 grams is 2 kilograms 650 grams. So 2 kilograms 650 grams of rice is left."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_021_02": {
+  "q": "A bottle holds 20 litres of water. How many glasses of 300 millilitres each can be filled?",
+  "options": [
+   "6000",
+   "66",
+   "20000",
+   "86"
+  ],
+  "hints": [
+   "First convert litres to millilitres: 1 litre is 1000 millilitres.",
+   "Then divide the total millilitres by the glass size.",
+   "20 litres is 20000 millilitres."
+  ],
+  "steps": [
+   "Convert: 20 litres is 20000 millilitres.",
+   "The number of glasses is 20000 divided by 300, which is 66."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2017_004_02": {
+  "q": "A drum holds 10 litres of water. How many glasses of 250 millilitres each can be filled?",
+  "options": [
+   "10000",
+   "40",
+   "50",
+   "2500"
+  ],
+  "hints": [
+   "First convert litres to millilitres: 1 litre is 1000 millilitres.",
+   "Then divide the total millilitres by the glass size.",
+   "10 litres is 10000 millilitres."
+  ],
+  "steps": [
+   "Convert: 10 litres is 10000 millilitres.",
+   "The number of glasses is 10000 divided by 250, which is 40."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2017_010_02": {
+  "q": "A tank holds 10 litres of water. How many glasses of 250 millilitres each can be filled?",
+  "options": [
+   "50",
+   "2500",
+   "10000",
+   "40"
+  ],
+  "hints": [
+   "First convert litres to millilitres: 1 litre is 1000 millilitres.",
+   "Then divide the total millilitres by the glass size.",
+   "10 litres is 10000 millilitres."
+  ],
+  "steps": [
+   "Convert: 10 litres is 10000 millilitres.",
+   "The number of glasses is 10000 divided by 250, which is 40."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2018_039_02": {
+  "q": "A tank holds 15 litres of water. How many glasses of 500 millilitres each can be filled?",
+  "options": [
+   "15000",
+   "7500",
+   "30",
+   "45"
+  ],
+  "hints": [
+   "First convert litres to millilitres: 1 litre is 1000 millilitres.",
+   "Then divide the total millilitres by the glass size.",
+   "15 litres is 15000 millilitres."
+  ],
+  "steps": [
+   "Convert: 15 litres is 15000 millilitres.",
+   "The number of glasses is 15000 divided by 500, which is 30."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_037_03_p2b": {
+  "q": "Nikhil has 4 bags of sugar, each weighing 8 kilograms 500 grams. What is the total weight in grams?",
+  "options": [
+   "34000",
+   "35000",
+   "8500",
+   "32000"
+  ],
+  "hints": [
+   "First convert 8 kilograms 500 grams to grams.",
+   "8 kilograms is 8000 grams, and 500 grams more makes 8500 grams.",
+   "Then multiply by 4 bags."
+  ],
+  "steps": [
+   "One bag is 8 kilograms 500 grams, which is 8500 grams.",
+   "The total is 8500 times 4, which is 34000 grams."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_037_04_p2b": {
+  "q": "Siddharth has 4 bags of wheat, each weighing 2 kilograms 750 grams. What is the total weight in grams?",
+  "options": [
+   "11000",
+   "8000",
+   "12000",
+   "2750"
+  ],
+  "hints": [
+   "First convert 2 kilograms 750 grams to grams.",
+   "2 kilograms is 2000 grams, and 750 grams more makes 2750 grams.",
+   "Then multiply by 4 bags."
+  ],
+  "steps": [
+   "One bag is 2 kilograms 750 grams, which is 2750 grams.",
+   "The total is 2750 times 4, which is 11000 grams."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2021_009_02": {
+  "q": "A drum holds 15 litres of water. How many glasses of 250 millilitres each can be filled?",
+  "options": [
+   "15000",
+   "75",
+   "60",
+   "3750"
+  ],
+  "hints": [
+   "First convert litres to millilitres: 1 litre is 1000 millilitres.",
+   "Then divide the total millilitres by the glass size.",
+   "15 litres is 15000 millilitres."
+  ],
+  "steps": [
+   "Convert: 15 litres is 15000 millilitres.",
+   "The number of glasses is 15000 divided by 250, which is 60."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2022_013_03_p2b": {
+  "q": "Aarav has 4 bags of rice, each weighing 6 kilograms 500 grams. What is the total weight in grams?",
+  "options": [
+   "24000",
+   "6500",
+   "26000",
+   "27000"
+  ],
+  "hints": [
+   "First convert 6 kilograms 500 grams to grams.",
+   "6 kilograms is 6000 grams, and 500 grams more makes 6500 grams.",
+   "Then multiply by 4 bags."
+  ],
+  "steps": [
+   "One bag is 6 kilograms 500 grams, which is 6500 grams.",
+   "The total is 6500 times 4, which is 26000 grams."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2022_034_01": {
+  "q": "Riya has 2 bags of rice, each weighing 8 kilograms 500 grams. What is the total weight in grams?",
+  "options": [
+   "18000",
+   "16000",
+   "17000",
+   "8500"
+  ],
+  "hints": [
+   "First convert 8 kilograms 500 grams to grams.",
+   "8 kilograms is 8000 grams, and 500 grams more makes 8500 grams.",
+   "Then multiply by 2 bags."
+  ],
+  "steps": [
+   "One bag is 8 kilograms 500 grams, which is 8500 grams.",
+   "The total is 8500 times 2, which is 17000 grams."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2025_015_02": {
+  "q": "A drum holds 5 litres of water. How many glasses of 200 millilitres each can be filled?",
+  "options": [
+   "5000",
+   "1000",
+   "30",
+   "25"
+  ],
+  "hints": [
+   "First convert litres to millilitres: 1 litre is 1000 millilitres.",
+   "Then divide the total millilitres by the glass size.",
+   "5 litres is 5000 millilitres."
+  ],
+  "steps": [
+   "Convert: 5 litres is 5000 millilitres.",
+   "The number of glasses is 5000 divided by 200, which is 25."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2025_025_01": {
+  "q": "Tara has 5 bags of lentils, each weighing 6 kilograms 500 grams. What is the total weight in grams?",
+  "options": [
+   "32500",
+   "30000",
+   "6500",
+   "33500"
+  ],
+  "hints": [
+   "First convert 6 kilograms 500 grams to grams.",
+   "6 kilograms is 6000 grams, and 500 grams more makes 6500 grams.",
+   "Then multiply by 5 bags."
+  ],
+  "steps": [
+   "One bag is 6 kilograms 500 grams, which is 6500 grams.",
+   "The total is 6500 times 5, which is 32500 grams."
+  ]
+ },
+ "VAR2_EXT_G4_FP_2025_034_04_p2b": {
+  "q": "Kavya has 5 bags of lentils, each weighing 5 kilograms 500 grams. What is the total weight in grams?",
+  "options": [
+   "5500",
+   "28500",
+   "27500",
+   "25000"
+  ],
+  "hints": [
+   "First convert 5 kilograms 500 grams to grams.",
+   "5 kilograms is 5000 grams, and 500 grams more makes 5500 grams.",
+   "Then multiply by 5 bags."
+  ],
+  "steps": [
+   "One bag is 5 kilograms 500 grams, which is 5500 grams.",
+   "The total is 5500 times 5, which is 27500 grams."
+  ]
+ }
+}
