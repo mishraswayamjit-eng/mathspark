@@ -62,9 +62,14 @@ def build_record():
             record["options"].setdefault(qid, {})[p["replace"]] = p["with"]
     for path in sorted(glob.glob(os.path.join(G4, "teach-out-*.json"))):
         record["teach"].update(load(path))
-    # Help written AFTER the options were repaired already describes the new options.
-    fresh = os.path.join(G4, "teach-out-07.json")
-    record["freshNotes"] = sorted(load(fresh)) if os.path.exists(fresh) else []
+    # Help written AFTER the options were repaired already describes the new options:
+    # teach-out-07 (repairs) and teach-out-11 onwards (the second rewrite round).
+    fresh = []
+    for path in sorted(glob.glob(os.path.join(G4, "teach-out-*.json"))):
+        number = int(os.path.basename(path)[len("teach-out-"):-len(".json")])
+        if number >= 7:
+            fresh += list(load(path))
+    record["freshNotes"] = sorted(set(fresh))
     # Later repairs of questions raters flagged: rewordings, option replacements, removals.
     repairs = os.path.join(G4, "repairs-out.json")
     if os.path.exists(repairs):
