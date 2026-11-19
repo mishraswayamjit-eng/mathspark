@@ -1,0 +1,6730 @@
+{
+ "G5A_ALGEBRA_001": {
+  "origin": "authored",
+  "check": {
+   "variable": "n",
+   "value": "2"
+  },
+  "beats": [
+   {
+    "say": "Meera thinks of a number, n. She adds 5, multiplies the result by 3, then takes away the number she first thought of. Let's write down what she has after each action.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "n: add 5, multiply the result by 3, subtract n",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First she adds 5. So now she has n plus 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "n + 5"
+     }
+    ]
+   },
+   {
+    "say": "Next she multiplies the result by 3. How do we write that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3n + 5",
+      "3(n + 5)",
+      "n + 15"
+     ],
+     "answer": 1,
+     "ifNot": "The result is the whole of n plus 5, so all of it is multiplied by 3. Brackets keep the n and the 5 together."
+    }
+   },
+   {
+    "say": "3 times the whole bracket. The 3 multiplies the n, and it multiplies the 5 as well. That gives 3 n plus 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3(n + 5) = 3n + 15"
+     },
+     {
+      "op": "arc",
+      "line": "l2",
+      "from": {
+       "text": "3"
+      },
+      "to": [
+       {
+        "text": "n"
+       },
+       {
+        "text": "5"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "say": "That is the trap in this question: multiplying only the n and leaving the 5 alone. The 5 was added before the multiplying, so it is multiplied too.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "15"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Last action: she subtracts the number she first thought of, which is n.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3n + 15 − n"
+     }
+    ]
+   },
+   {
+    "say": "3 n, take away 1 n. How many n are left?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2n",
+      "3n",
+      "4n"
+     ],
+     "answer": 0,
+     "ifNot": "We start with 3 lots of n and take 1 lot away. That leaves 2 lots of n."
+    }
+   },
+   {
+    "say": "3 n minus n is 2 n. So her final answer is 2 n plus 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3n + 15 − n = 2n + 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "2n + 15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with a real number. If Meera thinks of 2, she gets 7, then 21, then 19. And 2 times 2, plus 15, is 19 as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "(2 + 5) × 3 = 21"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "21 − 2 = 19"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "2 × 2 + 15 = 19"
+     }
+    ]
+   },
+   {
+    "say": "So: write what you have after each action, and use brackets whenever a whole result is multiplied."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_002": {
+  "origin": "authored",
+  "check": {
+   "variable": "p",
+   "value": "14"
+  },
+  "beats": [
+   {
+    "say": "A sheet of card is 4 p centimetres long and 3 p centimetres wide. A square of side p centimetres is cut away from one corner. We want the perimeter of the piece that is left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Card 4p cm by 3p cm. Square of side p cm cut from a corner",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start with the whole rectangle. Its perimeter is 2 times the length plus the breadth. 2 times, 4 p plus 3 p, is 14 p.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2 × (4p + 3p) = 14p"
+     }
+    ]
+   },
+   {
+    "say": "Now the corner square is cut away. What do you think happens to the perimeter?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "It gets smaller",
+      "It stays the same",
+      "It gets bigger"
+     ],
+     "answer": 1,
+     "ifNot": "It feels as if cutting a piece off must change the edge. But trace round the new shape with your finger: the cut takes some edge away, and it also makes some new edge."
+    }
+   },
+   {
+    "say": "Look at what goes. The cut removes p centimetres from the end of one long edge, and p centimetres from the end of one short edge.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Edges lost: p + p",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "But the cut also makes two new edges, inside the corner. They are two sides of the little square, so each one is p centimetres long.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Edges gained: p + p",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So we take away p and p, and we add back p and p. The changes cancel out exactly.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "14p − p − p + p + p = 14p"
+     },
+     {
+      "op": "group",
+      "line": "l4",
+      "targets": [
+       {
+        "text": "− p − p"
+       },
+       {
+        "text": "+ p + p"
+       }
+      ],
+      "label": "cancel"
+     }
+    ]
+   },
+   {
+    "say": "The perimeter of the piece that is left is still 14 p centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Perimeter = 14p cm",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "14p cm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is thinking that a smaller piece of card must have a smaller perimeter. Its area is smaller, but the walk round its edge is just as long."
+   },
+   {
+    "say": "Check with p as 1. The card is 4 by 3, with perimeter 14. Going round the cut shape, the edges are 4, 2, 1, 1, 3 and 3, and they add up to 14 too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4 + 2 + 1 + 1 + 3 + 3 = 14"
+     }
+    ]
+   },
+   {
+    "say": "So when a square is cut out of a corner, the two new inside edges replace the two pieces that went. The perimeter stays the same."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square has sides s centimetres long. A rectangle is made 3 centimetres longer and 3 centimetres narrower than the square. How do the two areas compare?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Square: s by s. Rectangle: 3 cm longer, 3 cm narrower",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The choices all say always, for every s. A good way in is to try a value and see what happens. Let's take s as 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Try s = 5: rectangle is 8 by 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The square is 5 by 5, so its area is 25. The rectangle is 3 longer, that's 8, and 3 narrower, that's 2. Its area is 8 times 2, which is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 × 5 = 25"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 × 2 = 16"
+     }
+    ]
+   },
+   {
+    "say": "So the rectangle is smaller, by 25 minus 16, which is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "25 − 16 = 9"
+     }
+    ]
+   },
+   {
+    "say": "One try is not enough for always. Take s as 10. The square is 100, and the rectangle is 13 by 7. What is the rectangle's area?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Try s = 10: rectangle is 13 by 7",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "10 × 10 = 100"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "91",
+      "100",
+      "94"
+     ],
+     "answer": 0,
+     "ifNot": "Count 13 sevens: 10 sevens, and then 3 more sevens. Altogether that comes to 91."
+    }
+   },
+   {
+    "say": "13 times 7 is 91. And 100 minus 91 is 9 again!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "13 × 7 = 91"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "100 − 91 = 9"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "9",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Why always 9? Narrowing takes off a strip 3 wide and s long. Lengthening adds a strip 3 wide, but only s minus 3 long. The new strip is short by 3 times 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "3 × 3 = 9"
+     }
+    ]
+   },
+   {
+    "say": "Two traps here. The perimeter does stay the same, so it is tempting to say the area does too. And the change is 3 times 3, not 3 plus 3."
+   },
+   {
+    "say": "So the rectangle is always 9 square centimetres smaller than the square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "The rectangle is always 9 sq cm smaller",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "9 sq cm smaller"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When a rule must hold for every value of a letter, try two values, spot what stays the same, and then look for the reason."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We are told that 2 a plus b equals 9. We want the value of 6 a, plus 3 b, minus 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "2a + b = 9. Find 6a + 3b − 4",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We can't find a and b on their own, because lots of pairs fit. So we hunt for 2 a plus b hiding inside the new expression. Remember, 9 is the value of the whole of it, not of a alone.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2a + b"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Look at 6 a plus 3 b. How does it compare with 2 a plus b?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 times as big",
+      "3 times as big",
+      "6 times as big"
+     ],
+     "answer": 1,
+     "ifNot": "Compare part by part. 6 a is 3 lots of 2 a, and 3 b is 3 lots of b. So each part is 3 times as big."
+    }
+   },
+   {
+    "say": "6 a is 3 times 2 a, and 3 b is 3 times b. So 6 a plus 3 b is 3 lots of the whole of 2 a plus b.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "6a + 3b = 3 × (2a + b)",
+      "label": true
+     },
+     {
+      "op": "arc",
+      "line": "l1",
+      "from": {
+       "text": "3",
+       "nth": 2
+      },
+      "to": [
+       {
+        "text": "2a"
+       },
+       {
+        "text": "b)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "say": "And we know 2 a plus b is 9. So 6 a plus 3 b is 3 times 9, which is 27.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 9 = 27"
+     }
+    ]
+   },
+   {
+    "say": "Careful, we're not finished. 27 is only the 6 a plus 3 b part. The expression still has minus 4 at the end.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "− 4"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "27 minus 4 is 23. So the value is 23.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "27 − 4 = 23",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "23"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with real numbers. If a is 4 and b is 1, then 2 a plus b is 9. And 6 a is 24, 3 b is 3, so we get 24 plus 3 minus 4, which is 23.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "2 × 4 + 1 = 9"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "6 × 4 = 24"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "24 + 3 − 4 = 23"
+     }
+    ]
+   },
+   {
+    "say": "So when you can't find the letters one by one, look for the given expression hiding inside the new one."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We are told that x minus y equals 4. We want the value of x plus 7, take away the bracket y minus 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "x − y = 4. Find (x + 7) − (y − 3)",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We can't find x and y on their own. So we'll open the brackets and look for x minus y, because that part we do know."
+   },
+   {
+    "say": "The first bracket is easy: x plus 7. The second bracket has a minus sign in front of it. That is the place to slow down.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "− (y − 3)"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "We are taking away the whole of y minus 3. What does that do?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "takes away y, takes away 3",
+      "takes away y, gives back 3",
+      "adds y, takes away 3"
+     ],
+     "answer": 1,
+     "ifNot": "y minus 3 is 3 less than y. So if we take away all of y, we have taken 3 too many, and we must give 3 back."
+    }
+   },
+   {
+    "say": "Taking away y minus 3 means taking away y, and then giving 3 back. So the minus 3 inside turns into plus 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(x + 7) − (y − 3) = x + 7 − y + 3",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "+ 3"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now bring the x and the y together. We get x minus y, plus 7, plus 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "= (x − y) + 7 + 3",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "(x − y)"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "And x minus y is 4. So the value is 4 plus 7 plus 3, which is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 + 7 + 3 = 14",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "14"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with x as 10 and y as 6, which are 4 apart. 10 plus 7 is 17, and 6 minus 3 is 3. Then 17 minus 3 is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "10 + 7 = 17"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "6 − 3 = 3"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "17 − 3 = 14"
+     }
+    ]
+   },
+   {
+    "say": "So remember: a minus sign in front of a bracket changes the sign inside it. Taking away a minus 3 gives 3 back."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_006": {
+  "origin": "authored",
+  "check": {
+   "variable": "n",
+   "value": "33"
+  },
+  "beats": [
+   {
+    "say": "Riya makes a row of squares from matchsticks. 1 square needs 4, 2 squares need 7, and 3 squares need 10. How many squares are in the row she makes with exactly 100 matchsticks?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Squares in a row: 4, 7, 10, ... sticks. Squares for 100?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Look at 4, then 7, then 10. How many matchsticks does each new square add?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "3",
+      "1"
+     ],
+     "answer": 1,
+     "ifNot": "Look at the jumps, from 4 to 7 and from 7 to 10. Each new square shares a side with the one before it, so it needs only 3 more."
+    }
+   },
+   {
+    "say": "Each new square adds 3. Only the very first square needs 4, which is 3 and 1 extra. So think of it as 3 for every square, plus 1 extra stick at the start.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 for each square, plus 1 extra",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For n squares, that is 3 n plus 1 matchsticks. Test it on 3 squares: 3 times 3, plus 1, is 10. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 3 + 1 = 10"
+     }
+    ]
+   },
+   {
+    "say": "Riya uses 100. So 3 n plus 1 equals 100, and now we work backwards.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3n + 1 = 100"
+     }
+    ]
+   },
+   {
+    "say": "What do we undo first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "divide 100 by 3",
+      "take away the 1 extra",
+      "divide 100 by 4"
+     ],
+     "answer": 1,
+     "ifNot": "The 1 extra stick is not part of any group of 3. So we take it away first, and then share the rest in threes."
+    }
+   },
+   {
+    "say": "Take 1 from both sides. 3 n equals 99.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l3",
+      "target": {
+       "text": "+ 1"
+      },
+      "note": "− 1"
+     },
+     {
+      "op": "both",
+      "line": "l3",
+      "text": "− 1"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3n = 99"
+     }
+    ]
+   },
+   {
+    "say": "Now share 99 in threes. 99 divided by 3 is 33. So Riya's row has 33 squares.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "l4",
+      "by": "3"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "n = 33",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "n = 33"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The tempting move is 100 divided by 4, because a square has 4 sides. But joined squares share sides, so only the first one costs 4."
+   },
+   {
+    "say": "Check: 3 times 33 is 99, and 1 more makes 100. Exactly right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × 33 + 1 = 100"
+     }
+    ]
+   },
+   {
+    "say": "So for a growing pattern: find what each step adds, write the rule, then work backwards from the total."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "On day n, plant A is 3 n plus 2 centimetres tall, and plant B is 5 n minus 40 centimetres. The days start from day 10. On which day is B taller than A for the first time?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A: (3n + 2) cm. B: (5n − 40) cm. n is 10 or more",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start on day 10. A is 3 times 10, plus 2, which is 32. B is 5 times 10, minus 40, which is 10. So A is well ahead.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 × 10 + 2 = 32"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 × 10 − 40 = 10"
+     }
+    ]
+   },
+   {
+    "say": "The gap between them is 32 minus 10, which is 22 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "32 − 10 = 22"
+     }
+    ]
+   },
+   {
+    "say": "Each day, A grows 3 centimetres and B grows 5. So what happens to the gap each day?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it shrinks by 2 cm",
+      "it shrinks by 5 cm",
+      "it grows by 2 cm"
+     ],
+     "answer": 0,
+     "ifNot": "B grows 5 while A grows 3. So every day B catches up by the difference, which is 2 centimetres."
+    }
+   },
+   {
+    "say": "The gap shrinks by 2 a day. A gap of 22 takes 22 divided by 2, which is 11 days, to close.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 − 3 = 2"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "22 ÷ 2 = 11"
+     }
+    ]
+   },
+   {
+    "say": "11 days after day 10 is day 21. And on day 21, both plants are 65 centimetres tall.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "10 + 11 = 21"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "3 × 21 + 2 = 65"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "5 × 21 − 40 = 65"
+     }
+    ]
+   },
+   {
+    "say": "So, is day 21 our answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, day 21",
+      "No, they are only level"
+     ],
+     "answer": 1,
+     "ifNot": "On day 21 the two plants are exactly the same height. The question asks for B to be taller, and level is not taller."
+    }
+   },
+   {
+    "say": "Here is the trap. On day 21 they are only equal. B is taller for the first time one day later, on day 22.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "21 + 1 = 22",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "22"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check day 22. A is 3 times 22, plus 2, which is 68. B is 5 times 22, minus 40, which is 70. B is ahead at last.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × 22 + 2 = 68"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "5 × 22 − 40 = 70"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "70 > 68"
+     }
+    ]
+   },
+   {
+    "say": "So in a catching up question: find the gap, find how fast it closes, and then read carefully whether you want level or ahead."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_008": {
+  "origin": "authored",
+  "check": {
+   "variable": "n",
+   "value": "8"
+  },
+  "beats": [
+   {
+    "say": "Asha works out 3 times the bracket n plus 4. Bala works out 3 n plus 4, with the same n. By how much is Asha's answer greater?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Asha: 3(n + 4). Bala: 3n + 4. How much greater is Asha's?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The two look almost the same. The only difference is Asha's brackets, so let's open them."
+   },
+   {
+    "say": "What is 3 times the bracket, n plus 4?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3n + 4",
+      "3n + 12",
+      "3n + 7"
+     ],
+     "answer": 1,
+     "ifNot": "The 3 multiplies everything inside the bracket. That is 3 lots of n, and 3 lots of 4 as well."
+    }
+   },
+   {
+    "say": "3 times n is 3 n, and 3 times 4 is 12. So Asha has 3 n plus 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3(n + 4) = 3n + 12"
+     },
+     {
+      "op": "arc",
+      "line": "l1",
+      "from": {
+       "text": "3"
+      },
+      "to": [
+       {
+        "text": "n"
+       },
+       {
+        "text": "4"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "say": "Bala has 3 n plus 4. Both of them have 3 n, so that part matches. Only the number parts differ: 12 for Asha, 4 for Bala.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3n + 4"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "12"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "4"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "12 minus 4 is 8. So Asha's answer is always 8 more than Bala's.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 − 4 = 8",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice that 12 is not the answer. Bala already has 4, so we want the gap between 12 and 4."
+   },
+   {
+    "say": "Check with n as 2. Asha: 2 plus 4 is 6, and 3 times 6 is 18. Bala: 3 times 2 is 6, plus 4 is 10. And 18 minus 10 is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × (2 + 4) = 18"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "3 × 2 + 4 = 10"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "18 − 10 = 8"
+     }
+    ]
+   },
+   {
+    "say": "So to compare two expressions, open the brackets first. Then compare them part by part."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_009": {
+  "origin": "authored",
+  "check": {
+   "variable": "p",
+   "value": "9"
+  },
+  "beats": [
+   {
+    "say": "A pen costs p rupees. Ravi buys 4 pens and gets 3 rupees off his whole bill. Sana buys 4 pens and gets 3 rupees off each pen. How much more than Sana does Ravi pay?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Ravi: 4 pens, ₹3 off the bill. Sana: 4 pens, ₹3 off each",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Ravi first. 4 pens cost 4 p, and 3 rupees comes off just once. So he pays 4 p minus 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4p − 3"
+     }
+    ]
+   },
+   {
+    "say": "Now Sana. Each of her pens costs p minus 3. What does she pay for 4 of them?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4p − 3",
+      "4(p − 3)",
+      "p − 12"
+     ],
+     "answer": 1,
+     "ifNot": "Each pen costs the whole of p minus 3, and she buys 4 of them. So the 4 multiplies the whole bracket."
+    }
+   },
+   {
+    "say": "Sana pays 4 times the bracket. 4 times p is 4 p, and 4 times 3 is 12. So she pays 4 p minus 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4(p − 3) = 4p − 12"
+     },
+     {
+      "op": "arc",
+      "line": "l2",
+      "from": {
+       "text": "4"
+      },
+      "to": [
+       {
+        "text": "p"
+       },
+       {
+        "text": "3"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "say": "See what happened? Sana's 3 rupees comes off 4 times, once for each pen. She saves 12 rupees. Ravi saves only 3.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "12"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Both start from 4 p. So Ravi pays more by the gap between the two savings: 12 minus 3, which is 9 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 − 3 = 9",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is thinking the two deals are the same, because both say 3 rupees off. Off the bill happens once. Off each pen happens 4 times."
+   },
+   {
+    "say": "Check with pens at 10 rupees. Ravi pays 4 tens minus 3, which is 37. Sana pays 4 sevens, which is 28. And 37 minus 28 is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4 × 10 − 3 = 37"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "4 × (10 − 3) = 28"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "37 − 28 = 9"
+     }
+    ]
+   },
+   {
+    "say": "So write an expression for each person, open the brackets, and compare. Ravi pays 9 rupees more."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_010": {
+  "origin": "authored",
+  "check": {
+   "variable": "r",
+   "value": "10"
+  },
+  "beats": [
+   {
+    "say": "We are told p equals 2 q, and q equals 3 r. We want one expression that is equal to p plus q plus r.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "p = 2q and q = 3r. Find p + q + r",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Three different letters can't be added as they stand. So the plan is to write all three using the same letter."
+   },
+   {
+    "say": "q is already written with r: q equals 3 r. So let's put everything in terms of r.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "q = 3r"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "p is 2 lots of q, and each q is 3 r. So what is p, written with r?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2r",
+      "5r",
+      "6r"
+     ],
+     "answer": 2,
+     "ifNot": "p is 2 lots of q, and each q is worth 3 r. 2 lots of 3 r make 6 r."
+    }
+   },
+   {
+    "say": "p is 2 times 3 r, which is 6 r. The slip to avoid is adding the 2 and the 3. 2 lots of something is a multiplication.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2 × 3r = 6r"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "p = 6r",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now add the three. p is 6 r, q is 3 r, and r is just 1 r. Don't leave that last one out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6r + 3r + r"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "r",
+       "nth": 3
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "6 and 3 and 1 make 10. So p plus q plus r equals 10 r.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "6r + 3r + r = 10r",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "10r"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with r as 1. Then q is 3 and p is 6. And 6 plus 3 plus 1 is 10, which is 10 times r.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "6 + 3 + 1 = 10"
+     }
+    ]
+   },
+   {
+    "say": "So to add different letters, first write each one using the same letter. Then just count how many you have."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_011": {
+  "origin": "authored",
+  "check": {
+   "variable": "k",
+   "value": "1"
+  },
+  "beats": [
+   {
+    "say": "A rectangle has a perimeter of 4 k plus 10 centimetres, and its length is k plus 4 centimetres. We want an expression for its breadth.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Perimeter (4k + 10) cm, length (k + 4) cm. Breadth?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "A rectangle's perimeter is made of 2 lengths and 2 breadths. We'll work backwards from it, one stage at a time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Perimeter = 2 lengths + 2 breadths",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "If we halve the perimeter, what do we have?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1 length + 1 breadth",
+      "2 breadths",
+      "1 breadth"
+     ],
+     "answer": 0,
+     "ifNot": "The perimeter is 2 lengths and 2 breadths. Half of that is 1 length and 1 breadth."
+    }
+   },
+   {
+    "say": "Half of 4 k is 2 k, and half of 10 is 5. So one length and one breadth together make 2 k plus 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "(4k + 10) ÷ 2 = 2k + 5"
+     }
+    ]
+   },
+   {
+    "say": "Now take the length away, and the breadth is what is left. The length is k plus 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "(2k + 5) − (k + 4)"
+     }
+    ]
+   },
+   {
+    "say": "Do the k parts and the number parts one at a time. 2 k minus k is k. And 5 minus 4 is 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 − 4 = 1"
+     }
+    ]
+   },
+   {
+    "say": "So the breadth is k plus 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "(2k + 5) − (k + 4) = k + 1",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "k + 1"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps to dodge. Taking the length from the whole perimeter leaves a length and 2 breadths. And stopping at 2 k plus 5 gives a length and a breadth together."
+   },
+   {
+    "say": "Check: a length and a breadth are k plus 4 and k plus 1. Add them and double it, and we get 4 k plus 10, our perimeter.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "2 × (k + 4 + k + 1) = 4k + 10"
+     }
+    ]
+   },
+   {
+    "say": "So to get from a perimeter to a side: halve it first, then take away the side you know. The breadth is k plus 1."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_012": {
+  "origin": "authored",
+  "check": {
+   "variable": "y",
+   "value": "4"
+  },
+  "beats": [
+   {
+    "say": "Arjun is y years old now. His father's age is 4 more than 3 times Arjun's age. We want the sum of their ages 5 years from now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Arjun: y. Father: 4 more than 3 times y. Sum in 5 years?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Take it in three stages. Their ages now, their ages in 5 years, and only then the sum."
+   },
+   {
+    "say": "Arjun is y now. His father is 3 times y, plus 4. So his father is 3 y plus 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Now: Arjun y, Father 3y + 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Think about 5 years from now. Who will be 5 years older?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only Arjun",
+      "only his father",
+      "both of them"
+     ],
+     "answer": 2,
+     "ifNot": "Time passes for everyone. In 5 years, Arjun is 5 years older, and so is his father."
+    }
+   },
+   {
+    "say": "Arjun will be y plus 5. His father will be 3 y plus 4, plus 5, which is 3 y plus 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "y + 5"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3y + 4 + 5 = 3y + 9"
+     }
+    ]
+   },
+   {
+    "say": "Now add the two ages: y plus 5, plus 3 y plus 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "y + 5 + 3y + 9"
+     }
+    ]
+   },
+   {
+    "say": "y and 3 y make 4 y. 5 and 9 make 14. So the sum of their ages will be 4 y plus 14.",
+    "board": [
+     {
+      "op": "group",
+      "line": "l4",
+      "targets": [
+       {
+        "text": "y"
+       },
+       {
+        "text": "3y"
+       }
+      ],
+      "label": "4y"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "y + 5 + 3y + 9 = 4y + 14",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "4y + 14"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is adding the 5 years only once. There are two people, and each of them grows 5 years older, so the sum grows by 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "5 + 5 = 10"
+     }
+    ]
+   },
+   {
+    "say": "Check with Arjun aged 10. His father is 34. In 5 years they are 15 and 39, which add up to 54. And 4 times 10, plus 14, is 54 too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × 10 + 4 = 34"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "15 + 39 = 54"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "4 × 10 + 14 = 54"
+     }
+    ]
+   },
+   {
+    "say": "So with ages: write each age now, then each age later, and add at the very end."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_013": {
+  "origin": "authored",
+  "check": {
+   "variable": "n",
+   "value": "15"
+  },
+  "beats": [
+   {
+    "say": "The n-th term of a sequence is 6 n plus 5, so the first term is 11. How many terms of the sequence are less than 100?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "nth term is 6n + 5. How many terms are less than 100?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The terms go 11, 17, 23, and keep climbing by 6. We need the last one that is still below 100, and its position, n.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l0",
+      "text": "11, 17, 23, ...",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For a term to be below 100, 6 n plus 5 must be less than 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "6n + 5 < 100"
+     }
+    ]
+   },
+   {
+    "say": "Take the 5 off both sides. So 6 n must be less than 95.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l1",
+      "target": {
+       "text": "+ 5"
+      },
+      "note": "− 5"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6n < 95"
+     }
+    ]
+   },
+   {
+    "say": "What is the biggest n that keeps 6 n below 95?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "14",
+      "15",
+      "16"
+     ],
+     "answer": 1,
+     "ifNot": "Try the 6 times table near 95. 6 times 15 stays under it, but 6 times 16 goes just over."
+    }
+   },
+   {
+    "say": "6 times 15 is 90, which fits. 6 times 16 is 96, which is too big. So the biggest n is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6 × 15 = 90"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "6 × 16 = 96"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. 100 divided by 6 is 16 and a bit, so 16 looks right. But that forgets the plus 5. The 16th term is 96 plus 5, which is 101. That is over 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6 × 16 + 5 = 101"
+     }
+    ]
+   },
+   {
+    "say": "And the 15th term is 90 plus 5, which is 95. That is the last one below 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "6 × 15 + 5 = 95"
+     }
+    ]
+   },
+   {
+    "say": "The terms below 100 run from the 1st up to the 15th. So there are 15 of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "n = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "n = 15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: set the rule below the limit, undo it step by step, then check the term on each side of the cut."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four expressions: n plus 1, 3 n, 2 n plus 4, and n times the bracket n plus 1, then plus 1. Which one gives an odd number for every whole number n?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Always odd?   n + 1,   3n,   2n + 4,   n × (n + 1) + 1",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Every whole number means odd ones and even ones. So we test each expression with one of each: n as 1, and n as 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Test n = 1 and n = 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "n plus 1: with n as 1, it gives 2. That is even already, so it is out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1 + 1 = 2"
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "n + 1"
+      }
+     }
+    ]
+   },
+   {
+    "say": "3 n: with n as 1, it gives 3, which is odd. Is that enough to trust it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, 3 is odd",
+      "No, try n = 2 as well"
+     ],
+     "answer": 1,
+     "ifNot": "One odd answer is not every answer. We said we would test an even n too, so try n as 2."
+    }
+   },
+   {
+    "say": "With n as 2, 3 n is 6. That is even, so 3 n is out too. This is the trap: an expression can look right for one value and still let us down.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 × 2 = 6"
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "3n"
+      }
+     }
+    ]
+   },
+   {
+    "say": "2 n plus 4 gives 6, and then 8. Both of its parts are even, so it is always even. Out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 × 1 + 4 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 × 2 + 4 = 8"
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "2n + 4"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The last one. With n as 1, it is 1 times 2, plus 1, which is 3. With n as 2, it is 2 times 3, plus 1, which is 7. Both are odd.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1 × 2 + 1 = 3"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "2 × 3 + 1 = 7"
+     }
+    ]
+   },
+   {
+    "say": "Why does it always work? n and n plus 1 are neighbours, so one of them is even. That makes their product even. And an even number plus 1 is odd.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "even + 1 = odd",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the expression that is always odd is n times the bracket n plus 1, then plus 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "n × (n + 1) + 1 is always odd",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "n × (n + 1) + 1"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "To test every n, try an odd one and an even one. A single even answer is enough to rule an expression out."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A taxi charges 40 rupees for the first 2 kilometres, and c rupees for every kilometre after that. We want the fare for a ride of d kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹40 for the first 2 km, then ₹c per km. Fare for d km?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Split the ride into two parts. The first 2 kilometres, with a fixed charge. And the rest, charged for each kilometre."
+   },
+   {
+    "say": "The first part is simple. The first 2 kilometres cost 40 rupees altogether, paid once.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "First 2 km: 40",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The whole ride is d kilometres. How many kilometres are left to pay for, at c rupees each?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "d",
+      "d − 2",
+      "d + 2"
+     ],
+     "answer": 1,
+     "ifNot": "The first 2 kilometres are already covered by the 40 rupees. So out of d kilometres, d minus 2 are left."
+    }
+   },
+   {
+    "say": "d minus 2 kilometres are left, at c rupees each. That costs c times the whole of d minus 2. The brackets keep d minus 2 together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "The rest: c × (d − 2)",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "(d − 2)"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Add the two parts. The fare is 40, plus c times the bracket d minus 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Fare = 40 + c × (d − 2)",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "40 + c × (d − 2)"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Watch the traps. c times d would charge for every kilometre, but the first 2 are already paid for. And without brackets, we would take 2 rupees off the fare, not 2 kilometres off the distance."
+   },
+   {
+    "say": "Check with numbers. Say c is 10 and the ride is 5 kilometres. Then 3 kilometres are left, costing 30. With the 40, the fare is 70.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "5 − 2 = 3"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "10 × 3 = 30"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "40 + 30 = 70"
+     }
+    ]
+   },
+   {
+    "say": "So for a charge in two parts: work out each part on its own, then add. The fare is 40, plus c times the bracket d minus 2."
+   }
+  ]
+ },
+ "G5A_ALGEBRA_016": {
+  "origin": "authored",
+  "check": {
+   "variable": "n",
+   "value": "3"
+  },
+  "beats": [
+   {
+    "say": "A number machine takes a number n. It doubles it, adds 6, halves the result, and then subtracts the n that went in. What comes out?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "n: double, add 6, halve the result, subtract n",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Follow the machine one action at a time. Doubling n gives 2 n. Adding 6 gives 2 n plus 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2n + 6"
+     }
+    ]
+   },
+   {
+    "say": "Now the machine halves the result. What is half of 2 n plus 6?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "n + 6",
+      "n + 3",
+      "2n + 3"
+     ],
+     "answer": 1,
+     "ifNot": "The result is the whole of 2 n plus 6, so both parts are halved. Half of 2 n is n, and half of 6 is 3."
+    }
+   },
+   {
+    "say": "Halving goes to both parts. Half of 2 n is n, and half of 6 is 3. So now the machine holds n plus 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "(2n + 6) ÷ 2 = n + 3"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "3"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "That was the trap: halving only the 2 n and leaving the 6 as it is. The 6 is part of the result, so it is halved as well."
+   },
+   {
+    "say": "Last action: subtract the n that went in. n plus 3, take away n.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "n + 3 − n"
+     }
+    ]
+   },
+   {
+    "say": "The n and the minus n cancel each other. All that is left is 3.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l3",
+      "target": {
+       "text": "n"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "l3",
+      "target": {
+       "text": "− n"
+      }
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "n + 3 − n = 3",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "3",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Look, there is no n left in the answer. Whatever number goes in, 3 comes out."
+   },
+   {
+    "say": "Check with 5. Double it and add 6, and we have 16. Halve it, 8. Take away the 5 we started with, and we get 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "5 × 2 + 6 = 16"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "16 ÷ 2 = 8"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "8 − 5 = 3"
+     }
+    ]
+   },
+   {
+    "say": "So follow a machine one action at a time, and remember that halving a result halves every part of it."
+   }
+  ]
+ },
+ "G5A_ANGLES_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "At which of these times is the smaller angle between the two hands exactly 45 degrees? 1:30, 4:30, 10:30, or 12:45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Exactly 45° between the hands?  1:30, 4:30, 10:30, 12:45",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, the size of one gap. The clock face is a full turn of 360 degrees, split into 12 equal gaps between the numbers. So each gap is 30 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "360 ÷ 12 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Take 4:30. The minute hand points at the 6. Where is the hour hand?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "exactly at the 4",
+      "halfway between 4 and 5",
+      "exactly at the 5"
+     ],
+     "answer": 1,
+     "ifNot": "At half past, the hour hand has had half an hour to move on. So it is halfway from the 4 to the 5."
+    }
+   },
+   {
+    "say": "That is the trap with clock angles. The hour hand does not wait at the 4. By half past, it has crept halfway to the 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4:30: hour hand halfway between 4 and 5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "From the hour hand to the 5 is half a gap, which is 15 degrees. From the 5 to the 6 is a whole gap, 30 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "30 ÷ 2 = 15"
+     }
+    ]
+   },
+   {
+    "say": "15 plus 30 is 45. So at 4:30 the angle is exactly 45 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "15 + 30 = 45"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "45"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's make sure of the others. At 1:30 the hands are 4 and a half gaps apart, and at 10:30 as well. That is 135 degrees each time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "4.5 × 30 = 135"
+     }
+    ]
+   },
+   {
+    "say": "At 12:45 the minute hand is on the 9, and the hour hand is three quarters of the way from 12 to 1. That is 3 and three quarters gaps, which is 112.5 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3.75 × 30 = 112.5"
+     }
+    ]
+   },
+   {
+    "say": "So the only time that gives 45 degrees is 4:30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "At 4:30 the angle is 45°",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "4:30"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "For a clock angle: count the gaps between the hands, 30 degrees each, and always move the hour hand on for the minutes that have passed."
+   }
+  ]
+ },
+ "G5A_ANGLES_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "At 12 o'clock the two hands lie exactly together. After how many minutes is the angle between them 66 degrees for the first time?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Hands together at 12:00. Minutes until they are 66° apart?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Both hands move, so we need to know how fast each one turns. The minute hand goes all the way round, 360 degrees, in 60 minutes. That is 6 degrees every minute.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "360 ÷ 60 = 6"
+     }
+    ]
+   },
+   {
+    "say": "The hour hand moves just one gap, 30 degrees, in those 60 minutes. That is half a degree every minute.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "30 ÷ 60 = 0.5"
+     }
+    ]
+   },
+   {
+    "say": "So each minute, by how much does the angle between the hands grow?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 degrees",
+      "6 and a half degrees",
+      "5 and a half degrees"
+     ],
+     "answer": 2,
+     "ifNot": "Both hands turn the same way round. The minute hand pulls ahead by 6 degrees, but the hour hand follows by half a degree. So the angle grows by the difference."
+    }
+   },
+   {
+    "say": "6 minus a half is 5 and a half degrees each minute. To keep away from halves, double it: 11 degrees every 2 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6 − 0.5 = 5.5"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5.5 × 2 = 11"
+     }
+    ]
+   },
+   {
+    "say": "Now, how many lots of 11 make 66? 66 divided by 11 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "66 ÷ 11 = 6"
+     }
+    ]
+   },
+   {
+    "say": "6 lots of 2 minutes is 12 minutes. The angle is 66 degrees after 12 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "6 × 2 = 12",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The tempting answer is 11 minutes, because 66 divided by 6 is 11. But that forgets the hour hand, which has been moving all the time."
+   },
+   {
+    "say": "Check: in 12 minutes the minute hand turns 72 degrees and the hour hand turns 6. And 72 minus 6 is 66.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "12 × 6 = 72"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "12 × 0.5 = 6"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "72 − 6 = 66"
+     }
+    ]
+   },
+   {
+    "say": "So when both hands move, work with how fast the angle between them grows, not with one hand alone. Here it takes 12 minutes."
+   }
+  ]
+ },
+ "G5A_ANGLES_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "At 10:10, what is the larger angle between the hour hand and the minute hand, measured the long way round the clock?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "At 10:10, the larger angle between the hands?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Let's measure both hands from the 12, going clockwise. The full turn is 360 degrees and there are 12 gaps, so each gap between numbers is 30 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l0",
+      "text": "360 ÷ 12 = 30"
+     }
+    ]
+   },
+   {
+    "say": "The minute hand is at the 2. That is 2 gaps from the 12, so 60 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2 × 30 = 60"
+     }
+    ]
+   },
+   {
+    "say": "Now the hour hand. At 10:10, where is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "exactly at the 10",
+      "a little past the 10",
+      "at the 11"
+     ],
+     "answer": 1,
+     "ifNot": "10 minutes have passed since 10 o'clock, and the hour hand never stops moving. So it has crept a little past the 10."
+    }
+   },
+   {
+    "say": "The 10 is 10 gaps round, which is 300 degrees. The hour hand moves half a degree each minute, so in 10 minutes it has moved 5 degrees more. It is at 305.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 × 30 = 300"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "10 × 0.5 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "300 + 5 = 305"
+     }
+    ]
+   },
+   {
+    "say": "Going clockwise from the minute hand at 60 to the hour hand at 305 is 305 minus 60, which is 245 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "305 − 60 = 245"
+     }
+    ]
+   },
+   {
+    "say": "Is 245 the long way round, or the short way?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the long way",
+      "the short way"
+     ],
+     "answer": 0,
+     "ifNot": "Compare it with half of the full turn of 360. 245 is more than half a turn, so it must be the long way round."
+    }
+   },
+   {
+    "say": "The other way round is 360 minus 245, which is 115. That is the smaller angle. The question wants the larger one, 245 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "360 − 245 = 115"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Larger angle = 245°",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "245°"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps here. Leaving the hour hand exactly on the 10 gives 240. And 115 is a real angle between the hands, but it is the short way round.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "300 − 60 = 240"
+     }
+    ]
+   },
+   {
+    "say": "So for a clock angle: place each hand in degrees from the 12, subtract, and then check which way round the question wants."
+   }
+  ]
+ },
+ "G5A_ANGLES_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "While the minute hand of a clock turns through 150 degrees, through how many degrees does the hour hand turn?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Minute hand turns 150°. How far does the hour hand turn?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The two hands are tied together by time. So the first thing to find is how long the minute hand takes to turn 150 degrees."
+   },
+   {
+    "say": "The minute hand turns a full 360 degrees in 60 minutes, which is 6 degrees a minute. 150 divided by 6 is 25. So 25 minutes pass.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "360 ÷ 60 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "150 ÷ 6 = 25"
+     }
+    ]
+   },
+   {
+    "say": "In a whole hour, the hour hand only moves from one number to the next, which is 30 degrees. How much is that each minute?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Hour hand: 30° in 60 minutes",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "half a degree",
+      "2 degrees",
+      "6 degrees"
+     ],
+     "answer": 0,
+     "ifNot": "30 degrees are shared out over 60 minutes. 30 is half of 60, so the hour hand moves half a degree each minute."
+    }
+   },
+   {
+    "say": "30 divided by 60 is a half. So the hour hand turns half a degree every minute.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "30 ÷ 60 = 0.5"
+     }
+    ]
+   },
+   {
+    "say": "In 25 minutes it turns 25 halves. Half of 25 is 12.5 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "25 × 0.5 = 12.5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "12.5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is stopping at 25. That is the number of minutes that pass, not the degrees the hour hand turns."
+   },
+   {
+    "say": "Here is a quick check. The hour hand is 12 times slower than the minute hand. And 150 divided by 12 is 12.5 as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "150 ÷ 12 = 12.5"
+     }
+    ]
+   },
+   {
+    "say": "So when two hands are linked, find the time first. Then use each hand's own speed."
+   }
+  ]
+ },
+ "G5A_ANGLES_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Point O is on a straight line A B. A ray O C makes two angles, A O C and C O B. Ray O P cuts A O C in half, and ray O Q cuts C O B in half. How big is angle P O Q?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "O on line AB. OP halves angle AOC, OQ halves angle COB. POQ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Angles A O C and C O B sit side by side on a straight line. So together they make 180 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "AOC + COB = 180°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Angle P O Q is made of two pieces: from O P to O C, and from O C to O Q. The first piece is half of A O C. The second is half of C O B.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "POQ = half of AOC + half of COB",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Half of one angle, plus half of the other. What is that the same as?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "half of their total",
+      "their total",
+      "it depends on OC"
+     ],
+     "answer": 0,
+     "ifNot": "Halving each part and then adding gives the same as adding first and then halving. So it is half of the total."
+    }
+   },
+   {
+    "say": "Half of each is the same as half of the total. The total is 180, and half of 180 is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "180 ÷ 2 = 90"
+     }
+    ]
+   },
+   {
+    "say": "So angle P O Q is 90 degrees, a right angle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Angle POQ = 90°",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "90°"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Does it change when O C moves? Try it. If A O C is 100 and C O B is 80, the halves are 50 and 40. They make 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "100 + 80 = 180"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "50 + 40 = 90"
+     }
+    ]
+   },
+   {
+    "say": "Move O C so that the angles are 60 and 120. The halves are 30 and 60. That is 90 again!",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "60 + 120 = 180"
+     },
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "30 + 60 = 90"
+     }
+    ]
+   },
+   {
+    "say": "The trap is thinking we must know where O C is. We don't. When two angles on a straight line are each halved, the two halves always make 90 degrees."
+   }
+  ]
+ },
+ "G5A_ANGLES_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two straight lines cross, making 4 angles. Three of the 4 angles add up to 250 degrees. What is the smallest of the 4 angles?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Two lines cross. Three of the four angles add up to 250°",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The 4 angles go all the way round a point, so they make a full turn, 360 degrees. Three of them make 250. So the one left out is 360 minus 250, which is 110.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "360 − 250 = 110"
+     }
+    ]
+   },
+   {
+    "say": "Is 110 the smallest? Let's find the others. What do we know about the angle opposite the 110?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it is also 110",
+      "it is 70",
+      "it is 250"
+     ],
+     "answer": 0,
+     "ifNot": "When two straight lines cross, the angles opposite each other are equal. So the angle opposite the 110 is 110 as well."
+    }
+   },
+   {
+    "say": "Opposite angles are equal, so there are two angles of 110.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Opposite angles: 110° and 110°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Each of the other two angles sits beside a 110 on a straight line. A straight line is 180, so each one is 180 minus 110, which is 70.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "180 − 110 = 70"
+     }
+    ]
+   },
+   {
+    "say": "So the 4 angles are 110, 70, 110 and 70. The smallest is 70 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Smallest angle = 70°",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "70°"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is stopping at 110, the angle we found first. It was the one left out, but it is not the smallest."
+   },
+   {
+    "say": "Check: the three that were added are 70, 110 and 70. They make 250, just as the question says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "70 + 110 + 70 = 250"
+     }
+    ]
+   },
+   {
+    "say": "So when two lines cross, there are only two sizes of angle. Opposite angles are equal, and neighbours add up to 180."
+   }
+  ]
+ },
+ "G5A_ANGLES_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The supplement of an angle is 4 times its complement. What is the angle?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Supplement of an angle = 4 × its complement. The angle?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Two words to pin down. The complement is what the angle needs to reach 90 degrees. The supplement is what it needs to reach 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "complement = 90° − angle",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "supplement = 180° − angle",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For the same angle, how much bigger is the supplement than the complement?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "90 degrees",
+      "180 degrees",
+      "it depends on the angle"
+     ],
+     "answer": 0,
+     "ifNot": "Both start from the same angle. One climbs to 90 and the other climbs to 180. So the supplement always goes 90 further."
+    }
+   },
+   {
+    "say": "180 minus 90 is 90. So the supplement is always the complement plus 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "180 − 90 = 90"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "supplement = complement + 90°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here the supplement is 4 lots of the complement. That is 1 lot, plus 3 more lots. So those 3 extra lots must be the 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × complement = 90°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "90 divided by 3 is 30. So the complement is 30 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "90 ÷ 3 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 30 is the complement, not the angle. The angle is 90 minus 30, which is 60 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "90 − 30 = 60",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "60"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the complement of 60 is 30. Its supplement is 180 minus 60, which is 120. And 4 times 30 is 120.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "180 − 60 = 120"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "4 × 30 = 120"
+     }
+    ]
+   },
+   {
+    "say": "So remember: the supplement is always 90 more than the complement. That one fact unlocks the question."
+   }
+  ]
+ },
+ "G5A_ANGLES_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The complement and the supplement of an angle add up to 194 degrees. What is the angle?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Complement + supplement of an angle = 194°. The angle?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The complement is 90 minus the angle. The supplement is 180 minus the angle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "complement = 90° − angle",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "supplement = 180° − angle",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add the two. 90 and 180 make 270. And the angle has been taken away twice, once in each.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "90 + 180 = 270"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "270° − 2 angles = 194°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So what are the 2 copies of the angle worth?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "270 − 194",
+      "270 + 194",
+      "194 − 90"
+     ],
+     "answer": 0,
+     "ifNot": "270 with the 2 angles taken away leaves 194. So the 2 angles are the gap between 270 and 194."
+    }
+   },
+   {
+    "say": "270 minus 194 is 76. So 2 copies of the angle make 76 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "270 − 194 = 76"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap: 76 is two copies, because the angle was taken away twice. So halve it. 76 divided by 2 is 38.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "76 ÷ 2 = 38",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "38"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check. The complement of 38 is 52. The supplement is 142. And 52 plus 142 is 194.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "90 − 38 = 52"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "180 − 38 = 142"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "52 + 142 = 194"
+     }
+    ]
+   },
+   {
+    "say": "So write the complement and the supplement from their totals, 90 and 180, and count how many times the angle is taken away."
+   }
+  ]
+ },
+ "G5A_ANGLES_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Angle P and angle Q are complementary. Angle Q and angle R are supplementary. How much bigger is angle R than angle P?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "P and Q complementary. Q and R supplementary. R − P?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Complementary means they add up to 90. So P and Q make 90, and P is 90 minus Q.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "P + Q = 90°, so P = 90° − Q",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Supplementary means they add up to 180. So Q and R make 180, and R is 180 minus Q.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Q + R = 180°, so R = 180° − Q",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We don't know Q. Do we need it, to compare R with P?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, it depends on Q",
+      "No, the same Q comes off both"
+     ],
+     "answer": 1,
+     "ifNot": "Look at the two lines on the board. P is 90 take away Q, and R is 180 take away Q. The very same Q is taken away both times."
+    }
+   },
+   {
+    "say": "The same Q is taken from both. So the gap between R and P is just the gap between 180 and 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "180 − 90 = 90"
+     }
+    ]
+   },
+   {
+    "say": "Angle R is always 90 degrees bigger than angle P.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "R is 90° bigger than P",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "90°"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Try it. If Q is 30, then P is 60 and R is 150. The gap is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "90 − 30 = 60"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "180 − 30 = 150"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "150 − 60 = 90"
+     }
+    ]
+   },
+   {
+    "say": "Change Q to 50. Now P is 40 and R is 130. The gap is 90 again, so it does not depend on Q at all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "90 − 50 = 40"
+     },
+     {
+      "op": "write",
+      "id": "c5",
+      "text": "180 − 50 = 130"
+     },
+     {
+      "op": "write",
+      "id": "c6",
+      "text": "130 − 40 = 90"
+     }
+    ]
+   },
+   {
+    "say": "So when the same unknown is taken from two totals, it doesn't matter what it is. The difference is the difference of the totals, 90 degrees."
+   }
+  ]
+ },
+ "G5A_ANGLES_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two angles are complementary. In whole degrees, one of them is a multiple of 7 and the other is a multiple of 11. What is the difference between the two angles?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Complementary: a multiple of 7 and a multiple of 11",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Complementary angles add up to 90 degrees. So we need a multiple of 7 and a multiple of 11 that make 90 together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "multiple of 7 + multiple of 11 = 90",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are fewer multiples of 11, so list those: 11, 22, 33, 44, 55, 66, 77, 88.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "11, 22, 33, 44, 55, 66, 77, 88",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Take each one from 90 to see what its partner would have to be: 79, 68, 57, 46, 35, 24, 13 and 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "79, 68, 57, 46, 35, 24, 13, 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which of those partners is a multiple of 7?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "57",
+      "35",
+      "24"
+     ],
+     "answer": 1,
+     "ifNot": "Run through the 7 times table in your head. 5 sevens are 35, and none of the other numbers in the list turn up."
+    }
+   },
+   {
+    "say": "Only 35 is a multiple of 7: it is 5 sevens. Its partner is 55, which is 5 elevens. So the angles are 35 and 55.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "35"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 × 7 = 35"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 × 11 = 55"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "35 + 55 = 90"
+     }
+    ]
+   },
+   {
+    "say": "The question asks for the difference. 55 minus 35 is 20 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "55 − 35 = 20",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "20"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The slip to avoid is guessing a pair that looks neat. A careful list shows there is only one pair that passes both tests."
+   },
+   {
+    "say": "So when two conditions must both hold, list everything that fits the first one, then test each against the second."
+   }
+  ]
+ },
+ "G5A_ANGLES_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two parallel roads run east to west, with a lamp post E between them. The line from B on the north road makes 35 degrees with that road. The line from D on the south road makes 40 degrees. We want angle B E D.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Parallel roads. BE at 35° to north road, DE at 40° to south",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The angle at E does not touch either road, so the 35 and the 40 seem far away from it. Here is the trick: draw a new line through E, parallel to both roads.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Draw a line through E, parallel to the roads",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "That new line cuts angle B E D into two parts: an upper part, towards B, and a lower part, towards D.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "BED = upper part + lower part",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Look at the upper part and the 35 degree angle at B. They sit in a Z shape between two parallel lines. What do we know about them?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "they are equal",
+      "they add up to 180",
+      "they add up to 90"
+     ],
+     "answer": 0,
+     "ifNot": "The line B E crosses two parallel lines, the north road and our new line. The angles in the Z shape are alternate angles, and alternate angles are equal."
+    }
+   },
+   {
+    "say": "They are alternate angles, so they are equal. The upper part is 35 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "upper part = 35° (alternate angles)",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "In the same way, the line D E makes a Z with the south road and our new line. So the lower part is 40 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "lower part = 40° (alternate angles)",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add the two parts. 35 plus 40 is 75. Angle B E D is 75 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "35 + 40 = 75",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "75"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The tempting moves are to subtract the two angles, or to take them from 180. But the lamp post is between the roads, so the two parts sit side by side, and we add."
+   },
+   {
+    "say": "So when an angle is stuck between two parallel lines, draw a third parallel line through its corner. Then each part matches an angle you know."
+   }
+  ]
+ },
+ "G5A_ANGLES_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A straight line crosses two parallel lines. An angle at the first crossing and its alternate angle at the second add up to 124 degrees. How big is each obtuse angle at the crossings?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Two alternate angles add up to 124°. Each obtuse angle?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What do we know about a pair of alternate angles between parallel lines?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "they are equal",
+      "they add up to 180",
+      "one is double the other"
+     ],
+     "answer": 0,
+     "ifNot": "Alternate angles sit in a Z shape between the parallel lines. And between parallel lines, alternate angles are always equal."
+    }
+   },
+   {
+    "say": "Alternate angles are equal. Two equal angles add up to 124, so each one is 124 divided by 2, which is 62 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "124 ÷ 2 = 62"
+     }
+    ]
+   },
+   {
+    "say": "Now read the question again. It asks for the obtuse angles, the ones bigger than a right angle. 62 is acute, so we are not done yet.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "obtuse"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "At each crossing, an obtuse angle sits beside a 62 degree angle on a straight line. Together they make 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "62° + obtuse angle = 180°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "180 minus 62 is 118. Each obtuse angle is 118 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "180 − 62 = 118",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "118"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps to dodge. 62 is an angle at the crossings, but it is the acute one. And 124 is two angles added together, not one angle."
+   },
+   {
+    "say": "Check: 118 is bigger than a right angle, so it is obtuse. And 62 plus 118 is 180, a straight line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "62 + 118 = 180"
+     }
+    ]
+   },
+   {
+    "say": "So at parallel lines there are only two sizes of angle, an acute one and an obtuse one, and together they make 180."
+   }
+  ]
+ },
+ "G5A_ANGLES_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "P is on the top one of two parallel lines. Q and R are on the bottom one. P Q makes 50 degrees with the top line on the left of P, and P R makes 62 degrees with it on the right. What is the largest angle of triangle P Q R?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "P on top line; Q, R on bottom line. PQ at 50°, PR at 62°",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "At P, three angles lie along the straight top line: the 50 on the left, the triangle's angle Q P R in the middle, and the 62 on the right. Together they make 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "50° + angle QPR + 62° = 180°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So how do we find angle Q P R?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "180 − 50 − 62",
+      "50 + 62",
+      "180 − 62"
+     ],
+     "answer": 0,
+     "ifNot": "The three angles share the straight line, 180 degrees. Take away the 50 and the 62, and what is left is the angle in the middle."
+    }
+   },
+   {
+    "say": "50 and 62 make 112. And 180 minus 112 is 68. So angle Q P R is 68 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "50 + 62 = 112"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "180 − 112 = 68"
+     }
+    ]
+   },
+   {
+    "say": "Now the angle at Q. The line P Q crosses the two parallel lines and makes a Z shape. So the angle at Q equals the 50. They are alternate angles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "angle PQR = 50° (alternate angles)",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "In the same way, the angle at R equals the 62.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "angle PRQ = 62° (alternate angles)",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The triangle's angles are 68, 50 and 62. The largest is 68 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Largest angle = 68°",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "68°"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 112. That is the 50 and the 62 added together, and it is not an angle of the triangle at all. Find all three angles before you choose the largest."
+   },
+   {
+    "say": "Check: 68 plus 50 plus 62 is 180, just right for a triangle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "68 + 50 + 62 = 180"
+     }
+    ]
+   },
+   {
+    "say": "So between parallel lines, use the straight line at the top and the alternate angles at the bottom. The largest angle here is 68 degrees."
+   }
+  ]
+ },
+ "G5A_ANGLES_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi turns 135 degrees clockwise, and then 270 degrees anticlockwise. He is now facing North. Which way was he facing at the start?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "135° clockwise, then 270° anticlockwise. Now faces North",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are two turns, in opposite directions. Let's squash them into one single turn first."
+   },
+   {
+    "say": "135 clockwise, then 270 anticlockwise. What single turn is that the same as?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "135 anticlockwise",
+      "405 anticlockwise",
+      "135 clockwise"
+     ],
+     "answer": 0,
+     "ifNot": "The two turns go opposite ways, so the clockwise one undoes part of the anticlockwise one. Take the smaller from the bigger. The bigger one was anticlockwise."
+    }
+   },
+   {
+    "say": "270 minus 135 is 135. The anticlockwise turn was the bigger one, so overall Ravi turned 135 degrees anticlockwise.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "270 − 135 = 135"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "135",
+       "nth": 2
+      },
+      "text": "anticlockwise",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "He ended facing North. To find where he started, we undo his turn. Which way do we turn from North?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "135 clockwise",
+      "135 anticlockwise"
+     ],
+     "answer": 0,
+     "ifNot": "To undo a turn, go back the opposite way. He turned anticlockwise, so we wind him back clockwise."
+    }
+   },
+   {
+    "say": "That is the trap. Turning anticlockwise from North would carry his turn on, not take it back. To undo it, we go clockwise.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Undo: from North, turn 135° clockwise",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "From North, 90 degrees clockwise is East. We need 135, which is 45 more. Halfway from East to South is South-East.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "90 + 45 = 135"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "North → East → South-East",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So Ravi started facing South-East.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Start: South-East",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "South-East"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check. From South-East, 135 clockwise takes him to West. Then 270 anticlockwise from West goes past South and East, to North. That matches.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "South-East → West → South → East → North",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So to find a starting direction: squash the turns into one, then undo that one turn from the finish."
+   }
+  ]
+ },
+ "G5A_ANGLES_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Asha faces North-East. She turns through 3 right angles clockwise, and then 135 degrees anticlockwise. What is the smallest turn that makes her face North-East again?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Faces NE. Turns 3 right angles clockwise, 135° anticlockwise",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First find where she ends up. 3 right angles is 3 times 90, which is 270 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 × 90 = 270"
+     }
+    ]
+   },
+   {
+    "say": "270 clockwise is a full turn less 90. So it lands in the same place as 90 anticlockwise. From North-East, that is North-West.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "360 − 270 = 90"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "North-East → North-West",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now 135 anticlockwise from North-West. 45 takes her to West, 45 more to South-West, and 45 more to South. So she now faces South.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "45 + 45 + 45 = 135"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "North-West → West → South-West → South",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "She faces South and wants North-East. Going clockwise, through West and North, how big is that turn?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "135 degrees",
+      "180 degrees",
+      "225 degrees"
+     ],
+     "answer": 2,
+     "ifNot": "Clockwise from South it is 90 to West, 90 more to North, and then 45 more to North-East. Add those three pieces."
+    }
+   },
+   {
+    "say": "Clockwise it is 90 plus 90 plus 45, which is 225 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "90 + 90 + 45 = 225"
+     }
+    ]
+   },
+   {
+    "say": "But that is more than half a turn, so the other way must be shorter. Anticlockwise, through South-East and East, it is 360 minus 225, which is 135.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "360 − 225 = 135"
+     }
+    ]
+   },
+   {
+    "say": "So the smallest turn is 135 degrees anticlockwise.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "135° anticlockwise",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "135° anticlockwise"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is stopping at the first turn that works. 225 clockwise does bring her back, but the question asks for the smallest turn. Always check both ways round."
+   },
+   {
+    "say": "So: follow the turns to see where she faces now, then measure the way back in both directions and pick the smaller."
+   }
+  ]
+ },
+ "G5A_ANGLES_016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A toy robot faces North. Each time a bell rings, it turns 135 degrees clockwise. After how many rings does it face North again for the first time?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Robot faces North. Each ring: turns 135° clockwise",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The robot faces North again when its total turning is a whole number of full turns. A full turn is 360 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Full turns: 360, 720, 1080, ...",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add up the turning, ring by ring: 135, 270, 405, 540.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "135, 270, 405, 540",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "After 4 rings the total is 540. Is the robot facing North?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "540 − 360 = 180"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, North",
+      "No, it faces South"
+     ],
+     "answer": 1,
+     "ifNot": "540 is one full turn of 360, and then 180 more. That extra half turn leaves the robot facing South."
+    }
+   },
+   {
+    "say": "540 is a full turn and a half. So after 4 rings the robot faces South, exactly backwards. That is a clue: 4 more rings will bring it the rest of the way."
+   },
+   {
+    "say": "Keep adding: 675, 810, 945, 1080.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "675, 810, 945, 1080",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "1080 is 3 times 360. That is exactly 3 full turns, and it is the first total that is a multiple of 360.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 360 = 1080"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "1080"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "1080 is the 8th total. So the robot faces North again after 8 rings.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 × 135 = 1080",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The tempting answers are 3, because of the 3 full turns, and 4, because 540 looks neat. But we are counting rings, and only the 8th ring lands exactly on North."
+   },
+   {
+    "say": "So for a turn that repeats, keep adding until the total is a whole number of full turns. Here that takes 8 rings."
+   }
+  ]
+ },
+ "G5A_ANGLES_017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four rays, O A, O B, O C and O D, start from the same point. Going round in order, the angles between neighbours are 20, 30 and 40 degrees. Counting every angle made by two of the rays, how many are acute?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Rays OA, OB, OC, OD. AOB = 20°, BOC = 30°, COD = 40°",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Every angle needs two rays as its arms. With 4 rays, there are 6 ways to pick the two arms. So there are 6 angles to look at, not just the 3 we are given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "AOB, BOC, COD, AOC, BOD, AOD",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The three given angles are 20, 30 and 40. All are smaller than a right angle, so all are acute. That is 3 so far."
+   },
+   {
+    "say": "Now the angles made of two neighbours joined together. A O C is 20 plus 30, which is 50. B O D is 30 plus 40, which is 70. Both are acute. That makes 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "20 + 30 = 50"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "30 + 40 = 70"
+     }
+    ]
+   },
+   {
+    "say": "One angle is left: A O D, made of all three parts. Is it acute?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, it is acute",
+      "No, it is a right angle",
+      "No, it is obtuse"
+     ],
+     "answer": 1,
+     "ifNot": "Add all three parts: 20, 30 and 40. An acute angle has to be less than a right angle. Is this one?"
+    }
+   },
+   {
+    "say": "20 plus 30 plus 40 is exactly 90. That is a right angle. Acute means less than 90, so A O D does not count.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "20 + 30 + 40 = 90"
+     },
+     {
+      "op": "note",
+      "line": "l4",
+      "target": {
+       "text": "90"
+      },
+      "text": "right angle",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the acute angles are 20, 30, 40, 50 and 70. There are 5 of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Acute: 20°, 30°, 40°, 50°, 70°. That is 5 angles",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "5 angles"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps here. Counting only the 3 given angles misses the ones made by joining. And counting all 6 forgets that an angle of exactly 90 is not acute."
+   },
+   {
+    "say": "So list every pair of rays, find each angle, and test each one against the meaning of the word. Here 5 angles are acute."
+   }
+  ]
+ },
+ "G5A_ANGLES_018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two angles are supplementary. Which statement is true for every such pair? One must be obtuse. They cannot both be acute. They cannot be equal. Or, the larger one is always more than a right angle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Supplementary angles. Which statement is always true?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Supplementary angles add up to 180 degrees. A statement that is always true must survive every pair. So let's hunt for a pair that breaks a statement.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "angle + angle = 180°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Can you think of a supplementary pair where the two angles are equal?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "90 and 90",
+      "60 and 60",
+      "100 and 100"
+     ],
+     "answer": 0,
+     "ifNot": "Equal angles that add up to 180 must each be half of 180. And half of 180 is 90."
+    }
+   },
+   {
+    "say": "90 and 90 make 180. This is the pair most people forget, and that is the trap in this question.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "90 + 90 = 180"
+     }
+    ]
+   },
+   {
+    "say": "Test the statements on it. One must be obtuse? Neither is. They cannot be equal? They are. The larger is more than 90? It is exactly 90. One pair breaks three statements.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "90° and 90°: not obtuse, equal, not more than 90°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "That leaves: they cannot both be acute. Acute means less than 90. So two acute angles add up to less than 90 plus 90, which is less than 180."
+   },
+   {
+    "say": "Take 89 and 89, the biggest acute angles in whole degrees. They only reach 178. Two acute angles can never be supplementary.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "89 + 89 = 178"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "178 < 180"
+     }
+    ]
+   },
+   {
+    "say": "So the statement that is always true is: they cannot both be acute.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "They cannot both be acute",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "They cannot both be acute"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "To test an always statement, look for one pair that breaks it. The equal pair, 90 and 90, is a good one to try first."
+   }
+  ]
+ },
+ "G5A_ANGLES_019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Angle A O B is 70 degrees and angle B O C is 50 degrees. The two angles share the arm O B. What are all the possible sizes of angle A O C?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Angle AOB = 70°, angle BOC = 50°, sharing arm OB. AOC?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Picture O B first, with O A 70 degrees away from it. Now we add O C, 50 degrees from O B. But on which side of O B? The question does not say."
+   },
+   {
+    "say": "So how many places can ray O C go?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only 1",
+      "2, one on each side of OB",
+      "lots of places"
+     ],
+     "answer": 1,
+     "ifNot": "O C must be 50 degrees from O B. It can swing 50 degrees to one side of O B, or 50 degrees to the other. That makes 2 places."
+    }
+   },
+   {
+    "say": "First place: O C is on the far side of O B, away from O A. The two angles sit side by side, so we add. 70 plus 50 is 120.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "70 + 50 = 120"
+     }
+    ]
+   },
+   {
+    "say": "Second place: O C is on the same side as O A, tucked inside the 70. Now the angles overlap, so we subtract. 70 minus 50 is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "70 − 50 = 20"
+     }
+    ]
+   },
+   {
+    "say": "Both pictures fit the question. So angle A O C can be 20 degrees or 120 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Angle AOC = 20° or 120°",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "20° or 120°"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is drawing just one picture and stopping at 120. When a question asks for every possible size, ask yourself: could this be drawn another way?"
+   },
+   {
+    "say": "Check the second picture. From O A it is 20 degrees to O C, and then 50 more to O B. That makes 70, which is angle A O B.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "20 + 50 = 70"
+     }
+    ]
+   },
+   {
+    "say": "So when two angles share an arm, they can sit side by side or overlap. Add for one, subtract for the other: 120 or 20."
+   }
+  ]
+ },
+ "G5A_ANGLES_020": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A wheel has 9 equally spaced spokes, numbered 1 to 9 in order. What is the smaller angle between spoke 2 and spoke 8?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "9 equal spokes. Smaller angle between spoke 2 and spoke 8?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "9 spokes share the full turn equally, so there are 9 equal gaps. Each gap is 360 divided by 9, which is 40 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "360 ÷ 9 = 40"
+     }
+    ]
+   },
+   {
+    "say": "Count the gaps going up from spoke 2 to spoke 8. 8 minus 2 is 6 gaps. That is 6 times 40, which is 240 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 − 2 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6 × 40 = 240"
+     }
+    ]
+   },
+   {
+    "say": "The question wants the smaller angle. Is 240 the one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, 240",
+      "No, go the other way round"
+     ],
+     "answer": 1,
+     "ifNot": "Compare 240 with half of the full turn of 360. It is more than half, so there must be a shorter way round the wheel."
+    }
+   },
+   {
+    "say": "240 is more than half a turn. So go the other way: from spoke 8 to 9, then to 1, then to 2. That is only 3 gaps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8 → 9 → 1 → 2: 3 gaps",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "3 times 40 is 120. The smaller angle is 120 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 40 = 120",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "120"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the two ways round should make a full turn. 240 plus 120 is 360.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "240 + 120 = 360"
+     }
+    ]
+   },
+   {
+    "say": "On a wheel there are always two ways round. Count the gaps both ways, and pick the one the question asks for."
+   }
+  ]
+ },
+ "G5A_BODMAS_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "72 divided by 6, plus 3 times 4, minus 2, comes to 22. We may put in one pair of brackets, and we want the value to become 30. Where do the brackets go?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "72 ÷ 6 + 3 × 4 − 2 = 22",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Why 22? Division and multiplication come first: 72 divided by 6 is 12, and 3 times 4 is 12. Then 12 plus 12 minus 2 is 22.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 + 12 − 2 = 22"
+     }
+    ]
+   },
+   {
+    "say": "Brackets only help if they change what is done first. Which brackets would change nothing at all?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "(3 × 4)",
+      "(6 + 3)",
+      "(4 − 2)"
+     ],
+     "answer": 0,
+     "ifNot": "3 times 4 is already done before the adding and subtracting. Brackets round it only tell us to do what we were doing anyway."
+    }
+   },
+   {
+    "say": "So try brackets round 6 plus 3. Brackets first: 6 plus 3 is 9. Now we have 72 divided by 9, times 4, minus 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "72 ÷ (6 + 3) × 4 − 2 = 72 ÷ 9 × 4 − 2"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "(6 + 3)"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Division and multiplication go from left to right. 72 divided by 9 is 8. Then 8 times 4 is 32.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "72 ÷ 9 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8 × 4 = 32"
+     }
+    ]
+   },
+   {
+    "say": "And 32 minus 2 is 30. That is the value we wanted. So the brackets go round 6 plus 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "32 − 2 = 30"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "72 ÷ (6 + 3) × 4 − 2 = 30",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "(6 + 3)"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now the tempting one: brackets round 4 minus 2. Working from left to right it seems to give 30. But multiplication comes before addition: 3 times 2 is 6, and 12 plus 6 is only 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "72 ÷ 6 + 3 × (4 − 2) = 18"
+     }
+    ]
+   },
+   {
+    "say": "So to test a pair of brackets, do the bracket first, and then keep to the usual order for everything else."
+   }
+  ]
+ },
+ "G5A_BODMAS_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The signs plus, minus and times go into the three boxes between 8, 2, 5 and 3, each sign used once. What is the greatest value the expression can have?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "8 □ 2 □ 5 □ 3, using +, − and × once each. Greatest value?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The times sign is done first, wherever it sits. So let's try it in each box in turn. Each time, we pick the better places for plus and minus."
+   },
+   {
+    "say": "Times in the first box: 8 times 2 is 16. Then it is better to add the 5 and take away the 3. That gives 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "8 × 2 = 16"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 × 2 + 5 − 3 = 18"
+     }
+    ]
+   },
+   {
+    "say": "Times in the middle box: 2 times 5 is 10. Add it to 8, and take away 3. That gives 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 + 2 × 5 − 3 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Times in the last box: 5 times 3 is 15. Now plus and minus go in the first two boxes. Which way round is better?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8 □ 2 □ 5 × 3",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 − 2 + 5 × 3",
+      "8 + 2 − 5 × 3"
+     ],
+     "answer": 0,
+     "ifNot": "Whatever follows the minus sign is taken away. In one choice that is just the small 2. In the other it is the whole of 5 times 3, which is 15."
+    }
+   },
+   {
+    "say": "Take away only the small 2, and add the big 15. 8 minus 2, plus 15, is 21.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 × 3 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 − 2 + 5 × 3 = 21",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "21"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Compare 18, 15 and 21. The greatest value is 21.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "18"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "15"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The surprise is that the times sign is not best next to the big 8. Between 5 and 3 it makes 15, and it lets us take away just the 2."
+   },
+   {
+    "say": "And always do the times first. Working 8 plus 2 times 5 from left to right gives a value that is far too big to be real."
+   },
+   {
+    "say": "So when you place signs, try the strongest sign in every position, and choose carefully what gets taken away. Here the best is 21."
+   }
+  ]
+ },
+ "G5A_BODMAS_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is a long one, with three kinds of brackets nested inside each other. We start from the innermost bracket and work outwards.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "72 ÷ 6 × 3 − [15 − {9 − (7 − 2 × 2)}]",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The innermost is the round bracket: 7 minus 2 times 2.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "(7 − 2 × 2)"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Inside it, what do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7 − 2",
+      "2 × 2"
+     ],
+     "answer": 1,
+     "ifNot": "Inside a bracket the usual order still applies. Multiplication comes before subtraction, so 2 times 2 goes first."
+    }
+   },
+   {
+    "say": "2 times 2 is 4, and 7 minus 4 is 3. The trap is doing 7 minus 2 first, just because it is written first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "7 − 2 × 2 = 3"
+     },
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "(7 − 2 × 2)"
+      },
+      "text": "3",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next the curly bracket: 9 minus 3 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 − 3 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Then the square bracket: 15 minus 6 is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 − 6 = 9"
+     }
+    ]
+   },
+   {
+    "say": "Now the front part. Division and multiplication go from left to right: 72 divided by 6 is 12, and 12 times 3 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "72 ÷ 6 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 × 3 = 36"
+     }
+    ]
+   },
+   {
+    "say": "Last, take the whole square bracket away. 36 minus 9 is 27.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "36 − 9 = 27",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "27"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So with nested brackets: innermost first, then outwards. And inside every bracket, keep to the usual order."
+   }
+  ]
+ },
+ "G5A_BODMAS_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The digits 2, 3 and 4 go into the three boxes, once each: 24 divided by a box, plus 6 times a box, minus a box. What is the greatest value we can make?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "24 ÷ □ + 6 × □ − □, digits 2, 3, 4 once each. Greatest?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Each box does a different job. One divides 24, one multiplies 6, and one is taken away. Ask which job gains the most from a big digit."
+   },
+   {
+    "say": "Which box should get the largest digit, 4?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the one dividing 24",
+      "the one multiplying 6",
+      "the one taken away"
+     ],
+     "answer": 1,
+     "ifNot": "Dividing by a big digit makes that part smaller, and taking away a big digit loses more. Only the multiplying box grows with a bigger digit."
+    }
+   },
+   {
+    "say": "The 4 multiplies the 6, giving 24. Each extra 1 in that box is worth 6 more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "6 × 4 = 24"
+     }
+    ]
+   },
+   {
+    "say": "Now 2 and 3 are left, for dividing and for taking away. First way: divide by 2, take away 3. 24 divided by 2 is 12. Then 12 plus 24 minus 3 is 33.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "24 ÷ 2 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 + 24 − 3 = 33"
+     }
+    ]
+   },
+   {
+    "say": "Second way: divide by 3, take away 2. 24 divided by 3 is 8. Then 8 plus 24 minus 2 is 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "24 ÷ 3 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "8 + 24 − 2 = 30"
+     }
+    ]
+   },
+   {
+    "say": "33 beats 30. Here is the trap: taking away the smallest digit feels right. But dividing by 2 and not by 3 gains 4, while taking away 3 and not 2 loses only 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "12 − 8 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So the greatest value is 33.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "24 ÷ 2 + 6 × 4 − 3 = 33",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "33"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When each box has a different job, ask how much each job changes with a bigger digit. Then test the close calls."
+   }
+  ]
+ },
+ "G5A_BODMAS_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Which number goes in the box? 6, plus 4 times the bracket, divided by 2, equals 20. Inside the bracket is the box minus 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "6 + 4 × (□ − 3) ÷ 2 = 20",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We'll work backwards. Think about the order the left side is worked out in: the bracket, then times 4 and divide by 2, and the 6 is added last of all."
+   },
+   {
+    "say": "To work backwards, which do we undo first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the + 6",
+      "the × 4",
+      "the − 3"
+     ],
+     "answer": 0,
+     "ifNot": "Working backwards is like taking off shoes and socks: the last thing put on comes off first. The 6 is added last, so it is undone first."
+    }
+   },
+   {
+    "say": "Undo the plus 6: 20 minus 6 is 14. So the middle part, 4 times the bracket divided by 2, equals 14.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "6 +"
+      },
+      "note": "− 6"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "20 − 6 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 × (□ − 3) ÷ 2 = 14",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Undo the divide by 2: 14 times 2 is 28. So 4 times the bracket is 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "14 × 2 = 28"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 × (□ − 3) = 28",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Undo the times 4: 28 divided by 4 is 7. So the bracket equals 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "28 ÷ 4 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "□ − 3 = 7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Careful with the last step. The box minus 3 is 7, so we add the 3 back. 7 plus 3 is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "7 + 3 = 10",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 10 minus 3 is 7. 4 times 7 is 28, and divided by 2 that is 14. And 6 plus 14 is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "6 + 4 × (10 − 3) ÷ 2 = 20"
+     }
+    ]
+   },
+   {
+    "say": "The trap at the start is adding 6 and 4 first. The 4 belongs to the multiplication, so the 6 waits till last. And working backwards, the last operation is undone first."
+   }
+  ]
+ },
+ "G5A_BODMAS_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four statements, and exactly one of them is true. We'll work out the left side of each with the correct order, and compare it with the number after the equals sign.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Exactly one of the four statements is true. Which one?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Take this one: 18 minus 6 divided by 3, plus 3. Is it 7? What do we do first?",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "18 − 6 ÷ 3 + 3 = 7 ?",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "18 − 6",
+      "6 ÷ 3",
+      "3 + 3"
+     ],
+     "answer": 1,
+     "ifNot": "Division comes before adding and subtracting, wherever it sits. So 6 divided by 3 goes first."
+    }
+   },
+   {
+    "say": "6 divided by 3 is 2. Then 18 minus 2 plus 3 is 19, not 7. You only get 7 by doing 18 minus 6 first. So this one is out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "18 − 6 ÷ 3 + 3 = 19"
+     },
+     {
+      "op": "strike",
+      "line": "s2",
+      "target": {
+       "text": "= 7"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Next: 4 plus 6 times 5, minus 20. Is it 30? Multiply first: 6 times 5 is 30. Then 4 plus 30 minus 20 is 14. Out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s3",
+      "text": "4 + 6 × 5 − 20 = 30 ?",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 + 6 × 5 − 20 = 14"
+     },
+     {
+      "op": "strike",
+      "line": "s3",
+      "target": {
+       "text": "= 30"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Next: 2 times 9, minus 3 times 2. Is it 30? Both multiplications go first: 18 minus 6 is 12. Out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s4",
+      "text": "2 × 9 − 3 × 2 = 30 ?",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 × 9 − 3 × 2 = 12"
+     },
+     {
+      "op": "strike",
+      "line": "s4",
+      "target": {
+       "text": "= 30"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Last: 30 minus 12 divided by 2, times 3. Is it 12? Division and multiplication go from left to right: 12 divided by 2 is 6, and 6 times 3 is 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "30 − 12 ÷ 2 × 3 = 12 ?",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 ÷ 2 × 3 = 18"
+     }
+    ]
+   },
+   {
+    "say": "Then 30 minus 18 is 12. It matches! This is the true statement.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "30 − 12 ÷ 2 × 3 = 12",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "30 − 12 ÷ 2 × 3 = 12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "See the pattern in the three that fell? Each one only works if you go straight from left to right. That is the trap."
+   },
+   {
+    "say": "So find the divide and times parts first, do those, and only then add and subtract."
+   }
+  ]
+ },
+ "G5A_BODMAS_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meena says that putting brackets round the last two numbers of an expression never changes its value. For which of the four expressions does the value change?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Brackets round the last two numbers: which value changes?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We work out each one twice: as written, and with brackets round the last two numbers. Start with 20 plus 6 minus 4. Both ways give 22. No change.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "20 + 6 − 4 = 22"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "20 + (6 − 4) = 22"
+     }
+    ]
+   },
+   {
+    "say": "20 times 6 divided by 3: as written it comes to 40. With brackets it is 20 times 2, which is also 40. No change.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 × 6 ÷ 3 = 40"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "20 × (6 ÷ 3) = 40"
+     }
+    ]
+   },
+   {
+    "say": "20 plus 6 times 4: the multiplication is done first anyway, so the brackets add nothing. Both ways give 44.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "20 + 6 × 4 = 44"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "20 + (6 × 4) = 44"
+     }
+    ]
+   },
+   {
+    "say": "Now 20 minus 6 plus 4. As written, we go from left to right and get 18. With brackets round 6 plus 4, how much is taken away from 20?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "20 − 6 + 4 = 18"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6",
+      "10",
+      "2"
+     ],
+     "answer": 1,
+     "ifNot": "The brackets are done first, and 6 plus 4 is 10. So now the whole 10 is taken away, not just the 6."
+    }
+   },
+   {
+    "say": "With brackets, the whole of 6 plus 4 is taken away. 20 minus 10 is 10. The value has changed, from 18 to 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "20 − (6 + 4) = 10"
+     }
+    ]
+   },
+   {
+    "say": "So the value changes for 20 minus 6 plus 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "20 − 6 + 4 changes: 18 becomes 10",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "20 − 6 + 4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Why this one? A minus sign in front of a bracket takes away everything inside it. Without the brackets the 4 was being added. With them, it is taken away."
+   },
+   {
+    "say": "So watch for a minus sign just before a bracket. That is where brackets change the value."
+   }
+  ]
+ },
+ "G5A_BODMAS_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kabir worked out 40 minus 8 times a box, plus 6, from left to right, and got 134. What is the correct value of the expression, with the same number in the box?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "40 − 8 × □ + 6. Left to right, Kabir got 134. Correct value?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Two jobs here. First find the number in the box, by following Kabir's working backwards. Then work the expression out properly."
+   },
+   {
+    "say": "Kabir went from left to right. So his first step was 40 minus 8, which is 32. Then he multiplied 32 by the box, and added 6 to reach 134.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "40 − 8 = 32"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Kabir: 32 × □ + 6 = 134",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Undo his plus 6: 134 minus 6 is 128. So 32 times the box is 128.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "134 − 6 = 128"
+     }
+    ]
+   },
+   {
+    "say": "Undo the times 32: 128 divided by 32 is 4. The number in the box is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "128 ÷ 32 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "□ = 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So, is 4 our answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, 4",
+      "No, now work it out properly"
+     ],
+     "answer": 1,
+     "ifNot": "4 is only the number in the box. The question asks for the correct value of the whole expression, so there is one more job to do."
+    }
+   },
+   {
+    "say": "Now the correct order, with 4 in the box. Multiply first: 8 times 4 is 32.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "40 − 8 × 4 + 6"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "8 × 4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "8 × 4 = 32"
+     }
+    ]
+   },
+   {
+    "say": "Then subtract and add, from left to right. 40 minus 32 is 8, and 8 plus 6 is 14. The correct value is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "40 − 32 + 6 = 14",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "14"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "One more place to slip: after 40 minus 32, the 6 is added, not taken away. Only the 32 has a minus sign in front of it."
+   },
+   {
+    "say": "So when someone has used a different order, follow their steps backwards to find the missing number. Then start again with the correct order."
+   }
+  ]
+ },
+ "G5A_BODMAS_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four expressions are built from 999 and 12. Which has the greatest value? We'll reason it out, without ever multiplying 999 by 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Which is greatest? Decide without multiplying 999 by 12",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start with 999 times the bracket 12 minus 12, plus 12. The bracket is 0, and 999 times 0 is 0. So this one is only 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "999 × (12 − 12) + 12 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Next: 999 plus 12 in a bracket, times 12, divided by 12. Multiplying by 12 and then dividing by 12 brings us straight back. So it is just 999 plus 12, which is 1011.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "(999 + 12) × 12 ÷ 12 = 1011"
+     }
+    ]
+   },
+   {
+    "say": "The other two both start with 999 times 12. That is far more than 1011, so the winner is one of these two.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "999 × 12 − 12"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "999 × 12 + 12 ÷ 12"
+     }
+    ]
+   },
+   {
+    "say": "The first of them, 999 times 12, minus 12, is 12 less than 999 times 12.",
+    "board": [
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "− 12"
+      },
+      "text": "12 less",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "In the second one, 999 times 12, plus 12 divided by 12, what is added to 999 times 12?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12",
+      "1",
+      "nothing"
+     ],
+     "answer": 1,
+     "ifNot": "Division is done before addition. So 12 divided by 12 is worked out first, and that is 1. Then the 1 is added."
+    }
+   },
+   {
+    "say": "The division comes before the addition, and 12 divided by 12 is 1. So this one is 1 more than 999 times 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 ÷ 12 = 1"
+     },
+     {
+      "op": "note",
+      "line": "l4",
+      "target": {
+       "text": "+ 12 ÷ 12"
+      },
+      "text": "1 more",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "1 more beats 12 less. So the greatest is 999 times 12, plus 12 divided by 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest: 999 × 12 + 12 ÷ 12",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "999 × 12 + 12 ÷ 12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap would be working that one from left to right, adding 12 and then dividing everything by 12. The order of operations is what makes it the biggest."
+   },
+   {
+    "say": "So you can compare big expressions without big sums. Look at what each one does to the part they share."
+   }
+  ]
+ },
+ "G5A_BODMAS_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "24, 8, 2 and 5 have a box between each pair, and the answer is 25. Each box holds plus, minus, times or divide, and no sign is used twice. Which sign is not used?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "24 □ 8 □ 2 □ 5 = 25, no sign used twice",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Look at the target. 25 is just 1 more than 24. So the 8, the 2 and the 5 must together add exactly 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "25 − 24 = 1"
+     }
+    ]
+   },
+   {
+    "say": "Suppose the 5 is added. Then the 8 and the 2 must take away 4, because 5 minus 4 is 1. How can 8 and 2 make 4?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 − 4 = 1"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 − 2",
+      "8 ÷ 2",
+      "8 × 2"
+     ],
+     "answer": 1,
+     "ifNot": "8 minus 2 is 6, and 8 times 2 is much too big. Only 8 divided by 2 gives 4."
+    }
+   },
+   {
+    "say": "8 divided by 2 is 4. So try this: 24, minus 8 divided by 2, plus 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 ÷ 2 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "24 − 8 ÷ 2 + 5"
+     }
+    ]
+   },
+   {
+    "say": "Division first: 8 divided by 2 is 4. Then 24 minus 4, plus 5, is 25. It works!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "24 − 4 + 5 = 25"
+     }
+    ]
+   },
+   {
+    "say": "The signs we used are minus, divide and plus. The one left out is the multiplication sign.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Not used: the multiplication sign ×",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "×"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "There is a tempting other try: 24 divided by 8, plus 2 times 5. From left to right it seems to reach 25. But with the correct order it is 3 plus 10, which is 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "24 ÷ 8 + 2 × 5 = 13"
+     }
+    ]
+   },
+   {
+    "say": "So start from the target, see how far it is from the first number, and always test your idea with the correct order."
+   }
+  ]
+ },
+ "G5A_DECIMALS_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Anu copied a decimal number with one digit after the point, but she left out the decimal point. What she wrote was 40.5 more than the real number. What was the real number?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Point left out. Number written is 40.5 more. Real number?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Take a number like 2.3. Leave out the point and it becomes 23. How many times as big is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2.3 → 23",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10 times",
+      "9 times",
+      "100 times"
+     ],
+     "answer": 0,
+     "ifNot": "Without the point, the 2 ones become 2 tens and the 3 tenths become 3 ones. Every digit is worth 10 times as much."
+    }
+   },
+   {
+    "say": "So the number Anu wrote is 10 times the real number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "written number = 10 × real number",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the gap. She has 10 lots of the real number where there should be 1 lot. The extra is 9 lots. So 40.5 is 9 times the real number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "10 − 1 = 9"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "9 × real number = 40.5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So divide 40.5 by 9. 405 divided by 9 is 45, so 40.5 divided by 9 is 4.5. The real number was 4.5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "405 ÷ 9 = 45"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "40.5 ÷ 9 = 4.5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "4.5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is dividing by 10. The written number is 10 times the real one, but the difference between them is only 9 times."
+   },
+   {
+    "say": "Check: without its point, 4.5 becomes 45. And 45 minus 4.5 is 40.5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "45 − 4.5 = 40.5"
+     }
+    ]
+   },
+   {
+    "say": "So when a number becomes 10 times as big, it has grown by 9 times itself. Divide the growth by 9."
+   }
+  ]
+ },
+ "G5A_DECIMALS_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A train journey takes 2.4 hours. The train leaves at 9:50 in the morning. At what time does it arrive?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Journey takes 2.4 hours. Leaves at 9:50 a.m. Arrives?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "2.4 hours is 2 whole hours and 0.4 of an hour. How many minutes is 0.4 of an hour?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l0",
+      "text": "1 hour = 60 minutes",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2.4 hours = 2 hours + 0.4 of an hour",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 minutes",
+      "40 minutes",
+      "24 minutes"
+     ],
+     "answer": 2,
+     "ifNot": "The 4 after the point means 4 tenths of an hour, not 4 minutes and not 40 minutes. An hour has 60 minutes, so find 4 tenths of 60."
+    }
+   },
+   {
+    "say": "This is the trap. The digit after the point is not a count of minutes. 0.4 of an hour is 4 tenths of 60. One tenth of 60 is 6, and 4 sixes are 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "0.4 × 60 = 24"
+     }
+    ]
+   },
+   {
+    "say": "So the journey takes 2 hours 24 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2.4 hours = 2 hours 24 minutes",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now add that to 9:50. First the 2 hours: 9:50 becomes 11:50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "9:50 a.m. + 2 hours = 11:50 a.m.",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Then the 24 minutes. 10 of them take us to 12 noon. That leaves 14 minutes more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "11:50 a.m. + 10 minutes = 12:00 noon",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "24 − 10 = 14"
+     }
+    ]
+   },
+   {
+    "say": "14 minutes past 12 is 12:14 in the afternoon. That is when the train arrives.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Arrives at 12:14 p.m.",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "12:14 p.m."
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So with decimal hours, change the decimal part into minutes first, using 60 minutes in an hour. Then add."
+   }
+  ]
+ },
+ "G5A_DECIMALS_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A pencil costs 4.50 rupees and an eraser costs 2.50 rupees. Anu buys 12 items, some of each, and pays exactly 44 rupees. How many pencils does she buy?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Pencil ₹4.50, eraser ₹2.50. 12 items cost ₹44. Pencils?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Here is a neat way in. Pretend all 12 items were erasers, the cheaper thing. The bill would be 12 times 2.50, which is 30 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 × 2.50 = 30"
+     }
+    ]
+   },
+   {
+    "say": "But the real bill is 44. That is 44 minus 30, which is 14 rupees more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "44 − 30 = 14"
+     }
+    ]
+   },
+   {
+    "say": "Now swap one eraser for a pencil. By how much does the bill go up?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "₹4.50",
+      "₹2",
+      "₹2.50"
+     ],
+     "answer": 1,
+     "ifNot": "We put a pencil in, but we also take an eraser out. So the bill goes up by the difference between the two prices."
+    }
+   },
+   {
+    "say": "A pencil costs 4.50 and an eraser costs 2.50, so each swap adds 2 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4.50 − 2.50 = 2"
+     }
+    ]
+   },
+   {
+    "say": "We need 14 rupees more, at 2 rupees a swap. 14 divided by 2 is 7 swaps. So there are 7 pencils.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "14 ÷ 2 = 7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful which number you give. 12 minus 7 leaves 5 erasers, but the question asks for the pencils, and that is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 − 7 = 5"
+     }
+    ]
+   },
+   {
+    "say": "Check: 7 pencils cost 31.50 and 5 erasers cost 12.50. Together that is 44 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "7 × 4.50 = 31.50"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "5 × 2.50 = 12.50"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "31.50 + 12.50 = 44"
+     }
+    ]
+   },
+   {
+    "say": "So with two prices and a total: pretend everything is the cheaper item, then count how many swaps make up the extra."
+   }
+  ]
+ },
+ "G5A_DECIMALS_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Dividing any number by 0.25 always gives the same result as doing something simpler. What is it?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Dividing any number by 0.25 is the same as ...?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, what is 0.25? It is one quarter.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "0.25 = 1/4"
+     }
+    ]
+   },
+   {
+    "say": "Dividing by a quarter asks: how many quarters fit into the number? Think of rotis cut into quarters."
+   },
+   {
+    "say": "How many quarters fit into 1 whole?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "a quarter of one",
+      "4",
+      "25"
+     ],
+     "answer": 1,
+     "ifNot": "Cut 1 whole roti into quarters and count the pieces. There are 4 of them."
+    }
+   },
+   {
+    "say": "4 quarters fit into each whole. So 1 divided by 0.25 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1 ÷ 0.25 = 4"
+     }
+    ]
+   },
+   {
+    "say": "Test it with 3. Each whole holds 4 quarters, so 3 wholes hold 3 times 4, which is 12. And 3 divided by 0.25 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 × 4 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 ÷ 0.25 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So dividing by 0.25 is the same as multiplying the number by 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "÷ 0.25 is the same as × 4",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "× 4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is mixing up dividing by a quarter with taking a quarter. Taking a quarter makes a number smaller. Dividing by a number less than 1 makes it bigger."
+   },
+   {
+    "say": "So think of dividing as asking how many fit. Small pieces fit many times: 4 quarters in every whole."
+   }
+  ]
+ },
+ "G5A_DECIMALS_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two decimal numbers add up to 7.2, and their difference is 1.8. What is the larger of the two numbers?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Two numbers: sum 7.2, difference 1.8. The larger number?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Picture the two numbers as two bars. The larger bar is the smaller bar with an extra piece of 1.8 on the end.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "larger = smaller + 1.8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "If we add the difference, 1.8, to the sum, what do we have?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 copies of the larger number",
+      "2 copies of the smaller number",
+      "the larger number"
+     ],
+     "answer": 0,
+     "ifNot": "The sum is one larger and one smaller. Adding 1.8 stretches the smaller one until it is as long as the larger. So now we have 2 of the larger."
+    }
+   },
+   {
+    "say": "The sum is larger plus smaller. Add the 1.8, and the smaller grows to match the larger. So 7.2 plus 1.8 is twice the larger number. That is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "7.2 + 1.8 = 9"
+     }
+    ]
+   },
+   {
+    "say": "Twice the larger is 9, and half of 9 is 4.5. So the larger number is 4.5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9 ÷ 2 = 4.5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "4.5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check. The smaller is 4.5 minus 1.8, which is 2.7. And 4.5 plus 2.7 is 7.2. Both facts fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4.5 − 1.8 = 2.7"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "4.5 + 2.7 = 7.2"
+     }
+    ]
+   },
+   {
+    "say": "Watch the traps. Half of the sum, 3.6, would only be right if the two numbers were equal. And 2.7 is the smaller number, not the larger.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "7.2 ÷ 2 = 3.6"
+     }
+    ]
+   },
+   {
+    "say": "So: the sum plus the difference gives twice the larger number. The larger number here is 4.5."
+   }
+  ]
+ },
+ "G5A_DECIMALS_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many numbers with exactly two digits after the decimal point, like 3.47, are greater than 3.4 and less than 3.5?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Two decimal digits, greater than 3.4 and less than 3.5",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "At first it looks as if nothing fits between 3.4 and 3.5. But write both ends with two digits after the point: 3.40 and 3.50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3.4 = 3.40"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3.5 = 3.50"
+     }
+    ]
+   },
+   {
+    "say": "Now we can see the hundredths in between. They start at 3.41 and go up to 3.49.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3.41, 3.42, 3.43, 3.44, 3.45, 3.46, 3.47, 3.48, 3.49",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Should we count 3.40 and 3.50 as well?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, both",
+      "No, neither",
+      "Only 3.40"
+     ],
+     "answer": 1,
+     "ifNot": "3.40 is equal to 3.4, and 3.50 is equal to 3.5. The numbers must be greater than one end and less than the other, so the ends themselves stay out."
+    }
+   },
+   {
+    "say": "The ends are equal to 3.4 and 3.5, so they are not between them. That is the trap: letting an end slip in, and counting one or two too many."
+   },
+   {
+    "say": "Count the list. The last digits run from 1 to 9, so there are 9 numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "3.41 to 3.49: 9 numbers",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "9 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So to count decimals between two ends: write the ends with the same number of digits, list what lies strictly between, and leave the ends out."
+   }
+  ]
+ },
+ "G5A_DECIMALS_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In the number 4.75, what is the place value of the digit 7?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "In 4.75, what is the place value of the digit 7?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The decimal point is our landmark. Just before it is the ones place. That is where the 4 sits.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "4"
+      },
+      "text": "ones",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The 7 is the first digit after the point. What is that place called?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "tens",
+      "tenths",
+      "hundredths"
+     ],
+     "answer": 1,
+     "ifNot": "Count the places after the point. The first one after the point is the tenths place, and the second is the hundredths."
+    }
+   },
+   {
+    "say": "The first place after the point is the tenths. So the 7 stands for 7 tenths.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "text": "tenths",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The 5 after it is in the hundredths place. And notice that tenths are not tens. The tens place is on the other side of the point.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "text": "hundredths",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the place value of the digit 7 is 7 tenths.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7 tenths",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "7 tenths"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Read the places outwards from the point: tenths first, then hundredths."
+   }
+  ]
+ },
+ "G5A_DECIMALS_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Which digit is in the hundredths place in 36.482?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Which digit is in the hundredths place in 36.482?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start at the decimal point and step to the right. The places are tenths, then hundredths, then thousandths.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "tenths, hundredths, thousandths",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the hundredths place is which place after the point?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the first",
+      "the second",
+      "the third"
+     ],
+     "answer": 1,
+     "ifNot": "Say them in order from the point: tenths, hundredths, thousandths. Hundredths comes second."
+    }
+   },
+   {
+    "say": "After the point we have 4, then 8, then 2. The 4 is tenths, the 8 is hundredths, and the 2 is thousandths.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "4"
+      },
+      "text": "tenths",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "8"
+      },
+      "text": "hundredths",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "text": "thousandths",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the digit in the hundredths place is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Hundredths digit: 8",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Don't count from the front of the number. The 3 is in the tens place, on the other side of the point. Always count from the decimal point."
+   }
+  ]
+ },
+ "G5A_DECIMALS_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Which of these numbers is the greatest: 3.4, 3.9, 3.1 or 3.7?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest?   3.4,   3.9,   3.1,   3.7",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "To compare decimals, start with the biggest place. All four numbers have 3 ones, so the ones can't decide it."
+   },
+   {
+    "say": "Where do we look next?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the tenths digits",
+      "the number of digits",
+      "nowhere, they are equal"
+     ],
+     "answer": 0,
+     "ifNot": "After the ones comes the tenths place, the first digit after the point. Those digits are different, so they decide."
+    }
+   },
+   {
+    "say": "The tenths digits are 4, 9, 1 and 7. The biggest of those is 9.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "3.9"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So the greatest number is 3.9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest: 3.9",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "3.9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "It makes sense: 3.9 is only one tenth short of 4, closer than any of the others. So compare the ones first, then the tenths."
+   }
+  ]
+ },
+ "G5A_DECIMALS_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Which of these numbers is the smallest: 0.52, 0.35, 0.25 or 0.55?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Smallest?   0.52,   0.35,   0.25,   0.55",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "All four have 0 ones. So go to the tenths, the first digit after the point: 5, 3, 2 and 5."
+   },
+   {
+    "say": "Which number has the fewest tenths?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "0.52",
+      "0.35",
+      "0.25"
+     ],
+     "answer": 2,
+     "ifNot": "Look only at the first digit after the point. 0.52 has 5 tenths, 0.35 has 3 tenths, and 0.25 has 2 tenths."
+    }
+   },
+   {
+    "say": "0.25 has only 2 tenths, fewer than any other. Once the tenths decide it, the hundredths don't matter.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "0.25"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "A slip to avoid: picking 0.52 because it ends in a small 2. That 2 is only hundredths. Its 5 tenths make it much bigger."
+   },
+   {
+    "say": "So the smallest number is 0.25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Smallest: 0.25",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "0.25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Compare the tenths first. Look at the hundredths only when the tenths are the same, as in 0.52 and 0.55."
+   }
+  ]
+ },
+ "G5A_DECIMALS_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "What is 2.5 plus 1.3? We add tenths with tenths, and ones with ones.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "2.5 + 1.3",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start with the tenths. They are the digits just after each point: 5 tenths and 3 tenths.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "3"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "5 tenths and 3 tenths make how many tenths?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 tenths",
+      "2 tenths",
+      "8 ones"
+     ],
+     "answer": 0,
+     "ifNot": "We are adding, so put the 5 tenths and the 3 tenths together. 5 and 3 make 8, and they are still tenths."
+    }
+   },
+   {
+    "say": "8 tenths. Now the ones: 2 and 1 make 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "0.5 + 0.3 = 0.8"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 + 1 = 3"
+     }
+    ]
+   },
+   {
+    "say": "3 ones and 8 tenths make 3.8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2.5 + 1.3 = 3.8",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "3.8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by taking away: 3.8 minus 1.3 brings us back to 2.5. So line up the points, and add each place with its own kind.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3.8 − 1.3 = 2.5"
+     }
+    ]
+   }
+  ]
+ },
+ "G5A_DECIMALS_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rani had 8.50 rupees. She spent 3.20 rupees on a pencil. How much money does she have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Rani had ₹8.50. She spent ₹3.20. Money left?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "She spent some of her money. Do we add, or take away?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add",
+      "take away"
+     ],
+     "answer": 1,
+     "ifNot": "Spending makes the money in her purse go down. So we take away what she spent from what she had."
+    }
+   },
+   {
+    "say": "We take away. Line up the points, so that rupees are under rupees and paise are under paise.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "8.50 − 3.20"
+     }
+    ]
+   },
+   {
+    "say": "Paise first: 50 paise take away 20 paise leaves 30 paise.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "50 − 20 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Rupees next: 8 take away 3 leaves 5 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 − 3 = 5"
+     }
+    ]
+   },
+   {
+    "say": "5 rupees and 30 paise. Rani has 5.30 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8.50 − 3.20 = 5.30",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "5.30"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 5.30 plus 3.20 is 8.50, just what she started with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "5.30 + 3.20 = 8.50"
+     }
+    ]
+   }
+  ]
+ },
+ "G5A_DECIMALS_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "What is 4.6 times 10?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4.6 × 10",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Multiplying by 10 makes every digit worth 10 times as much. So each digit moves one place to the left."
+   },
+   {
+    "say": "The 4 ones become 4 tens. The 6 tenths become 6 ones.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "4"
+      },
+      "text": "ones → tens",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "6"
+      },
+      "text": "tenths → ones",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So what is 4.6 times 10?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "46",
+      "460",
+      "40.6"
+     ],
+     "answer": 0,
+     "ifNot": "We have 4 tens and 6 ones. Write the 4 in the tens place and the 6 in the ones place."
+    }
+   },
+   {
+    "say": "4 tens and 6 ones make 46. It looks as if the decimal point has hopped one place to the right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4.6 × 10 = 46",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "46"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two slips to avoid: don't hop two places, and don't push a zero into the middle. Times 10 means one hop. Check: 46 divided by 10 is 4.6 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "46 ÷ 10 = 4.6"
+     }
+    ]
+   }
+  ]
+ }
+}

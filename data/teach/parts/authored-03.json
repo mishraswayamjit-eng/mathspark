@@ -1,0 +1,7271 @@
+{
+ "G5A_MEASUREMENT_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "3 mangoes and 2 guavas weigh 1 kilogram 150 grams. 2 mangoes and 3 guavas weigh 1 kilogram 50 grams. We want the weight of one mango.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3 mangoes + 2 guavas: 1 kg 150 g",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "2 mangoes + 3 guavas: 1 kg 50 g",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, grams everywhere. 1 kilogram is 1000 grams, so the two weighings are 1150 grams and 1050 grams.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1 kg = 1000 g, so 1150 g and 1050 g",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The tempting move is to share 1150 grams equally among the 5 fruits. But a mango and a guava do not weigh the same, so equal sharing will not do."
+   },
+   {
+    "say": "Here is the clever idea: put the two weighings together. How many mangoes and how many guavas is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 mangoes and 5 guavas",
+      "5 mangoes and 4 guavas",
+      "6 mangoes and 6 guavas"
+     ],
+     "answer": 0,
+     "ifNot": "Count each fruit across both weighings. 3 mangoes and 2 mangoes make 5 mangoes. 2 guavas and 3 guavas make 5 guavas."
+    }
+   },
+   {
+    "say": "Together they weigh 1150 plus 1050, which is 2200 grams. That is 5 pairs of one mango and one guava, so one pair weighs 2200 divided by 5, which is 440 grams.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1150 + 1050 = 2200"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2200 ÷ 5 = 440"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "440"
+      },
+      "text": "1 mango + 1 guava",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now compare the weighings. The first has a mango where the second has a guava, and it is 100 grams heavier. So a mango weighs 100 grams more than a guava.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1150 − 1050 = 100"
+     }
+    ]
+   },
+   {
+    "say": "A mango and a guava weigh 440 grams, and the mango is 100 grams heavier. So what do 2 mangoes weigh?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "440 + 100 = 540 grams",
+      "440 − 100 = 340 grams",
+      "440 × 2 = 880 grams"
+     ],
+     "answer": 0,
+     "ifNot": "Swap the guava in the pair for a second mango. A mango is 100 grams heavier than a guava, so the pair gets 100 grams heavier."
+    }
+   },
+   {
+    "say": "2 mangoes weigh 540 grams. Halve it: one mango weighs 270 grams.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "440 + 100 = 540"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "540 ÷ 2 = 270",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "270"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check. A guava is 100 grams lighter, so it is 170 grams. Then 3 mangoes and 2 guavas come to 1150 grams, exactly the first weighing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "270 − 100 = 170"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "3 × 270 + 2 × 170 = 1150"
+     }
+    ]
+   },
+   {
+    "say": "So with two mixed weighings: add them to find one of each together, compare them to find the difference, and then split."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A candle 24 centimetres tall burns down 3 millimetres every 5 minutes. It is lit at 10:50 in the morning. When will it be exactly 6 centimetres tall?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "24 cm candle burns 3 mm every 5 min, lit 10:50 a.m.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "When is it exactly 6 cm tall?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Read the 6 centimetres carefully. It is the part still standing. So how much of the candle has to burn away?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q2",
+      "target": {
+       "text": "6 cm tall"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 centimetres",
+      "18 centimetres",
+      "24 centimetres"
+     ],
+     "answer": 1,
+     "ifNot": "The 6 centimetres is the part left standing, not the part that burns. The candle starts at 24, so take 6 away from 24."
+    }
+   },
+   {
+    "say": "24 minus 6 is 18, so 18 centimetres must burn away. That is the trap in this question: the 6 is what stays, not what goes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "24 − 6 = 18"
+     }
+    ]
+   },
+   {
+    "say": "The candle burns in millimetres, so we need the same unit. 1 centimetre is 10 millimetres, so 18 centimetres is 180 millimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "18 × 10 = 180"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "180"
+      },
+      "text": "millimetres",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "It burns 3 millimetres at a time. How do we find how many lots of 3 millimetres are in 180?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "180 ÷ 3",
+      "180 × 3",
+      "180 − 3"
+     ],
+     "answer": 0,
+     "ifNot": "We are asking how many threes fit into 180. Fitting equal lots into a number is a division."
+    }
+   },
+   {
+    "say": "180 divided by 3 is 60 lots. Each lot takes 5 minutes, so the time is 60 times 5, which is 300 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "180 ÷ 3 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "60 × 5 = 300"
+     }
+    ]
+   },
+   {
+    "say": "Notice it is not one minute for each millimetre. Now turn the minutes into hours: 300 divided by 60 is 5 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "300 ÷ 60 = 5"
+     }
+    ]
+   },
+   {
+    "say": "5 hours after 10:50 in the morning. 2 hours take us to 12:50, and 3 more hours take us to 3:50 in the afternoon.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "10:50 a.m. + 2 hours = 12:50 p.m.",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "12:50 p.m. + 3 hours = 3:50 p.m.",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "3:50 p.m."
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 60 lots of 3 millimetres is 180 millimetres, which is 18 centimetres. And 24 minus 18 leaves 6 centimetres standing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "60 × 3 = 180"
+     }
+    ]
+   },
+   {
+    "say": "So: find what must burn, match the units, count the lots, and turn the minutes into hours."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Asha's steps are 60 centimetres long and her father's are 90 centimetres. They start on the same line and walk 36 metres. Counting the start, at how many places do their heel marks land on the same spot?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Steps: Asha 60 cm, father 90 cm. They walk 36 m.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Asha's heel lands at 60, 120, 180 and so on. Her father's lands at 90, 180, 270 and so on.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Asha: 60, 120, 180, 240 ...",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Father: 90, 180, 270 ...",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "After the start, where do both heels first land on the same spot?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "at 150 cm, which is 60 + 90",
+      "at 180 cm",
+      "at 5400 cm, which is 60 × 90"
+     ],
+     "answer": 1,
+     "ifNot": "Look for the first number that is in both lists. 180 is 3 of Asha's steps and 2 of her father's, so both heels land there."
+    }
+   },
+   {
+    "say": "So the marks meet every 180 centimetres. Adding 60 and 90 is the tempting move, but 150 is not in either list.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "180"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "f",
+      "target": {
+       "text": "180"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The walk is 36 metres. 1 metre is 100 centimetres, so that is 3600 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "36 × 100 = 3600"
+     }
+    ]
+   },
+   {
+    "say": "How many gaps of 180 centimetres fit in 3600? 3600 divided by 180 is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3600 ÷ 180 = 20"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "20"
+      },
+      "text": "gaps",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "20 gaps. So how many shared places are there, counting the starting line?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "20",
+      "21",
+      "19"
+     ],
+     "answer": 1,
+     "ifNot": "Think of a fence. 20 gaps need a post at the start, and a post at the end of every gap. That is one more post than gaps."
+    }
+   },
+   {
+    "say": "There is a shared mark at the end of each of the 20 gaps, and one more at the starting line. 20 plus 1 is 21 places.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 + 1 = 21",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "21"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with a short walk. In the first 360 centimetres the shared marks are at 0, 180 and 360. That is 2 gaps and 3 places: one more than the gaps again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "0, 180, 360: 2 gaps, 3 places",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So shared marks come at common multiples. Count the gaps, then add 1 for the start."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kiran drank half the juice and then 150 millilitres more. His sister drank half of what was left and then 100 millilitres more. Now 200 millilitres are left. How much was in the jug at the start?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Half, then 150 ml. Half of the rest, then 100 ml.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Left: 200 ml. At the start?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We know the end but not the start. So we walk the story backwards, undoing the latest thing first."
+   },
+   {
+    "say": "What was the very last thing that happened to the juice?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the sister drank 100 ml more",
+      "the sister drank half",
+      "Kiran drank 150 ml more"
+     ],
+     "answer": 0,
+     "ifNot": "Read the story right to its end. The last thing before the 200 millilitres is the sister drinking her extra 100 millilitres."
+    }
+   },
+   {
+    "say": "So put her 100 millilitres back. 200 plus 100 is 300. The jug held 300 millilitres just before her last drink.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "200 + 100 = 300"
+     }
+    ]
+   },
+   {
+    "say": "That 300 is what stayed after she drank half. So she found double that: 300 times 2 is 600 millilitres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "300 × 2 = 600"
+     }
+    ]
+   },
+   {
+    "say": "Now we undo Kiran. He drank half, and then 150 millilitres more. Which do we undo first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "double the 600",
+      "put back the 150 ml",
+      "take away 150 ml"
+     ],
+     "answer": 1,
+     "ifNot": "Going backwards, the latest thing comes first. Kiran's extra 150 millilitres came after his half, so it goes back before we double."
+    }
+   },
+   {
+    "say": "600 plus 150 is 750. Doubling first is the classic slip here. The extra drink came later, so it goes back first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "600 + 150 = 750"
+     }
+    ]
+   },
+   {
+    "say": "And 750 is the half that Kiran left. Double it: 750 times 2 is 1500 millilitres. 1000 millilitres make 1 litre, so that is 1 litre 500 millilitres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "750 × 2 = 1500"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "1500 ml = 1000 ml + 500 ml = 1 litre 500 ml",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "1 litre 500 ml"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check forwards. Half of 1500 is 750, less 150 is 600. Half of 600 is 300, less 100 is 200. Exactly what is left in the jug.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1500 ÷ 2 − 150 = 600"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "600 ÷ 2 − 100 = 200"
+     }
+    ]
+   },
+   {
+    "say": "So when the end is known and the start is not: work backwards, undo the latest step first, and do the opposite each time. The jug held 1 litre 500 millilitres."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A clock takes 6 seconds to strike 4 o'clock, timed from the first strike to the last. The gaps between strikes are equal. How long does it take to strike 10 o'clock?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4 o'clock: 6 seconds, first strike to last. 10 o'clock?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Picture the 4 strikes in a row. How many gaps are there between them?",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "strike - strike - strike - strike",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 gaps",
+      "3 gaps",
+      "5 gaps"
+     ],
+     "answer": 1,
+     "ifNot": "Hold up 4 fingers and count the spaces between them. There are only 3 spaces. The gaps are always one fewer than the strikes."
+    }
+   },
+   {
+    "say": "4 strikes have 3 gaps. The timing starts on the first strike and stops on the last, so the 6 seconds are filled by those 3 gaps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 − 1 = 3"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3"
+      },
+      "text": "gaps",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So one gap is 6 divided by 3, which is 2 seconds. Sharing the 6 seconds among the 4 strikes is the tempting move, but the time passes in the gaps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6 ÷ 3 = 2"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "2"
+      },
+      "text": "seconds a gap",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now 10 o'clock. The clock strikes 10 times. How many gaps is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10 gaps",
+      "9 gaps",
+      "11 gaps"
+     ],
+     "answer": 1,
+     "ifNot": "It is the same idea as before. The gaps sit between the strikes, so there is one fewer gap than strikes."
+    }
+   },
+   {
+    "say": "10 strikes have 9 gaps between them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "10 − 1 = 9"
+     }
+    ]
+   },
+   {
+    "say": "9 gaps of 2 seconds each: 9 times 2 is 18. The clock takes 18 seconds to strike 10 o'clock.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "9 × 2 = 18",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "18"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check our gap on the first clock. 3 gaps of 2 seconds make 6 seconds. That matches the question.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 2 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So with strikes, posts or trees in a row: count the gaps, not the things. There is always one fewer gap."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A machine is switched on at 9:40 at night on Thursday and runs for exactly 75 hours. On which day, and at what time, does it stop?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "On: Thursday 9:40 p.m. Runs 75 hours. Stops?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "75 hours is a lot to count round a clock. But a whole day is 24 hours, and after a whole day the clock shows the same time again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1 day = 24 hours",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So how many whole days fit into 75 hours?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 days",
+      "3 days",
+      "4 days"
+     ],
+     "answer": 1,
+     "ifNot": "Keep adding 24 hours until one more lot would go past 75. You can add it 3 times, so 3 whole days fit."
+    }
+   },
+   {
+    "say": "3 times 24 is 72 hours, and 75 minus 72 leaves 3 hours over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 24 = 72"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "75 − 72 = 3"
+     }
+    ]
+   },
+   {
+    "say": "3 days after Thursday: Friday, Saturday, Sunday. And the clock is back at 9:40 at night.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "Thursday 9:40 p.m. + 3 days = Sunday 9:40 p.m.",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the 3 extra hours. From 9:40 at night, 2 hours 20 minutes take us to 12 midnight.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "9:40 p.m. + 2 h 20 min = 12 midnight",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Midnight has just passed. What day is it now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "still Sunday",
+      "Monday",
+      "Tuesday"
+     ],
+     "answer": 1,
+     "ifNot": "A new day begins at midnight. The day after Sunday is Monday, so the machine is now running into Monday."
+    }
+   },
+   {
+    "say": "It is Monday. We have used 2 hours 20 minutes of the 3 hours, so 40 minutes remain. 40 minutes past midnight is 12:40 a.m.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3 h − 2 h 20 min = 40 min",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "Stops: Monday, 12:40 a.m.",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "Monday, 12:40 a.m."
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "There are two traps here. Passing midnight changes the day. And just after midnight is early morning, so it is a.m., not p.m."
+   },
+   {
+    "say": "So for a long run of hours: take out the whole days first, then add the leftover hours, and watch for midnight."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A sports camp runs every day from 25 January 2024 to 5 March 2024, counting both the first day and the last. For how many days does it run?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "25 January 2024 to 5 March 2024, both days counted",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We count month by month: the camp days in January, all of February, then the camp days in March."
+   },
+   {
+    "say": "January has 31 days. From the 25th to the 31st, counting both, how many days is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "j",
+      "text": "January: 25th to 31st",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 days",
+      "7 days",
+      "5 days"
+     ],
+     "answer": 1,
+     "ifNot": "Taking 25 from 31 gives 6, but that leaves out the 25th itself. Both end days count, so add 1 more."
+    }
+   },
+   {
+    "say": "31 minus 25 is 6, and 1 more for the 25th itself makes 7 days in January.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "31 − 25 + 1 = 7"
+     }
+    ]
+   },
+   {
+    "say": "Now February. How many days does February have in 2024?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2024"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "28",
+      "29",
+      "30"
+     ],
+     "answer": 1,
+     "ifNot": "Check the year. 2024 can be divided by 4 exactly, so it is a leap year. In a leap year February has one extra day."
+    }
+   },
+   {
+    "say": "2024 divided by 4 is 506 with nothing left over, so 2024 is a leap year. February has 29 days, not 28. That is the hidden trap.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2024 ÷ 4 = 506"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "February 2024: 29 days",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "March is quick. From the 1st to the 5th is 5 days.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "March: 1st to 5th = 5 days",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add the three parts: 7 plus 29 plus 5 makes 41. The camp runs for 41 days.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "7 + 29 + 5 = 41",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "41"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Look back at the parts: 7 days for January, 29 for the whole of February, 5 for March. No day is counted twice and none is missed."
+   },
+   {
+    "say": "So when you count days: go month by month, count both end days, and always check the year before you trust February."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_020": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A pile of 200 sheets of paper is 1 centimetre 6 millimetres thick. A book of this paper has 350 pages, one on each side of every sheet, and two covers that are each 1.5 millimetres thick. How thick is the book?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "200 sheets: 1 cm 6 mm. Book: 350 pages, 2 covers of 1.5 mm",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The book has 350 pages, with one page on each side of a sheet. How many sheets of paper is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "350 sheets",
+      "175 sheets",
+      "700 sheets"
+     ],
+     "answer": 1,
+     "ifNot": "Every sheet carries 2 pages, one on its front and one on its back. So there are half as many sheets as pages."
+    }
+   },
+   {
+    "say": "350 divided by 2 is 175 sheets. Pages and sheets are not the same thing, and that is the big trap here.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "350 ÷ 2 = 175"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "175"
+      },
+      "text": "sheets",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, the pile. 1 centimetre is 10 millimetres, so 1 centimetre 6 millimetres is 10 plus 6, which is 16 millimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 + 6 = 16"
+     }
+    ]
+   },
+   {
+    "say": "200 sheets are 16 millimetres thick. Divide both by 8: 25 sheets are 2 millimetres thick.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "200 ÷ 8 = 25"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "16 ÷ 8 = 2"
+     }
+    ]
+   },
+   {
+    "say": "How many lots of 25 sheets are in our 175 sheets?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 lots",
+      "7 lots",
+      "8 lots"
+     ],
+     "answer": 1,
+     "ifNot": "Count up in lots of 25 until you reach 175, keeping a tally on your fingers. Or divide 175 by 25."
+    }
+   },
+   {
+    "say": "175 divided by 25 is 7 lots, and each lot is 2 millimetres thick. So the paper is 7 times 2, which is 14 millimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "175 ÷ 25 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7 × 2 = 14"
+     }
+    ]
+   },
+   {
+    "say": "We are not done yet. The book has two covers, a front and a back, each 1.5 millimetres. Together they add 3 millimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "2 × 1.5 = 3"
+     }
+    ]
+   },
+   {
+    "say": "14 plus 3 is 17. The book is 17 millimetres thick.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "14 + 3 = 17",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "17"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Does the size make sense? 175 sheets is a little less than the pile of 200, and 14 millimetres of paper is a little less than 16. Yes."
+   },
+   {
+    "say": "So in a book question: halve the pages to get the sheets, find the paper's thickness, and remember both covers."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two clocks are set right at 12 noon. One gains 3 minutes every hour and the other loses 2 minutes every hour. What does the fast clock show when they are exactly 1 hour apart for the first time?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Right at 12 noon. One gains 3 min an hour,",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "the other loses 2 min an hour. 1 hour apart?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Each hour one clock runs 3 minutes ahead and the other falls 2 minutes behind. By how much does the gap between them grow each hour?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 − 2 = 1 minute",
+      "3 + 2 = 5 minutes",
+      "3 × 2 = 6 minutes"
+     ],
+     "answer": 1,
+     "ifNot": "The clocks move away from each other, one forwards and one backwards. So both changes widen the gap: 3 minutes and 2 minutes together."
+    }
+   },
+   {
+    "say": "The gap grows by 3 plus 2, which is 5 minutes every hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 + 2 = 5"
+     }
+    ]
+   },
+   {
+    "say": "We want a gap of 1 hour, and 1 hour is 60 minutes. 60 divided by 5 is 12, so it takes 12 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 ÷ 5 = 12"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "12"
+      },
+      "text": "hours",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "12 hours after 12 noon, the real time is 12 midnight.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 noon + 12 hours = 12 midnight",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Careful now. Which time does the question ask us for?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the real time",
+      "what the fast clock shows",
+      "what the slow clock shows"
+     ],
+     "answer": 1,
+     "ifNot": "Read the last line of the question again. It asks what the fast clock shows, and the fast clock is ahead of the real time."
+    }
+   },
+   {
+    "say": "The fast clock gains 3 minutes each hour. In 12 hours it gains 12 times 3, which is 36 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 × 3 = 36"
+     }
+    ]
+   },
+   {
+    "say": "So the fast clock is 36 minutes past midnight. It shows 12:36 a.m.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Fast clock: 12 midnight + 36 min = 12:36 a.m.",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "12:36 a.m."
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the gap. The slow clock has lost 12 times 2, which is 24 minutes. 36 ahead and 24 behind make 60 minutes apart: exactly 1 hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "12 × 2 = 24"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "36 + 24 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So add the gain and the loss to see how fast the gap opens. Then read exactly which clock the question wants."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A bottle holds 75 millilitres of cough syrup. Anu takes 5 millilitres every morning and 5 millilitres every night. Her first dose is on Monday night. When does she take the last dose?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "75 ml bottle. 5 ml every morning and every night.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "First dose: Monday night. Last dose?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Let's count doses, not days. Each dose is 5 millilitres, so the bottle holds 75 divided by 5, which is 15 doses.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "75 ÷ 5 = 15"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "15"
+      },
+      "text": "doses",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the trap. The first Monday is not a full day of medicine. Anu takes only the night dose that day.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q2",
+      "target": {
+       "text": "Monday night"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "After that first Monday night dose, how many doses are left in the bottle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "14",
+      "13"
+     ],
+     "answer": 1,
+     "ifNot": "Just one dose has been used so far, out of 15. Take 1 away from 15."
+    }
+   },
+   {
+    "say": "15 minus 1 is 14 doses left. From Tuesday on, she takes 2 doses every day.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15 − 1 = 14"
+     }
+    ]
+   },
+   {
+    "say": "14 divided by 2 is 7. So the 14 doses last exactly 7 full days.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "14 ÷ 2 = 7"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "7"
+      },
+      "text": "full days",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Those 7 full days start on Tuesday. Which day is the 7th one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Sunday",
+      "the next Monday",
+      "the next Tuesday"
+     ],
+     "answer": 1,
+     "ifNot": "Count 7 days with Tuesday as day 1: Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Monday."
+    }
+   },
+   {
+    "say": "Tuesday is day 1 and the next Monday is day 7. Every full day ends with the night dose, so the very last dose is on the next Monday night.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "Tue, Wed, Thu, Fri, Sat, Sun, Mon: 7 days",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Last dose: the next Monday night",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "the next Monday night"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by counting doses: 1 on the first Monday, then 7 days of 2 doses. 1 plus 14 is 15, the whole bottle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1 + 7 × 2 = 15"
+     }
+    ]
+   },
+   {
+    "say": "So count the doses first, deal with the part day on its own, and then count the full days one by one."
+   }
+  ]
+ },
+ "G5A_OPERATIONS1_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya and Kabir have 450 stickers altogether. If Riya gives 30 of hers to Kabir, they will have the same number. How many does Riya have now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Riya + Kabir: 450. Riya gives 30, then they are equal.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start at the moment after the gift, when they are equal. A gift only moves stickers from one hand to another, so the total is still 450."
+   },
+   {
+    "say": "After the gift they are equal, with 450 between them. How many does each child have then?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "450 ÷ 2",
+      "450 − 30",
+      "450 + 30"
+     ],
+     "answer": 0,
+     "ifNot": "Two equal amounts that make 450 together: each one is half of 450."
+    }
+   },
+   {
+    "say": "450 divided by 2 is 225. After the gift, each child has 225 stickers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "450 ÷ 2 = 225"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "225"
+      },
+      "text": "each, after the gift",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "But the question asks what Riya has now, before she gives anything away. How does that compare with 225?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30 more than 225",
+      "30 less than 225",
+      "exactly 225"
+     ],
+     "answer": 0,
+     "ifNot": "Riya is the one who gives stickers away. She comes down to 225 only after losing 30, so right now she has 30 more."
+    }
+   },
+   {
+    "say": "So we put her 30 stickers back in her hand. 225 plus 30 is 255. Riya has 255 stickers now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "225 + 30 = 255",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "255"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The tempting slip is to stop at 225. That is what she will have after the gift, not what she has now."
+   },
+   {
+    "say": "Check. Kabir has 450 minus 255, which is 195. Give him 30 and he has 225. Riya drops from 255 to 225. Equal!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "450 − 255 = 195"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "195 + 30 = 225"
+     }
+    ]
+   },
+   {
+    "say": "So when a gift makes two people equal: halve the total, then undo the gift for the person the question asks about."
+   }
+  ]
+ },
+ "G5A_OPERATIONS1_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun had to subtract 386 from a number. By mistake he copied 386 as 368, and he added it instead of subtracting. He got 2154. What is the right answer?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Asked: number − 386. Did: number + 368 = 2,154",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Arjun made two slips. He copied the number with two digits swapped, and he added when he should have subtracted.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "386"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "+ 368"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "We do not know his starting number yet. But we know exactly what he did to it, so we can undo it."
+   },
+   {
+    "say": "He added 368 and reached 2154. How do we get back to his starting number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2,154 − 368",
+      "2,154 − 386",
+      "2,154 + 368"
+     ],
+     "answer": 0,
+     "ifNot": "Undo exactly what he really did. He added 368, not 386, so we take 368 away from 2154."
+    }
+   },
+   {
+    "say": "2154 minus 368 is 1786. That is the number Arjun started with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2,154 − 368 = 1,786"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "1,786"
+      },
+      "text": "starting number",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Is 1786 our answer, or is there more to do?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1,786 is the answer",
+      "now subtract 386",
+      "now subtract 368 again"
+     ],
+     "answer": 1,
+     "ifNot": "1786 is only the number he began with. The job he was given was to subtract 386 from it, so we still have to do that."
+    }
+   },
+   {
+    "say": "Now we do what he was asked, with the right number. 1786 minus 386 is 1400. The right answer is 1400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1,786 − 386 = 1,400",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "1,400"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by doing it Arjun's way. 1786 plus 368 is 2154, exactly what he got.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1,786 + 368 = 2,154"
+     }
+    ]
+   },
+   {
+    "say": "So when someone has done a different sum from the one they were given: first undo what they really did, then do what they were asked."
+   }
+  ]
+ },
+ "G5A_OPERATIONS1_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The digits 1, 2, 3, 4, 5 and 6 are each used once to make two 3 digit numbers. What is the smallest possible difference between them?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits 1, 2, 3, 4, 5, 6 make two 3-digit numbers.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Smallest difference?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "For a small difference, the two numbers must be as close together as we can get them. The hundreds digits matter most."
+   },
+   {
+    "say": "Which hundreds digits keep the two numbers close?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "far apart, like 6 and 1",
+      "neighbours, like 4 and 3",
+      "it makes no difference"
+     ],
+     "answer": 1,
+     "ifNot": "Hundreds are worth the most. If the hundreds digits are far apart, the numbers are hundreds apart. Neighbours keep them close."
+    }
+   },
+   {
+    "say": "Let's take 4 and 3 as the hundreds digits. The digits left over are 1, 2, 5 and 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 _ _ and 3 _ _    left: 1, 2, 5, 6",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is the insight. The bigger number, the one starting with 4, should be as small as it can be. The smaller number should be as large as it can be. They lean towards each other."
+   },
+   {
+    "say": "So what should the number starting with 4 be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "412",
+      "421",
+      "465"
+     ],
+     "answer": 0,
+     "ifNot": "We want the number starting with 4 to be as small as possible. So it takes the two smallest digits left, 1 and 2, with the smaller one first."
+    }
+   },
+   {
+    "say": "The bigger number is 412. The other number gets 5 and 6. To be as large as possible it is 365, not 356.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "412 and 365   (365 is more than 356)",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "412 minus 365 is 47.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "412 − 365 = 47",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "47"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Could other neighbours do better? With 3 and 2 the best is 314 minus 265, and with 5 and 4 it is 512 minus 463. Both give 49. So 47 is the smallest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "314 − 265 = 49"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "512 − 463 = 49"
+     }
+    ]
+   },
+   {
+    "say": "So for the smallest difference: choose neighbouring digits in front, then make the bigger number small and the smaller number big."
+   }
+  ]
+ },
+ "G5A_OPERATIONS1_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A book lies open, and the two facing page numbers add up to 437. Kabir turns over 6 more leaves. What is the number on the right-hand page now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Facing pages add up to 437. Turn 6 more leaves.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Facing pages carry numbers that follow one another, like 8 and 9. So we want two neighbours that add up to 437."
+   },
+   {
+    "say": "Half of 437 is 218 and a half. So the two pages sit just below and just above that: 218 and 219.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "218 + 219 = 437"
+     }
+    ]
+   },
+   {
+    "say": "The bigger one, 219, is on the right-hand page.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "219"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "219"
+      },
+      "text": "right-hand page",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Kabir turns 1 leaf. By how much do the page numbers go up?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "by 1",
+      "by 2",
+      "by 6"
+     ],
+     "answer": 1,
+     "ifNot": "A leaf is one piece of paper, with a page on its front and a page on its back. Turning it takes you past both pages."
+    }
+   },
+   {
+    "say": "Each leaf carries 2 pages. So 6 leaves move the numbers on by 6 times 2, which is 12. Adding only 6 is the trap here.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6 × 2 = 12"
+     }
+    ]
+   },
+   {
+    "say": "219 plus 12 is 231. The right-hand page is now page 231.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "219 + 12 = 231",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "231"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check. The left-hand page is now 218 plus 12, which is 230. And 230 and 231 are neighbours, with the bigger one on the right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "218 + 12 = 230"
+     }
+    ]
+   },
+   {
+    "say": "So with books: facing pages are neighbours, and every leaf you turn moves the numbers on by 2."
+   }
+  ]
+ },
+ "G5A_OPERATIONS1_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Asha and Bina have 560 rupees together. Bina and Chetan have 640. Asha and Chetan have 600. How much does Bina have?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Asha + Bina = 560, Bina + Chetan = 640,",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Asha + Chetan = 600. Bina = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Nobody's money is given alone, only in pairs. The trick is to add all three pairs together. 560 plus 640 plus 600 is 1800.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "560 + 640 + 600 = 1800"
+     }
+    ]
+   },
+   {
+    "say": "In that 1800, how many times has each child's money been counted?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "once",
+      "twice",
+      "three times"
+     ],
+     "answer": 1,
+     "ifNot": "Look at Asha. She is in the first pair and in the third pair. In the same way, every child is in exactly 2 of the pairs."
+    }
+   },
+   {
+    "say": "Each child is counted twice, so 1800 is double the real total. Halve it: the three children have 900 rupees together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1800 ÷ 2 = 900"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "900"
+      },
+      "text": "all three together",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "All three have 900. Which pair do we take away to leave only Bina?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Asha and Bina, 560",
+      "Bina and Chetan, 640",
+      "Asha and Chetan, 600"
+     ],
+     "answer": 2,
+     "ifNot": "To leave Bina alone, remove the two children who are not Bina. That is Asha and Chetan, and together they have 600."
+    }
+   },
+   {
+    "say": "900 minus 600 is 300. Bina has 300 rupees.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q2",
+      "target": {
+       "text": "Asha + Chetan = 600"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "900 − 600 = 300",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "300"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to skip the halving and take 600 away from 1800. That number counts everybody twice."
+   },
+   {
+    "say": "Check. Asha has 560 minus 300, which is 260. Chetan has 640 minus 300, which is 340. And 260 plus 340 is 600, just as the question says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "560 − 300 = 260"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "640 − 300 = 340"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "260 + 340 = 600"
+     }
+    ]
+   },
+   {
+    "say": "So when you are given every pair: add the pairs, halve to get everyone together, then take away the pair you do not want."
+   }
+  ]
+ },
+ "G5A_OPERATIONS1_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera added up a long list. She copied 4582 as 4852, and she copied 739 as 379. Everything else was right, and her total was 9640. What is the right total?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Copied 4,582 as 4,852 and 739 as 379. Total: 9,640",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We do not know the other numbers in the list, and we do not need them. We only have to repair the two slips."
+   },
+   {
+    "say": "She wrote 4852 where 4582 should be. Did that make her total too big or too small?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "too big",
+      "too small",
+      "it made no change"
+     ],
+     "answer": 0,
+     "ifNot": "Compare the two numbers. 4852 is more than 4582, so she added more than she should have. Her total came out too big."
+    }
+   },
+   {
+    "say": "4852 minus 4582 is 270. So this slip made her total 270 too big.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4,852 − 4,582 = 270"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "270"
+      },
+      "text": "too much",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The second slip goes the other way. She wrote 379 where 739 should be. 379 is smaller, so something is missing: 739 minus 379 is 360.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "739 − 379 = 360"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "360"
+      },
+      "text": "missing",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So how do we repair her total of 9640?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "take away 270, add 360",
+      "add 270, take away 360",
+      "take away 270 and 360"
+     ],
+     "answer": 0,
+     "ifNot": "Think about each slip on its own. The extra 270 has to come off. The missing 360 has to go back in."
+    }
+   },
+   {
+    "say": "9640 minus 270 is 9370. Then 9370 plus 360 is 9730. The right total is 9730.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9,640 − 270 = 9,370"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "9,370 + 360 = 9,730",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "9,730"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is treating both slips the same way. One made the total too big and the other made it too small, so decide the direction for each."
+   },
+   {
+    "say": "A quick check. We took off 270 and put on 360, so the total should rise by 90. And 9730 is 90 more than 9640.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "360 − 270 = 90"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "9,640 + 90 = 9,730"
+     }
+    ]
+   },
+   {
+    "say": "So to repair a total, you never need the whole list. Find how far off each slip was, and which way."
+   }
+  ]
+ },
+ "G5A_OPERATIONS1_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "On Monday the tickets numbered 358 to 512 were sold. On Tuesday the numbers carried on from 513, and 40 more tickets were sold than on Monday. What was the last ticket number on Tuesday?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Monday: tickets 358 to 512.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Tuesday: from 513, 40 more tickets than Monday.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, how many tickets were sold on Monday, from 358 to 512?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "512 − 358",
+      "512 − 358 + 1",
+      "512 − 358 − 1"
+     ],
+     "answer": 1,
+     "ifNot": "Try it with small numbers. Tickets 3 to 5 are 3 tickets: 3, 4 and 5. But 5 minus 3 is only 2. Both end tickets were sold, so we add 1."
+    }
+   },
+   {
+    "say": "512 minus 358 is 154, and 1 more because both end tickets count. Monday had 155 tickets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "512 − 358 = 154"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "154 + 1 = 155"
+     }
+    ]
+   },
+   {
+    "say": "Tuesday had 40 more than that. 155 plus 40 is 195 tickets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "155 + 40 = 195"
+     }
+    ]
+   },
+   {
+    "say": "Tuesday's first ticket is 513, and there are 195 of them. What do we add to 513 to reach the last one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "195",
+      "194",
+      "196"
+     ],
+     "answer": 1,
+     "ifNot": "Ticket 513 is itself the first of the 195. So after it there are only 194 more tickets to go."
+    }
+   },
+   {
+    "say": "Ticket 513 is number 1 of the 195, so the last ticket is 194 further on. It is the same both ends idea, the other way round.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "195 − 1 = 194"
+     }
+    ]
+   },
+   {
+    "say": "513 plus 194 is 707. The last ticket sold on Tuesday was number 707.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "513 + 194 = 707",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "707"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by counting Tuesday's tickets, from 513 to 707. 707 minus 513 is 194, and 1 more makes 195. That is right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "707 − 513 + 1 = 195"
+     }
+    ]
+   },
+   {
+    "say": "So when things are numbered from one number to another, the count is last minus first, plus 1."
+   }
+  ]
+ },
+ "G5A_OPERATIONS1_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Each letter stands for a digit, and different letters are different digits. P Q R, added three times, makes Q Q Q. We want P plus Q plus R.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "PQR + PQR + PQR = QQQ",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "P + Q + R = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The total, Q Q Q, has three equal digits. There are only a few numbers like that, so we can test them one by one.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l0",
+      "text": "QQQ could be 111, 222, 333, ... 999",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "If three lots of P Q R make Q Q Q, how do we get P Q R from Q Q Q?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "divide by 3",
+      "multiply by 3",
+      "subtract 3"
+     ],
+     "answer": 0,
+     "ifNot": "Three equal numbers add up to Q Q Q. So each one is a third of it, and to find a third we divide by 3."
+    }
+   },
+   {
+    "say": "Try 111: divided by 3 it gives 37, which has only 2 digits. 222 gives 74. 333 gives 111, whose digits are all the same. None of these fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "111 ÷ 3 = 37"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "222 ÷ 3 = 74"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "333 ÷ 3 = 111"
+     }
+    ]
+   },
+   {
+    "say": "Now 444. Divided by 3, it gives 148.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "444 ÷ 3 = 148"
+     }
+    ]
+   },
+   {
+    "say": "Here is the test that matters. Which digit of 148 has to match the Q of 444?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the first digit, 1",
+      "the middle digit, 4",
+      "the last digit, 8"
+     ],
+     "answer": 1,
+     "ifNot": "In P Q R the letter Q sits in the middle. So the middle digit of our number has to be the same as the repeated digit."
+    }
+   },
+   {
+    "say": "The middle digit of 148 is 4, and Q is 4. It fits! And 1, 4 and 8 are all different.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "148"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The others do not fit. 555 gives 185, with 8 in the middle, not 5. 777 gives 259, 888 gives 296, and the rest repeat a digit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "555 ÷ 3 = 185"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "777 ÷ 3 = 259"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "888 ÷ 3 = 296"
+     }
+    ]
+   },
+   {
+    "say": "So P is 1, Q is 4 and R is 8. 1 plus 4 plus 8 is 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "1 + 4 + 8 = 13",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "13"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 148 plus 148 plus 148 is 444. Three equal digits, and the middle digit matches.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "148 + 148 + 148 = 444"
+     }
+    ]
+   },
+   {
+    "say": "So in a letter puzzle, look for the clue that leaves only a few choices, then test each one against every rule."
+   }
+  ]
+ },
+ "G5A_OPERATIONS1_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Using each of the digits 1, 2, 3 and 4 exactly once, we can make 24 different 4 digit numbers. What is the sum of all 24?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits 1, 2, 3, 4, each once: 24 numbers. Their sum?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Adding 24 numbers one by one would take ages. Instead, look at one place at a time, starting with the units place."
+   },
+   {
+    "say": "The 24 numbers share the 4 digits fairly. How many times is each digit in the units place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "24 ÷ 4 = 6 times",
+      "4 times",
+      "once"
+     ],
+     "answer": 0,
+     "ifNot": "No digit is special, so each one gets an equal share of the 24 units places. Share 24 equally among the 4 digits."
+    }
+   },
+   {
+    "say": "24 divided by 4 is 6. So the digit 1 is in the units place 6 times, and so are 2, 3 and 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "24 ÷ 4 = 6"
+     }
+    ]
+   },
+   {
+    "say": "The digits 1, 2, 3 and 4 add up to 10. Each is there 6 times, so the units column adds up to 6 times 10, which is 60.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1 + 2 + 3 + 4 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6 × 10 = 60"
+     }
+    ]
+   },
+   {
+    "say": "What about the tens column? What do its digits add up to?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "60 as well",
+      "less than 60",
+      "more than 60"
+     ],
+     "answer": 0,
+     "ifNot": "The tens place is shared in the same fair way. Each digit is there 6 times too, so the digits add up to 60 again."
+    }
+   },
+   {
+    "say": "Every column adds up to 60. But 60 in the tens column is worth 600, in the hundreds column 6000, and in the thousands column 60,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "60 × 10 = 600"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "60 × 100 = 6,000"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "60 × 1,000 = 60,000"
+     }
+    ]
+   },
+   {
+    "say": "Add the four columns: 60 plus 600 plus 6000 plus 60,000 is 66,660.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "60 + 600 + 6,000 + 60,000 = 66,660",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "66,660"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Test the idea on a tiny case. The digits 1 and 2 make 12 and 21, which add up to 33. Each column adds up to 3, and 3 units plus 3 tens is 33 too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "12 + 21 = 33"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "3 + 30 = 33"
+     }
+    ]
+   },
+   {
+    "say": "So to add up every arrangement of some digits: find what one column adds up to, then give each column its place value."
+   }
+  ]
+ },
+ "G5A_OPERATIONS1_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Work out 100 minus 99, plus 98 minus 97, plus 96 minus 95, and so on, all the way down to plus 2 minus 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "100 − 99 + 98 − 97 + 96 − 95 + ... + 4 − 3 + 2 − 1",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Working from left to right would take a hundred steps. Look for small groups that repeat instead."
+   },
+   {
+    "say": "Take the first two numbers together. What is 100 minus 99?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "199",
+      "0"
+     ],
+     "answer": 0,
+     "ifNot": "100 and 99 are neighbours on the number line. Take one from the other and just 1 is left."
+    }
+   },
+   {
+    "say": "100 minus 99 is 1. The next pair, 98 minus 97, is 1 as well. So is 96 minus 95.",
+    "board": [
+     {
+      "op": "group",
+      "line": "q",
+      "targets": [
+       {
+        "text": "100 − 99"
+       },
+       {
+        "text": "98 − 97"
+       },
+       {
+        "text": "96 − 95"
+       }
+      ],
+      "label": "each pair is 1"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "100 − 99 = 1"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "98 − 97 = 1"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "96 − 95 = 1"
+     }
+    ]
+   },
+   {
+    "say": "It carries on like that right to the end. The last pair, 2 minus 1, is worth 1 too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 − 1 = 1"
+     }
+    ]
+   },
+   {
+    "say": "There are 100 numbers in the line. How many pairs do they make?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "100 pairs",
+      "50 pairs",
+      "51 pairs"
+     ],
+     "answer": 1,
+     "ifNot": "Each pair uses up 2 numbers. So 100 numbers, taken 2 at a time, make half as many pairs."
+    }
+   },
+   {
+    "say": "100 divided by 2 is 50 pairs, with nothing left over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "100 ÷ 2 = 50"
+     }
+    ]
+   },
+   {
+    "say": "50 pairs, worth 1 each. 50 times 1 is 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "50 × 1 = 50",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "50",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps to dodge. The numbers do not all cancel to 0, because each pair leaves 1 behind. And there are 50 pairs, not 100."
+   },
+   {
+    "say": "Try a tiny one: 4 minus 3, plus 2 minus 1. That is 2 pairs, and the answer is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "4 − 3 + 2 − 1 = 2"
+     }
+    ]
+   },
+   {
+    "say": "So in a long line of plus and minus, pair the numbers up. The answer here is 50."
+   }
+  ]
+ },
+ "G5A_OPERATIONS2_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A tray holds 12 eggs. How many eggs are there in 6 full trays?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1 tray holds 12 eggs. 6 full trays?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Every tray holds the same number, 12. So we have 6 equal groups of 12."
+   },
+   {
+    "say": "How do we count equal groups quickly?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 + 6",
+      "12 × 6",
+      "12 − 6"
+     ],
+     "answer": 1,
+     "ifNot": "Adding 12 and 6 would give one tray and 6 loose eggs. Here we have 12 eggs again and again, 6 times over, and that is multiplying."
+    }
+   },
+   {
+    "say": "12 times 6 is easy if we split the 12 into 10 and 2. 10 times 6 is 60, and 2 times 6 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "10 × 6 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 × 6 = 12"
+     }
+    ]
+   },
+   {
+    "say": "60 plus 12 is 72. So 12 times 6 is 72, and there are 72 eggs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "60 + 12 = 72"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 × 6 = 72",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "72"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So equal groups mean multiply. And a big times fact can be split into two easy ones."
+   }
+  ]
+ },
+ "G5A_OPERATIONS2_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "An auto-rickshaw charges 9 rupees for every kilometre. What is the fare for a ride of 7 kilometres?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹9 for every km. Fare for 7 km?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Each of the 7 kilometres costs the same amount, 9 rupees."
+   },
+   {
+    "say": "Which sum gives the fare?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9 + 7",
+      "9 × 7",
+      "9 − 7"
+     ],
+     "answer": 1,
+     "ifNot": "Adding 9 and 7 mixes rupees with kilometres. The 9 rupees are paid again for every one of the 7 kilometres, so we multiply."
+    }
+   },
+   {
+    "say": "Here is a neat way to do 9 times 7. 10 times 7 is 70, and that is one 7 too many. 70 minus 7 is 63.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "10 × 7 = 70"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "70 − 7 = 63"
+     }
+    ]
+   },
+   {
+    "say": "So 9 times 7 is 63. The fare is 63 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9 × 7 = 63",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "63"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the same amount for each one means multiply. And for a times 9, work out times 10 and take one lot away."
+   }
+  ]
+ },
+ "G5A_OPERATIONS2_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "There are 7 days in a week, and Meera's summer holiday lasts exactly 8 weeks. How many days is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "7 days in a week. Holiday: 8 weeks. Days?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are 8 weeks, with 7 days in every one. That is 8 equal groups of 7."
+   },
+   {
+    "say": "Which sum counts the days?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7 + 8",
+      "7 × 8",
+      "8 − 7"
+     ],
+     "answer": 1,
+     "ifNot": "7 plus 8 would be one week and 8 more days. Here every one of the 8 weeks has 7 days, so we multiply."
+    }
+   },
+   {
+    "say": "7 times 8 is a fact lots of people mix up, so let's build it from doubles. 7 times 2 is 14. Double that for 7 times 4, which is 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "7 × 2 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "7 × 4 = 28"
+     }
+    ]
+   },
+   {
+    "say": "Double once more for 7 times 8. Double 28 is 56. The holiday lasts 56 days.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "7 × 8 = 56",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "56"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a way to remember it. Say 5, 6, 7, 8: 56 is 7 times 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "56 = 7 × 8"
+     }
+    ]
+   },
+   {
+    "say": "So equal groups mean multiply. And doubling twice turns a times 2 fact into a times 8 fact."
+   }
+  ]
+ },
+ "G5A_OPERATIONS2_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Dadi shares 45 laddoos equally among 5 children. How many laddoos does each child get?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "45 laddoos shared equally among 5 children",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Dadi wants every child to get the same number, with no laddoos left over."
+   },
+   {
+    "say": "Which sum shares 45 equally among 5?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "45 − 5",
+      "45 ÷ 5",
+      "45 + 5"
+     ],
+     "answer": 1,
+     "ifNot": "Taking 5 away would hand out only 5 laddoos. Sharing equally into 5 groups is a division."
+    }
+   },
+   {
+    "say": "To divide 45 by 5, ask yourself: 5 times what makes 45? Counting up in fives, 5 times 9 is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 × 9 = 45"
+     }
+    ]
+   },
+   {
+    "say": "So 45 divided by 5 is 9. Each child gets 9 laddoos.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "45 ÷ 5 = 9",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 5 children with 9 laddoos each is 9 times 5, which is 45. Every laddoo is used.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9 × 5 = 45"
+     }
+    ]
+   },
+   {
+    "say": "So sharing equally means dividing, and a times fact you know gives you the answer."
+   }
+  ]
+ },
+ "G5A_OPERATIONS2_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "For the morning assembly, 96 children stand in rows of 8. How many rows are there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "96 children in rows of 8. How many rows?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Each row takes 8 children. So we want to know how many eights fit into 96."
+   },
+   {
+    "say": "Which sum tells us that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "96 − 8",
+      "96 ÷ 8",
+      "96 + 8"
+     ],
+     "answer": 1,
+     "ifNot": "Taking away 8 fills only one row. To find how many rows of 8 there are in 96, we divide."
+    }
+   },
+   {
+    "say": "96 is past the easy part of the 8 times table, so split it into 80 and 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "96 = 80 + 16"
+     }
+    ]
+   },
+   {
+    "say": "80 divided by 8 is 10 rows, and 16 divided by 8 is 2 more rows.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "80 ÷ 8 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "16 ÷ 8 = 2"
+     }
+    ]
+   },
+   {
+    "say": "10 plus 2 is 12. So 96 divided by 8 is 12, and there are 12 rows.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "96 ÷ 8 = 12",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 12 rows of 8 is 12 times 8, which is 96. Every child has a place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 × 8 = 96"
+     }
+    ]
+   },
+   {
+    "say": "So making equal rows means dividing. And a big division can be split into two easy ones."
+   }
+  ]
+ },
+ "G5A_OPERATIONS2_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "6 notebooks of the same kind cost 240 rupees altogether. What is the cost of one notebook?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "6 notebooks cost ₹240 altogether. One notebook?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The notebooks are all the same, so the 240 rupees are shared equally among the 6 of them."
+   },
+   {
+    "say": "Which sum gives the cost of one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "240 × 6",
+      "240 ÷ 6",
+      "240 − 6"
+     ],
+     "answer": 1,
+     "ifNot": "240 rupees is already the price of all 6. One notebook costs an equal share of that, which is less, so we divide."
+    }
+   },
+   {
+    "say": "Here is a shortcut. 240 is 24 tens, and 24 divided by 6 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "24 ÷ 6 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So 24 tens divided by 6 is 4 tens, which is 40. One notebook costs 40 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "240 ÷ 6 = 40",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "40",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 6 notebooks at 40 rupees each is 6 times 40, which is 240.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6 × 40 = 240"
+     }
+    ]
+   },
+   {
+    "say": "So the cost of one is the total divided by how many. And a zero at the end can wait while you use a fact you know."
+   }
+  ]
+ },
+ "G5A_OPERATIONS2_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Which number, when multiplied by 9, gives 108?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "? × 9 = 108",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Some number was multiplied by 9, and the result is 108. We want the number we started with."
+   },
+   {
+    "say": "What undoes multiplying by 9?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "subtracting 9",
+      "dividing by 9",
+      "adding 9"
+     ],
+     "answer": 1,
+     "ifNot": "Times and divide are partners. Whatever times does, divide undoes. So to undo times 9, we divide by 9."
+    }
+   },
+   {
+    "say": "So we divide 108 by 9. Split 108 into 90 and 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "108 = 90 + 18"
+     }
+    ]
+   },
+   {
+    "say": "90 divided by 9 is 10, and 18 divided by 9 is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "90 ÷ 9 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "18 ÷ 9 = 2"
+     }
+    ]
+   },
+   {
+    "say": "10 plus 2 is 12. So 108 divided by 9 is 12. The number is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "108 ÷ 9 = 12",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 12 times 9. 10 nines are 90 and 2 nines are 18, and together that is 108.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 × 9 = 108"
+     }
+    ]
+   },
+   {
+    "say": "So a missing number in a multiplication is found by dividing."
+   }
+  ]
+ },
+ "G5A_OPERATIONS2_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "One dozen is 12. A fruit seller has 60 bananas. How many dozens of bananas is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1 dozen = 12. 60 bananas = ? dozens",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "A dozen is a group of 12. So we want to know how many groups of 12 there are in 60."
+   },
+   {
+    "say": "Which sum tells us that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "60 − 12",
+      "60 ÷ 12",
+      "60 + 12"
+     ],
+     "answer": 1,
+     "ifNot": "Taking away 12 removes just one dozen. To count how many dozens fit into 60, we divide."
+    }
+   },
+   {
+    "say": "Let's count up in twelves and keep a tally on our fingers: 12, 24, 36, 48, 60.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12, 24, 36, 48, 60",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "That took 5 twelves. So 60 divided by 12 is 5. There are 5 dozens of bananas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 ÷ 12 = 5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 5 dozens is 5 times 12, which is 60.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 × 12 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So to find how many equal groups fit into a number, divide. Counting up in the group size works too."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The price of a cricket bat is raised by 20 percent. A month later, the new price is cut by 20 percent. How does the final price compare with the price at the very beginning?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Price raised by 20%. Then the new price is cut by 20%.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Final price compared with the start?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Up 20 percent, then down 20 percent. Before we work it out, what do you expect?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "back where it started",
+      "lower than the start",
+      "higher than the start"
+     ],
+     "answer": 1,
+     "ifNot": "It feels as if the two changes cancel. But they are 20 percent of two different prices. Let's follow a real price through and see."
+    }
+   },
+   {
+    "say": "No price is given, so we can choose an easy one. Say the bat costs 100 rupees at the beginning.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Start: ₹100",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First the rise. 20 percent of 100 is 20, so the price goes up to 120 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "20% of 100 = 20"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "100 + 20 = 120"
+     }
+    ]
+   },
+   {
+    "say": "Now the 20 percent cut. It is 20 percent of which price?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "of 100, the first price",
+      "of 120, the new price",
+      "of 20, the rise"
+     ],
+     "answer": 1,
+     "ifNot": "Read the question again: it is the new price that is cut. The cut is taken from what the bat costs at that moment, which is 120."
+    }
+   },
+   {
+    "say": "20 percent of 120 is 24. That is the heart of it: the cut is taken from a bigger price, so it is bigger than the rise was.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "new price"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "20% of 120 = 24"
+     }
+    ]
+   },
+   {
+    "say": "120 minus 24 is 96. The final price is 96 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "120 − 24 = 96"
+     }
+    ]
+   },
+   {
+    "say": "96 is 4 rupees below 100, and 4 out of 100 is 4 percent. So the final price is 4 percent less than at the beginning.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "100 − 96 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "Final price: 4% less than at the start",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "4% less"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the same percent up and then down does not bring you back. Each percent belongs to the price just before it, and starting from 100 makes that easy to follow."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A bus fare was raised by 20 percent. Later the new fare was reduced by 10 percent, and it is now 594 rupees. What was the fare before the two changes?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Fare raised by 20%, then reduced by 10%. Now ₹594.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Fare before the changes?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We know the end and want the beginning. So we work backwards, undoing the last change first."
+   },
+   {
+    "say": "The last change was the 10 percent cut. After a 10 percent cut, 90 percent of the raised fare is left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "100% − 10% = 90%"
+     }
+    ]
+   },
+   {
+    "say": "So 594 rupees is 90 percent of the raised fare. Divide by 9 to find 10 percent: 594 divided by 9 is 66.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "594 ÷ 9 = 66"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "66"
+      },
+      "text": "10% of raised fare",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "10 percent is 66, so the whole raised fare is 10 times that: 660 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "66 × 10 = 660"
+     }
+    ]
+   },
+   {
+    "say": "Now undo the 20 percent rise. 660 is what percent of the first fare?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "80%",
+      "120%",
+      "20%"
+     ],
+     "answer": 1,
+     "ifNot": "The first fare is the whole, 100 percent. Raising it by 20 percent puts 20 more on top, so the raised fare is 120 percent of the first fare."
+    }
+   },
+   {
+    "say": "660 is 120 percent of the first fare. Divide by 12 to find 10 percent: 660 divided by 12 is 55.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "100% + 20% = 120%"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "660 ÷ 12 = 55"
+     }
+    ]
+   },
+   {
+    "say": "10 percent is 55, so the first fare is 10 times that. It was 550 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "55 × 10 = 550",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "550"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The tempting move is to say: up 20, down 10, so up 10 overall. But the two percents belong to different fares, so they cannot be mixed."
+   },
+   {
+    "say": "Check forwards. 20 percent of 550 is 110, making 660. 10 percent of 660 is 66, and 660 minus 66 is 594. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "550 + 110 = 660"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "660 − 66 = 594"
+     }
+    ]
+   },
+   {
+    "say": "So to undo percent changes: go backwards one change at a time, and ask each time what percent of the earlier amount you are holding."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Anil's weight is 25 percent more than Binu's weight. By what percent is Binu's weight less than Anil's?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Anil's weight is 25% more than Binu's.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Binu's is what percent less than Anil's?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "No weights are given, so we can choose an easy one. Say Binu weighs 100 units.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Binu: 100 units",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Anil weighs 25 percent more. 25 percent of 100 is 25, so Anil weighs 125 units.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "100 + 25 = 125"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "125"
+      },
+      "text": "Anil",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The gap between them is 25 units, whichever way you look at it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "125 − 100 = 25"
+     }
+    ]
+   },
+   {
+    "say": "Now the question: Binu is what percent less than Anil? Which weight do we compare the 25 with?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Binu's 100",
+      "Anil's 125",
+      "either, it is the same"
+     ],
+     "answer": 1,
+     "ifNot": "Listen to the words: less than Anil's weight. The weight named after the word than is the one we measure against. That is Anil's 125."
+    }
+   },
+   {
+    "say": "So we want 25 out of 125. 125 divided by 25 is 5, so 25 is one fifth of 125.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q2",
+      "target": {
+       "text": "less than Anil's"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "125 ÷ 25 = 5"
+     }
+    ]
+   },
+   {
+    "say": "One fifth, as a percent, is 20 percent. So Binu's weight is 20 percent less than Anil's.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "25/125 = 20%",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "20%"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "See the trap? 25 percent more one way is not 25 percent less the other way. The gap is the same 25 units, but it is measured against a bigger weight, so the percent is smaller."
+   },
+   {
+    "say": "Check: 20 percent of 125 is 25, and 125 minus 25 is 100. That is Binu's weight.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "20% of 125 = 25"
+     }
+    ]
+   },
+   {
+    "say": "So with percent more or less, always ask: than whom? That person's amount is the base you measure against."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Farida has 400 rupees and Gopal has 500 rupees. One of the four statements about them is true. Let's find out which.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Farida: ₹400. Gopal: ₹500. Which statement is true?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Every statement talks about more or less, so start with the difference. 500 minus 400 is 100 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "500 − 400 = 100"
+     }
+    ]
+   },
+   {
+    "say": "Here is the key idea. That 100 rupees is a different percent, depending on whose money we measure it against."
+   },
+   {
+    "say": "Take the words: Gopal has more than Farida. Whose money do we measure the 100 against?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Farida's 400",
+      "Gopal's 500"
+     ],
+     "answer": 0,
+     "ifNot": "The person named after the word than is the base. More than Farida means we compare the gap with Farida's 400."
+    }
+   },
+   {
+    "say": "100 out of 400 is one quarter, and one quarter is 25 percent. So Gopal has 25 percent more than Farida.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "100/400 = 25%"
+     }
+    ]
+   },
+   {
+    "say": "Now the other way. Farida has less than Gopal, so we measure against Gopal's 500. 100 out of 500 is one fifth, which is 20 percent.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "100/500 = 20%"
+     }
+    ]
+   },
+   {
+    "say": "So Farida has 20 percent less than Gopal, not 25. And Gopal has 25 percent more than Farida, not 20. Two statements swap these numbers round, and that is the trap."
+   },
+   {
+    "say": "What about 80 percent less? 400 is 80 percent of 500. That is how much Farida has, not how much less she has.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "400/500 = 80%"
+     }
+    ]
+   },
+   {
+    "say": "So the true statement is: Gopal has 25 percent more money than Farida.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Gopal has 25% more money than Farida.",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "25% more"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "With percent more or less, always ask: than whom? The same gap of 100 rupees is 25 percent of one amount and 20 percent of the other."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera spent 40 percent of her money on a school bag. Then she spent 25 percent of the money that was left on a water bottle. She now has 315 rupees. How much did she have at first?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "40% on a bag, then 25% of what was left. Now ₹315.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The second percent is of what was left, not of all her money. That is the trap. So we work backwards from the 315 rupees.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "of what was left"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "She spent 25 percent of the money left after the bag. What percent of that money still remains?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "25%",
+      "75%",
+      "35%"
+     ],
+     "answer": 1,
+     "ifNot": "25 percent is one quarter. Spending one quarter of something leaves three quarters of it, and three quarters is 75 percent."
+    }
+   },
+   {
+    "say": "So 315 rupees is three quarters of the money she had after the bag. One quarter is 315 divided by 3, which is 105.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "315 ÷ 3 = 105"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "105"
+      },
+      "text": "one quarter",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "4 quarters make the whole: 105 times 4 is 420. She had 420 rupees after buying the bag.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "105 × 4 = 420"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "420"
+      },
+      "text": "after the bag",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The bag took 40 percent of all her money. So 420 rupees is what percent of the starting amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "40%",
+      "60%",
+      "35%"
+     ],
+     "answer": 1,
+     "ifNot": "The 40 percent is the part she spent. The 420 rupees is the part she kept. The two parts make the whole, so she kept 60 percent."
+    }
+   },
+   {
+    "say": "420 is 60 percent of the start. Divide by 6 to find 10 percent: 420 divided by 6 is 70.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "100% − 40% = 60%"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "420 ÷ 6 = 70"
+     }
+    ]
+   },
+   {
+    "say": "10 percent is 70, so the whole amount is 10 times that. Meera had 700 rupees at first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "70 × 10 = 700",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "700"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The tempting slip is to add 40 and 25, and say 35 percent is left. But the 25 percent was taken from a smaller amount, not from all her money."
+   },
+   {
+    "say": "Check forwards. 40 percent of 700 is 280, leaving 420. 25 percent of 420 is 105, leaving 315. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "700 − 280 = 420"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "420 − 105 = 315"
+     }
+    ]
+   },
+   {
+    "say": "So when a percent is taken of what was left: work backwards, one spend at a time, from the money you have at the end."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Asha scored 30 percent of the total marks and was 15 marks short of the pass mark. Bala scored 45 percent of the total and got 30 marks more than the pass mark. What were the total marks?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Asha: 30% of the total, 15 below the pass mark.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Bala: 45% of the total, 30 above the pass mark.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We do not know the pass mark or the total. But both children are measured against the same pass mark, so let's compare them with each other."
+   },
+   {
+    "say": "Asha is 15 marks below the pass mark and Bala is 30 marks above it. How many marks apart are they?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30 − 15 = 15 marks",
+      "15 + 30 = 45 marks",
+      "30 marks"
+     ],
+     "answer": 1,
+     "ifNot": "Picture a ladder. Asha stands 15 steps below the pass mark and Bala stands 30 steps above it. To climb from Asha to Bala you go up 15, and then 30 more."
+    }
+   },
+   {
+    "say": "15 plus 30 is 45. Bala has 45 marks more than Asha.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "15 + 30 = 45"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "45"
+      },
+      "text": "marks apart",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the same gap in percent. Bala has 45 percent and Asha has 30 percent, so the gap is 15 percent of the total.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "45% − 30% = 15%"
+     }
+    ]
+   },
+   {
+    "say": "So 15 percent of the total is 45 marks. That is the link that unlocks the question.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15% of the total = 45 marks",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "If 15 percent is 45 marks, how do we find 1 percent?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "45 ÷ 15",
+      "45 × 15",
+      "45 − 15"
+     ],
+     "answer": 0,
+     "ifNot": "15 equal pieces make 45 marks. To find one piece, share 45 by 15."
+    }
+   },
+   {
+    "say": "45 divided by 15 is 3, so 1 percent is 3 marks. The whole test is 100 percent, which is 3 times 100. The total is 300 marks.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "45 ÷ 15 = 3"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 100 = 300",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "300"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check. Asha has 30 percent of 300, which is 90, so the pass mark is 105. Bala has 45 percent of 300, which is 135, and that is 30 above 105.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "30% of 300 = 90"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "90 + 15 = 105"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "45% of 300 = 135"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "105 + 30 = 135"
+     }
+    ]
+   },
+   {
+    "say": "So when two people are compared with the same mark: find the gap between them in marks, and the same gap in percent, and match the two."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A school bag has a marked price of 1500 rupees. Shop A takes 20 percent off and then adds 5 percent tax. Shop B adds 5 percent tax first and then takes 20 percent off. What does each shop charge?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Marked price ₹1,500.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Shop A: 20% off, then 5% tax. Shop B: 5% tax, then 20% off",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Let's follow Shop A first. 20 percent is one fifth, and 1500 divided by 5 is 300. Taking 300 off 1500 leaves 1200 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "20% of 1,500 = 300"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1,500 − 300 = 1,200"
+     }
+    ]
+   },
+   {
+    "say": "Now Shop A adds 5 percent tax. It is 5 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "of 1,500",
+      "of 1,200",
+      "of 300"
+     ],
+     "answer": 1,
+     "ifNot": "Shop A adds its tax after the discount. So the tax is worked out on the reduced price, which is 1200."
+    }
+   },
+   {
+    "say": "5 percent of 1200 is 60. So Shop A charges 1200 plus 60, which is 1260 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5% of 1,200 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1,200 + 60 = 1,260"
+     }
+    ]
+   },
+   {
+    "say": "Now Shop B, the other way round. Tax first: 5 percent of 1500 is 75, making 1575 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5% of 1,500 = 75"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1,500 + 75 = 1,575"
+     }
+    ]
+   },
+   {
+    "say": "Then 20 percent off. One fifth of 1575 is 315, and 1575 minus 315 is 1260. Shop B charges 1260 rupees too!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "1,575 ÷ 5 = 315"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "1,575 − 315 = 1,260"
+     }
+    ]
+   },
+   {
+    "say": "So both shops charge 1260 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "Both shops charge ₹1,260.",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "₹1,260"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Why the same? Taking 20 percent off is a multiplication, and so is adding 5 percent. Two multiplications give the same result in either order, just as 2 times 3 is 3 times 2."
+   },
+   {
+    "say": "The trap is to take 5 from 20 and call it 15 percent off. That would give 1275. The two percents are of different amounts, so they cannot be subtracted.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "1,500 − 15% of 1,500 = 1,275"
+     }
+    ]
+   },
+   {
+    "say": "So a discount and a tax can come in either order, and both shops charge 1260 rupees. But always work them out one after the other."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A restaurant bill of 1155 rupees already includes a 5 percent tax on the price of the food. How many rupees of tax are in the bill?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Bill: ₹1,155, including 5% tax on the food price. Tax?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The tax is 5 percent. But 5 percent of what?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "of the bill, 1,155",
+      "of the food price",
+      "of 1,000"
+     ],
+     "answer": 1,
+     "ifNot": "The question says the tax is on the price of the food. The bill is bigger than the food price, because the tax is already inside it."
+    }
+   },
+   {
+    "say": "So taking 5 percent of 1155 is the trap. The bill is the food price and the tax together.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "on the food price"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The food price is the whole, 100 percent. The tax adds 5 percent more. So the bill is 105 percent of the food price.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "100% + 5% = 105%"
+     }
+    ]
+   },
+   {
+    "say": "105 percent is 1155 rupees. Now, 105 times 10 is 1050, and one more 105 makes 1155. So 1155 divided by 105 is 11, and 1 percent is 11 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "105 × 10 = 1,050"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1,050 + 105 = 1,155"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1,155 ÷ 105 = 11"
+     }
+    ]
+   },
+   {
+    "say": "1 percent of the food price is 11 rupees, and the tax is 5 percent. Which sum gives the tax?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "11 × 5",
+      "11 × 105",
+      "11 × 100"
+     ],
+     "answer": 0,
+     "ifNot": "The tax is 5 of those 1 percent pieces, and each piece is 11 rupees."
+    }
+   },
+   {
+    "say": "11 times 5 is 55. The tax in the bill is 55 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "11 × 5 = 55",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "55"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check. The food is 100 percent, which is 11 times 100, or 1100 rupees. And 1100 plus 55 is 1155, the bill.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "11 × 100 = 1,100"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "1,100 + 55 = 1,155"
+     }
+    ]
+   },
+   {
+    "say": "So when tax is already inside a bill, the bill is more than 100 percent of the price. Find 1 percent first, then take what you need."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In a class, 40 percent of the children are girls and the rest are boys. 30 percent of the girls and 50 percent of the boys wear glasses. What percent of the whole class wears glasses?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "40% are girls, the rest are boys.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "30% of the girls and 50% of the boys wear glasses.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Each percent here is of a different group. So adding 30 and 50, or taking the number halfway between them, will not work. Let's picture real children.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q2",
+      "target": {
+       "text": "of the girls"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q2",
+      "target": {
+       "text": "of the boys"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Imagine a class of exactly 100 children. Then 40 percent girls means 40 girls.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Class of 100: 40 girls",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "And how many boys are there?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "40",
+      "60",
+      "50"
+     ],
+     "answer": 1,
+     "ifNot": "The rest of the class are boys. Take the 40 girls away from the 100 children."
+    }
+   },
+   {
+    "say": "100 minus 40 is 60 boys.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "100 − 40 = 60"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "60"
+      },
+      "text": "boys",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Girls with glasses: 30 percent of the 40 girls. 10 percent of 40 is 4, so 30 percent is 12 girls.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "30% of 40 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Boys with glasses: 50 percent of the 60 boys. How many is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "50",
+      "30",
+      "60"
+     ],
+     "answer": 1,
+     "ifNot": "50 percent means half. And it is half of the boys, who number 60, not half of the whole class."
+    }
+   },
+   {
+    "say": "Half of 60 is 30 boys.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "50% of 60 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Altogether, 12 plus 30 is 42 children with glasses, out of 100. That is 42 percent of the class.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 + 30 = 42"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "42/100 = 42%",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "42%"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice that 42 is nearer to 50 than to 30. There are more boys than girls, so the boys' percent pulls harder."
+   },
+   {
+    "say": "So when percents are of different groups, picture 100 people, count each group, and add up the real numbers."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A class has 40 children, and 30 percent of them are girls. Some boys move to another class, and no girls leave. Now 40 percent of the class are girls. How many boys moved?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "40 children, 30% girls. Some boys leave. Now 40% girls.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, how many girls are there? 10 percent of 40 is 4, so 30 percent is 12 girls.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "30% of 40 = 12"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "12"
+      },
+      "text": "girls",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Some boys move away, but no girls do. So there are still 12 girls. Hold on to that number: it is the one thing that does not change."
+   },
+   {
+    "say": "After the boys move, the girls are 40 percent. That is 40 percent of what?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "of the old class of 40",
+      "of the new, smaller class",
+      "of the boys"
+     ],
+     "answer": 1,
+     "ifNot": "The new percent describes the class as it is now, after the boys have gone. So it is 40 percent of the new, smaller class."
+    }
+   },
+   {
+    "say": "That is the trap. 40 percent of the old class would be 16 girls, but there are only 12. The percent went up because the class got smaller.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "40% of 40 = 16"
+     }
+    ]
+   },
+   {
+    "say": "So 12 girls are 40 percent of the new class. Divide by 4: 10 percent of the new class is 3 children.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 ÷ 4 = 3"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "3"
+      },
+      "text": "10% of new class",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "10 percent is 3 children, so the whole new class is 3 times 10, which is 30 children.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 × 10 = 30"
+     }
+    ]
+   },
+   {
+    "say": "The class shrank from 40 children to 30. 40 minus 30 is 10, so 10 boys moved.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "40 − 30 = 10",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: are 12 girls really 40 percent of 30 children? 10 percent of 30 is 3, so 40 percent is 12. Yes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "40% of 30 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So when a percent changes, find the thing that stayed the same, and use it to work out the new whole."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Each side of a square playground is made 50 percent longer. By what percent does the area of the playground increase?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Each side of a square is made 50% longer.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Area increases by what percent?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we work it out: the side grows by 50 percent. Does the area grow by 50 percent too?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, by 50%",
+      "no, by more than 50%",
+      "no, by less than 50%"
+     ],
+     "answer": 1,
+     "ifNot": "Area is side times side, so the longer side gets used twice. Let's try a real square and see how big the change is."
+    }
+   },
+   {
+    "say": "No size is given, so choose an easy one. Take a side of 10 metres. The area is 10 times 10, which is 100 square metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "10 × 10 = 100"
+     }
+    ]
+   },
+   {
+    "say": "Now make the side 50 percent longer. Half of 10 is 5, so the new side is 15 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 + 5 = 15"
+     }
+    ]
+   },
+   {
+    "say": "The new area is 15 times 15, which is 225 square metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 × 15 = 225"
+     }
+    ]
+   },
+   {
+    "say": "The area went from 100 to 225. What is the increase?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "225",
+      "125",
+      "50"
+     ],
+     "answer": 1,
+     "ifNot": "The increase is only the extra part, the amount above what we started with. Take the old area away from the new area."
+    }
+   },
+   {
+    "say": "225 minus 100 is 125 square metres more. And 125 more, on a start of 100, is an increase of 125 percent.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "225 − 100 = 125"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "125/100 = 125%",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "125%"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps here. 225 percent is the new area compared with the old one, not the increase. And 50 percent for each side, added up, is too small: the two increases multiply."
+   },
+   {
+    "say": "So when a side grows, the area grows by more, because area uses the side twice. Try an easy side like 10 and see. Here the area grows by 125 percent."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rohan's mother puts 6000 rupees in a bank that pays simple interest of 5 percent per year. How much will she have in all after 18 months?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹6,000 at 5% simple interest per year.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "How much in all after 18 months?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The bank pays 5 percent for each whole year. So first find one year's interest. 1 percent of 6000 is 60, so 5 percent is 300 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l0",
+      "text": "1% of 6,000 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5% of 6,000 = 300"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "300"
+      },
+      "text": "for 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The time is 18 months, but the rate is for a year. How long is 18 months, in years?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1 year = 12 months",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "18 years",
+      "1 and a half years",
+      "2 years"
+     ],
+     "answer": 1,
+     "ifNot": "A year has 12 months. 18 months is 12 months and 6 more, and 6 months is half a year."
+    }
+   },
+   {
+    "say": "18 months is 12 months plus 6 months: one and a half years. Using 18 as if it were years is the first trap.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 + 6 = 18"
+     }
+    ]
+   },
+   {
+    "say": "One year gives 300 rupees. Half a year gives half of that, 150 rupees. So the interest is 300 plus 150, which is 450 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "300 ÷ 2 = 150"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "300 + 150 = 450"
+     }
+    ]
+   },
+   {
+    "say": "Is 450 rupees the answer to the question?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q2",
+      "target": {
+       "text": "in all"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, 450",
+      "no, add the 6,000 she put in"
+     ],
+     "answer": 1,
+     "ifNot": "Read the question again. It asks how much she will have in all. That is her own 6000 rupees together with the interest."
+    }
+   },
+   {
+    "say": "She still has the money she put in, and the interest on top. 6000 plus 450 is 6450 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "6,000 + 450 = 6,450",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "6,450"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So with simple interest: find one year's interest, scale it to the time in years, and check whether the question wants the interest or the total."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In a school election there were only two candidates, and every vote went to one of them. The winner got 60 percent of the votes and won by 240 votes. How many votes were cast in all?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Two candidates. Winner: 60% of the votes, won by 240 votes.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The winner got 60 percent, and every vote went to one of the two. What percent did the other candidate get?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "40%",
+      "60%",
+      "30%"
+     ],
+     "answer": 0,
+     "ifNot": "All the votes together are the whole. If the winner took 60 percent of them, the rest went to the other candidate."
+    }
+   },
+   {
+    "say": "100 minus 60 is 40. The other candidate got 40 percent of the votes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "100% − 60% = 40%"
+     }
+    ]
+   },
+   {
+    "say": "Now, won by 240 means the gap between the two candidates. It is not the winner's votes, and it is not the other candidate's votes. That is the trap.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "won by 240 votes"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "What is that gap, as a percent of all the votes?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "60%",
+      "20%",
+      "40%"
+     ],
+     "answer": 1,
+     "ifNot": "The gap is how far apart the two candidates are. One has 60 percent and the other has 40 percent, so take one from the other."
+    }
+   },
+   {
+    "say": "60 minus 40 is 20. The lead is 20 percent of the votes, and we know the lead is 240 votes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60% − 40% = 20%"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20% of the votes = 240",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "20 percent is one fifth. So all the votes are 5 times 240, which is 1200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "240 × 5 = 1,200",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "1,200"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check. 60 percent of 1200 is 720, and 40 percent is 480. And 720 minus 480 is 240, the winning gap.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "60% of 1,200 = 720"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "40% of 1,200 = 480"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "720 − 480 = 240"
+     }
+    ]
+   },
+   {
+    "say": "So when someone wins by a number of votes, that number is the gap. Find the gap as a percent, then scale up to the whole."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Exactly 35 percent of the children in a class are girls. What is the smallest number of children the class could have?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Exactly 35% of a class are girls. Smallest class?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "35 percent means 35 out of every 100. So a class of 100 with 35 girls would fit. But could a smaller class fit too?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "35% = 35/100"
+     }
+    ]
+   },
+   {
+    "say": "The catch is that the number of girls must be a whole number. You cannot have half a girl! So let's make the fraction 35 out of 100 as simple as it can be."
+   },
+   {
+    "say": "Which number divides both 35 and 100 exactly?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "5",
+      "7"
+     ],
+     "answer": 1,
+     "ifNot": "35 ends in 5 and 100 ends in 0. Any number that ends in 5 or 0 can be divided by 5."
+    }
+   },
+   {
+    "say": "35 divided by 5 is 7, and 100 divided by 5 is 20. So 35 out of 100 is the same as 7 out of 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "35 ÷ 5 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "100 ÷ 5 = 20"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "35/100 = 7/20"
+     }
+    ]
+   },
+   {
+    "say": "7 and 20 share no other factor, so the fraction cannot get any simpler. The girls are 7 out of every 20 children."
+   },
+   {
+    "say": "So the smallest class has 20 children, with 7 girls.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Smallest class: 20 children, 7 girls",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "20 children"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: multiply 7 and 20 both by 5, and you are back at 35 out of 100, which is 35 percent.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7 × 5 = 35"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "20 × 5 = 100"
+     }
+    ]
+   },
+   {
+    "say": "So for the smallest group that fits a percent: write the percent as a fraction, simplify it fully, and read the bottom number. Here that is 20."
+   }
+  ]
+ },
+ "G5A_PERCENTAGE_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A shop says: buy 4, get 1 more free. Riya takes 5 notebooks of the same price and pays for 4. What percent discount is she really getting on the 5 notebooks?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Buy 4, get 1 more free. Takes 5, pays for 4. Discount?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "No price is given, so choose an easy one. Say each notebook costs 10 rupees."
+   },
+   {
+    "say": "Riya takes home 5 notebooks. At full price they are worth 5 times 10, which is 50 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 × 10 = 50"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "50"
+      },
+      "text": "full price",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "She pays for 4, which is 40 rupees. So she saves 10 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 × 10 = 40"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "50 − 40 = 10"
+     }
+    ]
+   },
+   {
+    "say": "A discount is a saving compared with a price. Which price do we compare her 10 rupees with?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the 40 rupees she pays",
+      "the full price, 50 rupees"
+     ],
+     "answer": 1,
+     "ifNot": "A discount is always measured against the full price of everything you take home. Riya takes home 5 notebooks, worth 50 rupees."
+    }
+   },
+   {
+    "say": "10 out of 50 is one fifth, because 50 divided by 10 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "50 ÷ 10 = 5"
+     }
+    ]
+   },
+   {
+    "say": "And one fifth is 20 percent. The discount is 20 percent.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "10/50 = 20%",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "20%"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 25 percent. That compares the 10 rupees saved with the 40 rupees she pays. But a discount is measured on the full 50 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "10/40 = 25%"
+     }
+    ]
+   },
+   {
+    "say": "So for any offer: find the full price of all you take home, find what you save, and compare the saving with the full price. Here it is 20 percent."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Find the difference between the greatest 5 digit even number with all its digits different, and the smallest 5 digit odd number with all its digits different.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest 5-digit even number, all digits different,",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "minus smallest 5-digit odd number, all digits different",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are two numbers to build, and each has two conditions. Let's build each one a place at a time, and subtract at the end."
+   },
+   {
+    "say": "The greatest 5 digit number with different digits uses the biggest digits in order: 98,765.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Greatest, digits different: 98,765",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "But look at the last digit of 98,765. Is the number even?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, it is even",
+      "no, it is odd"
+     ],
+     "answer": 1,
+     "ifNot": "A number is even when its last digit is 0, 2, 4, 6 or 8. This one ends in 5, so it is odd."
+    }
+   },
+   {
+    "say": "So we change only the ones digit, and as little as we can. The next even digit below 5 is 4, and 4 is not used yet. That gives 98,764.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l1",
+      "target": {
+       "text": "5"
+      },
+      "note": "4"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Greatest even: 98,764",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the smallest. The first digit cannot be 0, so start with 1. Then 0 can come next, and then 2, 3 and 4. That gives 10,234.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Smallest, digits different: 10,234",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "10,234 ends in 4, so it is even, and we need odd. Which is the smallest odd number we can make by changing the ones digit?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10,231",
+      "10,233",
+      "10,235"
+     ],
+     "answer": 2,
+     "ifNot": "The digits must all be different. 1 and 3 are already used in the number, so the smallest odd digit still free is 5."
+    }
+   },
+   {
+    "say": "The ones digit becomes 5, so the smallest odd one is 10,235. Forgetting that 0 can sit in the second place, or forgetting even and odd, are the traps here.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l3",
+      "target": {
+       "text": "4"
+      },
+      "note": "5"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "Smallest odd: 10,235",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now subtract. 98,764 minus 10,235 is 88,529.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "98,764 − 10,235 = 88,529",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "88,529"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 88,529 plus 10,235 is 98,764.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "88,529 + 10,235 = 98,764"
+     }
+    ]
+   },
+   {
+    "say": "So when a number has two conditions: build the best number for one, then nudge the last digit until the other fits too."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In a 5 digit number, the thousands digit is 4. When the thousands digit and the tens digit swap places, the number becomes greater by 2970. What is the tens digit of the original number?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "5-digit number, thousands digit 4.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Swap thousands and tens digits: greater by 2,970.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "When two digits swap, only those two places change. The other three digits stay exactly as they are."
+   },
+   {
+    "say": "Try a small case first. Suppose the tens digit is just 1 more than the thousands digit. After the swap, the thousands place gains 1, worth 1000, and the tens place loses 1, worth 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "thousands: + 1000      tens: − 10",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "1000 minus 10 is 990. So every 1 of difference between the two digits changes the number by 990.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1000 − 10 = 990"
+     }
+    ]
+   },
+   {
+    "say": "Our number grew by 2970. How do we find how far apart the two digits are?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2,970 ÷ 990",
+      "2,970 − 990",
+      "2,970 ÷ 1,000"
+     ],
+     "answer": 0,
+     "ifNot": "Each 1 of difference between the digits is worth 990. So we count how many lots of 990 there are in 2970."
+    }
+   },
+   {
+    "say": "990 times 3 is 2970, so 2970 divided by 990 is 3. The two digits are 3 apart.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "990 × 3 = 2,970"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2,970 ÷ 990 = 3"
+     }
+    ]
+   },
+   {
+    "say": "The digits are 3 apart, the thousands digit is 4, and the number got greater after the swap. So what is the tens digit?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 − 3 = 1",
+      "4 + 3 = 7",
+      "3"
+     ],
+     "answer": 1,
+     "ifNot": "The number grew, so a bigger digit moved up into the thousands place. The tens digit must be the bigger one: 3 more than 4."
+    }
+   },
+   {
+    "say": "A bigger digit moved up to the thousands place, so the tens digit is the bigger one. 4 plus 3 is 7. The tens digit is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "4 + 3 = 7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at 3. That is the gap between the two digits, not the digit itself."
+   },
+   {
+    "say": "Check with a number like 54,372. Swap the 4 and the 7 and you get 57,342. And 57,342 minus 54,372 is 2970.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "57,342 − 54,372 = 2,970"
+     }
+    ]
+   },
+   {
+    "say": "So when two digits swap, find what 1 of difference is worth, then see how many of those fit into the change."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A dairy sold 45 million 6 thousand packets of milk last year. This year it sold 9 lakh 95 thousand more. How many packets did it sell this year, in the Indian system?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Last year: 45 million 6 thousand packets.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "This year: 9 lakh 95 thousand more. Indian system?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "One number is in millions and the other is in lakhs. Before we add, both must be in the same system."
+   },
+   {
+    "say": "How many lakhs make 1 million?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1 lakh",
+      "10 lakh",
+      "100 lakh"
+     ],
+     "answer": 1,
+     "ifNot": "1 lakh is 1 followed by 5 zeros. 1 million is 1 followed by 6 zeros, which is 10 times as much."
+    }
+   },
+   {
+    "say": "1 million is 10 lakh. So 45 million is 45 times 10, which is 450 lakh.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1 million = 10 lakh",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "45 × 10 = 450"
+     }
+    ]
+   },
+   {
+    "say": "And 100 lakh make 1 crore, so 450 lakh is 4 crore 50 lakh. Reading 45 million as 45 lakh, or as 45 crore, is the big trap.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "100 lakh = 1 crore",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "450 lakh = 4 crore 50 lakh",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So last year's number is 4 crore 50 lakh 6 thousand.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Last year: 4 crore 50 lakh 6 thousand",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now add 9 lakh 95 thousand. Start with the thousands: 6 plus 95 is 101 thousand.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "6 + 95 = 101"
+     },
+     {
+      "op": "note",
+      "line": "l6",
+      "target": {
+       "text": "101"
+      },
+      "text": "thousand",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "101 thousand is more than 100 thousand. What do we do with it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "leave it as 101 thousand",
+      "write 1 lakh 1 thousand",
+      "drop the extra 1"
+     ],
+     "answer": 1,
+     "ifNot": "100 thousand make 1 lakh. So 101 thousand is 1 lakh and 1 thousand, and the 1 lakh is carried over to the lakhs."
+    }
+   },
+   {
+    "say": "101 thousand is 1 lakh 1 thousand. We keep the 1 thousand and carry the 1 lakh.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "101 thousand = 1 lakh 1 thousand",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the lakhs: 50 plus 9, plus the 1 we carried, is 60 lakh. Missing that carried lakh is the other trap.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "50 + 9 + 1 = 60"
+     },
+     {
+      "op": "note",
+      "line": "l8",
+      "target": {
+       "text": "60"
+      },
+      "text": "lakh",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The crores stay at 4. So this year the dairy sold 4 crore 60 lakh 1 thousand packets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "4 crore 60 lakh 1 thousand",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "4 crore 60 lakh 1 thousand"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the same sum written in figures, and it agrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "4,50,06,000 + 9,95,000 = 4,60,01,000"
+     }
+    ]
+   },
+   {
+    "say": "So put both numbers into one system, add place by place from the right, and carry when a place fills up. The answer is 4 crore 60 lakh 1 thousand."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Every whole number from 1 to 100 is written in Roman numerals. Which number needs the most letters?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1 to 100 in Roman numerals. Most letters?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "A bigger number does not always need more letters. 100 is just C, a single letter! So let's look at the ones part and the tens part separately."
+   },
+   {
+    "say": "Here are the ones, from 1 to 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "I, II, III, IV, V, VI, VII, VIII, IX",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which of the ones is the longest?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9, which is IX",
+      "8, which is VIII",
+      "3, which is III"
+     ],
+     "answer": 1,
+     "ifNot": "Count the letters. VIII has 4 letters. IX stands for a bigger number but has only 2 letters."
+    }
+   },
+   {
+    "say": "8 is the longest: VIII has 4 letters.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "VIII"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now here are the tens, written the same way.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "X, XX, XXX, XL, L, LX, LXX, LXXX, XC",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which of the tens is the longest?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "90, which is XC",
+      "80, which is LXXX",
+      "30, which is XXX"
+     ],
+     "answer": 1,
+     "ifNot": "Count the letters again. LXXX has 4 letters. 90 is short: it is only XC, which is 2 letters."
+    }
+   },
+   {
+    "say": "80 is the longest: LXXX has 4 letters. And 90 is short, only XC. That is why 99 is not the answer: it is XCIX, just 4 letters.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "LXXX"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "99 = XCIX",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Join the longest tens to the longest ones. 80 and 8 make 88, which is LXXXVIII.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "88 = LXXXVIII",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "88"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Count them: 4 letters and 4 letters make 8 letters. No other number up to 100 has as many.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "4 + 4 = 8"
+     }
+    ]
+   },
+   {
+    "say": "So bigger does not mean longer. Split the number into its parts and find the longest of each. The answer is 88."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Every whole number from 1 to 100 is written in Roman numerals. How many of them do not use the letter X?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1 to 100 in Roman numerals. How many do NOT use X?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "X can get into a number in two ways: through its tens part, or through its ones part. Let's check the tens first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "10 X, 20 XX, 30 XXX, 40 XL, 50 L",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 LX, 70 LXX, 80 LXXX, 90 XC, 100 C",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which of these have no X at all?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only 50",
+      "50 and 100",
+      "40, 50, 90 and 100"
+     ],
+     "answer": 1,
+     "ifNot": "Look closely at 40 and 90. 40 is XL and 90 is XC, so each of them has an X. Only L and C stand without one."
+    }
+   },
+   {
+    "say": "Only 50, which is L, and 100, which is C. Every number with any other tens part has an X. So we are left with 1 to 9, 50 to 59, and 100.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "50 L"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "100 C"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Still possible: 1 to 9, 50 to 59, 100",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now here are the ones parts, from 1 to 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "I, II, III, IV, V, VI, VII, VIII, IX",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Does any of the ones parts hide an X?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no, none of them",
+      "yes, 9 is IX",
+      "yes, 5 is V"
+     ],
+     "answer": 1,
+     "ifNot": "Read along the list to the very end. 9 is written IX, and there is the X."
+    }
+   },
+   {
+    "say": "9 is IX. So 9 is out, and 59, which is LIX, is out as well. That is the hidden trap.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "IX"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "9 = IX and 59 = LIX: both out",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count what is left. 1 to 8 is 8 numbers. 50 to 58 is 9 numbers, because both ends count. And 100 is 1 more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1 to 8: 8     50 to 58: 9     100: 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "8 plus 9 plus 1 is 18. So 18 of the numbers do not use the letter X.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "8 + 9 + 1 = 18",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "18"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So when a letter can hide in more than one part of a number, check every part. And remember the ends of the list, like 100."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many whole numbers become 4700 when rounded to the nearest hundred, but do not become 4700 when rounded to the nearest ten?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Rounds to 4,700 to the nearest hundred,",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "but NOT to 4,700 to the nearest ten. How many?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are two kinds of rounding here. Let's find the full list of numbers for each one, and then compare the lists."
+   },
+   {
+    "say": "To the nearest hundred, 4700 comes from 4650 up to 4749. The very next number would round up instead.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Nearest hundred: 4,650 to 4,749",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How many whole numbers are there from 4650 to 4749?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "99",
+      "100",
+      "101"
+     ],
+     "answer": 1,
+     "ifNot": "Both ends count. 4749 minus 4650 is 99, and 1 more for the first number makes 100."
+    }
+   },
+   {
+    "say": "That is 100 numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4,749 − 4,650 + 1 = 100"
+     }
+    ]
+   },
+   {
+    "say": "To the nearest ten, 4700 comes from 4695 up to 4704. Counting both ends, that is 10 numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Nearest ten: 4,695 to 4,704",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4,704 − 4,695 + 1 = 10"
+     }
+    ]
+   },
+   {
+    "say": "Are those 10 numbers inside the first list of 100?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, all of them",
+      "no, none of them",
+      "only some of them"
+     ],
+     "answer": 0,
+     "ifNot": "The first list runs from 4650 to 4749. The numbers 4695 to 4704 all sit between those two, so every one of them is in the first list."
+    }
+   },
+   {
+    "say": "All 10 are in the first list. The question wants numbers in the first list but not in the second, so we take those 10 away."
+   },
+   {
+    "say": "100 minus 10 is 90. So 90 numbers fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "100 − 10 = 90",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "90"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is in the counting. From 4695 to 4704 there are 10 numbers, not 9, because both ends count."
+   },
+   {
+    "say": "Try one of the 90, such as 4660. To the nearest hundred it becomes 4700, but to the nearest ten it stays at 4660. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4,660: hundred gives 4,700, ten gives 4,660",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So list the numbers for each kind of rounding, see how the lists overlap, and take away what you do not want."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rounded to the nearest ten, Kabir has 80 marbles and Zoya has 50. What is the smallest possible difference between the numbers they really have?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "To the nearest ten: Kabir 80 marbles, Zoya 50 marbles.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Smallest possible real difference?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The tempting answer is 80 minus 50, which is 30. But those are rounded numbers, and each one hides a whole range of real numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "80 − 50 = 30"
+     }
+    ]
+   },
+   {
+    "say": "The numbers that round to 80 run from 75 up to 84.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "Kabir: 75 to 84",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "And which numbers round to 50?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "45 to 54",
+      "45 to 55",
+      "40 to 60"
+     ],
+     "answer": 0,
+     "ifNot": "It is the same pattern as Kabir's. 45 rounds up to 50, and so does everything up to 54. But 55 rounds up to 60."
+    }
+   },
+   {
+    "say": "Zoya could have anything from 45 to 54. Not 55, because 55 rounds up to 60.",
+    "board": [
+     {
+      "op": "write",
+      "id": "z",
+      "text": "Zoya: 45 to 54",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For the smallest difference we want the two children as close together as possible. Which real numbers do we choose?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Kabir 84, Zoya 45",
+      "Kabir 75, Zoya 54",
+      "Kabir 80, Zoya 50"
+     ],
+     "answer": 1,
+     "ifNot": "Kabir has more, so bring him down as low as he can go. Zoya has fewer, so bring her up as high as she can go."
+    }
+   },
+   {
+    "say": "Kabir's smallest is 75, and Zoya's greatest is 54.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "k",
+      "target": {
+       "text": "75"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "z",
+      "target": {
+       "text": "54"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "75 minus 54 is 21. The smallest possible difference is 21 marbles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "75 − 54 = 21",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "21"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "For comparison, the greatest difference would be 84 minus 45, which is 39. So the real difference could be anywhere from 21 to 39, not just 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "84 − 45 = 39"
+     }
+    ]
+   },
+   {
+    "say": "So a rounded number stands for a range. For the smallest difference, take the bottom of the bigger range and the top of the smaller one."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Anaya writes every whole number from 1 to 200. How many times does she write the digit 7?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Write every number from 1 to 200. How many 7s?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We are counting digits, not numbers. A number like 77 has two sevens in it. So let's count one place at a time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l0",
+      "text": "77 has two 7s",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The ones place first: 7, 17, 27, and so on, up to 197.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Ones place: 7, 17, 27, ... 197",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There is one of these in every 10 numbers. So how many are there up to 200?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10",
+      "20",
+      "19"
+     ],
+     "answer": 1,
+     "ifNot": "Every block of 10 numbers has exactly one number that ends in 7. And 200 is 20 blocks of 10."
+    }
+   },
+   {
+    "say": "200 divided by 10 is 20. So she writes 7 in the ones place 20 times.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "200 ÷ 10 = 20"
+     }
+    ]
+   },
+   {
+    "say": "Now the tens place. 7 is the tens digit in 70 to 79, and again in 170 to 179.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Tens place: 70 to 79, 170 to 179",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "That is 10 numbers, and 10 more. So she writes 7 in the tens place 20 times as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "10 + 10 = 20"
+     }
+    ]
+   },
+   {
+    "say": "And the hundreds place? Up to 200 the hundreds digit is only ever 1 or 2, so there are no sevens there."
+   },
+   {
+    "say": "The number 77 is in both of our lists. Should we take 1 off, so that it is not counted twice?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, take 1 off",
+      "no, 77 has two sevens"
+     ],
+     "answer": 1,
+     "ifNot": "We are counting every 7 that she writes. In 77 she writes the digit 7 twice, once for the tens and once for the ones."
+    }
+   },
+   {
+    "say": "77 and 177 each have two sevens, so being in both lists is exactly right. 20 plus 20 is 40.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4a",
+      "text": "77 and 177: two 7s each",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "20 + 20 = 40",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "40"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So to count how often a digit is written, go place by place and add. Anaya writes the digit 7 a total of 40 times."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many 3 digit numbers have digits whose product is 12? For example 143 is one, because 1 times 4 times 3 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3-digit numbers whose digits multiply to 12. How many?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1 × 4 × 3 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Here is a plan. First find every set of three digits that multiply to 12. Then count how many numbers each set can make."
+   },
+   {
+    "say": "Start with sets that include a 1. Then the other two digits must multiply to 12 by themselves: that is 2 and 6, or 3 and 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1 × 2 × 6 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Sets so far: 1, 2, 6 and 1, 3, 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Is there a set with no 1 in it at all?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no, that is all of them",
+      "yes: 2, 2, 3",
+      "yes: 2, 3, 4"
+     ],
+     "answer": 1,
+     "ifNot": "Try small digits. 2 times 2 is 4, and 4 times 3 is 12. So 2, 2 and 3 work, with no 1 at all."
+    }
+   },
+   {
+    "say": "2 times 2 times 3 is 12. That is the set people miss.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 × 2 × 3 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Now count the numbers. Three different digits, like 1, 2 and 6, can be arranged in 6 ways. Here they all are.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "126, 162, 216, 261, 612, 621",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The set 1, 3, 4 also has three different digits, so it gives 6 numbers in the same way."
+   },
+   {
+    "say": "What about 2, 2, 3? How many different numbers does it make?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6",
+      "3",
+      "1"
+     ],
+     "answer": 1,
+     "ifNot": "The two 2s look the same, so swapping them makes no new number. Only the place of the 3 matters: first, middle or last."
+    }
+   },
+   {
+    "say": "Only the place of the 3 matters: it can be last, in the middle, or first. That is 3 numbers, not 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "223, 232, 322",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "6 plus 6 plus 3 is 15. There are 15 such numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "6 + 6 + 3 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So in a counting question: list every set first, then count the arrangements, and watch for a repeated digit."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "I am a 4 digit number. My thousands digit is twice my ones digit. My hundreds digit is 3 more than my tens digit. My four digits add up to 20. Which number am I?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Thousands = twice ones. Hundreds = tens + 3.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "The four digits add up to 20.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Three clues. Start with the one that leaves the fewest choices: the thousands digit is twice the ones digit."
+   },
+   {
+    "say": "The thousands and ones digits could be 2 and 1, 4 and 2, 6 and 3, or 8 and 4. Anything bigger would not be a single digit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Thousands & ones: 2 & 1, 4 & 2, 6 & 3, 8 & 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Those pairs add up to 3, 6, 9 and 12. All four digits add up to 20, so the hundreds and tens digits together must make 17, 14, 11 or 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "20 − 3 = 17"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 − 6 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "20 − 9 = 11"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "20 − 12 = 8"
+     }
+    ]
+   },
+   {
+    "say": "Now the last clue: the hundreds digit is 3 more than the tens digit. So we need two digits that are 3 apart, with one of those sums."
+   },
+   {
+    "say": "Which of these sums can be made by two digits that are 3 apart?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "17",
+      "14",
+      "11"
+     ],
+     "answer": 2,
+     "ifNot": "Try 7 and 4. They are 3 apart, and 7 plus 4 is 11. A sum of 17 would need a 10, which is not a digit, and 14 does not split into whole numbers 3 apart."
+    }
+   },
+   {
+    "say": "7 and 4 are 3 apart and add up to 11. The sums 14 and 8 cannot be split into two whole numbers 3 apart, and 17 would need 10 and 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7 + 4 = 11"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "7 − 4 = 3"
+     }
+    ]
+   },
+   {
+    "say": "A sum of 11 belongs with the pair 6 and 3. So the thousands digit is 6, the hundreds 7, the tens 4 and the ones 3. The number is 6743.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "11"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "The number is 6743",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "6743"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check all three clues. 6 is twice 3. 7 is 3 more than 4. And 6 plus 7 plus 4 plus 3 is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "6 + 7 + 4 + 3 = 20"
+     }
+    ]
+   },
+   {
+    "say": "Take care with the order at the end: it is the hundreds digit that is the bigger one, so 7 comes before 4."
+   },
+   {
+    "say": "So with a riddle of clues: begin with the clue that leaves the fewest choices, then test each choice against the others."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "What is the smallest 6 digit number that can be made using only the digits 0, 3, 5 and 8, if each of them must be used at least once?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Smallest 6-digit number using only 0, 3, 5, 8,",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "each at least once",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are 6 places but only 4 digits. So some digit has to be used more than once. The question is which one."
+   },
+   {
+    "say": "Begin at the front. To make the number small, which digit goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "0",
+      "3",
+      "5"
+     ],
+     "answer": 1,
+     "ifNot": "0 is the smallest digit, but a number cannot start with 0, or it would not have 6 digits. The next smallest is 3."
+    }
+   },
+   {
+    "say": "The number starts with 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 _ _ _ _ _",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now we want the next places to be as small as possible. Which digit is best to repeat?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "0",
+      "3",
+      "8"
+     ],
+     "answer": 0,
+     "ifNot": "0 is the smallest digit of all. It may be used again and again, as long as it is not in the first place."
+    }
+   },
+   {
+    "say": "So we fill up with zeros. But careful: 5 and 8 must each appear at least once, so we have to keep two places for them."
+   },
+   {
+    "say": "Where do 5 and 8 go? In the last two places, where a digit is worth the least. And the smaller one goes first: 5, then 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 _ _ _ 5 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "That leaves three places in the middle, all filled with 0. The number is 300058.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Smallest: 300058",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "300058"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Compare it with 300358, which repeats the 3 instead. In the hundreds place 0 is smaller than 3, so our number is the smaller one.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "300058 < 300358"
+     }
+    ]
+   },
+   {
+    "say": "Check the rules: it has 6 digits, it uses only 0, 3, 5 and 8, and each of them is there."
+   },
+   {
+    "say": "So for the smallest number: smallest allowed digit in front, repeat the smallest digit, and push the big digits to the end."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "What is the greatest 4 digit number in which all four digits are different and add up to 12?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest 4-digit number: digits all different, sum 12",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "For a great number we make the digits on the left as big as we can. But we keep checking both rules as we go."
+   },
+   {
+    "say": "The biggest thousands digit is 9. Then the other three digits must add up to 12 minus 9, which is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "9 _ _ _",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 − 9 = 3"
+     }
+    ]
+   },
+   {
+    "say": "Three digits are left, and they add up to 3. Can the hundreds digit be 3?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, giving 9300",
+      "no, the last two would both be 0"
+     ],
+     "answer": 1,
+     "ifNot": "If the hundreds digit takes all 3, nothing is left for the last two places. They would both be 0, and the digits must all be different."
+    }
+   },
+   {
+    "say": "9300 does add up to 12, but it uses 0 twice. That is the trap.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9300: the digit 0 is used twice",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the hundreds digit is the next best, 2. That leaves 3 minus 2, which is 1, for the last two digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 − 2 = 1"
+     }
+    ]
+   },
+   {
+    "say": "The last two digits are different and add up to 1, so they are 1 and 0. In which order?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1 then 0",
+      "0 then 1"
+     ],
+     "answer": 0,
+     "ifNot": "We want the greatest number, so the bigger digit goes in the place that is worth more. Tens are worth more than ones."
+    }
+   },
+   {
+    "say": "The bigger digit goes first: 1 in the tens place and 0 in the ones place. The number is 9210.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Greatest: 9210",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "9210"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 9 plus 2 plus 1 plus 0 is 12, and all four digits are different.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "9 + 2 + 1 + 0 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So for the greatest number: make each digit as big as you can from the left, and step down only when a rule would break."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four statements are made about the face values and place values of digits. Which one is true for every 4 digit number?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Which statement is true for EVERY 4-digit number?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "True for every number means that no number at all can break it. So our job is to try to break each statement with a tricky number."
+   },
+   {
+    "say": "Numbers with zeros in them are good at breaking rules. Let's test with 3050.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Test number: 3,050",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Its face values are just its digits: 3, 0, 5 and 0. Its place values are what each digit is worth: 3000, 0, 50 and 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Face values: 3, 0, 5, 0",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Place values: 3,000, 0, 50, 0",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "One statement says the face values add up to the number itself. But 3 plus 0 plus 5 plus 0 is 8, not 3050. That one is broken.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 + 0 + 5 + 0 = 8"
+     }
+    ]
+   },
+   {
+    "say": "Another says the place value of the hundreds digit is greater than the place value of the tens digit. Is that so in 3050?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes",
+      "no: 0 is not greater than 50"
+     ],
+     "answer": 1,
+     "ifNot": "The hundreds digit of 3050 is 0, so its place value is 0. The tens digit is 5, with place value 50. And 0 is not greater than 50."
+    }
+   },
+   {
+    "say": "Broken as well. It sounded true, because hundreds are usually worth more than tens. But a zero spoils it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "0 < 50"
+     }
+    ]
+   },
+   {
+    "say": "Another says every face value is smaller than its place value. Look at the ones digit, 0: its face value is 0 and its place value is 0. Equal, not smaller. Broken."
+   },
+   {
+    "say": "Now the last one: the place values add up to the number itself. 3000 plus 0 plus 50 plus 0 is 3050. It holds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3,000 + 0 + 50 + 0 = 3,050"
+     }
+    ]
+   },
+   {
+    "say": "And it holds for every number, because adding up the place values is just the expanded form. Look at 4726: it is 4000 plus 700 plus 20 plus 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "4,000 + 700 + 20 + 6 = 4,726"
+     }
+    ]
+   },
+   {
+    "say": "So the statement that is always true is: the sum of the place values of all its digits is equal to the number itself.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "Sum of the place values = the number itself",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "place values"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So to test a statement about every number, hunt for one number that breaks it. Zeros are a good place to look."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A 2 digit number is 27 more than the number made by writing its digits in the opposite order. The reversed number also has 2 digits. How many such numbers are there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A 2-digit number is 27 more than its reverse.",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "The reverse also has 2 digits. How many?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Let's try a few numbers minus their reverses and look for a pattern. 41 minus 14 is 27. And 52 minus 25 is 27 as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "41 − 14 = 27"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "52 − 25 = 27"
+     }
+    ]
+   },
+   {
+    "say": "In 41 the digits are 3 apart, and in 52 they are 3 apart too. Now try 31, where the digits are 2 apart: 31 minus 13 is 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "31 − 13 = 18"
+     }
+    ]
+   },
+   {
+    "say": "A gap of 2 gives 18, and a gap of 3 gives 27. What is the pattern?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the difference is 9 times the gap",
+      "the difference is the gap plus 24",
+      "there is no pattern"
+     ],
+     "answer": 0,
+     "ifNot": "18 is 9 times 2, and 27 is 9 times 3. A number minus its reverse is always 9 times the gap between its digits."
+    }
+   },
+   {
+    "say": "So for a difference of 27, the gap is 27 divided by 9, which is 3. The tens digit is 3 more than the ones digit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "27 ÷ 9 = 3"
+     }
+    ]
+   },
+   {
+    "say": "List every number like that, starting with the smallest ones digit: 30, 41, 52, 63, 74, 85 and 96.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "30, 41, 52, 63, 74, 85, 96",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "One of these 7 does not belong. Which one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "96",
+      "30",
+      "none, all 7 fit"
+     ],
+     "answer": 1,
+     "ifNot": "Reverse each number. The reverse of 30 is 0 then 3, which is just 3. That does not have 2 digits, and the question says the reverse must."
+    }
+   },
+   {
+    "say": "30 is out, because its reverse is just 3. That is the trap that makes people answer 7.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l5",
+      "target": {
+       "text": "30"
+      },
+      "note": "reverse is just 3"
+     }
+    ]
+   },
+   {
+    "say": "That leaves 41, 52, 63, 74, 85 and 96. There are 6 such numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "41, 52, 63, 74, 85, 96: 6 numbers",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "6 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the last one: 96 minus 69 is 27.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "96 − 69 = 27"
+     }
+    ]
+   },
+   {
+    "say": "So try examples to find the pattern, list every number that fits, and then test each one against all the conditions."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many 3 digit numbers have exactly one digit that is 0?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3-digit numbers with exactly one digit that is 0",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Exactly one 0. So first decide where that single 0 can sit. And remember, the other two digits must then not be 0."
+   },
+   {
+    "say": "Can the 0 be in the hundreds place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes",
+      "no"
+     ],
+     "answer": 1,
+     "ifNot": "If the first digit were 0, the number would really have only 2 digits. So a 3 digit number never starts with 0."
+    }
+   },
+   {
+    "say": "So there are two cases. Either the 0 is in the tens place, or the 0 is in the ones place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Case 1: _ 0 _  like 507",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Case 2: _ _ 0  like 570",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Case 1, like 507. The hundreds digit can be 1 to 9, which is 9 choices. The ones digit must not be 0, so it is 1 to 9 as well: 9 choices."
+   },
+   {
+    "say": "9 choices for the first digit and 9 for the last. How many numbers are in case 1?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9 + 9 = 18",
+      "9 × 9 = 81",
+      "90"
+     ],
+     "answer": 1,
+     "ifNot": "Each of the 9 first digits can go with each of the 9 last digits. That is 9 lots of 9."
+    }
+   },
+   {
+    "say": "9 times 9 is 81 numbers in case 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9 × 9 = 81"
+     }
+    ]
+   },
+   {
+    "say": "Case 2, like 570. Again there are 9 choices for the hundreds digit and 9 for the tens digit. That is 81 numbers more.",
+    "board": [
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "_ _ 0"
+      },
+      "text": "9 × 9 = 81 too",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "81 plus 81 is 162. So 162 numbers have exactly one 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "81 + 81 = 162",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "162"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to count 90 numbers with 0 in the tens place and 90 with 0 in the ones place. That lets in numbers like 300, which has two zeros.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "300 has two 0s: not allowed",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So when a question says exactly one, split it into cases, and in each case make sure the other digits obey the rule too."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A number has all its digits different. Rounded to the nearest thousand, it becomes 60,000. What is the greatest number it could be?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "All digits different. Rounds to 60,000 (nearest thousand).",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Greatest it could be?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Two conditions again. First find the numbers that round to 60,000. Then look for the greatest of them with all its digits different."
+   },
+   {
+    "say": "What is the greatest whole number that rounds to 60,000, to the nearest thousand?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "60,499",
+      "60,500",
+      "60,999"
+     ],
+     "answer": 0,
+     "ifNot": "For the nearest thousand we look at the hundreds digit. 5 or more rounds up, so 60,500 goes up to the next thousand. The greatest that still rounds down is 60,499."
+    }
+   },
+   {
+    "say": "The numbers from 59,500 up to 60,499 all round to 60,000. So the greatest of them is 60,499.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Rounds to 60,000: 59,500 to 60,499",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "But look at the digits of 60,499. Are they all different?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes",
+      "no, 9 is there twice"
+     ],
+     "answer": 1,
+     "ifNot": "Read the digits one at a time: 6, 0, 4, 9, 9. The 9 appears twice."
+    }
+   },
+   {
+    "say": "The 9 is used twice, so 60,499 is out. We want the next best: keep the front digits and lower only the ones digit.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "60,499"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The front four digits are 6, 0, 4 and 9. The biggest digit not used yet is 8, so the ones digit becomes 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6 0 4 9 _   biggest unused digit: 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The number is 60,498.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Greatest: 60,498",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "60,498"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: its digits 6, 0, 4, 9 and 8 are all different. And with 4 in the hundreds place, it rounds down to 60,000."
+   },
+   {
+    "say": "Notice we did not drop below 60,000 to something like 59,876. Numbers just above 60,000 are greater, and they round to 60,000 too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "59,876 < 60,498"
+     }
+    ]
+   },
+   {
+    "say": "So with two conditions: find the best number for one of them, then change as little as you can to satisfy the other."
+   }
+  ]
+ }
+}

@@ -1,0 +1,196 @@
+"""Algebraic expressions, G5A_ALGEBRA_001 to 008: one lesson each, written by hand."""
+from authored_01_lib import (ANS, ANSC, ARC, B, BOTH, CHOOSE, CIRC, DIVIDE, GIVEN, GROUP, LANS, LB,  # noqa: F401
+                             LESSON, NOTE, STRIKE, UL, W)
+
+LESSONS = {}
+P = "G5A_ALGEBRA_"
+
+# Think of n, add 5, multiply by 3, subtract n  ->  2n + 15
+LESSONS[P + "001"] = LESSON(
+    B("Meera thinks of a number, n. She adds 5, multiplies the result by 3, then takes away the number she first thought of. Let's write down what she has after each action.",
+      GIVEN("q", "n: add 5, multiply the result by 3, subtract n")),
+    B("First she adds 5. So now she has n plus 5.",
+      W("l1", "n + 5")),
+    B("Next she multiplies the result by 3. How do we write that?",
+      ask=CHOOSE(["3n + 5", "3(n + 5)", "n + 15"], 1,
+                 "The result is the whole of n plus 5, so all of it is multiplied by 3. Brackets keep the n and the 5 together.")),
+    B("3 times the whole bracket. The 3 multiplies the n, and it multiplies the 5 as well. That gives 3 n plus 15.",
+      W("l2", "3(n + 5) = 3n + 15"), ARC("l2", "3", ["n", "5"])),
+    B("That is the trap in this question: multiplying only the n and leaving the 5 alone. The 5 was added before the multiplying, so it is multiplied too.",
+      UL("l2", "15")),
+    B("Last action: she subtracts the number she first thought of, which is n.",
+      W("l3", "3n + 15 − n")),
+    B("3 n, take away 1 n. How many n are left?",
+      ask=CHOOSE(["2n", "3n", "4n"], 0,
+                 "We start with 3 lots of n and take 1 lot away. That leaves 2 lots of n.")),
+    B("3 n minus n is 2 n. So her final answer is 2 n plus 15.",
+      ANS("l4", "3n + 15 − n = 2n + 15"), CIRC("l4", "2n + 15")),
+    B("Check with a real number. If Meera thinks of 2, she gets 7, then 21, then 19. And 2 times 2, plus 15, is 19 as well.",
+      W("c1", "(2 + 5) × 3 = 21"), W("c2", "21 − 2 = 19"), W("c3", "2 × 2 + 15 = 19")),
+    B("So: write what you have after each action, and use brackets whenever a whole result is multiplied."),
+    check=("n", 2),
+)
+
+# 4p by 3p card, square of side p cut from a corner: perimeter is still 14p
+LESSONS[P + "002"] = LESSON(
+    B("A sheet of card is 4 p centimetres long and 3 p centimetres wide. A square of side p centimetres is cut away from one corner. We want the perimeter of the piece that is left.",
+      GIVEN("q", "Card 4p cm by 3p cm. Square of side p cm cut from a corner")),
+    B("Start with the whole rectangle. Its perimeter is 2 times the length plus the breadth. 2 times, 4 p plus 3 p, is 14 p.",
+      W("l1", "2 × (4p + 3p) = 14p")),
+    B("Now the corner square is cut away. What do you think happens to the perimeter?",
+      ask=CHOOSE(["It gets smaller", "It stays the same", "It gets bigger"], 1,
+                 "It feels as if cutting a piece off must change the edge. But trace round the new shape with your finger: the cut takes some edge away, and it also makes some new edge.")),
+    B("Look at what goes. The cut removes p centimetres from the end of one long edge, and p centimetres from the end of one short edge.",
+      LB("l2", "Edges lost: p + p")),
+    B("But the cut also makes two new edges, inside the corner. They are two sides of the little square, so each one is p centimetres long.",
+      LB("l3", "Edges gained: p + p")),
+    B("So we take away p and p, and we add back p and p. The changes cancel out exactly.",
+      W("l4", "14p − p − p + p + p = 14p"), GROUP("l4", ["− p − p", "+ p + p"], "cancel")),
+    B("The perimeter of the piece that is left is still 14 p centimetres.",
+      LANS("l5", "Perimeter = 14p cm"), CIRC("l5", "14p cm")),
+    B("The trap is thinking that a smaller piece of card must have a smaller perimeter. Its area is smaller, but the walk round its edge is just as long."),
+    B("Check with p as 1. The card is 4 by 3, with perimeter 14. Going round the cut shape, the edges are 4, 2, 1, 1, 3 and 3, and they add up to 14 too.",
+      W("c1", "4 + 2 + 1 + 1 + 3 + 3 = 14")),
+    B("So when a square is cut out of a corner, the two new inside edges replace the two pieces that went. The perimeter stays the same."),
+    check=("p", 14),
+)
+
+# Square s by s; rectangle 3 longer and 3 narrower: always 9 sq cm smaller
+LESSONS[P + "003"] = LESSON(
+    B("A square has sides s centimetres long. A rectangle is made 3 centimetres longer and 3 centimetres narrower than the square. How do the two areas compare?",
+      GIVEN("q", "Square: s by s. Rectangle: 3 cm longer, 3 cm narrower")),
+    B("The choices all say always, for every s. A good way in is to try a value and see what happens. Let's take s as 5.",
+      LB("l1", "Try s = 5: rectangle is 8 by 2")),
+    B("The square is 5 by 5, so its area is 25. The rectangle is 3 longer, that's 8, and 3 narrower, that's 2. Its area is 8 times 2, which is 16.",
+      W("l2", "5 × 5 = 25"), W("l3", "8 × 2 = 16")),
+    B("So the rectangle is smaller, by 25 minus 16, which is 9.",
+      W("l4", "25 − 16 = 9")),
+    B("One try is not enough for always. Take s as 10. The square is 100, and the rectangle is 13 by 7. What is the rectangle's area?",
+      LB("l5", "Try s = 10: rectangle is 13 by 7"), W("l6", "10 × 10 = 100"),
+      ask=CHOOSE(["91", "100", "94"], 0,
+                 "Count 13 sevens: 10 sevens, and then 3 more sevens. Altogether that comes to 91.")),
+    B("13 times 7 is 91. And 100 minus 91 is 9 again!",
+      W("l7", "13 × 7 = 91"), W("l8", "100 − 91 = 9"), CIRC("l4", "9"), CIRC("l8", "9", 2)),
+    B("Why always 9? Narrowing takes off a strip 3 wide and s long. Lengthening adds a strip 3 wide, but only s minus 3 long. The new strip is short by 3 times 3.",
+      W("l9", "3 × 3 = 9")),
+    B("Two traps here. The perimeter does stay the same, so it is tempting to say the area does too. And the change is 3 times 3, not 3 plus 3."),
+    B("So the rectangle is always 9 square centimetres smaller than the square.",
+      LANS("a", "The rectangle is always 9 sq cm smaller"), CIRC("a", "9 sq cm smaller")),
+    B("When a rule must hold for every value of a letter, try two values, spot what stays the same, and then look for the reason."),
+)
+
+# 2a + b = 9  ->  6a + 3b − 4 = 23
+LESSONS[P + "004"] = LESSON(
+    B("We are told that 2 a plus b equals 9. We want the value of 6 a, plus 3 b, minus 4.",
+      GIVEN("q", "2a + b = 9. Find 6a + 3b − 4")),
+    B("We can't find a and b on their own, because lots of pairs fit. So we hunt for 2 a plus b hiding inside the new expression. Remember, 9 is the value of the whole of it, not of a alone.",
+      UL("q", "2a + b")),
+    B("Look at 6 a plus 3 b. How does it compare with 2 a plus b?",
+      ask=CHOOSE(["2 times as big", "3 times as big", "6 times as big"], 1,
+                 "Compare part by part. 6 a is 3 lots of 2 a, and 3 b is 3 lots of b. So each part is 3 times as big.")),
+    B("6 a is 3 times 2 a, and 3 b is 3 times b. So 6 a plus 3 b is 3 lots of the whole of 2 a plus b.",
+      LB("l1", "6a + 3b = 3 × (2a + b)"), ARC("l1", "3", ["2a", "b)"], 2)),
+    B("And we know 2 a plus b is 9. So 6 a plus 3 b is 3 times 9, which is 27.",
+      W("l2", "3 × 9 = 27")),
+    B("Careful, we're not finished. 27 is only the 6 a plus 3 b part. The expression still has minus 4 at the end.",
+      UL("q", "− 4")),
+    B("27 minus 4 is 23. So the value is 23.",
+      *ANSC("l3", "27 − 4 = 23", 23)),
+    B("Check with real numbers. If a is 4 and b is 1, then 2 a plus b is 9. And 6 a is 24, 3 b is 3, so we get 24 plus 3 minus 4, which is 23.",
+      W("c1", "2 × 4 + 1 = 9"), W("c2", "6 × 4 = 24"), W("c3", "24 + 3 − 4 = 23")),
+    B("So when you can't find the letters one by one, look for the given expression hiding inside the new one."),
+)
+
+# x − y = 4  ->  (x + 7) − (y − 3) = 14
+LESSONS[P + "005"] = LESSON(
+    B("We are told that x minus y equals 4. We want the value of x plus 7, take away the bracket y minus 3.",
+      GIVEN("q", "x − y = 4. Find (x + 7) − (y − 3)")),
+    B("We can't find x and y on their own. So we'll open the brackets and look for x minus y, because that part we do know."),
+    B("The first bracket is easy: x plus 7. The second bracket has a minus sign in front of it. That is the place to slow down.",
+      UL("q", "− (y − 3)")),
+    B("We are taking away the whole of y minus 3. What does that do?",
+      ask=CHOOSE(["takes away y, takes away 3", "takes away y, gives back 3", "adds y, takes away 3"], 1,
+                 "y minus 3 is 3 less than y. So if we take away all of y, we have taken 3 too many, and we must give 3 back.")),
+    B("Taking away y minus 3 means taking away y, and then giving 3 back. So the minus 3 inside turns into plus 3.",
+      LB("l1", "(x + 7) − (y − 3) = x + 7 − y + 3"), UL("l1", "+ 3")),
+    B("Now bring the x and the y together. We get x minus y, plus 7, plus 3.",
+      LB("l2", "= (x − y) + 7 + 3"), UL("l2", "(x − y)")),
+    B("And x minus y is 4. So the value is 4 plus 7 plus 3, which is 14.",
+      *ANSC("l3", "4 + 7 + 3 = 14", 14)),
+    B("Check with x as 10 and y as 6, which are 4 apart. 10 plus 7 is 17, and 6 minus 3 is 3. Then 17 minus 3 is 14.",
+      W("c1", "10 + 7 = 17"), W("c2", "6 − 3 = 3"), W("c3", "17 − 3 = 14")),
+    B("So remember: a minus sign in front of a bracket changes the sign inside it. Taking away a minus 3 gives 3 back."),
+)
+
+# Matchstick squares 4, 7, 10, ...: 100 matchsticks make 33 squares
+LESSONS[P + "006"] = LESSON(
+    B("Riya makes a row of squares from matchsticks. 1 square needs 4, 2 squares need 7, and 3 squares need 10. How many squares are in the row she makes with exactly 100 matchsticks?",
+      GIVEN("q", "Squares in a row: 4, 7, 10, ... sticks. Squares for 100?")),
+    B("Look at 4, then 7, then 10. How many matchsticks does each new square add?",
+      ask=CHOOSE(["4", "3", "1"], 1,
+                 "Look at the jumps, from 4 to 7 and from 7 to 10. Each new square shares a side with the one before it, so it needs only 3 more.")),
+    B("Each new square adds 3. Only the very first square needs 4, which is 3 and 1 extra. So think of it as 3 for every square, plus 1 extra stick at the start.",
+      LB("l1", "3 for each square, plus 1 extra")),
+    B("For n squares, that is 3 n plus 1 matchsticks. Test it on 3 squares: 3 times 3, plus 1, is 10. It fits.",
+      W("l2", "3 × 3 + 1 = 10")),
+    B("Riya uses 100. So 3 n plus 1 equals 100, and now we work backwards.",
+      W("l3", "3n + 1 = 100")),
+    B("What do we undo first?",
+      ask=CHOOSE(["divide 100 by 3", "take away the 1 extra", "divide 100 by 4"], 1,
+                 "The 1 extra stick is not part of any group of 3. So we take it away first, and then share the rest in threes.")),
+    B("Take 1 from both sides. 3 n equals 99.",
+      STRIKE("l3", "+ 1", "− 1"), BOTH("l3", "− 1"), W("l4", "3n = 99")),
+    B("Now share 99 in threes. 99 divided by 3 is 33. So Riya's row has 33 squares.",
+      DIVIDE("l4", "3"), ANS("l5", "n = 33"), CIRC("l5", "n = 33")),
+    B("The tempting move is 100 divided by 4, because a square has 4 sides. But joined squares share sides, so only the first one costs 4."),
+    B("Check: 3 times 33 is 99, and 1 more makes 100. Exactly right.",
+      W("c1", "3 × 33 + 1 = 100")),
+    B("So for a growing pattern: find what each step adds, write the rule, then work backwards from the total."),
+    check=("n", 33),
+)
+
+# Plant A: 3n + 2, plant B: 5n − 40, n from 10. B first taller on day 22
+LESSONS[P + "007"] = LESSON(
+    B("On day n, plant A is 3 n plus 2 centimetres tall, and plant B is 5 n minus 40 centimetres. The days start from day 10. On which day is B taller than A for the first time?",
+      GIVEN("q", "A: (3n + 2) cm. B: (5n − 40) cm. n is 10 or more")),
+    B("Start on day 10. A is 3 times 10, plus 2, which is 32. B is 5 times 10, minus 40, which is 10. So A is well ahead.",
+      W("l1", "3 × 10 + 2 = 32"), W("l2", "5 × 10 − 40 = 10")),
+    B("The gap between them is 32 minus 10, which is 22 centimetres.",
+      W("l3", "32 − 10 = 22")),
+    B("Each day, A grows 3 centimetres and B grows 5. So what happens to the gap each day?",
+      ask=CHOOSE(["it shrinks by 2 cm", "it shrinks by 5 cm", "it grows by 2 cm"], 0,
+                 "B grows 5 while A grows 3. So every day B catches up by the difference, which is 2 centimetres.")),
+    B("The gap shrinks by 2 a day. A gap of 22 takes 22 divided by 2, which is 11 days, to close.",
+      W("l4", "5 − 3 = 2"), W("l5", "22 ÷ 2 = 11")),
+    B("11 days after day 10 is day 21. And on day 21, both plants are 65 centimetres tall.",
+      W("l6", "10 + 11 = 21"), W("l7", "3 × 21 + 2 = 65"), W("l8", "5 × 21 − 40 = 65")),
+    B("So, is day 21 our answer?",
+      ask=CHOOSE(["Yes, day 21", "No, they are only level"], 1,
+                 "On day 21 the two plants are exactly the same height. The question asks for B to be taller, and level is not taller.")),
+    B("Here is the trap. On day 21 they are only equal. B is taller for the first time one day later, on day 22.",
+      *ANSC("l9", "21 + 1 = 22", 22)),
+    B("Check day 22. A is 3 times 22, plus 2, which is 68. B is 5 times 22, minus 40, which is 70. B is ahead at last.",
+      W("c1", "3 × 22 + 2 = 68"), W("c2", "5 × 22 − 40 = 70"), W("c3", "70 > 68")),
+    B("So in a catching up question: find the gap, find how fast it closes, and then read carefully whether you want level or ahead."),
+)
+
+# 3(n + 4) against 3n + 4: always 8 more
+LESSONS[P + "008"] = LESSON(
+    B("Asha works out 3 times the bracket n plus 4. Bala works out 3 n plus 4, with the same n. By how much is Asha's answer greater?",
+      GIVEN("q", "Asha: 3(n + 4). Bala: 3n + 4. How much greater is Asha's?")),
+    B("The two look almost the same. The only difference is Asha's brackets, so let's open them."),
+    B("What is 3 times the bracket, n plus 4?",
+      ask=CHOOSE(["3n + 4", "3n + 12", "3n + 7"], 1,
+                 "The 3 multiplies everything inside the bracket. That is 3 lots of n, and 3 lots of 4 as well.")),
+    B("3 times n is 3 n, and 3 times 4 is 12. So Asha has 3 n plus 12.",
+      W("l1", "3(n + 4) = 3n + 12"), ARC("l1", "3", ["n", "4"])),
+    B("Bala has 3 n plus 4. Both of them have 3 n, so that part matches. Only the number parts differ: 12 for Asha, 4 for Bala.",
+      W("l2", "3n + 4"), UL("l1", "12"), UL("l2", "4")),
+    B("12 minus 4 is 8. So Asha's answer is always 8 more than Bala's.",
+      *ANSC("l3", "12 − 4 = 8", 8)),
+    B("Notice that 12 is not the answer. Bala already has 4, so we want the gap between 12 and 4."),
+    B("Check with n as 2. Asha: 2 plus 4 is 6, and 3 times 6 is 18. Bala: 3 times 2 is 6, plus 4 is 10. And 18 minus 10 is 8.",
+      W("c1", "3 × (2 + 4) = 18"), W("c2", "3 × 2 + 4 = 10"), W("c3", "18 − 10 = 8")),
+    B("So to compare two expressions, open the brackets first. Then compare them part by part."),
+    check=("n", 8),
+)

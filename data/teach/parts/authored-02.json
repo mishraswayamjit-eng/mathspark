@@ -1,0 +1,6950 @@
+{
+ "G5A_DECIMALS_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "What is 3.25 multiplied by 100?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3.25 × 100 = ?",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Multiplying by 100 makes every digit worth 100 times as much. So the decimal point ends up further to the right.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "100"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Start with the 3 ones. 3 times 100 is 300, so the 3 becomes 3 hundreds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 × 100 = 300"
+     }
+    ]
+   },
+   {
+    "say": "Now the whole number. Where does the point in 3.25 land when we multiply by 100?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "32.5",
+      "325",
+      "3250"
+     ],
+     "answer": 1,
+     "ifNot": "Times 10 moves the point one place, and that gives 32.5. Times 100 is times 10 twice, so the point moves two places."
+    }
+   },
+   {
+    "say": "Two places to the right: past the 2, then past the 5. 3.25 becomes 325.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3.25 × 100 = 325",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "325"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with the parts: 0.25 times 100 is 25, and 300 plus 25 is 325.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "0.25 × 100 = 25"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "300 + 25 = 325"
+     }
+    ]
+   },
+   {
+    "say": "So to multiply by 100, move the decimal point two places to the right: one place for each zero in 100."
+   }
+  ]
+ },
+ "G5A_DECIMALS_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "What is 57 divided by 10?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "57 ÷ 10 = ?",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, where is the decimal point in 57? It is hiding at the end: 57 is the same as 57.0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "57 = 57.0"
+     }
+    ]
+   },
+   {
+    "say": "Dividing by 10 moves the point one place. Which way does it go?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "to the left: smaller",
+      "to the right: bigger"
+     ],
+     "answer": 0,
+     "ifNot": "Dividing shares the number out, so the answer must be smaller than 57. The point moves to the left."
+    }
+   },
+   {
+    "say": "One place to the left puts the point between the 5 and the 7. So 57 becomes 5.7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "57 ÷ 10 = 5.7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "5.7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The 5 tens became 5 ones, and the 7 ones became 7 tenths. No zero sneaks in between them, so it is not 5.07.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5.07 ≠ 5.7"
+     }
+    ]
+   },
+   {
+    "say": "Check by going back: 5.7 times 10 moves the point one place to the right, and gives 57 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5.7 × 10 = 57"
+     }
+    ]
+   },
+   {
+    "say": "So to divide by 10, move the decimal point one place to the left. 57 divided by 10 is 5.7."
+   }
+  ]
+ },
+ "G5A_DECIMALS_016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How do we write seven tenths as a decimal?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "seven tenths = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Tenths are what you get when one whole is cut into 10 equal parts. Seven tenths is 7 of those parts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "7/10"
+     }
+    ]
+   },
+   {
+    "say": "Is seven tenths more than 1 whole, or less than 1 whole?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "more than 1",
+      "less than 1"
+     ],
+     "answer": 1,
+     "ifNot": "We have only 7 of the 10 parts, so we do not have the whole thing yet. It is less than 1."
+    }
+   },
+   {
+    "say": "Less than 1, so there are no ones. We write 0 in the ones place, and then the decimal point.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "ones . tenths",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The first place after the point is the tenths place. That is where our 7 goes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "7/10 = 0.7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "0.7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 0.07 has the 7 in the second place. That means seven hundredths, which is much smaller.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "0.07 = 7/100"
+     }
+    ]
+   },
+   {
+    "say": "So tenths live in the first place after the point. Seven tenths is 0.7."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The number 4 P 2 7 Q can be divided by both 5 and 9. P and Q are missing digits. How many different numbers fit?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4P27Q is divisible by 5 and by 9",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Two rules to use. Start with 5, because it only looks at the last digit. What can Q be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only 5",
+      "0 or 5",
+      "any digit"
+     ],
+     "answer": 1,
+     "ifNot": "Think of 10: it is a multiple of 5 as well, and it ends in 0. So a multiple of 5 ends in 0 or in 5."
+    }
+   },
+   {
+    "say": "So there are two cases, Q is 0 and Q is 5, and we must try both.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Q = 0  or  Q = 5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the rule for 9: the digits must add up to a multiple of 9. With Q as 0, the digits we know are 4, 2, 7 and 0. They add up to 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 + 2 + 7 + 0 = 13"
+     }
+    ]
+   },
+   {
+    "say": "13 plus P must be a multiple of 9. The next one after 13 is 18, so P is 5. That is one number: 45,270.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "13 + 5 = 18"
+     },
+     {
+      "op": "write",
+      "id": "n1",
+      "text": "45,270",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now Q as 5. The digits 4, 2, 7 and 5 add up to 18. That is already a multiple of 9!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 + 2 + 7 + 5 = 18"
+     }
+    ]
+   },
+   {
+    "say": "So 18 plus P must be a multiple of 9. Which digits can P be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only 9",
+      "only 0",
+      "0 or 9"
+     ],
+     "answer": 2,
+     "ifNot": "18 is already a multiple of 9, so adding 0 keeps it there. Adding 9 takes us to the next multiple. Both work."
+    }
+   },
+   {
+    "say": "P can be 0, which gives 40,275. Or P can be 9, which gives 49,275. Two more numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "18 + 0 = 18"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "18 + 9 = 27"
+     },
+     {
+      "op": "write",
+      "id": "n2",
+      "text": "40,275 and 49,275",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count them up: 1 number when Q is 0, and 2 numbers when Q is 5. That makes 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "1 + 2 = 3",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps here: forgetting that a multiple of 5 can end in 0, and forgetting that P itself can be 0."
+   },
+   {
+    "say": "So take the rule with fewer choices first, split into cases, and count every case. 3 numbers fit."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The number 4 P 8 can be divided by 6, but NOT by 9. How many different digits can P be?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4P8: divisible by 6, NOT by 9",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Divisible by 6 means divisible by 2 and by 3. The number ends in 8, so it is even whatever P is. That leaves only the rule for 3.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "8"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "For 3, the digits must add up to a multiple of 3. 4 plus 8 is 12, so the digits add up to 12 plus P.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 + 8 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "digit sum = 12 + P",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "12 is already a multiple of 3. So which digits can P be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3, 6, 9",
+      "0, 3, 6, 9",
+      "6 only"
+     ],
+     "answer": 1,
+     "ifNot": "12 is a multiple of 3 already, so P must add a multiple of 3: that is 0, 3, 6 or 9. Do not leave out the 0."
+    }
+   },
+   {
+    "say": "Four digits pass the rule for 6. Here are their digit sums: 12, 15, 18 and 21.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 + 0 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 + 3 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 + 6 = 18"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "12 + 9 = 21"
+     }
+    ]
+   },
+   {
+    "say": "But the question also says NOT divisible by 9. Which of these digit sums is a multiple of 9?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12",
+      "15",
+      "18",
+      "21"
+     ],
+     "answer": 2,
+     "ifNot": "Count in nines: 9, then 18. Only 18 is in our list, and it comes from P being 6."
+    }
+   },
+   {
+    "say": "So 6 is out, because 468 can be divided by 9. We cross it off.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "468 ÷ 9 = 52"
+     },
+     {
+      "op": "strike",
+      "line": "l5",
+      "target": {
+       "text": "12 + 6 = 18"
+      },
+      "note": "÷ 9"
+     }
+    ]
+   },
+   {
+    "say": "That leaves 0, 3 and 9. So P can be 3 different digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "P = 0, 3 or 9: that is 3 digits",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "3 digits"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at 4, the digits that pass the rule for 6. Always read on to the word NOT."
+   },
+   {
+    "say": "So list everything that fits the first rule, then strike out what breaks the second. 3 digits are left."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many whole numbers from 1 to 50 have exactly three factors?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1 to 50: exactly three factors?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Factors usually come in pairs. Look at 12: 1 with 12, 2 with 6, 3 with 4. Pairs give an even number of factors.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 = 1 × 12 = 2 × 6 = 3 × 4"
+     }
+    ]
+   },
+   {
+    "say": "But three is odd. What kind of number has an odd number of factors?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "a prime number",
+      "a square number",
+      "an even number"
+     ],
+     "answer": 1,
+     "ifNot": "A prime has just 2 factors. For an odd count, one factor must pair with itself, like 3 times 3. That happens only in a square number."
+    }
+   },
+   {
+    "say": "So we only need the square numbers up to 50. Here they are.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sq",
+      "text": "1, 4, 9, 16, 25, 36, 49",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now count the factors of each. 4 has 1, 2 and 4. 9 has 1, 3 and 9. Three factors each.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "4"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with 16. Its factors are 1, 2, 4, 8 and 16. That is five. 36 has even more, and 1 has only one factor.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "16: 1, 2, 4, 8, 16",
+      "label": true
+     },
+     {
+      "op": "strike",
+      "line": "sq",
+      "target": {
+       "text": "16"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "sq",
+      "target": {
+       "text": "36"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "sq",
+      "target": {
+       "text": "1"
+      }
+     }
+    ]
+   },
+   {
+    "say": "25 has 1, 5 and 25. 49 has 1, 7 and 49. Three factors each.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "49"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Did you spot it? 4, 9, 25 and 49 are the squares of 2, 3, 5 and 7, the prime numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2² = 4"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3² = 9"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5² = 25"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7² = 49"
+     }
+    ]
+   },
+   {
+    "say": "So 4 numbers have exactly three factors.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "4, 9, 25, 49: that is 4 numbers",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "4 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to count all 7 squares. Only the square of a prime has exactly three factors: 1, the prime, and the square itself."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "What is the smallest whole number that has exactly 6 factors? The choices are 12, 18, 32 and 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Smallest number with exactly 6 factors?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "12, 18, 32, 16",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count factors in pairs, so none get lost. Start with 12: 1 times 12, 2 times 6, 3 times 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 = 1 × 12 = 2 × 6 = 3 × 4"
+     }
+    ]
+   },
+   {
+    "say": "How many factors does 12 have?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "6",
+      "5"
+     ],
+     "answer": 1,
+     "ifNot": "Each pair holds two factors. Three pairs make 6 factors: 1, 2, 3, 4, 6 and 12."
+    }
+   },
+   {
+    "say": "6 factors. But wait: 18 and 32 have three pairs each, so they have 6 factors as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "18 = 1 × 18 = 2 × 9 = 3 × 6"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "32 = 1 × 32 = 2 × 16 = 4 × 8"
+     }
+    ]
+   },
+   {
+    "say": "And 16 has only five: 1, 2, 4, 8 and 16, because 4 pairs with itself.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "16 = 1 × 16 = 2 × 8 = 4 × 4"
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "16"
+      }
+     }
+    ]
+   },
+   {
+    "say": "So three of the choices have 6 factors. The question asks for the smallest, and 12 is the smallest of them.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Could a number below 12 have 6 factors? No: 6, 8 and 10 have four each, 4 and 9 have three, and the primes have two.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6 = 1 × 6 = 2 × 3"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 = 1 × 8 = 2 × 4"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "10 = 1 × 10 = 2 × 5"
+     }
+    ]
+   },
+   {
+    "say": "So the smallest number with exactly 6 factors is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "12 has 6 factors: 1, 2, 3, 4, 6, 12",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "12",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at the first number you check, or to pick a bigger one that also works. Count in pairs, then choose the smallest."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "p, p plus 2 and p plus 4 are all prime numbers. What is the sum of the three primes?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "p, p + 2, p + 4 are all prime",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We do not know p, so let's try the small primes one by one. Try 2: we get 2, 4 and 6. But 4 and 6 are even, so they are not prime.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "p = 2:  2, 4, 6",
+      "label": true
+     },
+     {
+      "op": "strike",
+      "line": "l1",
+      "target": {
+       "text": "2, 4, 6"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Try 3: we get 3, 5 and 7. Are all three prime?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "p = 3:  3, 5, 7",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, all three",
+      "no, 5 is not",
+      "no, 7 is not"
+     ],
+     "answer": 0,
+     "ifNot": "3, 5 and 7 each have only two factors: 1 and the number itself. So all three are prime."
+    }
+   },
+   {
+    "say": "All prime! But is it the only set? Try 5: we get 5, 7 and 9. And 9 is 3 times 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "p = 5:  5, 7, 9",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "9 = 3 × 3"
+     },
+     {
+      "op": "strike",
+      "line": "l3",
+      "target": {
+       "text": "9"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Try 7: we get 7, 9 and 11. There is 9 again. Try 11: we get 11, 13 and 15, and 15 is 3 times 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "p = 7:  7, 9, 11",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "p = 11:  11, 13, 15",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "15 = 3 × 5"
+     }
+    ]
+   },
+   {
+    "say": "Here is why it keeps breaking. In three numbers that go up in twos like this, one is always a multiple of 3. It can only be prime if it is 3 itself."
+   },
+   {
+    "say": "So the only set is 3, 5 and 7. Add them: 3 plus 5 plus 7 is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "3 + 5 + 7 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "One trap is to start from 1: 1, 3 and 5. But 1 is not a prime number, because it has only one factor."
+   },
+   {
+    "say": "So when you do not know the number, test small cases in order and look for the reason the others break. The sum is 15."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two prime numbers add up to 99. What is the difference between them?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "prime + prime = 99",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We could hunt through pairs, but there is a quicker way in. Look at 99: it is odd.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "99"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Almost every prime is odd. What do you get when you add two odd numbers?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "always an odd number",
+      "always an even number",
+      "it depends"
+     ],
+     "answer": 1,
+     "ifNot": "Try it: 3 plus 5 is 8, and 3 plus 7 is 10. Odd plus odd always comes out even."
+    }
+   },
+   {
+    "say": "Odd plus odd is even, so two odd primes can never make 99. One of our primes must be even.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 + 5 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "odd + odd = even",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "And there is only one even prime: 2. Every other even number can be divided by 2, so it is not prime.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "one prime = 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the other prime is 99 minus 2, which is 97.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "99 − 2 = 97"
+     }
+    ]
+   },
+   {
+    "say": "Is 97 really prime? It is odd, its digits add up to 16 so 3 does not go in, it does not end in 0 or 5, and 7 times 14 is 98, just past it. Yes, 97 is prime.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "9 + 7 = 16"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7 × 14 = 98"
+     }
+    ]
+   },
+   {
+    "say": "Now the difference: 97 minus 2 is 95.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "97 − 2 = 95",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "95"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to split 99 into two numbers close together, like 49 and 50. But 49 is 7 times 7, and 50 is even.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "49 + 50 = 99"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "49 = 7 × 7"
+     }
+    ]
+   },
+   {
+    "say": "So when two primes make an odd total, one of them has to be 2. Here they are 2 and 97, and the difference is 95."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "What is the smallest number that leaves remainder 3 when divided by 4, remainder 4 when divided by 5, and remainder 5 when divided by 6?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "÷ 4 rem 3,  ÷ 5 rem 4,  ÷ 6 rem 5",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Compare each remainder with the number we divide by. 3 and 4. 4 and 5. 5 and 6. What do you notice?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "remainder is 1 less each time",
+      "remainder is 1 more each time",
+      "nothing special"
+     ],
+     "answer": 0,
+     "ifNot": "3 is 1 less than 4. 4 is 1 less than 5. 5 is 1 less than 6. Every time, the remainder is just 1 short of the divisor."
+    }
+   },
+   {
+    "say": "Each time, the number is just 1 short of dividing exactly. So if we add 1 to it, it divides exactly by 4, by 5 and by 6!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "number + 1 divides by 4, 5 and 6",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So number plus 1 is a common multiple of 4, 5 and 6. We want the smallest one. Start with the multiples of 6, up to 60.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6, 12, 18, 24, 30, 36, 42, 48, 54, 60",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For the 5, it must end in 0 or 5. 30 does, but 4 does not go into 30. 60 works: 4 times 15, and 5 times 12.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "30"
+      }
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "60"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 × 15 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 × 12 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6 × 10 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So number plus 1 is 60. What is the number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "61",
+      "59",
+      "60"
+     ],
+     "answer": 1,
+     "ifNot": "We added 1 to reach 60. To get back to the number, take that 1 away again."
+    }
+   },
+   {
+    "say": "60 minus 1 is 59.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "60 − 1 = 59",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "59"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 4 times 14, plus 3, is 59. 5 times 11, plus 4, is 59. And 6 times 9, plus 5, is 59. All three fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "4 × 14 + 3 = 59"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "5 × 11 + 4 = 59"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "6 × 9 + 5 = 59"
+     }
+    ]
+   },
+   {
+    "say": "Two traps: 61 is 1 more than 60, not 1 less. And 119 fits too, but it comes from 120, and we wanted the smallest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "120 − 1 = 119"
+     }
+    ]
+   },
+   {
+    "say": "So when every remainder is 1 short of its divisor, find the least common multiple and take 1 away. The answer is 59."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "One number leaves remainder 4 when divided by 9. Another leaves remainder 7 when divided by 9. What is the remainder when their sum is divided by 9?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "÷ 9: remainders 4 and 7. Sum ÷ 9: remainder?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We are not told the numbers, so let's pick simple ones that fit. 9 plus 4 is 13, and 9 plus 7 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "9 + 4 = 13"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 + 7 = 16"
+     }
+    ]
+   },
+   {
+    "say": "Add them: 13 plus 16 is 29.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "13 + 16 = 29"
+     }
+    ]
+   },
+   {
+    "say": "Now divide 29 by 9. 9 times 3 is 27. What is left over?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "9 × 3 = 27"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "11",
+      "2",
+      "3"
+     ],
+     "answer": 1,
+     "ifNot": "27 is the biggest multiple of 9 inside 29. From 27 up to 29 is 2, so 2 is left over."
+    }
+   },
+   {
+    "say": "29 is 27 and 2 more. So the remainder is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "29 = 9 × 3 + 2"
+     }
+    ]
+   },
+   {
+    "say": "Why does it work for any numbers? Each number is some nines plus its remainder. Add them, and the remainders add up to 4 plus 7, which is 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4 + 7 = 11"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. 11 cannot be a remainder when we divide by 9, because 11 still holds one more 9. Take it out, and 2 is left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "11 − 9 = 2",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So add the remainders, then take out any nines that are hiding. The remainder is 2."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The sum of any four consecutive whole numbers is always divisible by which of these: 4, 6, 10 or 2?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sum of any 4 consecutive numbers: always ÷ by?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "4,  6,  10,  2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The big word is always. It has to work for every set of four, so we test more than one set. First: 1 plus 2 plus 3 plus 4 is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1 + 2 + 3 + 4 = 10"
+     }
+    ]
+   },
+   {
+    "say": "10 cannot be divided by 4, and it cannot be divided by 6. So those two are out already.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "4"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "6"
+      }
+     }
+    ]
+   },
+   {
+    "say": "10 can be divided by 10, and by 2. Is one test enough to choose 10?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, 10 works",
+      "no, test another set"
+     ],
+     "answer": 1,
+     "ifNot": "One set that works does not show it always works. Slide along to the next four numbers and test again."
+    }
+   },
+   {
+    "say": "Next set: 2 plus 3 plus 4 plus 5 is 14. That cannot be divided by 10. So 10 is out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 + 3 + 4 + 5 = 14"
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "10"
+      }
+     }
+    ]
+   },
+   {
+    "say": "One more: 3 plus 4 plus 5 plus 6 is 18. Our sums are 10, 14 and 18. All even.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 + 4 + 5 + 6 = 18"
+     }
+    ]
+   },
+   {
+    "say": "Here is why. Any four numbers in a row are two odd numbers and two even numbers. Odd plus odd is even, so the whole sum is always even.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "odd + even + odd + even = even",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the sum is always divisible by 2.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "always divisible by 2",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 4: four numbers, so it feels like 4 should work. But the very first sum, 10, says no."
+   },
+   {
+    "say": "So for an always question, hunt for one case that breaks each choice. The one that never breaks is 2."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A 2-digit number is added to its reverse, like 47 plus 74. The sum is always divisible by which of these: 9, 11, 2 or 10?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "2-digit number + its reverse: always ÷ by?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "9,  11,  2,  10",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Try the example first. 47 plus 74 is 121.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "47 + 74 = 121"
+     }
+    ]
+   },
+   {
+    "say": "Two more, with small digits. 12 plus 21 is 33. And 35 plus 53 is 88.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 + 21 = 33"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "35 + 53 = 88"
+     }
+    ]
+   },
+   {
+    "say": "Our sums are 121, 33 and 88. Which number divides all three?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9",
+      "11",
+      "2",
+      "10"
+     ],
+     "answer": 1,
+     "ifNot": "33 is odd, so 2 and 10 are out. 3 plus 3 is 6, so 9 does not go into 33. But 33 is 3 times 11."
+    }
+   },
+   {
+    "say": "11 goes into every one: 11 times 11 is 121, 3 times 11 is 33, and 8 times 11 is 88.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "11 × 11 = 121"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 11 = 33"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 × 11 = 88"
+     },
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "11"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "But why always? Look at 47 plus 74. The 4 is a ten in one number and a one in the other. So the 4 is counted 10 plus 1 times, which is 11 times.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "4 × 10 + 4 × 1 = 4 × 11"
+     }
+    ]
+   },
+   {
+    "say": "The 7 is counted 11 times as well. So the sum is 11 times 4, plus 11 times 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "4 × 11 + 7 × 11 = 121"
+     }
+    ]
+   },
+   {
+    "say": "So the sum is always divisible by 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "always divisible by 11",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "11"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 9. Nine goes with subtracting a number and its reverse, not adding them. Adding gives a multiple of 11 every time."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We multiply 1 times 2 times 3, all the way up to 10. How many zeros are at the end of the answer?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1 × 2 × 3 × 4 × 5 × 6 × 7 × 8 × 9 × 10",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We do not need to work out the whole thing. A zero at the end appears each time 10 is a factor of the product."
+   },
+   {
+    "say": "The factor 10 is sitting right there at the end. That gives one zero.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "But a 10 can also be made in disguise. Which two numbers in the list multiply to make 10?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 and 5",
+      "4 and 6",
+      "3 and 7"
+     ],
+     "answer": 0,
+     "ifNot": "We need a product of exactly 10. 2 times 5 is 10. So the 2 and the 5 make a hidden 10 between them."
+    }
+   },
+   {
+    "say": "2 times 5 is 10. That hidden 10 gives a second zero.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2 × 5 = 10"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Could there be a third? Every 10 needs a 5. Only two numbers in the list hold a 5: the 5 itself, and 10, which is 2 times 5. No more fives, so no more zeros."
+   },
+   {
+    "say": "So the answer ends in 2 zeros.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 gives 1 zero, 2 × 5 gives 1 more: 2 zeros",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "2 zeros"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "We can check with the real product. It is 36,28,800, which ends in 2 zeros.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1 × 2 × ... × 10 = 36,28,800",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The trap is to count only the 10 you can see. Zeros at the end come from every pair of a 2 and a 5, so count the fives."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The number 3 P 4 6 Q can be divided by both 8 and 11. What is P plus Q?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3P46Q is divisible by 8 and by 11",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Each rule looks at a different part of the number. Which rule should we use first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8: it needs only Q",
+      "11: it needs P and Q"
+     ],
+     "answer": 0,
+     "ifNot": "The rule for 8 looks at the last three digits only: 4, 6 and Q. That has just one missing digit, so it is the easier place to start."
+    }
+   },
+   {
+    "say": "For 8, the last three digits must make a multiple of 8. So we need 4 6 Q, somewhere from 460 to 469.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "46Q: 460 to 469",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "8 times 50 is 400, and 8 times 8 is 64. So 8 times 58 is 464. That is in our range, so Q is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 × 50 = 400"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 × 8 = 64"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8 × 58 = 464"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Q = 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Careful: 460 looks tempting, because 4 goes into it. But the multiples of 8 near here are 456, 464 and 472.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 × 57 = 456"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "8 × 59 = 472"
+     }
+    ]
+   },
+   {
+    "say": "Now 11. Add every other digit. The 1st, 3rd and 5th digits are 3, 4 and 4, which make 11. The 2nd and 4th are P and 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "3 P 4 6 4",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "3 + 4 + 4 = 11"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "P + 6",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For 11, those two totals must be equal, or differ by a multiple of 11. So what is P?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "P = 6",
+      "P = 5",
+      "P = 11"
+     ],
+     "answer": 1,
+     "ifNot": "P plus 6 has to equal 11. And P is a single digit, so P is 5."
+    }
+   },
+   {
+    "say": "5 plus 6 is 11, so both totals are 11. P is 5, and the number is 35,464.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "5 + 6 = 11"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "35,464",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So P plus Q is 5 plus 4, which is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "5 + 4 = 9",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l12",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So start with the rule that has only one missing digit, then use what you found in the other rule. P plus Q is 9."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many of the factors of 120 are even numbers?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Factors of 120: how many are even?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First find all the factors, in pairs so none get lost. 1 times 120, 2 times 60, 3 times 40, 4 times 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1 × 120 = 2 × 60 = 3 × 40 = 4 × 30"
+     }
+    ]
+   },
+   {
+    "say": "Carry on: 5 times 24, 6 times 20, 8 times 15, 10 times 12. After that the pairs repeat.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 × 24 = 6 × 20 = 8 × 15 = 10 × 12"
+     }
+    ]
+   },
+   {
+    "say": "8 pairs, with 2 factors in each. That is 16 factors in all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 × 2 = 16"
+     }
+    ]
+   },
+   {
+    "say": "Now, are half of them even and half odd? Let's not guess. Which kind is quicker to pick out?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the odd factors: there are few",
+      "the even factors"
+     ],
+     "answer": 0,
+     "ifNot": "Most of these factors are even. The odd ones are few, so it is quicker to find them and take them away from 16."
+    }
+   },
+   {
+    "say": "Hunt for the odd ones: 1, 3, 5 and 15. Only 4 odd factors.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "1"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "All the rest are even. 16 minus 4 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "16 − 4 = 12",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to halve 16 and say 8. Odd and even factors are not shared equally: 120 has lots of twos inside it, so most of its factors are even."
+   },
+   {
+    "say": "So list the factors in pairs, count the odd ones, and subtract. 12 of the factors of 120 are even."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many prime numbers between 50 and 100 are still prime when their digits are reversed?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Primes from 50 to 100: still prime reversed?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, a careful list of the primes between 50 and 100. There are ten of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "53, 59, 61, 67, 71",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "73, 79, 83, 89, 97",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Watch out for 91. It looks prime, but 7 times 13 is 91, so it is not on our list.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "7 × 13 = 91"
+     }
+    ]
+   },
+   {
+    "say": "Now we reverse each one. Here is a shortcut: the first digit becomes the last digit. Which first digits spoil it straight away?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5, 6 and 8",
+      "7 and 9",
+      "none of them"
+     ],
+     "answer": 0,
+     "ifNot": "A number ending in 5 is a multiple of 5. A number ending in 6 or 8 is even. So primes that start with 5, 6 or 8 turn into numbers that are not prime."
+    }
+   },
+   {
+    "say": "53 and 59 turn into 35 and 95, multiples of 5. 61 and 67 turn into 16 and 76, and 83 and 89 into 38 and 98, all even. Six are out.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "p1",
+      "target": {
+       "text": "53"
+      },
+      "note": "35"
+     },
+     {
+      "op": "strike",
+      "line": "p1",
+      "target": {
+       "text": "59"
+      },
+      "note": "95"
+     },
+     {
+      "op": "strike",
+      "line": "p1",
+      "target": {
+       "text": "61"
+      },
+      "note": "16"
+     },
+     {
+      "op": "strike",
+      "line": "p1",
+      "target": {
+       "text": "67"
+      },
+      "note": "76"
+     },
+     {
+      "op": "strike",
+      "line": "p2",
+      "target": {
+       "text": "83"
+      },
+      "note": "38"
+     },
+     {
+      "op": "strike",
+      "line": "p2",
+      "target": {
+       "text": "89"
+      },
+      "note": "98"
+     }
+    ]
+   },
+   {
+    "say": "Four are left: 71, 73, 79 and 97. Their reverses are 17, 37, 97 and 79.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "17, 37, 97, 79",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "17 and 37 are prime. And 97 and 79 are both on our list already: they are each other's reverse!",
+    "board": [
+     {
+      "op": "mark",
+      "line": "p1",
+      "target": {
+       "text": "71"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "p2",
+      "target": {
+       "text": "73"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "p2",
+      "target": {
+       "text": "79"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "p2",
+      "target": {
+       "text": "97"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So 4 primes stay prime when reversed.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "71, 73, 79, 97: that is 4 primes",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "4 primes"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The traps: letting 91 onto the list, or forgetting that 97 counts as well as 79."
+   },
+   {
+    "say": "So list carefully, reverse, and use the last digit to throw out the easy ones first. The answer is 4."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many whole numbers between 100 and 200 are divisible by 3 but NOT by 6?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "100 to 200: divisible by 3 but NOT by 6",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Think about the multiples of 3: 3, 6, 9, 12, 15, 18. Every second one is a multiple of 6. Which ones are those?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3, 6, 9, 12, 15, 18",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the even ones",
+      "the odd ones"
+     ],
+     "answer": 0,
+     "ifNot": "6, 12 and 18 are the multiples of 6, and they are the even ones. A multiple of 3 that is also even is a multiple of 6."
+    }
+   },
+   {
+    "say": "So the even multiples of 3 are out. We want the odd multiples of 3.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l1",
+      "target": {
+       "text": "6"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "l1",
+      "target": {
+       "text": "12"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "l1",
+      "target": {
+       "text": "18"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Find the first one after 100. 102 is a multiple of 3, but it is even. The next multiple of 3 is 105, and it is odd.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "102 = 3 × 34"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "105 = 3 × 35"
+     }
+    ]
+   },
+   {
+    "say": "And the last one before 200. 198 is a multiple of 3, but it is even. Step back 3 to 195, which is odd.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "198 = 3 × 66"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "195 = 3 × 65"
+     }
+    ]
+   },
+   {
+    "say": "From one odd multiple to the next we jump 6: 105, 111, 117, and so on up to 195.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "105, 111, 117, ..., 195",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How many jumps of 6 from 105 to 195? The distance is 90, and 90 divided by 6 is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "195 − 105 = 90"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "90 ÷ 6 = 15"
+     }
+    ]
+   },
+   {
+    "say": "15 jumps. So how many numbers are in the list?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "16",
+      "14"
+     ],
+     "answer": 1,
+     "ifNot": "Think of 3 fence posts in a row: there are only 2 gaps between them. The numbers are the posts and the jumps are the gaps, so there is one more number than jumps."
+    }
+   },
+   {
+    "say": "One more number than jumps: 15 plus 1 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "15 + 1 = 16",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps. One is counting every multiple of 3 from 102 to 198, even ones included: that gives 33. The other is stopping at 15 jumps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "66 − 34 + 1 = 33"
+     }
+    ]
+   },
+   {
+    "say": "So divisible by 3 but not by 6 means the odd multiples of 3. Find the first and the last, count the jumps, and add 1. There are 16."
+   }
+  ]
+ },
+ "G5A_DIVISIBILITY_016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many whole numbers from 1 to 100 are divisible by both 4 and 6?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1 to 100: divisible by both 4 and 6",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "A number that 4 and 6 both go into is a common multiple of 4 and 6. What is the smallest one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "24",
+      "12",
+      "2"
+     ],
+     "answer": 1,
+     "ifNot": "4 times 6 is 24, and that is a common multiple, but not the smallest. 12 is 4 times 3, and 6 times 2."
+    }
+   },
+   {
+    "say": "12 is the smallest: 4 times 3, and 6 times 2. The trap is to jump to 4 times 6, which is 24, and miss 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 × 3 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6 × 2 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Every number divisible by both 4 and 6 is a multiple of 12. So we just list the multiples of 12 up to 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12, 24, 36, 48, 60, 72, 84, 96",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "After 96 comes 108, which is past 100. So we stop at 96.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "96 + 12 = 108"
+     }
+    ]
+   },
+   {
+    "say": "Count them. 12 times 8 is 96, so there are 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 × 8 = 96",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check one from the middle: 60 is 4 times 15, and 6 times 10. Both go in.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4 × 15 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "6 × 10 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So for divisible by both, find the least common multiple, then count its multiples. There are 8."
+   }
+  ]
+ },
+ "G5A_FRACTIONS_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun spent half his money and 10 rupees more at the first stall. At the second he spent half of what was left and 10 rupees more. Then he had 20 rupees. How much did he take to the mela?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "half and ₹10 more, twice. Left: ₹20",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We know the end of the story, not the start. So we work backwards, like rewinding a film. Which stall do we undo first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the first stall",
+      "the second stall"
+     ],
+     "answer": 1,
+     "ifNot": "Rewinding goes from the end. The last thing that happened was the second stall, so that is undone first."
+    }
+   },
+   {
+    "say": "At the second stall he paid half, then 10 rupees more, and was left with 20. Undo the last step first: give back the 10 rupees. 20 plus 10 is 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "₹20 + ₹10 = ₹30"
+     }
+    ]
+   },
+   {
+    "say": "That 30 is what was left after he paid half. So 30 is the other half. What did he bring to the second stall?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "₹15",
+      "₹60",
+      "₹40"
+     ],
+     "answer": 1,
+     "ifNot": "If 30 rupees is one half, the whole amount is two halves. So we double 30."
+    }
+   },
+   {
+    "say": "30 times 2 is 60. He had 60 rupees after the first stall.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "₹30 × 2 = ₹60"
+     }
+    ]
+   },
+   {
+    "say": "Now undo the first stall the same way. Give back the 10 rupees: 60 plus 10 is 70. Then double: 70 times 2 is 140.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "₹60 + ₹10 = ₹70"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "₹70 × 2 = ₹140",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "₹140"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the order. Going backwards we add the 10 first and double second. Doubling first gives a different amount."
+   },
+   {
+    "say": "Check forwards. Half of 140 is 70, and 10 more makes 80 spent, leaving 60. Half of 60 is 30, and 10 more makes 40 spent, leaving 20. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "140 − 80 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "60 − 40 = 20"
+     }
+    ]
+   },
+   {
+    "say": "So when you know the end, work backwards and undo each step in reverse order. Arjun took 140 rupees."
+   }
+  ]
+ },
+ "G5A_FRACTIONS_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A jar full of honey weighs 900 grams. After one third of the honey is used, the jar and the honey left weigh 650 grams. What does the empty jar weigh?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Full: 900 g. One-third of honey used: 650 g",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Between the two weighings, only honey left the jar. So how much honey was used? 900 minus 650 is 250 grams.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "900 − 650 = 250"
+     }
+    ]
+   },
+   {
+    "say": "That 250 grams is one third of something. One third of what?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "of the honey",
+      "of the jar and honey together"
+     ],
+     "answer": 0,
+     "ifNot": "The question says one third of the honey is used. The jar is glass, and nobody used up a third of the glass!"
+    }
+   },
+   {
+    "say": "One third of the honey is 250 grams. So all the honey is 3 times as much: 750 grams.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "250 × 3 = 750"
+     }
+    ]
+   },
+   {
+    "say": "The full jar is jar plus honey. Take the honey away: 900 minus 750 is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "900 − 750 = 150",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "150"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The empty jar weighs 150 grams. The trap is to stop at 250, or at 750. Those are honey, not jar."
+   },
+   {
+    "say": "Check: two thirds of the honey is left, which is 500 grams. Add the jar: 150 plus 500 is 650. It matches the second weighing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "750 − 250 = 500"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "150 + 500 = 650"
+     }
+    ]
+   },
+   {
+    "say": "So look at what changed between the two weighings. That gives the honey, and what is left over is the jar: 150 grams."
+   }
+  ]
+ },
+ "G5A_FRACTIONS_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Which of these fractions is closest to one half: 5 over 11, 4 over 7, 7 over 15 or 9 over 20?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Closest to 1/2?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "5/11,  4/7,  7/15,  9/20",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is a neat trick. Ask what the top would have to be to make exactly one half. Half of 11 is 5 and a half. So 5 over 11 is half an eleventh short.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "5/11"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Half of one eleventh is 1 over 22. So 5 over 11 is 1 over 22 below one half.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1/2 − 5/11 = 1/22"
+     }
+    ]
+   },
+   {
+    "say": "Now 4 over 7. Half of 7 is 3 and a half, so 4 is half a seventh too many. It is 1 over 14 above one half.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4/7 − 1/2 = 1/14"
+     }
+    ]
+   },
+   {
+    "say": "Your turn. Half of 15 is 7 and a half. So how far is 7 over 15 from one half?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1/15",
+      "1/30",
+      "1/7"
+     ],
+     "answer": 1,
+     "ifNot": "7 is half a part short, and each part is one fifteenth. Half of one fifteenth is 1 over 30."
+    }
+   },
+   {
+    "say": "1 over 30 below. And 9 over 20: half of 20 is 10, so it is one whole twentieth short.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1/2 − 7/15 = 1/30"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1/2 − 9/20 = 1/20"
+     }
+    ]
+   },
+   {
+    "say": "The gaps are 1 over 22, 1 over 14, 1 over 30 and 1 over 20. All have 1 on top. Which gap is the smallest?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1/14",
+      "1/30",
+      "1/20"
+     ],
+     "answer": 1,
+     "ifNot": "When the tops are all 1, a bigger bottom means smaller pieces. 30 is the biggest bottom, so 1 over 30 is the smallest gap."
+    }
+   },
+   {
+    "say": "1 over 30 is the smallest gap, so 7 over 15 is the closest to one half.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "7/15"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "7/15 is closest to 1/2",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "7/15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 9 over 20: it misses by one whole part, while 7 over 15 misses by only half a part."
+   },
+   {
+    "say": "So to compare fractions near one half, find each gap from one half. The smallest gap wins: 7 over 15."
+   }
+  ]
+ },
+ "G5A_FRACTIONS_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four friends had pizzas of the same size. Ravi ate 3 over 7 of his, Sam 5 over 11, Tara 4 over 9 and Uma 6 over 13. Who has the most pizza left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Ravi 3/7, Sam 5/11, Tara 4/9, Uma 6/13",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Read the last line carefully. We want the most left. So are we looking for the friend who ate the most, or the least?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "ate the most",
+      "ate the least"
+     ],
+     "answer": 1,
+     "ifNot": "What you eat is gone. The less you eat, the more is left on the plate. So we want the smallest fraction eaten."
+    }
+   },
+   {
+    "say": "So we need the smallest fraction. All four are a little under one half, so let's see how far under each one is.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l0",
+      "text": "most left = ate the least",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Ravi: half of 7 is 3 and a half, so 3 over 7 is half a seventh short. That is 1 over 14 below one half.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1/2 − 3/7 = 1/14"
+     }
+    ]
+   },
+   {
+    "say": "The others work the same way. Tara is 1 over 18 below, Sam is 1 over 22 below, and Uma is 1 over 26 below.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1/2 − 4/9 = 1/18"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1/2 − 5/11 = 1/22"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1/2 − 6/13 = 1/26"
+     }
+    ]
+   },
+   {
+    "say": "Which of these gaps is the biggest?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1/14",
+      "1/18",
+      "1/26"
+     ],
+     "answer": 0,
+     "ifNot": "All the tops are 1. A smaller bottom means bigger pieces, so 1 over 14 is the biggest gap."
+    }
+   },
+   {
+    "say": "1 over 14 is the biggest gap. So 3 over 7 is the furthest below one half, which makes it the smallest fraction.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3/7 < 4/9 < 5/11 < 6/13"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "3/7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Ravi ate the least, so Ravi has the most pizza left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "Ravi ate least, so Ravi has most left",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "Ravi",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to pick Uma. She has the biggest fraction, but that is the pizza she ate, so she has the least left."
+   },
+   {
+    "say": "So first decide whether you want the biggest or the smallest. Then compare each fraction with one half."
+   }
+  ]
+ },
+ "G5A_FRACTIONS_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Asha can paint a fence alone in 6 hours. Bela can paint it alone in 12 hours. They paint together for 2 hours, then Bela goes home. How many more hours does Asha need?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Asha: 6 hours. Bela: 12 hours. Together for 2 hours",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Hours cannot simply be added or taken away here. The trick is to ask: how much of the fence does each girl paint in 1 hour?"
+   },
+   {
+    "say": "Asha takes 6 hours for the whole fence. So what fraction does she paint in 1 hour?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1/6 of the fence",
+      "6 fences",
+      "1/2 of the fence"
+     ],
+     "answer": 0,
+     "ifNot": "6 equal hours make the whole fence. So each hour paints one of 6 equal parts: 1 over 6."
+    }
+   },
+   {
+    "say": "Asha paints 1 over 6 each hour, and Bela paints 1 over 12. Together that is 2 over 12 plus 1 over 12, which is 3 over 12, or 1 over 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1/6 + 1/12 = 2/12 + 1/12 = 3/12 = 1/4"
+     }
+    ]
+   },
+   {
+    "say": "They work together for 2 hours. 2 lots of 1 over 4 is 2 over 4, which is one half of the fence.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 × 1/4 = 1/2"
+     }
+    ]
+   },
+   {
+    "say": "So half the fence is painted, and half is left for Asha alone.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1 − 1/2 = 1/2"
+     }
+    ]
+   },
+   {
+    "say": "Asha paints 1 over 6 each hour. How many hours does she need for one half?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 hours",
+      "3 hours",
+      "6 hours"
+     ],
+     "answer": 1,
+     "ifNot": "One half is the same as 3 over 6. At 1 over 6 each hour, that takes 3 hours."
+    }
+   },
+   {
+    "say": "One half is 3 over 6, so she needs 3 more hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1/2 = 3/6"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 1/6 = 1/2",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it another way: Asha does the whole fence in 6 hours, so half the fence takes her half of 6, which is 3."
+   },
+   {
+    "say": "The trap is 6 minus 2, which is 4: that forgets Bela's help. So turn times into fractions for 1 hour first. Asha needs 3 more hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "6 − 2 = 4"
+     }
+    ]
+   }
+  ]
+ },
+ "G5A_FRACTIONS_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A tap fills an empty tank in 4 hours. A drain can empty the full tank in 6 hours. The tank is empty, and both are left open. How long will the tank take to fill?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Tap fills in 4 hours. Drain empties in 6 hours",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The hours themselves cannot be added or subtracted. Instead, ask what happens in 1 hour. What fraction of the tank does the tap fill in 1 hour?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1/4 of the tank",
+      "4 tanks",
+      "1/6 of the tank"
+     ],
+     "answer": 0,
+     "ifNot": "The tap needs 4 equal hours for the whole tank. So in 1 hour it fills one of 4 equal parts: 1 over 4."
+    }
+   },
+   {
+    "say": "In 1 hour the tap pours in 1 over 4 of the tank. In the same hour the drain lets out 1 over 6 of the tank.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "in: 1/4 each hour     out: 1/6 each hour",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Water comes in and water goes out. So what do we do with 1 over 4 and 1 over 6?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add them",
+      "subtract them"
+     ],
+     "answer": 1,
+     "ifNot": "The drain takes water away, so it works against the tap. What stays in the tank is what came in, take away what went out."
+    }
+   },
+   {
+    "say": "Subtract. In twelfths, 1 over 4 is 3 over 12, and 1 over 6 is 2 over 12. 3 over 12 minus 2 over 12 is 1 over 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1/4 − 1/6 = 3/12 − 2/12 = 1/12"
+     }
+    ]
+   },
+   {
+    "say": "So each hour the tank gains just 1 over 12 of a tankful. 12 lots of 1 over 12 make the whole tank, so it needs 12 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 × 1/12 = 1",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "12 hours is much longer than the tap's 4 hours. That makes sense, because the drain is fighting the tap."
+   },
+   {
+    "say": "The traps: 4 plus 6 is 10, and 6 minus 4 is 2. But 2 hours would be faster than the tap alone with no drain at all!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 + 6 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6 − 4 = 2"
+     }
+    ]
+   },
+   {
+    "say": "So for filling and draining, turn each time into a fraction for 1 hour, subtract, and see how many hours make the whole. Here it is 12 hours."
+   }
+  ]
+ },
+ "G5A_FRACTIONS_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Look at the whole numbers from 1 to 30. What fraction of them are multiples of 2, or multiples of 3, or both?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1 to 30: multiples of 2 or 3 (or both)?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Count the multiples of 2 first. Every second number is one, so 30 divided by 2 gives 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "30 ÷ 2 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Now the multiples of 3. Every third number is one, so 30 divided by 3 gives 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "30 ÷ 3 = 10"
+     }
+    ]
+   },
+   {
+    "say": "15 and 10. Can we just add them and say 25?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 + 10 = 25"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, 25 numbers",
+      "no, some are counted twice"
+     ],
+     "answer": 1,
+     "ifNot": "Think about 6. It is a multiple of 2, so it is in the first count. It is a multiple of 3 as well, so it is in the second count too."
+    }
+   },
+   {
+    "say": "Numbers like 6 are in both lists, so they were counted twice. Those are the multiples of 6: 6, 12, 18, 24 and 30. There are 5 of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "6, 12, 18, 24, 30",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "30 ÷ 6 = 5"
+     }
+    ]
+   },
+   {
+    "say": "Each of those 5 was counted twice, so take 5 away once. 25 minus 5 is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "25 − 5 = 20"
+     }
+    ]
+   },
+   {
+    "say": "So 20 of the 30 numbers fit. As a fraction that is 20 over 30. Divide top and bottom by 10, and we get 2 over 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "20/30 = 2/3",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "2/3"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 25 over 30, which is 5 over 6. That counts the multiples of 6 twice.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "25/30 = 5/6"
+     }
+    ]
+   },
+   {
+    "say": "So for this OR that: add the two counts, then take away the ones in both lists. The answer is 2 over 3."
+   }
+  ]
+ },
+ "G5A_FRACTIONS_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "2 over 3 of the boys and 3 over 4 of the girls of Class 5 went on a picnic. The same number of boys and girls went, and 36 children went in all. How many children are in Class 5?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "2/3 of boys = 3/4 of girls. 36 went in all",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The two fractions belong to two different groups, so we cannot use them on 36 directly. Start with what we can find: how many boys went?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "36",
+      "18",
+      "24"
+     ],
+     "answer": 1,
+     "ifNot": "36 children went, and the boys and girls who went are equal in number. So split 36 into two equal halves."
+    }
+   },
+   {
+    "say": "36 divided by 2 is 18. So 18 boys went, and 18 girls went.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "36 ÷ 2 = 18"
+     }
+    ]
+   },
+   {
+    "say": "Now the boys. 18 is 2 over 3 of all the boys. So 2 parts are 18, and 1 part is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "18 ÷ 2 = 9"
+     }
+    ]
+   },
+   {
+    "say": "All the boys are 3 parts. 3 times 9 is 27 boys.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 × 9 = 27"
+     },
+     {
+      "op": "write",
+      "id": "l3b",
+      "text": "2/3 of 27 = 18"
+     }
+    ]
+   },
+   {
+    "say": "Now the girls. 18 is 3 over 4 of all the girls. So 3 parts are 18. How big is 1 part?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "18 ÷ 4",
+      "18 ÷ 3",
+      "18 × 3"
+     ],
+     "answer": 1,
+     "ifNot": "The 18 girls who went are 3 of the 4 parts. So share 18 among those 3 parts."
+    }
+   },
+   {
+    "say": "18 divided by 3 is 6. All the girls are 4 parts, and 4 times 6 is 24 girls.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "18 ÷ 3 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "4 × 6 = 24"
+     }
+    ]
+   },
+   {
+    "say": "The whole class is the boys and the girls together. 27 plus 24 is 51.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "27 + 24 = 51",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "51"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 9 boys and 6 girls stayed behind, which is 15. And 36 plus 15 is 51.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "9 + 6 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "36 + 15 = 51"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to treat 36 as a fraction of the whole class. Each fraction belongs to its own group, so find each group on its own. The class has 51 children."
+   }
+  ]
+ },
+ "G5A_FRACTIONS_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A fraction is equivalent to 3 over 5. Its numerator and denominator add up to 72. What is its denominator?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Equivalent to 3/5. Top + bottom = 72",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Fractions equivalent to 3 over 5 are made by multiplying the top and the bottom by the same number: 6 over 10, 9 over 15, and so on.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3/5 = 6/10 = 9/15"
+     }
+    ]
+   },
+   {
+    "say": "In every one, the top is 3 equal parts and the bottom is 5 of the same parts. How many parts is that altogether?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 parts",
+      "15 parts",
+      "2 parts"
+     ],
+     "answer": 0,
+     "ifNot": "The top has 3 parts and the bottom has 5. Together, 3 plus 5 makes 8 parts."
+    }
+   },
+   {
+    "say": "3 plus 5 is 8 parts, and those 8 parts add up to 72. So one part is 72 divided by 8, which is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 + 5 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "72 ÷ 8 = 9"
+     }
+    ]
+   },
+   {
+    "say": "The top is 3 parts: 3 times 9 is 27. The bottom is 5 parts: 5 times 9 is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 × 9 = 27"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 × 9 = 45"
+     }
+    ]
+   },
+   {
+    "say": "So the fraction is 27 over 45, and its denominator is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3/5 = 27/45",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "45"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 27 plus 45 is 72. And careful: 27 is among the choices, but that is the numerator, the top.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "27 + 45 = 72"
+     }
+    ]
+   },
+   {
+    "say": "So think of an equivalent fraction as equal parts: add the parts, find one part, then build the top and the bottom. The denominator is 45."
+   }
+  ]
+ },
+ "G5A_INTEGERS_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meena multiplies 25 copies of minus 1 together. Kabir multiplies 24 copies of minus 1 together. What is the sum of their two answers?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Meena: 25 copies of −1. Kabir: 24 copies of −1",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Nobody wants to multiply 25 times! Start small and watch the sign. Two copies: minus 1 times minus 1 is plus 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(−1) × (−1) = 1"
+     }
+    ]
+   },
+   {
+    "say": "Three copies: that plus 1, times one more minus 1, flips back to minus 1. Four copies flips again, to plus 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "(−1) × (−1) × (−1) = −1"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "(−1) × (−1) × (−1) × (−1) = 1"
+     }
+    ]
+   },
+   {
+    "say": "See the pattern? Every pair of minus ones makes plus 1. So what do an even number of copies multiply to?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "−1",
+      "0"
+     ],
+     "answer": 0,
+     "ifNot": "An even number of copies can be put into pairs with none left over. Each pair makes plus 1, and ones multiplied together stay 1."
+    }
+   },
+   {
+    "say": "Kabir has 24 copies. 24 is even: it makes 12 pairs, and each pair is plus 1. So Kabir's answer is 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "24 ÷ 2 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Kabir: 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Meena has 25 copies. That is 12 pairs and one more minus 1 left over. So Meena's answer is minus 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "25 = 12 × 2 + 1"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "Meena: −1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now add the two answers. Minus 1 plus 1 is 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "(−1) + 1 = 0",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "0"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to add the copies and get minus 25 and minus 24. But the copies are multiplied, and multiplying by minus 1 only flips the sign."
+   },
+   {
+    "say": "So with copies of minus 1: an even number gives 1, an odd number gives minus 1. Here the sum is 0."
+   }
+  ]
+ },
+ "G5A_INTEGERS_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The product of two integers is positive, and their sum is minus 12. Which of these could be the greater of the two: minus 5, minus 7, 2 or minus 13?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "product positive, sum = −12. The greater one?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "−5,  −7,  2,  −13",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the product. When is a product positive?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "both have the same sign",
+      "they have different signs"
+     ],
+     "answer": 0,
+     "ifNot": "Plus times plus is plus, and minus times minus is plus too. Different signs give a minus. So for a positive product, the signs match."
+    }
+   },
+   {
+    "say": "Same signs, then: both positive or both negative. But two positive numbers could never add up to minus 12. So both are negative.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "both negative",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "That rules out 2. And minus 13? Its partner would have to be 1 to make minus 12, and 1 is positive. So minus 13 is out as well.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "2"
+      }
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "−13 + 1 = −12"
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "−13"
+      }
+     }
+    ]
+   },
+   {
+    "say": "That leaves minus 5 and minus 7. And look: they are partners. Minus 5 plus minus 7 is minus 12, and their product is 35, which is positive.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "(−5) + (−7) = −12"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "(−5) × (−7) = 35"
+     }
+    ]
+   },
+   {
+    "say": "So the pair is minus 5 and minus 7. Which one is the greater?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "−7",
+      "−5"
+     ],
+     "answer": 1,
+     "ifNot": "On the number line, the greater number is further to the right. Minus 5 is closer to zero than minus 7, so it sits to the right."
+    }
+   },
+   {
+    "say": "Minus 5 is to the right of minus 7 on the number line, so minus 5 is the greater.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "−5 > −7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "−5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is minus 7. 7 is bigger than 5, but with negative numbers it turns round: the one nearer to zero is greater."
+   },
+   {
+    "say": "So read the signs from the product and the sum, find the pair, then use the number line to pick the greater. It is minus 5."
+   }
+  ]
+ },
+ "G5A_INTEGERS_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Point P is at minus 8 on a number line. Q is 5 units away from P. R is 12 units away from Q. What is the greatest possible distance of R from 0?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "P at −8. Q is 5 from P. R is 12 from Q",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The key words are away from. We are not told which way. So where could Q be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only at −3",
+      "only at −13",
+      "at −13 or at −3"
+     ],
+     "answer": 2,
+     "ifNot": "Away can mean to the left or to the right. 5 to the left of minus 8 is minus 13, and 5 to the right is minus 3."
+    }
+   },
+   {
+    "say": "Q could be 5 to the left, at minus 13, or 5 to the right, at minus 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "−8 − 5 = −13"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "−8 + 5 = −3"
+     }
+    ]
+   },
+   {
+    "say": "From each of those, R goes 12 left or 12 right. From minus 13: R is at minus 25, or at minus 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "−13 − 12 = −25"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "−13 + 12 = −1"
+     }
+    ]
+   },
+   {
+    "say": "From minus 3: R is at minus 15, or at 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "−3 − 12 = −15"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "−3 + 12 = 9"
+     }
+    ]
+   },
+   {
+    "say": "Four places for R: minus 25, minus 1, minus 15 and 9. Which one is furthest from 0?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9",
+      "−25",
+      "−15"
+     ],
+     "answer": 1,
+     "ifNot": "Distance from 0 does not care about the side. Minus 25 is 25 steps from 0, and that is more than 15 or 9."
+    }
+   },
+   {
+    "say": "Minus 25 is 25 units from 0. That is the greatest distance.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "R at −25: 25 units from 0",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "25",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to go right both times and land on 9. P starts on the left of 0, so going left both times carries R furthest away."
+   },
+   {
+    "say": "So when a question says away from, try both directions every time, then compare the distances. The greatest is 25."
+   }
+  ]
+ },
+ "G5A_INTEGERS_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "An ant is at minus 14 and a beetle is at 6 on a number line. They walk towards each other. Each second the ant moves 3 units and the beetle moves 1 unit. Where do they meet?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Ant at −14 (3 a second). Beetle at 6 (1 a second)",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, how far apart are they? From minus 14 up to 0 is 14 units, and from 0 to 6 is 6 more. 14 plus 6 is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "14 + 6 = 20"
+     }
+    ]
+   },
+   {
+    "say": "Each second the ant comes 3 closer and the beetle comes 1 closer. So how much does the gap shrink each second?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "by 2 units",
+      "by 3 units",
+      "by 4 units"
+     ],
+     "answer": 2,
+     "ifNot": "Both are walking towards each other, so both help to close the gap. 3 from the ant and 1 from the beetle make 4."
+    }
+   },
+   {
+    "say": "The gap closes by 4 each second. 20 divided by 4 is 5, so they meet after 5 seconds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 + 1 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 ÷ 4 = 5"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 5 is the time, not the place. We want the point. How far has the ant walked in 5 seconds?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 units",
+      "15 units",
+      "20 units"
+     ],
+     "answer": 1,
+     "ifNot": "The ant moves 3 units every second. In 5 seconds that is 5 lots of 3."
+    }
+   },
+   {
+    "say": "5 times 3 is 15. The ant starts at minus 14 and walks 15 to the right. 14 steps bring it to 0, and 1 more step takes it to 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 × 3 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "−14 + 15 = 1",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "1",
+       "nth": 3
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with the beetle. It walks 5 units to the left from 6, and 6 minus 5 is 1. They are at the same point.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "6 − 5 = 1"
+     }
+    ]
+   },
+   {
+    "say": "The trap is the halfway point, minus 4. They would meet there only if they walked equally fast, and the ant is faster.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "−14 + 10 = −4"
+     }
+    ]
+   },
+   {
+    "say": "So find the gap, find how fast it closes, get the time, and then walk one of them forward. They meet at 1."
+   }
+  ]
+ },
+ "G5A_INTEGERS_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In Rahul's building there is no floor 0: the floor just above floor minus 1 is floor 1. He parks on floor minus 3, goes up 8 floors to his office, then down 2 floors to the canteen. Which floor is the canteen on?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "No floor 0. Start −3, up 8, down 2",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "It is tempting to write minus 3 plus 8, which is 5. On an ordinary number line that would be right. Why not here?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "−3 + 8 = 5"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the lift is slow",
+      "there is no floor 0 to count",
+      "8 is too many floors"
+     ],
+     "answer": 1,
+     "ifNot": "An ordinary number line has 0 between minus 1 and 1. This building skips it, so one of the steps in our sum lands on a floor that is not there."
+    }
+   },
+   {
+    "say": "So we count the floors one at a time. Here are the floors in order, with no 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "−3, −2, −1, 1, 2, 3, 4, 5, 6",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start on minus 3 and count 8 floors up: minus 2, minus 1, then 1, 2, 3, 4, 5, 6. The 8th floor we reach is floor 6.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "f",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "f",
+      "target": {
+       "text": "6"
+      },
+      "text": "office",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the office is on floor 6, one higher than the 5 our sum gave.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l1",
+      "target": {
+       "text": "5"
+      },
+      "note": "6"
+     }
+    ]
+   },
+   {
+    "say": "Now the canteen is 2 floors down from 6. Which floor is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "floor 4",
+      "floor 3",
+      "floor 5"
+     ],
+     "answer": 0,
+     "ifNot": "From 6, one floor down is 5, and one more down is 4. There is no missing floor between 6 and 4, so this part is ordinary counting."
+    }
+   },
+   {
+    "say": "Down from 6: floor 5, then floor 4. The canteen is on floor 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6 − 2 = 4",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "4"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "f",
+      "target": {
+       "text": "4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is minus 3 plus 8 minus 2, which gives 3. That counts a floor 0 that this building does not have.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "−3 + 8 − 2 = 3"
+     }
+    ]
+   },
+   {
+    "say": "So when the numbering skips a number, do not trust the sum. Count the steps one by one. The canteen is on floor 4."
+   }
+  ]
+ },
+ "G5A_INTEGERS_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "k is an integer less than minus 3. Which of these is always the greatest: k plus 5, k minus 3, k plus k, or 2 minus k?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "k < −3. Which is always the greatest?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "k + 5,   k − 3,   k + k,   2 − k",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We do not know k, so let's try one value it could have. It must be less than minus 3. Let's take minus 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "try k = −4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "k plus 5 is minus 4 plus 5, which is 1. k minus 3 is minus 4 minus 3, which is minus 7. k plus k is minus 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "−4 + 5 = 1"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "−4 − 3 = −7"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "−4 + (−4) = −8"
+     }
+    ]
+   },
+   {
+    "say": "Now the last one: 2 minus k, which is 2 take away minus 4. What is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "−2",
+      "6",
+      "−6"
+     ],
+     "answer": 1,
+     "ifNot": "Taking away a negative number is the same as adding its opposite. So 2 take away minus 4 is 2 plus 4."
+    }
+   },
+   {
+    "say": "Taking away minus 4 is the same as adding 4. So 2 minus k is 2 plus 4, which is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 − (−4) = 2 + 4 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Our four results are 1, minus 7, minus 8 and 6. The greatest is 6, from 2 minus k.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "2 − k"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "But the question says always. Will it still win for other values? Try k as minus 10: k plus 5 is minus 5, and 2 minus k is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "−10 + 5 = −5"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "2 − (−10) = 12"
+     }
+    ]
+   },
+   {
+    "say": "Here is why. k plus 5 is always less than 2, because k is below minus 3. But taking away k adds more than 3 on to 2, so 2 minus k is always more than 5."
+   },
+   {
+    "say": "So the greatest is always 2 minus k.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "2 − k is always the greatest",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "2 − k"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is k plus 5, because adding looks bigger. With negative numbers, test a value: taking away a negative is what makes a number grow."
+   }
+  ]
+ },
+ "G5A_INTEGERS_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Monday in Leh: lowest minus 9 degrees, highest 5. Tuesday's lowest was 4 degrees lower than Monday's. Tuesday's gap between highest and lowest was 3 degrees less than Monday's gap. What was Tuesday's highest?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Mon: −9°C to 5°C. Tue: lowest 4 lower, gap 3 less",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Three things to find, in order: Monday's gap, Tuesday's lowest, and Tuesday's gap. Start with Monday. How many degrees is it from minus 9 up to 5?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 degrees",
+      "14 degrees",
+      "9 degrees"
+     ],
+     "answer": 1,
+     "ifNot": "Climb in two parts. From minus 9 up to zero is 9 degrees. Then from zero up to 5 is 5 more. 9 and 5 make 14."
+    }
+   },
+   {
+    "say": "From minus 9 up to 0 is 9 degrees, then 5 more to reach 5. Monday's gap is 14 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "9 + 5 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l1b",
+      "text": "5 − (−9) = 14"
+     }
+    ]
+   },
+   {
+    "say": "Tuesday's gap is 3 less than that. 14 minus 3 is 11 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "14 − 3 = 11"
+     }
+    ]
+   },
+   {
+    "say": "Now Tuesday's lowest. It is 4 degrees lower than minus 9. Which way is lower?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "−5: nearer to zero",
+      "−13: further below zero"
+     ],
+     "answer": 1,
+     "ifNot": "Lower means colder. Colder than minus 9 goes further below zero, so we step down 4 from minus 9."
+    }
+   },
+   {
+    "say": "Lower means further below zero. Minus 9 minus 4 is minus 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "−9 − 4 = −13"
+     }
+    ]
+   },
+   {
+    "say": "Tuesday starts at minus 13 and its gap is 11. Go up 11 from minus 13. That does not even reach zero: it stops at minus 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "−13 + 11 = −2",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "−2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: from minus 13 up to minus 2 is 11 degrees, and 11 is 3 less than Monday's 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "−2 − (−13) = 11"
+     }
+    ]
+   },
+   {
+    "say": "The traps: taking Monday's gap as 9 minus 5, and taking 4 lower than minus 9 as minus 5. Lower always means further down the thermometer."
+   },
+   {
+    "say": "So find the gap by climbing through zero, change it as the story says, then climb from the new lowest. Tuesday's highest was minus 2 degrees."
+   }
+  ]
+ },
+ "G5A_INTEGERS_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In a quiz, each right answer earns 5 points, and each answer that is not right loses 2 points. Riya answered all 20 questions and scored 51. How many did she get right?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Right: +5. Not right: −2. 20 questions, score 51",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Here is a clever way in. Imagine Riya got every single one right. 20 times 5 is 100 points.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "20 × 5 = 100"
+     }
+    ]
+   },
+   {
+    "say": "But she scored 51. So she is short of a perfect score by 100 minus 51, which is 49 points.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "100 − 51 = 49"
+     }
+    ]
+   },
+   {
+    "say": "Now change one right answer into one that is not right. How many points does the score drop?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 points",
+      "5 points",
+      "7 points"
+     ],
+     "answer": 2,
+     "ifNot": "She does not earn the 5 points any more, and she loses 2 more on top. So the score drops by 5 and then by 2."
+    }
+   },
+   {
+    "say": "Each miss costs 7 points: the 5 she does not earn, and the 2 she loses.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 + 2 = 7"
+     }
+    ]
+   },
+   {
+    "say": "She is 49 points short, at 7 points a miss. 49 divided by 7 is 7 misses.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "49 ÷ 7 = 7"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 7 is how many were not right. The question asks how many were right. 20 minus 7 is 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "20 − 7 = 13",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "13"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 13 right answers earn 65 points. 7 misses lose 14. And 65 minus 14 is 51.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "13 × 5 = 65"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "7 × 2 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "65 − 14 = 51"
+     }
+    ]
+   },
+   {
+    "say": "So start from a perfect score, find how far short she is, and divide by what each miss really costs. Riya got 13 right."
+   }
+  ]
+ },
+ "G5A_INTEGERS_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many integers greater than minus 10 are closer to minus 3 than to 5 on the number line?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Integers > −10, closer to −3 than to 5",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Picture minus 3 and 5 on the number line. Somewhere between them is a point exactly as far from one as from the other. Everything to the left of that point is closer to minus 3."
+   },
+   {
+    "say": "How far is it from minus 3 to 5? 3 steps up to 0, and 5 more. That is 8 units.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 + 5 = 8"
+     }
+    ]
+   },
+   {
+    "say": "Half of 8 is 4. So the halfway point is 4 steps from each end. Minus 3 plus 4 is 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 ÷ 2 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "−3 + 4 = 1"
+     },
+     {
+      "op": "write",
+      "id": "l3b",
+      "text": "5 − 4 = 1"
+     }
+    ]
+   },
+   {
+    "say": "So 1 is the halfway point. Is 1 itself closer to minus 3?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, count it",
+      "no, it is equally far from both"
+     ],
+     "answer": 1,
+     "ifNot": "1 is 4 steps from minus 3 and 4 steps from 5. Equally far is not closer, so 1 is not counted."
+    }
+   },
+   {
+    "say": "1 is a tie, so it is out. We want the integers to the left of 1, and greater than minus 10. Here they are.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "−9, −8, −7, −6, −5, −4, −3, −2, −1, 0",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Minus 10 itself is not included, because greater than minus 10 starts at minus 9. And do not forget 0 at the other end.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "−9"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "0"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Count them: 9 negative integers, from minus 9 to minus 1, and then 0. 9 plus 1 is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "9 + 1 = 10",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check 0: it is 3 steps from minus 3 and 5 steps from 5, so it really is closer to minus 3."
+   },
+   {
+    "say": "So find the halfway point, leave the tie out, and count carefully at both ends. There are 10 integers."
+   }
+  ]
+ },
+ "G5A_INTEGERS_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A frog is at the bottom of a well, 10 metres below the ground, at minus 10. Each day it climbs 4 metres, and each night it slips down 2 metres. During which day does it first reach ground level?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Start −10. Day: up 4. Night: down 2",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "A quick thought: up 4 and down 2 is a gain of 2 each day, and 10 divided by 2 is 5. So is it the 5th day?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 − 2 = 2"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 ÷ 2 = 5"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, the 5th day",
+      "not sure: follow the frog"
+     ],
+     "answer": 1,
+     "ifNot": "The gain of 2 is for a whole day and night. But the frog could reach the top during a day's climb, before the night's slip. So follow it step by step."
+    }
+   },
+   {
+    "say": "Let's follow the frog. Day 1: it climbs from minus 10 to minus 6. That night it slips back to minus 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "−10 + 4 = −6"
+     },
+     {
+      "op": "write",
+      "id": "n1",
+      "text": "−6 − 2 = −8"
+     }
+    ]
+   },
+   {
+    "say": "Day 2: it climbs from minus 8 to minus 4, then slips to minus 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "−8 + 4 = −4"
+     },
+     {
+      "op": "write",
+      "id": "n2",
+      "text": "−4 − 2 = −6"
+     }
+    ]
+   },
+   {
+    "say": "Day 3: it climbs from minus 6 to minus 2, then slips to minus 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "−6 + 4 = −2"
+     },
+     {
+      "op": "write",
+      "id": "n3",
+      "text": "−2 − 2 = −4"
+     }
+    ]
+   },
+   {
+    "say": "Day 4 begins at minus 4, and the frog climbs 4 metres. Where does it get to?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "−2",
+      "0: ground level",
+      "2"
+     ],
+     "answer": 1,
+     "ifNot": "Minus 4 is 4 metres below the ground. Climbing 4 metres brings the frog exactly up to 0."
+    }
+   },
+   {
+    "say": "Minus 4 plus 4 is 0. The frog is out, during the 4th day, before any slipping that night.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d4",
+      "text": "−4 + 4 = 0"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "ground level on the 4th day",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "4th"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the quick thought was a trap. On its last day the frog reaches the top and does not slip back."
+   },
+   {
+    "say": "For climb and slip stories, follow the position after each climb and each slip. The frog first reaches the ground on the 4th day."
+   }
+  ]
+ },
+ "G5A_INTEGERS_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Which of these integers is the greatest: minus 9, minus 4, minus 6 or minus 12?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest:  −9,  −4,  −6,  −12",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Picture the number line. Numbers get greater as you move to the right. Here are our four in order, with 0 at the right-hand end.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "−12   −9   −6   −4   0",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "All four are to the left of zero. Which one is nearest to zero?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "−12",
+      "−9",
+      "−4"
+     ],
+     "answer": 2,
+     "ifNot": "Count the steps back to zero. Minus 4 needs only 4 steps, fewer than any of the others."
+    }
+   },
+   {
+    "say": "Minus 4 is only 4 steps from zero, so it is the furthest to the right.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "−4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the greatest is minus 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "−4 is the greatest",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "−4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is minus 12, because 12 is the biggest number we can see. But minus 12 is furthest to the left, so it is the smallest.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "−12"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So with negative numbers, the one nearest to zero is the greatest. Here that is minus 4."
+   }
+  ]
+ },
+ "G5A_INTEGERS_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A thermometer in Kargil shows 5 degrees below zero. How is this temperature written?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "5 degrees below zero = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "A thermometer is a number line standing up. Zero is the starting point. Above zero we count 1, 2, 3 upwards.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "0°C: the starting point",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Below zero we count downwards. What do we put in front of a number to show it is below zero?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "a plus sign",
+      "a minus sign",
+      "a zero"
+     ],
+     "answer": 1,
+     "ifNot": "Numbers below zero are negative numbers, and we show that with a minus sign in front."
+    }
+   },
+   {
+    "say": "A minus sign. So 5 degrees below zero is written minus 5 degrees Celsius.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 below zero = −5°C",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "−5°C"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: start at minus 5 and warm up by 5 degrees. We are back at zero.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "−5 + 5 = 0"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 5 without the sign would mean 5 degrees above zero, a much warmer day. The minus sign tells us which side of zero we are on."
+   },
+   {
+    "say": "So below zero means a minus sign in front. 5 degrees below zero is minus 5 degrees."
+   }
+  ]
+ },
+ "G5A_INTEGERS_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "What is the opposite of minus 8?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "opposite of −8 = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Find minus 8 on the number line. It is 8 steps to the left of zero.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "−8 ........ 0 ........ 8",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "−8"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The opposite of a number is the same distance from zero, on the other side. So where is the opposite of minus 8?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 steps right of zero",
+      "8 steps left of zero",
+      "at zero"
+     ],
+     "answer": 0,
+     "ifNot": "Minus 8 is on the left of zero. Its opposite must be on the other side, the right, and just as far away: 8 steps."
+    }
+   },
+   {
+    "say": "8 steps to the right of zero is 8. So the opposite of minus 8 is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "opposite of −8 = 8",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "8",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: a number and its opposite always add up to zero. Minus 8 plus 8 is 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "−8 + 8 = 0"
+     }
+    ]
+   },
+   {
+    "say": "A trap is 16. That is the distance from minus 8 all the way to 8, not the opposite itself.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8 + 8 = 16"
+     }
+    ]
+   },
+   {
+    "say": "So to find an opposite, keep the distance from zero and switch sides. The opposite of minus 8 is 8."
+   }
+  ]
+ },
+ "G5A_INTEGERS_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Work out minus 6 plus 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "(−6) + 9 = ?",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Use the number line. We start at minus 6. Adding a positive number means moving to the right, so we take 9 steps to the right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "start at −6, move 9 steps right",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Do it in two parts. How many steps does it take to get from minus 6 up to zero?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 steps",
+      "9 steps",
+      "3 steps"
+     ],
+     "answer": 0,
+     "ifNot": "Minus 6 is 6 steps to the left of zero. So it takes 6 steps to walk back to zero."
+    }
+   },
+   {
+    "say": "6 steps reach zero. We have 9 steps in all, so 9 minus 6 leaves 3 steps still to go.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "−6 + 6 = 0"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9 − 6 = 3"
+     }
+    ]
+   },
+   {
+    "say": "Those 3 steps carry on to the right of zero, and land on 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "(−6) + 9 = 3",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two things to watch. 6 plus 9 is 15, but our 6 was a minus 6. And the answer is plus 3, not minus 3, because 9 steps are enough to get past zero.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6 + 9 = 15"
+     }
+    ]
+   },
+   {
+    "say": "So to add to a negative number, walk right: first to zero, then on with the steps that are left. Minus 6 plus 9 is 3."
+   }
+  ]
+ },
+ "G5A_INTEGERS_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Work out 4 minus 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4 − 10 = ?",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Use the number line. We start at 4. Subtracting means moving to the left, so we take 10 steps to the left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "start at 4, move 10 steps left",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We are taking away more than we have. So where will we end up?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "above zero",
+      "at zero",
+      "below zero"
+     ],
+     "answer": 2,
+     "ifNot": "From 4 it takes only 4 steps to reach zero. We have 10 steps, so we keep going past zero, to the left."
+    }
+   },
+   {
+    "say": "4 steps take us down to zero. 10 minus 4 leaves 6 steps still to go.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 − 4 = 0"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "10 − 4 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Those 6 steps go below zero, and land on minus 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 − 10 = −6",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "−6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the answer is not plain 6. That would be 10 minus 4. Here we went past zero, so the sign is minus."
+   },
+   {
+    "say": "So when you take away more than you have, walk left through zero and count what is left. 4 minus 10 is minus 6."
+   }
+  ]
+ },
+ "G5A_INTEGERS_016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Early in the morning the temperature in Shimla was minus 2 degrees. By noon it had risen by 7 degrees. What was the temperature at noon?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Morning: −2°C. Rises by 7°C. Noon = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "A thermometer is a number line standing up. A rise means going up, so we start at minus 2 and climb 7 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "−2 + 7 = ?"
+     }
+    ]
+   },
+   {
+    "say": "How many of those 7 degrees are used up just getting to zero?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 degrees",
+      "7 degrees",
+      "5 degrees"
+     ],
+     "answer": 0,
+     "ifNot": "Minus 2 is 2 degrees below zero. So the first 2 degrees of the rise bring it up to zero."
+    }
+   },
+   {
+    "say": "2 degrees reach zero. 7 minus 2 leaves 5 degrees still to climb.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "7 − 2 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So the temperature climbs 5 degrees above zero. At noon it was 5 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "−2 + 7 = 5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 2 plus 7, which is 9. But the morning was 2 below zero, so part of the rise is spent reaching zero.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 + 7 = 9"
+     }
+    ]
+   },
+   {
+    "say": "So for a rise from below zero, climb to zero first, then count on. The noon temperature was 5 degrees."
+   }
+  ]
+ },
+ "G5A_INTEGERS_017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Which of these statements is true? Here are the four.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "−5 > −2",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "−5 = 5",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "−5 < −2",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "0 < −2",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Remember how to read the signs: the wide, open end faces the bigger number, and the small pointed end points at the smaller one."
+   },
+   {
+    "say": "The statements use minus 5, minus 2, 0 and 5. Let's put the first three on a number line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "−5   −4   −3   −2   −1   0",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "On the number line, the number further to the left is the smaller one. Which is smaller, minus 5 or minus 2?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "−5 is smaller",
+      "−2 is smaller"
+     ],
+     "answer": 0,
+     "ifNot": "Minus 5 is further to the left than minus 2. Further left means smaller, even though 5 is bigger than 2."
+    }
+   },
+   {
+    "say": "Minus 5 is further left, so minus 5 is less than minus 2. That is the true statement.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "−5"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "−5 < −2",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "−5 < −2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now the others. Minus 5 is not greater than minus 2. Minus 5 and 5 are on opposite sides of zero, so they are not equal. And 0 is to the right of minus 2, so 0 is greater.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "a",
+      "target": {
+       "text": "−5 > −2"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "b",
+      "target": {
+       "text": "−5 = 5"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "d",
+      "target": {
+       "text": "0 < −2"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The trap is thinking that 5 is bigger than 2, so minus 5 must be bigger than minus 2. With negative numbers it turns round."
+   },
+   {
+    "say": "So put the numbers on a number line: left is less. Minus 5 is less than minus 2."
+   }
+  ]
+ },
+ "G5A_INTEGERS_018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "On a number line, which integer is 3 units to the left of 1?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3 units to the left of 1 = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Here is a piece of the number line, with 1 near the right-hand end.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "−3   −2   −1   0   1   2",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "1",
+       "nth": 2
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Start at 1 and take one step left at a time. The first step lands on 0. Where does the second step land?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "−1",
+      "1",
+      "−2"
+     ],
+     "answer": 0,
+     "ifNot": "After 0, the next number to the left is minus 1. The steps carry on past zero into the negative numbers."
+    }
+   },
+   {
+    "say": "Step 1 lands on 0, step 2 on minus 1, and step 3 on minus 2.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "−2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "As a subtraction, moving 3 to the left of 1 is 1 take away 3, which is minus 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1 − 3 = −2",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "−2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful to start counting from 1, not from 0. And going right instead would give 4, which is bigger, not smaller.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1 + 3 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So moving left means subtracting, and the steps can go straight through zero. 3 to the left of 1 is minus 2."
+   }
+  ]
+ },
+ "G5A_INTEGERS_019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The ground floor of a building is floor 0. A lift is on floor minus 2, two floors below the ground. It goes up 5 floors. Which floor is it on now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Lift on floor −2. Up 5 floors = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Think of the floors as a number line standing up. Going up means adding, so this is minus 2 plus 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "−2 + 5 = ?"
+     }
+    ]
+   },
+   {
+    "say": "Count the floors as the lift passes them. The first floor it reaches is minus 1. What is the second?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "floor 0",
+      "floor 1",
+      "floor −2"
+     ],
+     "answer": 0,
+     "ifNot": "Above minus 1 comes the ground floor, which is floor 0 in this building. It counts as a floor like any other."
+    }
+   },
+   {
+    "say": "So the lift reaches minus 1, then 0, then 1, 2 and 3. That is 5 floors.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "−1, 0, 1, 2, 3",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The lift stops on floor 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "−2 + 5 = 3",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 2 plus 5, which is 7. The lift started 2 floors below the ground, so 2 of its 5 floors only bring it up to floor 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 + 5 = 7"
+     }
+    ]
+   },
+   {
+    "say": "So going up from below zero: reach zero first, then count on. Minus 2 plus 5 is 3."
+   }
+  ]
+ },
+ "G5A_INTEGERS_020": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Which of these temperatures is the coldest: minus 1 degree, minus 10 degrees, 2 degrees or 0 degrees?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Coldest:  −1°C,  −10°C,  2°C,  0°C",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Colder means lower on the thermometer. On a number line, that is further to the left."
+   },
+   {
+    "say": "Two of them are below zero: minus 1 and minus 10. Which is further below zero?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "−1",
+      "−10"
+     ],
+     "answer": 1,
+     "ifNot": "Minus 1 is just 1 step below zero. Minus 10 is 10 steps below, so it is much further down."
+    }
+   },
+   {
+    "say": "Minus 10 is 10 steps below zero. Here are all four in order, from lowest to highest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "−10   −1   0   2",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l1b",
+      "text": "−10 < −1 < 0 < 2"
+     }
+    ]
+   },
+   {
+    "say": "So the coldest is minus 10 degrees.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "−10"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "coldest: −10°C",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "−10°C"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is minus 1, because it has a minus sign and 1 looks small. But minus 1 is only just below zero, so it is warmer than minus 10."
+   },
+   {
+    "say": "So the coldest temperature is the lowest number, the one furthest below zero. Here that is minus 10 degrees."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A carpenter saws a log 3 metres 60 centimetres long into pieces of 45 centimetres. Each cut takes 4 minutes, and he rests 1 minute between cuts. How long is it from the start of the first cut to the end of the last?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Log 3 m 60 cm. Pieces 45 cm. Cut 4 min, rest 1 min",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, the number of pieces. Change the length to centimetres: 3 metres is 300 centimetres, so the log is 360 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l0",
+      "text": "300 + 60 = 360"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 m 60 cm = 360 cm",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "360 divided by 45. Two 45s make 90, and 90 times 4 is 360. So 45 goes in 8 times: 8 pieces.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "45 × 2 = 90"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "360 ÷ 45 = 8"
+     }
+    ]
+   },
+   {
+    "say": "Now picture the log. How many cuts make 8 pieces?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 cuts",
+      "7 cuts",
+      "9 cuts"
+     ],
+     "answer": 1,
+     "ifNot": "Try a short stick: 1 cut makes 2 pieces, and 2 cuts make 3 pieces. The cuts are always one fewer than the pieces."
+    }
+   },
+   {
+    "say": "One cut makes 2 pieces, so the cuts are one fewer than the pieces. 8 pieces need 7 cuts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8 − 1 = 7"
+     }
+    ]
+   },
+   {
+    "say": "And the rests? He rests only between one cut and the next. How many rests fit between 7 cuts?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7 rests",
+      "6 rests",
+      "8 rests"
+     ],
+     "answer": 1,
+     "ifNot": "The rests are the gaps between the cuts. After the last cut the job is over, so there is no rest to count there. 7 cuts have 6 gaps."
+    }
+   },
+   {
+    "say": "7 cuts have 6 gaps between them, so 6 rests.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "7 − 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Cutting time: 7 cuts of 4 minutes is 28 minutes. Resting time: 6 rests of 1 minute is 6 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7 × 4 = 28"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "6 × 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "28 plus 6 is 34 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "28 + 6 = 34",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "34"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "This question sets the same trap twice. Pieces, cuts, rests: each is one fewer than the one before. 8, then 7, then 6. The job takes 34 minutes."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya glues 8 strips of paper end to end. Each strip is 25 centimetres long, and at every join the two strips overlap by 15 millimetres. How long is the finished strip?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "8 strips of 25 cm. Overlap at each join: 15 mm",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Two things need care. First, the units: centimetres and millimetres. Let's work in millimetres. 25 centimetres is 250 millimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "25 × 10 = 250"
+     }
+    ]
+   },
+   {
+    "say": "With no overlap at all, 8 strips would be 8 times 250, which is 2000 millimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 × 250 = 2000"
+     }
+    ]
+   },
+   {
+    "say": "Second, the joins. How many joins are there in a row of 8 strips?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 joins",
+      "7 joins",
+      "9 joins"
+     ],
+     "answer": 1,
+     "ifNot": "Try 2 strips: they have just 1 join. 3 strips have 2 joins. The joins are always one fewer than the strips, because the two ends are free."
+    }
+   },
+   {
+    "say": "The two end strips each have a free end, so 8 strips have 7 joins.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 − 1 = 7"
+     }
+    ]
+   },
+   {
+    "say": "Each join hides 15 millimetres of paper. 7 times 15 is 105 millimetres hidden.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "7 × 15 = 105"
+     }
+    ]
+   },
+   {
+    "say": "Take the hidden length away: 2000 minus 105 is 1895 millimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2000 − 105 = 1895"
+     }
+    ]
+   },
+   {
+    "say": "Now back to centimetres. 10 millimetres make 1 centimetre, so 1895 millimetres is 189 centimetres and 5 millimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1895 = 189 × 10 + 5"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "189 cm 5 mm",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "189 cm 5 mm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The traps: taking away 8 overlaps instead of 7, or taking away the 15 as if it were centimetres."
+   },
+   {
+    "say": "So put everything in one unit, count the joins as one fewer than the strips, and subtract. The strip is 189 centimetres 5 millimetres long."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A rectangular garden is 12 metres long and 7 metres 50 centimetres wide. Posts go all the way round its boundary, 1 metre 50 centimetres apart, with a post at every corner. How many posts are needed?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Garden 12 m by 7 m 50 cm. Posts 1 m 50 cm apart",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Work in centimetres, so there are no half metres to worry about. 12 metres is 1200 centimetres, 7 metres 50 is 750, and 1 metre 50 is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1200 cm by 750 cm.  Gap: 150 cm",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Imagine walking once round the whole boundary. One length and one width make 1950 centimetres. Twice that, for all four sides, is 3900.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1200 + 750 = 1950"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1950 × 2 = 3900"
+     }
+    ]
+   },
+   {
+    "say": "How many gaps of 150 fit into 3900? Two gaps make 300, and 3900 divided by 300 is 13. So there are 13 times 2, which is 26 gaps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "150 × 2 = 300"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3900 ÷ 300 = 13"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3900 ÷ 150 = 26"
+     }
+    ]
+   },
+   {
+    "say": "26 gaps. On a straight fence, the posts are one more than the gaps. Is that true here, going round a closed boundary?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes: 27 posts",
+      "no: 26 posts, same as the gaps"
+     ],
+     "answer": 1,
+     "ifNot": "Walk round in your head. The last gap brings you back to the post you started from, and it is already counted. So there is one post for each gap."
+    }
+   },
+   {
+    "say": "Round a closed loop, the last gap ends at the first post. So posts and gaps are equal: 26 posts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "closed loop: 26 gaps, 26 posts",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "26 posts"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Do the corners work out? 1200 divided by 150 is 8, and 750 divided by 150 is 5. A whole number of gaps on each side, so a post lands on every corner.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "1200 ÷ 150 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "750 ÷ 150 = 5"
+     }
+    ]
+   },
+   {
+    "say": "Another trap is counting each side on its own: 9 posts, 6, 9 and 6 make 30. But that counts every corner post twice. 30 minus 4 is 26.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "9 + 6 + 9 + 6 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "30 − 4 = 26"
+     }
+    ]
+   },
+   {
+    "say": "So for posts round a closed boundary, divide the distance all the way round by the gap. Posts equal gaps: 26."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "An empty drum holds 100 litres. Every morning Ravi pours in 40 litres, and every night 25 litres leak out. On which morning does the drum become full for the first time?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Drum: 100 litres. Morning: + 40. Night: − 25",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Over a whole day and night the drum gains 40 minus 25, which is 15 litres. It is tempting to divide 100 by 15. But when in the day is the drum at its fullest?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "40 − 25 = 15"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "just after the morning pour",
+      "just after the night leak"
+     ],
+     "answer": 0,
+     "ifNot": "The level goes up in the morning and down at night. So the highest level each day comes straight after the pouring, before the leak."
+    }
+   },
+   {
+    "say": "So we watch the morning levels. Morning 1: the drum has 40 litres. That night it leaks down to 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "0 + 40 = 40"
+     },
+     {
+      "op": "write",
+      "id": "n1",
+      "text": "40 − 25 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Morning 2: 15 plus 40 is 55. Night: down to 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "15 + 40 = 55"
+     },
+     {
+      "op": "write",
+      "id": "n2",
+      "text": "55 − 25 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Morning 3: 30 plus 40 is 70. Night: down to 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m3",
+      "text": "30 + 40 = 70"
+     },
+     {
+      "op": "write",
+      "id": "n3",
+      "text": "70 − 25 = 45"
+     }
+    ]
+   },
+   {
+    "say": "Morning 4: 45 plus 40 is 85. Not full yet. Night: down to 60.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m4",
+      "text": "45 + 40 = 85"
+     },
+     {
+      "op": "write",
+      "id": "n4",
+      "text": "85 − 25 = 60"
+     }
+    ]
+   },
+   {
+    "say": "Morning 5 starts with 60 litres. What happens when Ravi pours in 40?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it reaches 100: full",
+      "it reaches 90",
+      "it reaches 75"
+     ],
+     "answer": 0,
+     "ifNot": "60 plus 40 is exactly 100, and the drum holds 100 litres. So it is full."
+    }
+   },
+   {
+    "say": "60 plus 40 is 100. The drum is full on the 5th morning.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m5",
+      "text": "60 + 40 = 100"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "full on the 5th morning",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "5th"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "See the pattern in the morning levels? 40, 55, 70, 85, 100. They go up by 15 each day, but they start from 40, not from 0."
+   },
+   {
+    "say": "The trap is 100 divided by 15, which points to the 7th morning. Always ask when the level is highest, and follow it. The answer is the 5th morning."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A bottle full of juice weighs 1 kilogram 350 grams. When half the juice has been drunk, the bottle and the juice left weigh 800 grams. What does the empty bottle weigh?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Full: 1 kg 350 g. Half the juice gone: 800 g",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Put both weights in grams first. 1 kilogram is 1000 grams, so the full bottle weighs 1350 grams.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1000 + 350 = 1350"
+     }
+    ]
+   },
+   {
+    "say": "Between the two weighings, what went away?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "half the juice",
+      "half the bottle and juice",
+      "all the juice"
+     ],
+     "answer": 0,
+     "ifNot": "Only juice was drunk. The bottle itself is still all there. So the drop in weight is exactly half of the juice."
+    }
+   },
+   {
+    "say": "The drop is 1350 minus 800, which is 550 grams. That is half the juice.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1350 − 800 = 550"
+     }
+    ]
+   },
+   {
+    "say": "So all the juice is twice as much: 550 times 2 is 1100 grams.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "550 × 2 = 1100"
+     }
+    ]
+   },
+   {
+    "say": "The full bottle is bottle plus juice. Take the juice away: 1350 minus 1100 is 250.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1350 − 1100 = 250",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "250"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the bottle, 250, plus half the juice, 550, makes 800 grams. That matches the second weighing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "250 + 550 = 800"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to halve a whole weighing, like half of 800. Only the juice was halved, never the bottle."
+   },
+   {
+    "say": "So compare the two weighings to find the juice, then take all the juice from the full weight. The empty bottle weighs 250 grams."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A plane leaves Mumbai at 11:40 p.m. by Mumbai clocks. It lands in Dubai at 1:25 a.m. by Dubai clocks. Dubai clocks are always 1 hour 30 minutes behind Mumbai clocks. How long was the flight?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Leaves 11:40 p.m. (Mumbai). Lands 1:25 a.m. (Dubai)",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The two times were read on clocks in two different cities. Can we just find the gap between 11:40 p.m. and 1:25 a.m.?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, subtract them",
+      "no, use one city's clock first"
+     ],
+     "answer": 1,
+     "ifNot": "The clocks do not agree: Dubai's is 1 hour 30 minutes behind. To measure a length of time, both readings must come from the same clock."
+    }
+   },
+   {
+    "say": "So let's put the landing on Mumbai's clock. Dubai is behind, which means Mumbai is ahead: at the same moment, Mumbai's clock shows a later time. So we add 1 hour 30 minutes."
+   },
+   {
+    "say": "1:25 a.m. plus 1 hour is 2:25 a.m. Then 30 minutes more: 25 plus 30 is 55. So the plane lands at 2:55 a.m. Mumbai time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "25 + 30 = 55"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1:25 a.m. Dubai = 2:55 a.m. Mumbai",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now both times are on Mumbai's clock: 11:40 p.m. to 2:55 a.m. We cross midnight, so go in two parts. How long from 11:40 p.m. to midnight?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "40 minutes",
+      "20 minutes",
+      "60 minutes"
+     ],
+     "answer": 1,
+     "ifNot": "An hour has 60 minutes. From 40 minutes past up to the full hour is 60 minus 40, which is 20 minutes."
+    }
+   },
+   {
+    "say": "20 minutes to midnight. Then from midnight to 2:55 a.m. is 2 hours 55 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "60 − 40 = 20"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "20 min + 2 h 55 min",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add the minutes: 20 plus 55 is 75 minutes, which is 1 hour and 15 minutes. With the 2 hours, that makes 3 hours 15 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "20 + 55 = 75"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "75 = 60 + 15"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "3 hours 15 minutes",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "3 hours 15 minutes"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The traps: finding the gap between the two readings as they stand, on two different clocks. Or taking away the 1 hour 30 minutes instead of adding it, which gives a flight of only 15 minutes!"
+   },
+   {
+    "say": "So before finding how long something took, put both times on the same clock. The flight took 3 hours 15 minutes."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meena's watch gains 5 minutes in every real hour. She sets it right at 6:00 a.m. Later the same day it shows 7:00 p.m. What is the real time then?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Gains 5 min each real hour. Set 6:00 a.m. Shows 7:00 p.m.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The watch runs fast. So is the real time earlier or later than 7:00 p.m.?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "earlier than 7:00 p.m.",
+      "later than 7:00 p.m."
+     ],
+     "answer": 0,
+     "ifNot": "A fast watch races ahead of the real time. So the real time is still behind what the watch shows: it is earlier."
+    }
+   },
+   {
+    "say": "Earlier. Now, how far has the watch moved? From 6:00 a.m. to 6:00 p.m. is 12 hours, and 1 more hour reaches 7:00 p.m. That is 13 hours on the watch.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 + 1 = 13"
+     }
+    ]
+   },
+   {
+    "say": "In minutes, 13 times 60 is 780 minutes on the watch.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "13 × 60 = 780"
+     }
+    ]
+   },
+   {
+    "say": "Here is the key. During 1 real hour, how many minutes does the watch move?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "60 minutes",
+      "65 minutes",
+      "55 minutes"
+     ],
+     "answer": 1,
+     "ifNot": "A real hour is 60 minutes, and the watch gains 5 on top of that. So it moves 60 plus 5."
+    }
+   },
+   {
+    "say": "The watch moves 65 minutes for every real hour. How many lots of 65 are in 780? 65 times 10 is 650, and 65 times 2 is 130. Together, 780. So 12 lots.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "60 + 5 = 65"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "65 × 10 = 650"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "65 × 2 = 130"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "780 ÷ 65 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So 12 real hours have passed. 12 hours after 6:00 a.m. is 6:00 p.m.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "6:00 a.m. + 12 hours = 6:00 p.m.",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "6:00 p.m."
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: in 12 real hours the watch gains 12 times 5, which is 60 minutes. So it shows 1 hour too much: 7:00 p.m. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "12 × 5 = 60"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 13 times 5, which is 65 minutes, taken off 7:00 p.m. But the 13 hours are watch hours, not real hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "13 × 5 = 65"
+     }
+    ]
+   },
+   {
+    "say": "So find how far the watch moved, and divide by what it moves in one real hour. The real time is 6:00 p.m."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Buses leave a depot every 25 minutes. The first bus leaves at 6:40 a.m. How many buses leave before 1:00 p.m.?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Every 25 min. First bus 6:40 a.m. Before 1:00 p.m.?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, how long is it from 6:40 a.m. to 1:00 p.m.? Go through noon carefully. From 6:40 a.m. to 12:40 p.m. is 6 hours. Then 20 minutes more reaches 1:00 p.m.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "6:40 a.m. to 12:40 p.m. = 6 hours",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "40 + 20 = 60"
+     }
+    ]
+   },
+   {
+    "say": "6 hours 20 minutes. In minutes, 6 times 60 is 360, and 360 plus 20 is 380 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6 × 60 = 360"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "360 + 20 = 380"
+     }
+    ]
+   },
+   {
+    "say": "How many whole gaps of 25 minutes fit into 380? 4 gaps make 100 minutes, so 300 minutes hold 12 gaps. The 80 left over hold 3 more, with 5 minutes to spare.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "25 × 4 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "25 × 12 = 300"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "380 − 300 = 80"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "25 × 3 = 75"
+     }
+    ]
+   },
+   {
+    "say": "12 plus 3 is 15 gaps. 15 times 25 is 375 minutes, so the last bus leaves 5 minutes before 1:00 p.m., at 12:55.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "12 + 3 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "15 × 25 = 375"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "last bus: 12:55 p.m.",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "15 gaps between buses. So how many buses is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15 buses",
+      "16 buses",
+      "14 buses"
+     ],
+     "answer": 1,
+     "ifNot": "A gap needs a bus at each end. The very first bus, at 6:40 a.m., leaves before any gap has passed, so it has to be counted too."
+    }
+   },
+   {
+    "say": "The first bus leaves at the start of the first gap. So the buses are one more than the gaps: 15 plus 1 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "15 + 1 = 16",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l12",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Test it small: buses at 6:40, 7:05 and 7:30 are 3 buses, but only 2 gaps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l13",
+      "text": "6:40, 7:05, 7:30",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So find the time, count the whole gaps, and add 1 for the first bus. 16 buses leave before 1:00 p.m."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In a model of a tower, 1 centimetre stands for 6 metres of the real tower, and the model is 15 centimetres tall. A second model uses 1 centimetre for 4 metres. How tall is the second model?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Model 1: 1 cm = 6 m, 15 cm tall. Model 2: 1 cm = 4 m",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Both models show the same real tower. Its height is the bridge between them. How do we find the real height from the first model?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15 × 6",
+      "15 × 4",
+      "15 ÷ 6"
+     ],
+     "answer": 0,
+     "ifNot": "Each centimetre of the first model stands for 6 metres. The model is 15 centimetres tall, so the tower is 15 lots of 6 metres."
+    }
+   },
+   {
+    "say": "15 times 6 is 90. The real tower is 90 metres tall.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "15 × 6 = 90"
+     }
+    ]
+   },
+   {
+    "say": "In the second model each centimetre stands for only 4 metres. Will this model be taller or shorter than the first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "taller",
+      "shorter"
+     ],
+     "answer": 0,
+     "ifNot": "Each centimetre now covers fewer metres. So we need more centimetres to cover the same 90 metres. The model is taller."
+    }
+   },
+   {
+    "say": "Taller. We need to know how many fours are in 90. 4 times 22 is 88, and 2 metres are left over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 × 22 = 88"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "90 − 88 = 2"
+     }
+    ]
+   },
+   {
+    "say": "2 metres is half of 4 metres, so it needs half a centimetre more. That makes 22 and a half centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "90 ÷ 4 = 22.5"
+     }
+    ]
+   },
+   {
+    "say": "Half a centimetre is 5 millimetres. So the second model is 22 centimetres 5 millimetres tall.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "22 cm 5 mm",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "22 cm 5 mm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 10 centimetres, from 15 times 4 divided by 6. That makes the model shorter, when fewer metres to each centimetre must make it taller.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "15 × 4 ÷ 6 = 10"
+     }
+    ]
+   },
+   {
+    "say": "So go through the real thing: model to real tower, then real tower to the new model. The answer is 22 centimetres 5 millimetres."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A carpenter has 6 planks, each 2 metres long. He needs pieces exactly 35 centimetres long, and each piece must be cut from a single plank. What is the greatest number of pieces he can cut?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "6 planks of 2 m. Pieces of 35 cm, each from one plank",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The key words are from a single plank. So think about one plank on its own first. 2 metres is 200 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2 × 100 = 200"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "each from one plank"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "How many whole pieces of 35 fit into 200? 35 times 5 is 175, and 35 times 6 is 210.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "35 × 5 = 175"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "35 × 6 = 210"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 pieces",
+      "6 pieces"
+     ],
+     "answer": 0,
+     "ifNot": "6 pieces would need 210 centimetres, and the plank is only 200. So 5 is the most that fit."
+    }
+   },
+   {
+    "say": "5 pieces fit, using 175 centimetres. That leaves 200 minus 175, which is 25 centimetres at the end of the plank.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "200 − 175 = 25"
+     }
+    ]
+   },
+   {
+    "say": "25 is too short for another piece of 35. And it cannot be joined to a leftover from another plank. So that bit is wasted."
+   },
+   {
+    "say": "Every plank gives 5 pieces. 6 planks give 6 times 5, which is 30 pieces.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6 × 5 = 30",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "30"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to add all the wood together: 6 planks make 1200 centimetres, and 35 goes into 1200 as many as 34 times. But 4 of those pieces would be made from joined scraps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "6 × 200 = 1200"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "35 × 34 = 1190"
+     }
+    ]
+   },
+   {
+    "say": "So when each piece must come from one plank, work out one plank first, then multiply. The greatest number is 30 pieces."
+   }
+  ]
+ },
+ "G5A_MEASUREMENT_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A sheet of card is 32 centimetres long and 22 centimetres wide. Asha cuts cards 80 millimetres by 50 millimetres from it, all placed the same way round. What is the greatest number she can cut?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sheet 32 cm by 22 cm. Cards 80 mm by 50 mm",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Match the units first. 80 millimetres is 8 centimetres, and 50 millimetres is 5 centimetres. So each card is 8 by 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "80 ÷ 10 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "50 ÷ 10 = 5"
+     }
+    ]
+   },
+   {
+    "say": "Whole cards must fit along the length and along the width, so think in rows. Put the 8 side along the 32 edge. How many cards fit along it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 cards",
+      "6 cards",
+      "5 cards"
+     ],
+     "answer": 0,
+     "ifNot": "Each card takes up 8 centimetres of the 32. 8 times 4 is exactly 32, so 4 cards fit."
+    }
+   },
+   {
+    "say": "4 cards along the length. Up the 22 width, each row is 5 tall. 5 times 4 is 20, so 4 rows fit, and 2 centimetres are left over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "32 ÷ 8 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 × 4 = 20"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "22 − 20 = 2"
+     }
+    ]
+   },
+   {
+    "say": "4 rows of 4 cards. 4 times 4 is 16 cards.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4 × 4 = 16"
+     }
+    ]
+   },
+   {
+    "say": "But the card could be turned. Put the 5 side along the 32 edge: 5 times 6 is 30, so 6 fit. Each row is now 8 tall, and 8 times 3 is 24, too tall for 22. Only 2 rows fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "5 × 6 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "8 × 3 = 24"
+     }
+    ]
+   },
+   {
+    "say": "Turned, that is 2 rows of 6, which is 12 cards. Which way is better?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "6 × 2 = 12"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the first way: 16",
+      "turned: 12",
+      "they are the same"
+     ],
+     "answer": 0,
+     "ifNot": "16 is more than 12. The question asks for the greatest number, so we keep the first way."
+    }
+   },
+   {
+    "say": "The first way wins. The greatest number of cards is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "4 rows of 4 = 16 cards",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is dividing the areas: 704 divided by 40 says 17 and a bit. But the strip left over is only 2 centimetres wide, and no card fits in it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "32 × 22 = 704"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "8 × 5 = 40"
+     },
+     {
+      "op": "write",
+      "id": "l13",
+      "text": "17 × 40 = 680"
+     }
+    ]
+   },
+   {
+    "say": "So for cutting cards from a sheet, count rows and columns of whole cards, try both ways round, and take the bigger. Here it is 16."
+   }
+  ]
+ }
+}

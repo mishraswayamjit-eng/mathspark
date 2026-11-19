@@ -1,0 +1,185 @@
+"""authored-02, second group: divisibility 006 to 013."""
+from authored_02_lib import ANSC, ANSLC, B, CHOOSE, CIRC, GIVEN, LB, LESSON, STRIKE, UL, W
+
+LESSONS = {}
+
+# Two primes add up to 99.
+LESSONS["G5A_DIVISIBILITY_006"] = LESSON(
+    B("Two prime numbers add up to 99. What is the difference between them?",
+      GIVEN("q", "prime + prime = 99")),
+    B("We could hunt through pairs, but there is a quicker way in. Look at 99: it is odd.",
+      UL("q", "99")),
+    B("Almost every prime is odd. What do you get when you add two odd numbers?",
+      ask=CHOOSE(["always an odd number", "always an even number", "it depends"], 1,
+                 "Try it: 3 plus 5 is 8, and 3 plus 7 is 10. Odd plus odd always comes out even.")),
+    B("Odd plus odd is even, so two odd primes can never make 99. One of our primes must be even.",
+      W("l1", "3 + 5 = 8"), LB("l2", "odd + odd = even")),
+    B("And there is only one even prime: 2. Every other even number can be divided by 2, so it is not prime.",
+      LB("l3", "one prime = 2")),
+    B("So the other prime is 99 minus 2, which is 97.",
+      W("l4", "99 − 2 = 97")),
+    B("Is 97 really prime? It is odd, its digits add up to 16 so 3 does not go in, it does not end in 0 or 5, and 7 times 14 is 98, just past it. Yes, 97 is prime.",
+      W("l5", "9 + 7 = 16"), W("l6", "7 × 14 = 98")),
+    B("Now the difference: 97 minus 2 is 95.",
+      *ANSC("l7", "97 − 2 = 95", 95)),
+    B("The trap is to split 99 into two numbers close together, like 49 and 50. But 49 is 7 times 7, and 50 is even.",
+      W("l8", "49 + 50 = 99"), W("l9", "49 = 7 × 7")),
+    B("So when two primes make an odd total, one of them has to be 2. Here they are 2 and 97, and the difference is 95."),
+)
+
+# Remainders 3, 4, 5 on dividing by 4, 5, 6.
+LESSONS["G5A_DIVISIBILITY_007"] = LESSON(
+    B("What is the smallest number that leaves remainder 3 when divided by 4, remainder 4 when divided by 5, and remainder 5 when divided by 6?",
+      GIVEN("q", "÷ 4 rem 3,  ÷ 5 rem 4,  ÷ 6 rem 5")),
+    B("Compare each remainder with the number we divide by. 3 and 4. 4 and 5. 5 and 6. What do you notice?",
+      ask=CHOOSE(["remainder is 1 less each time", "remainder is 1 more each time", "nothing special"], 0,
+                 "3 is 1 less than 4. 4 is 1 less than 5. 5 is 1 less than 6. Every time, the remainder is just 1 short of the divisor.")),
+    B("Each time, the number is just 1 short of dividing exactly. So if we add 1 to it, it divides exactly by 4, by 5 and by 6!",
+      LB("l1", "number + 1 divides by 4, 5 and 6")),
+    B("So number plus 1 is a common multiple of 4, 5 and 6. We want the smallest one. Start with the multiples of 6, up to 60.",
+      LB("l2", "6, 12, 18, 24, 30, 36, 42, 48, 54, 60")),
+    B("For the 5, it must end in 0 or 5. 30 does, but 4 does not go into 30. 60 works: 4 times 15, and 5 times 12.",
+      STRIKE("l2", "30"), CIRC("l2", "60"), W("l3", "4 × 15 = 60"), W("l4", "5 × 12 = 60"), W("l5", "6 × 10 = 60")),
+    B("So number plus 1 is 60. What is the number?",
+      ask=CHOOSE(["61", "59", "60"], 1,
+                 "We added 1 to reach 60. To get back to the number, take that 1 away again.")),
+    B("60 minus 1 is 59.",
+      *ANSC("l6", "60 − 1 = 59", 59)),
+    B("Check: 4 times 14, plus 3, is 59. 5 times 11, plus 4, is 59. And 6 times 9, plus 5, is 59. All three fit.",
+      W("l7", "4 × 14 + 3 = 59"), W("l8", "5 × 11 + 4 = 59"), W("l9", "6 × 9 + 5 = 59")),
+    B("Two traps: 61 is 1 more than 60, not 1 less. And 119 fits too, but it comes from 120, and we wanted the smallest.",
+      W("l10", "120 − 1 = 119")),
+    B("So when every remainder is 1 short of its divisor, find the least common multiple and take 1 away. The answer is 59."),
+)
+
+# Remainders 4 and 7 on dividing by 9: remainder of the sum.
+LESSONS["G5A_DIVISIBILITY_008"] = LESSON(
+    B("One number leaves remainder 4 when divided by 9. Another leaves remainder 7 when divided by 9. What is the remainder when their sum is divided by 9?",
+      GIVEN("q", "÷ 9: remainders 4 and 7. Sum ÷ 9: remainder?")),
+    B("We are not told the numbers, so let's pick simple ones that fit. 9 plus 4 is 13, and 9 plus 7 is 16.",
+      W("l1", "9 + 4 = 13"), W("l2", "9 + 7 = 16")),
+    B("Add them: 13 plus 16 is 29.",
+      W("l3", "13 + 16 = 29")),
+    B("Now divide 29 by 9. 9 times 3 is 27. What is left over?",
+      W("l4", "9 × 3 = 27"),
+      ask=CHOOSE(["11", "2", "3"], 1,
+                 "27 is the biggest multiple of 9 inside 29. From 27 up to 29 is 2, so 2 is left over.")),
+    B("29 is 27 and 2 more. So the remainder is 2.",
+      W("l5", "29 = 9 × 3 + 2")),
+    B("Why does it work for any numbers? Each number is some nines plus its remainder. Add them, and the remainders add up to 4 plus 7, which is 11.",
+      W("l6", "4 + 7 = 11")),
+    B("Here is the trap. 11 cannot be a remainder when we divide by 9, because 11 still holds one more 9. Take it out, and 2 is left.",
+      *ANSC("l7", "11 − 9 = 2", 2)),
+    B("So add the remainders, then take out any nines that are hiding. The remainder is 2."),
+)
+
+# Sum of four consecutive numbers.
+LESSONS["G5A_DIVISIBILITY_009"] = LESSON(
+    B("The sum of any four consecutive whole numbers is always divisible by which of these: 4, 6, 10 or 2?",
+      GIVEN("q", "Sum of any 4 consecutive numbers: always ÷ by?"), LB("o", "4,  6,  10,  2")),
+    B("The big word is always. It has to work for every set of four, so we test more than one set. First: 1 plus 2 plus 3 plus 4 is 10.",
+      W("l1", "1 + 2 + 3 + 4 = 10")),
+    B("10 cannot be divided by 4, and it cannot be divided by 6. So those two are out already.",
+      STRIKE("o", "4"), STRIKE("o", "6")),
+    B("10 can be divided by 10, and by 2. Is one test enough to choose 10?",
+      ask=CHOOSE(["yes, 10 works", "no, test another set"], 1,
+                 "One set that works does not show it always works. Slide along to the next four numbers and test again.")),
+    B("Next set: 2 plus 3 plus 4 plus 5 is 14. That cannot be divided by 10. So 10 is out.",
+      W("l2", "2 + 3 + 4 + 5 = 14"), STRIKE("o", "10")),
+    B("One more: 3 plus 4 plus 5 plus 6 is 18. Our sums are 10, 14 and 18. All even.",
+      W("l3", "3 + 4 + 5 + 6 = 18")),
+    B("Here is why. Any four numbers in a row are two odd numbers and two even numbers. Odd plus odd is even, so the whole sum is always even.",
+      LB("l4", "odd + even + odd + even = even")),
+    B("So the sum is always divisible by 2.",
+      CIRC("o", "2"), *ANSLC("l5", "always divisible by 2", "2")),
+    B("The trap is 4: four numbers, so it feels like 4 should work. But the very first sum, 10, says no."),
+    B("So for an always question, hunt for one case that breaks each choice. The one that never breaks is 2."),
+)
+
+# A 2-digit number plus its reverse.
+LESSONS["G5A_DIVISIBILITY_010"] = LESSON(
+    B("A 2-digit number is added to its reverse, like 47 plus 74. The sum is always divisible by which of these: 9, 11, 2 or 10?",
+      GIVEN("q", "2-digit number + its reverse: always ÷ by?"), LB("o", "9,  11,  2,  10")),
+    B("Try the example first. 47 plus 74 is 121.",
+      W("l1", "47 + 74 = 121")),
+    B("Two more, with small digits. 12 plus 21 is 33. And 35 plus 53 is 88.",
+      W("l2", "12 + 21 = 33"), W("l3", "35 + 53 = 88")),
+    B("Our sums are 121, 33 and 88. Which number divides all three?",
+      ask=CHOOSE(["9", "11", "2", "10"], 1,
+                 "33 is odd, so 2 and 10 are out. 3 plus 3 is 6, so 9 does not go into 33. But 33 is 3 times 11.")),
+    B("11 goes into every one: 11 times 11 is 121, 3 times 11 is 33, and 8 times 11 is 88.",
+      W("l4", "11 × 11 = 121"), W("l5", "3 × 11 = 33"), W("l6", "8 × 11 = 88"), CIRC("o", "11")),
+    B("But why always? Look at 47 plus 74. The 4 is a ten in one number and a one in the other. So the 4 is counted 10 plus 1 times, which is 11 times.",
+      W("l7", "4 × 10 + 4 × 1 = 4 × 11")),
+    B("The 7 is counted 11 times as well. So the sum is 11 times 4, plus 11 times 7.",
+      W("l8", "4 × 11 + 7 × 11 = 121")),
+    B("So the sum is always divisible by 11.",
+      *ANSLC("l9", "always divisible by 11", "11")),
+    B("The trap is 9. Nine goes with subtracting a number and its reverse, not adding them. Adding gives a multiple of 11 every time."),
+)
+
+# Zeros at the end of 1 × 2 × ... × 10.
+LESSONS["G5A_DIVISIBILITY_011"] = LESSON(
+    B("We multiply 1 times 2 times 3, all the way up to 10. How many zeros are at the end of the answer?",
+      GIVEN("q", "1 × 2 × 3 × 4 × 5 × 6 × 7 × 8 × 9 × 10")),
+    B("We do not need to work out the whole thing. A zero at the end appears each time 10 is a factor of the product."),
+    B("The factor 10 is sitting right there at the end. That gives one zero.",
+      CIRC("q", "10")),
+    B("But a 10 can also be made in disguise. Which two numbers in the list multiply to make 10?",
+      ask=CHOOSE(["2 and 5", "4 and 6", "3 and 7"], 0,
+                 "We need a product of exactly 10. 2 times 5 is 10. So the 2 and the 5 make a hidden 10 between them.")),
+    B("2 times 5 is 10. That hidden 10 gives a second zero.",
+      W("l1", "2 × 5 = 10"), UL("q", "2"), UL("q", "5")),
+    B("Could there be a third? Every 10 needs a 5. Only two numbers in the list hold a 5: the 5 itself, and 10, which is 2 times 5. No more fives, so no more zeros."),
+    B("So the answer ends in 2 zeros.",
+      *ANSLC("l2", "10 gives 1 zero, 2 × 5 gives 1 more: 2 zeros", "2 zeros")),
+    B("We can check with the real product. It is 36,28,800, which ends in 2 zeros.",
+      LB("l3", "1 × 2 × ... × 10 = 36,28,800")),
+    B("The trap is to count only the 10 you can see. Zeros at the end come from every pair of a 2 and a 5, so count the fives."),
+)
+
+# 3P46Q divisible by 8 and 11.
+LESSONS["G5A_DIVISIBILITY_012"] = LESSON(
+    B("The number 3 P 4 6 Q can be divided by both 8 and 11. What is P plus Q?",
+      GIVEN("q", "3P46Q is divisible by 8 and by 11")),
+    B("Each rule looks at a different part of the number. Which rule should we use first?",
+      ask=CHOOSE(["8: it needs only Q", "11: it needs P and Q"], 0,
+                 "The rule for 8 looks at the last three digits only: 4, 6 and Q. That has just one missing digit, so it is the easier place to start.")),
+    B("For 8, the last three digits must make a multiple of 8. So we need 4 6 Q, somewhere from 460 to 469.",
+      LB("l1", "46Q: 460 to 469")),
+    B("8 times 50 is 400, and 8 times 8 is 64. So 8 times 58 is 464. That is in our range, so Q is 4.",
+      W("l2", "8 × 50 = 400"), W("l3", "8 × 8 = 64"), W("l4", "8 × 58 = 464"), LB("l5", "Q = 4")),
+    B("Careful: 460 looks tempting, because 4 goes into it. But the multiples of 8 near here are 456, 464 and 472.",
+      W("l6", "8 × 57 = 456"), W("l7", "8 × 59 = 472")),
+    B("Now 11. Add every other digit. The 1st, 3rd and 5th digits are 3, 4 and 4, which make 11. The 2nd and 4th are P and 6.",
+      LB("n", "3 P 4 6 4"), W("l8", "3 + 4 + 4 = 11"), LB("l9", "P + 6")),
+    B("For 11, those two totals must be equal, or differ by a multiple of 11. So what is P?",
+      ask=CHOOSE(["P = 6", "P = 5", "P = 11"], 1,
+                 "P plus 6 has to equal 11. And P is a single digit, so P is 5.")),
+    B("5 plus 6 is 11, so both totals are 11. P is 5, and the number is 35,464.",
+      W("l10", "5 + 6 = 11"), LB("l11", "35,464")),
+    B("So P plus Q is 5 plus 4, which is 9.",
+      *ANSC("l12", "5 + 4 = 9", 9)),
+    B("So start with the rule that has only one missing digit, then use what you found in the other rule. P plus Q is 9."),
+)
+
+# Even factors of 120.
+LESSONS["G5A_DIVISIBILITY_013"] = LESSON(
+    B("How many of the factors of 120 are even numbers?",
+      GIVEN("q", "Factors of 120: how many are even?")),
+    B("First find all the factors, in pairs so none get lost. 1 times 120, 2 times 60, 3 times 40, 4 times 30.",
+      W("l1", "1 × 120 = 2 × 60 = 3 × 40 = 4 × 30")),
+    B("Carry on: 5 times 24, 6 times 20, 8 times 15, 10 times 12. After that the pairs repeat.",
+      W("l2", "5 × 24 = 6 × 20 = 8 × 15 = 10 × 12")),
+    B("8 pairs, with 2 factors in each. That is 16 factors in all.",
+      W("l3", "8 × 2 = 16")),
+    B("Now, are half of them even and half odd? Let's not guess. Which kind is quicker to pick out?",
+      ask=CHOOSE(["the odd factors: there are few", "the even factors"], 0,
+                 "Most of these factors are even. The odd ones are few, so it is quicker to find them and take them away from 16.")),
+    B("Hunt for the odd ones: 1, 3, 5 and 15. Only 4 odd factors.",
+      CIRC("l1", "1"), CIRC("l1", "3"), CIRC("l2", "5"), CIRC("l2", "15")),
+    B("All the rest are even. 16 minus 4 is 12.",
+      *ANSC("l4", "16 − 4 = 12", 12)),
+    B("The trap is to halve 16 and say 8. Odd and even factors are not shared equally: 120 has lots of twos inside it, so most of its factors are even."),
+    B("So list the factors in pairs, count the odd ones, and subtract. 12 of the factors of 120 are even."),
+)

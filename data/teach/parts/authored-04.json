@@ -1,0 +1,6420 @@
+{
+ "G5A_PLACEVALUE_017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Using the digits 2, 5 and 7 once each, we can make six different 3 digit numbers. We want the sum of all six.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits 2, 5, 7 once each: sum of all six numbers?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Here they are. With 2 in front: 257 and 275. With 5 in front: 527 and 572. With 7 in front: 725 and 752.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "257, 275, 527, 572, 725, 752",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We could add all six, but there is a quicker way. Look only at the hundreds place. How many times does each digit sit there?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "once",
+      "twice",
+      "3 times"
+     ],
+     "answer": 1,
+     "ifNot": "Look at the list. 2 is in front of two numbers, 257 and 275. The same goes for 5 and for 7. So each digit is in the hundreds place twice."
+    }
+   },
+   {
+    "say": "Each digit leads twice. And it is the same in the tens place and in the ones place: every digit turns up there exactly twice.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "257"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "275"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So one place adds up to twice the sum of the digits. 2 plus 5 plus 7 is 14, and twice 14 is 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 + 5 + 7 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2 × 14 = 28"
+     }
+    ]
+   },
+   {
+    "say": "That gives us 28 hundreds, 28 tens and 28 ones. 28 hundreds is 2800, and 28 tens is 280.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "28 × 100 = 2800"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "28 × 10 = 280"
+     }
+    ]
+   },
+   {
+    "say": "Add them up. 2800 plus 280 plus 28 is 3108. That is the sum of all six numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "2800 + 280 + 28 = 3108",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "3108"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The slip to watch for is counting each digit once, or 3 times, in a place. Six numbers shared among 3 digits gives each digit a place exactly twice."
+   },
+   {
+    "say": "Check the long way. The first pair makes 532, the second pair 1099, and the third pair 1477. Together they make 3108 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "257 + 275 = 532"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "527 + 572 = 1099"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "725 + 752 = 1477"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "532 + 1099 + 1477 = 3108"
+     }
+    ]
+   },
+   {
+    "say": "So when digits are shuffled through every place, count how often each digit lands in a place, then add place by place."
+   }
+  ]
+ },
+ "G5A_PLACEVALUE_018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A palindrome reads the same forwards and backwards, like 3553. We want to know how many 4 digit palindromes are even numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4-digit palindromes, like 3553: how many are even?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Look at 3553. The last digit copies the first, and the third copies the second. So once we choose the first two digits, the whole number is decided.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "A B B A",
+      "label": true
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "A",
+       "nth": 2
+      },
+      "text": "last = first",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "A number is even when its last digit is even. But here the last digit is also the first digit. So which digits can it be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "0, 2, 4, 6 or 8",
+      "2, 4, 6 or 8",
+      "any digit from 1 to 9"
+     ],
+     "answer": 1,
+     "ifNot": "The last digit must be even, and it is also the first digit. A 4 digit number cannot start with 0, so 0 is out. That leaves 2, 4, 6 and 8."
+    }
+   },
+   {
+    "say": "That is the trap. 0 is an even digit, but a number cannot start with 0. So the first digit has only 4 choices: 2, 4, 6 or 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "A: 2, 4, 6 or 8 → 4 choices",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The second digit has no rule to obey. It can be any digit from 0 to 9, and that is 10 choices.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "B: 0 to 9 → 10 choices",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Each of the 4 choices for the first digit can go with each of the 10 choices for the second. So we multiply: 4 times 10 is 40.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 × 10 = 40",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "40"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with 2 in front: 2002, 2112, 2222, and so on up to 2992. That is 10 palindromes, and there are 10 more each for 4, 6 and 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2002, 2112, 2222, … 2992",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So in a palindrome, count only the digits you are free to choose, and remember the first digit is never 0. There are 40 even ones."
+   }
+  ]
+ },
+ "G5A_PROFITLOSS_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A shopkeeper bought a toy car for 40 rupees and sold it for 55 rupees. We want his profit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Bought for ₹40, sold for ₹55. Profit?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Profit is the extra money he gets back, on top of what he paid.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Profit = selling price − cost price",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So how do we find it here?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "55 + 40",
+      "55 − 40",
+      "40 − 55"
+     ],
+     "answer": 1,
+     "ifNot": "Profit is how much more he got than he paid. So we take the 40 he paid away from the 55 he got."
+    }
+   },
+   {
+    "say": "55 minus 40 is 15. His profit is 15 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "55 − 40 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "15"
+      },
+      "text": "rupees",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check: the 40 he paid, plus the 15 profit, makes 55, the selling price.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "40 + 15 = 55"
+     }
+    ]
+   },
+   {
+    "say": "So for a profit, take the cost price away from the selling price."
+   }
+  ]
+ },
+ "G5A_PROFITLOSS_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meena bought a bag for 250 rupees and sold it for 220 rupees. We want her loss.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Bought for ₹250, sold for ₹220. Loss?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "She got back less than she paid, so she lost some money. The loss is the gap between the two prices.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Loss = cost price − selling price",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which sum gives that gap?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "250 + 220",
+      "250 − 220",
+      "220 − 200"
+     ],
+     "answer": 1,
+     "ifNot": "The loss is how much less she got than she paid. So we take the 220 she got away from the 250 she paid."
+    }
+   },
+   {
+    "say": "250 minus 220 is 30. Her loss is 30 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "250 − 220 = 30",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "30"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "30"
+      },
+      "text": "rupees",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check: the 220 she got, plus the 30 she lost, makes 250, the price she paid.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "220 + 30 = 250"
+     }
+    ]
+   },
+   {
+    "say": "So for a loss, take the selling price away from the cost price."
+   }
+  ]
+ },
+ "G5A_PROFITLOSS_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A fruit seller buys a basket of mangoes for 300 rupees. He wants a profit of 50 rupees. What should his selling price be?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Cost ₹300, wants a profit of ₹50. Selling price?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Think first. To make a profit, should he sell the basket for more than 300 rupees, or for less?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "more than 300",
+      "less than 300",
+      "exactly 300"
+     ],
+     "answer": 0,
+     "ifNot": "A profit means he ends up with extra money. So he must get back more than the 300 rupees he paid."
+    }
+   },
+   {
+    "say": "More. He needs his 300 rupees back, and 50 rupees on top.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Selling price = cost price + profit",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "300 plus 50 is 350. He should sell the basket for 350 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "300 + 50 = 350",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "350"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "350"
+      },
+      "text": "rupees",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check: selling for 350 after paying 300 leaves 350 minus 300, which is 50. That is the profit he wanted.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "350 − 300 = 50"
+     }
+    ]
+   },
+   {
+    "say": "So to make a profit, add the profit to the cost price."
+   }
+  ]
+ },
+ "G5A_PROFITLOSS_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi bought a cricket bat for 500 rupees, and sold it to a friend at a loss of 80 rupees. For how much did he sell it?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Cost ₹500, sold at a loss of ₹80. Selling price?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "A loss. So did Ravi get more than the 500 rupees he paid, or less?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "more than 500",
+      "less than 500"
+     ],
+     "answer": 1,
+     "ifNot": "A loss means he got back less money than he paid. So the selling price is below 500 rupees."
+    }
+   },
+   {
+    "say": "Less. He got 80 rupees less than he paid, so we take the loss away from the cost price.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Selling price = cost price − loss",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "loss"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "500 minus 80 is 420. He sold the bat for 420 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "500 − 80 = 420",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "420"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "420"
+      },
+      "text": "rupees",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check: 420 plus the 80 he lost makes 500, the price he paid.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "420 + 80 = 500"
+     }
+    ]
+   },
+   {
+    "say": "So with a loss, the selling price is the cost price take away the loss."
+   }
+  ]
+ },
+ "G5A_PROFITLOSS_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A shopkeeper sold a pen for 90 rupees and made a profit of 20 rupees. How much had he paid for the pen?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sold for ₹90, profit ₹20. Cost price?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "This one runs backwards: we know the selling price and want the cost price. He made a profit, so the 90 rupees is his cost and a bit more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Cost price + profit = selling price",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So how do we get back to what he paid?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "90 + 20",
+      "90 − 20",
+      "it is 20"
+     ],
+     "answer": 1,
+     "ifNot": "He made a profit, so he paid less than the 90 rupees he got. Take the 20 rupees of profit off the 90."
+    }
+   },
+   {
+    "say": "90 minus 20 is 70. He had paid 70 rupees for the pen.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "90 − 20 = 70",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "70"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "70"
+      },
+      "text": "rupees",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The tempting slip is to add, because profit sounds like more. But the profit is already inside the 90. The cost is the smaller number."
+   },
+   {
+    "say": "Check: 70 rupees, plus a profit of 20, makes 90, the selling price.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "70 + 20 = 90"
+     }
+    ]
+   },
+   {
+    "say": "So with a profit, the cost price is the selling price take away the profit."
+   }
+  ]
+ },
+ "G5A_PROFITLOSS_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Sita sold a storybook for 150 rupees and made a loss of 30 rupees. How much had she paid for it?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sold for ₹150, loss ₹30. Cost price?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "She made a loss. So was the price she paid more than 150 rupees, or less?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "more than 150",
+      "less than 150",
+      "exactly 150"
+     ],
+     "answer": 0,
+     "ifNot": "A loss means she got back less than she paid. She got 150 rupees, so she must have paid more than that."
+    }
+   },
+   {
+    "say": "More. She got back 30 rupees less than she paid. So to find what she paid, we put those 30 rupees back.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Cost price = selling price + loss",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "150 plus 30 is 180. She had paid 180 rupees for the storybook.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "150 + 30 = 180",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "180"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "180"
+      },
+      "text": "rupees",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The tempting slip is to take away, because loss sounds like less. But the loss has already been taken off. The cost is the bigger number."
+   },
+   {
+    "say": "Check: she paid 180 and got 150. 180 minus 150 is 30, the loss in the story.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "180 − 150 = 30"
+     }
+    ]
+   },
+   {
+    "say": "So with a loss, the cost price is the selling price plus the loss."
+   }
+  ]
+ },
+ "G5A_PROFITLOSS_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A shopkeeper sells a toy for more money than he paid for it. What do we call what he makes?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sells a toy for MORE than he paid. He makes …?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Let's try it with small numbers. Say he paid 10 rupees for the toy and sold it for 12 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Paid ₹10, sold for ₹12",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "12 minus 10 is 2. He gets back all he paid, and 2 rupees extra.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 − 10 = 2"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "2"
+      },
+      "text": "extra",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "What is that extra money called?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "a loss",
+      "a discount",
+      "a profit"
+     ],
+     "answer": 2,
+     "ifNot": "A loss is when he gets back less than he paid, and a discount is money taken off for the buyer. Here the shopkeeper ends up with extra money."
+    }
+   },
+   {
+    "say": "The extra money a seller earns is called a profit. So selling for more than the cost gives a profit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Sold for more than the cost → a profit",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "a profit"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And the other way round: selling for less than he paid would be a loss. More means profit, less means loss."
+   }
+  ]
+ },
+ "G5A_PROFITLOSS_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Mohan bought a cycle for 900 rupees and later sold it for 900 rupees. Did he make a profit or a loss?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Bought for ₹900, sold for ₹900. Profit or loss?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Profit or loss is always about the gap between the two prices. So compare them. Which is bigger?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the selling price",
+      "the cost price",
+      "they are equal"
+     ],
+     "answer": 2,
+     "ifNot": "Look at both prices. He paid 900 rupees and he got 900 rupees. Neither one is bigger."
+    }
+   },
+   {
+    "say": "They are equal. So the gap is 900 minus 900, which is 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "900 − 900 = 0"
+     }
+    ]
+   },
+   {
+    "say": "He got back exactly what he paid: nothing gained, and nothing lost.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Neither a profit nor a loss",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "Neither"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the 900 rupees is the price, not a profit. A profit is only the extra money, and here there is no extra."
+   },
+   {
+    "say": "So equal prices mean no profit and no loss. Mohan made neither."
+   }
+  ]
+ },
+ "G5A_PROFITLOSS_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A shopkeeper bought a water bottle for 80 rupees and sold it for 100 rupees. What was his profit?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Bought for ₹80, sold for ₹100. Profit?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "He sold it for more than he paid, so there is a profit. It is the gap between the two prices.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Profit = selling price − cost price",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which sum finds that gap?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "100 − 80",
+      "100 + 80",
+      "80 − 100"
+     ],
+     "answer": 0,
+     "ifNot": "The profit is the extra he got over what he paid. So start with the 100 he got and take away the 80 he paid."
+    }
+   },
+   {
+    "say": "100 minus 80 is 20. His profit was 20 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "100 − 80 = 20",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "20"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "20"
+      },
+      "text": "rupees",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check by counting up: from 80, add 20, and you reach 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "80 + 20 = 100"
+     }
+    ]
+   },
+   {
+    "say": "So profit is the selling price take away the cost price."
+   }
+  ]
+ },
+ "G5A_PROFITLOSS_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A fruit seller paid 200 rupees for a box of apples. Four selling prices are offered, and we want the one that gives him a profit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Paid ₹200. Which selling price gives a profit?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "₹180    ₹200    ₹150    ₹240",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the idea. For a profit, how must the selling price compare with the 200 rupees he paid?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "more than 200",
+      "less than 200",
+      "equal to 200"
+     ],
+     "answer": 0,
+     "ifNot": "A profit means he ends up with extra money. So he has to get back more than the 200 rupees he paid."
+    }
+   },
+   {
+    "say": "It must be more than 200. Now test each price. 180 is less than 200, and so is 150. Those would be losses.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "180 < 200"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "150 < 200"
+     }
+    ]
+   },
+   {
+    "say": "200 is exactly what he paid. That gives no profit and no loss.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "200 = 200"
+     }
+    ]
+   },
+   {
+    "say": "240 is more than 200. So selling for 240 rupees gives a profit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "240 > 200",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "240"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "₹240"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And how big is that profit? 240 minus 200 is 40 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "240 − 200 = 40"
+     }
+    ]
+   },
+   {
+    "say": "So a profit needs a selling price above the cost price. Here, only 240 is."
+   }
+  ]
+ },
+ "G5A_SEQUENCES_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is a sequence: 3, 4, 7, 11, 18, 29. We want its 9th term.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3, 4, 7, 11, 18, 29, …  9th term?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First idea: look at the jumps. They are 1, 3, 4, 7, 11. That is not a steady jump, so we need another idea.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Jumps: 1, 3, 4, 7, 11",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Look at 3, 4, 7. Then look at 4, 7, 11. How is each term made from the two before it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add the two terms before it",
+      "multiply the two before it",
+      "add 4 each time"
+     ],
+     "answer": 0,
+     "ifNot": "Try it. 3 plus 4 is 7. Then 4 plus 7 is 11. Each term is the two terms before it, added together."
+    }
+   },
+   {
+    "say": "3 plus 4 is 7, then 7 plus 11 is 18, and 11 plus 18 is 29. The rule holds all the way along.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 + 4 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "7 + 11 = 18"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "11 + 18 = 29"
+     }
+    ]
+   },
+   {
+    "say": "Now count the places carefully. 29 is the 6th term. So the 7th term is 18 plus 29, which is 47.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "29"
+      },
+      "text": "6th",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "18 + 29 = 47"
+     },
+     {
+      "op": "note",
+      "line": "l5",
+      "target": {
+       "text": "47"
+      },
+      "text": "7th",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The 8th term is 29 plus 47, which is 76.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "29 + 47 = 76"
+     },
+     {
+      "op": "note",
+      "line": "l6",
+      "target": {
+       "text": "76"
+      },
+      "text": "8th",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "We have reached 76. Do we stop here?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, 76 is the answer",
+      "no, one more step"
+     ],
+     "answer": 1,
+     "ifNot": "29 was the 6th term, so 47 is the 7th and 76 is the 8th. We want the 9th, so there is one more step to take."
+    }
+   },
+   {
+    "say": "One more step. The 9th term is 47 plus 76, which is 123.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "47 + 76 = 123",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "123"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l7",
+      "target": {
+       "text": "123"
+      },
+      "text": "9th",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So when the jumps make no simple pattern, see if each term is built from the ones before it. And keep count of the places as you go."
+   }
+  ]
+ },
+ "G5A_SEQUENCES_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Look at this sequence: 5, 40, 8, 35, 11, 30, 14, 25. We want the 15th term and the 16th term, added together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "5, 40, 8, 35, 11, 30, 14, 25, …  15th + 16th term?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The terms jump up, then down, then up again. That is the clue that two patterns are woven together. So take every second term."
+   },
+   {
+    "say": "The odd places hold 5, 8, 11, 14, going up by 3. The even places hold 40, 35, 30, 25, going down by 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Odd places: 5, 8, 11, 14 (+3)",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Even places: 40, 35, 30, 25 (−5)",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The 15th term is in the odd pattern. Count the odd places up to 15 and there are 8 of them. So it is the 8th number of that pattern.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Places 1, 3, 5, 7, 9, 11, 13, 15 → 8 numbers",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "To get from the 1st number of a pattern to its 8th number, how many steps do we take?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7 steps",
+      "8 steps",
+      "15 steps"
+     ],
+     "answer": 0,
+     "ifNot": "Count the jumps, not the numbers. From the 1st to the 2nd is 1 step, so from the 1st to the 8th is 7 steps."
+    }
+   },
+   {
+    "say": "That is the trap: 8 numbers, but only 7 steps. So the 15th term is 5 plus 7 lots of 3. 7 times 3 is 21, and 5 plus 21 is 26.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "7 × 3 = 21"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 + 21 = 26"
+     },
+     {
+      "op": "note",
+      "line": "l5",
+      "target": {
+       "text": "26"
+      },
+      "text": "15th term",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The 16th term is the 8th number of the even pattern, again 7 steps on. 7 times 5 is 35, and 40 minus 35 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7 × 5 = 35"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "40 − 35 = 5"
+     },
+     {
+      "op": "note",
+      "line": "l7",
+      "target": {
+       "text": "5",
+       "nth": 2
+      },
+      "text": "16th term",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now add them. 26 plus 5 is 31.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "26 + 5 = 31",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "31"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by carrying both patterns on. After 14 come 17, 20, 23, 26. After 25 come 20, 15, 10, 5. They end on 26 and 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "14, 17, 20, 23, 26   and   25, 20, 15, 10, 5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So when a sequence zigzags, split it into two patterns. And remember, the 8th number is only 7 steps after the first. The sum is 31."
+   }
+  ]
+ },
+ "G5A_SEQUENCES_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Tara counts up to 4 and back down to 1, again and again: 1, 2, 3, 4, 3, 2, 1, 2, and so on. We want the 100th number she says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1, 2, …  100th?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Her counting repeats, so we look for the block that repeats. A block must stop just before the pattern starts again."
+   },
+   {
+    "say": "Which is the repeating block?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1, 2, 3, 4, 3, 2, 1",
+      "1, 2, 3, 4, 3, 2",
+      "1, 2, 3, 4"
+     ],
+     "answer": 1,
+     "ifNot": "Careful with the 1. After 1, 2, 3, 4, 3, 2, the next 1 starts the pattern all over again, so it belongs to the next block."
+    }
+   },
+   {
+    "say": "The block is 1, 2, 3, 4, 3, 2, and that is 6 numbers. The trap is to count 7, by taking the 1 at both ends.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "1, 2, 3, 4, 3, 2"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Block: 1, 2, 3, 4, 3, 2 → 6 numbers",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How many whole blocks fit into 100 numbers? 16 times 6 is 96. So 16 blocks use up 96 numbers, and 100 minus 96 leaves 4 more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "16 × 6 = 96"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "100 − 96 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So where in a block is the 100th number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the 4th number of a block",
+      "the 6th number of a block",
+      "the 1st number of a block"
+     ],
+     "answer": 0,
+     "ifNot": "96 numbers are used up by whole blocks. Then a new block starts, and the 100th number is 4 numbers into it."
+    }
+   },
+   {
+    "say": "Count 4 numbers into the block: 1, 2, 3, 4. The 4th number is 4. So the 100th number Tara says is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "100th number = 4",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the idea on a small case. 10 is 6 plus 4, so the 10th number should be 4 as well. Count along Tara's list: it is.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6 + 4 = 10"
+     }
+    ]
+   },
+   {
+    "say": "So for a repeating pattern: find the true block, divide to drop the whole blocks, and count along what is left over."
+   }
+  ]
+ },
+ "G5A_SEQUENCES_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A sequence starts 100, 93, 86, 79, going down by 7 each time. How many of its terms are greater than 0?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "100, 93, 86, 79, … (down by 7). Terms above 0?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Every step takes away 7. So first we ask: how many 7s can we take from 100 before we run out?"
+   },
+   {
+    "say": "14 times 7 is 98. So after 14 steps down, the term is 100 minus 98, which is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "14 × 7 = 98"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "100 − 98 = 2"
+     }
+    ]
+   },
+   {
+    "say": "2 is still greater than 0. One more step would give 2 minus 7, which is below 0. So 14 steps is as far as we can go.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2 − 7 is below 0",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "14 steps down. So how many terms are greater than 0?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "14",
+      "15",
+      "16"
+     ],
+     "answer": 1,
+     "ifNot": "Steps are the jumps between terms. The first term, 100, is there before any step is taken. So count 1 for the start, and 1 more for each of the 14 steps."
+    }
+   },
+   {
+    "say": "Here is the trap: 14 is the number of steps, not the number of terms. The starting term, 100, counts too. 14 plus 1 is 15.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "100"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "14 + 1 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check on the start of the list. 100, 93, 86, 79 is 4 terms, but only 3 steps down. Terms are always one more than steps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "100, 93, 86, 79: 4 terms, 3 steps",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So count the steps by dividing, make sure the last term is still above 0, then add 1 for the first term. There are 15 terms."
+   }
+  ]
+ },
+ "G5A_SEQUENCES_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is a long sum: 100 minus 99, plus 98 minus 97, and so on, all the way down to plus 2 minus 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "100 − 99 + 98 − 97 + … + 4 − 3 + 2 − 1 = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Working from left to right would take ages. So look for small groups that are easy to work out."
+   },
+   {
+    "say": "Put the numbers in pairs: 100 minus 99, then 98 minus 97, and on down to 2 minus 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(100 − 99) + (98 − 97) + … + (2 − 1)",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Every pair is worth 1. 100 minus 99 is 1, 98 minus 97 is 1, and 2 minus 1 is 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "100 − 99 = 1"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "98 − 97 = 1"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 − 1 = 1"
+     }
+    ]
+   },
+   {
+    "say": "There are 100 numbers in the sum, from 100 down to 1. How many pairs do they make?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "100 pairs",
+      "50 pairs",
+      "49 pairs"
+     ],
+     "answer": 1,
+     "ifNot": "Each pair uses up 2 numbers. So 100 numbers make 100 divided by 2 pairs, which is 50."
+    }
+   },
+   {
+    "say": "100 divided by 2 is 50. So there are 50 pairs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "100 ÷ 2 = 50"
+     }
+    ]
+   },
+   {
+    "say": "50 pairs, each worth 1. 50 times 1 is 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "50 × 1 = 50",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "50",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two slips to dodge. The sum does not cancel down to 0, because each pair leaves 1 behind. And it is not 100, because every pair uses 2 numbers."
+   },
+   {
+    "say": "Check with a small one: 4 minus 3, plus 2 minus 1. That is 1 plus 1, which is 2. 4 numbers, 2 pairs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "4 − 3 + 2 − 1 = 2"
+     }
+    ]
+   },
+   {
+    "say": "So when a long sum has a rhythm, group it into equal pairs and count the pairs. Here that gives 50."
+   }
+  ]
+ },
+ "G5A_SEQUENCES_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In this sequence each number is written as many times as its own size: one 1, two 2s, three 3s, four 4s. We want the 50th term.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1, 2, 2, 3, 3, 3, 4, 4, 4, 4, …  50th term?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Let's find the place where each number ends. The 1 ends at place 1. The 2s end at place 3. The 3s end at place 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1 + 2 = 3"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1 + 2 + 3 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So we keep a running total, adding the next number each time: 1, 3, 6, 10, 15, 21, 28, 36, 45. The 9s end at place 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Ends: 1, 3, 6, 10, 15, 21, 28, 36, 45",
+      "label": true
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "45"
+      },
+      "text": "the 9s end here",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The 9s end at place 45, and we want place 50. What is written in the places just after 45?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "more 9s",
+      "ten 10s",
+      "one 10, then 11s"
+     ],
+     "answer": 1,
+     "ifNot": "The 9s are finished: there are exactly nine of them. Next comes 10, and it is written 10 times."
+    }
+   },
+   {
+    "say": "Ten 10s come next. 45 plus 10 is 55, so the 10s fill places 46 to 55.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "45 + 10 = 55"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Places 46 to 55: all 10s",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Place 50 lies between 46 and 55. So the 50th term is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "50th term = 10",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The tempting slip is to say 9, because 45 is so close to 50. But the 9s stop at place 45, and place 50 comes after that."
+   },
+   {
+    "say": "So add 1 plus 2 plus 3 and so on to see where each number ends, then find which stretch your place falls in. Here it is the 10s."
+   }
+  ]
+ },
+ "G5A_SEQUENCES_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A sequence starts with 7. If a term is odd, we add 5. If it is even, we halve it. It begins 7, 12, 6, 3, and we want the 50th term.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Start 7. Odd: add 5. Even: halve. 7, 12, 6, 3, …  50th?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Carry on from 3. It is odd, so add 5 to get 8. 8 is even, so halve it to get 4. Then 2, then 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 + 5 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 ÷ 2 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 ÷ 2 = 2"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 ÷ 2 = 1"
+     }
+    ]
+   },
+   {
+    "say": "1 is odd, so add 5, and we get 6. We have seen 6 before! From here on, everything comes round again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "1 + 5 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7, 12, 6, 3, 8, 4, 2, 1, 6, 3, 8, 4, 2, 1, …",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which block repeats?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7, 12, 6, 3, 8, 4, 2, 1",
+      "6, 3, 8, 4, 2, 1",
+      "12, 6, 3, 8, 4, 2"
+     ],
+     "answer": 1,
+     "ifNot": "After the 1 we go back to 6, not to 7. So 7 and 12 never come again. The block that repeats is 6, 3, 8, 4, 2, 1."
+    }
+   },
+   {
+    "say": "The block 6, 3, 8, 4, 2, 1 has 6 numbers. And here is the trap: it only starts at the 3rd term. The 7 and the 12 sit outside it.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "6, 3, 8, 4, 2, 1"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "strike",
+      "line": "l6",
+      "target": {
+       "text": "7, 12"
+      },
+      "note": "not in the block"
+     }
+    ]
+   },
+   {
+    "say": "So set those 2 terms aside. 50 minus 2 leaves 48 terms inside the repeating part.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "50 − 2 = 48"
+     }
+    ]
+   },
+   {
+    "say": "48 divided by 6 is exactly 8, with nothing left over. So the 50th term finishes off the 8th block.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "48 ÷ 6 = 8"
+     }
+    ]
+   },
+   {
+    "say": "It is the last number of a block. Which number is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6",
+      "1",
+      "8"
+     ],
+     "answer": 1,
+     "ifNot": "Nothing left over means we land on the end of a block, not the start of one. The block is 6, 3, 8, 4, 2, 1, and it ends with 1."
+    }
+   },
+   {
+    "say": "The block ends in 1. So the 50th term is 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "50th term = 1",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "1"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check on a near case. 2 plus 6 is 8, so the 8th term should end the first block. In our list, the 8th term is 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "2 + 6 = 8"
+     }
+    ]
+   },
+   {
+    "say": "So: run the rule until it comes round again, set aside the terms before the loop, then divide by the length of the block."
+   }
+  ]
+ },
+ "G5A_SPEED_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Asha cycles at a steady 12 kilometres an hour. How far does she cycle in 3 hours?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "12 km/hr for 3 hours. How far?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "12 kilometres an hour means she covers 12 kilometres in every single hour.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "12 km/hr"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "She rides for 3 hours. How do we find how far she goes?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 + 3",
+      "12 × 3",
+      "12 ÷ 3"
+     ],
+     "answer": 1,
+     "ifNot": "She covers 12 kilometres in the first hour, 12 in the second and 12 in the third. That is 3 lots of 12."
+    }
+   },
+   {
+    "say": "12 times 3 is 36. Asha cycles 36 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 × 3 = 36",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "36"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "36"
+      },
+      "text": "km",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding hour by hour: 12 plus 12 plus 12 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 + 12 + 12 = 36"
+     }
+    ]
+   },
+   {
+    "say": "So distance is speed times time."
+   }
+  ]
+ },
+ "G5A_SPEED_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A snail crawls 5 centimetres every minute. How far does it crawl in 8 minutes?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "5 cm every minute, for 8 minutes. How far?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Every minute adds another 5 centimetres. And there are 8 of those minutes.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "every minute"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So which sum gives the whole distance?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 + 8",
+      "8 − 5",
+      "5 × 8"
+     ],
+     "answer": 2,
+     "ifNot": "The snail does not crawl 5 centimetres just once. It crawls 5 centimetres in each of the 8 minutes, so we need 8 lots of 5."
+    }
+   },
+   {
+    "say": "8 lots of 5 is 5 times 8, which is 40. The snail crawls 40 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 × 8 = 40",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "40"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "40"
+      },
+      "text": "cm",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check by going back: 40 centimetres shared into steps of 5 is 8 steps, one for each minute.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "40 ÷ 5 = 8"
+     }
+    ]
+   },
+   {
+    "say": "So distance is speed times time. Here that is 40 centimetres."
+   }
+  ]
+ },
+ "G5A_SPEED_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi swims 2 metres every second. How long does he take to swim 50 metres?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "2 metres every second. Time for 50 metres?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Each second carries him 2 metres further. So the real question is: how many lots of 2 metres fit into 50 metres?"
+   },
+   {
+    "say": "Which sum tells us that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "50 × 2",
+      "50 ÷ 2",
+      "50 − 2"
+     ],
+     "answer": 1,
+     "ifNot": "We are asking how many 2s fit into 50, and each one takes a second. Counting how many fit is a division."
+    }
+   },
+   {
+    "say": "50 divided by 2 is 25. Ravi takes 25 seconds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "50 ÷ 2 = 25",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "25"
+      },
+      "text": "seconds",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check: 25 seconds, at 2 metres each second, is 25 times 2, which is 50 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "25 × 2 = 50"
+     }
+    ]
+   },
+   {
+    "say": "So time is distance divided by speed."
+   }
+  ]
+ },
+ "G5A_SPEED_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rahul walks at a steady 4 kilometres an hour. How long does he take to walk 12 kilometres?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4 km/hr. Time to walk 12 km?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "4 kilometres an hour means each hour of walking covers 4 kilometres.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "4 km/hr"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So how do we find the number of hours for 12 kilometres?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 × 4",
+      "12 + 4",
+      "12 ÷ 4"
+     ],
+     "answer": 2,
+     "ifNot": "Each hour covers 4 kilometres. So we need to know how many 4s fit into 12, and that is a division."
+    }
+   },
+   {
+    "say": "12 divided by 4 is 3. Rahul takes 3 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 ÷ 4 = 3",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3"
+      },
+      "text": "hours",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check hour by hour: 4, then 4 more, then 4 more. After 3 hours that is 12 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 + 4 + 4 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So time is distance divided by speed. Here it is 3 hours."
+   }
+  ]
+ },
+ "G5A_SPEED_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A boat travels 45 kilometres along a river in 3 hours, at a steady speed. What is its speed?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "45 km in 3 hours. Speed?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Speed tells us how far the boat goes in just 1 hour. The boat is steady, so each of the 3 hours covers the same distance."
+   },
+   {
+    "say": "So how do we find the distance for 1 hour?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "45 × 3",
+      "45 ÷ 3",
+      "45 − 3"
+     ],
+     "answer": 1,
+     "ifNot": "The 45 kilometres are spread equally over the 3 hours. To find the share for one hour, divide 45 by 3."
+    }
+   },
+   {
+    "say": "45 divided by 3 is 15. The boat covers 15 kilometres each hour, so its speed is 15 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "45 ÷ 3 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "15"
+      },
+      "text": "km/hr",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check: 15 kilometres an hour for 3 hours is 15 times 3, which is 45 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15 × 3 = 45"
+     }
+    ]
+   },
+   {
+    "say": "So speed is distance divided by time."
+   }
+  ]
+ },
+ "G5A_SPEED_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A horse gallops 600 metres in 2 minutes, at a steady speed. How many metres does it gallop in one minute?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "600 metres in 2 minutes. Metres in 1 minute?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "One minute is half of 2 minutes. The horse is steady, so in half the time it covers half the distance."
+   },
+   {
+    "say": "Which sum finds that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "600 × 2",
+      "600 ÷ 2",
+      "600 − 2"
+     ],
+     "answer": 1,
+     "ifNot": "The 600 metres are shared equally between the 2 minutes. So one minute gets 600 divided by 2."
+    }
+   },
+   {
+    "say": "600 divided by 2 is 300. The horse gallops 300 metres in one minute.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "600 ÷ 2 = 300",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "300"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "300"
+      },
+      "text": "metres",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check: 300 metres in the first minute and 300 in the second make 600 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "300 + 300 = 600"
+     }
+    ]
+   },
+   {
+    "say": "So the distance for one minute is the whole distance divided by the number of minutes."
+   }
+  ]
+ },
+ "G5A_SPEED_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A toy car moves 10 centimetres every second. How long does it take to move 80 centimetres?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "10 cm every second. Time for 80 cm?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Each second moves the car 10 centimetres on. So we want to know how many 10s there are in 80."
+   },
+   {
+    "say": "Which sum is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "80 × 10",
+      "80 − 10",
+      "80 ÷ 10"
+     ],
+     "answer": 2,
+     "ifNot": "We are counting how many lots of 10 centimetres fit into 80 centimetres. Each lot takes 1 second. That is a division."
+    }
+   },
+   {
+    "say": "80 divided by 10 is 8. The toy car takes 8 seconds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "80 ÷ 10 = 8",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "8",
+       "nth": 2
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "8",
+       "nth": 2
+      },
+      "text": "seconds",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check: 8 seconds at 10 centimetres each second is 10 times 8, which is 80 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 × 8 = 80"
+     }
+    ]
+   },
+   {
+    "say": "So time is distance divided by speed. The car needs 8 seconds."
+   }
+  ]
+ },
+ "G5A_SPEED_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya walks 100 metres in 50 seconds, at a steady speed. What is her speed in metres per second?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "100 metres in 50 seconds. Metres per second?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Metres per second means: how many metres does she walk in just 1 second?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "per second"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So what do we do with the 100 and the 50?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "100 × 50",
+      "100 ÷ 50",
+      "100 − 50"
+     ],
+     "answer": 1,
+     "ifNot": "The 100 metres are spread equally over 50 seconds. To find the share for one second, divide 100 by 50."
+    }
+   },
+   {
+    "say": "100 divided by 50 is 2. Kavya walks 2 metres every second.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "100 ÷ 50 = 2",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "2"
+      },
+      "text": "metres per second",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check: 2 metres every second, for 50 seconds, is 2 times 50, which is 100 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 × 50 = 100"
+     }
+    ]
+   },
+   {
+    "say": "So speed is distance divided by time. Her speed is 2 metres per second."
+   }
+  ]
+ },
+ "G5A_SPEED_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A lorry travels at a steady 40 kilometres an hour for 5 hours. What distance does it cover?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "40 km/hr for 5 hours. Distance?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "40 kilometres an hour means the lorry covers 40 kilometres in each hour. And it keeps going for 5 hours.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "40 km/hr"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So how do we find the whole distance?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "40 + 5",
+      "40 ÷ 5",
+      "40 × 5"
+     ],
+     "answer": 2,
+     "ifNot": "The lorry covers 40 kilometres in every one of the 5 hours. That is 5 lots of 40, so we multiply."
+    }
+   },
+   {
+    "say": "4 times 5 is 20, so 40 times 5 is 200. The lorry covers 200 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 × 5 = 20"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "40 × 5 = 200",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "200"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "200"
+      },
+      "text": "km",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check: 200 kilometres shared over 5 hours is 200 divided by 5, which is 40 kilometres each hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "200 ÷ 5 = 40"
+     }
+    ]
+   },
+   {
+    "say": "So distance is speed times time. Here it is 200 kilometres."
+   }
+  ]
+ },
+ "G5A_SPEED_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four friends each cycled for exactly 1 hour. Ravi covered 14 kilometres, Sana 11, Tina 16 and Uday 9. Who cycled at the greatest speed?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1 hour each: Ravi 14 km, Sana 11, Tina 16, Uday 9",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Everyone rode for the same time, 1 hour. So the distance each one covered in that hour is their speed.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "1 hour each"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "When the time is the same for everyone, who is the fastest?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the one who went furthest",
+      "the one who went least far",
+      "we cannot tell"
+     ],
+     "answer": 0,
+     "ifNot": "Faster means covering more ground in the same time. So in one hour, the fastest rider is the one who went the furthest."
+    }
+   },
+   {
+    "say": "So we just compare the distances. 16 is more than 14, 14 is more than 11, and 11 is more than 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "16 > 14 > 11 > 9"
+     }
+    ]
+   },
+   {
+    "say": "The greatest distance is 16 kilometres, and that is Tina's. So Tina cycled at the greatest speed.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Tina 16"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Tina: 16 km in 1 hour → fastest",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "Tina"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So when the time is the same, the one who goes furthest is the fastest. Here that is Tina."
+   }
+  ]
+ },
+ "G5A_TRIANGLES_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have five sets of three lengths. We want to know how many of them can be the three sides of a triangle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "How many of these 5 sets can make a triangle?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "s",
+      "text": "3,4,7 | 5,5,9 | 2,6,9 | 4,7,10 | 6,6,12",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Picture the longest stick lying flat, with the two shorter sticks hinged at its ends. Their tips can only meet if, together, they are longer than it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Two shorter sides together > longest side",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Set 2: 5 plus 5 is 10, which is more than 9. That makes a triangle. Set 4: 4 plus 7 is 11, more than 10. That makes one too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 + 5 = 10 > 9"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 + 7 = 11 > 10"
+     }
+    ]
+   },
+   {
+    "say": "Set 3: 2 plus 6 is 8, which is less than 9. The two short sticks cannot reach each other. No triangle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2 + 6 = 8 < 9"
+     },
+     {
+      "op": "strike",
+      "line": "s",
+      "target": {
+       "text": "2,6,9"
+      },
+      "note": "too short"
+     }
+    ]
+   },
+   {
+    "say": "Now Set 1. 3 plus 4 is exactly 7. Can those three make a triangle?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 + 4 = 7"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, equal is enough",
+      "no, the sticks lie flat"
+     ],
+     "answer": 1,
+     "ifNot": "If the two short sticks together are exactly as long as the long one, they must lie flat along it to reach. There is no room to rise up into a triangle."
+    }
+   },
+   {
+    "say": "Equal is not enough. That is the trap here: the sticks just lie flat. Set 5 is the same, because 6 plus 6 is exactly 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6 + 6 = 12"
+     },
+     {
+      "op": "strike",
+      "line": "s",
+      "target": {
+       "text": "3,4,7"
+      },
+      "note": "flat"
+     },
+     {
+      "op": "strike",
+      "line": "s",
+      "target": {
+       "text": "6,6,12"
+      },
+      "note": "flat"
+     }
+    ]
+   },
+   {
+    "say": "So only Set 2 and Set 4 work. That makes 2 sets.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s",
+      "target": {
+       "text": "5,5,9"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "s",
+      "target": {
+       "text": "4,7,10"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Only Set 2 and Set 4 → 2 sets",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "2 sets"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So to test three lengths, add the two shorter ones and compare with the longest. More means a triangle. Equal or less means none."
+   }
+  ]
+ },
+ "G5A_TRIANGLES_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Mira has sticks of 2, 3, 4, 5 and 7 centimetres. She picks three at a time and tries to make a triangle. How many different triangles can she make?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sticks 2, 3, 4, 5, 7 cm. Pick 3: how many triangles?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Three sticks close up only when the two shorter ones together are longer than the longest. So we list every choice in order, and test each one.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Two shorter sides together > longest side",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the 2 and the 3 together. With the 4 as the third stick: 2 plus 3 is 5, more than 4. That works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2 + 3 = 5 > 4"
+     }
+    ]
+   },
+   {
+    "say": "Now 2, 3 and 5. 2 plus 3 is exactly 5. Does that make a triangle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, equal is enough",
+      "no, the sticks lie flat"
+     ],
+     "answer": 1,
+     "ifNot": "If the two short sticks together are exactly as long as the long one, they must lie flat along it to reach. There is no room to rise up into a triangle."
+    }
+   },
+   {
+    "say": "No. Equal is not enough, the sticks lie flat. And 2, 3, 7 is worse still, because 5 is less than 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2, 3, 5: only equal.   2, 3, 7: too short",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Next, the 2 with the 4. 2 plus 4 is 6, more than 5, so 2, 4, 5 works. But 6 is less than 7, so 2, 4, 7 does not. And 2, 5, 7 is only equal.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2 + 4 = 6 > 5"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 + 4 = 6 < 7"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 + 5 = 7"
+     }
+    ]
+   },
+   {
+    "say": "Now the choices without the 2. 3 plus 4 is 7, more than 5, so 3, 4, 5 works. But 3, 4, 7 is only equal.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3 + 4 = 7 > 5"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "3, 4, 7: only equal",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "3 plus 5 is 8, more than 7, so 3, 5, 7 works. And 4 plus 5 is 9, more than 7, so 4, 5, 7 works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "3 + 5 = 8 > 7"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "4 + 5 = 9 > 7"
+     }
+    ]
+   },
+   {
+    "say": "Count the ones that work. There are 5 of them, so Mira can make 5 triangles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "(2,3,4) (2,4,5) (3,4,5) (3,5,7) (4,5,7)",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5 triangles",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "We tested 10 choices in all. The trap is to count every one of them, or to let in the flat ones where the short sticks only equal the long one."
+   },
+   {
+    "say": "So list the choices in order so none is missed, and test each: the two shorter sticks together must beat the longest."
+   }
+  ]
+ },
+ "G5A_TRIANGLES_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two sides of a triangle are 4 centimetres and 9 centimetres. The third side is a whole number. How many different lengths can it have?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sides 4 cm and 9 cm. Third side: how many whole lengths?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The third side cannot be too long, and it cannot be too short. Let's find both limits."
+   },
+   {
+    "say": "Too long first. If the third side is the longest, the 4 and the 9 together must be longer than it. 4 plus 9 is 13, so the third side is less than 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 + 9 = 13"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "third side < 13",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now too short. If 9 is the longest side, the 4 and the third side together must beat 9. 9 minus 4 is 5, so the third side is more than 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9 − 4 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "third side > 5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Can the third side be exactly 5, or exactly 13?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, both",
+      "no, neither",
+      "only 13"
+     ],
+     "answer": 1,
+     "ifNot": "With 5, the sides 4 and 5 together are exactly 9, so they lie flat along it. With 13, the 4 and the 9 lie flat along the 13. Neither makes a triangle."
+    }
+   },
+   {
+    "say": "Neither. At 5 or at 13 the sides lie flat in a straight line. So the third side can be 6, 7, 8, 9, 10, 11 or 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6, 7, 8, 9, 10, 11, 12",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count them: there are 7 different lengths.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7 different lengths",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A slip to dodge: 12 minus 6 is 6, but that counts the jumps between the numbers. From 6 to 12 there are 7 numbers, because both ends are in.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "12 − 6 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "6 + 1 = 7"
+     }
+    ]
+   },
+   {
+    "say": "Check the two ends. 4 plus 6 is 10, which beats 9. And 4 plus 9 is 13, which beats 12. Both make triangles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "4 + 6 = 10 > 9"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "4 + 9 = 13 > 12"
+     }
+    ]
+   },
+   {
+    "say": "So the third side lies between the difference and the sum of the other two, without touching either. Here that gives 7 lengths."
+   }
+  ]
+ },
+ "G5A_TRIANGLES_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Villages P, Q and R are not in one straight line. Road PQ is 7 kilometres and road QR is 12 kilometres. Which of these four lengths could road PR be?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "PQ = 7 km, QR = 12 km. Which could PR be?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "19 km    5 km    18 km    4 km",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The three roads make a triangle. Going from P to R, the straight road must be shorter than the way round through Q. The way round is 7 plus 12, which is 19.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "7 + 12 = 19"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "PR < 19",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So could PR be exactly 19 kilometres?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes",
+      "no"
+     ],
+     "answer": 1,
+     "ifNot": "PR is 19 only if going straight is just as long as going through Q. That happens only when Q is on the straight line from P to R, and the story says it is not."
+    }
+   },
+   {
+    "say": "No. 19 would put all three villages in one straight line. Cross it out.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "19 km"
+      },
+      "note": "in a line"
+     }
+    ]
+   },
+   {
+    "say": "PR cannot be too short either. Roads PQ and PR together must be longer than QR. 12 minus 7 is 5, so PR must be more than 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 − 7 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "PR > 5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So 5 is out: it only just reaches, in a straight line again. And 4 is out, because 7 plus 4 is 11, too short to cover the 12.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "5 km"
+      },
+      "note": "in a line"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "7 + 4 = 11 < 12"
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "4 km"
+      },
+      "note": "too short"
+     }
+    ]
+   },
+   {
+    "say": "Only 18 is left. It is more than 5 and less than 19. So road PR could be 18 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5 < 18 < 19",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "18"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "18 km"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 7 plus 12 is 19, more than 18. And 7 plus 18 is 25, more than 12. The triangle closes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7 + 18 = 25 > 12"
+     }
+    ]
+   },
+   {
+    "say": "So the third side of a triangle is always between the difference and the sum of the other two. Here only 18 fits."
+   }
+  ]
+ },
+ "G5A_TRIANGLES_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many different triangles have whole number sides and a perimeter of 13 centimetres? The same three lengths count only once.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Whole-number sides, perimeter 13 cm. How many triangles?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Lots of sets of three numbers add up to 13, like 1, 1 and 11. But most of them cannot close up into a triangle. So we start with the longest side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1 + 1 + 11 = 13"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "11"
+      },
+      "text": "far too long",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The longest side must be shorter than the other two together. So it is less than half of 13, which is 6 and a half. The longest side is 6 at most.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Longest side < 6½ → at most 6",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "And how small can the longest side be? Could it be 4?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 + 4 + 4 = 12"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes",
+      "no"
+     ],
+     "answer": 1,
+     "ifNot": "If the longest side is 4, the three sides add up to 12 at most. That cannot reach 13."
+    }
+   },
+   {
+    "say": "No: 4 plus 4 plus 4 is only 12. So the longest side is 5 or 6. That leaves just two cases to list.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "Longest side: 5 or 6",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Longest side 6: the other two add up to 7. They can be 6 and 1, or 5 and 2, or 4 and 3. That is 3 triangles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "13 − 6 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "6, 6, 1     6, 5, 2     6, 4, 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Longest side 5: the other two add up to 8, and neither may be more than 5. They can be 5 and 3, or 4 and 4. That is 2 triangles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "13 − 5 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "5, 5, 3     5, 4, 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "3 triangles and 2 triangles make 5 in all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "3 + 2 = 5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check one that looks risky: 6, 6 and 1. Its two shorter sides are 6 and 1, which make 7, and 7 beats 6. It closes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "6 + 1 = 7 > 6"
+     }
+    ]
+   },
+   {
+    "say": "So fix the longest side first: it must be less than half the perimeter. Then list in order. There are 5 triangles."
+   }
+  ]
+ },
+ "G5A_TRIANGLES_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "An isosceles triangle has whole number sides and a perimeter of 20 centimetres. How many different triangles like this are there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Isosceles, whole-number sides, perimeter 20 cm. How many?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "An isosceles triangle has two equal sides. Once we choose their length, the third side is whatever is left over from 20."
+   },
+   {
+    "say": "Try equal sides of 3. Twice 3 is 6, so the third side is 20 minus 6, which is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2 × 3 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "20 − 6 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3, 3, 14",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Can 3, 3 and 14 make a triangle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes",
+      "no"
+     ],
+     "answer": 1,
+     "ifNot": "The two sides of 3 together make only 6. They cannot reach across a side of 14, so their tips never meet."
+    }
+   },
+   {
+    "say": "No. That is the trap: not every choice closes up. The two equal sides together must be longer than the third side. So together they are more than half of 20, which is 10.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l3",
+      "target": {
+       "text": "3, 3, 14"
+      },
+      "note": "cannot close"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "20 ÷ 2 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "equal sides together > 10",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So each equal side is more than 5. Even 5 is out: 5 plus 5 is exactly 10, so 5, 5 and 10 would lie flat.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "5 + 5 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "5, 5, 10: flat",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "At the other end, the third side needs at least 1 centimetre. With equal sides of 9, twice 9 is 18 and the third side is 2. With 10 each, nothing is left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "2 × 9 = 18"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "20 − 18 = 2"
+     }
+    ]
+   },
+   {
+    "say": "So the equal sides can be 6, 7, 8 or 9. The triangles are 6, 6, 8. Then 7, 7, 6. Then 8, 8, 4. And 9, 9, 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "6, 6, 8     7, 7, 6     8, 8, 4     9, 9, 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "That is 4 triangles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "4 triangles",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check that they add up to 20. 6 plus 6 plus 8 is 20, and 9 plus 9 plus 2 is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "6 + 6 + 8 = 20"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "9 + 9 + 2 = 20"
+     }
+    ]
+   },
+   {
+    "say": "So choose the equal sides, work out the third, and keep only the ones that close up. Here there are 4."
+   }
+  ]
+ },
+ "G5A_TRIANGLES_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "One angle of an isosceles triangle is 40 degrees. We want every possible size of the largest angle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Isosceles triangle, one angle 40°. Largest angle?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "An isosceles triangle has two equal angles. But we are not told whether the 40 degree angle is one of the equal pair, or the odd one out. So there are two cases."
+   },
+   {
+    "say": "Case 1: 40 is one of the equal pair. Then two angles are 40 each, making 80. The third is 180 minus 80, which is 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "Case 1: 40°, 40°, ?",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "40 + 40 = 80"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "180 − 80 = 100"
+     }
+    ]
+   },
+   {
+    "say": "Case 2: 40 is the odd one out. How do we find the two equal angles?",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "Case 2: 40°, ?, ?",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "180 − 40, then halve",
+      "180 − 40 − 40",
+      "halve the 40"
+     ],
+     "answer": 0,
+     "ifNot": "Take the 40 away from 180 to see what the two equal angles share. Then split that equally between the two of them."
+    }
+   },
+   {
+    "say": "180 minus 40 is 140. The two equal angles share it, so each one is half of 140, which is 70.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "180 − 40 = 140"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "140 ÷ 2 = 70"
+     }
+    ]
+   },
+   {
+    "say": "So the triangle is 40, 40, 100, or it is 40, 70, 70. In the first, the largest angle is 100. In the second, it is 70.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "40°, 40°, 100°   or   40°, 70°, 70°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "100°"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "70°"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So the largest angle is 70 degrees or 100 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Largest angle: 70° or 100°",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "70° or 100°"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop after one case. Whenever an isosceles triangle gives you one angle, ask: is it one of the twins, or the odd one out?"
+   },
+   {
+    "say": "Check that both add up to 180. 40 plus 40 plus 100 is 180, and 40 plus 70 plus 70 is 180. So 70 and 100 are both possible.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "40 + 40 + 100 = 180"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "40 + 70 + 70 = 180"
+     }
+    ]
+   }
+  ]
+ },
+ "G5A_TRIANGLES_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two sides of an isosceles triangle are 4 centimetres and 9 centimetres. What is its perimeter?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Isosceles triangle, sides 4 cm and 9 cm. Perimeter?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Isosceles means two sides are equal. So the third side is a copy of one of the others: it is 4, or it is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4, 4, 9   or   4, 9, 9",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Before adding anything up, test 4, 4 and 9. Can those make a triangle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes",
+      "no"
+     ],
+     "answer": 1,
+     "ifNot": "The two shorter sides are 4 and 4. Together they make 8, which is less than 9. So their ends cannot meet."
+    }
+   },
+   {
+    "say": "4 plus 4 is 8, and 8 is less than 9. The two short sides cannot reach each other. So 4, 4, 9 is not a triangle at all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 + 4 = 8 < 9"
+     },
+     {
+      "op": "strike",
+      "line": "l1",
+      "target": {
+       "text": "4, 4, 9"
+      },
+      "note": "cannot close"
+     }
+    ]
+   },
+   {
+    "say": "Now 4, 9, 9. The two shorter sides are 4 and 9, which make 13, and 13 is more than 9. This one closes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 + 9 = 13 > 9"
+     }
+    ]
+   },
+   {
+    "say": "So the sides are 4, 9 and 9. 4 plus 9 plus 9 is 22. The perimeter is 22 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 + 9 + 9 = 22",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "22"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to offer two answers, 17 and 22. The 17 comes from 4, 4, 9, and that triangle cannot be made.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "4 + 4 + 9 = 17"
+     },
+     {
+      "op": "note",
+      "line": "l5",
+      "target": {
+       "text": "17"
+      },
+      "text": "no such triangle",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So with an isosceles triangle, try both choices for the third side, but test each one before you add. Only 22 works."
+   }
+  ]
+ },
+ "G5A_TRIANGLES_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "One exterior angle of a triangle is 110 degrees. Of the two interior angles not next to it, one is 20 degrees bigger than the other. What is the largest interior angle?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Exterior angle 110°. Far angles differ by 20°. Largest?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "An exterior angle of a triangle equals the two far interior angles added together. So those two angles add up to 110.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "The two far angles add up to 110°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "One is 20 bigger than the other. Take away that extra 20, and what is left is two copies of the smaller angle. 110 minus 20 is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "110 − 20 = 90"
+     }
+    ]
+   },
+   {
+    "say": "Half of 90 is 45. So the smaller angle is 45, and the bigger is 45 plus 20, which is 65.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "90 ÷ 2 = 45"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "45 + 20 = 65"
+     }
+    ]
+   },
+   {
+    "say": "We have 45 and 65. Is 65 the largest angle of the triangle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, 65 is the largest",
+      "not yet: find the third angle"
+     ],
+     "answer": 1,
+     "ifNot": "A triangle has three interior angles, and we have found only two. The third one sits next to the exterior angle, and it might be bigger."
+    }
+   },
+   {
+    "say": "Here is the trap: there is a third angle. It sits beside the exterior angle on a straight line, so the two make 180. 180 minus 110 is 70.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "180 − 110 = 70"
+     }
+    ]
+   },
+   {
+    "say": "The three interior angles are 45, 65 and 70. The largest is 70 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "45°, 65°, 70°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Largest interior angle = 70°",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "70°"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And 110 itself cannot be the answer. It is outside the triangle, and we want an interior angle."
+   },
+   {
+    "say": "Check: 45 plus 65 plus 70 is 180, as it must be in a triangle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "45 + 65 + 70 = 180"
+     }
+    ]
+   },
+   {
+    "say": "So find all three angles before you pick the largest. Here it is 70."
+   }
+  ]
+ },
+ "G5A_TRIANGLES_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In a triangle, the largest angle equals the sum of the other two. One of those two is 4 times the other. What is the smallest angle?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Largest angle = sum of other two. One is 4 × the other.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start with the first sentence alone. The three angles add up to 180. And the largest one is exactly as big as the other two put together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "largest + (other two) = 180°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So what is the largest angle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "180 ÷ 2 = 90",
+      "180 ÷ 3 = 60",
+      "we cannot tell yet"
+     ],
+     "answer": 0,
+     "ifNot": "The 180 degrees is made of two pieces: the largest angle, and the other two together. Those pieces are equal, so each is half of 180."
+    }
+   },
+   {
+    "say": "The largest angle is half of 180, which is 90. And the other two add up to 90 as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "180 ÷ 2 = 90"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap: the two smaller angles share 90, not the whole 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "other two together = 90°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "One of them is 4 times the other. Call the small one 1 part, so the other is 4 parts. Together that is 5 parts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1 + 4 = 5"
+     }
+    ]
+   },
+   {
+    "say": "5 parts make 90, so 1 part is 90 divided by 5, which is 18. The other angle is 4 times 18, which is 72.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "90 ÷ 5 = 18"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4 × 18 = 72"
+     }
+    ]
+   },
+   {
+    "say": "The angles are 18, 72 and 90. The smallest is 18 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "18°, 72°, 90° → smallest = 18°",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "18°",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 18 plus 72 is 90, the largest angle. And 18 plus 72 plus 90 is 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "18 + 72 = 90"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "18 + 72 + 90 = 180"
+     }
+    ]
+   },
+   {
+    "say": "So use the first clue to pin down the largest angle, then share what is left in parts. The smallest angle is 18 degrees."
+   }
+  ]
+ },
+ "G5A_TRIANGLES_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "At each corner of a triangle, one exterior angle is drawn. What is the smallest number of these three exterior angles that can be obtuse?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "One exterior angle at each corner. Fewest obtuse ones?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "An exterior angle sits on a straight line with the interior angle beside it. So the two of them add up to 180 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "exterior + interior = 180°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Try an interior angle of 50. Its exterior angle is 180 minus 50, which is 130. That is obtuse. So an acute angle inside gives an obtuse angle outside.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "180 − 50 = 130"
+     }
+    ]
+   },
+   {
+    "say": "And an obtuse angle inside, say 100, gives 180 minus 100 outside, which is 80. That is acute.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "180 − 100 = 80"
+     }
+    ]
+   },
+   {
+    "say": "So for few obtuse angles outside, we want few acute angles inside. Could a triangle have just one acute angle?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "90 + 90 = 180"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes",
+      "no"
+     ],
+     "answer": 1,
+     "ifNot": "Then the other two angles would each be 90 degrees or more. Those two alone would reach 180, leaving nothing for the third angle."
+    }
+   },
+   {
+    "say": "No. Two angles of 90 or more would use up all 180 by themselves. So every triangle has at least 2 acute angles inside, and that means at least 2 obtuse angles outside."
+   },
+   {
+    "say": "Can it be exactly 2? Take the triangle 100, 50, 30. Outside, its angles are 80, 130 and 150. Just two of them are obtuse.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "100 + 50 + 30 = 180"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "180 − 30 = 150"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "Exterior: 80°, 130°, 150°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "130°"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "150°"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So the smallest number is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Fewest obtuse exterior angles = 2",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to answer 1, thinking of obtuse angles inside the triangle. Outside, it flips: acute inside means obtuse outside."
+   },
+   {
+    "say": "So turn a question about exterior angles into one about interior angles. At least 2 acute inside gives at least 2 obtuse outside."
+   }
+  ]
+ },
+ "G5A_TRIANGLES_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A triangle has a base of 20 centimetres, with a height of 9 centimetres drawn to it. Another side is 12 centimetres. What is the height drawn to that 12 centimetre side?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Base 20 cm, height 9 cm. Height to the 12 cm side?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Any side of a triangle can be the base, each with its own height. What never changes is the area. So find the area first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Area = ½ × base × height",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Half of 20 is 10, and 10 times 9 is 90. The area is 90 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "½ × 20 × 9 = 90"
+     }
+    ]
+   },
+   {
+    "say": "Now use the 12 centimetre side as the base. Half of 12, times its height, must also be 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "½ × 12 × height = 90",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So what is 12 times the height?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "90",
+      "180",
+      "45"
+     ],
+     "answer": 1,
+     "ifNot": "Half of 12 times the height is 90. So the full 12 times the height is twice as much, which is 180."
+    }
+   },
+   {
+    "say": "Twice 90 is 180, so 12 times the height is 180. The trap is to divide 90 by 12 and forget about the half.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2 × 90 = 180"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 × height = 180",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "180 divided by 12 is 15. The height to the 12 centimetre side is 15 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "180 ÷ 12 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Does that make sense? The 12 side is shorter than the 20 side, so its height has to be taller than 9 to keep the same area. And 15 is taller."
+   },
+   {
+    "say": "Check: half of 12 is 6, and 6 times 15 is 90, the same area as before.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "½ × 12 × 15 = 90"
+     }
+    ]
+   },
+   {
+    "say": "So when one triangle has two bases, find the area from one pair, then use it to find the missing height. Here it is 15 centimetres."
+   }
+  ]
+ },
+ "G5A_TRIANGLES_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A triangle has whole number sides and a perimeter of 24 centimetres. What is the greatest possible length of its longest side?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Whole-number sides, perimeter 24 cm. Greatest longest side?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The perimeter is fixed at 24. So when one side gets longer, the other two together get shorter. At some point they can no longer meet."
+   },
+   {
+    "say": "Try a longest side of 12. The other two share 24 minus 12, which is 12. Can they make a triangle with it?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "24 − 12 = 12"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes",
+      "no, they lie flat"
+     ],
+     "answer": 1,
+     "ifNot": "The other two sides together are exactly 12, the same as the long side. To reach, they must lie flat along it, so there is no triangle."
+    }
+   },
+   {
+    "say": "No. They only equal the long side, so they lie flat. That is the trap: 12 is half the perimeter, and half is already too long.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 against 12: flat",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So try 11. The other two share 24 minus 11, which is 13. And 13 is more than 11, so they can meet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "24 − 11 = 13"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "13 > 11"
+     }
+    ]
+   },
+   {
+    "say": "For example, 11, 11 and 2. They add up to 24, and the two shorter sides, 11 and 2, make 13, which beats 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "11 + 11 + 2 = 24"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "11 + 2 = 13 > 11"
+     }
+    ]
+   },
+   {
+    "say": "So the greatest possible longest side is 11 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest longest side = 11 cm",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "11 cm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And a side like 22 is hopeless. The other two would share just 2 centimetres, and could never reach each other.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "24 − 22 = 2"
+     }
+    ]
+   },
+   {
+    "say": "So the longest side must be less than half the perimeter. Half of 24 is 12, so the greatest whole number is 11."
+   }
+  ]
+ },
+ "G5A_VARIATION_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Asha and Bina have stickers in the ratio 5 to 3. Asha gives 12 stickers to Bina, and now they have the same number. How many did Asha have at first?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Asha : Bina = 5 : 3. Asha gives 12 → equal. Asha at first?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Asha has 5 parts and Bina has 3 parts. So Asha is ahead by 5 minus 3, which is 2 parts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 − 3 = 2"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "2"
+      },
+      "text": "parts ahead",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Asha gives 12 stickers to Bina, and they become equal. So how big was the gap between them?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 stickers",
+      "24 stickers",
+      "6 stickers"
+     ],
+     "answer": 1,
+     "ifNot": "Giving 12 does two things at once. Asha goes down by 12, and Bina goes up by 12. So the gap closes from both sides."
+    }
+   },
+   {
+    "say": "That is the trap. The gap closes from both sides: Asha drops 12 and Bina climbs 12. So the gap was 12 plus 12, which is 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 + 12 = 24"
+     }
+    ]
+   },
+   {
+    "say": "The gap is 2 parts, and it is 24 stickers. So 1 part is 24 divided by 2, which is 12 stickers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "24 ÷ 2 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Asha had 5 parts. 5 times 12 is 60. Asha had 60 stickers at first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 × 12 = 60",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "60"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: Bina had 3 times 12, which is 36. After the gift, Asha has 60 minus 12 and Bina has 36 plus 12. Both come to 48.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 12 = 36"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "60 − 12 = 48"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "36 + 12 = 48"
+     }
+    ]
+   },
+   {
+    "say": "So when one gives to the other and they end up equal, the gap was twice the gift. Then the ratio turns the gap into parts."
+   }
+  ]
+ },
+ "G5A_VARIATION_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meena and Tara share money in the ratio 5 to 1. Meena gives 15 rupees to Tara, and the ratio becomes 2 to 1. How much does Meena have now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Meena : Tara = 5 : 1. Meena gives ₹15 → 2 : 1. Meena now?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "When Meena gives money to Tara, the total they have together does not change. That is the key to this one."
+   },
+   {
+    "say": "At first there are 5 plus 1, that is 6 parts in all. Afterwards, the ratio 2 to 1 has only 3 parts. Same total, but parts of a different size.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 + 1 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 + 1 = 3"
+     }
+    ]
+   },
+   {
+    "say": "How can we write 2 to 1 so that it has 6 parts as well?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 : 2",
+      "3 : 3",
+      "2 : 4"
+     ],
+     "answer": 0,
+     "ifNot": "Double both numbers of 2 to 1. That gives 4 to 2, which is the same ratio, and 4 plus 2 makes 6 parts."
+    }
+   },
+   {
+    "say": "Double both numbers: 2 to 1 is the same as 4 to 2. Now both ratios have 6 parts, so the parts are the same size.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2 : 1 = 4 : 2",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 + 2 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Meena goes from 5 parts down to 4 parts. She lost 1 part, and that is the 15 rupees she gave. So 1 part is 15 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Meena: 5 parts → 4 parts",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "5 − 4 = 1"
+     },
+     {
+      "op": "note",
+      "line": "l6",
+      "target": {
+       "text": "1"
+      },
+      "text": "part = ₹15",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Meena now has 4 parts. 4 times 15 is 60. She has 60 rupees now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "4 × 15 = 60",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "60"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to compare 5 to 1 with 2 to 1 straight away, as if the parts matched. They only match once both ratios have the same total."
+   },
+   {
+    "say": "Check: at first Meena had 5 times 15, which is 75, and Tara had 15. After the gift they have 60 and 30, and 60 is twice 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "5 × 15 = 75"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "75 − 15 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "15 + 15 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "60 = 2 × 30"
+     }
+    ]
+   },
+   {
+    "say": "So when money only moves between two people, the total stays fixed. Write both ratios with the same total, then compare."
+   }
+  ]
+ },
+ "G5A_VARIATION_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In a chess club, boys to girls is 3 to 4. Then 6 more boys join, and the ratio becomes 6 to 7. How many children are in the club now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Boys : girls = 3 : 4. 6 more boys → 6 : 7. Children now?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Only boys join. The number of girls does not change. So we make the girls the same number of parts in both ratios."
+   },
+   {
+    "say": "Girls are 4 parts in one ratio and 7 parts in the other. What number can both become?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "11",
+      "28",
+      "14"
+     ],
+     "answer": 1,
+     "ifNot": "We need a number that both 4 and 7 go into. 4 times 7 is 28, and both of them go into 28."
+    }
+   },
+   {
+    "say": "4 times 7 is 28. So multiply the first ratio by 7: 3 to 4 becomes 21 to 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 × 7 = 28"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 7 = 21"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 : 4 = 21 : 28",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "And multiply the second ratio by 4: 6 to 7 becomes 24 to 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "6 × 4 = 24"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6 : 7 = 24 : 28",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the parts match. Boys go from 21 parts to 24 parts. That is 3 more parts, and they are the 6 new boys. So 1 part is 2 children.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "24 − 21 = 3"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "6 ÷ 3 = 2"
+     }
+    ]
+   },
+   {
+    "say": "The club now has 24 parts of boys and 28 parts of girls. 24 plus 28 is 52 parts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "24 + 28 = 52"
+     }
+    ]
+   },
+   {
+    "say": "52 parts, with 2 children in each. 52 times 2 is 104. There are 104 children in the club now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "52 × 2 = 104",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "104"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to say the boys went from 3 parts to 6 parts. Those parts are not the same size until the girls have been matched."
+   },
+   {
+    "say": "Check: now there are 48 boys and 56 girls. Before, there were 42 boys, and 42 plus 6 is 48.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "24 × 2 = 48"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "28 × 2 = 56"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "21 × 2 = 42"
+     },
+     {
+      "op": "write",
+      "id": "l13",
+      "text": "42 + 6 = 48"
+     }
+    ]
+   },
+   {
+    "say": "So find what does not change, give it the same number of parts in both ratios, and then compare the rest. The club has 104 children."
+   }
+  ]
+ },
+ "G5A_VARIATION_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In Class 5B, the ratio of children who walk to school, to all the children in the class, is 3 to 8. There are 40 children who do not walk. How many walk?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Walkers : ALL children = 3 : 8. 40 do not walk. Walkers?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Read the ratio carefully. The 8 is not another group. It is the whole class. Out of every 8 children, 3 walk.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "ALL"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So how many parts do not walk?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 parts",
+      "5 parts",
+      "3 parts"
+     ],
+     "answer": 1,
+     "ifNot": "The whole class is 8 parts, and 3 of those parts walk. The rest do not, and 8 minus 3 leaves 5."
+    }
+   },
+   {
+    "say": "8 minus 3 is 5. So 5 parts do not walk, and those 5 parts are the 40 children.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "8 − 3 = 5"
+     }
+    ]
+   },
+   {
+    "say": "1 part is 40 divided by 5, which is 8 children.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "40 ÷ 5 = 8"
+     }
+    ]
+   },
+   {
+    "say": "The walkers are 3 parts. 3 times 8 is 24. So 24 children walk to school.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 × 8 = 24",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "24"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to read 3 to 8 as walkers to non walkers. Then the 40 children would be taken as 8 parts, and everything after that goes astray."
+   },
+   {
+    "say": "Check: the whole class is 8 parts, and 8 times 8 is 64 children. Take away the 24 walkers, and 40 are left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8 × 8 = 64"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "64 − 24 = 40"
+     }
+    ]
+   },
+   {
+    "say": "So always ask what each number in a ratio stands for: a group, or the whole. Here 24 children walk."
+   }
+  ]
+ },
+ "G5A_VARIATION_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Anu, Bela and Chitra share 372 rupees. Anu to Bela is 3 to 4, and Bela to Chitra is 6 to 5. How much does Chitra get?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Anu : Bela = 3 : 4, Bela : Chitra = 6 : 5. Share ₹372.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Bela is in both ratios, but she is 4 in one and 6 in the other. Before we can join them, Bela must be the same number in both.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "6"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Which number can Bela be in both ratios?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10",
+      "12",
+      "2"
+     ],
+     "answer": 1,
+     "ifNot": "We need a number that 4 and 6 both go into. 4 times 3 is 12, and 6 times 2 is 12. So Bela can be 12."
+    }
+   },
+   {
+    "say": "Multiply the first ratio by 3: 3 to 4 becomes 9 to 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 × 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 × 3 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 : 4 = 9 : 12",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Multiply the second ratio by 2: 6 to 5 becomes 12 to 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "6 × 2 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 × 2 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "6 : 5 = 12 : 10",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now join them. Anu to Bela to Chitra is 9 to 12 to 10. In all, that is 9 plus 12 plus 10, which is 31 parts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "Anu : Bela : Chitra = 9 : 12 : 10",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "9 + 12 + 10 = 31"
+     }
+    ]
+   },
+   {
+    "say": "31 parts make 372 rupees. 372 divided by 31 is 12, so 1 part is 12 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "372 ÷ 31 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Chitra has 10 parts. 10 times 12 is 120. Chitra gets 120 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "10 × 12 = 120",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "120"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to write 3 to 4 to 5 straight away. That forgets that Bela is 4 in one ratio and 6 in the other."
+   },
+   {
+    "say": "Check: Anu gets 108 and Bela gets 144. Add Chitra's 120, and the total is 372.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "9 × 12 = 108"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "12 × 12 = 144"
+     },
+     {
+      "op": "write",
+      "id": "l13",
+      "text": "108 + 144 + 120 = 372"
+     }
+    ]
+   },
+   {
+    "say": "So to join two ratios, first make the shared person the same number in both. Then count the parts and share."
+   }
+  ]
+ },
+ "G5A_VARIATION_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Half of Kavi's savings is equal to a third of Lata's savings. Together they have saved 150 rupees. How much has Kavi saved?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "½ of Kavi's = ⅓ of Lata's. Together ₹150. Kavi?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Call that equal amount 1 block. Half of Kavi's savings is 1 block, so the whole of Kavi's savings is 2 blocks.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Kavi: 2 blocks",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A third of Lata's savings is 1 block. So how many blocks does Lata have?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 blocks",
+      "3 blocks",
+      "1 block"
+     ],
+     "answer": 1,
+     "ifNot": "A third means one of 3 equal pieces. If one piece is 1 block, then the whole of Lata's savings is 3 blocks."
+    }
+   },
+   {
+    "say": "Lata has 3 blocks. Notice that Lata has more than Kavi: it takes only a third of hers to match half of his.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Lata: 3 blocks",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Together that is 2 plus 3, which is 5 blocks, worth 150 rupees. 150 divided by 5 is 30, so 1 block is 30 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2 + 3 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "150 ÷ 5 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Kavi has 2 blocks. 2 times 30 is 60. Kavi has saved 60 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 × 30 = 60",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "60"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The slip to dodge is giving Kavi the 3 blocks and Lata the 2. It flips over: the one whose half is used has the smaller amount."
+   },
+   {
+    "say": "Check: Lata has 3 times 30, which is 90. Half of 60 is 30, and a third of 90 is 30, so they match. And 60 plus 90 is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3 × 30 = 90"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "½ × 60 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "⅓ × 90 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "60 + 90 = 150"
+     }
+    ]
+   },
+   {
+    "say": "So when a fraction of one amount equals a fraction of another, call the equal bit 1 block and count blocks. Kavi has 60 rupees."
+   }
+  ]
+ },
+ "G5A_VARIATION_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "12 workers can build a wall in 20 days. They all work for 5 days, and then 3 workers leave. How many days does the wall take from start to finish?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "12 workers: 20 days. After 5 days, 3 leave. Total days?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Measure the wall in worker days: the work 1 worker does in 1 day. 12 workers for 20 days is 12 times 20, which is 240 worker days.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 × 20 = 240"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "240"
+      },
+      "text": "worker-days",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "In the first 5 days, all 12 are working. 12 times 5 is 60 worker days done. 240 minus 60 leaves 180 still to do.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 × 5 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "240 − 60 = 180"
+     }
+    ]
+   },
+   {
+    "say": "Then 3 workers leave. 12 minus 3 is 9 workers left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 − 3 = 9"
+     }
+    ]
+   },
+   {
+    "say": "How do we find the days the 9 workers need for the rest?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "180 ÷ 9",
+      "180 ÷ 12",
+      "240 ÷ 9"
+     ],
+     "answer": 0,
+     "ifNot": "Only 9 workers are left, and only 180 worker days of work are left. Each day the 9 of them do 9 worker days, so divide 180 by 9."
+    }
+   },
+   {
+    "say": "180 divided by 9 is 20. They need 20 more days.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "180 ÷ 9 = 20"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 20 is only the days after the others left. The question asks for start to finish, so the first 5 days go in too.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Total days"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "5 plus 20 is 25. The wall takes 25 days from start to finish.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "5 + 20 = 25",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the work: 60 worker days at first, then 9 workers for 20 days is 180 more. 60 plus 180 is 240, the whole wall.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "9 × 20 = 180"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "60 + 180 = 240"
+     }
+    ]
+   },
+   {
+    "say": "So measure a job in worker days, take off what is done, and share the rest among the workers who are left."
+   }
+  ]
+ },
+ "G5A_VARIATION_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A hostel has rice to feed 40 students for 30 days. After 10 days, 10 more students join. For how many more days will the rice last?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Rice: 40 students, 30 days. After 10 days, 10 more join.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, how much rice is left after 10 days? The 40 students have eaten for 10 of the 30 days. So there is rice for 20 more days, for those 40.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "30 − 10 = 20"
+     }
+    ]
+   },
+   {
+    "say": "Count the rice in student days: the rice 1 student eats in 1 day. 40 students for 20 days is 40 times 20, which is 800 student days.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "40 × 20 = 800"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "800"
+      },
+      "text": "student-days left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now 10 more students join. 40 plus 10 is 50 students.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "40 + 10 = 50"
+     }
+    ]
+   },
+   {
+    "say": "50 students share 800 student days of rice. Which sum tells us how long it lasts?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "800 ÷ 50",
+      "800 ÷ 40",
+      "800 ÷ 10"
+     ],
+     "answer": 0,
+     "ifNot": "Every day, the 50 students eat 50 student days of rice. So we see how many 50s there are in 800."
+    }
+   },
+   {
+    "say": "800 divided by 50 is 16. The rice will last 16 more days.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "800 ÷ 50 = 16",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to start from all 30 days of rice. But 10 days of it were already eaten, and by only 40 students. Always start from what is left."
+   },
+   {
+    "say": "It makes sense too. With nobody new, the rice would last 20 more days. More mouths means fewer days, and 16 is fewer than 20."
+   },
+   {
+    "say": "Check: 50 students for 16 days is 50 times 16, which is 800 student days, exactly the rice that was left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "50 × 16 = 800"
+     }
+    ]
+   },
+   {
+    "say": "So count the food that is left in student days, then divide by the new number of students."
+   }
+  ]
+ },
+ "G5A_VARIATION_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A taxi charges a fixed amount for every trip, plus the same amount for each kilometre. 5 kilometres cost 110 rupees and 8 kilometres cost 155 rupees. What do 12 kilometres cost?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Fixed amount + per km. 5 km: ₹110. 8 km: ₹155. 12 km?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Every fare has the fixed amount hidden inside it. So we cannot just divide 110 by 5. That is the trap. Instead, compare the two trips."
+   },
+   {
+    "say": "The second trip is 8 minus 5, that is 3 kilometres longer. And it costs 155 minus 110, that is 45 rupees more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "8 − 5 = 3"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "155 − 110 = 45"
+     }
+    ]
+   },
+   {
+    "say": "The fixed amount is the same in both trips. So what are those extra 45 rupees paying for?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the fixed amount",
+      "the 3 extra kilometres",
+      "all 8 kilometres"
+     ],
+     "answer": 1,
+     "ifNot": "Both trips include the same fixed amount, so it drops out when we compare them. The only difference is the 3 extra kilometres."
+    }
+   },
+   {
+    "say": "Just the 3 extra kilometres. So 1 kilometre costs 45 divided by 3, which is 15 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "45 ÷ 3 = 15"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "15"
+      },
+      "text": "rupees per km",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the fixed amount. In the 5 kilometre trip, the kilometres cost 5 times 15, which is 75. And 110 minus 75 leaves 35 rupees fixed.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 × 15 = 75"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "110 − 75 = 35"
+     },
+     {
+      "op": "note",
+      "line": "l5",
+      "target": {
+       "text": "35"
+      },
+      "text": "fixed",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "For 12 kilometres, the kilometres cost 12 times 15, which is 180 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "12 × 15 = 180"
+     }
+    ]
+   },
+   {
+    "say": "Add the fixed 35. 180 plus 35 is 215. The 12 kilometre trip costs 215 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "180 + 35 = 215",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "215"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with the 8 kilometre trip: 8 times 15 is 120, and 120 plus 35 is 155. That matches the fare we were told.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "8 × 15 = 120"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "120 + 35 = 155"
+     }
+    ]
+   },
+   {
+    "say": "So when a price has a fixed part, compare two cases to find the cost of one more, then work back to the fixed part."
+   }
+  ]
+ },
+ "G5A_VARIATION_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A 30 litre mixture has milk and water in the ratio 7 to 3. How many litres of water must be added to make the ratio of milk to water 3 to 2?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "30 litres, milk : water = 7 : 3. Add water → 3 : 2.",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First turn the ratio into litres. 7 plus 3 is 10 parts, and they make 30 litres. So 1 part is 3 litres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "7 + 3 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "30 ÷ 10 = 3"
+     }
+    ]
+   },
+   {
+    "say": "Milk is 7 parts: 7 times 3 is 21 litres. Water is 3 parts: 3 times 3 is 9 litres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "7 × 3 = 21"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "21"
+      },
+      "text": "litres of milk",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 × 3 = 9"
+     },
+     {
+      "op": "note",
+      "line": "l4",
+      "target": {
+       "text": "9"
+      },
+      "text": "litres of water",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "We add only water. So what stays the same?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the milk, 21 litres",
+      "the total, 30 litres",
+      "the water, 9 litres"
+     ],
+     "answer": 0,
+     "ifNot": "Pouring in water makes the water grow, and the total grows with it. Nothing touches the milk, so it stays at 21 litres."
+    }
+   },
+   {
+    "say": "The milk stays at 21 litres. That is the key. The trap is to keep the total at 30, but the total grows as the water goes in."
+   },
+   {
+    "say": "In the new ratio, 3 to 2, the milk is the 3 parts. So 3 parts are 21 litres, and 1 part is 21 divided by 3, which is 7 litres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "21 ÷ 3 = 7"
+     }
+    ]
+   },
+   {
+    "say": "The water must be 2 parts. 2 times 7 is 14 litres of water in all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "2 × 7 = 14"
+     }
+    ]
+   },
+   {
+    "say": "But 9 litres of water are already there. 14 minus 9 is 5. So 5 litres of water must be added.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "14 − 9 = 5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 21 litres of milk to 14 litres of water. Divide both by 7 and you get 3 to 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "21 ÷ 7 = 3"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "14 ÷ 7 = 2"
+     }
+    ]
+   },
+   {
+    "say": "So find what does not change, here the milk, and build the new ratio around it. Then take away what was already there."
+   }
+  ]
+ },
+ "G5A_VARIATION_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Jar P holds 20 litres of milk and water in the ratio 3 to 1. Jar Q holds 30 litres in the ratio 2 to 3. Both are emptied into a drum. What is the ratio of milk to water there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "P: 20 litres, 3 : 1. Q: 30 litres, 2 : 3. Milk : water?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The jars hold different amounts, so we cannot just add the ratio numbers. That is the trap. We have to work in litres."
+   },
+   {
+    "say": "Jar P: 3 plus 1 is 4 parts, making 20 litres, so 1 part is 5 litres. Milk is 3 times 5, which is 15 litres, and water is 5 litres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 + 1 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "20 ÷ 4 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 × 5 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Jar Q holds 30 litres in the ratio 2 to 3. How many litres is 1 part?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30 ÷ 2 = 15",
+      "30 ÷ 3 = 10",
+      "30 ÷ 5 = 6"
+     ],
+     "answer": 2,
+     "ifNot": "Count all the parts first. 2 parts of milk and 3 parts of water make 5 parts, and those 5 parts are the 30 litres."
+    }
+   },
+   {
+    "say": "2 plus 3 is 5 parts, so 1 part is 30 divided by 5, which is 6 litres. Milk is 2 times 6, which is 12. Water is 3 times 6, which is 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 + 3 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "30 ÷ 5 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "2 × 6 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "3 × 6 = 18"
+     }
+    ]
+   },
+   {
+    "say": "Now pour both into the drum. Milk: 15 plus 12 is 27 litres. Water: 5 plus 18 is 23 litres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "15 + 12 = 27"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "5 + 18 = 23"
+     }
+    ]
+   },
+   {
+    "say": "So milk to water is 27 to 23. No number divides both, so that is the ratio.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Milk : water = 27 : 23",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "27 : 23"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Mind the order: milk first, then water. 23 to 27 would be water to milk."
+   },
+   {
+    "say": "Check the total: 27 plus 23 is 50 litres, and the jars held 20 plus 30, which is 50 as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "27 + 23 = 50"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "20 + 30 = 50"
+     }
+    ]
+   },
+   {
+    "say": "So to mix two mixtures, change each ratio into litres, add the milk, add the water, and only then write the ratio: 27 to 23."
+   }
+  ]
+ },
+ "G5A_VARIATION_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A money box has 1 rupee, 2 rupee and 5 rupee coins, in the ratio 5 to 3 to 2. All the coins together are worth 210 rupees. How many 5 rupee coins are there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹1, ₹2, ₹5 coins in ratio 5 : 3 : 2. Value ₹210. ₹5 coins?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the ratio counts coins, but 210 is a value in rupees. So we cannot share the 210 in the ratio 5 to 3 to 2. That is the trap."
+   },
+   {
+    "say": "Instead, make one small group of coins: 5 coins of 1 rupee, 3 coins of 2 rupees, and 2 coins of 5 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Group: 5 × ₹1,  3 × ₹2,  2 × ₹5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How much is one group worth?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10 rupees",
+      "21 rupees",
+      "8 rupees"
+     ],
+     "answer": 1,
+     "ifNot": "Add up the values, not the number of coins. 5 coins of 1 rupee are worth 5, 3 coins of 2 rupees are worth 6, and 2 coins of 5 rupees are worth 10."
+    }
+   },
+   {
+    "say": "5 times 1 is 5, 3 times 2 is 6, and 2 times 5 is 10. Then 5 plus 6 plus 10 is 21. One group is worth 21 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 × 1 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 × 2 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 × 5 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 + 6 + 10 = 21"
+     }
+    ]
+   },
+   {
+    "say": "The whole box is worth 210 rupees. 210 divided by 21 is 10, so there are 10 groups.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "210 ÷ 21 = 10"
+     },
+     {
+      "op": "note",
+      "line": "l6",
+      "target": {
+       "text": "10"
+      },
+      "text": "groups",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Each group has 2 coins of 5 rupees. 10 groups have 10 times 2, which is 20 of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "10 × 2 = 20",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "20"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice that 10 is the number of groups, not the answer. And the question asks how many coins, not how much they are worth."
+   },
+   {
+    "say": "Check: 50 coins of 1 rupee, 30 coins of 2 rupees and 20 coins of 5 rupees. That is 50 plus 60 plus 100, which is 210 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "50 × 1 = 50"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "30 × 2 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "20 × 5 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "50 + 60 + 100 = 210"
+     }
+    ]
+   },
+   {
+    "say": "So when a ratio counts things of different values, find the value of one group, then count the groups. There are 20 coins of 5 rupees."
+   }
+  ]
+ },
+ "G5A_VARIATION_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The ages of a mother and her daughter Riya are in the ratio 7 to 2. In 5 years' time, they will be in the ratio 8 to 3. How old is the mother now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Mother : Riya = 7 : 2. In 5 years: 8 : 3. Mother now?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Both of them grow older by the same 5 years. So the gap between their ages never changes. That is the key."
+   },
+   {
+    "say": "Now, the gap is 7 minus 2, which is 5 parts. In 5 years, the gap is 8 minus 3, which is 5 parts again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "7 − 2 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 − 3 = 5"
+     }
+    ]
+   },
+   {
+    "say": "The same gap is 5 parts both times. So the parts are the same size in both ratios, and we can compare them directly."
+   },
+   {
+    "say": "The mother goes from 7 parts to 8 parts in 5 years. So how many years is 1 part?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 years",
+      "1 year",
+      "8 years"
+     ],
+     "answer": 0,
+     "ifNot": "She gains 1 part, going from 7 parts to 8. In that time she gets 5 years older. So that 1 part is 5 years."
+    }
+   },
+   {
+    "say": "She gains 1 part while she gets 5 years older. So 1 part is 5 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 − 7 = 1"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "1"
+      },
+      "text": "part = 5 years",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The mother is 7 parts now. 7 times 5 is 35. She is 35 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "7 × 5 = 35",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "35"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to give her age in 5 years' time, which is 8 parts. The question asks for her age now."
+   },
+   {
+    "say": "Check: Riya is 2 times 5, which is 10. In 5 years they will be 40 and 15. Divide both by 5 and you get 8 to 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 × 5 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "35 + 5 = 40"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "10 + 5 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "40 ÷ 5 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "15 ÷ 5 = 3"
+     }
+    ]
+   },
+   {
+    "say": "So with ages, the gap never changes. If the gap is the same number of parts both times, the parts match, and the mother is 35."
+   }
+  ]
+ },
+ "G5A_VARIATION_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "3 men, or 6 boys, can paint a school hall in 20 days. How many days will 2 men and 4 boys take, working together?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3 men OR 6 boys: 20 days. 2 men + 4 boys: days?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, change everyone into one kind of worker. 3 men do the same work as 6 boys. So 1 man works like 6 divided by 3, which is 2 boys.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "6 ÷ 3 = 2"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "2"
+      },
+      "text": "boys = 1 man",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the team of 2 men and 4 boys is worth how many boys?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 boys",
+      "8 boys",
+      "10 boys"
+     ],
+     "answer": 1,
+     "ifNot": "Each man counts as 2 boys. So the 2 men are worth 4 boys, and there are 4 real boys as well."
+    }
+   },
+   {
+    "say": "2 men are worth 2 times 2, which is 4 boys. Add the 4 real boys, and the team is like 8 boys. The trap is to count 6 workers, all the same.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 × 2 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 + 4 = 8"
+     }
+    ]
+   },
+   {
+    "say": "How big is the job? 6 boys take 20 days, so it is 6 times 20, which is 120 boy days of work.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "6 × 20 = 120"
+     },
+     {
+      "op": "note",
+      "line": "l4",
+      "target": {
+       "text": "120"
+      },
+      "text": "boy-days",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "8 boys share 120 boy days. 120 divided by 8 is 15. The team takes 15 days.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "120 ÷ 8 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Does that make sense? The team is worth 8 boys, which is more than 6 boys. So it should take less than 20 days, and 15 is less."
+   },
+   {
+    "say": "Check: 8 boys for 15 days is 8 times 15, which is 120 boy days, the whole job.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 × 15 = 120"
+     }
+    ]
+   },
+   {
+    "say": "So turn a mixed team into one kind of worker, measure the job in worker days, and divide."
+   }
+  ]
+ },
+ "G5A_VARIATION_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kiran and Leela had money in the ratio 3 to 2. Each of them spent 40 rupees on a book, and now the ratio is 2 to 1. How much did Kiran have at first?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Kiran : Leela = 3 : 2. Each spends ₹40 → 2 : 1. Kiran?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Both spend the same 40 rupees. So the gap between their money does not change. That is the key."
+   },
+   {
+    "say": "Before, the gap is 3 minus 2, which is 1 part. After, the gap is 2 minus 1, which is 1 part again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 − 2 = 1"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 − 1 = 1"
+     }
+    ]
+   },
+   {
+    "say": "The same gap is 1 part both times. So the parts are the same size before and after."
+   },
+   {
+    "say": "Kiran goes from 3 parts to 2 parts by spending 40 rupees. So how much is 1 part?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "20 rupees",
+      "40 rupees",
+      "80 rupees"
+     ],
+     "answer": 1,
+     "ifNot": "He drops by 1 part, from 3 parts to 2. What he lost is the 40 rupees he spent. So that 1 part is 40 rupees."
+    }
+   },
+   {
+    "say": "He lost 1 part, and he spent 40 rupees. So 1 part is 40 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Kiran: 3 parts → 2 parts, so 1 part = ₹40",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "At first Kiran had 3 parts. 3 times 40 is 120. He had 120 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 × 40 = 120",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "120"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the question asks for his money at first, not after the book. After the book he has only 2 parts."
+   },
+   {
+    "say": "Check: Leela had 2 times 40, which is 80. After spending, Kiran has 80 and Leela has 40, and 80 is twice 40.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 × 40 = 80"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "120 − 40 = 80"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "80 − 40 = 40"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "80 = 2 × 40"
+     }
+    ]
+   },
+   {
+    "say": "So when both spend the same amount, the gap stays fixed. Match the gap in both ratios, and the parts tell you the rest."
+   }
+  ]
+ }
+}

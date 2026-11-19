@@ -1,0 +1,187 @@
+"""Triangles 006 to 013, written one by one."""
+from authored_04_lib import ANSC, ANSL, B, BOX, CHOOSE, CIRC, GIVEN, LB, LESSON, NOTE, STRIKE, UL, W  # noqa: F401
+
+LESSONS = {}
+
+# Isosceles, whole-number sides, perimeter 20: how many?
+LESSONS["G5A_TRIANGLES_006"] = LESSON(
+    B("An isosceles triangle has whole number sides and a perimeter of 20 centimetres. How many different triangles like this are there?",
+      GIVEN("q", "Isosceles, whole-number sides, perimeter 20 cm. How many?")),
+    B("An isosceles triangle has two equal sides. Once we choose their length, the third side is whatever is left over from 20."),
+    B("Try equal sides of 3. Twice 3 is 6, so the third side is 20 minus 6, which is 14.",
+      W("l1", "2 × 3 = 6"), W("l2", "20 − 6 = 14"), LB("l3", "3, 3, 14")),
+    B("Can 3, 3 and 14 make a triangle?",
+      ask=CHOOSE(["yes", "no"], 1,
+                 "The two sides of 3 together make only 6. They cannot reach across a side of 14, so their tips never meet.")),
+    B("No. That is the trap: not every choice closes up. The two equal sides together must be longer than the third side. So together they are more than half of 20, which is 10.",
+      STRIKE("l3", "3, 3, 14", "cannot close"), W("l4", "20 ÷ 2 = 10"), LB("l5", "equal sides together > 10")),
+    B("So each equal side is more than 5. Even 5 is out: 5 plus 5 is exactly 10, so 5, 5 and 10 would lie flat.",
+      W("l6", "5 + 5 = 10"), LB("l7", "5, 5, 10: flat")),
+    B("At the other end, the third side needs at least 1 centimetre. With equal sides of 9, twice 9 is 18 and the third side is 2. With 10 each, nothing is left.",
+      W("l8", "2 × 9 = 18"), W("l9", "20 − 18 = 2")),
+    B("So the equal sides can be 6, 7, 8 or 9. The triangles are 6, 6, 8. Then 7, 7, 6. Then 8, 8, 4. And 9, 9, 2.",
+      LB("l10", "6, 6, 8     7, 7, 6     8, 8, 4     9, 9, 2")),
+    B("That is 4 triangles.",
+      *ANSL("a", "4 triangles", "4")),
+    B("Check that they add up to 20. 6 plus 6 plus 8 is 20, and 9 plus 9 plus 2 is 20.",
+      W("l11", "6 + 6 + 8 = 20"), W("l12", "9 + 9 + 2 = 20")),
+    B("So choose the equal sides, work out the third, and keep only the ones that close up. Here there are 4."),
+)
+
+# Isosceles triangle with one angle of 40 degrees: the largest angle.
+LESSONS["G5A_TRIANGLES_007"] = LESSON(
+    B("One angle of an isosceles triangle is 40 degrees. We want every possible size of the largest angle.",
+      GIVEN("q", "Isosceles triangle, one angle 40°. Largest angle?")),
+    B("An isosceles triangle has two equal angles. But we are not told whether the 40 degree angle is one of the equal pair, or the odd one out. So there are two cases."),
+    B("Case 1: 40 is one of the equal pair. Then two angles are 40 each, making 80. The third is 180 minus 80, which is 100.",
+      LB("c1", "Case 1: 40°, 40°, ?"), W("l1", "40 + 40 = 80"), W("l2", "180 − 80 = 100")),
+    B("Case 2: 40 is the odd one out. How do we find the two equal angles?",
+      LB("c2", "Case 2: 40°, ?, ?"),
+      ask=CHOOSE(["180 − 40, then halve", "180 − 40 − 40", "halve the 40"], 0,
+                 "Take the 40 away from 180 to see what the two equal angles share. Then split that equally between the two of them.")),
+    B("180 minus 40 is 140. The two equal angles share it, so each one is half of 140, which is 70.",
+      W("l3", "180 − 40 = 140"), W("l4", "140 ÷ 2 = 70")),
+    B("So the triangle is 40, 40, 100, or it is 40, 70, 70. In the first, the largest angle is 100. In the second, it is 70.",
+      LB("l5", "40°, 40°, 100°   or   40°, 70°, 70°"), UL("l5", "100°"), UL("l5", "70°")),
+    B("So the largest angle is 70 degrees or 100 degrees.",
+      *ANSL("a", "Largest angle: 70° or 100°", "70° or 100°")),
+    B("The trap is to stop after one case. Whenever an isosceles triangle gives you one angle, ask: is it one of the twins, or the odd one out?"),
+    B("Check that both add up to 180. 40 plus 40 plus 100 is 180, and 40 plus 70 plus 70 is 180. So 70 and 100 are both possible.",
+      W("l6", "40 + 40 + 100 = 180"), W("l7", "40 + 70 + 70 = 180")),
+)
+
+# Isosceles triangle with sides 4 and 9: the perimeter.
+LESSONS["G5A_TRIANGLES_008"] = LESSON(
+    B("Two sides of an isosceles triangle are 4 centimetres and 9 centimetres. What is its perimeter?",
+      GIVEN("q", "Isosceles triangle, sides 4 cm and 9 cm. Perimeter?")),
+    B("Isosceles means two sides are equal. So the third side is a copy of one of the others: it is 4, or it is 9.",
+      LB("l1", "4, 4, 9   or   4, 9, 9")),
+    B("Before adding anything up, test 4, 4 and 9. Can those make a triangle?",
+      ask=CHOOSE(["yes", "no"], 1,
+                 "The two shorter sides are 4 and 4. Together they make 8, which is less than 9. So their ends cannot meet.")),
+    B("4 plus 4 is 8, and 8 is less than 9. The two short sides cannot reach each other. So 4, 4, 9 is not a triangle at all.",
+      W("l2", "4 + 4 = 8 < 9"), STRIKE("l1", "4, 4, 9", "cannot close")),
+    B("Now 4, 9, 9. The two shorter sides are 4 and 9, which make 13, and 13 is more than 9. This one closes.",
+      W("l3", "4 + 9 = 13 > 9")),
+    B("So the sides are 4, 9 and 9. 4 plus 9 plus 9 is 22. The perimeter is 22 centimetres.",
+      *ANSC("l4", "4 + 9 + 9 = 22", 22)),
+    B("The trap is to offer two answers, 17 and 22. The 17 comes from 4, 4, 9, and that triangle cannot be made.",
+      W("l5", "4 + 4 + 9 = 17"), NOTE("l5", "17", "no such triangle")),
+    B("So with an isosceles triangle, try both choices for the third side, but test each one before you add. Only 22 works."),
+)
+
+# Exterior angle 110; the two far interior angles differ by 20: largest interior angle.
+LESSONS["G5A_TRIANGLES_009"] = LESSON(
+    B("One exterior angle of a triangle is 110 degrees. Of the two interior angles not next to it, one is 20 degrees bigger than the other. What is the largest interior angle?",
+      GIVEN("q", "Exterior angle 110°. Far angles differ by 20°. Largest?")),
+    B("An exterior angle of a triangle equals the two far interior angles added together. So those two angles add up to 110.",
+      LB("l1", "The two far angles add up to 110°")),
+    B("One is 20 bigger than the other. Take away that extra 20, and what is left is two copies of the smaller angle. 110 minus 20 is 90.",
+      W("l2", "110 − 20 = 90")),
+    B("Half of 90 is 45. So the smaller angle is 45, and the bigger is 45 plus 20, which is 65.",
+      W("l3", "90 ÷ 2 = 45"), W("l4", "45 + 20 = 65")),
+    B("We have 45 and 65. Is 65 the largest angle of the triangle?",
+      ask=CHOOSE(["yes, 65 is the largest", "not yet: find the third angle"], 1,
+                 "A triangle has three interior angles, and we have found only two. The third one sits next to the exterior angle, and it might be bigger.")),
+    B("Here is the trap: there is a third angle. It sits beside the exterior angle on a straight line, so the two make 180. 180 minus 110 is 70.",
+      W("l5", "180 − 110 = 70")),
+    B("The three interior angles are 45, 65 and 70. The largest is 70 degrees.",
+      LB("l6", "45°, 65°, 70°"), *ANSL("a", "Largest interior angle = 70°", "70°")),
+    B("And 110 itself cannot be the answer. It is outside the triangle, and we want an interior angle."),
+    B("Check: 45 plus 65 plus 70 is 180, as it must be in a triangle.",
+      W("l7", "45 + 65 + 70 = 180")),
+    B("So find all three angles before you pick the largest. Here it is 70."),
+)
+
+# Largest angle = sum of the other two; one of those is 4 times the other: smallest angle.
+LESSONS["G5A_TRIANGLES_010"] = LESSON(
+    B("In a triangle, the largest angle equals the sum of the other two. One of those two is 4 times the other. What is the smallest angle?",
+      GIVEN("q", "Largest angle = sum of other two. One is 4 × the other.")),
+    B("Start with the first sentence alone. The three angles add up to 180. And the largest one is exactly as big as the other two put together.",
+      LB("l1", "largest + (other two) = 180°")),
+    B("So what is the largest angle?",
+      ask=CHOOSE(["180 ÷ 2 = 90", "180 ÷ 3 = 60", "we cannot tell yet"], 0,
+                 "The 180 degrees is made of two pieces: the largest angle, and the other two together. Those pieces are equal, so each is half of 180.")),
+    B("The largest angle is half of 180, which is 90. And the other two add up to 90 as well.",
+      W("l2", "180 ÷ 2 = 90")),
+    B("Here is the trap: the two smaller angles share 90, not the whole 180.",
+      LB("l3", "other two together = 90°")),
+    B("One of them is 4 times the other. Call the small one 1 part, so the other is 4 parts. Together that is 5 parts.",
+      W("l4", "1 + 4 = 5")),
+    B("5 parts make 90, so 1 part is 90 divided by 5, which is 18. The other angle is 4 times 18, which is 72.",
+      W("l5", "90 ÷ 5 = 18"), W("l6", "4 × 18 = 72")),
+    B("The angles are 18, 72 and 90. The smallest is 18 degrees.",
+      *ANSL("a", "18°, 72°, 90° → smallest = 18°", "18°")),
+    B("Check: 18 plus 72 is 90, the largest angle. And 18 plus 72 plus 90 is 180.",
+      W("l7", "18 + 72 = 90"), W("l8", "18 + 72 + 90 = 180")),
+    B("So use the first clue to pin down the largest angle, then share what is left in parts. The smallest angle is 18 degrees."),
+)
+
+# Smallest number of obtuse exterior angles.
+LESSONS["G5A_TRIANGLES_011"] = LESSON(
+    B("At each corner of a triangle, one exterior angle is drawn. What is the smallest number of these three exterior angles that can be obtuse?",
+      GIVEN("q", "One exterior angle at each corner. Fewest obtuse ones?")),
+    B("An exterior angle sits on a straight line with the interior angle beside it. So the two of them add up to 180 degrees.",
+      LB("l1", "exterior + interior = 180°")),
+    B("Try an interior angle of 50. Its exterior angle is 180 minus 50, which is 130. That is obtuse. So an acute angle inside gives an obtuse angle outside.",
+      W("l2", "180 − 50 = 130")),
+    B("And an obtuse angle inside, say 100, gives 180 minus 100 outside, which is 80. That is acute.",
+      W("l3", "180 − 100 = 80")),
+    B("So for few obtuse angles outside, we want few acute angles inside. Could a triangle have just one acute angle?",
+      W("l4", "90 + 90 = 180"),
+      ask=CHOOSE(["yes", "no"], 1,
+                 "Then the other two angles would each be 90 degrees or more. Those two alone would reach 180, leaving nothing for the third angle.")),
+    B("No. Two angles of 90 or more would use up all 180 by themselves. So every triangle has at least 2 acute angles inside, and that means at least 2 obtuse angles outside."),
+    B("Can it be exactly 2? Take the triangle 100, 50, 30. Outside, its angles are 80, 130 and 150. Just two of them are obtuse.",
+      W("l5", "100 + 50 + 30 = 180"), W("l6", "180 − 30 = 150"), LB("l7", "Exterior: 80°, 130°, 150°"),
+      UL("l7", "130°"), UL("l7", "150°")),
+    B("So the smallest number is 2.",
+      *ANSL("a", "Fewest obtuse exterior angles = 2", "2")),
+    B("The trap is to answer 1, thinking of obtuse angles inside the triangle. Outside, it flips: acute inside means obtuse outside."),
+    B("So turn a question about exterior angles into one about interior angles. At least 2 acute inside gives at least 2 obtuse outside."),
+)
+
+# Base 20, height 9; the height to the 12 cm side.
+LESSONS["G5A_TRIANGLES_012"] = LESSON(
+    B("A triangle has a base of 20 centimetres, with a height of 9 centimetres drawn to it. Another side is 12 centimetres. What is the height drawn to that 12 centimetre side?",
+      GIVEN("q", "Base 20 cm, height 9 cm. Height to the 12 cm side?")),
+    B("Any side of a triangle can be the base, each with its own height. What never changes is the area. So find the area first.",
+      LB("f", "Area = ½ × base × height")),
+    B("Half of 20 is 10, and 10 times 9 is 90. The area is 90 square centimetres.",
+      W("l1", "½ × 20 × 9 = 90")),
+    B("Now use the 12 centimetre side as the base. Half of 12, times its height, must also be 90.",
+      LB("l2", "½ × 12 × height = 90")),
+    B("So what is 12 times the height?",
+      ask=CHOOSE(["90", "180", "45"], 1,
+                 "Half of 12 times the height is 90. So the full 12 times the height is twice as much, which is 180.")),
+    B("Twice 90 is 180, so 12 times the height is 180. The trap is to divide 90 by 12 and forget about the half.",
+      W("l3", "2 × 90 = 180"), LB("l4", "12 × height = 180")),
+    B("180 divided by 12 is 15. The height to the 12 centimetre side is 15 centimetres.",
+      *ANSC("l5", "180 ÷ 12 = 15", 15)),
+    B("Does that make sense? The 12 side is shorter than the 20 side, so its height has to be taller than 9 to keep the same area. And 15 is taller."),
+    B("Check: half of 12 is 6, and 6 times 15 is 90, the same area as before.",
+      W("l6", "½ × 12 × 15 = 90")),
+    B("So when one triangle has two bases, find the area from one pair, then use it to find the missing height. Here it is 15 centimetres."),
+)
+
+# Whole-number sides, perimeter 24: greatest possible longest side.
+LESSONS["G5A_TRIANGLES_013"] = LESSON(
+    B("A triangle has whole number sides and a perimeter of 24 centimetres. What is the greatest possible length of its longest side?",
+      GIVEN("q", "Whole-number sides, perimeter 24 cm. Greatest longest side?")),
+    B("The perimeter is fixed at 24. So when one side gets longer, the other two together get shorter. At some point they can no longer meet."),
+    B("Try a longest side of 12. The other two share 24 minus 12, which is 12. Can they make a triangle with it?",
+      W("l1", "24 − 12 = 12"),
+      ask=CHOOSE(["yes", "no, they lie flat"], 1,
+                 "The other two sides together are exactly 12, the same as the long side. To reach, they must lie flat along it, so there is no triangle.")),
+    B("No. They only equal the long side, so they lie flat. That is the trap: 12 is half the perimeter, and half is already too long.",
+      LB("l2", "12 against 12: flat")),
+    B("So try 11. The other two share 24 minus 11, which is 13. And 13 is more than 11, so they can meet.",
+      W("l3", "24 − 11 = 13"), W("l4", "13 > 11")),
+    B("For example, 11, 11 and 2. They add up to 24, and the two shorter sides, 11 and 2, make 13, which beats 11.",
+      W("l5", "11 + 11 + 2 = 24"), W("l6", "11 + 2 = 13 > 11")),
+    B("So the greatest possible longest side is 11 centimetres.",
+      *ANSL("a", "Greatest longest side = 11 cm", "11 cm")),
+    B("And a side like 22 is hopeless. The other two would share just 2 centimetres, and could never reach each other.",
+      W("l7", "24 − 22 = 2")),
+    B("So the longest side must be less than half the perimeter. Half of 24 is 12, so the greatest whole number is 11."),
+)
