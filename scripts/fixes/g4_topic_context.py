@@ -15,12 +15,17 @@ import g4_classify_inputs as g4  # noqa: E402
 
 
 def main():
-    rows = bank.load_bank(4)
-    for n in bank.tree_nodes(4):
+    grade = int(sys.argv[1]) if len(sys.argv) > 1 else 4
+    out_dir = os.path.join(os.path.dirname(g4.OUT), "g%d" % grade)
+    if not os.path.isdir(out_dir):
+        os.makedirs(out_dir)
+    g4.OUT = out_dir
+    rows = bank.load_bank(grade)
+    for n in bank.tree_nodes(grade):
         qs = [q for q in rows if q.get("node") == n["id"]]
         g4.dump("topic-%s.json" % n["id"], [{
             "id": q["id"], "source": q.get("source"),
-            "real": (q.get("source") or "").startswith(("g4_mse_final", "previous_year")),
+            "real": (q.get("source") or "").startswith(("g4_mse_final", "previous_year", "g5_final", "official_ipm")),
             "newlyWritten": q.get("source") == "g4_authored",
             "difficulty": q.get("difficulty"), "question": q.get("questionText"),
             "options": [o["text"] for o in q["options"]],

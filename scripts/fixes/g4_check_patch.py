@@ -85,8 +85,9 @@ def main():
     files = [a for a in sys.argv[1:] if not a.startswith("--")]
     if not files:
         raise SystemExit(__doc__)
-    by_id = {q["id"]: q for q in bank.load_bank(4)}
-    nodes = {n["id"] for n in bank.tree_nodes(4)}
+    # Grade 4 and Grade 5 files are both checked with this script.
+    by_id = {q["id"]: q for q in bank.load_bank(4) + bank.load_bank(5)}
+    nodes = {n["id"] for n in bank.tree_nodes(4) + bank.tree_nodes(5)}
     problems = []
     ok = 0
     for path in files:
