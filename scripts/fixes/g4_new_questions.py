@@ -32,9 +32,12 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import bank  # noqa: E402
 import g4_classify_inputs as g4  # noqa: E402
 
-G4 = g4.OUT
-RECORD = os.path.join(ROOT, "scripts", "fixes", "g4_authored.json")
-SOURCE = "g4_authored"
+# The grade is the second argument (4 unless given): gate 5, report 5, add 5.
+GRADE = int(sys.argv[2]) if len(sys.argv) > 2 else 4
+G4 = os.path.join(os.path.dirname(g4.OUT), "g%d" % GRADE)   # the grade's review folder
+g4.OUT = G4
+RECORD = os.path.join(ROOT, "scripts", "fixes", "g%d_authored.json" % GRADE)
+SOURCE = "g%d_authored" % GRADE
 # The blind solver marked these "above Grade 4" for using the circumference or area of a
 # circle; the real Grade 4 papers use both (with pi = 22/7), so they are accepted.
 ACCEPT_FIT = {"G4A_CIRCLE_015", "G4A_CIRCLE_021", "G4A_CIRCLE_022", "G4A_CIRCLE_025"}
@@ -59,16 +62,26 @@ def written():
     for path in sorted(paths, key=lambda p: int(re.search(r"new-(\d+)\.json$", p).group(1))):
         for p in load(path):
             counters[p["topic"]] += 1
-            qid = "G4A_%s_%03d" % (p["topic"].replace("gr4_", "").upper(), counters[p["topic"]])
+            qid = "G%dA_%s_%03d" % (GRADE, p["topic"].replace("gr%d_" % GRADE, "").upper(), counters[p["topic"]])
             out.append((qid, p))
     return out
 
 
 def to_bank(qid, p, nodes, difficulty):
     node = nodes[p["topic"]]
+    label = node["name"]
+    if node.get("key"):
+        # A label the topic's key reaches and no other topic's does.
+        tree = bank.tree_nodes()
+        for attempt in ("Grade %d — %s" % (GRADE, node["name"]), "Grade %d — %s (%s)" % (GRADE, node["name"], node["key"]),
+                        "Grade %d — %s" % (GRADE, node["key"].capitalize())):
+            trial = {"id": qid, "topicId": node["db"], "subTopic": attempt}
+            label = attempt
+            if bank.assign_node(trial, tree) == p["topic"] and len(bank.candidate_nodes(trial, tree)) == 1:
+                break
     return {
         "id": qid, "node": p["topic"], "topicId": node["db"],
-        "subTopic": ("Grade 4 — %s" % node["name"]) if node.get("key") else node["name"],
+        "subTopic": label,
         "difficulty": difficulty, "questionText": p["question"], "questionLatex": "",
         "options": [{"id": LETTERS[i], "text": str(t)} for i, t in enumerate(p["options"])],
         "correctAnswer": LETTERS[p["answer"]],
@@ -113,7 +126,7 @@ def judge(qid, p, round1, gate_a, gate_b):
 
 def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "report"
-    nodes = {n["id"]: n for n in bank.tree_nodes(4)}
+    nodes = {n["id"]: n for n in bank.tree_nodes(GRADE)}
     rows = written()
     questions = bank.load_bank()
     have = {q["id"] for q in questions}
@@ -161,7 +174,7 @@ def main():
     if mode != "add":
         return
 
-    texts = {re.sub(r"[^a-z0-9]+", " ", (q.get("questionText") or "").lower()).strip() for q in questions if str(q.get("node") or "").startswith("gr4_")}
+    texts = {re.sub(r"[^a-z0-9]+", " ", (q.get("questionText") or "").lower()).strip() for q in questions if str(q.get("node") or "").startswith("gr%d_" % GRADE)}
     record = load(RECORD) if os.path.exists(RECORD) else {}
     added = 0
     for qid, p, level in new:
