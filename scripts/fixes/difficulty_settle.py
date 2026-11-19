@@ -24,7 +24,10 @@ sys.path.append(os.path.join(ROOT, "scripts", "bank"))
 import bank  # noqa: E402
 
 D = os.path.join(ROOT, "data", "bank-import", "difficulty")
-RECORD = os.path.join(ROOT, "scripts", "fixes", "g4_difficulty.json")
+# The grade is the second argument (4 unless given): report 5, tiebreak 5, apply 5.
+GRADE = int(sys.argv[2]) if len(sys.argv) > 2 else 4
+G = "g%d" % GRADE
+RECORD = os.path.join(ROOT, "scripts", "fixes", "%s_difficulty.json" % G)
 LEVELS = ("Easy", "Medium", "Hard")
 RANK = {"Easy": 0, "Medium": 1, "Hard": 2}
 REAL = re.compile(r"^(g\d_final_|g\d_mse_final_|previous_year_)\d{4}$")
@@ -68,30 +71,35 @@ def final(a, b, t):
 
 def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "report"
-    a, b = load_ratings("g4-out-*-A.json"), load_ratings("g4-out-*-B.json")
-    tie = load_ratings("g4-tie-out-*.json")
-    rows = bank.load_bank(4)
+    a, b = load_ratings(G + "-out-*-A.json"), load_ratings(G + "-out-*-B.json")
+    tie = load_ratings(G + "-tie-out-*.json")
+    rows = bank.load_bank(GRADE)
     by_id = {q["id"]: q for q in rows}
-    names = {n["id"]: n["name"] for n in bank.tree_nodes(4)}
+    names = {n["id"]: n["name"] for n in bank.tree_nodes(GRADE)}
+    a = {i: r for i, r in a.items() if i in by_id}
+    b = {i: r for i, r in b.items() if i in by_id}
+    missing = [q["id"] for q in rows if q["id"] not in a or q["id"] not in b]
+    if missing:
+        print("NOTE: %d questions of the bank do not yet have two ratings" % len(missing))
     ids, exact, far, table, kappa = agreement(a, b)
 
     if mode == "tiebreak":
         split = sorted(i for i in ids if a[i]["level"] != b[i]["level"])
         src = {}
-        for path in sorted(glob.glob(os.path.join(D, "g4-in-*.json"))):
+        for path in sorted(glob.glob(os.path.join(D, G + "-in-*.json"))):
             with io.open(path, encoding="utf-8") as f:
                 for row in json.load(f):
                     src[row["id"]] = row
-        parts = 2
+        parts = max(1, (len(split) + 169) // 170)
         size = (len(split) + parts - 1) // parts
         for i in range(parts):
             chunk = split[i * size:(i + 1) * size]
-            with io.open(os.path.join(D, "g4-tie-in-%d.json" % (i + 1)), "w", encoding="utf-8", newline="\n") as f:
+            with io.open(os.path.join(D, "%s-tie-in-%d.json" % (G, i + 1)), "w", encoding="utf-8", newline="\n") as f:
                 json.dump([dict(src[q], between=sorted([a[q]["level"], b[q]["level"]], key=RANK.get)) for q in chunk], f, ensure_ascii=False, indent=1)
-            print("g4-tie-in-%d.json  %d questions" % (i + 1, len(chunk)))
+            print("%s-tie-in-%d.json  %d questions" % (G, i + 1, len(chunk)))
         return
 
-    print("GRADE 4: %d questions rated twice" % len(ids))
+    print("GRADE %d: %d questions rated twice" % (GRADE, len(ids)))
     print("  same level from both raters: %d (%d%%); one level apart: %d; Easy against Hard: %d; weighted kappa %.2f" % (
         exact, round(100.0 * exact / len(ids)), len(ids) - exact - far, far, kappa))
     print("  rater A across / rater B down:      Easy Medium  Hard")
@@ -99,7 +107,7 @@ def main():
         print("    %-30s %5d %6d %5d" % (y, table[("Easy", y)], table[("Medium", y)], table[("Hard", y)]))
 
     g5a, g5b = load_ratings("g5cal-out-A.json"), load_ratings("g5cal-out-B.json")
-    if g5a and g5b:
+    if g5a and g5b and GRADE == 4:
         gid, gex, gfar, _, gk = agreement(g5a, g5b)
         g5 = {q["id"]: q for q in bank.load_bank(5)}
         print("\nGRADE 5 benchmark: %d real-paper questions rated twice; same level %d%%, weighted kappa %.2f" % (len(gid), round(100.0 * gex / len(gid)), gk))
@@ -130,7 +138,11 @@ def main():
 
     def kind(q):
         s = q.get("source") or ""
-        return "real past papers" if REAL.match(s) else {"hand_crafted": "hand-written", "g4_authored": "newly written"}.get(s, "worksheets" if "worksheet" in s else "generated")
+        if REAL.match(s) or s == "official_ipm_2020":
+            return "real past papers"
+        named = {"hand_crafted": "hand-written", "g4_authored": "newly written", "ipm_textbook": "textbook",
+                 "pdf_extracted": "worksheets", "ai_generated": "AI-written"}
+        return named.get(s, "worksheets" if "worksheet" in s else "generated")
 
     print("\nGrade 4, stored label against settled label (settled questions only)")
     print("  %-22s %-16s %-16s %s" % ("", "stored E/M/H", "settled E/M/H", "labels that change"))

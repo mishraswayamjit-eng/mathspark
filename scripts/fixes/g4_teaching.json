@@ -80,10 +80,37 @@
 },
 "Q_CH12_009": {
 "C": "4440"
+},
+"PYQ_2017_Q33": {
+"A": "MCCCCIV"
+},
+"Q_CH17_019": {
+"C": "3:20 PM"
+},
+"Q_CH12_024": {
+"B": "3.65 kg"
 }
 },
 "reword": {
-"EXT_G4_FP_2025_027": "15th August 2024 was a Thursday. Which of these days came 5 times in that month?"
+"EXT_G4_FP_2025_027": "15th August 2024 was a Thursday. Which of these days came 5 times in that month?",
+"Q_CH15_009": "In this magic square with fractions, every row, every column and both diagonals add up to the same total. Top row: 2, 7/3, 2/3. Middle row: 1/3, ?, 3. Bottom row: 8/3, 1, 4/3. Find the number in place of the question mark.",
+"EXT_G4_FP_2021_032": "By what smallest number must 28 be multiplied to get a perfect square?",
+"EXT_G4_FP_2021_005": "In a hall, the chairs are arranged so that the number of rows is equal to the number of chairs in each row. One man sits on each chair and every chair is filled. Which of these can be the number of men in the hall?",
+"EXT_G4_FP_2023_029": "Look at this square of numbers. Top row: 3, 7, 8. Middle row: 9, 21, 24. Bottom row: 81, 441, Q. The numbers going down each column follow the same rule. Find Q.",
+"EXT_G4_FP_2022_028": "Look at this square of numbers. Top row: 7, 13, 24. Middle row: 3, 6, Z. Bottom row: 16, 49, 169. The numbers going down each column follow the same rule. Which number is in place of Z?",
+"EXT_G4_WS2_CH15_002": "A 3 by 3 magic square has top row 4, 3, 8 and middle row 9, 5, 1. The bottom row is still empty. When the magic square is completed, which of these numbers will not be used?",
+"PYQ_2018_Q24": "A boy has six number cards: 4, 4, 4, 9, 9, 9. He uses 5 of the cards to make a 3-digit number and a 2-digit number. Which of these can be the difference between the 3-digit number and the 2-digit number?",
+"EXT_G4_FP_2024_024": "Eight equal circles are drawn inside a rectangle in 2 rows of 4. Each circle just touches the circles next to it and the nearest sides of the rectangle. The radius of each circle is 4 cm. What is the area of the rectangle?",
+"PYQ_2019_Q15": "Eight circles of equal diameters are drawn in a rectangle in 2 rows of 4. Each circle touches the circles next to it and the nearest sides of the rectangle at one point only. The radius of each circle is 6 cm. Find the perimeter of the rectangle.",
+"EXT_G4_FP_2022_033": "Eight equal circles are drawn inside a rectangle in 2 rows of 4. Each circle touches the circles next to it and the nearest sides of the rectangle at one point only. The radius of each circle is 7 cm. What is the area of the rectangle?",
+"EXT_G4_FP_2023_007": "Which of the following can be the product of (★ ★ 6) and (★ 9), where ★ denotes digits not necessarily the same?",
+"EXT_G4_FP_2024_011": "The perimeter of a square is equal to the perimeter of an equilateral triangle. Each side of the triangle is 16 cm. What is the area of the square?",
+"EXT_G4_FP_2025_007": "Use BODMAS to find the value of 192 ÷ (12 + (72 ÷ 8 − 5) × 3).",
+"EXT_G4_FP_2020_006": "How many diameters of a circle can be drawn from one point on the circle?",
+"EXT_G4_FP_2021_037": "Triangle BED has a base of 6 cm and a height of 4 cm. What is the area of triangle BED?",
+"PYQ_2019_Q30": "The perimeter of a square is 36 cm. Three such squares are joined edge to edge in one straight row to make a rectangle. What will be the perimeter of the resulting rectangle?",
+"PYQ_2016_Q24": "A rectangle of length 4 cm and breadth 1 cm is cut into 4 equal squares. By how much is the sum of the perimeters of the 4 squares more than the perimeter of the rectangle?",
+"PYQ_2019_Q07": "Eight points, named A to H, are marked on the circumference of a circle. How many line segments can be drawn by joining any two of these points?"
 },
 "teach": {
 "EXT_G4_FP_2021_010": {
@@ -2627,26 +2654,29 @@
 },
 "EXT_G4_FP_2020_006": {
 "hints": [
-"This is about the parts of a circle. Remember what a diameter must pass through.",
-"A diameter is a straight line across the circle that passes through the centre. Pick a point on the circle and draw a line from it through the centre.",
-"Similar example: how many radii can be drawn from the centre of a circle? A radius joins the centre to any point on the circle, and there are endless points on the circle. So endless radii can be drawn."
+"Think about what makes a line a diameter. It has to pass through one special point of the circle.",
+"A diameter starts on the circle, passes through the centre, and ends on the circle. From your point, how many straight lines go through the centre?",
+"Similar example: how many radii can be drawn from the centre of a circle? A radius joins the centre to a point on the circle. There are endless points on the circle, so endless radii can be drawn from the centre."
 ],
 "steps": [
 {
-"text": "A diameter joins two points on the circle and passes through the centre."
+"text": "A diameter is a straight line that joins two points on the circle and passes through the centre."
 },
 {
-"text": "Start at the given point on the circle. A straight line from it through the centre can be drawn in only one way."
+"text": "Start at the chosen point on the circle. To be a diameter, the line must go straight through the centre."
+},
+{
+"text": "Only one straight line can pass through two fixed points, here the chosen point and the centre."
 },
 {
 "text": "So only 1 diameter can be drawn from a point on the circle."
 }
 ],
 "notes": {
-"A": "Yes! Only one straight line from that point passes through the centre.",
-"B": "Try drawing it. A straight line from the point must pass through the centre, and only one line does that.",
-"C": "Many chords can be drawn from the point, but only the one through the centre is a diameter.",
-"D": "A circle has endless diameters in all. From one fixed point on it, only one passes through the centre."
+"A": "Yes! A diameter must pass through the centre, and only one straight line joins your point to the centre and carries on to the other side.",
+"B": "Other lines from the point miss the centre, so they are chords, not diameters. Count only the line that passes through the centre.",
+"C": "Many chords can be drawn from one point, but a diameter must pass through the centre. Only one line from the point does that.",
+"D": "A whole circle has endless diameters, but each one starts from a different point. From one point, only one line goes through the centre."
 }
 },
 "EXT_G4_FP_2021_024": {
@@ -2707,9 +2737,9 @@
 },
 "EXT_G4_FP_2022_033": {
 "hints": [
-"This is an area problem. Each circle touches its neighbours and the sides, so the circles tell you the size of the rectangle.",
-"Find the diameter of one circle. Each circle fits exactly inside a square whose side is that diameter.",
-"Similar example: 6 equal circles of radius 5 cm fill a rectangle in 2 rows of 3. The diameter is 10 cm, so each circle sits in a square of area 10 × 10 = 100 sq. cm. Six squares make 6 × 100 = 600 sq. cm."
+"The circles fill the rectangle exactly, so its length and breadth can be counted in circle widths. The width of a circle is its diameter.",
+"Find the diameter of one circle: it is twice the radius of 7 cm. The length of the rectangle is 4 diameters and the breadth is 2 diameters.",
+"Similar example: 10 equal circles of radius 2 cm sit in a rectangle in 2 rows of 5. The diameter is 4 cm. The length is 5 × 4 = 20 cm and the breadth is 2 × 4 = 8 cm, so the area is 20 × 8 = 160 sq cm."
 ],
 "steps": [
 {
@@ -2717,22 +2747,23 @@
 "latex": "2 \\times 7 = 14"
 },
 {
-"text": "Each circle fits exactly in a square of side 14 cm.",
-"latex": "14 \\times 14 = 196"
+"text": "The length holds 4 circles side by side.",
+"latex": "4 \\times 14 = 56"
 },
 {
-"text": "The 8 circles fill the rectangle, so the rectangle is made of 8 such squares.",
-"latex": "8 \\times 196 = 1568"
+"text": "The breadth holds 2 circles.",
+"latex": "2 \\times 14 = 28"
 },
 {
-"text": "The area of the rectangle is 1568 sq. cm."
+"text": "Area is length times breadth. The area of the rectangle is 1568 sq.cm.",
+"latex": "56 \\times 28 = 1568"
 }
 ],
 "notes": {
-"A": "Yes! Each circle sits in a 14 cm square of 196 sq. cm, and 8 × 196 = 1568.",
-"B": "Check the multiplication: each square is 14 × 14 = 196 sq. cm, and there are 8 of them.",
-"C": "784 is half of the area. Use the diameter, 14 cm, for both sides of each square, and count all 8 circles.",
-"D": "Work it out again: the diameter is 14 cm, one square is 196 sq. cm, and 8 squares fill the rectangle."
+"A": "Yes! The diameter is 14 cm, so the rectangle is 56 cm by 28 cm, and 56 × 28 = 1568.",
+"B": "The sides may be right, so check the multiplying. 56 × 20 = 1120 and 56 × 8 = 448. Add these two.",
+"C": "784 is 28 × 28, which uses a length of only 2 diameters. The length holds 4 circles, so it is 4 × 14 = 56 cm.",
+"D": "This is a little too big. Try 56 × 28 in two parts, 56 × 20 and 56 × 8, then add them."
 }
 },
 "EXT_G4_FP_2023_033": {
@@ -10008,36 +10039,33 @@
 },
 "EXT_G4_FP_2025_007": {
 "hints": [
-"This has a bracket inside a bracket, so start with the innermost one. A number written right next to a bracket means multiply.",
-"Begin with 72 ÷ 8 − 5 in the inner bracket. Divide before you subtract. The 3 next to the bracket multiplies it.",
-"Here is a similar one: 100 ÷ (4 + (30 ÷ 5 − 3)2). Inside, 30 ÷ 5 = 6 and 6 − 3 = 3. Then 3 × 2 = 6 and 4 + 6 = 10. Last, 100 ÷ 10 = 10."
+"Work from the innermost brackets outwards. Inside each bracket, do division and multiplication before addition and subtraction.",
+"Start with the inner bracket, 72 ÷ 8 − 5. Do the division first, then the subtraction.",
+"Similar example: 100 ÷ (4 + (18 ÷ 3 − 4) × 3). Inner bracket: 18 ÷ 3 = 6, then 6 − 4 = 2. Next 2 × 3 = 6, then 4 + 6 = 10. Last, 100 ÷ 10 = 10."
 ],
 "steps": [
 {
-"text": "Inner bracket: divide, then subtract.",
-"latex": "72 \\div 8 - 5 = 4"
+"text": "Inner bracket first: divide, then subtract.",
+"latex": "72 \\div 8 = 9 \\quad 9 - 5 = 4"
 },
 {
-"text": "The 3 next to the bracket means times 3.",
+"text": "In the outer bracket, multiply before adding.",
 "latex": "4 \\times 3 = 12"
 },
 {
-"text": "Finish the outer bracket.",
+"text": "Now add inside the outer bracket.",
 "latex": "12 + 12 = 24"
 },
 {
-"text": "Divide.",
+"text": "Last, divide. The value is 8.",
 "latex": "192 \\div 24 = 8"
-},
-{
-"text": "The answer is 8."
 }
 ],
 "notes": {
 "A": "Yes! The inner bracket is 4, then 4 × 3 = 12, 12 + 12 = 24, and 192 ÷ 24 = 8.",
-"B": "Check the outer bracket. It is 12 + 12 = 24, and 24 goes into 192 more than 6 times.",
-"C": "This is 192 ÷ 12. The whole bracket has to be worked out first, and it comes to 24.",
-"D": "12 is the value of one part of the bracket. Finish the bracket, 12 + 12 = 24, and then divide 192 by it."
+"B": "This needs the outer bracket to be 32. Work it step by step: 72 ÷ 8 = 9, 9 − 5 = 4, 4 × 3 = 12, then 12 + 12.",
+"C": "This comes from dividing 192 by 12 alone. The whole outer bracket must be worked out first, and it comes to 24.",
+"D": "This comes from an outer bracket of 16, which leaves out the multiplying by 3. After 9 − 5 = 4, multiply by 3 before adding 12."
 }
 },
 "EXT_G4_FP_2025_032": {
@@ -13712,35 +13740,36 @@
 },
 "EXT_G4_FP_2023_007": {
 "hints": [
-"Some digits are hidden, so you cannot work out one exact product. Look for clues that every such product must obey.",
-"Multiply the two ones digits you can see, 6 and 9. The product must end in the same digit as that.",
-"Here is a similar one: (□□2) × (□3), a 3-digit number times a 2-digit number. 2 × 3 = 6, so the product ends in 6. The smallest it can be is 102 × 13 = 1326 and the largest is 992 × 93 = 92256."
+"You cannot know the hidden digits, but you can still check two things about the product: its last digit and its size.",
+"Multiply the last digits, 6 × 9, to find what the product must end in. Then think how small and how big a 3-digit number times a 2-digit number can be.",
+"Similar example: (★ ★ 3) × (★ 7). 3 × 7 = 21, so the product ends in 1. The smallest it can be is 103 × 17 = 1751 and the largest is 993 × 97 = 96321. So 1231 is too small, but 10011 fits, because 213 × 47 = 10011."
 ],
 "steps": [
 {
-"text": "Each A is a hidden digit. Look at the ones digits you can see. The product must end in 4.",
+"text": "Multiply the last digits to find the last digit of the product. It must end in 4.",
 "latex": "6 \\times 9 = 54"
 },
 {
-"text": "A 3-digit number ending in 6 times a 2-digit number ending in 9 is at least 106 × 19. So 1854 is too small.",
+"text": "All four choices end in 4, so check the size next. The smallest possible product is 106 times 19.",
 "latex": "106 \\times 19 = 2014"
 },
 {
-"text": "It is at most 996 × 99. So 986004 is too big.",
+"text": "The largest possible product is 996 times 99. So 1854 is too small and 986004 is too big.",
 "latex": "996 \\times 99 = 98604"
 },
 {
-"text": "40548 ends in 8, not 4."
+"text": "For 40548, a 2-digit number ending in 9 would have to divide it exactly. None of 19, 29, 39, 49, 59, 69, 79, 89 or 99 does."
 },
 {
-"text": "Only 51684 fits. For example, 876 × 59 = 51684. So the product can be 51684."
+"text": "For the choice that is left, 876 times 59 fits the pattern. So the product can be 51684.",
+"latex": "876 \\times 59 = 51684"
 }
 ],
 "notes": {
-"A": "It ends in 4, but it is too small. Even 106 × 19 is 2014.",
-"B": "It ends in 4, but it has too many digits. Even 996 × 99 is only 98604.",
-"C": "Yes! It ends in 4 and it is the right size for a 3-digit number times a 2-digit number.",
-"D": "6 × 9 = 54, so the product must end in 4. This one ends in 8."
+"A": "This is too small. Even the smallest numbers that fit, 106 and 19, give 2014.",
+"B": "This is too big. Even the largest numbers that fit, 996 and 99, give only 98604, which has five digits.",
+"C": "Yes! It ends in 4, it is the right size, and 876 × 59 = 51684 fits the pattern.",
+"D": "The last digit and the size both look fine, so this was a careful try. But no 2-digit number ending in 9 divides 40548 exactly, so it cannot be made."
 }
 },
 "EXT_G4_FP_2024_018": {
@@ -13841,65 +13870,64 @@
 },
 "EXT_G4_FP_2022_028": {
 "hints": [
-"Look for one rule that links the numbers going down each column. The same rule must work in every column.",
-"Look at the first column: 7, 3 and 16. Subtract the middle number from the top one, and see how the result is linked to 16.",
-"Here is a similar one: a column holds 9, 4 and 25. 9 − 4 = 5 and 5 × 5 = 25. If another column has 20 on top and 36 at the bottom, then 6 × 6 = 36, so the middle number is 20 − 6 = 14."
+"Read each column from top to bottom. See how the top two numbers can be used to make the bottom number.",
+"Look at the first column: 7, 3, 16. Find 7 − 3, then think how that answer is linked to 16. Check the idea on the second column.",
+"Similar example: a column reads 9, 4, 25. 9 − 4 = 5 and 5 × 5 = 25. If another column reads 15, ?, 64, then 8 × 8 = 64, so the difference is 8 and the missing number is 15 − 8 = 7."
 ],
 "steps": [
 {
-"text": "First column: 7 − 3 = 4, and 4 × 4 = 16.",
-"latex": "7 - 3 = 4"
+"text": "First column: subtract the middle number from the top number, then multiply the answer by itself.",
+"latex": "7 - 3 = 4 \\quad 4 \\times 4 = 16"
 },
 {
-"text": "Second column: 13 − 6 = 7, and 7 × 7 = 49. The rule works again."
+"text": "The second column follows the same rule.",
+"latex": "13 - 6 = 7 \\quad 7 \\times 7 = 49"
 },
 {
-"text": "Third column: find the number that gives 169 when multiplied by itself.",
+"text": "Third column: the bottom number is 169, and 13 times 13 is 169. So 24 minus Z must be 13.",
 "latex": "13 \\times 13 = 169"
 },
 {
-"text": "So 24 − Z must be 13.",
+"text": "So Z is 11.",
 "latex": "24 - 13 = 11"
-},
-{
-"text": "So Z = 11."
 }
 ],
 "notes": {
-"A": "13 is the number that makes 169 when multiplied by itself. Z is what you take from 24 to leave 13.",
-"B": "24 − 15 = 9 and 9 × 9 = 81, not 169. You need 24 − Z to be 13.",
-"C": "Yes! 24 − 11 = 13 and 13 × 13 = 169.",
-"D": "24 − 8 = 16 and 16 × 16 = 256, not 169. You need 24 − Z to be 13."
+"A": "13 is the difference that gives 169, because 13 × 13 = 169. Z is the number you take from 24 to leave 13.",
+"B": "24 − 15 = 9, and 9 × 9 = 81, not 169. The difference needs to be 13.",
+"C": "Yes! 24 − 11 = 13 and 13 × 13 = 169, just like the other two columns.",
+"D": "24 − 8 = 16, and 16 × 16 = 256, not 169. The difference needs to be 13."
 }
 },
 "EXT_G4_FP_2023_029": {
 "hints": [
-"Look for one rule that links the numbers going down each column. The same rule must work in every column.",
-"Look at the first column: 3, 9 and 81. See how 3 becomes 9, and then how 9 becomes 81.",
-"Here is a similar one: a column holds 2, 6 and 36. 2 × 3 = 6 and 6 × 6 = 36. With the same rule, a column that starts with 5 goes 5 × 3 = 15, then 15 × 15 = 225."
+"Read each column from top to bottom. Find how the top number becomes the middle number, and how the middle number becomes the bottom number.",
+"Look at the first column: 3, 9, 81. What do you do to 3 to get 9? What do you do to 9 to get 81? Check that the second column works the same way.",
+"Similar example: a column reads 2, 6, 36. The top number is multiplied by 3 to get 6, and 6 is multiplied by itself to get 36. A column starting with 5 would then read 5, 15, 225."
 ],
 "steps": [
 {
-"text": "First column: 3 × 3 = 9, and 9 × 9 = 81.",
-"latex": "9 \\times 9 = 81"
+"text": "First column: 3 becomes 9, then 9 becomes 81.",
+"latex": "3 \\times 3 = 9 \\quad 9 \\times 9 = 81"
 },
 {
-"text": "Second column: 7 × 3 = 21, and 21 × 21 = 441. The rule works again."
+"text": "The second column follows the same rule: multiply by 3, then multiply the result by itself.",
+"latex": "7 \\times 3 = 21 \\quad 21 \\times 21 = 441"
 },
 {
-"text": "Third column: 8 × 3 = 24, which matches the middle number.",
+"text": "Third column: 8 times 3 is 24, so Q is 24 times 24.",
 "latex": "8 \\times 3 = 24"
 },
 {
-"text": "Now multiply 24 by itself. So Q = 576.",
+"text": "So Q is 576.",
 "latex": "24 \\times 24 = 576"
 }
 ],
 "notes": {
-"A": "196 is 14 × 14. The bottom number is the middle number, 24, multiplied by itself.",
-"B": "Yes! 8 × 3 = 24 and 24 × 24 = 576.",
-"C": "484 is 22 × 22. You need 24 × 24. Try 24 × 20 and 24 × 4, then add.",
-"D": "676 is 26 × 26. You need 24 × 24. Try 24 × 20 and 24 × 4, then add."
+"A": "196 is 14 × 14. The number above Q is 24, so Q should be 24 multiplied by itself.",
+"B": "Yes! Each bottom number is the middle number times itself, and 24 × 24 = 576.",
+"C": "484 is 22 × 22. The number above Q is 24, so work out 24 × 24.",
+"D": "676 is 26 × 26. The number above Q is 24, so Q is 24 × 24."
 }
 },
 "EXT_G4_FP_2024_015": {
@@ -13965,31 +13993,35 @@
 },
 "EXT_G4_WS2_CH15_002": {
 "hints": [
-"In a magic square every row, every column and both diagonals add up to the same total. Find that total first.",
-"Add the three numbers in the first row: 4, 3 and 8. That total tells you what the missing numbers must be.",
-"Here is a similar one: a magic square starts with the rows 2, 7, 6 and 9, 5, 1. Each row adds up to 15. The last row is 15 − 2 − 9 = 4, then 15 − 7 − 5 = 3, then 15 − 6 − 1 = 8."
+"In a magic square every row and every column adds up to the same total. Find the total from a full row, then fill in the empty row.",
+"Add the top row: 4 + 3 + 8. Each column must reach the same total, so work out what is missing under 4 and 9, under 3 and 5, and under 8 and 1.",
+"Similar example: a magic square has top row 2, 7, 6 and middle row 9, 5, 1. Each line adds up to 15. The first column has 2 + 9, so it needs 4. The second has 7 + 5, so it needs 3. The third has 6 + 1, so it needs 8. The bottom row is 4, 3, 8."
 ],
 "steps": [
 {
-"text": "The first row is 4, 3, 8. Add it up.",
+"text": "Find the total of a full row.",
 "latex": "4 + 3 + 8 = 15"
 },
 {
-"text": "The second row is 9, 5, 1, which also adds up to 15. So the magic total is 15.",
-"latex": "9 + 5 + 1 = 15"
+"text": "Each column must also add up to 15. The first column already has 4 and 9.",
+"latex": "15 - 4 - 9 = 2"
 },
 {
-"text": "Fill the last row using the columns: 15 − 4 − 9 = 2, then 15 − 3 − 5 = 7, then 15 − 8 − 1 = 6."
+"text": "Do the same for the second and third columns.",
+"latex": "15 - 3 - 5 = 7 \\quad 15 - 8 - 1 = 6"
 },
 {
-"text": "The finished square uses each number from 1 to 9 once. So 11 is the number that is not used."
+"text": "The bottom row is 2, 7, 6. The finished square uses the numbers 1 to 9, once each."
+},
+{
+"text": "3, 6 and 9 are all in the square. The number that will not be used is 11."
 }
 ],
 "notes": {
-"A": "3 is already there, in the first row: 4, 3, 8.",
-"B": "6 goes in the last row, because 15 − 8 − 1 = 6.",
-"C": "9 is already there, at the start of the second row.",
-"D": "Yes! The finished square uses only the numbers 1 to 9, so 11 is never used."
+"A": "3 is already in the top row, so it is used. Look for a number that is not in the finished square.",
+"B": "6 goes in the bottom row, under 8 and 1, because 8 + 1 + 6 = 15. So it is used.",
+"C": "9 is already in the middle row, so it is used. The finished square holds the numbers 1 to 9.",
+"D": "Yes! The finished square uses 1 to 9 once each, so 11 never appears."
 }
 },
 "EXT_G4_FP_2020_017": {
@@ -14143,62 +14175,60 @@
 },
 "EXT_G4_FP_2024_011": {
 "hints": [
-"Both shapes have the same distance round them. Use the triangle to find that distance, then use it for the square.",
-"An equilateral triangle has 3 equal sides. Find its perimeter from the side of 16 cm.",
-"Here is a similar one: the triangle's side is 8 cm. Perimeter = 3 × 8 = 24 cm. The square's side = 24 ÷ 4 = 6 cm. Area = 6 × 6 = 36 cm.sq."
+"Use the triangle to find the perimeter the two shapes share. Then use that perimeter to find the side of the square, and last its area.",
+"An equilateral triangle has 3 equal sides, so find its perimeter: 3 × 16 cm. The square has the same perimeter, shared equally among 4 sides.",
+"Similar example: an equilateral triangle of side 8 cm has perimeter 3 × 8 = 24 cm. A square with the same perimeter has side 24 ÷ 4 = 6 cm, and its area is 6 × 6 = 36 sq cm."
 ],
 "steps": [
 {
-"text": "The 16 cm is the side of the triangle. It has 3 equal sides, so find its perimeter.",
+"text": "Perimeter of the triangle: 3 equal sides of 16 cm.",
 "latex": "3 \\times 16 = 48"
 },
 {
-"text": "The square has the same perimeter, shared among 4 equal sides.",
+"text": "The square has the same perimeter, 48 cm, shared among 4 equal sides.",
 "latex": "48 \\div 4 = 12"
 },
 {
-"text": "Area of the square is side × side.",
+"text": "Area of the square is side times side. The area is 144 cm.sq.",
 "latex": "12 \\times 12 = 144"
-},
-{
-"text": "So the area of the square is 144 cm.sq."
 }
 ],
 "notes": {
-"A": "This is 16 × 16, but 16 cm is the triangle's side. The square's side is 48 ÷ 4 = 12 cm.",
-"B": "Yes! The perimeter is 48 cm, the square's side is 12 cm, and 12 × 12 = 144.",
-"C": "100 is 10 × 10. Check the square's side: 48 ÷ 4 = 12 cm.",
-"D": "Check the two steps. The square's side is 48 ÷ 4 = 12 cm, and its area is 12 × 12."
+"A": "256 is 16 × 16, which treats 16 cm as the side of the square. 16 cm is the side of the triangle, so find the perimeter first.",
+"B": "Yes! The perimeter is 3 × 16 = 48 cm, the side of the square is 48 ÷ 4 = 12 cm, and 12 × 12 = 144.",
+"C": "This needs a square of side 10 cm, with perimeter 40 cm. The shared perimeter is 3 × 16 = 48 cm.",
+"D": "Check the side of the square: 48 ÷ 4 = 12 cm. The area is side times side, 12 × 12."
 }
 },
 "EXT_G4_FP_2024_024": {
 "hints": [
-"Each circle fits exactly inside its own small square. The rectangle is made of these squares side by side.",
-"Find how wide one circle is. The distance across a circle, its diameter, is twice the radius.",
-"Here is a similar one: 6 equal circles of radius 5 cm fill a rectangle. Each circle is 10 cm across, so it sits in a square of 10 × 10 = 100 cm.sq. The rectangle is 6 × 100 = 600 cm.sq."
+"The circles fill the rectangle exactly, so its length and breadth can be counted in circle widths. The width of a circle is its diameter.",
+"Find the diameter of one circle: it is twice the radius of 4 cm. The length of the rectangle is 4 diameters and the breadth is 2 diameters.",
+"Similar example: 6 equal circles of radius 5 cm sit in a rectangle in 2 rows of 3. The diameter is 10 cm. The length is 3 × 10 = 30 cm and the breadth is 2 × 10 = 20 cm, so the area is 30 × 20 = 600 sq cm."
 ],
 "steps": [
 {
-"text": "The diameter of each circle is twice its radius.",
+"text": "The diameter of each circle is twice the radius.",
 "latex": "2 \\times 4 = 8"
 },
 {
-"text": "Each circle sits in its own square of side 8 cm.",
-"latex": "8 \\times 8 = 64"
+"text": "The length holds 4 circles side by side.",
+"latex": "4 \\times 8 = 32"
 },
 {
-"text": "The 8 circles fill the rectangle, so it is made of 8 such squares.",
-"latex": "8 \\times 64 = 512"
+"text": "The breadth holds 2 circles.",
+"latex": "2 \\times 8 = 16"
 },
 {
-"text": "So the area of the rectangle is 512 cm.sq."
+"text": "Area is length times breadth. The area of the rectangle is 512 cm.sq.",
+"latex": "32 \\times 16 = 512"
 }
 ],
 "notes": {
-"A": "This is 4 squares of 64, only half of the rectangle. There are 8 circles, so count 8 squares.",
-"B": "Check the size of one square: 8 × 8 = 64. Then take 8 of them.",
-"C": "Yes! Each circle needs a square of 64 cm.sq, and 8 × 64 = 512.",
-"D": "Each circle needs a square of 8 × 8 = 64. Multiply that by the 8 circles."
+"A": "256 is 16 × 16, which uses 16 cm for the length as well as the breadth. The length holds 4 whole circles: 4 × 8 = 32 cm.",
+"B": "Check the sides again. The length is 4 diameters, 32 cm, and the breadth is 2 diameters, 16 cm. Multiply those two.",
+"C": "Yes! The diameter is 8 cm, so the rectangle is 32 cm by 16 cm, and 32 × 16 = 512.",
+"D": "This is a little too big. The rectangle is exactly 4 diameters long and 2 diameters wide: 32 cm by 16 cm."
 }
 },
 "EXT_G4_FP_2024_032": {
@@ -15174,30 +15204,34 @@
 },
 "EXT_G4_FP_2021_005": {
 "hints": [
-"When the number of rows equals the number of chairs in each row, the chairs make a square. Think about what kind of number the total must be.",
-"The total is a number multiplied by itself. Test each choice: can it be written as some number times that same number?",
-"Similar example: could a hall like this hold 196 people? Yes, because 14 × 14 = 196, so there are 14 rows of 14 chairs. Could it hold 200? No, because 200 lies between 14 × 14 = 196 and 15 × 15 = 225."
+"When the number of rows equals the number of chairs in each row, the total is a number multiplied by itself. Think about what kind of number that makes.",
+"The number of men must be a perfect square. Find square numbers close to each choice and see which choice is exactly a number times itself.",
+"Similar example: could 225 children sit this way? 15 × 15 = 225, so yes, in 15 rows of 15. Could 226? 15 × 15 = 225 and 16 × 16 = 256, and 226 lies between them, so no."
 ],
 "steps": [
 {
-"text": "The rows and columns are equal, so the number of chairs is a number times itself. It must be a square number."
+"text": "The rows and the chairs in each row are equal, so the number of men is a number times itself, a perfect square."
 },
 {
-"text": "Try 18 rows of 18 chairs.",
+"text": "Find square numbers near the choices.",
+"latex": "11 \\times 11 = 121 \\quad 12 \\times 12 = 144 \\quad 16 \\times 16 = 256 \\quad 17 \\times 17 = 289"
+},
+{
+"text": "131 lies between 121 and 144, and 275 lies between 256 and 289, so neither is a perfect square."
+},
+{
+"text": "Now try 18.",
 "latex": "18 \\times 18 = 324"
 },
 {
-"text": "The other choices are not squares. 131 lies between 121 and 144, 275 lies between 256 and 289, and 325 is one more than 324."
-},
-{
-"text": "Only 324 is a square number. So the number of men is 324."
+"text": "325 is one more than 324, so it is not a perfect square. The number of men can be 324."
 }
 ],
 "notes": {
-"A": "11 × 11 = 121 and 12 × 12 = 144. 131 falls between them, so it cannot fill equal rows and columns.",
-"B": "This is very close, but 18 × 18 = 324. 325 is one too many to make a square.",
-"C": "16 × 16 = 256 and 17 × 17 = 289. 275 falls between them, so it is not a square number.",
-"D": "Yes! 18 rows of 18 chairs make 18 × 18 = 324."
+"A": "11 × 11 = 121 and 12 × 12 = 144. 131 falls between them, so it cannot be arranged in equal rows and columns.",
+"B": "Very close! 18 × 18 = 324, so 325 has one man too many for a square arrangement.",
+"C": "16 × 16 = 256 and 17 × 17 = 289. 275 falls between them, so it is not a number times itself.",
+"D": "Yes! 18 × 18 = 324, so there are 18 rows with 18 chairs in each row."
 }
 },
 "EXT_G4_FP_2021_018": {
@@ -15265,32 +15299,31 @@
 },
 "EXT_G4_FP_2021_032": {
 "hints": [
-"A perfect square is a number times itself. Try each choice and see whether the product is a perfect square.",
-"Break 28 into small factors: 4 × 7 = 28. The 4 is already a square, 2 × 2. Think about what the lonely 7 needs.",
-"Similar example: what should 12 be multiplied by to get a perfect square? 4 × 3 = 12. The 4 is a square but the 3 has no partner. Multiply by 3: 12 × 3 = 36, and 6 × 6 = 36."
+"A perfect square is made of matching pairs of factors. Break the number into its prime factors and look for a factor that has no partner.",
+"Break 28 into prime factors: 28 = 2 × 2 × 7. Which factor is in a pair, and which one is alone?",
+"Similar example: 12 = 2 × 2 × 3. The 2s make a pair but the 3 is alone. Multiply by 3: 12 × 3 = 36, and 36 = 6 × 6, a perfect square."
 ],
 "steps": [
 {
-"text": "Break 28 into factors. 4 is already a square, but 7 has no partner.",
-"latex": "28 = 4 \\times 7"
+"text": "Break 28 into prime factors.",
+"latex": "28 = 2 \\times 2 \\times 7"
 },
 {
-"text": "Give 7 a partner by multiplying by 7.",
-"latex": "28 \\times 7 = 196"
+"text": "The two 2s make a pair. The 7 has no partner, so one more 7 is needed."
 },
 {
-"text": "Check that 196 is a perfect square.",
-"latex": "14 \\times 14 = 196"
+"text": "Multiply 28 by 7 and check.",
+"latex": "28 \\times 7 = 196 = 14 \\times 14"
 },
 {
-"text": "So 28 must be multiplied by 7."
+"text": "196 is a perfect square, so the smallest number to multiply by is 7."
 }
 ],
 "notes": {
-"A": "28 × 12 = 336. That lies between 18 × 18 = 324 and 19 × 19 = 361, so it is not a perfect square.",
-"B": "28 × 10 = 280. That lies between 16 × 16 = 256 and 17 × 17 = 289, so it is not a perfect square.",
-"C": "Yes! 28 × 7 = 196, and 14 × 14 = 196.",
-"D": "28 × 5 = 140. That lies between 11 × 11 = 121 and 12 × 12 = 144, so it is not a perfect square."
+"A": "28 × 12 = 336, and no whole number times itself gives 336. Look for the factor of 28 that has no partner.",
+"B": "28 × 10 = 280, which is not a perfect square. Break 28 into 2 × 2 × 7 and see which factor is alone.",
+"C": "Yes! 28 = 2 × 2 × 7, so one more 7 completes the pairs. 28 × 7 = 196 = 14 × 14.",
+"D": "28 × 5 = 140, which is not a perfect square. The factor of 28 without a partner is 7, not 5."
 }
 },
 "EXT_G4_FP_2022_009": {
@@ -16311,9 +16344,9 @@
 },
 "EXT_G4_FP_2021_037": {
 "hints": [
-"The area of a triangle is half the area of the rectangle with the same base and height.",
-"Multiply the base by the height first. Then remember that the triangle takes up only half of that.",
-"Similar example: a triangle has base 10 cm and height 8 cm. 10 × 8 = 80, and half of 80 is 40. Its area is 40 sq.cm."
+"The area of a triangle is half the area of a rectangle with the same base and height.",
+"Multiply the base by the height: 6 × 4. Then remember that a triangle takes up only half of that.",
+"Similar example: a triangle has base 10 cm and height 3 cm. 10 × 3 = 30, and half of 30 is 15, so the area is 15 sq cm."
 ],
 "steps": [
 {
@@ -16321,18 +16354,18 @@
 "latex": "6 \\times 4 = 24"
 },
 {
-"text": "The triangle is half of this.",
+"text": "A triangle is half of that rectangle, so divide by 2.",
 "latex": "24 \\div 2 = 12"
 },
 {
-"text": "Area is measured in square units. So the area of triangle BED is 12 sq.cm."
+"text": "The area of triangle BED is 12 sq.cm."
 }
 ],
 "notes": {
-"A": "This is a length, not an area. Area is measured in square centimetres: find half of 6 × 4.",
-"B": "This is a length, not an area. Area is measured in square centimetres: find half of base times height.",
-"C": "This is base times height, which is the area of the whole rectangle. The triangle is half of it.",
-"D": "Yes! Half of 6 × 4 is 12, and area is measured in square centimetres."
+"A": "6 cm is the length of the base. Area needs base times height, then half of that, and it is measured in square centimetres.",
+"B": "Area is measured in square centimetres, not centimetres. Work out half of 6 × 4.",
+"C": "24 is base times height, which is the area of the whole rectangle. A triangle is half of that.",
+"D": "Yes! Half of 6 × 4 is 12, so the area is 12 square centimetres."
 }
 },
 "EXT_G4_FP_2022_018": {
@@ -17445,6 +17478,428 @@
 "C": "Check the division. Two beans weigh 5 grams, so 500 grams holds 100 pairs of beans.",
 "D": "1000 is the number of grams in a whole kilogram. The bag weighs half a kilogram, and each bean is 2.5 grams."
 }
+},
+"PYQ_2017_Q33": {
+"hints": [
+"Check each numeral against the rules of Roman numerals: how many times a letter may repeat, and which letters may be placed before a bigger letter to subtract.",
+"A letter is never written more than three times in a row, and V, L and D are never placed before a bigger letter to subtract. Test each numeral against these two rules.",
+"Similar example: is XXXXVI written correctly? No, because X appears four times in a row. Forty is written XL, so the number 46 is written XLVI."
+],
+"steps": [
+{
+"text": "A letter may repeat at most three times in a row. MCCCCIV has C four times in a row, so it breaks this rule."
+},
+{
+"text": "V, L and D are never put before a bigger letter to subtract. CDVLII has V before L, so it breaks this rule."
+},
+{
+"text": "Read CDLXVI part by part: CD is 400, L is 50, X is 10, V is 5 and I is 1. Every part follows the rules.",
+"latex": "400 + 50 + 10 + 5 + 1 = 466"
+},
+{
+"text": "So the numeral that is correctly written is CDLXVI."
+}
+],
+"notes": {
+"A": "Count the letter C here. It appears four times in a row, but a letter can repeat only three times. Four hundred is written CD.",
+"B": "Look at the V placed before L. V is never used to subtract. Forty-seven is written XLVII.",
+"C": "Yes! CD is 400, L is 50, X is 10, V is 5 and I is 1, so this is 466 and every rule is followed.",
+"D": "One of the numerals does follow every rule. Check each one for a letter repeated four times, or a V placed before a bigger letter."
+}
+},
+"Q_CH17_019": {
+"hints": [
+"Add the journey time to the starting time. Add the hours and the minutes separately, and remember that 60 minutes make 1 hour.",
+"Start by adding the 4 hours to 09:45. Then add the 35 minutes, and watch what happens when the minutes go past 60.",
+"Similar example: a bus leaves at 10:50 and takes 2 hours 25 minutes. 10:50 plus 2 hours is 12:50. Then 50 + 25 = 75 minutes, which is 1 hour 15 minutes. So the bus arrives at 13:15, which is 1:15 PM."
+],
+"steps": [
+{
+"text": "Add the 4 hours first. 09:45 plus 4 hours is 13:45.",
+"latex": "9 + 4 = 13"
+},
+{
+"text": "Now add the minutes.",
+"latex": "45 + 35 = 80"
+},
+{
+"text": "80 minutes is 1 hour and 20 minutes, so carry 1 hour.",
+"latex": "80 - 60 = 20"
+},
+{
+"text": "13 hours plus 1 hour is 14 hours, so the time is 14:20. On the 12-hour clock, 14:20 is 2:20 PM.",
+"latex": "14 - 12 = 2"
+}
+],
+"notes": {
+"A": "The minutes do add up to 80, but a clock never shows 80 minutes. Change 60 of those minutes into 1 more hour.",
+"B": "Yes! 09:45 plus 4 hours is 13:45, and 35 more minutes makes 14:20, which is 2:20 PM.",
+"C": "The 80 minutes give just 1 extra hour, not 2. Carry the hour only once: 13 hours plus 1 hour is 14 hours.",
+"D": "The minutes are right, but 80 minutes also gives 1 extra hour. Add that hour to the 13 hours."
+}
+},
+"Q_CH12_024": {
+"hints": [
+"Both amounts must be in the same unit before you subtract. Change them both to grams, or both to kilograms.",
+"Change 5.4 kg into grams. Remember that 1 kg is 1000 g, so 0.4 kg is 400 g.",
+"Similar example: 6.2 kg take away 3 kg 500 g. 6.2 kg is 6200 g and 3 kg 500 g is 3500 g. 6200 − 3500 = 2700 g, which is 2 kg 700 g."
+],
+"steps": [
+{
+"text": "Change 5.4 kg to grams. 5.4 kg is 5400 g.",
+"latex": "5.4 \\times 1000 = 5400"
+},
+{
+"text": "Change 2 kg 750 g to grams.",
+"latex": "2000 + 750 = 2750"
+},
+{
+"text": "Subtract the rice that was sold.",
+"latex": "5400 - 2750 = 2650"
+},
+{
+"text": "2650 g is 2 kg 650 g. So 2 kg 650 g of rice is left."
+}
+],
+"notes": {
+"A": "Here 400 g was taken away from 750 g. But the shopkeeper has the 400 g and sells the 750 g, so borrow 1 kg to make 1400 g and then subtract.",
+"B": "The grams are right. But 1 kg was borrowed to subtract the grams, so only 4 kg are left to take 2 kg away from.",
+"C": "This is the amount that was sold. Take it away from 5.4 kg to find what is left.",
+"D": "Yes! 5400 g − 2750 g = 2650 g, which is 2 kg 650 g."
+}
+},
+"Q_CH15_009": {
+"hints": [
+"In a magic square every row, column and diagonal has the same total. Find that total from a line that is complete, then use it on the line with the missing number.",
+"Add the top row: 2 + 7/3 + 2/3. It helps to write 2 as 6/3 so that everything is in thirds.",
+"Similar example: a magic square has top row 3, 7/2, 1 and middle row 1/2, ?, 9/2. The top row adds up to 6/2 + 7/2 + 2/2 = 15/2. The middle row must match, and 1/2 + 9/2 = 10/2, so the missing number is 15/2 − 10/2 = 5/2."
+],
+"steps": [
+{
+"text": "Add the top row. Write 2 as 6/3 so that everything is in thirds.",
+"latex": "\\frac{6}{3} + \\frac{7}{3} + \\frac{2}{3} = \\frac{15}{3} = 5"
+},
+{
+"text": "So every row, column and diagonal must add up to 5."
+},
+{
+"text": "In the middle row, add the two numbers you know. Write 3 as 9/3.",
+"latex": "\\frac{1}{3} + \\frac{9}{3} = \\frac{10}{3}"
+},
+{
+"text": "Take this away from the total of 5, which is 15/3. The missing number is 5/3.",
+"latex": "\\frac{15}{3} - \\frac{10}{3} = \\frac{5}{3}"
+}
+],
+"notes": {
+"A": "15 is the top row counted in thirds, 6 + 7 + 2. The total is 15/3, which is 5, and the missing number is only a part of that.",
+"B": "5 is the total of each row. The question mark is what you must add to 1/3 and 3 to reach 5.",
+"C": "6/3 is the same as 2, which already sits in the top row. Add 1/3 and 3 first, then see how much more is needed to reach 5.",
+"D": "Yes! Each line adds up to 5. In the middle row 1/3 + 3 = 10/3, and 15/3 − 10/3 = 5/3."
+}
+},
+"Q_CH07_025": {
+"hints": [
+"The fraction must pass two tests at once. Check each choice against both clues.",
+"First test: take the numerator away from the denominator and keep only the fractions where the answer is 3. Then check which of those is equal to 4/7.",
+"Similar example: my numerator is 2 less than my denominator and I am equal to 3/5. Try 6/10: it equals 3/5, but 10 − 6 = 4. Try 5/7: 7 − 5 = 2, but it is not equal to 3/5. Try 3/5: 5 − 3 = 2 and it is 3/5 itself, so it passes both tests."
+],
+"steps": [
+{
+"text": "Clue 1: the numerator is 3 less than the denominator. Check each fraction.",
+"latex": "7 - 4 = 3 \\quad 11 - 8 = 3 \\quad 21 - 12 = 9 \\quad 14 - 8 = 6"
+},
+{
+"text": "Only 4/7 and 8/11 pass the first clue."
+},
+{
+"text": "Clue 2: the fraction is equal to 4/7. Doubling 4/7 gives 8/14, so 8/11 is not equal to 4/7.",
+"latex": "\\frac{4 \\times 2}{7 \\times 2} = \\frac{8}{14}"
+},
+{
+"text": "4/7 is equal to itself, and 7 − 4 = 3. So the fraction is 4/7."
+}
+],
+"notes": {
+"A": "Yes! 7 − 4 = 3, and 4/7 is equal to itself, so both clues fit.",
+"B": "The numerator here is 3 less than the denominator, which is a good start. But 4/7 doubled is 8/14, so 8/11 is not equal to 4/7.",
+"C": "12/21 is equal to 4/7, but 21 − 12 = 9. The numerator must be only 3 less than the denominator.",
+"D": "8/14 is equal to 4/7, but 14 − 8 = 6. The numerator must be only 3 less than the denominator."
+}
+},
+"Q_CH18_015": {
+"hints": [
+"Work out the angle between the hands for each time, then compare. Remember that the hour hand keeps moving slowly as the minutes pass.",
+"The clock face has 12 gaps of 30° each. For each time, find where the minute hand points, find where the hour hand is, and count the gaps between them. Start with 9:00.",
+"Similar example: at 3:30 the minute hand is on the 6. The hour hand is halfway between 3 and 4. From there to the 6 is 2 and a half gaps, and 2.5 × 30° = 75°."
+],
+"steps": [
+{
+"text": "The clock has 12 gaps between the numbers, and each gap is 30°.",
+"latex": "360 \\div 12 = 30"
+},
+{
+"text": "At 9:00 the hands are on 9 and 12, which is 3 gaps.",
+"latex": "3 \\times 30 = 90^\\circ"
+},
+{
+"text": "At 4:30 the minute hand is on 6 and the hour hand is halfway between 4 and 5. That is 1 and a half gaps.",
+"latex": "1.5 \\times 30 = 45^\\circ"
+},
+{
+"text": "At 12:15 the minute hand is on 3. The hour hand has moved a quarter of a gap past 12, so there are 2 and three-quarter gaps between them.",
+"latex": "2.75 \\times 30 = 82.5^\\circ"
+},
+{
+"text": "At 6:15 the minute hand is on 3. The hour hand is a quarter of a gap past 6, so there are 3 and a quarter gaps between them.",
+"latex": "3.25 \\times 30 = 97.5^\\circ"
+},
+{
+"text": "Compare 45°, 97.5°, 90° and 82.5°. The greatest angle is 97.5°, at 6:15."
+}
+],
+"notes": {
+"A": "At 4:30 the hour hand is halfway between 4 and 5, only 1 and a half gaps from the minute hand. That is 45°, the smallest of the four.",
+"B": "Yes! At 6:15 the hands are 3 and a quarter gaps apart, which is 97.5°. That is more than 90°, 82.5° and 45°.",
+"C": "At 9:00 the angle is exactly 90°. One of the other times gives a little more than 90°, so check where the hour hand is at 6:15.",
+"D": "At 12:15 the hour hand has moved a little past 12 towards the minute hand, so the angle is 82.5°, a little less than 90°."
+}
+},
+"PYQ_2018_Q24": {
+"hints": [
+"Every digit must be a 4 or a 9. Think about how big or small the two numbers can be, and what the last digit of their difference can be.",
+"Look at the ones place first. 4 − 4 and 9 − 9 give 0, 9 − 4 gives 5, and 14 − 9 gives 5. So the difference must end in 0 or 5. Which choices are still possible?",
+"Similar example: with cards 3, 3, 3, 8, 8, 8, can the difference be 350? Try 388 − 38 = 350. It uses the cards 3, 8, 8, 3, 8, which is two 3s and three 8s, so it can be made."
+],
+"steps": [
+{
+"text": "The 3-digit number starts with 4 or 9, so it is between 444 and 499, or between 944 and 999. The 2-digit number is between 44 and 99."
+},
+{
+"text": "Taking away a number from 44 to 99 leaves a difference from 345 to 455, or from 845 to 955. So 150 and 550 cannot be made.",
+"latex": "444 - 99 = 345 \\quad 499 - 44 = 455"
+},
+{
+"text": "With only 4s and 9s, the ones digit of the difference is 0 or 5. So 359 cannot be made.",
+"latex": "9 - 9 = 0 \\quad 4 - 4 = 0 \\quad 9 - 4 = 5 \\quad 14 - 9 = 5"
+},
+{
+"text": "Check the choice that is left. 499 − 49 uses the cards 4, 9, 9, 4, 9, which is two 4s and three 9s.",
+"latex": "499 - 49 = 450"
+},
+{
+"text": "So the difference can be 450."
+}
+],
+"notes": {
+"A": "With only 4s and 9s, the ones digit of the difference is always 0 or 5, so it can never end in 9.",
+"B": "Yes! 499 − 49 = 450, and it uses two 4s and three 9s, which the boy has.",
+"C": "A 3-digit number starting with 4 gives a difference of at most 455, and one starting with 9 gives at least 845. 550 falls in the gap between.",
+"D": "The smallest 3-digit number he can make is 444. Even after taking away 99, the difference is 345, so 150 is too small."
+}
+},
+"PYQ_2019_Q15": {
+"hints": [
+"The circles fill the rectangle exactly, so its length and breadth can be counted in circle widths. Then go all the way round the rectangle.",
+"Find the diameter of one circle: it is twice the radius of 6 cm. The length of the rectangle is 4 diameters and the breadth is 2 diameters.",
+"Similar example: 6 equal circles of radius 5 cm sit in a rectangle in 2 rows of 3. The diameter is 10 cm, so the length is 30 cm and the breadth is 20 cm. The perimeter is 2 × (30 + 20) = 100 cm."
+],
+"steps": [
+{
+"text": "The diameter of each circle is twice the radius.",
+"latex": "2 \\times 6 = 12"
+},
+{
+"text": "The length holds 4 circles and the breadth holds 2 circles.",
+"latex": "4 \\times 12 = 48 \\quad 2 \\times 12 = 24"
+},
+{
+"text": "Add the length and the breadth, then double it to go round all four sides.",
+"latex": "2 \\times (48 + 24) = 144"
+},
+{
+"text": "The perimeter of the rectangle is 144 cm."
+}
+],
+"notes": {
+"A": "48 + 24 = 72 is the length plus the breadth, which is only halfway round. Double it for all four sides.",
+"B": "48 cm is the length of the rectangle, 4 diameters. The perimeter goes all the way round: two lengths and two breadths.",
+"C": "Yes! The rectangle is 48 cm by 24 cm, and 2 × (48 + 24) = 144.",
+"D": "96 cm is the two lengths only, 48 + 48. Add the two breadths of 24 cm as well."
+}
+},
+"PYQ_2019_Q30": {
+"hints": [
+"Find the side of one square first. Then picture the long rectangle and find its length and breadth.",
+"A square has 4 equal sides, so divide 36 cm by 4 to get one side. The rectangle is 3 sides long and 1 side wide.",
+"Similar example: a square has perimeter 20 cm, so its side is 5 cm. Two such squares in a row make a rectangle 10 cm long and 5 cm wide. Its perimeter is 2 × (10 + 5) = 30 cm."
+],
+"steps": [
+{
+"text": "Find the side of one square.",
+"latex": "36 \\div 4 = 9"
+},
+{
+"text": "Three squares in a row make a rectangle 3 sides long and 1 side wide.",
+"latex": "3 \\times 9 = 27"
+},
+{
+"text": "Add the length and the breadth, then double it.",
+"latex": "2 \\times (27 + 9) = 72"
+},
+{
+"text": "The perimeter of the rectangle is 72 cm."
+}
+],
+"notes": {
+"A": "108 is 3 × 36, the three perimeters added together. Where the squares join, the edges are inside the rectangle and are not part of its boundary.",
+"B": "Yes! The side is 9 cm, the rectangle is 27 cm by 9 cm, and 2 × (27 + 9) = 72.",
+"C": "54 cm is the two lengths of 27 cm. Add the two breadths of 9 cm as well.",
+"D": "Each join hides 2 edges, one from each square. Two joins hide 4 edges of 9 cm, so take 36 away from 108."
+}
+},
+"PYQ_2016_Q24": {
+"hints": [
+"Find two things: the perimeter of the rectangle, and the total of the perimeters of all the squares. Then compare them.",
+"Each square has side 1 cm. Find the perimeter of one square, then of all 4 squares together. Find the perimeter of the 4 cm by 1 cm rectangle too.",
+"Similar example: a 3 cm by 1 cm rectangle is cut into 3 squares of side 1 cm. The squares have 3 × 4 = 12 cm of perimeter in all. The rectangle has 2 × (3 + 1) = 8 cm. The difference is 12 − 8 = 4 cm."
+],
+"steps": [
+{
+"text": "Each square has side 1 cm, so its perimeter is 4 cm.",
+"latex": "4 \\times 1 = 4"
+},
+{
+"text": "Add up the four squares.",
+"latex": "4 \\times 4 = 16"
+},
+{
+"text": "Find the perimeter of the rectangle.",
+"latex": "2 \\times (4 + 1) = 10"
+},
+{
+"text": "Subtract. The squares have 6 cm more.",
+"latex": "16 - 10 = 6"
+}
+],
+"notes": {
+"A": "4 cm is the perimeter of just one square. Add up all 4 squares, then compare with the rectangle.",
+"B": "There are 3 cuts, and each cut makes 2 new edges of 1 cm, one on each side of the cut. So the extra is 3 × 2.",
+"C": "10 cm is the perimeter of the rectangle. The question asks how much more the squares have, so take 10 away from 16.",
+"D": "Yes! The squares total 16 cm and the rectangle is 10 cm, so the squares have 6 cm more."
+}
+},
+"PYQ_2019_Q07": {
+"hints": [
+"Count in an organised way so that no segment is missed and none is counted twice. Start from one point and move on to the next.",
+"From A you can draw a segment to each of the other 7 points. From B, the segment to A is already drawn, so count only the new ones. Carry on like this.",
+"Similar example: with 5 points A to E, A joins 4 others, B joins 3 new ones, C joins 2 new ones and D joins 1 new one. 4 + 3 + 2 + 1 = 10 segments."
+],
+"steps": [
+{
+"text": "From A, draw a segment to each of the other 7 points."
+},
+{
+"text": "From B there are 6 new segments, from C there are 5, and so on down to 1 new segment from G."
+},
+{
+"text": "Add them all up.",
+"latex": "7 + 6 + 5 + 4 + 3 + 2 + 1 = 28"
+},
+{
+"text": "So 28 line segments can be drawn."
+}
+],
+"notes": {
+"A": "Yes! 7 + 6 + 5 + 4 + 3 + 2 + 1 = 28.",
+"B": "8 is the number of points, and also the number of segments joining only neighbours around the circle. Every point can be joined to points further away too.",
+"C": "Each point joins 7 others, not 2. Count 7 from A, then 6 new ones from B, and keep going.",
+"D": "Close, but a few segments are missing. Add 7 + 6 + 5 + 4 + 3 + 2 + 1 carefully."
+}
+},
+"EXT_G4_FP_2024_020": {
+"hints": [
+"Break the number into thousands, hundreds, tens and ones. Write each part in Roman numerals and then join them.",
+"Split 1896 into 1000 + 800 + 90 + 6. Start with 1000, which is M, and then think how to write 800.",
+"Similar example: 1674 = 1000 + 600 + 70 + 4. These parts are M, DC, LXX and IV, so 1674 is MDCLXXIV."
+],
+"steps": [
+{
+"text": "Split the number into its parts.",
+"latex": "1896 = 1000 + 800 + 90 + 6"
+},
+{
+"text": "1000 is M. 800 is 500 and three 100s, which is DCCC."
+},
+{
+"text": "90 is 10 less than 100, which is XC. 6 is 5 and 1, which is VI."
+},
+{
+"text": "Join the parts in order. The Roman numeral for 1896 is MDCCCXCVI."
+}
+],
+"notes": {
+"A": "This has C four times in a row, and a letter can repeat only three times. It also ends in XVI, which is 16, where 96 is needed.",
+"B": "The hundreds here are written CCM, but two letters are never placed before a bigger one to subtract. 800 is written DCCC.",
+"C": "Very close! This ends in IV, which is 4, so it is 1894. The ones part should be 6, which is VI.",
+"D": "Yes! M is 1000, DCCC is 800, XC is 90 and VI is 6, which makes 1896."
+}
+},
+"EXT_G4_FP_2025_027": {
+"hints": [
+"A day comes 5 times in a month only if it falls on the first few dates. Find how many days the month has and which day it started on.",
+"Count back from the 15th in jumps of 7 to find the day of 1st August. Then remember that August has 31 days, which is 4 full weeks and 3 days more.",
+"Similar example: a month of 30 days starts on a Monday. 30 days is 4 full weeks and 2 days more, so only the first two days, Monday and Tuesday, come 5 times."
+],
+"steps": [
+{
+"text": "Count back in sevens from the 15th. The 8th and the 1st are also Thursdays.",
+"latex": "15 - 7 = 8 \\quad 8 - 7 = 1"
+},
+{
+"text": "August has 31 days, which is 4 full weeks and 3 days more.",
+"latex": "31 = 4 \\times 7 + 3"
+},
+{
+"text": "The 3 extra dates are the 29th, 30th and 31st. They fall on Thursday, Friday and Saturday, so these three days come 5 times."
+},
+{
+"text": "Of the days given, the one that came 5 times is Saturday."
+}
+],
+"notes": {
+"A": "Yes! August 2024 began on a Thursday, so Thursday, Friday and Saturday each came 5 times. The Saturdays were 3, 10, 17, 24 and 31.",
+"B": "The Mondays were 5, 12, 19 and 26, which is 4 times. One more Monday would need a 33rd day in the month.",
+"C": "The 15th was a Thursday, so the 14th was a Wednesday. The Wednesdays were 7, 14, 21 and 28, which is 4 times.",
+"D": "The Sundays were 4, 11, 18 and 25, which is 4 times. Only the first three days of the month, Thursday, Friday and Saturday, come 5 times."
 }
 }
+},
+"freshNotes": [
+"EXT_G4_FP_2020_006",
+"EXT_G4_FP_2021_005",
+"EXT_G4_FP_2021_032",
+"EXT_G4_FP_2021_037",
+"EXT_G4_FP_2022_028",
+"EXT_G4_FP_2022_033",
+"EXT_G4_FP_2023_007",
+"EXT_G4_FP_2023_029",
+"EXT_G4_FP_2024_011",
+"EXT_G4_FP_2024_020",
+"EXT_G4_FP_2024_024",
+"EXT_G4_FP_2025_007",
+"EXT_G4_FP_2025_027",
+"EXT_G4_WS2_CH15_002",
+"PYQ_2016_Q24",
+"PYQ_2017_Q33",
+"PYQ_2018_Q24",
+"PYQ_2019_Q07",
+"PYQ_2019_Q15",
+"PYQ_2019_Q30",
+"Q_CH07_025",
+"Q_CH12_024",
+"Q_CH15_009",
+"Q_CH17_019",
+"Q_CH18_015"
+]
 }

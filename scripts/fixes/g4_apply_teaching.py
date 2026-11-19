@@ -62,6 +62,20 @@ def build_record():
             record["options"].setdefault(qid, {})[p["replace"]] = p["with"]
     for path in sorted(glob.glob(os.path.join(G4, "teach-out-*.json"))):
         record["teach"].update(load(path))
+    # Help written AFTER the options were repaired already describes the new options.
+    fresh = os.path.join(G4, "teach-out-07.json")
+    record["freshNotes"] = sorted(load(fresh)) if os.path.exists(fresh) else []
+    # Later repairs of questions raters flagged: rewordings, option replacements, removals.
+    repairs = os.path.join(G4, "repairs-out.json")
+    if os.path.exists(repairs):
+        for qid, p in load(repairs).items():
+            if p.get("remove"):
+                record["remove"][qid] = "repair: " + (p.get("why") or "")[:160]
+                continue
+            if p.get("question"):
+                record["reword"][qid] = p["question"]
+            for letter, text in (p.get("options") or {}).items():
+                record["options"].setdefault(qid, {})[letter] = text
     return record
 
 
@@ -82,6 +96,7 @@ def main():
             done["removed"] += 1
             continue
         changed_letters = set()
+        replaced_letters = set(record["options"].get(qid, {}))
         if qid in record["options"]:
             for letter, text in record["options"][qid].items():
                 if letter == q["correctAnswer"]:
@@ -105,7 +120,8 @@ def main():
             q["misconceptions"] = {k: t["notes"][k] for k in "ABCD"}
             done["taught"] += 1
         # A note written for an option whose text has since been replaced no longer fits it.
-        for letter in changed_letters:
+        stale = set() if qid in record.get("freshNotes", []) else (replaced_letters if t else changed_letters)
+        for letter in stale:
             if isinstance(q.get("misconceptions"), dict) and letter in q["misconceptions"]:
                 q["misconceptions"][letter] = STALE_NOTE
         out.append(q)
