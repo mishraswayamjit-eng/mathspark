@@ -1,0 +1,367 @@
+"""Grade 4 triangle lessons written for one question each: past papers (PYQ_...) and Q_CH19_001 to 010."""
+from g4_gr4_triangles_lib import (ANS, B, G, QF, W, ch, group, lesson, mark, strike, tri)
+
+LESSONS = {}
+
+# One angle of an isosceles triangle is 80°. Which cannot be another angle?
+LESSONS["PYQ_2016_Q22"] = lesson([
+    B("One angle of an isosceles triangle is 80 degrees. One of these 4 sizes can never be another angle of the triangle. Which?",
+      G("l1", "Isosceles triangle with one angle of 80°."), W("l2", "Which CANNOT be another of its angles?", tone="given"),
+      W("l3", "20°, 50°, 70° or 80°", tone="given")),
+    B("An isosceles triangle has 2 equal angles, the twins, and 1 odd angle. The question does not say whether the 80 is a twin or the odd one. So we try both.",
+      W("l4", "3 angles = 180°")),
+    B("Case 1: the 80 is a twin. Then the angles are 80, 80 and one more. 80 plus 80 is 160.",
+      W("c1", "Case 1: 80°, 80°, ?"), W("l5", "80 + 80 = 160")),
+    B("What is the third angle in this case?",
+      ask=ch(["180 − 160 = 20", "180 − 80 = 100", "160 − 80 = 80"], 0,
+             "The 3 angles add up to 180. The twins use 160 of it, so 20 is left.")),
+    B("20 degrees. So in case 1 the other angles are 80 and 20. Both of those can appear.",
+      W("l6", "180 − 160 = 20"), mark("l3", "20°", "underline"), mark("l3", "80°", "underline")),
+    B("Case 2: the 80 is the odd one. Then the twins share the rest. 180 minus 80 is 100.",
+      W("c2", "Case 2: 80°, ?, ?"), W("l7", "180 − 80 = 100")),
+    B("The twins share 100 equally. How big is each one?",
+      ask=ch(["100°", "50°", "25°"], 1,
+             "2 equal angles share 100 between them. Half of 100 is 50.")),
+    B("50 each. So in case 2 the other angles are 50 and 50.",
+      W("l8", "100 ÷ 2 = 50"), mark("l3", "50°", "underline")),
+    B("There are no more cases. The other angles can only be 80, 20 or 50. The one that never shows up is 70 degrees.",
+      ANS("l9", "70° cannot be one of the angles", "70°")),
+    B("With an isosceles triangle, always ask: is the angle I know a twin, or the odd one? Then work through both cases."),
+])
+
+# Two equal equilateral triangles joined; each has perimeter 24 cm.
+LESSONS["PYQ_2017_Q10"] = lesson([
+    B("2 equilateral triangles of the same size are joined along a side. Each triangle had a perimeter of 24 centimetres. What is the perimeter of the new figure?",
+      G("l1", "2 equal equilateral triangles are joined."),
+      W("l2", "Each has perimeter 24 cm. Perimeter of new figure = ?", tone="given"), QF("PYQ_2017_Q10")),
+    B("First we need the length of one side. An equilateral triangle has 3 equal sides, and they add up to 24."),
+    B("How long is each side?",
+      ask=ch(["24 ÷ 3 = 8 cm", "24 ÷ 2 = 12 cm", "24 × 3 = 72 cm"], 0,
+             "The perimeter, 24, is shared equally among 3 sides. So each side is 24 divided by 3.")),
+    B("8 centimetres. Every side of both triangles is 8 centimetres long.",
+      W("l3", "24 ÷ 3 = 8")),
+    B("Now look at the picture. The triangles are joined along one full side. That dashed side is inside the figure now. It is not part of the edge any more."),
+    B("Count the sides. 2 triangles have 6 sides in all.",
+      W("l4", "2 × 3 = 6")),
+    B("The join hides some sides inside the figure. How many?",
+      ask=ch(["1 side", "2 sides", "3 sides"], 1,
+             "Each triangle gives up 1 side at the join. There are 2 triangles, so 2 sides are hidden, even though they look like 1 line.")),
+    B("2 sides, one from each triangle. 6 minus 2 leaves 4 sides on the outside.",
+      W("l5", "6 − 2 = 4")),
+    B("4 sides of 8 centimetres each. 4 times 8 is 32. The perimeter of the new figure is 32 centimetres.",
+      W("l6", "4 × 8 = 32"), ANS("l7", "Perimeter = 32 cm", "32 cm")),
+    B("The trap is to add 24 and 24 and say 48. The join costs 2 sides of 8, so take 16 away from 48, and you get 32 again.",
+      W("l8", "24 + 24 = 48"), W("l9", "2 × 8 = 16"), W("l10", "48 − 16 = 32")),
+])
+
+# How many isosceles triangles have integer sides and perimeter 23?
+LESSONS["PYQ_2017_Q36"] = lesson([
+    B("How many different isosceles triangles have whole-number sides and a perimeter of 23?",
+      G("l1", "Isosceles triangles: whole-number sides, perimeter 23."), W("l2", "How many different ones?", tone="given")),
+    B("An isosceles triangle has 2 equal sides, the twins, and a third side. Twin plus twin plus third side makes 23.",
+      W("l3", "twin + twin + third = 23")),
+    B("Let's list in order, starting with the longest twins. Twins of 11: 11 plus 11 is 22, so the third side is 1.",
+      W("l4", "11 + 11 = 22"), W("t1", "11, 11, 1")),
+    B("Twins of 10: the third side is 3. Twins of 9: the third side is 5. Twins of 8: the third side is 7. These all close easily, because the twins are the longest sides.",
+      W("t2", "10, 10, 3"), W("t3", "9, 9, 5"), W("t4", "8, 8, 7")),
+    B("Twins of 7: the third side is 9. Now the third side is the longest, so we must test. 7 plus 7 is 14, more than 9. It closes.",
+      W("t5", "7, 7, 9"), W("l5", "7 + 7 = 14 > 9")),
+    B("Twins of 6: the third side is 11. 6 plus 6 is 12. Does it close?",
+      W("t6", "6, 6, 11"),
+      ask=ch(["yes, 12 is more than 11", "no, it is too flat"], 0,
+             "12 is more than 11, even if only just. So the twins can meet above the long side. It is a very flat triangle, but a real one.")),
+    B("It just fits, because 12 is more than 11.",
+      W("l6", "6 + 6 = 12 > 11")),
+    B("Twins of 5: the third side is 13. 5 plus 5 is 10. Does it close?",
+      W("t7", "5, 5, 13"),
+      ask=ch(["yes, it closes", "no, 10 is less than 13"], 1,
+             "10 is less than 13. The twins are too short to reach across the long side, so there is no triangle.")),
+    B("It does not. And shorter twins would be even worse. So the list stops here.",
+      W("l7", "5 + 5 = 10 < 13"), strike("t7", "5, 5, 13")),
+    B("Count the triangles: twins of 11, 10, 9, 8, 7 and 6. That makes 6 triangles.",
+      ANS("l8", "6 triangles")),
+    B("List in order, and test the ones where the third side is the longest. That is where the list comes to an end."),
+])
+
+# One angle of an isosceles triangle is 57°. Which can be another angle?
+LESSONS["PYQ_2018_Q40"] = lesson([
+    B("One angle of an isosceles triangle is 57 degrees. Which of these can be another angle of the triangle?",
+      G("l1", "Isosceles triangle with one angle of 57°."), W("l2", "Which can be another of its angles?", tone="given"),
+      W("l3", "50°, 123°, 61.5° or 33°", tone="given")),
+    B("An isosceles triangle has 2 equal angles, the twins, and 1 odd angle. The 57 could be a twin, or it could be the odd one. We try both.",
+      W("l4", "3 angles = 180°")),
+    B("Case 1: 57 is a twin. The angles are 57, 57 and one more. 57 plus 57 is 114, and 180 minus 114 is 66.",
+      W("c1", "Case 1: 57°, 57°, ?"), W("l5", "57 + 57 = 114"), W("l6", "180 − 114 = 66")),
+    B("So in case 1 the other angles are 57 and 66. Neither of those is among the choices. On to case 2."),
+    B("Case 2: 57 is the odd one. What do the twins share between them?",
+      W("c2", "Case 2: 57°, ?, ?"),
+      ask=ch(["180 − 57 = 123", "180 + 57 = 237", "just 57"], 0,
+             "The 3 angles make 180. Take away the 57, and the twins share what is left.")),
+    B("123. Careful: 123 is one of the choices, but it is both twins together, not one angle.",
+      W("l7", "180 − 57 = 123")),
+    B("Each twin is half of 123. Half of 122 is 61, so half of 123 is 61 and a half. We write that as 61.5.",
+      W("l8", "122 ÷ 2 = 61"), W("l9", "123 ÷ 2 = 61.5")),
+    B("An angle does not have to be a whole number. Check: 57 plus 61.5 plus 61.5 makes 180.",
+      W("l10", "57 + 61.5 + 61.5 = 180")),
+    B("So another angle of the triangle can be 61.5 degrees.",
+      ANS("l11", "61.5°"), mark("l3", "61.5°", "circle")),
+    B("And 33? That is 90 minus 57. It would give a right-angled triangle with no twins at all. So for isosceles puzzles, try the angle as a twin, then as the odd one.",
+      W("l12", "90 − 57 = 33")),
+])
+
+# Two angles of a triangle are given. Which can be an isosceles triangle?
+LESSONS["PYQ_2019_Q34"] = lesson([
+    B("Each choice gives 2 angles of a triangle. Which pair can belong to an isosceles triangle?",
+      G("l1", "Two angles are given. Which triangle is isosceles?"),
+      W("la", "A: 90° & 50°", tone="given"), W("lb", "B: 80° & 40°", tone="given"),
+      W("lc", "C: 55° & 70°", tone="given"), W("ld", "D: 60° & 40°", tone="given")),
+    B("Isosceles means 2 equal angles. We see only 2 of the 3 angles each time, so we find the hidden third angle and look for a twin.",
+      W("l2", "3 angles = 180°")),
+    B("A: 90 plus 50 is 140, and 180 minus 140 is 40. The angles are 90, 50 and 40. All different.",
+      W("l3", "90 + 50 = 140"), W("l4", "180 − 140 = 40")),
+    B("B: 80 plus 40 is 120, and 180 minus 120 is 60. The angles are 80, 40 and 60. All different again.",
+      W("l5", "80 + 40 = 120"), W("l6", "180 − 120 = 60")),
+    B("C: 55 plus 70 is 125. What is the third angle?",
+      W("l7", "55 + 70 = 125"),
+      ask=ch(["55°", "65°", "45°"], 0,
+             "The third angle is 180 minus 125. That leaves 55.")),
+    B("55! And the pair already has a 55. A twin. The angles are 55, 70 and 55.",
+      W("l8", "180 − 125 = 55"), W("l9", "C: 55°, 70°, 55°"),
+      group("l9", [{"text": "55°", "nth": 1}, {"text": "55°", "nth": 2}], "equal"),
+      tri("isosceles", a="70°", b="55°", c="55°")),
+    B("Check D to be safe. 60 plus 40 is 100, and 180 minus 100 is 80. All different.",
+      W("l10", "60 + 40 = 100"), W("l11", "180 − 100 = 80")),
+    B("So the pair is 55 degrees and 70 degrees.",
+      ANS("l12", "55° & 70°")),
+    B("The twin was hiding in the third angle. Always find it before you decide."),
+])
+
+# Each angle of an equilateral triangle measures:
+LESSONS["Q_CH19_001"] = lesson([
+    B("How big is each angle of an equilateral triangle?",
+      G("l1", "Each angle of an equilateral triangle = ?"), QF("Q_CH19_001")),
+    B("Equilateral means all 3 sides are equal. And when all the sides are equal, all the angles are equal too."),
+    B("What do the 3 angles of any triangle add up to?",
+      ask=ch(["180°", "360°", "90°"], 0,
+             "The 3 corners of a triangle fit along a straight line, and a straight line is 180 degrees.")),
+    B("180 degrees. So 3 equal angles share 180 between them.",
+      W("l2", "3 equal angles = 180°")),
+    B("How do we share 180 equally among 3 angles?",
+      ask=ch(["180 ÷ 3", "180 − 3", "180 × 3"], 0,
+             "Sharing equally means dividing. 180 shared among 3 angles is 180 divided by 3.")),
+    B("180 divided by 3 is 60. Multiply back to be sure: 3 times 60 is 180.",
+      W("l3", "180 ÷ 3 = 60"), W("l4", "3 × 60 = 180")),
+    B("So each angle of an equilateral triangle is 60 degrees.",
+      ANS("l5", "Each angle = 60°", "60°"), tri("equilateral", a="60°", b="60°", c="60°")),
+    B("And this never changes. A tiny equilateral triangle and a huge one both have 3 angles of 60 degrees."),
+])
+
+# The perimeter of an equilateral triangle with side 7 cm is:
+LESSONS["Q_CH19_002"] = lesson([
+    B("An equilateral triangle has a side of 7 centimetres. We want its perimeter.",
+      G("l1", "Equilateral triangle, side 7 cm. Perimeter = ?"), QF("Q_CH19_002")),
+    B("The perimeter is the walk all the way round. Equilateral means all 3 sides are equal, so every side is 7 centimetres.",
+      tri("equilateral", ab="7 cm", bc="7 cm", ca="7 cm")),
+    B("Which sum gives the walk all the way round?",
+      ask=ch(["7 + 7", "7 + 7 + 7", "7 × 7"], 1,
+             "The walk goes along all 3 sides, and each one is 7. So we add 7 three times.")),
+    B("7 plus 7 plus 7. That is 3 lots of 7, and 3 times 7 is 21.",
+      W("l2", "7 + 7 + 7 = 21"), W("l3", "3 × 7 = 21")),
+    B("So the perimeter is 21 centimetres.",
+      ANS("l4", "Perimeter = 21 cm", "21 cm")),
+    B("Watch out for 7 times 7. That makes 49, and it has nothing to do with walking round a triangle.",
+      W("l5", "7 × 7 = 49")),
+    B("And 4 times 7 would be right for a square, which has 4 sides. A triangle has only 3."),
+    B("For any equilateral triangle, the perimeter is 3 times the side. Here that is 21."),
+])
+
+# Two angles of a triangle are 35° and 65°. What is the third angle?
+LESSONS["Q_CH19_003"] = lesson([
+    B("2 angles of a triangle are 35 degrees and 65 degrees. Let's find the third.",
+      G("l1", "Two angles: 35° and 65°. Third angle = ?"), QF("Q_CH19_003")),
+    B("Every triangle keeps one rule: its 3 angles add up to 180 degrees.",
+      W("l2", "3 angles = 180°")),
+    B("What do we do with the 2 angles we know?",
+      ask=ch(["add them", "subtract them", "multiply them"], 0,
+             "We need to know how much of the 180 is used already. So we add the 2 angles we know.")),
+    B("35 plus 65. 30 and 60 make 90. 5 and 5 make 10. And 90 plus 10 is 100.",
+      W("l3", "30 + 60 = 90"), W("l4", "5 + 5 = 10"), W("l5", "35 + 65 = 100")),
+    B("100 is one of the choices. Is it the third angle?",
+      ask=ch(["yes, it is 100°", "no, take it away from 180"], 1,
+             "100 is the 2 known angles together. The third angle is what is left of the 180.")),
+    B("180 minus 100 is 80. The third angle is 80 degrees.",
+      W("l6", "180 − 100 = 80"), ANS("l7", "Third angle = 80°", "80°")),
+    B("Check: 35 plus 65 plus 80 makes 180. It works.",
+      W("l8", "35 + 65 + 80 = 180"), QF("Q_CH19_003", corners=["80°", "35°", "65°"])),
+    B("So: add the 2 angles you know, then take the total away from 180."),
+])
+
+# Two angles are 28° and 45°. What type of triangle?
+LESSONS["Q_CH19_004"] = lesson([
+    B("2 angles of a triangle are 28 degrees and 45 degrees. What type of triangle is it?",
+      G("l1", "Two angles: 28° and 45°. What type of triangle?"), QF("Q_CH19_004")),
+    B("Both angles we can see are acute, small and sharp. It is tempting to say acute-angled straight away. But a triangle has 3 angles."),
+    B("So find the third angle first. 28 plus 45: 28 plus 40 is 68, and 5 more is 73.",
+      W("l2", "28 + 40 = 68"), W("l3", "68 + 5 = 73")),
+    B("The 2 known angles make 73. What is the third angle?",
+      ask=ch(["180 − 73 = 107", "it is 73 too", "90 − 73 = 17"], 0,
+             "The 3 angles of a triangle add up to 180 degrees. So the third angle is 180 minus 73.")),
+    B("180 minus 73. Take away 70 to get 110, then 3 more to get 107.",
+      W("l4", "180 − 70 = 110"), W("l5", "110 − 3 = 107")),
+    B("The third angle is 107 degrees. What kind of angle is that?",
+      ask=ch(["acute: less than 90°", "a right angle: exactly 90°", "obtuse: more than 90°"], 2,
+             "107 is bigger than 90. An angle bigger than a right angle is called obtuse.")),
+    B("Obtuse. And one obtuse angle makes the whole triangle obtuse-angled.",
+      W("l6", "107 > 90"), QF("Q_CH19_004", corners=["107°", "28°", "45°"], note=None),
+      ANS("l7", "Obtuse-angled triangle")),
+    B("It is not isosceles, because 28, 45 and 107 are all different. And 2 angles were enough to decide, because they give us the third."),
+    B("Never judge a triangle by the 2 angles you can see. The third may be the big one."),
+])
+
+# Which of the following can be the lengths of the sides of a triangle?
+_A5 = "A: 2 cm, 5 cm, 9 cm"
+_C5 = "C: 1 cm, 5 cm, 6 cm"
+LESSONS["Q_CH19_005"] = lesson([
+    B("Which of these sets of lengths can be the sides of a triangle?",
+      G("l1", "Which lengths can be the sides of a triangle?"),
+      W("la", _A5, tone="given"), W("lb", "B: 6 cm, 8 cm, 12 cm", tone="given"),
+      W("lc", _C5, tone="given"), W("ld", "D: all of these", tone="given")),
+    B("Think of 3 sticks. They make a triangle only if the 2 shorter ones, put together, are longer than the longest. Otherwise they cannot meet.",
+      W("l2", "2 shorter sides together > longest side")),
+    B("A: 2 plus 5 is 7, and the longest side is 9. 7 is less than 9, so the short sides cannot reach each other.",
+      W("l3", "2 + 5 = 7 < 9"), strike("la", _A5)),
+    B("So already we know that all of these cannot be the answer.",
+      strike("ld", "D: all of these")),
+    B("C: 1 plus 5 is 6, and the longest side is 6 as well. Is that a triangle?",
+      W("l4", "1 + 5 = 6"),
+      ask=ch(["yes, 6 is enough", "no, the sides lie flat"], 1,
+             "The 2 short sides together are exactly as long as the long side. They can only lie flat along it. Equal is not enough.")),
+    B("Flat, so not a triangle.",
+      strike("lc", _C5)),
+    B("B: 6 plus 8 is 14, and the longest side is 12. 14 is more than 12, so these sides can meet.",
+      W("l5", "6 + 8 = 14 > 12")),
+    B("So the lengths that make a triangle are 6, 8 and 12 centimetres.",
+      ANS("l6", "6 cm, 8 cm, 12 cm")),
+    B("The test in one line: add the 2 shorter sides. More than the longest, a triangle. Equal or less, no triangle."),
+])
+
+# Which are the angles of an isosceles triangle?
+_A6 = "A: 30°, 60°, 90°"
+_B6 = "B: 40°, 120°, 20°"
+_C6 = "C: 50°, 90°, 40°"
+LESSONS["Q_CH19_006"] = lesson([
+    B("Which of these sets are the angles of an isosceles triangle?",
+      G("l1", "Which are the angles of an isosceles triangle?"),
+      W("la", _A6, tone="given"), W("lb", _B6, tone="given"), W("lc", _C6, tone="given"),
+      W("ld", "D: 30°, 75°, 75°", tone="given")),
+    B("An isosceles triangle has 2 equal sides. And equal sides always come with equal angles. So we are looking for a set with a matching pair."),
+    B("Look along each set. Which set has an angle that appears twice?",
+      ask=ch(["set A", "set B", "set C", "set D"], 3,
+             "Look at set D: 30, 75 and 75. The 75 is there twice.")),
+    B("Set D. The 75 appears twice.",
+      group("ld", [{"text": "75°", "nth": 1}, {"text": "75°", "nth": 2}], "equal")),
+    B("A, B and C each have 3 different angles. Those triangles are scalene.",
+      strike("la", _A6), strike("lb", _B6), strike("lc", _C6)),
+    B("Let's make sure D is a real triangle. 75 plus 75 is 150, and 30 more makes 180. It is.",
+      W("l2", "75 + 75 = 150"), W("l3", "150 + 30 = 180")),
+    B("So the angles of an isosceles triangle are 30, 75 and 75 degrees.",
+      ANS("l4", "30°, 75°, 75°"), tri("isosceles", a="30°", b="75°", c="75°")),
+    B("For isosceles, hunt for the twins: 2 angles exactly the same."),
+])
+
+# One acute angle of a right-angled triangle is 27°. The other?
+LESSONS["Q_CH19_007"] = lesson([
+    B("One acute angle of a right-angled triangle is 27 degrees. What is the other acute angle?",
+      G("l1", "Right-angled triangle. One acute angle = 27°. Other = ?"), QF("Q_CH19_007")),
+    B("A right-angled triangle has one angle of 90 degrees. And the 3 angles of any triangle add up to 180.",
+      W("l2", "Right angle = 90°"), W("l3", "3 angles = 180°")),
+    B("So what do the 2 acute angles add up to?",
+      ask=ch(["90°", "180°", "27°"], 0,
+             "Take the right angle out of the total. 180 minus 90 leaves 90 for the 2 acute angles.")),
+    B("90. In a right-angled triangle the 2 acute angles always share 90. That is a handy shortcut.",
+      W("l4", "180 − 90 = 90")),
+    B("One of them is 27. So the other is 90 minus 27. Take away 20 to get 70, then 7 more to get 63.",
+      W("l5", "90 − 20 = 70"), W("l6", "70 − 7 = 63"), W("l7", "90 − 27 = 63")),
+    B("So the other acute angle is 63 degrees.",
+      ANS("l8", "Other acute angle = 63°", "63°")),
+    B("Check: 90 plus 27 plus 63 makes 180.",
+      W("l9", "90 + 27 + 63 = 180"), QF("Q_CH19_007", corners=["27°", None, "63°"], note=None)),
+    B("In a right-angled triangle, the 2 acute angles add up to 90. Just take the one you know away from 90."),
+])
+
+# In a right-angled isosceles triangle, each of the equal angles measures:
+LESSONS["Q_CH19_008"] = lesson([
+    B("A triangle is right-angled and isosceles at the same time. How big is each of its equal angles?",
+      G("l1", "Right-angled isosceles triangle. Each equal angle = ?"), QF("Q_CH19_008")),
+    B("This triangle has 2 names. Right-angled tells us one angle is 90 degrees. Isosceles tells us 2 angles are equal.",
+      W("l2", "Right angle = 90°")),
+    B("Could the right angle be one of the equal pair?",
+      W("l3", "90 + 90 = 180"),
+      ask=ch(["yes, it could", "no, 2 right angles use up 180°"], 1,
+             "2 angles of 90 make 180 already. That would leave nothing for the third angle.")),
+    B("So the right angle is the odd one, and the other 2 angles are the equal pair."),
+    B("The 3 angles make 180. Take away the 90, and 90 is left for the equal pair.",
+      W("l4", "180 − 90 = 90")),
+    B("2 equal angles share 90. How big is each one?",
+      ask=ch(["45°", "90°", "30°"], 0,
+             "Equal shares means halving. Half of 90 is 45.")),
+    B("Half of 90 is 45. Each of the equal angles is 45 degrees.",
+      W("l5", "90 ÷ 2 = 45"), ANS("l6", "Each equal angle = 45°", "45°")),
+    B("Check: 90 plus 45 plus 45 makes 180. You can make this triangle by folding a square from corner to corner.",
+      W("l7", "90 + 45 + 45 = 180")),
+    B("One name gave us the 90. The other name told us to halve what was left."),
+])
+
+# Which of the following is NOT a type of triangle?
+LESSONS["Q_CH19_009"] = lesson([
+    B("3 of these are real types of triangle. 1 can never exist. Which?",
+      G("l1", "Which is NOT a type of triangle?"),
+      W("la", "A: acute-angled isosceles", tone="given"), W("lb", "B: obtuse-angled isosceles", tone="given"),
+      W("lc", "C: right-angled equilateral", tone="given"), W("ld", "D: acute-angled scalene", tone="given")),
+    B("Each name has 2 parts, one about angles and one about sides. A type is real if we can find 3 angles that fit both parts. Let's try to build each one.",
+      W("l2", "3 angles = 180°"), W("l3", "Acute: less than 90°. Obtuse: more than 90°.")),
+    B("A: acute-angled isosceles. Try 70, 70 and 40. All less than 90, 2 are equal, and they make 180. Real.",
+      W("l4", "70 + 70 + 40 = 180")),
+    B("B: obtuse-angled isosceles. Try 100, 40 and 40. One angle is above 90, and 2 are equal. Real.",
+      W("l5", "100 + 40 + 40 = 180")),
+    B("D: acute-angled scalene. Try 50, 60 and 70. All different, and all less than 90. Real.",
+      W("l6", "50 + 60 + 70 = 180")),
+    B("Now C: right-angled equilateral. How big is every angle of an equilateral triangle?",
+      ask=ch(["60°", "90°", "45°"], 0,
+             "All 3 angles of an equilateral triangle are equal, and they share 180. So each one is 60.")),
+    B("60, every one of them. But right-angled needs an angle of 90. An angle cannot be 60 and 90 at once!",
+      W("l7", "Equilateral: 60°, 60°, 60°"), W("l8", "60 ≠ 90")),
+    B("And 3 angles of 90 would make 270, far more than 180.",
+      W("l9", "90 + 90 + 90 = 270")),
+    B("So a right-angled equilateral triangle is not a type of triangle.",
+      mark("lc", "C: right-angled equilateral", "box"), ANS("l10", "C: right-angled equilateral cannot exist", "C")),
+    B("To test a type of triangle, try to build one. If the 2 parts of the name fight each other, it cannot exist."),
+])
+
+# Which are the angles of an obtuse-angled scalene triangle?
+_A10 = "A: 30°, 60°, 90°"
+_B10 = "B: 50°, 90°, 40°"
+_D10 = "D: 150°, 15°, 15°"
+LESSONS["Q_CH19_010"] = lesson([
+    B("Which set gives the angles of an obtuse-angled scalene triangle?",
+      G("l1", "Which are the angles of an obtuse-angled scalene triangle?"),
+      W("la", _A10, tone="given"), W("lb", _B10, tone="given"), W("lc", "C: 40°, 120°, 20°", tone="given"),
+      W("ld", _D10, tone="given")),
+    B("2 things must both be true. Obtuse-angled: one angle is more than 90. Scalene: all 3 sides are different, and so all 3 angles are different.",
+      W("l2", "Obtuse-angled: one angle more than 90°"), W("l3", "Scalene: all 3 angles different")),
+    B("First test: obtuse. Which sets have an angle bigger than 90?",
+      ask=ch(["A and B", "C and D", "all of them"], 1,
+             "In A and B the biggest angle is exactly 90. That is a right angle, not an obtuse one. C has 120 and D has 150.")),
+    B("C and D. In A and B the biggest angle is exactly 90, so those are right-angled triangles.",
+      strike("la", _A10), strike("lb", _B10)),
+    B("Second test: scalene. Look at D: 150, 15 and 15. Are all 3 different?",
+      ask=ch(["yes, all different", "no, 15 appears twice"], 1,
+             "The 15 is there twice. 2 equal angles make a triangle isosceles, not scalene.")),
+    B("D has twins, so it is isosceles. Out.",
+      strike("ld", _D10)),
+    B("C: 40, 120 and 20. 120 is obtuse, and all 3 are different. They add up to 180, so it is a real triangle.",
+      W("l4", "40 + 120 + 20 = 180")),
+    B("So the angles are 40, 120 and 20 degrees.",
+      ANS("l5", "40°, 120°, 20°")),
+    B("When a name has 2 parts, test one part at a time, and cross off as you go."),
+])

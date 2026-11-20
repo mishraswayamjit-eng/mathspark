@@ -1,0 +1,7850 @@
+{
+ "EXT_G4_FP_2020_034": {
+  "origin": "authored",
+  "check": {
+   "variable": "x",
+   "value": "17"
+  },
+  "beats": [
+   {
+    "say": "Here is our puzzle. 8 squared plus 15 squared equals x squared. We must find x.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "8² + 15² = x²",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The little 2 means squared: the number times itself. So 8 squared is 8 times 8, which is 64.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "8²"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8² = 8 × 8 = 64"
+     }
+    ]
+   },
+   {
+    "say": "Now 15 squared. What is 15 times 15?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "125",
+      "225",
+      "30"
+     ],
+     "answer": 1,
+     "ifNot": "Squared means times itself, not times 2. 15 lots of 15 make 225."
+    }
+   },
+   {
+    "say": "15 times 15 is 225.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "15²"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15² = 15 × 15 = 225"
+     }
+    ]
+   },
+   {
+    "say": "Add the two squares. 64 plus 225 is 289. So x squared is 289.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "64 + 225 = 289"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "x² = 289"
+     }
+    ]
+   },
+   {
+    "say": "Now, which number times itself makes 289? Try 17. 17 times 10 is 170, and 17 times 7 is 119. Together, 289. Yes!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "17 × 10 = 170"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "17 × 7 = 119"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "17 × 17 = 289"
+     }
+    ]
+   },
+   {
+    "say": "So x is 17.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "x = 17",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "x = 17"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: x is not 8 plus 15. That gives 23, and 23 times 23 is far more than 289. Square first, then add.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "8 + 15 = 23"
+     }
+    ]
+   },
+   {
+    "say": "So: square each number, add the squares, then find the number whose square that is."
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is our puzzle. 5 squared plus 12 squared equals M squared. We must find M.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5² + 12² = M²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The little 2 means squared: the number times itself. So 5 squared is 5 times 5, which is 25.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "5²"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5² = 5 × 5 = 25"
+     }
+    ]
+   },
+   {
+    "say": "Now 12 squared. What is 12 times 12?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "24",
+      "44",
+      "144"
+     ],
+     "answer": 2,
+     "ifNot": "Squared means times itself, not times 2. 12 lots of 12 make 144."
+    }
+   },
+   {
+    "say": "12 times 12 is 144.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "12²"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12² = 12 × 12 = 144"
+     }
+    ]
+   },
+   {
+    "say": "Add the two squares. 25 plus 144 is 169. So M squared is 169.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "25 + 144 = 169"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "M² = 169",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now, which number times itself makes 169? Try 13. 13 times 10 is 130, and 13 times 3 is 39. Together, 169. Yes!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "13 × 10 = 130"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "13 × 3 = 39"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "13 × 13 = 169"
+     }
+    ]
+   },
+   {
+    "say": "So M is 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "M = 13",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "M = 13"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 169 is M squared, not M. The question asks for M itself, the number that times itself makes 169."
+   },
+   {
+    "say": "So: square each number, add the squares, then find the number whose square that is."
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The hall has as many rows as there are chairs in each row, and every chair is filled. Which of these could be the number of men?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Rows = chairs in each row. How many men?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "131     325     275     324",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "?",
+       "breadth": "?",
+       "note": "Rows = chairs in each row"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Think of a small hall: 5 rows of 5 chairs hold 25 men. So what kind of number is the number of men?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "a number times itself",
+      "an even number",
+      "a number ending in 5"
+     ],
+     "answer": 0,
+     "ifNot": "Men equals rows times chairs in a row, and those two are the same. So it is a number times itself: a square number."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 rows of 5:   5 × 5 = 25",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So we are looking for a square number. Let us test each choice against squares we know."
+   },
+   {
+    "say": "131: 11 times 11 is 121 and 12 times 12 is 144. 131 falls in between, so it is not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "11 × 11 = 121"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 × 12 = 144"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "121 < 131 < 144"
+     }
+    ]
+   },
+   {
+    "say": "275: 16 times 16 is 256 and 17 times 17 is 289. In between again, so not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "16 × 16 = 256"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "17 × 17 = 289"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "256 < 275 < 289"
+     }
+    ]
+   },
+   {
+    "say": "Now try 18. 18 times 18 is 324. That is one of our choices!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "18 × 18 = 324"
+     },
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "18",
+       "breadth": "18",
+       "inside": "324 men",
+       "note": "18 rows of 18 chairs"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Careful with 325. It is only 1 more than 324, but a full hall needs an exact square. One extra man would have no chair."
+   },
+   {
+    "say": "So the number of men can be 324.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "324",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l11",
+      "target": {
+       "text": "324"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: equal rows and columns means a square number. Test each choice by squeezing it between two squares."
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "4 pairs of numbers. We add each pair, and look for a total that is a square number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Which pair adds up to a square number?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "91 & 19     157 & 68     59 & 52     76 & 78",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First pair: 91 plus 19 is 110.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "91 + 19 = 110"
+     }
+    ]
+   },
+   {
+    "say": "Is 110 a square number? 10 times 10 is 100 and 11 times 11 is 121.",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, it is a square",
+      "No, it falls between two squares"
+     ],
+     "answer": 1,
+     "ifNot": "110 is more than 100 but less than 121. There is no whole number between 10 and 11, so 110 is not a square."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "11 × 11 = 121"
+     }
+    ]
+   },
+   {
+    "say": "110 sits between 100 and 121, so it is not a square. Next pair: 157 plus 68 is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "157 + 68 = 225"
+     }
+    ]
+   },
+   {
+    "say": "225 is 15 times 15. A square number!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "15 × 15 = 225"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "225"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Let us check the others, to be sure. 59 plus 52 is 111, and 76 plus 78 is 154. Neither is a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "59 + 52 = 111"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "76 + 78 = 154"
+     }
+    ]
+   },
+   {
+    "say": "So the pair is 157 and 68.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "157 & 68",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "157 & 68"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A tip: learn the squares of the numbers up to 15 by heart. Then you spot 225 at once."
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_023": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Which sign goes in the box? We work out the left side, then the right side, and compare.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(29)² □ (31)² − (10)²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Left side: 29 times 29. A handy way: 29 times 30 is 870, then take away one 29. That leaves 841.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "29 × 30 = 870"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "870 − 29 = 841"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "29² = 841"
+     }
+    ]
+   },
+   {
+    "say": "On the right side, what must we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 31 and 10",
+      "square 31 and square 10",
+      "subtract 10 from 31"
+     ],
+     "answer": 1,
+     "ifNot": "The squares come before the subtraction. So first work out 31 squared and 10 squared, and only then subtract."
+    }
+   },
+   {
+    "say": "This is the trap. 31 minus 10 is 21, but we must not subtract first. Each number is squared first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "31 − 10 = 21:  not yet!",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "31 times 31: 31 times 30 is 930, plus one more 31 is 961.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "31 × 30 = 930"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "930 + 31 = 961"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "31² = 961"
+     }
+    ]
+   },
+   {
+    "say": "10 squared is 100. So the right side is 961 minus 100, which is 861.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "10² = 100"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "961 − 100 = 861"
+     }
+    ]
+   },
+   {
+    "say": "841 is less than 861. So the sign is: less than.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "841 < 861"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "(29)² < (31)² − (10)²",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l12",
+      "target": {
+       "text": "(29)² < (31)² − (10)²"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: squares first, then the take away, then compare."
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_032": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We must multiply 28 by the smallest number that turns it into a perfect square. The secret is in its prime factors.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "28 × ? = a perfect square  (smallest ?)",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "factorTree",
+       "number": 28,
+       "note": "Break 28 into prime factors"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Break 28 down. 28 is 2 times 14, and 14 is 2 times 7. So 28 is 2 times 2 times 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "28 = 2 × 14"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "28 = 2 × 2 × 7"
+     }
+    ]
+   },
+   {
+    "say": "In a perfect square, every prime factor has a partner. Look at 36: it is 2 times 2 times 3 times 3. Two pairs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "36 = 2 × 2 × 3 × 3"
+     }
+    ]
+   },
+   {
+    "say": "In 28, the two 2s make a pair. Which factor has no partner?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "14",
+      "7",
+      "2"
+     ],
+     "answer": 1,
+     "ifNot": "28 is 2 times 2 times 7. The 2s pair up with each other. The 7 stands alone."
+    },
+    "board": [
+     {
+      "op": "group",
+      "line": "l3",
+      "targets": [
+       {
+        "text": "2",
+        "nth": 2
+       },
+       {
+        "text": "2",
+        "nth": 3
+       }
+      ],
+      "label": "a pair"
+     }
+    ]
+   },
+   {
+    "say": "The 7 is alone. So we give it a partner: multiply by one more 7.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "28 × 7 = 196"
+     }
+    ]
+   },
+   {
+    "say": "Check: 196 is 14 times 14. A perfect square!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "14 × 14 = 196"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: guessing small numbers does not help here. Any other small number leaves the 7 without a partner."
+   },
+   {
+    "say": "So: break into primes, pair them up, and multiply by whatever is left alone."
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "For each pair, we square both numbers and add. We want a total that is itself a square number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Sum of the squares of which two is a square?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10, 15     7, 24     8, 45     9, 25",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with 10 and 15. 10 squared is 100 and 15 squared is 225. Together, 325.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "10² + 15² = 100 + 225 = 325"
+     }
+    ]
+   },
+   {
+    "say": "Is 325 a square? 18 times 18 is 324. So 325 misses by just 1. Not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "18 × 18 = 324"
+     }
+    ]
+   },
+   {
+    "say": "Next, 7 and 24. 7 squared is 49. For 24 squared: 24 times 20 is 480 and 24 times 4 is 96. So what is 24 times 24?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "576",
+      "48",
+      "476"
+     ],
+     "answer": 0,
+     "ifNot": "Add the two parts. 480 plus 96 makes 576."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "7² = 49"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "24 × 20 = 480"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "24 × 4 = 96"
+     }
+    ]
+   },
+   {
+    "say": "480 plus 96 is 576. So the total is 49 plus 576, which is 625.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "7² + 24² = 49 + 576 = 625"
+     }
+    ]
+   },
+   {
+    "say": "And 625 is 25 times 25. A square!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "25 × 25 = 625"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "625"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "The other two pairs give 2089 and 706, and neither of those is a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "8² + 45² = 2089"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "9² + 25² = 706"
+     }
+    ]
+   },
+   {
+    "say": "So the pair is 7 and 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "7 and 24",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l12",
+      "target": {
+       "text": "7 and 24"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is the first pair. 325 is so close to 324 that it is easy to believe. Close is not enough for a square."
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We must multiply 588 by the least number that makes a perfect square. The secret is in its prime factors.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "588 × ? = a perfect square  (least ?)",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "factorTree",
+       "number": 588,
+       "note": "Break 588 into prime factors"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Break 588 down. 588 is 2 times 294, and 294 is 2 times 147.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "588 = 2 × 294"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "294 = 2 × 147"
+     }
+    ]
+   },
+   {
+    "say": "147 is 3 times 49, and 49 is 7 times 7. So 588 is 2 times 2 times 3 times 7 times 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "147 = 3 × 49"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "588 = 2 × 2 × 3 × 7 × 7"
+     }
+    ]
+   },
+   {
+    "say": "In a perfect square every factor has a partner. The 2s make a pair and the 7s make a pair. Which factor is alone?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7",
+      "3",
+      "2"
+     ],
+     "answer": 1,
+     "ifNot": "There are two 2s and two 7s, so they pair up. There is only one 3, so it is alone."
+    }
+   },
+   {
+    "say": "The 3 is alone. So we multiply by 3 to give it a partner.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "588 × 3 = 1764"
+     }
+    ]
+   },
+   {
+    "say": "Check: 1764 is 42 times 42. A perfect square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "42 × 42 = 1764"
+     }
+    ]
+   },
+   {
+    "say": "So the least number is 3. Now look at the choices: 2, 6 and 4. There is no 3!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "choices: 2, 6, 4, None of these",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. When your answer is not in the list, do not bend it to fit. The answer is None of these.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "None of these",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "None of these"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A quick check of the others: multiplying by 2, 4 or 6 still leaves a factor without a partner."
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We add something to 1234 to reach a square number. So we need the first square above 1234.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1234 + ? = a square number",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "numberLine",
+       "min": 1220,
+       "max": 1300,
+       "step": 10,
+       "tickLabels": "none",
+       "points": [
+        {
+         "at": 1234,
+         "label": "1234"
+        }
+       ],
+       "note": "How far is the next square?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Where to start? 30 times 30 is 900, too small. 40 times 40 is 1600, too big. So try in between, at 35.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "30 × 30 = 900"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "40 × 40 = 1600"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "try 35",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "35 times 35 is 1225. That is just under 1234.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "35 × 35 = 1225"
+     }
+    ]
+   },
+   {
+    "say": "1225 is below 1234. So which square should we aim for?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "36 × 36",
+      "35 × 35",
+      "34 × 34"
+     ],
+     "answer": 0,
+     "ifNot": "We are adding, so we must go up. The next square after 35 times 35 is 36 times 36."
+    }
+   },
+   {
+    "say": "36 times 36: 36 times 30 is 1080, and 36 times 6 is 216. Together, 1296.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "36 × 30 = 1080"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "36 × 6 = 216"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "36 × 36 = 1296"
+     }
+    ]
+   },
+   {
+    "say": "Now find the gap from 1234 up to 1296. It is 62.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "1296 − 1234 = 62"
+     },
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "numberLine",
+       "min": 1220,
+       "max": 1300,
+       "step": 10,
+       "tickLabels": "none",
+       "points": [
+        {
+         "at": 1234,
+         "label": "1234"
+        },
+        {
+         "at": 1296,
+         "label": "1296"
+        }
+       ],
+       "hops": [
+        {
+         "from": 1234,
+         "to": 1296,
+         "label": "+62"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "So we must add 62.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "62",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "62"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 1234 plus 62 is 1296, and that is 36 times 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "1234 + 62 = 1296"
+     }
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_032": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "3 pairs of numbers. We add each pair, and look for a total that is a square number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Which two numbers add up to a square?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "159 & 165     198 & 145     189 & 330",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First pair: 159 plus 165 is 324.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "159 + 165 = 324"
+     }
+    ]
+   },
+   {
+    "say": "Is 324 a square? Try 18. 18 times 10 is 180, and 18 times 8 is 144. So what is 18 times 18?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "314",
+      "324",
+      "36"
+     ],
+     "answer": 1,
+     "ifNot": "18 times 18 is 18 times 10 and 18 times 8 together. 180 plus 144 makes 324."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "18 × 10 = 180"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "18 × 8 = 144"
+     }
+    ]
+   },
+   {
+    "say": "180 plus 144 is 324. So 324 is 18 times 18, a square!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "18 × 18 = 324"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "324"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Check the others. 198 plus 145 is 343. That is past 324, but short of 19 times 19, which is 361. Not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "198 + 145 = 343"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "19 × 19 = 361"
+     }
+    ]
+   },
+   {
+    "say": "189 plus 330 is 519. 22 times 22 is 484 and 23 times 23 is 529. In between, so not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "189 + 330 = 519"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "22 × 22 = 484"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "23 × 23 = 529"
+     }
+    ]
+   },
+   {
+    "say": "So the pair is 159 and 165.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "159 and 165",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l12",
+      "target": {
+       "text": "159 and 165"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: do not jump to none of these because the sums look hard. Add each pair properly first."
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two special squares to find, and then we divide one by the other.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Smallest 4-digit square ÷ greatest 2-digit even square",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The smallest 4-digit number is 1000. 30 times 30 is 900, so we are close. 31 times 31 is 961. Still only 3 digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "smallest 4-digit number: 1000",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "30 × 30 = 900"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "31 × 31 = 961"
+     }
+    ]
+   },
+   {
+    "say": "Try 32. 32 times 32 is 1024. That is the smallest 4-digit square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "32 × 32 = 1024"
+     }
+    ]
+   },
+   {
+    "say": "Now the 2-digit squares: 16, 25, 36, 49, 64 and 81. Which is the greatest even one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "64",
+      "81",
+      "36"
+     ],
+     "answer": 0,
+     "ifNot": "81 is the greatest, but it is odd. The greatest even one is 64."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "16, 25, 36, 49, 64, 81",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "81 is bigger, but it is odd. That is the trap. The greatest even one is 64.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l6",
+      "target": {
+       "text": "81"
+      },
+      "note": "odd"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "64"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now divide 1024 by 64. 64 times 10 is 640. That leaves 384, and 64 times 6 is 384.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "64 × 10 = 640"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "1024 − 640 = 384"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "64 × 6 = 384"
+     }
+    ]
+   },
+   {
+    "say": "10 lots and 6 lots make 16 lots. So the quotient is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "1024 ÷ 64 = 16"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "16",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l11",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: find each special number carefully, word by word, and only then divide."
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We divide the greatest 2-digit square by the smallest 2-digit square, and find what is left over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Greatest 2-digit square ÷ smallest one: remainder = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "List the squares. 1, 4 and 9 have one digit. Then come 16, 25, 36, 49, 64 and 81. And 100 has 3 digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "16, 25, 36, 49, 64, 81",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "10 × 10 = 100:  3 digits",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the greatest 2-digit square is 81 and the smallest is 16.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "81"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now divide 81 by 16. 5 times 16 is 80 and 6 times 16 is 96. So how many lots of 16 fit into 81?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6",
+      "5",
+      "4"
+     ],
+     "answer": 1,
+     "ifNot": "5 lots make 80, which fits inside 81. 6 lots make 96, which is too much."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 × 16 = 80"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6 × 16 = 96"
+     }
+    ]
+   },
+   {
+    "say": "5 lots of 16 make 80. 6 lots would be 96, which is too many."
+   },
+   {
+    "say": "81 minus 80 leaves 1. That is the remainder.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "81 − 80 = 1"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "1",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "1"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 5 times 16, plus 1, is 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "5 × 16 + 1 = 81"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 100 is a square, but it has 3 digits. The greatest 2-digit square is 81."
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH16_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "6 numbers, and one does not belong. First, what do they all have in common?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Odd one out: 144, 169, 196, 256, 324, 400",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What kind of numbers are these?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "prime numbers",
+      "multiples of 12",
+      "square numbers"
+     ],
+     "answer": 2,
+     "ifNot": "144 is 12 times 12. In the same way, every number here is some number times itself, so they are square numbers."
+    }
+   },
+   {
+    "say": "They are all squares: of 12, 13, 14, 16, 18 and 20.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "headers": [
+        "Number",
+        "Square of"
+       ],
+       "rows": [
+        [
+         "144",
+         "12"
+        ],
+        [
+         "169",
+         "13"
+        ],
+        [
+         "196",
+         "14"
+        ],
+        [
+         "256",
+         "16"
+        ],
+        [
+         "324",
+         "18"
+        ],
+        [
+         "400",
+         "20"
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "So being a square does not pick one out. Look again at the numbers being squared: 12, 13, 14, 16, 18 and 20."
+   },
+   {
+    "say": "All of them are even, except 13. And an odd number squared stays odd. 169 is the only odd number in the list.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "169"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the odd one out is 169.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "169",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "169"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When everything looks alike, dig one level deeper. Here, that meant asking what each number is the square of."
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH16_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "6 numbers, and one does not belong. They are all square numbers, so let us find what each is the square of.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Which does not belong? 81, 121, 169, 289, 361, 529",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "81 is 9 times 9. 121 is 11 times 11. 169 is 13 times 13.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "headers": [
+        "Number",
+        "Square of"
+       ],
+       "rows": [
+        [
+         "81",
+         "9"
+        ],
+        [
+         "121",
+         "11"
+        ],
+        [
+         "169",
+         "13"
+        ],
+        [
+         "289",
+         "17"
+        ],
+        [
+         "361",
+         "19"
+        ],
+        [
+         "529",
+         "23"
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "289 is 17 times 17. 361 is 19 times 19. And 529 is 23 times 23."
+   },
+   {
+    "say": "Look at 9, 11, 13, 17, 19 and 23. What is special about most of them?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "they are prime numbers",
+      "they are even numbers",
+      "they are multiples of 3"
+     ],
+     "answer": 0,
+     "ifNot": "11, 13, 17, 19 and 23 can only be divided by 1 and themselves. They are prime numbers."
+    }
+   },
+   {
+    "say": "5 of them are prime. But 9 is not prime, because 9 is 3 times 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 = 3 × 3"
+     }
+    ]
+   },
+   {
+    "say": "So 81 is the square of a number that is not prime. It does not belong.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "81"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "81",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "81"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap: all 6 numbers are odd, and all are squares, so those ideas do not help. The difference hides in the number being squared."
+   }
+  ]
+ },
+ "G4A_SQUARES_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The square of 12 means 12 multiplied by itself.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "The square of 12 = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "grid",
+       "rows": 12,
+       "cols": 12,
+       "dots": true,
+       "note": "12 rows of 12"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Which sum gives the square of 12?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 × 12",
+      "12 × 2",
+      "12 + 12"
+     ],
+     "answer": 0,
+     "ifNot": "Squaring means the number times itself. So it is 12 times 12, not 12 times 2."
+    }
+   },
+   {
+    "say": "12 times 12 is easier in two parts. Split one 12 into 10 and 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 × 12 = 12 × 10 + 12 × 2"
+     }
+    ]
+   },
+   {
+    "say": "12 times 10 is 120. And 12 times 2 is 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 × 10 = 120"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 × 2 = 24"
+     }
+    ]
+   },
+   {
+    "say": "120 plus 24 is 144. So the square of 12 is 144.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "120 + 24 = 144"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "144",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "144"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 10 times 10 plus 2 times 2 is only 104. That leaves out part of the square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "10 × 10 + 2 × 2 = 104"
+     }
+    ]
+   },
+   {
+    "say": "So remember: the square of a number is the number times itself."
+   }
+  ]
+ },
+ "G4A_SQUARES_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A perfect square is a number times itself, like 3 times 3. One of these 4 numbers is a perfect square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Which is a perfect square?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "48     64     56     72",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "List the squares near these numbers. 6 times 6 is 36. 7 times 7 is 49. 8 times 8 is 64. 9 times 9 is 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6 × 6 = 36"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "7 × 7 = 49"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "8 × 8 = 64"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "9 × 9 = 81"
+     }
+    ]
+   },
+   {
+    "say": "Which of our numbers is in that list of squares?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "64",
+      "48",
+      "56"
+     ],
+     "answer": 0,
+     "ifNot": "Look down the list of squares: 36, 49, 64, 81. Only 64 is one of our numbers."
+    }
+   },
+   {
+    "say": "64 is 8 times 8. So 64 is the perfect square.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "64"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "64",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "64"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 48, 56 and 72 are in the times tables too. But 48 is 6 times 8, and 56 is 7 times 8. Two different numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "48 = 6 × 8"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "56 = 7 × 8"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "72 = 8 × 9"
+     }
+    ]
+   },
+   {
+    "say": "A perfect square needs the same number twice."
+   }
+  ]
+ },
+ "G4A_SQUARES_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The board has 81 small squares, with as many rows as columns. How many squares are in each row?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "81 small squares, equal rows and columns. Each row = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Rows and columns are equal. So the number in a row, times what, makes 81?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "times itself",
+      "times 2",
+      "times 3"
+     ],
+     "answer": 0,
+     "ifNot": "There are as many rows as squares in a row. So we multiply the number by itself to get 81."
+    }
+   },
+   {
+    "say": "We need a number that, times itself, makes 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "? × ? = 81"
+     }
+    ]
+   },
+   {
+    "say": "Try 8. 8 times 8 is 64. Too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 × 8 = 64"
+     }
+    ]
+   },
+   {
+    "say": "Try 9. 9 times 9 is 81. That fits! So each row has 9 small squares.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "9 × 9 = 81"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "grid",
+       "rows": 9,
+       "cols": 9,
+       "dots": true,
+       "note": "9 rows of 9"
+      }
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "9",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: do not divide 81 by 3, and do not halve it. The board is square, so both numbers must be the same."
+   }
+  ]
+ },
+ "G4A_SQUARES_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We know only one thing about a number: it ends in 7. Can we still tell how its square ends?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "A number ends in 7. Its square ends in ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Test with the simplest such number, 7 itself. 7 times 7 is 49, which ends in 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "7 × 7 = 49"
+     }
+    ]
+   },
+   {
+    "say": "Will a bigger number that ends in 7, like 17, also have a square ending in 9?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, only the last digits matter",
+      "No, it could end in anything"
+     ],
+     "answer": 0,
+     "ifNot": "When we multiply, the last digit of the answer comes only from the last digits of the two numbers. Here that is 7 times 7."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "try 17",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "17 times 17: 17 times 10 is 170 and 17 times 7 is 119. Together, 289. It ends in 9 again!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "17 × 10 = 170"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "17 × 7 = 119"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "17 × 17 = 289"
+     }
+    ]
+   },
+   {
+    "say": "The last digit of a product comes only from the last digits. And 7 times 7 always ends in 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "9",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the last digit does not just stay 7. And 7 plus 7 is 14, but squaring is multiplying, not adding.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "7 + 7 = 14:  adding, not squaring",
+      "label": true
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "49 is a perfect square, and we want the very next one after it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Next perfect square after 49 = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "49 is which number times itself?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9 × 9",
+      "7 × 7",
+      "6 × 6"
+     ],
+     "answer": 1,
+     "ifNot": "7 times 7 is 49. So 49 is the square of 7."
+    }
+   },
+   {
+    "say": "49 is 7 times 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "7 × 7 = 49"
+     }
+    ]
+   },
+   {
+    "say": "The next square comes from the next counting number, which is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 × 8 = 64"
+     }
+    ]
+   },
+   {
+    "say": "8 times 8 is 64. So the next perfect square is 64.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "64",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "64"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 56 is 7 times 8. For the next square, both numbers must go up to 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "7 × 8 = 56:  not a square",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The squares go 49, 64, then 81. There is no perfect square in between.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "9 × 9 = 81"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi plants 11 rows of saplings, with 11 saplings in each row. How many saplings is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "11 rows of 11 saplings. How many?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "grid",
+       "rows": 11,
+       "cols": 11,
+       "dots": true,
+       "note": "11 rows of 11"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Which sum counts all the saplings?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "11 + 11",
+      "11 × 4",
+      "11 × 11"
+     ],
+     "answer": 2,
+     "ifNot": "Each row has 11, and there are 11 rows. So we add 11, eleven times over. That is 11 times 11."
+    }
+   },
+   {
+    "say": "11 times 11. Start with 11 times 10, which is 110.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "11 × 10 = 110"
+     }
+    ]
+   },
+   {
+    "say": "Then one more 11. 110 plus 11 is 121.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "110 + 11 = 121"
+     }
+    ]
+   },
+   {
+    "say": "So Ravi plants 121 saplings.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "11 × 11 = 121"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "121",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "121"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 22 is only 11 plus 11, which is just 2 rows. And 44 counts along the 4 sides. The saplings fill the whole field.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "11 + 11 = 22"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "11 × 4 = 44"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "5 squared plus 3 squared. The little 2 tells us to square each number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5² + 3² = ?",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What does 5 squared mean?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 + 2",
+      "5 × 5",
+      "5 × 2"
+     ],
+     "answer": 1,
+     "ifNot": "The little 2 means: use the number twice in a multiplication. So 5 squared is 5 times 5."
+    }
+   },
+   {
+    "say": "5 squared is 5 times 5, which is 25.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "5²"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5² = 5 × 5 = 25"
+     }
+    ]
+   },
+   {
+    "say": "3 squared is 3 times 3, which is 9.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3²"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3² = 3 × 3 = 9"
+     }
+    ]
+   },
+   {
+    "say": "Now add the two squares. 25 plus 9 is 34.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "25 + 9 = 34"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "34",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "34"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: do not add first. 5 plus 3 is 8, and 8 squared is 64. That is a different sum.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "(5 + 3)² = 64"
+     }
+    ]
+   },
+   {
+    "say": "So: square each number on its own, then add."
+   }
+  ]
+ },
+ "G4A_SQUARES_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The square of 30 is 30 times 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "The square of 30 = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is a trick for numbers that end in zero. First forget the zeros: 3 times 3 is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 3 = 9"
+     }
+    ]
+   },
+   {
+    "say": "Now put the zeros back. Each 30 has one zero. How many zeros go on the answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 zeros",
+      "1 zero",
+      "3 zeros"
+     ],
+     "answer": 0,
+     "ifNot": "One zero comes from the first 30 and one from the second 30. That makes 2 zeros."
+    }
+   },
+   {
+    "say": "One zero from each 30 makes 2 zeros. So we write 9, and then 2 zeros. That is 900.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "30 × 30 = 900"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "900",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "900"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 30 times 10 is 300, and 3 lots of 300 make 900.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "30 × 10 = 300"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3 × 300 = 900"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 60 is 30 plus 30. And 90 has only one zero. The square needs both zeros.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "30 + 30 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "90: one zero is missing",
+      "label": true
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We want the biggest perfect square that still has only two digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Greatest two-digit perfect square = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The greatest two-digit number is 99. So we want the biggest square that is not more than 99.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "greatest two-digit number: 99",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "10 times 10 is 100. Is that a two-digit number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No, it has 3 digits",
+      "Yes, it has 2 digits"
+     ],
+     "answer": 0,
+     "ifNot": "100 has 3 digits: 1, 0 and 0. So it is too big for us."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "10 × 10 = 100"
+     }
+    ]
+   },
+   {
+    "say": "100 is too big. Step back one: 9 times 9 is 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "9 × 9 = 81"
+     }
+    ]
+   },
+   {
+    "say": "81 has two digits. So 81 is the greatest two-digit perfect square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "81",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "81"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 99 is the greatest two-digit number, but no whole number times itself makes 99. It lies between 81 and 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "81 < 99 < 100"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We take away as little as we can from 30, and we must be left with a perfect square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "30 − ? = a perfect square  (smallest ?)",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "numberLine",
+       "min": 20,
+       "max": 40,
+       "step": 1,
+       "tickLabels": "none",
+       "points": [
+        {
+         "at": 30,
+         "label": "30"
+        }
+       ],
+       "note": "Find the nearest square below 30"
+      }
+     }
+    ]
+   },
+   {
+    "say": "We are taking away, so the square we want is below 30. And for the smallest take away, it should be as near to 30 as possible."
+   },
+   {
+    "say": "5 times 5 is 25 and 6 times 6 is 36. Which of these can we reach by taking away from 30?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "36",
+      "25"
+     ],
+     "answer": 1,
+     "ifNot": "36 is more than 30. We are taking away, so we need the square that is less than 30, which is 25."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 × 5 = 25"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6 × 6 = 36"
+     }
+    ]
+   },
+   {
+    "say": "25 is the nearest square below 30.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "numberLine",
+       "min": 20,
+       "max": 40,
+       "step": 1,
+       "tickLabels": "none",
+       "points": [
+        {
+         "at": 25,
+         "label": "25"
+        },
+        {
+         "at": 30,
+         "label": "30"
+        }
+       ],
+       "hops": [
+        {
+         "from": 30,
+         "to": 25,
+         "label": "−5"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "30 minus 25 is 5. So we take away 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "30 − 25 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 6 is what you would add to reach 36. And taking away 14 or 21 also leaves a square, but they are not the smallest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "30 − 14 = 16"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "30 − 21 = 9"
+     }
+    ]
+   },
+   {
+    "say": "So: the smallest take away leads to the nearest square below."
+   }
+  ]
+ },
+ "G4A_SQUARES_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "All 4 of these are perfect squares. We want the one that is the square of an odd number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Which is the square of an odd number?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "36     64     49     100",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Find what each one is the square of. 36 is 6 times 6. 64 is 8 times 8. 100 is 10 times 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "36 = 6 × 6"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "64 = 8 × 8"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "100 = 10 × 10"
+     }
+    ]
+   },
+   {
+    "say": "6, 8 and 10 are all even. So those three are squares of even numbers."
+   },
+   {
+    "say": "49 is 7 times 7. Is 7 odd or even?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "even",
+      "odd"
+     ],
+     "answer": 1,
+     "ifNot": "Even numbers end in 0, 2, 4, 6 or 8. 7 is not one of those, so 7 is odd."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "49 = 7 × 7"
+     }
+    ]
+   },
+   {
+    "say": "7 is odd. So 49 is the square of an odd number.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "49"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "49",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "49"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A shortcut: odd times odd is always odd. So the square of an odd number must be odd, and 49 is the only odd number here."
+   }
+  ]
+ },
+ "G4A_SQUARES_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two steps here: find the square of 6, and then compare it with 6 itself.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(square of 6) − 6 = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the square of 6. What is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "66",
+      "36",
+      "12"
+     ],
+     "answer": 1,
+     "ifNot": "The square of 6 is 6 times 6, which is 36. 6 times 2 would only be 12."
+    }
+   },
+   {
+    "say": "6 times 6 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6 × 6 = 36"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "grid",
+       "rows": 6,
+       "cols": 6,
+       "dots": true,
+       "note": "6 rows of 6"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Difference means subtract. So take the number 6 away from its square. 36 minus 6 is 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "36 − 6 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "30",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "30"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Picture it: from 6 rows of 6, take away one row. 5 rows of 6 are left, and that is 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 × 6 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 36 is only the square. The question has one more step. And difference never means add."
+   }
+  ]
+ },
+ "G4A_SQUARES_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We count the perfect squares that lie between 50 and 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "How many perfect squares between 50 and 150?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Find where to start. 7 times 7 is 49, just below 50. So the first square inside is 8 times 8, which is 64.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "7 × 7 = 49:  too small",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 × 8 = 64"
+     }
+    ]
+   },
+   {
+    "say": "Carry on. 9 times 9 is 81, 10 times 10 is 100, 11 times 11 is 121 and 12 times 12 is 144.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "9 × 9 = 81"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "11 × 11 = 121"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "12 × 12 = 144"
+     }
+    ]
+   },
+   {
+    "say": "13 times 13 is 169. Does that one count?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No, it is more than 150",
+      "Yes, it counts"
+     ],
+     "answer": 0,
+     "ifNot": "169 is bigger than 150, so it is outside our range. We stop at 144."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "13 × 13 = 169"
+     }
+    ]
+   },
+   {
+    "say": "So the squares are 64, 81, 100, 121 and 144.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "64, 81, 100, 121, 144",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count them. There are 5 perfect squares.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful at both ends. 49 is just outside, and so is 169. Always check the edges."
+   }
+  ]
+ },
+ "G4A_SQUARES_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "One of these digits can never be the last digit of a perfect square. Let us find out which.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Which digit is never the last digit of a perfect square?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4     7     5     6",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The last digit of a square depends only on the last digit of the number. So we just square the digits 0 to 9."
+   },
+   {
+    "say": "The squares are 0, 1, 4, 9, 16, 25, 36, 49, 64 and 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "0, 1, 4, 9, 16, 25, 36, 49, 64, 81",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Their last digits are 0, 1, 4, 9, 6, 5, 6, 9, 4 and 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "last digits:   0, 1, 4, 9, 6, 5, 6, 9, 4, 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which of our 4 digits is missing from that list?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7",
+      "4",
+      "6"
+     ],
+     "answer": 0,
+     "ifNot": "4 is there, from 2 times 2. 5 is there, from 5 times 5. 6 is there, from 4 times 4. But 7 never appears."
+    }
+   },
+   {
+    "say": "7 never shows up. So no perfect square ends in 7.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "In fact squares only ever end in 0, 1, 4, 5, 6 or 9. Never in 2, 3, 7 or 8. A handy fact for spotting squares!"
+   }
+  ]
+ },
+ "G4A_SQUARES_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "10 squared, take away 6 squared. We square each number first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "10² − 6² = ?",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "10 squared is 10 times 10, which is 100.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "10²"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10² = 100"
+     }
+    ]
+   },
+   {
+    "say": "And what is 6 squared?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "36",
+      "12",
+      "26"
+     ],
+     "answer": 0,
+     "ifNot": "6 squared is 6 times 6, which is 36. 6 times 2 would be only 12."
+    }
+   },
+   {
+    "say": "6 squared is 36.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "6²"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6² = 36"
+     }
+    ]
+   },
+   {
+    "say": "Now subtract. 100 minus 36 is 64.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "100 − 36 = 64"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "64",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "64"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: do not subtract first. 10 minus 6 is 4, and 4 squared is only 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "(10 − 6)² = 16"
+     }
+    ]
+   },
+   {
+    "say": "So: squares first, then the take away."
+   }
+  ]
+ },
+ "G4A_SQUARES_016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We add up these 6 odd numbers, and then ask which number the total is the square of.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1 + 3 + 5 + 7 + 9 + 11 is the square of ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A neat way to add: pair the ends. 1 and 11 make 12. 3 and 9 make 12. 5 and 7 make 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1 + 11 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 + 9 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 + 7 = 12"
+     }
+    ]
+   },
+   {
+    "say": "3 lots of 12 make 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 12 = 36"
+     }
+    ]
+   },
+   {
+    "say": "The total is 36. Which number, times itself, makes 36?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "36",
+      "11",
+      "6"
+     ],
+     "answer": 2,
+     "ifNot": "6 times 6 is 36. The question asks for the number that is squared, not for the total."
+    }
+   },
+   {
+    "say": "6 times 6 is 36. So the sum is the square of 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "6 × 6 = 36"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "6",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the pretty part. We added 6 odd numbers, and got 6 times 6. That always works!",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "grid",
+       "rows": 6,
+       "cols": 6,
+       "dots": true,
+       "note": "6 odd numbers build a 6 by 6 square"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Try it: 1 plus 3 is 4, which is 2 times 2. And 1 plus 3 plus 5 is 9, which is 3 times 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "1 + 3 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "1 + 3 + 5 = 9"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The teacher makes the biggest square she can from 150 children. Some will not fit. How many?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "150 children, biggest possible square. Left out = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A square has the same number in every row and column. So the number she uses is a perfect square, as big as possible, but not more than 150."
+   },
+   {
+    "say": "12 times 12 is 144. And 13 times 13 is 169.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 × 12 = 144"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "13 × 13 = 169"
+     }
+    ]
+   },
+   {
+    "say": "Which square can the teacher make with 150 children?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "13 by 13",
+      "12 by 12"
+     ],
+     "answer": 1,
+     "ifNot": "13 by 13 needs 169 children, but there are only 150. So the biggest square she can make is 12 by 12."
+    }
+   },
+   {
+    "say": "169 is too many. So the biggest square uses 144 children.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "grid",
+       "rows": 12,
+       "cols": 12,
+       "dots": true,
+       "note": "12 rows of 12 = 144"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The rest are left out. 150 minus 144 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "150 − 144 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 12 is the number in each row, not the number left out. And 19 is how many more she would need for the next square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "169 − 150 = 19"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The gardener wants to plant all 200 roses in a square. He may need to buy a few more. How many, at least?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "200 plants, all in a square. Extra plants needed = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "He wants to use every plant, so the square must hold at least 200. We need the first perfect square that is 200 or more."
+   },
+   {
+    "say": "14 times 14 is 196. Can a 14 by 14 square hold all 200 plants?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, it is close enough",
+      "No, 196 is less than 200"
+     ],
+     "answer": 1,
+     "ifNot": "196 is 4 short of 200. So 4 plants would be left over, and he wants to plant them all."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "14 × 14 = 196"
+     }
+    ]
+   },
+   {
+    "say": "196 is too small. This is the trap: we must go up to the next square, not down."
+   },
+   {
+    "say": "15 times 15 is 225. That holds them all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 × 15 = 225"
+     }
+    ]
+   },
+   {
+    "say": "He has 200 and needs 225. 225 minus 200 is 25. So he buys 25 more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "225 − 200 = 25"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "25",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 4 is how many would be left over from the smaller square. And 15 is the number in each row, not the number to buy.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "200 − 196 = 4"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The square root of 400, added to the square root of 49. We find each root first, and then add.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "√400 + √49 = ?",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The square root of 400 is the number that, times itself, makes 400. Which is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "200",
+      "40",
+      "20"
+     ],
+     "answer": 2,
+     "ifNot": "20 times 20 is 400, because 2 times 2 is 4, with 2 zeros. 200 is only half of 400, and a square root is not a half."
+    }
+   },
+   {
+    "say": "20 times 20 is 400. So the square root of 400 is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "20 × 20 = 400"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "√400 = 20"
+     }
+    ]
+   },
+   {
+    "say": "7 times 7 is 49. So the square root of 49 is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "7 × 7 = 49"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "√49 = 7"
+     }
+    ]
+   },
+   {
+    "say": "Now add. 20 plus 7 is 27.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "20 + 7 = 27"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "27",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "27"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: do not add first. 400 plus 49 is 449, and that is not what the question asks.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "400 + 49 = 449"
+     }
+    ]
+   },
+   {
+    "say": "So: find each square root on its own, then add."
+   }
+  ]
+ },
+ "G4A_SQUARES_020": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "441 soldiers stand in a square, and every soldier in the front row holds a flag. How many flags?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "441 soldiers in a square. Flags in the front row = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We need the number of soldiers in one row. That number, times itself, is 441.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "? × ? = 441"
+     }
+    ]
+   },
+   {
+    "say": "Try 20. 20 times 20 is 400. A bit too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 × 20 = 400"
+     }
+    ]
+   },
+   {
+    "say": "400 is too small. Here is a clue: 441 ends in 1. Which number should we try next?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "21",
+      "25",
+      "30"
+     ],
+     "answer": 0,
+     "ifNot": "We need just a little more than 20. And 21 ends in 1, so its square ends in 1 too, like 441."
+    }
+   },
+   {
+    "say": "21 times 21: 21 times 20 is 420, and one more 21 makes 441.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "21 × 20 = 420"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "420 + 21 = 441"
+     }
+    ]
+   },
+   {
+    "say": "So each row has 21 soldiers, and the front row holds 21 flags.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "21 × 21 = 441"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "21",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "21"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: only the front row holds flags. Not all four sides, and not all 441 soldiers."
+   }
+  ]
+ },
+ "G4A_SQUARES_021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Three of these are perfect squares, and one is not. We want the one that is not.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Which is NOT a perfect square?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "164     121     144     196",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "List the squares just above 10 times 10. 11 times 11 is 121. 12 times 12 is 144.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "11 × 11 = 121"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 × 12 = 144"
+     }
+    ]
+   },
+   {
+    "say": "13 times 13 is 169. 14 times 14 is 196.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "13 × 13 = 169"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "14 × 14 = 196"
+     }
+    ]
+   },
+   {
+    "say": "Which of our numbers is missing from the list 121, 144, 169, 196?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "164",
+      "144",
+      "196"
+     ],
+     "answer": 0,
+     "ifNot": "121, 144 and 196 are all in the list of squares. 164 is not there."
+    }
+   },
+   {
+    "say": "164 is not in the list. It sits between 144 and 169, so it is not a perfect square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "144 < 164 < 169"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "164"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "164",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "164"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 164 looks a lot like 169 and 144. Looking like a square is not enough. Check against the tables."
+   }
+  ]
+ },
+ "G4A_SQUARES_022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two numbers come one after the other. Their squares are 144 and 169. We want the sum of the two numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Squares are 144 and 169. Sum of the two numbers = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "144 is the square of which number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "14",
+      "12",
+      "72"
+     ],
+     "answer": 1,
+     "ifNot": "12 times 12 is 144. 72 is half of 144, and a square root is not a half."
+    }
+   },
+   {
+    "say": "12 times 12 is 144. So the first number is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 × 12 = 144"
+     }
+    ]
+   },
+   {
+    "say": "The numbers come one after the other, so the second should be 13. Check: 13 times 13 is 169. Yes!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "13 × 13 = 169"
+     }
+    ]
+   },
+   {
+    "say": "Now add the two numbers. 12 plus 13 is 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 + 13 = 25"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "25",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the question asks for the sum of the numbers, not of their squares. 144 plus 169 is 313, a very different answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "144 + 169 = 313"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_023": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Only one of these 4 numbers is a perfect square. We can find it without any long multiplying, just from the last digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Only one is a perfect square. Use the last digits.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1232     1443     1521     1687",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Remember how squares end. Square the digits 0 to 9, and the last digits are only ever 0, 1, 4, 5, 6 or 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "squares end in:   0, 1, 4, 5, 6 or 9",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So which endings are impossible for a perfect square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 and 6",
+      "2, 3, 7 and 8",
+      "1, 4 and 9"
+     ],
+     "answer": 1,
+     "ifNot": "Squares can end in 0, 1, 4, 5, 6 or 9. The digits left over are 2, 3, 7 and 8, and no square ends in those."
+    }
+   },
+   {
+    "say": "1232 ends in 2. 1443 ends in 3. 1687 ends in 7. All three are ruled out.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "1232"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "1443"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "1687"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Only 1521 is left. It ends in 1, which is fine.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "1521"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And indeed, 39 times 39 is 1521.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "39 × 39 = 1521"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "1521",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "1521"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: a good ending does not prove a number is a square. But a bad ending proves it is not. That was enough here."
+   }
+  ]
+ },
+ "G4A_SQUARES_024": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "4 squares to add. We square each number first, and then add them up.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1² + 2² + 3² + 4² = ?",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "1 times 1 is 1. And 2 times 2 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1² = 1"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2² = 4"
+     }
+    ]
+   },
+   {
+    "say": "What is 3 squared?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9",
+      "6",
+      "33"
+     ],
+     "answer": 0,
+     "ifNot": "3 squared is 3 times 3, which is 9. 3 times 2 would be 6, but squaring is times itself."
+    }
+   },
+   {
+    "say": "3 times 3 is 9. And 4 times 4 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3² = 9"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "4² = 16"
+     }
+    ]
+   },
+   {
+    "say": "Now add the squares. 1 plus 4 plus 9 plus 16 is 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1 + 4 + 9 + 16 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "30",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "30"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: adding first gives 1 plus 2 plus 3 plus 4, which is 10, and 10 squared is 100. Not the same thing at all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "(1 + 2 + 3 + 4)² = 100"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_025": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Tara has a square made of 64 tiles. She wants to grow it into the next bigger square. How many more tiles?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "64 tiles in a square. Tiles for the next bigger square?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "grid",
+       "rows": 8,
+       "cols": 8,
+       "dots": true,
+       "note": "64 tiles: 8 rows of 8"
+      }
+     }
+    ]
+   },
+   {
+    "say": "64 tiles make a square. How many tiles are along each side?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "16",
+      "32",
+      "8"
+     ],
+     "answer": 2,
+     "ifNot": "We need a number that, times itself, makes 64. 8 times 8 is 64, so each side has 8 tiles."
+    }
+   },
+   {
+    "say": "8 times 8 is 64. So her square is 8 by 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 × 8 = 64"
+     }
+    ]
+   },
+   {
+    "say": "The next bigger square is 9 by 9. And 9 times 9 is 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9 × 9 = 81"
+     },
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "grid",
+       "rows": 9,
+       "cols": 9,
+       "dots": true,
+       "note": "The next square: 9 rows of 9"
+      }
+     }
+    ]
+   },
+   {
+    "say": "She has 64 and needs 81. 81 minus 64 is 17.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "81 − 64 = 17"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "17",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "17"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "See where the 17 tiles go: one new row of 8, one new column of 8, and 1 tile in the corner.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 + 8 + 1 = 17"
+     }
+    ]
+   },
+   {
+    "say": "That corner tile is the trap. Forget it, and you get 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "8 + 8 = 16:  the corner is missing",
+      "label": true
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_026": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A number, squared, makes 225. We take the number that is 1 more, and square that instead.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "A number squared is 225. (The number + 1) squared = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which number, times itself, makes 225? A clue: 10 times 10 is 100 and 20 times 20 is 400.",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "112",
+      "15",
+      "25"
+     ],
+     "answer": 1,
+     "ifNot": "225 is between 100 and 400, so the number is between 10 and 20. And 225 ends in 5, so the number ends in 5. That is 15."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 × 20 = 400"
+     }
+    ]
+   },
+   {
+    "say": "15 times 15 is 225. So the number is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "15 × 15 = 225"
+     }
+    ]
+   },
+   {
+    "say": "One more than 15 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "15 + 1 = 16"
+     }
+    ]
+   },
+   {
+    "say": "16 times 16: 16 times 10 is 160, and 16 times 6 is 96. Together, 256.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "16 × 10 = 160"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "16 × 6 = 96"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "16 × 16 = 256"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "256",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "256"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: add 1 to the number, not to its square. 225 plus 1 is 226, and that is not a square at all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "225 + 1 = 226:  not a square",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So: go back to the number, change it, and then square again."
+   }
+  ]
+ },
+ "G4A_SQUARES_027": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We count every perfect square from 1 to 100, with both ends included.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "How many perfect squares from 1 to 100?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The first one is 1 times 1, which is 1. Yes, 1 is a perfect square!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1 × 1 = 1"
+     }
+    ]
+   },
+   {
+    "say": "And the last one? Which number, times itself, makes exactly 100?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "50",
+      "9",
+      "10"
+     ],
+     "answer": 2,
+     "ifNot": "10 times 10 is 100. So 100 is itself a perfect square, the square of 10."
+    }
+   },
+   {
+    "say": "10 times 10 is 100. So the squares run from the square of 1 up to the square of 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "10 × 10 = 100"
+     }
+    ]
+   },
+   {
+    "say": "Here they all are.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1, 4, 9, 16, 25, 36, 49, 64, 81, 100",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Each number from 1 to 10 gives one square. So there are 10 of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "10",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: both ends count here, 1 and 100. Miss one and you get 9. And 11 times 11 is 121, which is too big.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "11 × 11 = 121:  too big",
+      "label": true
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_028": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "51 squared, take away 49 squared. Big numbers, but there is a neat way in.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "51² − 49² = ?",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start with 51 times 50, which is 2550.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "51 × 50 = 2550"
+     }
+    ]
+   },
+   {
+    "say": "51 times 51 is one more 51 than that. 2550 plus 51 is 2601.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "51² = 2550 + 51 = 2601"
+     }
+    ]
+   },
+   {
+    "say": "Now 49 times 49. 49 times 50 is 2450. Is 49 times 49 more or less than that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "more, by one 49",
+      "less, by one 49"
+     ],
+     "answer": 1,
+     "ifNot": "49 times 49 has one 49 fewer than 49 times 50. So we take 49 away."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "49 × 50 = 2450"
+     }
+    ]
+   },
+   {
+    "say": "2450 minus 49 is 2401.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "49² = 2450 − 49 = 2401"
+     }
+    ]
+   },
+   {
+    "say": "Now subtract the squares. 2601 minus 2401 is 200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "2601 − 2401 = 200"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "200",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "200"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap: 51 minus 49 is 2, and 2 squared is 4. But we must square first, and only then subtract.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "(51 − 49)² = 4"
+     }
+    ]
+   },
+   {
+    "say": "A shortcut to enjoy: add the two numbers to get 100, and multiply by their difference, 2. That gives 200 as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "51 + 49 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "100 × 2 = 200"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_029": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We divide 48 by something, and the result must be a perfect square. We want the smallest number that works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "48 ÷ ? = a perfect square  (smallest ?)",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Smallest means we test small numbers in order. Dividing by 1 leaves 48, which is not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "48 ÷ 1 = 48"
+     }
+    ]
+   },
+   {
+    "say": "Divide by 2 and we get 24. Is 24 a square? 4 times 4 is 16 and 5 times 5 is 25. So no.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "48 ÷ 2 = 24"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 × 4 = 16"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 × 5 = 25"
+     }
+    ]
+   },
+   {
+    "say": "Now divide by 3. What is 48 divided by 3?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "16",
+      "18",
+      "12"
+     ],
+     "answer": 0,
+     "ifNot": "3 times 16 is 48. So 48 divided by 3 is 16."
+    }
+   },
+   {
+    "say": "48 divided by 3 is 16. And 16 is 4 times 4. A perfect square!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "48 ÷ 3 = 16"
+     }
+    ]
+   },
+   {
+    "say": "So the smallest number to divide by is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "3",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: dividing by 12 gives 4, which is a square too. But 12 is not the smallest. That is why we test in order.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "48 ÷ 12 = 4"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_030": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We subtract as little as we can from 1000, and we must land on a perfect square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1000 − ? = a perfect square  (smallest ?)",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We need the biggest perfect square below 1000. 30 times 30 is 900. So try the numbers just above 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "31 times 31: 31 times 30 is 930, and one more 31 makes 961.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "31 × 30 = 930"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "31 × 31 = 961"
+     }
+    ]
+   },
+   {
+    "say": "32 times 32 is 1024. Can we use that one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, it is closer to 1000",
+      "No, it is more than 1000"
+     ],
+     "answer": 1,
+     "ifNot": "We are subtracting from 1000, so the square must be less than 1000. 1024 is above it."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "32 × 32 = 1024"
+     }
+    ]
+   },
+   {
+    "say": "1024 is above 1000. This is the trap: it is nearer, but we cannot reach it by taking away. So our square is 961."
+   },
+   {
+    "say": "1000 minus 961 is 39.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1000 − 961 = 39"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "39",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "39"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 1000 minus 39 is 961, which is 31 times 31.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "1000 − 39 = 961"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 31 is the number we squared, not the number to subtract."
+   }
+  ]
+ },
+ "G4A_SQUARES_031": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We count the whole numbers that lie between 15 squared and 16 squared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "How many whole numbers between 15² and 16²?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First work out the two squares. 15 times 15 is 225, and 16 times 16 is 256.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15² = 225"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "16² = 256"
+     }
+    ]
+   },
+   {
+    "say": "The numbers between them start at 226 and end at 255.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "226, 227, ... , 254, 255",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "256 minus 225 is 31. Is that the number of whole numbers in between?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No, it is one fewer",
+      "Yes, 31"
+     ],
+     "answer": 0,
+     "ifNot": "The gap of 31 counts every step from 225 up to 256, and the last step lands on 256 itself. So there is one fewer in between."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "256 − 225 = 31"
+     }
+    ]
+   },
+   {
+    "say": "This is the trap. There are 31 steps, but the last step lands on 256, which is an end. So 30 numbers are in between.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "31 − 1 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "30",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "30"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check another way: from 226 to 255 is 255 minus 226, plus 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "255 − 226 + 1 = 30"
+     }
+    ]
+   },
+   {
+    "say": "A pattern: between 15 squared and 16 squared there are 2 times 15 numbers. It works for any two neighbours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "2 × 15 = 30"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_032": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The farmer has enough trees for one square, with 5 left over. For the next bigger square he is 20 short. How many trees has he?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "A square with 5 left over; 20 more for the next square",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Picture his trees on a number line. He is 5 past one perfect square, and 20 short of the next one."
+   },
+   {
+    "say": "So how far apart are those two squares?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "20",
+      "25"
+     ],
+     "answer": 2,
+     "ifNot": "From the smaller square up to his trees is 5. From his trees up to the bigger square is 20. Together that is 5 plus 20."
+    }
+   },
+   {
+    "say": "5 plus 20 is 25. We need two neighbouring squares that are 25 apart.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 + 20 = 25"
+     }
+    ]
+   },
+   {
+    "say": "A tip: neighbouring squares differ by the sum of the two numbers. 12 plus 13 is 25, so try 12 and 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 + 13 = 25"
+     }
+    ]
+   },
+   {
+    "say": "12 times 12 is 144, and 13 times 13 is 169. And yes, 169 minus 144 is 25!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 × 12 = 144"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "13 × 13 = 169"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "169 − 144 = 25"
+     }
+    ]
+   },
+   {
+    "say": "So his square holds 144 trees, with 5 left over. 144 plus 5 is 149.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "144 + 5 = 149"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "149",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "149"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 149 plus 20 is 169, the next square. And careful: 144 forgets the 5 left over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "149 + 20 = 169"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_033": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Asha has two square sheets of stamps: 9 rows of 9, and 12 rows of 12. She makes one big square from all of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "9 rows of 9 and 12 rows of 12, made into one square",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count the stamps on each sheet. 9 times 9 is 81. And 12 times 12 is 144.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 × 9 = 81"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 × 12 = 144"
+     }
+    ]
+   },
+   {
+    "say": "Altogether, 81 plus 144 is 225 stamps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "81 + 144 = 225"
+     }
+    ]
+   },
+   {
+    "say": "The big square has 225 stamps. How do we find the number in each row?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 9 and 12",
+      "multiply 9 by 12",
+      "find what times itself is 225"
+     ],
+     "answer": 2,
+     "ifNot": "In a square, the rows and columns are equal. So we need the number that, times itself, makes 225."
+    }
+   },
+   {
+    "say": "Try 15. 15 times 10 is 150, and 15 times 5 is 75. Together, 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "15 × 10 = 150"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "15 × 5 = 75"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "15 × 15 = 225"
+     }
+    ]
+   },
+   {
+    "say": "So the big square has 15 stamps in each row.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap: 9 plus 12 is 21, but sides cannot simply be added. 21 times 21 is 441, far more stamps than she has.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "9 + 12 = 21"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "21 × 21 = 441"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_034": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A riddle with two clues. I am a two-digit perfect square, and my digits add up to 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "A two-digit perfect square. Its digits add up to 13.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the stronger clue: a two-digit perfect square. There are only 6 of those.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "16, 25, 36, 49, 64, 81",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now test the second clue on each. 1 plus 6 is 7. 2 plus 5 is 7. 3 plus 6 is 9. None of those is 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1 + 6 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 + 5 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 + 6 = 9"
+     }
+    ]
+   },
+   {
+    "say": "What do the digits of 49 add up to?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "11",
+      "36",
+      "13"
+     ],
+     "answer": 2,
+     "ifNot": "The digits of 49 are 4 and 9. And 4 plus 9 is 13."
+    }
+   },
+   {
+    "say": "4 plus 9 is 13. That fits!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4 + 9 = 13"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "49"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The last two: 6 plus 4 is 10, and 8 plus 1 is 9. So only 49 works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "6 + 4 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "8 + 1 = 9"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "49",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "49"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 67 and 94 also have digits that add up to 13. But they are not perfect squares. Both clues must fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "67 and 94: not squares",
+      "label": true
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_035": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We want the smallest perfect square that can be divided exactly by 6, and also by 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Smallest perfect square that 6 and 8 both divide",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "It can be divided by 8, so it must be even. So we only test the even squares, in order.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4, 16, 36, 64, 100, 144",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "4 and 16 cannot be divided by 6. 36 can, but 36 cannot be divided exactly by 8.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "4"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "16"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "36"
+      }
+     }
+    ]
+   },
+   {
+    "say": "64 is 8 times 8, so 8 divides it. Does 6 divide 64 exactly?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, exactly",
+      "No, 6 × 10 = 60 and 6 × 11 = 66"
+     ],
+     "answer": 1,
+     "ifNot": "6 times 10 is 60 and 6 times 11 is 66. 64 falls between them, so 6 does not divide it exactly."
+    }
+   },
+   {
+    "say": "64 is out. And 100 is out too, because 6 times 16 is 96 and 6 times 17 is 102.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "64"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "100"
+      }
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6 × 16 = 96"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "6 × 17 = 102"
+     }
+    ]
+   },
+   {
+    "say": "Now 144. 144 divided by 6 is 24, and 144 divided by 8 is 18. Both are exact!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "144 ÷ 6 = 24"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "144 ÷ 8 = 18"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "144"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the smallest such perfect square is 144.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "144",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "144"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 24 or 48. Both 6 and 8 divide them, but they are not perfect squares. Every word of the question counts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "24 and 48: not perfect squares",
+      "label": true
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_036": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Most numbers have an even number of factors. We count the numbers from 1 to 50 that have an odd number of factors.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1 to 50: how many numbers have an odd number of factors?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Factors come in pairs. For 12: 1 and 12, 2 and 6, 3 and 4. That is 3 pairs, so 6 factors. An even count.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12:   1 × 12,   2 × 6,   3 × 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now look at 16: 1 and 16, 2 and 8, and then 4 and 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "16:   1 × 16,   2 × 8,   4 × 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "4 and 4 is a pair made of the same number. How many times do we count the factor 4?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "twice",
+      "once"
+     ],
+     "answer": 1,
+     "ifNot": "4 is just one factor of 16. We do not list it twice. So this pair adds only 1 to the count."
+    }
+   },
+   {
+    "say": "So 16 has 5 factors: 1, 2, 4, 8 and 16. An odd count! That happens when a factor pairs with itself.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "factors of 16:   1, 2, 4, 8, 16",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "This is the key idea. A number has an odd number of factors only when it is a perfect square."
+   },
+   {
+    "say": "So we just count the perfect squares up to 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "1, 4, 9, 16, 25, 36, 49",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are 7. The next square, 64, is past 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 × 8 = 64:  past 50",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: this is not about odd numbers, and not about prime numbers. It is about squares."
+   }
+  ]
+ },
+ "G4A_SQUARES_037": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A pattern is given, and we use it to add all the odd numbers from 1 to 39. No long adding needed!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1 + 3 = 4,   1 + 3 + 5 = 9,   1 + 3 + 5 + 7 = 16",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1 + 3 + 5 + ... + 39 = ?"
+     }
+    ]
+   },
+   {
+    "say": "Look at the answers: 4, 9, 16. Those are 2 times 2, 3 times 3 and 4 times 4. All squares!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 = 2 × 2      9 = 3 × 3      16 = 4 × 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "1 plus 3 plus 5 has 3 numbers, and its sum is 3 times 3. So what gets squared?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the last number added",
+      "the first number",
+      "how many numbers are added"
+     ],
+     "answer": 2,
+     "ifNot": "With 3 odd numbers the sum is 3 times 3. With 4 odd numbers it is 4 times 4. So we square how many numbers there are."
+    }
+   },
+   {
+    "say": "The sum is the count of odd numbers, times itself. So we need to know how many odd numbers there are from 1 to 39.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "grid",
+       "rows": 4,
+       "cols": 4,
+       "dots": true,
+       "note": "1 + 3 + 5 + 7 builds a 4 by 4 square"
+      }
+     }
+    ]
+   },
+   {
+    "say": "From 1 to 40 there are 40 numbers, and half of them are odd. Half of 40 is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1 to 40:  40 numbers, half are odd",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "40 ÷ 2 = 20"
+     }
+    ]
+   },
+   {
+    "say": "So there are 20 odd numbers, and the sum is 20 times 20, which is 400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "20 × 20 = 400"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "400",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "400"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to square the last number, 39. The pattern squares the count, not the last number."
+   },
+   {
+    "say": "Check with the pattern: 1, 3, 5, 7 ends in 7, and half of 7 plus 1 is 4. The sum was 4 times 4. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "(7 + 1) ÷ 2 = 4"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_038": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two numbers come one after the other, and their squares differ by 37. We want the larger number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Two neighbours. Their squares differ by 37. Larger = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Look for a pattern with small neighbours first. 4 squared is 16 and 5 squared is 25. The difference is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "25 − 16 = 9"
+     }
+    ]
+   },
+   {
+    "say": "The squares of 4 and 5 differ by 9. How is 9 connected to 4 and 5?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9 is 5 − 4",
+      "9 is 4 × 5",
+      "9 is 4 + 5"
+     ],
+     "answer": 2,
+     "ifNot": "4 plus 5 is 9. The difference of two neighbouring squares is the sum of the two numbers."
+    }
+   },
+   {
+    "say": "4 plus 5 is 9. Try another pair, 5 and 6. 36 minus 25 is 11, and 5 plus 6 is 11. It works again!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 + 5 = 9"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "36 − 25 = 11"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 + 6 = 11"
+     }
+    ]
+   },
+   {
+    "say": "So our two neighbours add up to 37. Which neighbours add up to 37? 18 and 19.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "18 + 19 = 37"
+     }
+    ]
+   },
+   {
+    "say": "Check with the squares. 19 times 19 is 361 and 18 times 18 is 324. They differ by 37.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "19 × 19 = 361"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "18 × 18 = 324"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "361 − 324 = 37"
+     }
+    ]
+   },
+   {
+    "say": "So the larger number is 19.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "19",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "19"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 18 is the smaller one. And 37 is the gap between the squares, not one of the numbers."
+   }
+  ]
+ },
+ "G4A_SQUARES_039": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "144 children stand in a square. Only the children on the outside edge hold a flag. How many is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "144 children in a square. How many on the outside edge?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the size of the square. 12 times 12 is 144, so each side has 12 children.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 × 12 = 144"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "grid",
+       "rows": 12,
+       "cols": 12,
+       "dots": true,
+       "note": "12 rows of 12"
+      }
+     }
+    ]
+   },
+   {
+    "say": "There are 4 sides with 12 children on each. Is the answer 4 times 12, which is 48?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No, the corners get counted twice",
+      "Yes, 48"
+     ],
+     "answer": 0,
+     "ifNot": "A child in a corner stands on two sides at once. So 4 times 12 counts each corner child twice."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 × 12 = 48"
+     }
+    ]
+   },
+   {
+    "say": "This is the trap. Each corner child belongs to two sides, so 48 counts 4 children twice."
+   },
+   {
+    "say": "Take away those 4 extra counts. 48 minus 4 is 44.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "48 − 4 = 44"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "44",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "44"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check another way. The top and bottom rows have 12 each. The two sides have 10 more each, without the corners.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "12 + 12 + 10 + 10 = 44"
+     }
+    ]
+   },
+   {
+    "say": "Or think of the children inside: they make a 10 by 10 square of 100. And 144 minus 100 is 44.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "144 − 100 = 44"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_040": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square floor of 225 tiles. The tiles on both diagonals are red. How many red tiles?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "225 tiles in a square. Both diagonals are red. How many?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First the size. 15 times 15 is 225, so the floor is 15 tiles by 15 tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15 × 15 = 225"
+     }
+    ]
+   },
+   {
+    "say": "A diagonal goes from corner to corner, and takes one tile from every row. So each diagonal has 15 tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "each diagonal: 15 tiles",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "grid",
+       "rows": 5,
+       "cols": 5,
+       "note": "A small floor, 5 by 5",
+       "shaded": [
+        [
+         0,
+         0
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         2,
+         2
+        ],
+        [
+         3,
+         3
+        ],
+        [
+         4,
+         4
+        ],
+        [
+         0,
+         4
+        ],
+        [
+         1,
+         3
+        ],
+        [
+         3,
+         1
+        ],
+        [
+         4,
+         0
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Two diagonals of 15 tiles. Is the answer 15 plus 15, which is 30?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, 30",
+      "No, they share the middle tile"
+     ],
+     "answer": 1,
+     "ifNot": "15 is odd, so there is one tile exactly in the middle. Both diagonals pass through it, and 30 counts it twice."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "15 + 15 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. Because 15 is odd, the two diagonals cross on the middle tile. We counted that tile twice."
+   },
+   {
+    "say": "So take 1 away. 30 minus 1 is 29.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "30 − 1 = 29"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "29",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "29"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Look at the small floor, 5 by 5. It has 5 plus 5 minus 1 red tiles, which is 9. Count them and see!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "5 + 5 − 1 = 9"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_041": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Some numbers are the sum of two perfect squares. For example, 13 is 4 plus 9. One of these 4 numbers is not.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Which is NOT a sum of two perfect squares?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "20     34     29     21",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The squares small enough to use are 1, 4, 9, 16 and 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "squares:  1, 4, 9, 16, 25",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Test 20. Take away 4, and 16 is left. Both are squares, so 20 can be made.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "20 = 4 + 16"
+     }
+    ]
+   },
+   {
+    "say": "Test 34. Take away 25. What is left, and is it a square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "11",
+      "9, and it is a square",
+      "9, but it is not a square"
+     ],
+     "answer": 1,
+     "ifNot": "34 minus 25 is 9, and 9 is 3 times 3. So 34 is 25 plus 9, which is two squares."
+    }
+   },
+   {
+    "say": "34 is 9 plus 25. And 29 is 4 plus 25. Both can be made.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "34 = 9 + 25"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "29 = 4 + 25"
+     },
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "20"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "34"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "29"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now 21. Take away each square in turn: 20, 17, 12 and 5 are left. None of those is a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "21 − 1 = 20"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "21 − 4 = 17"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "21 − 9 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "21 − 16 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So 21 cannot be made.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "21",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l11",
+      "target": {
+       "text": "21"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The method: take away one square, and see whether a square is left. Try every square, so that nothing is missed."
+   }
+  ]
+ },
+ "G4A_SQUARES_042": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Soldiers stand in a square. Then 3 full rows and 3 full columns march away, 69 soldiers in all, and a smaller square is left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Square of soldiers. 3 rows and 3 columns leave: 69 go.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "When 3 rows and 3 columns leave, the square that remains has sides that are 3 shorter.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "new side = old side − 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Is 69 simply 3 rows plus 3 columns of soldiers?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, 6 lines of soldiers",
+      "No, some soldiers are in both"
+     ],
+     "answer": 1,
+     "ifNot": "A soldier in the corner is in a row that leaves and also in a column that leaves. He must not be counted twice."
+    }
+   },
+   {
+    "say": "That is the trap, so we go a safer way. The soldiers who left are the big square minus the small square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "big square − small square = 69",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Test sides of 12 and 9. 144 minus 81 is 63. Not enough.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 × 12 = 144"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "9 × 9 = 81"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "144 − 81 = 63"
+     }
+    ]
+   },
+   {
+    "say": "Test sides of 13 and 10. 169 minus 100 is 69. That matches!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "13 × 13 = 169"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "169 − 100 = 69"
+     }
+    ]
+   },
+   {
+    "say": "So at first there were 13 rows of 13, which is 169 soldiers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "169",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "169"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 69 divided by 3 is 23, but a 23 by 23 square would lose far more than 69 soldiers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "69 ÷ 3 = 23"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "23 × 23 − 20 × 20 = 129"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_043": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In each pair the two numbers add up to 60. Which pair has the greatest product? We can find out without doing all four.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Which product is the greatest?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "29 × 31     30 × 30     28 × 32     27 × 33",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Learn from small numbers first. Take pairs that add up to 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 × 5 = 25"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 × 6 = 24"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 7 = 21"
+     }
+    ]
+   },
+   {
+    "say": "5 times 5 is 25, 4 times 6 is 24 and 3 times 7 is 21. What happens as the two numbers move apart?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the product gets smaller",
+      "the product gets bigger",
+      "it stays the same"
+     ],
+     "answer": 0,
+     "ifNot": "25, then 24, then 21. The further apart the two numbers are, the smaller the product."
+    }
+   },
+   {
+    "say": "The equal pair wins. The further apart the numbers move, the smaller the product gets."
+   },
+   {
+    "say": "The same happens here. The equal pair is 30 times 30, which is 900.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "29 times 31 is 899, just 1 less. And 28 times 32 is 896.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "29 × 31 = 899"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "28 × 32 = 896"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "27 × 33 = 891"
+     }
+    ]
+   },
+   {
+    "say": "So the greatest product is 30 times 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "30 × 30",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "30 × 30"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 33 is the biggest number here, but its partner 27 is the smallest. For the same sum, the square always wins."
+   }
+  ]
+ },
+ "G4A_SQUARES_044": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Look at the pattern in the question. We use it to find 11111 times 11111 without multiplying.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "11 × 11 = 121,   111 × 111 = 12321,  ...",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Sum of the digits of 11111 × 11111 = ?",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "121. 12321. 1234321. The digits climb up, and then come back down.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "121      12321      1234321",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "11 has two 1s, and its answer climbs to 2. 111 has three 1s, and its answer climbs to 3. How high will 11111 climb?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "to 4",
+      "to 9",
+      "to 5"
+     ],
+     "answer": 2,
+     "ifNot": "Count the 1s in 11111. There are 5 of them, so the answer climbs to 5."
+    }
+   },
+   {
+    "say": "11111 has five 1s. So the answer climbs to 5 and comes back down.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "11111 × 11111 = 123454321"
+     }
+    ]
+   },
+   {
+    "say": "Now add its digits. Going up: 1, 2, 3, 4 and 5 make 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "1 + 2 + 3 + 4 + 5 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Coming down: 4, 3, 2 and 1 make 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4 + 3 + 2 + 1 = 10"
+     }
+    ]
+   },
+   {
+    "say": "15 plus 10 is 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "15 + 10 = 25"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "25",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at 15. The digits come back down too. And look: 25 is 5 times 5, another square!"
+   }
+  ]
+ },
+ "G4A_SQUARES_045": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kabir's age is a perfect square now. In 9 years it will be a perfect square again. How old is he?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Age now: a perfect square. In 9 years: a square again.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "List some perfect squares that could be ages.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1, 4, 9, 16, 25, 36, 49",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add 9 to each, and see if we land on another square. 1 becomes 10. 4 becomes 13. 9 becomes 18. No luck yet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1 + 9 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 + 9 = 13"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "9 + 9 = 18"
+     }
+    ]
+   },
+   {
+    "say": "Now try 16. What is 16 plus 9, and is it a square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "25, but it is not a square",
+      "24",
+      "25, and it is a square"
+     ],
+     "answer": 2,
+     "ifNot": "16 plus 9 is 25. And 25 is 5 times 5, so it is a perfect square."
+    }
+   },
+   {
+    "say": "16 plus 9 is 25, which is 5 times 5. It works!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "16 + 9 = 25"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Could a bigger age work too? 25 plus 9 is 34. 36 plus 9 is 45. No. After 16, the squares are more than 9 apart.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "25 + 9 = 34"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "36 + 9 = 45"
+     }
+    ]
+   },
+   {
+    "say": "So Kabir is 16 this year.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "16",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 25 is the age he will reach, not his age now."
+   }
+  ]
+ },
+ "G4A_SQUARES_046": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We multiply 12 by something to get a perfect square. But the square must be greater than 100. We want the smallest multiplier.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 × ? = a perfect square greater than 100 (smallest ?)",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, what turns 12 into any perfect square? 12 is 2 times 2 times 3. The 3 has no partner.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 = 2 × 2 × 3"
+     }
+    ]
+   },
+   {
+    "say": "Multiply by 3, and we get 36, a perfect square. But look at the question again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 × 3 = 36"
+     }
+    ]
+   },
+   {
+    "say": "36 is a perfect square. Does it answer the question?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, 3 is the smallest",
+      "No, it is not greater than 100"
+     ],
+     "answer": 1,
+     "ifNot": "The question wants a perfect square greater than 100. 36 is far below 100."
+    }
+   },
+   {
+    "say": "This is the trap. 36 is too small. So we look at bigger multipliers, for a square above 100."
+   },
+   {
+    "say": "12 times 9 is 108. That is above 100, but 108 is between 100 and 121, so it is not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 × 9 = 108"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "100 < 108 < 121"
+     }
+    ]
+   },
+   {
+    "say": "12 times 12 is 144. A perfect square, and greater than 100!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "12 × 12 = 144"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "12",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And nothing smaller works. The only square between 100 and 144 is 121, and 12 does not divide 121."
+   }
+  ]
+ },
+ "G4A_SQUARES_047": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Anu squares an odd number and subtracts 1. Some number always divides her answer. We want the greatest such number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(odd number)² − 1: what always divides it?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Try the first few odd numbers. 3 squared is 9, and 9 minus 1 is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3² − 1 = 8"
+     }
+    ]
+   },
+   {
+    "say": "5 squared is 25, minus 1 is 24. 7 squared is 49, minus 1 is 48. 9 squared is 81, minus 1 is 80.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5² − 1 = 25 − 1 = 24"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "7² − 1 = 49 − 1 = 48"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "9² − 1 = 81 − 1 = 80"
+     }
+    ]
+   },
+   {
+    "say": "The very first answer is 8. Can a number bigger than 8 divide 8 exactly?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No, never",
+      "Yes, sometimes"
+     ],
+     "answer": 0,
+     "ifNot": "A number cannot be divided exactly by something bigger than itself. So nothing above 8 can divide every answer."
+    }
+   },
+   {
+    "say": "This is the key idea. The first answer is 8, so our number cannot be more than 8. That rules out 16 and 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "16 and 24 do not divide 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Does 8 divide them all? 24 is 3 times 8. 48 is 6 times 8. 80 is 10 times 8. Yes!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "24 = 3 × 8"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "48 = 6 × 8"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "80 = 10 × 8"
+     }
+    ]
+   },
+   {
+    "say": "So the greatest number that always divides her answer is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "8",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 4 divides them all too, but it is not the greatest. And 24 divides some of the answers, but not all."
+   }
+  ]
+ },
+ "G4A_SQUARES_048": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The year 2025 is 45 times 45, a perfect square. How many years until the next perfect square year?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2025 = 45 × 45. Years until the next perfect square = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which multiplication gives the next perfect square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "46 × 46",
+      "45 × 46",
+      "50 × 50"
+     ],
+     "answer": 0,
+     "ifNot": "Perfect squares come from the counting numbers, one after another. After 45 times 45 comes 46 times 46."
+    }
+   },
+   {
+    "say": "The next square is 46 times 46. Build it up. 46 times 45 is one more 45 than 45 times 45. That is 2070.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2025 + 45 = 2070"
+     }
+    ]
+   },
+   {
+    "say": "Then 46 times 46 is one more 46. 2070 plus 46 is 2116.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2070 + 46 = 2116"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "46 × 46 = 2116"
+     }
+    ]
+   },
+   {
+    "say": "So the next perfect square year is 2116. That is 91 years after 2025.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2116 − 2025 = 91"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "91",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "91"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice: we added 45 and then 46, and 45 plus 46 is 91. Neighbouring squares always differ by the sum of the two numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "45 + 46 = 91"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 90 is twice 45, which is 1 short. And 46 is the next number to square, not the number of years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "2 × 45 = 90:  one short",
+      "label": true
+     }
+    ]
+   }
+  ]
+ },
+ "PYQ_2016_Q31": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The hall has as many rows as there are chairs in each row, and every chair is filled. Which of these could be the number of men?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Rows = chairs in each row. How many men?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "131     325     275     324",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "?",
+       "breadth": "?",
+       "note": "Rows = chairs in each row"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Think of a small hall: 5 rows of 5 chairs hold 25 men. So what kind of number is the number of men?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "an even number",
+      "a number ending in 5",
+      "a number times itself"
+     ],
+     "answer": 2,
+     "ifNot": "Men equals rows times chairs in a row, and those two are the same. So it is a number times itself: a square number."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 rows of 5:   5 × 5 = 25",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So we are looking for a square number. Let us test each choice against squares we know."
+   },
+   {
+    "say": "131: 11 times 11 is 121 and 12 times 12 is 144. 131 falls in between, so it is not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "11 × 11 = 121"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 × 12 = 144"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "121 < 131 < 144"
+     }
+    ]
+   },
+   {
+    "say": "275: 16 times 16 is 256 and 17 times 17 is 289. In between again, so not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "16 × 16 = 256"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "17 × 17 = 289"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "256 < 275 < 289"
+     }
+    ]
+   },
+   {
+    "say": "Now try 18. 18 times 18 is 324. That is one of our choices!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "18 × 18 = 324"
+     },
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "18",
+       "breadth": "18",
+       "inside": "324 men",
+       "note": "18 rows of 18 chairs"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Careful with 325. It is only 1 more than 324, but a full hall needs an exact square. One extra man would have no chair."
+   },
+   {
+    "say": "So the number of men can be 324.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "324",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l11",
+      "target": {
+       "text": "324"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: equal rows and columns means a square number. Test each choice by squeezing it between two squares."
+   }
+  ]
+ },
+ "PYQ_2017_Q34": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "For each pair, we square both numbers and add. We want a total that is itself a square number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Sum of the squares of which two is a square?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2, 3     5, 6     4, 6     6, 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "2 and 3: the squares are 4 and 9, and together they make 13. Not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2² + 3² = 4 + 9 = 13"
+     }
+    ]
+   },
+   {
+    "say": "5 and 6: 25 plus 36 is 61. And 4 and 6: 16 plus 36 is 52.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5² + 6² = 25 + 36 = 61"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "4² + 6² = 16 + 36 = 52"
+     }
+    ]
+   },
+   {
+    "say": "7 times 7 is 49 and 8 times 8 is 64. So are 52 and 61 squares?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, both are",
+      "No, both lie between 49 and 64"
+     ],
+     "answer": 1,
+     "ifNot": "52 and 61 are both more than 49 and less than 64. No whole number lies between 7 and 8, so neither is a square."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7 × 7 = 49"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "8 × 8 = 64"
+     }
+    ]
+   },
+   {
+    "say": "Now 6 and 8: 36 plus 64 is 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "6² + 8² = 36 + 64 = 100"
+     }
+    ]
+   },
+   {
+    "say": "And 100 is 10 times 10. A square! So the pair is 6 and 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "6 and 8",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "6 and 8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice: 6, 8 and 10 are the famous 3, 4 and 5, doubled. 9 plus 16 is 25 as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "3² + 4² = 9 + 16 = 25"
+     }
+    ]
+   }
+  ]
+ },
+ "PYQ_2017_Q38": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We count the square numbers that have 2 digits and are even.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "How many even 2-digit square numbers?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First list every 2-digit square. Start at 4 times 4, which is 16, and stop before 10 times 10, which is 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "16, 25, 36, 49, 64, 81",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "10 × 10 = 100:  3 digits",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which numbers give an even square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "even numbers",
+      "odd numbers",
+      "every number"
+     ],
+     "answer": 0,
+     "ifNot": "Even times even is even, and odd times odd is odd. So only even numbers give even squares."
+    }
+   },
+   {
+    "say": "Even times even is even. So the even squares come from 4, 6 and 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 × 4 = 16"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6 × 6 = 36"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 × 8 = 64"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "36"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "64"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "That is 16, 36 and 64. So there are 3 of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "3",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 6 is the count of all the 2-digit squares. The question wants only the even ones."
+   },
+   {
+    "say": "And 4 and 100 are even squares too, but they do not have 2 digits."
+   }
+  ]
+ },
+ "PYQ_2018_Q36": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "4 pairs of numbers. We add each pair, and look for a total that is a square number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Which pair adds up to a square number?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "91 & 19     157 & 68     59 & 52     76 & 78",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First pair: 91 plus 19 is 110.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "91 + 19 = 110"
+     }
+    ]
+   },
+   {
+    "say": "Is 110 a square number? 10 times 10 is 100 and 11 times 11 is 121.",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, it is a square",
+      "No, it falls between two squares"
+     ],
+     "answer": 1,
+     "ifNot": "110 is more than 100 but less than 121. There is no whole number between 10 and 11, so 110 is not a square."
+    },
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "11 × 11 = 121"
+     }
+    ]
+   },
+   {
+    "say": "110 sits between 100 and 121, so it is not a square. Next pair: 157 plus 68 is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "157 + 68 = 225"
+     }
+    ]
+   },
+   {
+    "say": "225 is 15 times 15. A square number!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "15 × 15 = 225"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "225"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Let us check the others, to be sure. 59 plus 52 is 111, and 76 plus 78 is 154. Neither is a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "59 + 52 = 111"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "76 + 78 = 154"
+     }
+    ]
+   },
+   {
+    "say": "So the pair is 157 and 68.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "157 & 68",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "157 & 68"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A tip: learn the squares of the numbers up to 15 by heart. Then you spot 225 at once."
+   }
+  ]
+ },
+ "PYQ_2019_Q26": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We add something to 710 to reach a square number. So we need the first square above 710.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "710 + ? = a square number",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "numberLine",
+       "min": 700,
+       "max": 730,
+       "step": 5,
+       "tickLabels": "none",
+       "points": [
+        {
+         "at": 710,
+         "label": "710"
+        }
+       ],
+       "note": "How far is the next square?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Where to start? 25 times 25 is 625, too small. 30 times 30 is 900, too big.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "25 × 25 = 625"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "Try 26. 26 times 26 is 676. Still below 710.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "26 × 26 = 676"
+     }
+    ]
+   },
+   {
+    "say": "676 is still below 710. What should we try next?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "27 × 27",
+      "25 × 25",
+      "26 × 26 again"
+     ],
+     "answer": 0,
+     "ifNot": "We need a square above 710, so we go up one more, to 27 times 27."
+    }
+   },
+   {
+    "say": "27 times 27: 27 times 20 is 540 and 27 times 7 is 189. Together, 729. That is above 710!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "27 × 20 = 540"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "27 × 7 = 189"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "27 × 27 = 729"
+     }
+    ]
+   },
+   {
+    "say": "The gap from 710 up to 729 is 19.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "729 − 710 = 19"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "19",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "19"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 710 plus 19 is 729, which is 27 times 27.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "710 + 19 = 729"
+     }
+    ]
+   },
+   {
+    "say": "Careful: landing near 729 is not enough. A square has to be hit exactly."
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_031_01": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "We want the square root of 576. That means: which number, times itself, makes 576?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "√576 = ?",
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "? × ? = 576"
+     }
+    ]
+   },
+   {
+    "say": "20 times 20 is 400, and 30 times 30 is 900. Our 576 lies in between, so the answer is between 20 and 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 × 20 = 400"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "Now a clever clue. 576 ends in 6. Which last digit gives a square that ends in 6?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 or 8",
+      "4 or 6",
+      "1 or 9"
+     ],
+     "answer": 1,
+     "ifNot": "Square each digit and look at the last digit of the result. Only 4 or 6 gives a square that ends in 6."
+    }
+   },
+   {
+    "say": "4 times 4 is 16. 6 times 6 is 36. Both end in 6. So we try 24 or 26.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "4 × 4 = 16"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "6 × 6 = 36"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "try: 24 or 26",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Try 24. 24 times 20 is 480, and 24 times 4 is 96. Together that is 576. That is our number!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "24 × 20 = 480"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "24 × 4 = 96"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "24 × 24 = 576"
+     }
+    ]
+   },
+   {
+    "say": "So the square root of 576 is 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "24",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l11",
+      "target": {
+       "text": "24"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: a square root is not a half. Half of 576 is 288. But 288 times just 2 is already 576, so 288 times itself is far too big.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "288 × 2 = 576"
+     }
+    ]
+   },
+   {
+    "say": "So remember: a square root undoes squaring. Ask yourself which number, times itself, gives 576."
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_003_01": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "The square root of 16 is the number that, multiplied by itself, gives 16. Let us hunt for it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "√16 = ?",
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "? × ? = 16"
+     }
+    ]
+   },
+   {
+    "say": "Let us try a number. 3 times 3 is 9. That is too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 × 3 = 9"
+     }
+    ]
+   },
+   {
+    "say": "So try the next number, 4. What is 4 times 4?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "16",
+      "8",
+      "12"
+     ],
+     "answer": 0,
+     "ifNot": "4 times 4 means 4 lots of 4, and that makes 16. Adding 4 and 4 gives only 8."
+    }
+   },
+   {
+    "say": "4 times 4 is 16. That is exactly our number!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 × 4 = 16"
+     }
+    ]
+   },
+   {
+    "say": "So the square root of 16 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "4",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: a square root is not a half. Half of 16 is 8, and 8 times 8 is far too big.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 × 8 = 64"
+     }
+    ]
+   },
+   {
+    "say": "So remember: a square root undoes squaring. Ask yourself which number, times itself, gives 16."
+   }
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH16_013_04": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "We want the square of 23. Squaring a number means multiplying it by itself.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "23² = ?",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "So which sum is the square of 23?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "23 + 23",
+      "23 × 23",
+      "23 × 2"
+     ],
+     "answer": 1,
+     "ifNot": "Squaring means multiplying a number by itself. So the square of 23 is 23 times 23."
+    }
+   },
+   {
+    "say": "23 times 23 is a big sum, so split the second 23 into 20 and 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "23 × 23 = 23 × 20 + 23 × 3"
+     }
+    ]
+   },
+   {
+    "say": "23 times 20 is 460.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "23 × 20 = 460"
+     }
+    ]
+   },
+   {
+    "say": "23 times 3 is 69.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "23 × 3 = 69"
+     }
+    ]
+   },
+   {
+    "say": "Add the two parts. 460 plus 69 is 529.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "460 + 69 = 529"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "529",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "529"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A quick check on the last digit: 3 times 3 is 9, so the square must end in 9. It does."
+   },
+   {
+    "say": "Careful: 46 is just 23 doubled. Squaring is times itself, and that grows much faster.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "23 × 2 = 46"
+     }
+    ]
+   }
+  ]
+ }
+}

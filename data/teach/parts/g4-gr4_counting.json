@@ -1,0 +1,6026 @@
+{
+ "EXT_G4_FP_2020_026": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "8 points sit on a circle. We join every pair of points with a line segment. How many segments is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "8 points on a circle. Join every pair. How many?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "fg",
+      "spec": {
+       "kind": "polygon",
+       "points": [
+        [
+         6.0,
+         1.0
+        ],
+        [
+         9.54,
+         2.46
+        ],
+        [
+         11.0,
+         6.0
+        ],
+        [
+         9.54,
+         9.54
+        ],
+        [
+         6.0,
+         11.0
+        ],
+        [
+         2.46,
+         9.54
+        ],
+        [
+         1.0,
+         6.0
+        ],
+        [
+         2.46,
+         2.46
+        ]
+       ],
+       "note": "The corners are the 8 points. Join every pair, not just neighbours"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Pick any one point. It can be joined to every other point. That is 7 segments from this one point.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "8 − 1 = 7"
+     }
+    ]
+   },
+   {
+    "say": "There are 8 points, each with 7 segments. 8 times 7 is 56. Is 56 our answer?",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "8 × 7 = 56"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no, each segment is counted twice",
+      "yes, 56 segments",
+      "no, we should add 8 and 7"
+     ],
+     "answer": 0,
+     "ifNot": "A segment has two ends. We counted it once from each end, so every segment is in our 56 two times."
+    }
+   },
+   {
+    "say": "The segment from one point to another is the same segment coming back. So we halve 56. That gives 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "56 ÷ 2 = 28"
+     }
+    ]
+   },
+   {
+    "say": "Let's check a slower way. The first point makes 7 new segments. The next makes 6 new ones, then 5, and so on down to 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "7 + 6 + 5 + 4 + 3 + 2 + 1 = 28"
+     }
+    ]
+   },
+   {
+    "say": "Both ways give 28. So there are 28 line segments.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "28 segments",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "28 segments"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The method: each point joins all the others. Then halve, because every segment got counted twice."
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A, B, C and D play chess. Each one plays 2 games with every other player. How many games in all?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A, B, C, D. 2 games with every other. Total?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A game needs 2 players. So first let's find all the pairs of players. Start with A: A and B, A and C, A and D.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "AB  AC  AD",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now B. The pair B and A is already on our list, written as A B. So which new pairs does B make?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "BA, BC and BD",
+      "only BC",
+      "BC and BD"
+     ],
+     "answer": 2,
+     "ifNot": "B with A is the same pair as A with B. So the new ones are B with C, and B with D."
+    }
+   },
+   {
+    "say": "B gives B C and B D. And the last new pair is C and D.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "BC  BD",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "p3",
+      "text": "CD",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count the pairs: 3, then 2, then 1. That makes 6 pairs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 + 2 + 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Every pair plays 2 games. 6 times 2 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "6 × 2 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So 12 games were played altogether.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "12 games",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12 games"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 4 times 2, which is 8. Games belong to pairs, not to single players. So count the pairs first."
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Some points are on a circle. Joining every pair gives 15 line segments at most. How many points are there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "? points on a circle → 15 segments",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We do not know the number of points, so let's build up from small cases. 2 points give just 1 segment.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "2 points: 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add a 3rd point. It can be joined to both of the points already there. How many segments now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "4",
+      "3"
+     ],
+     "answer": 2,
+     "ifNot": "There was 1 segment. The new point adds 2 more, one to each old point. 1 plus 2."
+    }
+   },
+   {
+    "say": "1 plus 2 is 3. Here is the pattern: each new point joins all the points already there.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "3 points: 1 + 2 = 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A 4th point adds 3 more, which makes 6. A 5th point adds 4 more, which makes 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t3",
+      "text": "4 points: 3 + 3 = 6",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t4",
+      "text": "5 points: 6 + 4 = 10",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We want 15, and we are at 10. A 6th point adds 5 more. 10 plus 5 is 15. There it is!",
+    "board": [
+     {
+      "op": "write",
+      "id": "t5",
+      "text": "6 points: 10 + 5 = 15",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So there were 6 points on the circle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "6 points",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6 points"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check another way: 6 points, each joined to 5 others, is 30. Halve it, since each segment was counted twice. 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck1",
+      "text": "6 × 5 = 30"
+     },
+     {
+      "op": "write",
+      "id": "ck2",
+      "text": "30 ÷ 2 = 15"
+     }
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_031": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have the digits 4, 7, 6 and 9. Using each one only once, how many 4-digit odd numbers can we make?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits 4, 7, 6, 9, each once. 4-digit odd numbers?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What makes a number odd?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "its first digit is odd",
+      "all its digits are odd",
+      "its last digit is odd"
+     ],
+     "answer": 2,
+     "ifNot": "Only the ones digit decides whether a number is odd or even. The other digits do not matter."
+    }
+   },
+   {
+    "say": "So the last digit must be odd. Of our digits, 7 and 9 are odd. That is 2 choices for the ones place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "_ _ _ [7 or 9]",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Say we put 7 last. Then 4, 6 and 9 are left for the other 3 places: 3 choices, then 2, then 1. 3 times 2 times 1 is 6 numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × 2 × 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "It is the same story if 9 goes last: 6 more numbers. Careful not to stop at 6!"
+   },
+   {
+    "say": "6 numbers end in 7 and 6 numbers end in 9. 2 times 6 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "2 × 6 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So 12 odd numbers can be made.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "12 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The plan: fill the place that has a rule first. Then count the choices for the other places and multiply."
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_035": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "15 people are at a meeting. Each person shakes hands once with every other person. How many handshakes?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "15 people. Everyone shakes hands once. Total?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Think about one person. They shake hands with everyone except themselves. That is 14 handshakes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "15 − 1 = 14"
+     }
+    ]
+   },
+   {
+    "say": "15 people, 14 handshakes each. 15 times 10 is 150, and 15 times 4 is 60. Together, 210.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "15 × 14 = 150 + 60"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "150 + 60 = 210"
+     }
+    ]
+   },
+   {
+    "say": "Is 210 the number of handshakes?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, 210",
+      "no, halve it",
+      "no, double it"
+     ],
+     "answer": 1,
+     "ifNot": "When two people shake hands, that is one handshake. But we counted it once for each of them."
+    }
+   },
+   {
+    "say": "Every handshake was counted twice, once for each person. So we halve 210. Half of 210 is 105.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "210 ÷ 2 = 105"
+     }
+    ]
+   },
+   {
+    "say": "So there are 105 handshakes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "105 handshakes",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "105 handshakes"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Try it with 3 people: 3 times 2 is 6, and half of that is 3 handshakes. Each person with all the others, then halve.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck",
+      "text": "3 × 2 ÷ 2 = 3"
+     }
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_029": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have the digits 1, 5, 3 and 7. Using each one once, how many numbers bigger than 5000 can we make?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits 1, 5, 3, 7, each once. Numbers > 5000?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which place decides whether a 4-digit number is bigger than 5000?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the ones place",
+      "the tens place",
+      "the thousands place"
+     ],
+     "answer": 2,
+     "ifNot": "The thousands digit is worth the most. If it is 5 or more, the number is 5000 or more."
+    }
+   },
+   {
+    "say": "So the first digit must be 5 or 7. If it were 1 or 3, the number would be too small. That gives 2 choices for the first place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "[5 or 7] _ _ _",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Say 5 goes first. Then 1, 3 and 7 fill the other 3 places: 3 choices, then 2, then 1. That is 6 numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × 2 × 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "And if 7 goes first, we get 6 more in the same way. 2 times 6 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "2 × 6 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So 12 numbers are greater than 5000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "12 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the 4 digits make 24 numbers in total, but only half of them start with 5 or 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck",
+      "text": "4 × 3 × 2 × 1 = 24"
+     }
+    ]
+   },
+   {
+    "say": "Fill the place that has a rule first, then count the choices for the rest."
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here are 4 digits: 7, 6, 9 and 4. Each is used once. How many 4-digit odd numbers can be made?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits 7, 6, 9, 4, each once. 4-digit odd numbers?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What makes a number odd?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "its first digit is odd",
+      "all its digits are odd",
+      "its last digit is odd"
+     ],
+     "answer": 2,
+     "ifNot": "Only the ones digit decides whether a number is odd or even. The other digits do not matter."
+    }
+   },
+   {
+    "say": "So the last digit must be odd. Of our digits, 7 and 9 are odd. That is 2 choices for the ones place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "_ _ _ [7 or 9]",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Say we put 7 last. Then 6, 9 and 4 are left for the other 3 places: 3 choices, then 2, then 1. 3 times 2 times 1 is 6 numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × 2 × 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "It is the same story if 9 goes last: 6 more numbers. Careful not to stop at 6!"
+   },
+   {
+    "say": "6 numbers end in 7 and 6 numbers end in 9. 2 times 6 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "2 × 6 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So 12 odd numbers can be made.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "12 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The plan: fill the place that has a rule first. Then count the choices for the other places and multiply."
+   }
+  ]
+ },
+ "G4A_COUNTING_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many whole numbers are there from 15 to 42, counting both 15 and 42?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "15, 16, 17, ... , 42. How many numbers?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's try a tiny case first. From 1 to 3 we have 1, 2, 3. That is 3 numbers. But 3 minus 1 is only 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c0",
+      "text": "3 − 1 = 2"
+     }
+    ]
+   },
+   {
+    "say": "So if we only subtract, what do we miss?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "nothing",
+      "one of the end numbers",
+      "two numbers"
+     ],
+     "answer": 1,
+     "ifNot": "Subtracting counts the jumps between the numbers. There is always one more number than jumps."
+    }
+   },
+   {
+    "say": "Subtracting counts the jumps. So first, 42 minus 15 is 27 jumps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "42 − 15 = 27"
+     }
+    ]
+   },
+   {
+    "say": "Then add 1, so that the starting number 15 is counted too. 27 plus 1 is 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "27 + 1 = 28"
+     }
+    ]
+   },
+   {
+    "say": "So there are 28 whole numbers from 15 to 42.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "28 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "28 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Counting both ends: subtract, then add 1."
+   }
+  ]
+ },
+ "G4A_COUNTING_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera is in a queue. She is 7th from the front and 5th from the back. How many children are in the queue?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "7th from the front, 5th from the back. How many?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "fg",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 6,
+           "tone": "a",
+           "label": "in front"
+          },
+          {
+           "units": 1,
+           "tone": "b",
+           "label": "M"
+          },
+          {
+           "units": 4,
+           "tone": "c",
+           "label": "behind"
+          }
+         ],
+         "brace": "? children"
+        }
+       ],
+       "note": "Meera (M) is 7th from the front and 5th from the back"
+      }
+     }
+    ]
+   },
+   {
+    "say": "If Meera is 7th from the front, how many children are in front of her?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7",
+      "8",
+      "6"
+     ],
+     "answer": 2,
+     "ifNot": "Meera herself is number 7. So the children in front of her are numbers 1 to 6."
+    }
+   },
+   {
+    "say": "6 children are in front. In the same way, she is 5th from the back, so 4 children are behind her.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "7 − 1 = 6"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "5 − 1 = 4"
+     }
+    ]
+   },
+   {
+    "say": "Now add everyone up: 6 in front, Meera herself, and 4 behind.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "6 + 1 + 4 = 11"
+     }
+    ]
+   },
+   {
+    "say": "So there are 11 children in the queue.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "11 children",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "11 children"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 7 plus 5, which is 12. That counts Meera twice, once from each end. Take 1 away and we get 11 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "tr",
+      "text": "7 + 5 = 12"
+     },
+     {
+      "op": "write",
+      "id": "tr2",
+      "text": "12 − 1 = 11"
+     }
+    ]
+   },
+   {
+    "say": "So the quick rule is: add the two positions, then take away 1."
+   }
+  ]
+ },
+ "G4A_COUNTING_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A straight fence is 40 metres long. A post stands every 5 metres, with one at each end. How many posts are there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Fence 40 m. A post every 5 m, and at each end.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First count the gaps between the posts. Each gap is 5 metres, so 40 divided by 5 is 8 gaps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "40 ÷ 5 = 8"
+     }
+    ]
+   },
+   {
+    "say": "8 gaps. So how many posts?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fg",
+      "spec": {
+       "kind": "numberLine",
+       "min": 0,
+       "max": 40,
+       "step": 5,
+       "tickLabels": "all",
+       "note": "Mark every 5 m along the fence. Count the gaps between the marks"
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9",
+      "8",
+      "7"
+     ],
+     "answer": 0,
+     "ifNot": "Count the marks on the line, starting from 0. Each gap ends with a post, and there is one more post at the very start."
+    }
+   },
+   {
+    "say": "The posts stand at 0, 5, 10, and so on up to 40. Count them and you get 9. It is always one more than the gaps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "8 + 1 = 9"
+     }
+    ]
+   },
+   {
+    "say": "So there are 9 posts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "9 posts",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9 posts"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Look at your hand: 5 fingers, 4 gaps. In a straight line, the posts are the gaps plus 1."
+   }
+  ]
+ },
+ "G4A_COUNTING_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many 2-digit numbers end in the digit 5?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "2-digit numbers ending in 5: how many?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A 2-digit number has a tens digit and a ones digit. The ones digit is fixed: it must be 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "bx",
+      "text": "[ ? ] [ 5 ]",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So only the tens digit can change. Can the tens digit be 0?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes",
+      "no"
+     ],
+     "answer": 1,
+     "ifNot": "With 0 in the tens place we would just have the number 5. That has only one digit."
+    }
+   },
+   {
+    "say": "The tens digit can be 1, 2, 3, and so on up to 9. That is 9 choices."
+   },
+   {
+    "say": "Let's list them to be sure: 15, 25, 35, 45, 55, 65, 75, 85, 95.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "15, 25, 35, 45, 55, 65, 75, 85, 95",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count them: 9 numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "9 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is saying 10. The number 5 on its own does not count, because it has just one digit."
+   }
+  ]
+ },
+ "G4A_COUNTING_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya has 3 different tops and 2 different skirts. An outfit is one top with one skirt. How many outfits can she make?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3 tops, 2 skirts. How many outfits?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Take the first top. She can wear it with skirt 1 or with skirt 2. That is 2 outfits from just one top.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "Top 1: 2 outfits",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The second top can also go with either skirt. And the third top too. So how do we find the total?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 × 2",
+      "3 + 2",
+      "3 × 3"
+     ],
+     "answer": 0,
+     "ifNot": "Each of the 3 tops makes 2 outfits. 3 lots of 2 means we multiply."
+    }
+   },
+   {
+    "say": "3 tops, with 2 outfits each. That is 3 times 2, which is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "Top 2: 2 outfits",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t3",
+      "text": "Top 3: 2 outfits",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × 2 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So Riya can make 6 different outfits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "6 outfits",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6 outfits"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is adding: 3 plus 2 is 5. But every top pairs with every skirt, so we multiply."
+   }
+  ]
+ },
+ "G4A_COUNTING_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many even numbers are there from 1 to 30?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Even numbers from 1 to 30: how many?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Even numbers are the ones in the 2 times table: 2, 4, 6, 8 and so on.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "1, 2, 3, 4, 5, 6, ... , 29, 30",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "m",
+      "target": {
+       "text": "2",
+       "nth": 1
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "m",
+      "target": {
+       "text": "4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "m",
+      "target": {
+       "text": "6"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Look at the pattern: odd, even, odd, even. What part of all the numbers are even?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "all of them",
+      "half of them",
+      "a quarter of them"
+     ],
+     "answer": 1,
+     "ifNot": "The numbers take turns: odd, even, odd, even. So every second number is even. That is half."
+    }
+   },
+   {
+    "say": "There are 30 numbers from 1 to 30, and half of them are even. 30 divided by 2 is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "30 ÷ 2 = 15"
+     }
+    ]
+   },
+   {
+    "say": "So there are 15 even numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "15 even numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "15 even numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the ends: the last number, 30, is even, so it is counted. And 0 is not in our list."
+   },
+   {
+    "say": "From 1 up to an even number, exactly half the numbers are even."
+   }
+  ]
+ },
+ "G4A_COUNTING_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A carpenter cuts a long plank into 6 pieces, one cut at a time. How many cuts does he make?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1 plank → 6 pieces. How many cuts?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Before any cut, the plank is 1 piece. After 1 cut, there are 2 pieces.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "1 cut → 2 pieces",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "After 2 cuts, how many pieces?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "2",
+      "3"
+     ],
+     "answer": 2,
+     "ifNot": "Each cut turns one piece into two. So each cut adds just 1 more piece."
+    }
+   },
+   {
+    "say": "2 cuts make 3 pieces. 3 cuts make 4 pieces. The pieces are always one more than the cuts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "2 cuts → 3 pieces",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t3",
+      "text": "3 cuts → 4 pieces",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So for 6 pieces we need one fewer cut. 6 minus 1 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "6 − 1 = 5"
+     }
+    ]
+   },
+   {
+    "say": "The carpenter makes 5 cuts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "5 cuts",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "5 cuts"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Try it with a strip of paper. Cuts are always one fewer than pieces."
+   }
+  ]
+ },
+ "G4A_COUNTING_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many 2-digit numbers can we make using only the digits 3 and 8? A digit may be used twice.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits 3 and 8, repeats allowed. 2-digit numbers?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A 2-digit number has two places: tens and ones. The tens digit can be 3 or 8. That is 2 choices.",
+    "board": [
+     {
+      "op": "write",
+      "id": "bx",
+      "text": "[3 or 8] [ ? ]",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The digit may be used again. So how many choices are there for the ones digit?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "1",
+      "3"
+     ],
+     "answer": 0,
+     "ifNot": "Repeats are allowed. So the ones digit can also be 3 or 8, whatever the tens digit was."
+    }
+   },
+   {
+    "say": "2 choices for the tens, and for each of them 2 choices for the ones. 2 times 2 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "2 × 2 = 4"
+     }
+    ]
+   },
+   {
+    "say": "Let's list them: 33, 38, 83 and 88.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "33, 38, 83, 88",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So 4 numbers can be made.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "4 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to count only 38 and 83. Read carefully: a digit may be used twice, so 33 and 88 count too."
+   }
+  ]
+ },
+ "G4A_COUNTING_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The pages of a book are numbered 1 to 25. How many digits are printed in all?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Pages 1 to 25. How many digits printed?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Do all the page numbers have the same number of digits?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no: some have 1, some have 2",
+      "yes, 1 digit each",
+      "yes, 2 digits each"
+     ],
+     "answer": 0,
+     "ifNot": "Page 7 has one digit, but page 25 has two. So we need two groups."
+    }
+   },
+   {
+    "say": "First group: pages 1 to 9. That is 9 pages with 1 digit each, so 9 digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "Pages 1 to 9: 9 digits",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Second group: pages 10 to 25. How many pages? 25 minus 10 is 15, plus 1 because we count both ends. 16 pages.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c0",
+      "text": "25 − 10 = 15"
+     },
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "15 + 1 = 16"
+     }
+    ]
+   },
+   {
+    "say": "Careful there: it is 16 pages, not 15. Count on your fingers from 10 to 25 if you are unsure.",
+    "board": [
+     {
+      "op": "note",
+      "line": "c1",
+      "target": {
+       "text": "16"
+      },
+      "text": "count both ends",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Each of those 16 pages has 2 digits. 16 times 2 is 32 digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "16 × 2 = 32"
+     }
+    ]
+   },
+   {
+    "say": "Add the two groups. 9 plus 32 is 41.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "9 + 32 = 41"
+     }
+    ]
+   },
+   {
+    "say": "So 41 digits are printed.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "41 digits",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "41 digits"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Split the pages by how many digits they have, count each group, then add."
+   }
+  ]
+ },
+ "G4A_COUNTING_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many 2-digit numbers have digits that add up to 7?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "2-digit numbers, digits add up to 7. How many?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's be organised and go through the tens digit. If the tens digit is 1, the ones digit must be 6. That is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "16",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Tens digit 2 needs a 5: that is 25. Then come 34, 43, 52 and 61.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "25, 34, 43, 52, 61",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Is that all of them? What if the tens digit is 7?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no, 7 is too big",
+      "then the ones digit is 7",
+      "70 works: 7 + 0 = 7"
+     ],
+     "answer": 2,
+     "ifNot": "7 plus 0 is 7. So 70 belongs on our list too. Zero is a digit as well!"
+    }
+   },
+   {
+    "say": "Yes: 70. But the tens digit cannot be 0, because that would just be the 1-digit number 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m3",
+      "text": "70",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count the list: 16, 25, 34, 43, 52, 61, 70. That is 7 numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "7 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "7 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Go through the tens digit in order, and you will not miss any or count any twice."
+   }
+  ]
+ },
+ "G4A_COUNTING_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kiran writes all the numbers from 1 to 40. How many times does she write the digit 3?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Write 1 to 40. How often is the digit 3 written?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A 3 can sit in the ones place or in the tens place. Let's count each place on its own."
+   },
+   {
+    "say": "Ones place first: 3, 13, 23 and 33. That is 4 times.",
+    "board": [
+     {
+      "op": "write",
+      "id": "o",
+      "text": "Ones place: 3, 13, 23, 33",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the tens place. Which numbers have a 3 in the tens place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only 30",
+      "30 to 39",
+      "3, 13, 23, 33"
+     ],
+     "answer": 1,
+     "ifNot": "The tens digit is 3 for every number in the thirties, from 30 up to 39."
+    }
+   },
+   {
+    "say": "30, 31, 32, all the way to 39. That is 10 numbers, so 10 more 3s.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "Tens place: 30, 31, 32, ... , 39",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What about 33? It has two 3s. And we counted it in both lists, once for each 3. So that is just right.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "33"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Add the two counts. 4 plus 10 is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4 + 10 = 14"
+     }
+    ]
+   },
+   {
+    "say": "So she writes the digit 3 a total of 14 times.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "14 times",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "14 times"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Count place by place. Then a number like 33 looks after itself."
+   }
+  ]
+ },
+ "G4A_COUNTING_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "30 children stand in a line. Arjun is 12th from the front. What is his position from the back?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "30 in a line. 12th from the front. From the back?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "fg",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 11,
+           "tone": "a",
+           "label": "in front"
+          },
+          {
+           "units": 1,
+           "tone": "b",
+           "label": "A"
+          },
+          {
+           "units": 18,
+           "tone": "c",
+           "label": "behind"
+          }
+         ],
+         "brace": "30 children"
+        }
+       ],
+       "note": "Arjun (A) is 12th from the front. His place from the back = ?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "First, how many children are behind Arjun? Take away the first 12 children, which includes Arjun. 30 minus 12 is 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "30 − 12 = 18"
+     }
+    ]
+   },
+   {
+    "say": "18 children are behind him. Counting from the back, what is Arjun's position?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "19th",
+      "18th",
+      "20th"
+     ],
+     "answer": 0,
+     "ifNot": "Count from the back: the 18 children behind him come first. Arjun is the very next one."
+    }
+   },
+   {
+    "say": "Those 18 come first, and then Arjun. 18 plus 1 is 19.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "18 + 1 = 19"
+     }
+    ]
+   },
+   {
+    "say": "So Arjun is 19th from the back.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "19th from the back",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "19th from the back"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: add his two positions and take away 1, since he was counted twice. 12 plus 19 minus 1 is 30. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck",
+      "text": "12 + 19 − 1 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Position from the other end: the total, minus the position, plus 1."
+   }
+  ]
+ },
+ "G4A_COUNTING_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square garden has sides of 12 metres. Posts go all around it, one at every corner and one every 3 metres. How many posts?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Square, side 12 m. A post every 3 m all around.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "fg",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "12 m",
+       "breadth": "12 m",
+       "note": "A post at every corner, and every 3 m along each side"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The posts go all the way round, so find the distance around. 4 sides of 12 metres make 48 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4 × 12 = 48"
+     }
+    ]
+   },
+   {
+    "say": "Each gap between posts is 3 metres. 48 divided by 3 is 16 gaps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "48 ÷ 3 = 16"
+     }
+    ]
+   },
+   {
+    "say": "On a straight fence we would add 1 to the gaps. But this fence goes round in a loop. So how many posts?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "17, one more than the gaps",
+      "15, one fewer",
+      "16, the same as the gaps"
+     ],
+     "answer": 2,
+     "ifNot": "Walk round the garden. After the last gap you arrive back at the first post. No extra post is needed."
+    }
+   },
+   {
+    "say": "In a loop, the last gap ends at the first post again. So the posts and the gaps are equal: 16."
+   },
+   {
+    "say": "So 16 posts are needed.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "16 posts",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "16 posts"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Another trap: each side has 5 posts, and 4 times 5 is 20. But that counts every corner post twice. 20 minus 4 is 16 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck1",
+      "text": "4 × 5 = 20"
+     },
+     {
+      "op": "write",
+      "id": "ck2",
+      "text": "20 − 4 = 16"
+     }
+    ]
+   },
+   {
+    "say": "Straight line: gaps plus 1. Closed loop: the same as the gaps."
+   }
+  ]
+ },
+ "G4A_COUNTING_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Anu, Binu and Charu stand in a row for a photo. In how many different orders can they stand?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Anu, Binu, Charu in a row. How many orders?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Think of 3 empty places. Any of the 3 children can take the first place. That is 3 choices.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b1",
+      "text": "[3 choices] [ ? ] [ ? ]",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "One child has taken the first place. How many children are left to choose from for the second place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "1",
+      "2"
+     ],
+     "answer": 2,
+     "ifNot": "One child is already standing in the first place. So only 2 are left for the second."
+    }
+   },
+   {
+    "say": "2 choices for the second place. Then just 1 child is left for the last place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b2",
+      "text": "[3 choices] [2 choices] [1 choice]",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Multiply the choices. 3 times 2 times 1 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × 2 × 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Let's check with letters: A B C, A C B, B A C, B C A, C A B, C B A. That is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "ABC ACB BAC BCA CAB CBA",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So they can stand in 6 different orders.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "6 orders",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6 orders"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "To arrange things in a row: count the choices for each place, getting smaller each time, and multiply."
+   }
+  ]
+ },
+ "G4A_COUNTING_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A window has 4 small square panes, in 2 rows of 2. Counting squares of every size, how many squares can you see?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "2 rows of 2 panes. Squares of every size?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "fg",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "grid": {
+        "cols": 2,
+        "rows": 2
+       },
+       "note": "A window of 4 small panes. Count the squares of every size"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Start with the small ones. There are 4 small square panes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "small squares: 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Are there any bigger squares hiding?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no, only the 4 panes",
+      "yes, the whole window",
+      "yes, 2 panes side by side"
+     ],
+     "answer": 1,
+     "ifNot": "Step back and look at the whole window. It is as wide as it is tall, so it is a square too."
+    }
+   },
+   {
+    "say": "The whole window is 1 big square, made of all 4 panes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "big square: 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What about 2 panes side by side? That shape is longer than it is tall. It is a rectangle, not a square, so we do not count it."
+   },
+   {
+    "say": "Add them. 4 small and 1 big make 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4 + 1 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So there are 5 squares in the window.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "5 squares",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "5 squares"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When counting shapes, go size by size: small ones first, then bigger ones."
+   }
+  ]
+ },
+ "G4A_COUNTING_016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "16 players enter a knockout tournament. In every match the loser goes out. How many matches are played to find the champion?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "16 players, knockout. How many matches?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Go round by round. In round 1, the 16 players make 8 matches. 8 winners go on.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "16 ÷ 2 = 8"
+     }
+    ]
+   },
+   {
+    "say": "The 8 winners play 4 matches. Then 4 players play 2 matches. Then the last 2 play 1 match: the final.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Rounds: 8, 4, 2, 1 matches",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add the rounds. 8 plus 4 plus 2 plus 1 is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "8 + 4 + 2 + 1 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Here is a clever shortcut. Each match sends exactly 1 player out. How many players must go out to leave 1 champion?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "16",
+      "8"
+     ],
+     "answer": 0,
+     "ifNot": "There are 16 players and only 1 champion. Everyone else must lose once. 16 take away 1."
+    }
+   },
+   {
+    "say": "15 players must lose, and each match makes exactly 1 loser. So there are 15 matches. Both ways agree!",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "16 − 1 = 15"
+     }
+    ]
+   },
+   {
+    "say": "So 15 matches are played.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "15 matches",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "15 matches"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "In a knockout, the matches are always one fewer than the players."
+   }
+  ]
+ },
+ "G4A_COUNTING_017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many 2-digit numbers are multiples of 7?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "2-digit multiples of 7: how many?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Multiples of 7 are the 7 times table: 7, 14, 21 and so on. But 7 itself has only 1 digit. So the first one we want is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "7, 14, 21, ...",
+      "label": true
+     },
+     {
+      "op": "strike",
+      "line": "m",
+      "target": {
+       "text": "7"
+      }
+     },
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "7 × 2 = 14"
+     }
+    ]
+   },
+   {
+    "say": "Now the biggest one. 7 times 14 is 98. What about 7 times 15?",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "7 × 14 = 98"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "7 × 15 = 105"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "105: still a 2-digit number",
+      "105: too big, it has 3 digits",
+      "99"
+     ],
+     "answer": 1,
+     "ifNot": "98 plus 7 is 105. That has 3 digits, so it is out. 98 is the last one."
+    }
+   },
+   {
+    "say": "So our multiples go from 7 times 2 up to 7 times 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "7 × 2, 7 × 3, ... , 7 × 14",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now count the multipliers from 2 to 14. From 1 to 14 there are 14 of them. Leave out the 1, and there are 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "14 − 1 = 13"
+     }
+    ]
+   },
+   {
+    "say": "So there are 13 two-digit multiples of 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "13 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "13 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 14, which forgets that 7 itself is only a 1-digit number. Find the first and the last, then count."
+   }
+  ]
+ },
+ "G4A_COUNTING_018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Sunita climbs from the 1st floor to the 4th floor: 48 steps. Every floor has the same number of steps. How many steps from the 1st floor to the 7th?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1st → 4th floor: 48 steps. 1st → 7th floor: ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "From the 1st floor to the 4th floor, how many flights of stairs does she climb?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "5",
+      "3"
+     ],
+     "answer": 2,
+     "ifNot": "Count the climbs: 1st to 2nd, 2nd to 3rd, 3rd to 4th. She starts on the 1st floor, so she does not climb up to it."
+    }
+   },
+   {
+    "say": "1st to 2nd, 2nd to 3rd, 3rd to 4th. That is 3 flights, not 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4 − 1 = 3"
+     }
+    ]
+   },
+   {
+    "say": "So 48 steps are shared among 3 flights. 48 divided by 3 is 16 steps in each flight.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "48 ÷ 3 = 16"
+     }
+    ]
+   },
+   {
+    "say": "Now the 7th floor. In the same way, 1st to 7th is 6 flights.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "7 − 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "6 flights of 16 steps. 6 times 16 is 96.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "6 × 16 = 96"
+     }
+    ]
+   },
+   {
+    "say": "So she would climb 96 steps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "96 steps",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "96 steps"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Floors are like fence posts, and flights of stairs are the gaps. Always count the gaps."
+   }
+  ]
+ },
+ "G4A_COUNTING_019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "An ice-cream shop has 4 flavours: mango, chocolate, vanilla and strawberry. Rohan picks 2 different flavours. How many different pairs can he choose?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4 flavours: M, C, V, S. Pairs of 2 different ones?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's list the pairs in order, so that we miss none. Mango can go with chocolate, vanilla or strawberry. 3 pairs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "MC  MV  MS",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Next, chocolate. Chocolate with mango is already on the list. So how many new pairs does chocolate make?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "2",
+      "1"
+     ],
+     "answer": 1,
+     "ifNot": "Chocolate with mango is the same cup as mango with chocolate. The new ones are chocolate with vanilla, and chocolate with strawberry."
+    }
+   },
+   {
+    "say": "Chocolate gives 2 new pairs. Then vanilla with strawberry is the last new pair.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "CV  CS",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "p3",
+      "text": "VS",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add them. 3 plus 2 plus 1 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 + 2 + 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So Rohan can choose 6 different pairs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "6 pairs",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6 pairs"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 4 times 3, which is 12. That counts every pair twice. In a cup, the order does not matter, so halve it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck1",
+      "text": "4 × 3 = 12"
+     },
+     {
+      "op": "write",
+      "id": "ck2",
+      "text": "12 ÷ 2 = 6"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_COUNTING_020": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Using each of the digits 2, 0 and 5 exactly once, how many 3-digit numbers can be made?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits 2, 0, 5, each once. 3-digit numbers?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "One of these digits cannot go in the hundreds place. Which one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "5",
+      "0"
+     ],
+     "answer": 2,
+     "ifNot": "If 0 goes first, the number is not really a 3-digit number. A 0 at the front counts for nothing."
+    }
+   },
+   {
+    "say": "So the hundreds digit is 2 or 5. Start with 2: the other two digits can go as 0 then 5, or 5 then 0. That gives 205 and 250.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "205, 250",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with 5 and we get 502 and 520.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "502, 520",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count them: 2 numbers and 2 numbers. 2 plus 2 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "2 + 2 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So 4 three-digit numbers can be made.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "4 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 3 times 2 times 1, which is 6. That would also count numbers that start with 0. Watch out for 0 at the front."
+   }
+  ]
+ },
+ "G4A_COUNTING_021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A big triangle has 2 lines drawn from its top corner down to its base, making 3 small triangles side by side. How many triangles are there, of every size?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3 small triangles side by side. Every size?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "fg",
+      "spec": {
+       "kind": "polygon",
+       "points": [
+        [
+         6,
+         1
+        ],
+        [
+         1,
+         11
+        ],
+        [
+         4.33,
+         11
+        ],
+        [
+         7.67,
+         11
+        ],
+        [
+         11,
+         11
+        ]
+       ],
+       "dashed": [
+        {
+         "from": 0,
+         "to": 2
+        },
+        {
+         "from": 0,
+         "to": 3
+        }
+       ],
+       "note": "Two lines from the top corner to the base. Count every triangle"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Let's count size by size. First the small ones: left, middle and right. That is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "1 part: 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Can 2 small triangles next to each other make a bigger triangle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no",
+      "yes, but only one way",
+      "yes: left+middle, middle+right"
+     ],
+     "answer": 2,
+     "ifNot": "Join the left and the middle: the shape still has 3 corners, so it is a triangle. The middle and the right do the same."
+    }
+   },
+   {
+    "say": "Left with middle is one. Middle with right is another. That is 2 triangles made of 2 parts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "2 parts: 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Left with right? They do not touch, so that is not a shape. And all 3 parts together make the 1 big triangle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s3",
+      "text": "3 parts: 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add them. 3 plus 2 plus 1 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 + 2 + 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So there are 6 triangles in the figure.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "6 triangles",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6 triangles"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Count shapes by size: 1 part, 2 parts, 3 parts. Then nothing hides from you."
+   }
+  ]
+ },
+ "G4A_COUNTING_022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In a queue, Ravi is 8th from the front and Sana is 15th from the front. How many people stand between them?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Ravi: 8th. Sana: 15th. How many between?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "fg",
+      "spec": {
+       "kind": "numberLine",
+       "min": 1,
+       "max": 15,
+       "step": 14,
+       "tickLabels": "ends",
+       "points": [
+        {
+         "at": 8,
+         "label": "Ravi"
+        },
+        {
+         "at": 15,
+         "label": "Sana"
+        }
+       ],
+       "note": "Places in the queue, from the front. How many stand between them?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Between means after Ravi and before Sana. So we want the people in places 9, 10, 11, 12, 13 and 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "9, 10, 11, 12, 13, 14",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count those places. How many are there?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7",
+      "6",
+      "8"
+     ],
+     "answer": 1,
+     "ifNot": "Point at each one: 9, 10, 11, 12, 13, 14. Do not count Ravi's 8 or Sana's 15."
+    }
+   },
+   {
+    "say": "There are 6. Now a quick way. 15 minus 8 is 7. But that 7 counts Sana's own place too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "15 − 8 = 7"
+     }
+    ]
+   },
+   {
+    "say": "So take 1 away for Sana. 7 minus 1 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "7 − 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So 6 people stand between them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "6 people",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6 people"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "For 'between', subtract the positions, then take away 1."
+   }
+  ]
+ },
+ "G4A_COUNTING_023": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many numbers from 100 to 200, counting both, end in the digit 0?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "100 to 200. How many end in 0?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Numbers ending in 0 are the tens: 100, 110, 120 and so on, up to 200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "100, 110, 120, ... , 190, 200",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "From 100 to 200 is a distance of 100. Each jump is 10, so there are 10 jumps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "200 − 100 = 100"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "100 ÷ 10 = 10"
+     }
+    ]
+   },
+   {
+    "say": "10 jumps. So how many numbers?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10",
+      "9",
+      "11"
+     ],
+     "answer": 2,
+     "ifNot": "Think of fence posts. 10 gaps need 11 posts, because both ends count."
+    }
+   },
+   {
+    "say": "The numbers are the posts, and the jumps are the gaps. 10 plus 1 is 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "10 + 1 = 11"
+     }
+    ]
+   },
+   {
+    "say": "So 11 numbers end in 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "11 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "11 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Whenever both ends are counted, it is the jumps plus 1."
+   }
+  ]
+ },
+ "G4A_COUNTING_024": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A book's pages are numbered from 1. In all, 129 digits were printed. How many pages does the book have?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Pages from 1. 129 digits printed. How many pages?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Pages 1 to 9 have 1 digit each. So the first 9 pages use up 9 digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "Pages 1 to 9: 9 digits",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How many digits are left? 129 minus 9 is 120.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "129 − 9 = 120"
+     }
+    ]
+   },
+   {
+    "say": "From page 10 onwards, how many digits does each page use?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "1",
+      "3"
+     ],
+     "answer": 0,
+     "ifNot": "Page 10 and the pages after it are each written with 2 digits."
+    }
+   },
+   {
+    "say": "Each page uses 2 digits. So 120 digits make 120 divided by 2, which is 60 pages.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "120 ÷ 2 = 60"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 60 is only the 2-digit pages. Add back the first 9 pages. 9 plus 60 is 69.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "9 + 60 = 69"
+     }
+    ]
+   },
+   {
+    "say": "So the book has 69 pages.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "69 pages",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "69 pages"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 9 digits, then 60 pages of 2 digits is 120 more. 9 plus 120 is 129. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck",
+      "text": "9 + 120 = 129"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_COUNTING_025": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many 2-digit numbers have a tens digit bigger than the ones digit? 72 is one, but 27 is not.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "2-digit numbers with tens digit > ones digit?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Go through the tens digits in order. Tens digit 1: the ones digit must be smaller than 1, so only 0. That is the number 10. Just 1 number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "Tens 1: 10 → 1 number",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Tens digit 2: the ones digit can be 0 or 1. How many numbers is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "Tens 2: 20, 21 → ?",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "2",
+      "3"
+     ],
+     "answer": 1,
+     "ifNot": "The ones digit can be 0 or 1, giving the numbers 20 and 21."
+    }
+   },
+   {
+    "say": "2 numbers. Do you see the pattern? Tens digit 3 gives 3 numbers, tens digit 4 gives 4, all the way up to tens digit 9, which gives 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t3",
+      "text": "Tens 3: 3 numbers ... Tens 9: 9 numbers",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So we add 1 plus 2 plus 3, all the way up to 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45"
+     }
+    ]
+   },
+   {
+    "say": "A neat way to add: pair 1 with 9, 2 with 8, 3 with 7, 4 with 6. That is 4 tens, which is 40, and the 5 in the middle makes 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "40 + 5 = 45"
+     }
+    ]
+   },
+   {
+    "say": "So there are 45 such numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "45 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "45 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Do not forget the numbers that end in 0, like 10 and 20. Zero is smaller than every tens digit, so they count."
+   }
+  ]
+ },
+ "G4A_COUNTING_026": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many 3-digit numbers have digits that add up to 4?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3-digit numbers, digits add up to 4. How many?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's go through the hundreds digit. It cannot be 0. If it is 1, the other two digits must add up to 3."
+   },
+   {
+    "say": "That gives 103, 112, 121 and 130. 4 numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h1",
+      "text": "103, 112, 121, 130",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Hundreds digit 2: the other two digits must add up to 2. How many numbers?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "2",
+      "4"
+     ],
+     "answer": 0,
+     "ifNot": "The last two digits can be 0 and 2, or 1 and 1, or 2 and 0. That is 3 ways."
+    }
+   },
+   {
+    "say": "They are 202, 211 and 220. 3 numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h2",
+      "text": "202, 211, 220",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Hundreds digit 3 gives 301 and 310. And hundreds digit 4 gives just 400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h3",
+      "text": "301, 310",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "h4",
+      "text": "400",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add the groups. 4 plus 3 plus 2 plus 1 is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4 + 3 + 2 + 1 = 10"
+     }
+    ]
+   },
+   {
+    "say": "So there are 10 such numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "10 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "10 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The easy ones to miss are 400 and the others with zeros in them. Going in order catches them all."
+   }
+  ]
+ },
+ "G4A_COUNTING_027": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square board has 9 small squares, in 3 rows of 3. Counting squares of every size, how many are there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3 rows of 3 small squares. Squares of every size?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "fg",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "grid": {
+        "cols": 3,
+        "rows": 3
+       },
+       "note": "A board of 9 small squares. Count the squares of every size"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Size by size. The smallest squares first: there are 9 of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "1 by 1: 9",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Next, squares that are 2 wide and 2 tall. How many of those fit on the board?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "1",
+      "4"
+     ],
+     "answer": 2,
+     "ifNot": "A 2 by 2 square can sit in the top left, top right, bottom left or bottom right. They overlap, and that is fine."
+    }
+   },
+   {
+    "say": "There are 4: one snug in each corner of the board. They overlap each other, and that is allowed.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "2 by 2: 4",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "grid",
+       "rows": 3,
+       "cols": 3,
+       "shaded": [
+        [
+         0,
+         0
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         0
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       "note": "A square 2 wide and 2 tall fits in each corner: 4 of them"
+      }
+     }
+    ]
+   },
+   {
+    "say": "And the biggest: the whole board is 1 square, 3 wide and 3 tall.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s3",
+      "text": "3 by 3: 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add all the sizes. 9 plus 4 plus 1 is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "9 + 4 + 1 = 14"
+     }
+    ]
+   },
+   {
+    "say": "So there are 14 squares on the board.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "14 squares",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "14 squares"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The 2 by 2 squares are the ones people miss. Count every size, one at a time."
+   }
+  ]
+ },
+ "G4A_COUNTING_028": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "4 small squares are joined in a row to make a strip. Counting rectangles of every size, small squares too, how many are there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A strip of 4 squares. Rectangles of every size?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "fg",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "tone": "a"
+          }
+         ]
+        }
+       ],
+       "note": "A strip of small squares in a row. Count rectangles of every size"
+      }
+     }
+    ]
+   },
+   {
+    "say": "A square is a special rectangle, so each small square counts. That is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "1 square long: 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now rectangles made of 2 squares side by side. How many are there?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "4",
+      "3"
+     ],
+     "answer": 2,
+     "ifNot": "Number the squares 1, 2, 3, 4. The pairs are 1 and 2, then 2 and 3, then 3 and 4."
+    }
+   },
+   {
+    "say": "1 with 2, 2 with 3, 3 with 4. That is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "2 squares long: 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Rectangles made of 3 squares: 1 to 3, and 2 to 4. That is 2. And the whole strip is 1 more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s3",
+      "text": "3 squares long: 2",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "s4",
+      "text": "4 squares long: 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add them. 4 plus 3 plus 2 plus 1 is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4 + 3 + 2 + 1 = 10"
+     }
+    ]
+   },
+   {
+    "say": "So there are 10 rectangles in the strip.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "10 rectangles",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "10 rectangles"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice the pattern: 4, 3, 2, 1. Each longer size has one fewer place to sit."
+   }
+  ]
+ },
+ "G4A_COUNTING_029": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "At a party, every child gave one card to every other child. In all, 30 cards were given. How many children were there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Each child gives a card to every other. 30 cards.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Try a small party first. With 3 children, each one gives 2 cards. 3 times 2 is 6 cards.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c0",
+      "text": "3 × 2 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So the rule is: the number of children, times one fewer than that. We need two neighbouring numbers that multiply to 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "children × (children − 1) = 30",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which pair of neighbours multiplies to 30?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 × 4",
+      "10 × 3",
+      "6 × 5"
+     ],
+     "answer": 2,
+     "ifNot": "Neighbours are numbers next to each other, like 5 and 6. Multiply each neighbouring pair, and look for the one that makes 30."
+    }
+   },
+   {
+    "say": "6 times 5 is 30. So there were 6 children, and each one gave 5 cards.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "6 × 5 = 30"
+     }
+    ]
+   },
+   {
+    "say": "So 6 children were at the party.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "6 children",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6 children"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 5 is the number of cards each child gave, not the number of children. The children are one more."
+   },
+   {
+    "say": "And we do not halve here, as we do for handshakes. A card from Anu to Binu is different from a card from Binu to Anu."
+   }
+  ]
+ },
+ "G4A_COUNTING_030": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Using the digits 0, 1, 2 and 3, with no digit repeated, how many 3-digit even numbers can be made?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits 0, 1, 2, 3, no repeats. 3-digit even numbers?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "An even number ends in an even digit. Here that means it ends in 0 or in 2. Let's take the two cases one at a time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "bx",
+      "text": "_ _ [0 or 2]",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Case 1: it ends in 0. The hundreds digit can be 1, 2 or 3: 3 choices. Then 2 digits are left for the tens place. 3 times 2 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × 2 = 6"
+     },
+     {
+      "op": "note",
+      "line": "c1",
+      "target": {
+       "text": "6"
+      },
+      "text": "ends in 0",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Case 2: it ends in 2. The digits left are 0, 1 and 3. How many of them can go in the hundreds place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "3",
+      "1"
+     ],
+     "answer": 0,
+     "ifNot": "0 cannot go first, or the number would not have 3 digits. So only 1 or 3 can go there."
+    }
+   },
+   {
+    "say": "Only 1 or 3: that is 2 choices. Then 2 digits are left for the tens place, and one of them is the 0. 2 times 2 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "2 × 2 = 4"
+     },
+     {
+      "op": "note",
+      "line": "c2",
+      "target": {
+       "text": "4"
+      },
+      "text": "ends in 2",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Add the two cases. 6 plus 4 is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "6 + 4 = 10"
+     }
+    ]
+   },
+   {
+    "say": "So 10 such numbers can be made.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "10 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "10 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When 0 is one of the digits, split into cases. Zero is not allowed at the front, so it changes the count."
+   }
+  ]
+ },
+ "G4A_COUNTING_031": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A temple bell takes 6 seconds to ring 4 times, from the first ring to the last. How long does it take to ring 10 times?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4 rings take 6 seconds. 10 rings take ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The time passes in the gaps between the rings. How many gaps are there between 4 rings?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "3",
+      "5"
+     ],
+     "answer": 1,
+     "ifNot": "Tap the table 4 times: ding, ding, ding, ding. There are only 3 waits in between."
+    }
+   },
+   {
+    "say": "4 rings have 3 gaps. So 6 seconds are shared among 3 gaps. 6 divided by 3 is 2 seconds for each gap.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4 − 1 = 3"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "6 ÷ 3 = 2"
+     }
+    ]
+   },
+   {
+    "say": "Now 10 rings. In the same way, 10 rings have 9 gaps.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "10 − 1 = 9"
+     }
+    ]
+   },
+   {
+    "say": "9 gaps of 2 seconds each. 9 times 2 is 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "9 × 2 = 18"
+     }
+    ]
+   },
+   {
+    "say": "So it takes 18 seconds to ring 10 times.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "18 seconds",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "18 seconds"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to share the 6 seconds among the 4 rings. The clock only runs in the gaps between them."
+   }
+  ]
+ },
+ "G4A_COUNTING_032": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Tara is 9th from the left and Uma is 6th from the right. They swap places, and now Tara is 15th from the left. How many children are in the row?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Tara: 9th from left. Uma: 6th from right.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "After the swap, Tara: 15th from left. How many?",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "After the swap, where is Tara standing?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "in her own old spot",
+      "at the end of the row",
+      "in Uma's old spot"
+     ],
+     "answer": 2,
+     "ifNot": "They swapped. So Tara has moved into the place where Uma used to stand."
+    }
+   },
+   {
+    "say": "Tara is in Uma's old spot. We know two things about that one spot: it is 15th from the left, and it is 6th from the right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "One spot: 15th from left, 6th from right",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "6th from right"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So there are 14 children to its left, and 5 children to its right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "15 − 1 = 14"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "6 − 1 = 5"
+     }
+    ]
+   },
+   {
+    "say": "Add them all: 14 on the left, the spot itself, and 5 on the right. 14 plus 1 plus 5 is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "14 + 1 + 5 = 20"
+     }
+    ]
+   },
+   {
+    "say": "So there are 20 children in the row.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "20 children",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "20 children"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The 9 was only there to distract us. We never needed it! The shortcut: 15 plus 6, minus 1 for the spot counted twice.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck",
+      "text": "15 + 6 − 1 = 20"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_COUNTING_033": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Aman writes all the numbers from 1 to 100. How many times does he write the digit 1?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Write 1 to 100. How often is the digit 1 written?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count place by place. Ones place first: 1, 11, 21, 31, and so on up to 91. That is 10 times.",
+    "board": [
+     {
+      "op": "write",
+      "id": "o",
+      "text": "Ones: 1, 11, 21, 31, 41, 51, 61, 71, 81, 91",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the tens place. Which numbers have a 1 in the tens place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only 10",
+      "11 only",
+      "10 to 19"
+     ],
+     "answer": 2,
+     "ifNot": "Every number in the teens has a 1 in the tens place, and so does 10 itself."
+    }
+   },
+   {
+    "say": "10, 11, 12, up to 19. That is 10 numbers, so 10 more 1s.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "Tens: 10, 11, 12, ... , 19",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The number 11 has two 1s, and it is in both lists, once for each. So that is right.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "11"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "t",
+      "target": {
+       "text": "11"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "One more to find: the hundreds place. The number 100 starts with a 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "Hundreds: 100",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add them. 10 plus 10 plus 1 is 21.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "10 + 10 + 1 = 21"
+     }
+    ]
+   },
+   {
+    "say": "So Aman writes the digit 1 a total of 21 times.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "21 times",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "21 times"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Place by place: ones, tens, hundreds. And do not forget the last number, 100."
+   }
+  ]
+ },
+ "G4A_COUNTING_034": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many numbers from 1 to 60 can be divided exactly by 2, or by 3, or by both?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1 to 60: divisible by 2 or by 3 (or both)?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First the multiples of 2. Every second number is one, so 60 divided by 2 is 30 of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "60 ÷ 2 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Next the multiples of 3. Every third number is one, so 60 divided by 3 is 20 of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "60 ÷ 3 = 20"
+     }
+    ]
+   },
+   {
+    "say": "30 plus 20 is 50. But think of the number 6. Which list is it in?",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "30 + 20 = 50"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only the 2s",
+      "only the 3s",
+      "both lists"
+     ],
+     "answer": 2,
+     "ifNot": "6 is 2 times 3. So it is a multiple of 2 and also a multiple of 3. We counted it twice!"
+    }
+   },
+   {
+    "say": "Numbers like 6, 12 and 18 are in both lists. They are the multiples of 6, and there are 60 divided by 6 of them. That is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "6, 12, 18, ...",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "60 ÷ 6 = 10"
+     }
+    ]
+   },
+   {
+    "say": "We counted those 10 twice, so take them away once. 50 minus 10 is 40.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c5",
+      "text": "50 − 10 = 40"
+     }
+    ]
+   },
+   {
+    "say": "So there are 40 such numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "40 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "40 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "For 'this or that': count each list, add, then take away what is in both."
+   }
+  ]
+ },
+ "G4A_COUNTING_035": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A flag has 3 stripes in a row. Each is red, green or blue. Stripes that touch must be different colours. How many flags can be made?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3 stripes. Red, green or blue. Neighbours differ.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Paint one stripe at a time. The first stripe can be any of the 3 colours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b1",
+      "text": "[3] [ ? ] [ ? ]",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The second stripe touches the first. So how many colours can it be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "2",
+      "1"
+     ],
+     "answer": 1,
+     "ifNot": "It cannot match the first stripe. That leaves the other 2 colours."
+    }
+   },
+   {
+    "say": "2 choices for the second. Now the third stripe. It touches only the second one, not the first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b2",
+      "text": "[3] [2] [ ? ]",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So how many colours can the third stripe be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "2",
+      "3"
+     ],
+     "answer": 1,
+     "ifNot": "It only has to differ from the second stripe. It is allowed to match the first, because they do not touch."
+    }
+   },
+   {
+    "say": "The third stripe has 2 choices as well. It may even be the same as the first. Multiply: 3 times 2 times 2 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b3",
+      "text": "[3] [2] [2]",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × 2 × 2 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So 12 different flags can be made.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "12 flags",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12 flags"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 3 times 2 times 1, which is 6. That makes all 3 stripes different, but the rule was only about stripes that touch."
+   }
+  ]
+ },
+ "G4A_COUNTING_036": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many numbers are in this list? 4, 8, 12, 16, 20, 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4, 8, 12, 16, 20, 24",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The question asks how many numbers there are. It does not ask how big they are. So we just count them, one by one."
+   },
+   {
+    "say": "Point at each number as you count. 4 is the 1st. 8 is the 2nd. 12 is the 3rd.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "4",
+       "nth": 1
+      },
+      "text": "1st",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "8"
+      },
+      "text": "2nd",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "12"
+      },
+      "text": "3rd",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "16 is the 4th, and 20 is the 5th. What about 24?",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "16"
+      },
+      "text": "4th",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "20"
+      },
+      "text": "5th",
+      "place": "below"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the 5th",
+      "the 24th",
+      "the 6th"
+     ],
+     "answer": 2,
+     "ifNot": "After the 5th comes the 6th. 24 is the last number, and it is the 6th one we point at."
+    }
+   },
+   {
+    "say": "24 is the 6th, and it is the last one.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "24"
+      },
+      "text": "6th",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So there are 6 numbers in the list.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "6 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 24 is the last number, not how many there are. Count the numbers, not their size."
+   }
+  ]
+ },
+ "G4A_COUNTING_037": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ria writes down the whole numbers from 6 to 10: 6, 7, 8, 9, 10. How many numbers does she write?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "6, 7, 8, 9, 10",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's count them one at a time, pointing as we go. 6 is the 1st, 7 is the 2nd, 8 is the 3rd.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "6"
+      },
+      "text": "1st",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "text": "2nd",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "8"
+      },
+      "text": "3rd",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "9 is the 4th. So what is 10?",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "9"
+      },
+      "text": "4th",
+      "place": "below"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the 4th",
+      "the 10th",
+      "the 5th"
+     ],
+     "answer": 2,
+     "ifNot": "After the 4th comes the 5th. 10 is the last number she writes, and it is the 5th one."
+    }
+   },
+   {
+    "say": "10 is the 5th, and the last.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "10"
+      },
+      "text": "5th",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So Ria writes 5 numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "5 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "5 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 10 minus 6 is 4, but there are 5 numbers. When both ends are counted, there is always one extra.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck",
+      "text": "10 − 6 + 1 = 5"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_COUNTING_038": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many whole numbers lie between 10 and 15? We must not count 10 or 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Between 10 and 15 (not 10, not 15). How many?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Between means after 10 and before 15. Let's write them down: 11, 12, 13, 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "10 | 11, 12, 13, 14 | 15",
+      "label": true
+     },
+     {
+      "op": "strike",
+      "line": "m",
+      "target": {
+       "text": "10"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "m",
+      "target": {
+       "text": "15"
+      }
+     }
+    ]
+   },
+   {
+    "say": "How many numbers did we write?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "5",
+      "6"
+     ],
+     "answer": 0,
+     "ifNot": "Count them one by one: 11, 12, 13, 14. The ends, 10 and 15, are left out."
+    }
+   },
+   {
+    "say": "11, 12, 13, 14. That is 4 numbers.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "m",
+      "target": {
+       "text": "11, 12, 13, 14"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So there are 4 whole numbers between 10 and 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "4 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A quick check: 15 minus 10 is 5, and we take away 1 because neither end counts. That gives 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck",
+      "text": "15 − 10 − 1 = 4"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_COUNTING_039": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Anu and Bala stand in a line, one behind the other. In how many different orders can they stand?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Anu and Bala in a line. How many orders?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's try it. Anu can stand in front, with Bala behind.",
+    "board": [
+     {
+      "op": "write",
+      "id": "o1",
+      "text": "Anu, Bala",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Is there another way?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no, that is the only way",
+      "yes, they can swap"
+     ],
+     "answer": 1,
+     "ifNot": "The two children can change places. Then Bala is in front and Anu is behind."
+    }
+   },
+   {
+    "say": "They swap. Now Bala is in front, with Anu behind.",
+    "board": [
+     {
+      "op": "write",
+      "id": "o2",
+      "text": "Bala, Anu",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Are there any more? With 2 children, one is in front and the other is behind. So that is all."
+   },
+   {
+    "say": "So they can stand in 2 different orders.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "2 orders",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "2 orders"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "To count orders, write each one down. Then you can see that you have them all."
+   }
+  ]
+ },
+ "G4A_COUNTING_040": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Using the digits 4 and 7 once each, how many different 2-digit numbers can you make?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits 4 and 7, once each. 2-digit numbers?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Put 4 in the tens place and 7 in the ones place. That makes 47.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "47",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now swap the two digits around. Which number do we get?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "77",
+      "74",
+      "44"
+     ],
+     "answer": 1,
+     "ifNot": "Put 7 in the tens place and 4 in the ones place. That reads 74."
+    }
+   },
+   {
+    "say": "7 first, then 4. That makes 74.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "74",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Could we make 44 or 77? Not here: each digit can be used only once."
+   },
+   {
+    "say": "So we can make 2 different numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "2 numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "2 numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "With 2 digits used once each, there are 2 numbers: one, and its swap."
+   }
+  ]
+ },
+ "G4A_COUNTING_041": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "5 children stand in a queue. From the front they are Asha, Bina, Chetan, Dev and Esha. Who is 3rd?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Asha, Bina, Chetan, Dev, Esha",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The question says: starting from the front. So we begin counting at Asha.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Asha"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Asha is 1st. Bina is 2nd.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "Asha"
+      },
+      "text": "1st",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "Bina"
+      },
+      "text": "2nd",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Who comes next, in 3rd place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Chetan",
+      "Dev",
+      "Bina"
+     ],
+     "answer": 0,
+     "ifNot": "After Bina, who is 2nd, the next child in the line is Chetan."
+    }
+   },
+   {
+    "say": "Chetan is 3rd. After him, Dev is 4th and Esha is 5th.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "Chetan"
+      },
+      "text": "3rd",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "Dev"
+      },
+      "text": "4th",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "Esha"
+      },
+      "text": "5th",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So Chetan is 3rd in the queue.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Chetan",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "Chetan"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "For positions, always check which end to start from. Then count along: 1st, 2nd, 3rd."
+   }
+  ]
+ },
+ "G4A_COUNTING_042": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi is 4th in a queue. How many children are standing in front of him?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Ravi is 4th. How many in front of him?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's draw the queue. 1st, 2nd, 3rd, and then Ravi in 4th place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "1st, 2nd, 3rd, Ravi",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which places are in front of Ravi?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1st, 2nd and 3rd",
+      "1st, 2nd, 3rd and 4th",
+      "2nd and 3rd"
+     ],
+     "answer": 0,
+     "ifNot": "Ravi is the 4th child himself. He cannot be in front of himself! So it is only the 1st, 2nd and 3rd."
+    }
+   },
+   {
+    "say": "The 1st, 2nd and 3rd children are in front. Ravi is the 4th, so we do not count him.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "m",
+      "target": {
+       "text": "1st, 2nd, 3rd"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "That is 3 children. 4 minus 1 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4 − 1 = 3"
+     }
+    ]
+   },
+   {
+    "say": "So 3 children are standing in front of Ravi.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "3 children",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "3 children"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The number of people in front is always one less than your position."
+   }
+  ]
+ },
+ "G4A_COUNTING_043": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "There are 6 children in a queue. Meena is at the very front. How many children are behind her?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "6 in a queue. Meena is first. How many behind?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Meena is at the front. So every other child in the queue is behind her.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "Meena, then all the others",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are 6 children altogether. Is Meena one of the 6?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no",
+      "yes"
+     ],
+     "answer": 1,
+     "ifNot": "The 6 children in the queue include Meena. So she must not be counted among those behind her."
+    }
+   },
+   {
+    "say": "So take Meena away from the 6. 6 minus 1 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "6 − 1 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So 5 children are behind Meena.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "5 children",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "5 children"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: Meena and the 5 behind her make 6. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck",
+      "text": "1 + 5 = 6"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_COUNTING_044": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many even numbers are in this list? 3, 4, 7, 8, 10, 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3, 4, 7, 8, 10, 13",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Even numbers can be shared into 2 equal groups. They end in 0, 2, 4, 6 or 8."
+   },
+   {
+    "say": "Check each one. 3 is odd, so cross it out. 4 is even: keep it. 7 is odd.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "3",
+       "nth": 1
+      }
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "4"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "7"
+      }
+     }
+    ]
+   },
+   {
+    "say": "8 is even. Now, what about 10?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "odd",
+      "neither",
+      "even, it ends in 0"
+     ],
+     "answer": 2,
+     "ifNot": "10 can be shared into 2 groups of 5. A number ending in 0 is always even."
+    }
+   },
+   {
+    "say": "10 ends in 0, so it is even. And 13 ends in 3, so it is odd.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "13"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The even numbers are 4, 8 and 10. That is 3 numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "3 even numbers",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "3 even numbers"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "To spot an even number, look only at its last digit."
+   }
+  ]
+ },
+ "G4A_COUNTING_045": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here are all the orders for Anu, Binu and Charu: A B C, A C B, B A C, B C A, C A B, C B A. In how many is Anu first?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "ABC, ACB, BAC, BCA, CAB, CBA",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A stands for Anu. So we want the orders that begin with the letter A."
+   },
+   {
+    "say": "Look at the first letter of each order. Which ones start with A?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "ABC only",
+      "ABC, ACB and BAC",
+      "ABC and ACB"
+     ],
+     "answer": 2,
+     "ifNot": "Look only at the first letter. B A C has an A in it, but it starts with B."
+    }
+   },
+   {
+    "say": "A B C starts with A. So does A C B.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "ABC"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "ACB"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The other 4 start with B or C, so Anu is not first in those.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "BAC"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "BCA"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "CAB"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "CBA"
+      }
+     }
+    ]
+   },
+   {
+    "say": "So Anu is first in 2 of the orders.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "2 orders",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "2 orders"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When a list is given, read exactly what to look for, then check each item."
+   }
+  ]
+ },
+ "G4A_COUNTING_046": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Count the days from Monday to Thursday, counting both Monday and Thursday. How many days is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Monday to Thursday, counting both. How many days?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's write the days in order: Monday, Tuesday, Wednesday, Thursday.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "Monday, Tuesday, Wednesday, Thursday",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The question says to count both Monday and Thursday. So where do we start counting?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "at Monday",
+      "at Tuesday",
+      "at Wednesday"
+     ],
+     "answer": 0,
+     "ifNot": "Both ends count. So Monday itself is day number 1."
+    }
+   },
+   {
+    "say": "Monday is 1, Tuesday is 2, Wednesday is 3, Thursday is 4.",
+    "board": [
+     {
+      "op": "note",
+      "line": "m",
+      "target": {
+       "text": "Monday"
+      },
+      "text": "1",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "m",
+      "target": {
+       "text": "Tuesday"
+      },
+      "text": "2",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "m",
+      "target": {
+       "text": "Wednesday"
+      },
+      "text": "3",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "m",
+      "target": {
+       "text": "Thursday"
+      },
+      "text": "4",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So that is 4 days.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "4 days",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4 days"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When both ends are counted, write the list and count every item, the first and the last too."
+   }
+  ]
+ },
+ "G4A_COUNTING_047": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "7 chairs stand in a row, numbered 1 to 7. Which chair is exactly in the middle?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1  2  3  4  5  6  7",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The middle chair has the same number of chairs on each side of it."
+   },
+   {
+    "say": "Here is a way to find it. Cross off one chair from each end at the same time. First 1 and 7.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "1"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "7"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Then 2 and 6. Then 3 and 5.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "2"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "6"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "3"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "5"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Which chair is left?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Chair 4",
+      "Chair 3",
+      "Chair 5"
+     ],
+     "answer": 0,
+     "ifNot": "We crossed off 1, 2 and 3 from one end, and 7, 6 and 5 from the other. Only one chair is left standing."
+    }
+   },
+   {
+    "say": "Chair 4 is left. It has 3 chairs on its left and 3 chairs on its right.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the middle chair is Chair 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Chair 4",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "Chair 4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "To find the middle, cross off from both ends together until one is left."
+   }
+  ]
+ },
+ "PYQ_2016_Q17": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "4 friends, A, B, C and D, are playing chess. Each of them plays 2 games with every other player. How many games is that altogether?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A, B, C, D. 2 games with every other. Total?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A game needs 2 players. So first let's find all the pairs of players. Start with A: A and B, A and C, A and D.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "AB  AC  AD",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now B. The pair B and A is already on our list, written as A B. So which new pairs does B make?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "BC and BD",
+      "BA, BC and BD",
+      "only BC"
+     ],
+     "answer": 0,
+     "ifNot": "B with A is the same pair as A with B. So the new ones are B with C, and B with D."
+    }
+   },
+   {
+    "say": "B gives B C and B D. And the last new pair is C and D.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "BC  BD",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "p3",
+      "text": "CD",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count the pairs: 3, then 2, then 1. That makes 6 pairs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 + 2 + 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Every pair plays 2 games. 6 times 2 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "6 × 2 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So 12 games were played altogether.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "12 games",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12 games"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Remember: a game belongs to a pair of players. List the pairs in order, count them, then multiply by the games each pair plays."
+   }
+  ]
+ },
+ "PYQ_2018_Q12": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The teacher joins every pair of points on a circle and gets 15 line segments, the most possible. How many points were on the circle?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "? points on a circle → 15 segments",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We do not know the number of points, so let's build up from small cases. 2 points give just 1 segment.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "2 points: 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Add a 3rd point. It can be joined to both of the points already there. How many segments now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "2",
+      "4"
+     ],
+     "answer": 0,
+     "ifNot": "There was 1 segment. The new point adds 2 more, one to each old point. 1 plus 2."
+    }
+   },
+   {
+    "say": "1 plus 2 is 3. Here is the pattern: each new point joins all the points already there.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "3 points: 1 + 2 = 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A 4th point adds 3 more, which makes 6. A 5th point adds 4 more, which makes 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t3",
+      "text": "4 points: 3 + 3 = 6",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t4",
+      "text": "5 points: 6 + 4 = 10",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We want 15, and we are at 10. A 6th point adds 5 more. 10 plus 5 is 15. There it is!",
+    "board": [
+     {
+      "op": "write",
+      "id": "t5",
+      "text": "6 points: 10 + 5 = 15",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So there were 6 points on the circle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "6 points",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6 points"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check another way: 6 points, each joined to 5 others, is 30. Halve it, since each segment was counted twice. 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck1",
+      "text": "6 × 5 = 30"
+     },
+     {
+      "op": "write",
+      "id": "ck2",
+      "text": "30 ÷ 2 = 15"
+     }
+    ]
+   }
+  ]
+ },
+ "PYQ_2019_Q07": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "8 points, named A to H, are marked on a circle. We join every pair. How many line segments can we draw?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Points A to H on a circle. Join every pair.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "fg",
+      "spec": {
+       "kind": "polygon",
+       "points": [
+        [
+         6.0,
+         1.0
+        ],
+        [
+         9.54,
+         2.46
+        ],
+        [
+         11.0,
+         6.0
+        ],
+        [
+         9.54,
+         9.54
+        ],
+        [
+         6.0,
+         11.0
+        ],
+        [
+         2.46,
+         9.54
+        ],
+        [
+         1.0,
+         6.0
+        ],
+        [
+         2.46,
+         2.46
+        ]
+       ],
+       "corners": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+       ],
+       "note": "Every pair of points can be joined, not just neighbours"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Start at A. It can be joined to B, C, D, E, F, G and H. That is 7 segments.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "From A: 7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now B. It also joins 7 other points. But one of those segments is already drawn. Which one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the one to A",
+      "the one to C",
+      "the one to H"
+     ],
+     "answer": 0,
+     "ifNot": "We already drew the segment from A to B. Going from B back to A is the very same segment, so we must not count it again."
+    }
+   },
+   {
+    "say": "So B gives only 6 new segments. C gives 5 new ones, D gives 4, and it keeps shrinking by 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "From B: 6   From C: 5   From D: 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "E gives 3, F gives 2, and G gives 1. And H? All its segments are drawn already.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s3",
+      "text": "From E: 3   From F: 2   From G: 1   From H: 0",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now add them up. 7 plus 6 plus 5 plus 4 plus 3 plus 2 plus 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "7 + 6 + 5 + 4 + 3 + 2 + 1 = 28"
+     }
+    ]
+   },
+   {
+    "say": "That makes 28. So 28 line segments can be drawn.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "28 segments",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "28 segments"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A quick check: 8 points, times 7 partners each, then halved because each segment has two ends. That is 28 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck",
+      "text": "8 × 7 ÷ 2 = 28"
+     }
+    ]
+   }
+  ]
+ },
+ "Q_CH21_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "5 points are marked on a circle. A chord is a straight line joining 2 of the points. How many chords can we draw?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "5 points on a circle. How many chords?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's name the points A, B, C, D and E. From A we can draw chords to B, C, D and E. That is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "From A: 4",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "fg",
+      "spec": {
+       "kind": "polygon",
+       "points": [
+        [
+         6.0,
+         1.0
+        ],
+        [
+         10.76,
+         4.45
+        ],
+        [
+         8.94,
+         10.05
+        ],
+        [
+         3.06,
+         10.05
+        ],
+        [
+         1.24,
+         4.45
+        ]
+       ],
+       "corners": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+       ],
+       "dashed": [
+        {
+         "from": 0,
+         "to": 2
+        },
+        {
+         "from": 0,
+         "to": 3
+        }
+       ],
+       "note": "From A: chords to B, C, D and E. That is 4 chords",
+       "highlight": [
+        "e0",
+        "e4"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now B. How many new chords can B make?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "3",
+      "5"
+     ],
+     "answer": 1,
+     "ifNot": "B joins C, D and E. The chord from B to A is already drawn, so it is not new."
+    }
+   },
+   {
+    "say": "B gives 3 new chords. C gives 2 new ones, to D and E. D gives 1 new one, to E.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "From B: 3   From C: 2   From D: 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "And E? Every chord from E is already there. So we add: 4 plus 3 plus 2 plus 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4 + 3 + 2 + 1 = 10"
+     }
+    ]
+   },
+   {
+    "say": "That is 10. So 10 chords can be drawn.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "10 chords",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "10 chords"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 5 times 4, which is 20. That counts each chord twice, once from each end. Half of 20 is 10 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ck1",
+      "text": "5 × 4 = 20"
+     },
+     {
+      "op": "write",
+      "id": "ck2",
+      "text": "20 ÷ 2 = 10"
+     }
+    ]
+   }
+  ]
+ }
+}

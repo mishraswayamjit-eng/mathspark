@@ -1,0 +1,273 @@
+"""gr4_units lessons, part C: G4A_UNITS_019 to G4A_UNITS_034."""
+from g4_units_lib import a, b, c, fig, g, l, n, qfig, ring, u, w, x
+
+LESSONS = {}
+T = "gr4_units"
+
+LESSONS["G4A_UNITS_019"] = [
+    b("A snail crawls 3 centimetres 5 millimetres every minute. How many minutes does it take to crawl 2.1 metres?",
+      g("q", "3 cm 5 mm each minute. 2.1 m takes ? minutes")),
+    b("Centimetres, millimetres and metres are all mixed up here. Which single unit shall we use for everything?",
+      ask=c("millimetres", ["metres", "kilometres"],
+            "The smallest unit here is the millimetre. If we use it for everything, there are no decimals to worry about.")),
+    b("1 centimetre is 10 millimetres. So 3 centimetres is 30 millimetres, and 5 more makes 35 millimetres each minute.",
+      l("f1", "1 cm = 10 mm"), w("c1", "30 + 5 = 35")),
+    b("Now the 2.1 metres. 1 metre is 100 centimetres, and each of those is 10 millimetres. So 1 metre is 1000 millimetres.",
+      w("c0", "100 × 10 = 1000"), l("f2", "1 m = 1000 mm")),
+    b("2.1 times 1000 is 2100 millimetres. Careful, not 210: that would be the centimetres.",
+      w("c2", "2.1 × 1000 = 2100"), n("c2", "2100", "210 is the cm", "below")),
+    b("So the snail must go 2100 millimetres, at 35 each minute. How many 35s are in 2100? 35 times 2 is 70, and 70 times 30 is 2100.",
+      w("c3", "35 × 2 = 70"), w("c4", "70 × 30 = 2100")),
+    b("2 times 30 is 60. So 35 times 60 is 2100, and the snail takes 60 minutes.", w("c5", "35 × 60 = 2100"), a("ans", "60 minutes")),
+    b("That is exactly one hour. The plan: one unit for everything, then divide the distance by the distance each minute."),
+]
+
+LESSONS["G4A_UNITS_020"] = [
+    b("Pencils come in packets of a dozen, and erasers in packets of a score. Asha wants exactly as many pencils as erasers. What is the smallest number of pencils she can buy?",
+      g("q", "Pencils in dozens, erasers in scores."), l("q2", "Same number of each. Smallest number?")),
+    b("A dozen is 12 and a score is 20. So the pencils must be a number in the 12 times table, and the erasers a number in the 20 times table.",
+      l("f1", "1 dozen = 12"), l("f2", "1 score = 20")),
+    b("The two numbers must be equal. So what kind of number are we hunting for?",
+      ask=c("one in both times tables", ["12 + 20", "20 − 12"],
+            "The pencils are in the 12 times table and the erasers are in the 20 times table. They are equal, so the number is in both tables.")),
+    b("Let's list the 20s, because they grow faster: 20, 40, 60. Now test each one. Does 12 go into it exactly?",
+      l("m", "20, 40, 60, ...")),
+    b("12 does not go into 20. And 12 times 3 is 36, 12 times 4 is 48, so it jumps right over 40 too.",
+      x("m", "20"), x("m", "40"), w("c1", "12 × 3 = 36"), w("c2", "12 × 4 = 48")),
+    b("But 12 times 5 is 60. So 60 is in both tables: 5 packets of pencils and 3 packets of erasers.",
+      w("c3", "12 × 5 = 60"), w("c4", "20 × 3 = 60"), ring("m", "60")),
+    b("So the smallest number of pencils Asha can buy is 60.", a("ans", "60 pencils")),
+    b("The trap is 12 times 20, which is 240. That works, but it is not the smallest. List the multiples and take the first match.",
+      w("tr", "12 × 20 = 240")),
+]
+
+LESSONS["G4A_UNITS_021"] = [
+    b("A straight fence is 20 metres long. There is a post at each end, and the posts are 2 metres 50 centimetres apart. How many posts are there?",
+      g("q", "Fence 20 m. Posts every 2 m 50 cm, one at each end."), l("q2", "How many posts?")),
+    b("Make the units match. 20 metres is 2000 centimetres, and 2 metres 50 centimetres is 250 centimetres.",
+      l("f", "1 m = 100 cm"), w("c1", "20 × 100 = 2000"), w("c2", "200 + 50 = 250")),
+    b("How many gaps of 250 fit in 2000? 4 gaps make 1000, so 8 gaps make 2000.",
+      w("c3", "4 × 250 = 1000"), w("c4", "8 × 250 = 2000")),
+    b("So there are 8 gaps. Is the number of posts also 8?", fig("nl", qfig(T, "G4A_UNITS_021", 1)),
+      ask=c("no, 9 posts", ["yes, 8 posts", "no, 7 posts"],
+            "Look at the line. Every gap has a post at its far end, and there is one extra post right at the start.")),
+    b("Think of your hand: 5 fingers, but only 4 gaps between them. Posts in a straight line are always one more than the gaps."),
+    b("8 gaps, plus 1, makes 9 posts.", w("c5", "8 + 1 = 9"), a("ans", "9 posts")),
+    b("Remember: with a post at both ends, count the gaps, then add 1."),
+]
+
+LESSONS["G4A_UNITS_022"] = [
+    b("Amma pours 1 litre 200 millilitres of juice equally into 8 glasses. The children drink 3 glasses. How many litres are left?",
+      g("q", "1 litre 200 ml in 8 glasses. 3 drunk."), l("q2", "Juice left = ? litres")),
+    b("First, all in millilitres. 1 litre is 1000 millilitres, and 200 more makes 1200.",
+      l("f", "1 litre = 1000 ml"), w("c1", "1000 + 200 = 1200")),
+    b("Share 1200 among 8 glasses by halving 3 times: 600, then 300, then 150. So each glass holds 150 millilitres.",
+      w("c2", "1200 ÷ 2 = 600"), w("c3", "600 ÷ 2 = 300"), w("c4", "300 ÷ 2 = 150")),
+    b("The children drink 3 glasses. The question asks what is left. How many glasses still have juice?",
+      ask=c("5", ["3", "8"], "There were 8 glasses and 3 were drunk. 8 take away 3 leaves 5 full glasses.")),
+    b("5 glasses are left, each with 150 millilitres. 5 times 150 is 750 millilitres.",
+      w("c5", "8 − 3 = 5"), w("c6", "5 × 150 = 750")),
+    b("The answer must be in litres. 750 divided by 1000 is 0.75.", w("c7", "750 ÷ 1000 = 0.75")),
+    b("So 0.75 litres of juice are left.", a("ans", "0.75 litres")),
+    b("Two traps here. 3 glasses is what was drunk, not what is left. And the last step is to change into litres."),
+]
+
+LESSONS["G4A_UNITS_023"] = [
+    b("Each step Anu takes is 60 centimetres long. How many steps does she take to walk 1.5 kilometres?",
+      g("q", "1 step = 60 cm. 1.5 km = ? steps")),
+    b("Her steps are in centimetres, but the walk is in kilometres. What comes first?",
+      ask=c("change 1.5 km into cm", ["divide 1.5 by 60", "multiply 1.5 by 60"],
+            "We can only count how many steps fit when both lengths are in the same unit. Let's change the kilometres into centimetres.")),
+    b("Go down one unit at a time. 1 kilometre is 1000 metres, so 1.5 kilometres is 1500 metres.",
+      l("f1", "1 km = 1000 m"), w("c1", "1.5 × 1000 = 1500")),
+    b("Each metre is 100 centimetres. 1500 times 100 is 150000 centimetres. Count the zeros carefully!",
+      l("f2", "1 m = 100 cm"), w("c2", "1500 × 100 = 150000")),
+    b("Now, how many 60s are in 150000? Take one zero off both numbers: it is 15000 divided by 6.",
+      w("c3", "150000 ÷ 60 = 15000 ÷ 6")),
+    b("15 divided by 6 is 2.5. So 15000 divided by 6 is 2500.", w("c4", "15 ÷ 6 = 2.5"), w("c5", "15000 ÷ 6 = 2500")),
+    b("So Anu takes 2500 steps.", a("ans", "2500 steps")),
+    b("Check: 2500 steps of 60 centimetres make 150000 centimetres. It fits. Most slips here are lost zeros, so count them.",
+      w("ck", "2500 × 60 = 150000")),
+]
+
+LESSONS["G4A_UNITS_024"] = [
+    b("A shopkeeper buys 1 gross of pens for 720 rupees and sells them at 8 rupees each. How much does he gain on one score of pens?",
+      g("q", "Buys 1 gross for ₹720. Sells at ₹8 each."), l("q2", "Gain on 1 score = ?")),
+    b("A gross is 12 dozen. 12 times 12 is 144, so that is 144 pens. And a score is 20 pens.",
+      l("f1", "1 gross = 12 × 12 = 144"), l("f2", "1 score = 20")),
+    b("First, what did one pen cost him? 144 times 5 is 720. So each pen cost 5 rupees.",
+      w("c1", "144 × 5 = 720"), w("c2", "720 ÷ 144 = 5")),
+    b("He buys a pen for 5 rupees and sells it for 8 rupees. What is his gain on one pen?",
+      ask=c("3 rupees", ["8 rupees", "13 rupees"], "Gain is what he gets, minus what he paid. 8 take away 5.")),
+    b("8 minus 5 is 3. He gains 3 rupees on every pen.", w("c3", "8 − 5 = 3")),
+    b("A score is 20 pens. 20 times 3 is 60.", w("c4", "20 × 3 = 60")),
+    b("So he gains 60 rupees on one score of pens.", a("ans", "₹60")),
+    b("Careful with the choices. 160 is what he sells 20 pens for, and 100 is what he paid for them. The gain is the gap between those.",
+      w("ck", "160 − 100 = 60")),
+]
+
+LESSONS["G4A_UNITS_025"] = [
+    b("A frog is at the bottom of a well 2 metres 60 centimetres deep. Each day it climbs 50 centimetres, and each night it slips back 20. On which day does it climb out?",
+      g("q", "Well: 2 m 60 cm. Up 50 cm by day, down 20 cm at night."), l("q2", "Out on which day?")),
+    b("The well is 200 plus 60, which is 260 centimetres deep. In one full day and night the frog goes up 50 and down 20, so it gains 30.",
+      w("c1", "200 + 60 = 260"), w("c2", "50 − 20 = 30")),
+    b("Many people now divide 260 by 30 and say about 9 days. But think: what happens on the frog's last day?",
+      ask=c("it gets out before it can slip", ["it slips back as usual", "it climbs only 30 cm"],
+            "Once the frog reaches the top in the daytime, it is out. It does not slip back that night.")),
+    b("So the last climb is a full 50 centimetres. The frog only needs to be 210 centimetres up before that last day.",
+      w("c3", "260 − 50 = 210")),
+    b("How many full days and nights does it take to reach 210? The frog gains 30 each time, and 7 times 30 is 210.",
+      w("c4", "7 × 30 = 210")),
+    b("After 7 days and nights it is at 210. On the next day it climbs 50 and reaches 260. It is out!",
+      w("c5", "210 + 50 = 260"), fig("nl", qfig(T, "G4A_UNITS_025", 3))),
+    b("The day after day 7 is day 8. So the frog climbs out on the 8th day.", w("c6", "7 + 1 = 8"), a("ans", "8th day")),
+    b("In slip-back puzzles, treat the last climb on its own. That is the whole secret."),
+]
+
+LESSONS["G4A_UNITS_026"] = [
+    b("Three parcels weigh 2.4 kilograms, 2 kilograms 50 grams, and 2450 grams. The lightest and the heaviest go on a scale together. What does it show?",
+      g("q", "Parcels: 2.4 kg, 2 kg 50 g, 2450 g"), l("q2", "Lightest + heaviest = ? kg")),
+    b("To see which is lightest and which is heaviest, put all 3 in grams. 2.4 kilograms is 2.4 times 1000, which is 2400 grams.",
+      l("f", "1 kg = 1000 g"), w("c1", "2.4 × 1000 = 2400")),
+    b("Now 2 kilograms 50 grams. How many grams is that?",
+      ask=c("2050 g", ["2500 g", "250 g"], "2 kilograms is 2 thousand grams. Then add just 50 more.")),
+    b("2000 plus 50 is 2050 grams. Careful: not 2500. 50 grams is a small amount.",
+      w("c2", "2000 + 50 = 2050"), n("c2", "2050", "not 2500", "below")),
+    b("So the parcels are 2400, 2050 and 2450 grams. The lightest is 2050 and the heaviest is 2450.",
+      l("cmp", "2400 g, 2050 g, 2450 g"), u("cmp", "2050 g"), u("cmp", "2450 g")),
+    b("Add those two. 2050 plus 2450 is 4500 grams.", w("c3", "2050 + 2450 = 4500")),
+    b("4500 divided by 1000 is 4.5. So the scale shows 4.5 kilograms.", w("c4", "4500 ÷ 1000 = 4.5"), a("ans", "4.5 kg")),
+    b("The surprise was that 2 kilograms 50 grams is the lightest. Put everything in one unit before you compare."),
+]
+
+LESSONS["G4A_UNITS_027"] = [
+    b("A plumber cuts a pipe 12 metres long into pieces of 1 metre 50 centimetres. Each cut takes 4 minutes. How long does all the cutting take?",
+      g("q", "Pipe 12 m. Pieces of 1 m 50 cm. 4 minutes a cut."), l("q2", "Total cutting time?")),
+    b("First, how many pieces? In centimetres the pipe is 1200 and each piece is 150.",
+      l("f", "1 m = 100 cm"), w("c1", "12 × 100 = 1200"), w("c2", "100 + 50 = 150")),
+    b("2 pieces make 300 centimetres, which is 3 metres. So 12 metres gives 4 lots of 2 pieces. That is 8 pieces.",
+      w("c3", "2 × 150 = 300"), w("c4", "1200 ÷ 150 = 8")),
+    b("8 pieces. So how many cuts does the plumber make?",
+      ask=c("7", ["8", "9"],
+            "Try it with a strip of paper. One cut makes 2 pieces. Two cuts make 3 pieces. The cuts are always one fewer than the pieces.")),
+    b("Each cut is a place where two pieces meet. 8 pieces in a row meet at 7 places. So there are 7 cuts.",
+      w("c5", "8 − 1 = 7")),
+    b("Each cut takes 4 minutes. 7 times 4 is 28.", w("c6", "7 × 4 = 28")),
+    b("So all the cutting takes 28 minutes.", a("ans", "28 minutes")),
+    b("The trap is 8 times 4, which is 32. Pieces are not cuts: the cuts are one fewer.", w("tr", "8 × 4 = 32")),
+]
+
+LESSONS["G4A_UNITS_028"] = [
+    b("6 strips of paper, each 25 centimetres long, are glued end to end. At every join they overlap by 15 millimetres. How long is the finished strip?",
+      g("q", "6 strips of 25 cm. Each join overlaps 15 mm."), l("q2", "Finished length?")),
+    b("With no overlap at all, the strip would be 6 times 25, which is 150 centimetres.", w("c1", "6 × 25 = 150")),
+    b("But each join hides a little paper. 6 strips in a row: how many joins?",
+      ask=c("5", ["6", "7"],
+            "Joins sit between the strips. 2 strips have 1 join, and 3 strips have 2 joins. There is always one fewer join than strips.")),
+    b("6 strips have 5 joins.", w("c2", "6 − 1 = 5")),
+    b("Each overlap is 15 millimetres. 10 millimetres make 1 centimetre, so that is 1.5 centimetres. Careful: not 15 centimetres!",
+      l("f", "10 mm = 1 cm"), w("c3", "15 ÷ 10 = 1.5")),
+    b("5 joins, each hiding 1.5 centimetres. 5 times 1.5 is 7.5 centimetres lost.", w("c4", "5 × 1.5 = 7.5")),
+    b("Take that away from 150. 150 minus 7.5 is 142.5. So the finished strip is 142.5 centimetres long.",
+      w("c5", "150 − 7.5 = 142.5"), a("ans", "142.5 cm")),
+    b("Two things to watch: count the joins, not the strips, and make the units match."),
+]
+
+LESSONS["G4A_UNITS_029"] = [
+    b("An empty tank holds 50 litres. A tap pours in 4 litres every minute. After 5 minutes a drain opens too, and lets out 1 litre 500 millilitres every minute. When is the tank full?",
+      g("q", "Tank 50 litres. Tap: 4 litres a minute."), l("q2", "After 5 minutes, drain: 1 litre 500 ml a minute."),
+      l("q3", "Full after ? minutes")),
+    b("This story has two parts. First part: 5 minutes with only the tap. 5 times 4 is 20 litres in the tank.",
+      w("c1", "5 × 4 = 20")),
+    b("So how much more is needed? 50 minus 20 is 30 litres.", w("c2", "50 − 20 = 30")),
+    b("Second part: the tap puts in 4 litres a minute, but the drain takes out 1 and a half. How fast does the water rise now?",
+      ask=c("2.5 litres a minute", ["5.5 litres a minute", "4 litres a minute"],
+            "Water comes in and water goes out, so we subtract. 4 take away 1 and a half.")),
+    b("1 litre 500 millilitres is 1.5 litres. 4 minus 1.5 is 2.5. The water now rises 2.5 litres each minute.",
+      w("c3", "4 − 1.5 = 2.5")),
+    b("2.5 litres a minute means 5 litres every 2 minutes. We need 30 litres, which is 6 lots of 5. So 6 times 2 is 12 minutes.",
+      w("c4", "2.5 × 2 = 5"), w("c5", "30 ÷ 5 = 6"), w("c6", "6 × 2 = 12")),
+    b("Careful: 12 minutes is only the second part. Add the first 5 minutes. 5 plus 12 is 17.", w("c7", "5 + 12 = 17")),
+    b("So the tank is full 17 minutes after the tap was turned on.", a("ans", "17 minutes")),
+    b("When a story changes halfway, solve each part on its own, then add the times."),
+]
+
+LESSONS["G4A_UNITS_030"] = [
+    b("A baker needs 14 dozen eggs. Eggs come only in trays of 30. He buys the fewest trays that give enough. How many eggs are left over?",
+      g("q", "Needs 14 dozen eggs. Trays of 30."), l("q2", "Fewest trays. Eggs left over = ?")),
+    b("A dozen is 12. 14 times 10 is 140, and 14 times 2 is 28. So he needs 168 eggs.",
+      l("f", "1 dozen = 12"), w("c0", "14 × 12 = 140 + 28"), w("c1", "140 + 28 = 168")),
+    b("Now count the trays in 30s. 5 trays give 150 eggs.", w("c2", "5 × 30 = 150")),
+    b("He needs 168. Are 5 trays enough?",
+      ask=c("no, he needs a 6th tray", ["yes, 150 is nearly enough", "no, he needs 10 trays"],
+            "150 is less than 168, so some eggs would be missing. He must buy one more tray.")),
+    b("6 trays give 180 eggs. That is enough.", w("c3", "6 × 30 = 180")),
+    b("He uses 168 of them. 180 minus 168 is 12.", w("c4", "180 − 168 = 12")),
+    b("So 12 eggs are left over. That is exactly 1 dozen!", a("ans", "12 eggs")),
+    b("Read the last line of a question twice. It asked for the eggs left over, not the number of trays."),
+]
+
+LESSONS["G4A_UNITS_031"] = [
+    b("4 shops sell the same milk. P sells 500 millilitres for 28 rupees. Q sells 1.5 litres for 81. R sells 250 millilitres for 15. S sells 2 litres for 110.",
+      g("q", "P: 500 ml ₹28     Q: 1.5 litres ₹81"), l("q2", "R: 250 ml ₹15     S: 2 litres ₹110"),
+      l("q3", "Where is 1 litre cheapest?")),
+    b("The sizes are all different. What is the fair way to compare the shops?",
+      ask=c("find the price of 1 litre at each", ["pick the smallest price", "pick the biggest bottle"],
+            "A small price for a tiny bottle is not a bargain. We need the price of the same amount, 1 litre, at every shop.")),
+    b("Shop P: 500 millilitres is half a litre. So a litre costs 2 times 28, which is 56 rupees.",
+      w("p", "2 × 28 = 56"), n("p", "56", "Shop P", "below")),
+    b("Shop R: 250 millilitres is a quarter of a litre. So a litre costs 4 times 15, which is 60 rupees. The smallest price tag, but the dearest milk!",
+      w("r", "4 × 15 = 60"), n("r", "60", "Shop R", "below")),
+    b("Shop S: 2 litres cost 110, so 1 litre is half of that. 55 rupees.", w("s", "110 ÷ 2 = 55"), n("s", "55", "Shop S", "below")),
+    b("Shop Q is the tricky one. 1.5 litres is 3 half litres. 81 divided by 3 is 27 for each half litre, so a litre costs 54 rupees.",
+      w("q5", "81 ÷ 3 = 27"), w("q6", "2 × 27 = 54"), n("q6", "54", "Shop Q", "below")),
+    b("Now compare: 56, 60, 55 and 54. The least is 54, at Shop Q.", ring("q6", "54"), a("ans", "Shop Q")),
+    b("To compare prices, work out the cost of the same amount at each shop. Then the best deal is easy to spot."),
+]
+
+LESSONS["G4A_UNITS_032"] = [
+    b("A box with 12 equal tins weighs 5 kilograms 100 grams. With 4 tins taken out, it weighs 3 kilograms 500 grams. What does the empty box weigh?",
+      g("q", "Box + 12 tins = 5 kg 100 g"), l("q2", "4 tins out: 3 kg 500 g"), l("q3", "Empty box = ? g")),
+    b("Let's work in grams. The first weighing is 5100 grams and the second is 3500 grams.",
+      l("f", "1 kg = 1000 g"), l("g1", "5 kg 100 g = 5100 g"), l("g2", "3 kg 500 g = 3500 g")),
+    b("The weight dropped when 4 tins came out. So what does the drop tell us?",
+      ask=c("the weight of 4 tins", ["the weight of the box", "the weight of 12 tins"],
+            "The box stayed. Only 4 tins left. So the weight that vanished is exactly the weight of those 4 tins.")),
+    b("5100 minus 3500 is 1600. So 4 tins weigh 1600 grams.", w("c1", "5100 − 3500 = 1600")),
+    b("One tin is 1600 divided by 4, which is 400 grams.", w("c2", "1600 ÷ 4 = 400")),
+    b("All 12 tins weigh 12 times 400, which is 4800 grams.", w("c3", "12 × 400 = 4800")),
+    b("The full box was 5100 grams. Take the tins away: 5100 minus 4800 is 300.", w("c4", "5100 − 4800 = 300")),
+    b("So the empty box weighs 300 grams.", a("ans", "300 g")),
+    b("Careful: 400 grams is one tin, not the box. Keep going until you have answered what was asked."),
+]
+
+LESSONS["G4A_UNITS_033"] = [
+    b("A book's pages are numbered 1 to 300. Each sheet carries 2 pages and is 0.1 millimetres thick. There are 2 covers, each 2 millimetres thick. How thick is the book?",
+      g("q", "Pages 1 to 300. A sheet = 2 pages, 0.1 mm thick."), l("q2", "2 covers, 2 mm each. Thickness?")),
+    b("Each sheet has a page on the front and a page on the back. So how many sheets make 300 pages?",
+      ask=c("150", ["300", "600"], "Pick up one sheet of any book: it has 2 page numbers. So the sheets are half the pages.")),
+    b("300 divided by 2 is 150 sheets.", w("c1", "300 ÷ 2 = 150")),
+    b("Each sheet is 0.1 millimetres, which is one tenth. So 10 sheets make 1 millimetre, and 150 sheets make 15 millimetres.",
+      w("c2", "150 × 0.1 = 15")),
+    b("Now the covers. There are 2, each 2 millimetres thick. That adds 4 millimetres.", w("c3", "2 × 2 = 4")),
+    b("15 plus 4 is 19 millimetres.", w("c4", "15 + 4 = 19")),
+    b("The choices are in centimetres. 10 millimetres make 1 centimetre, so 19 divided by 10 is 1.9.",
+      l("f", "10 mm = 1 cm"), w("c5", "19 ÷ 10 = 1.9")),
+    b("So the book is 1.9 centimetres thick.", a("ans", "1.9 cm")),
+    b("Three traps in one question: sheets are not pages, there are two covers, and the unit changes at the end."),
+]
+
+LESSONS["G4A_UNITS_034"] = [
+    b("Rani needs 3 metres of lace. She has pieces of 1 metre 20 centimetres, 85 centimetres and 600 millimetres. How many more centimetres does she need?",
+      g("q", "Needs 3 m. Has 1 m 20 cm, 85 cm, 600 mm."), l("q2", "How many more cm?")),
+    b("Put every piece in centimetres. 1 metre 20 centimetres is 100 plus 20, which is 120. The 85 is already in centimetres.",
+      l("f1", "1 m = 100 cm"), w("c1", "100 + 20 = 120")),
+    b("And 600 millimetres? Remember, 10 millimetres make 1 centimetre.", l("f2", "10 mm = 1 cm"),
+      ask=c("60 cm", ["6 cm", "6000 cm"], "Divide by 10. For 600 divided by 10, just take one zero off.")),
+    b("600 divided by 10 is 60 centimetres.", w("c2", "600 ÷ 10 = 60")),
+    b("Add the 3 pieces. 120 plus 85 is 205, and 60 more makes 265 centimetres.",
+      w("c3", "120 + 85 = 205"), w("c4", "205 + 60 = 265")),
+    b("She needs 3 metres, which is 300 centimetres. 300 minus 265 is 35.", w("c5", "3 × 100 = 300"), w("c6", "300 − 265 = 35")),
+    b("So Rani needs 35 centimetres more lace.", a("ans", "35 cm")),
+    b("Careful: 265 is what she has, not what she still needs. Always finish the question."),
+]

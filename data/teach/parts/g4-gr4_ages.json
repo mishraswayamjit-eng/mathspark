@@ -1,0 +1,7393 @@
+{
+ "BOOST_EXT_G4_FP_2016_010_07": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Two ages today: 47 for Arjun and 9 for Riya. The question takes us back 6 years and asks for the gap between them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Arjun = 47 years, Riya = 9 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Difference 6 years ago = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word ago means we go back in time, so both ages get smaller. 6 years ago Arjun was 47 minus 6, which is 41.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "47 − 6 = 41"
+     }
+    ]
+   },
+   {
+    "say": "Riya was 6 years younger too. 9 minus 6 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "9 − 6 = 3"
+     }
+    ]
+   },
+   {
+    "say": "So back then they were 41 and 3. What is the gap between those two ages?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "44",
+      "38",
+      "32"
+     ],
+     "answer": 1,
+     "ifNot": "For a gap, take the smaller age away from the bigger one: 41 minus 3."
+    }
+   },
+   {
+    "say": "41 minus 3 is 38. The difference 6 years ago was 38 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "41 − 3 = 38"
+     },
+     {
+      "op": "mark",
+      "line": "w3",
+      "target": {
+       "text": "38"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now look at today's ages. 47 minus 9 is also 38. The very same gap!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "47 − 9 = 38"
+     },
+     {
+      "op": "mark",
+      "line": "w4",
+      "target": {
+       "text": "38"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "That is no accident. Both of them grew older by the same 6 years, so the gap between them did not change.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference 6 years ago = 38 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "38 years"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Next time you can go straight there. The difference in ages never changes, so just subtract today's ages. The answer is 38."
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2017_018_06": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Two ages today: 27 for Arjun and 28 for Riya. The question jumps 10 years ahead and asks what the ages add up to then.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Arjun = 27 years, Riya = 28 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Sum after 10 years = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word after means we go forward in time, so ages go up. After 10 years Arjun will be 27 plus 10, which is 37.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "27 + 10 = 37"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "37"
+      },
+      "text": "Arjun",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Riya. What do we do with Riya's age?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 10 too",
+      "leave it as 28",
+      "take away 10"
+     ],
+     "answer": 0,
+     "ifNot": "Time passes for everybody. Riya also grows 10 years older, so we add 10 to 28 as well."
+    }
+   },
+   {
+    "say": "Riya grows older as well. 28 plus 10 is 38.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "28 + 10 = 38"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "38"
+      },
+      "text": "Riya",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we add the two new ages. 37 plus 38 is 75.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "37 + 38 = 75"
+     }
+    ]
+   },
+   {
+    "say": "So after 10 years, their ages will add up to 75.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum after 10 years = 75 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "75 years"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a quick check. Today they add up to 55. Each of them gains 10 years, so we add 10 twice. We reach 75 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "27 + 28 = 55"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "55 + 10 + 10 = 75"
+     }
+    ]
+   },
+   {
+    "say": "So when time passes, everyone in the sum grows older. Two people means the years are added twice."
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2017_018_07": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Two ages today: 40 for Siya and 34 for Aditya. The question takes us back 10 years and asks for the gap between them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Siya = 40 years, Aditya = 34 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Difference 10 years ago = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word ago means we go back in time, so both ages get smaller. 10 years ago Siya was 40 minus 10, which is 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "40 − 10 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Aditya was 10 years younger too. 34 minus 10 is 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "34 − 10 = 24"
+     }
+    ]
+   },
+   {
+    "say": "So back then they were 30 and 24. What is the gap between those two ages?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "16",
+      "6",
+      "30"
+     ],
+     "answer": 1,
+     "ifNot": "For a gap, take the smaller age away from the bigger one: 30 minus 24."
+    }
+   },
+   {
+    "say": "30 minus 24 is 6. The difference 10 years ago was 6 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "30 − 24 = 6"
+     },
+     {
+      "op": "mark",
+      "line": "w3",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now look at today's ages. 40 minus 34 is also 6. The very same gap!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "40 − 34 = 6"
+     },
+     {
+      "op": "mark",
+      "line": "w4",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is why. Every birthday adds 1 year to both of them, so the gap between two ages never changes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference 10 years ago = 6 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6 years"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Next time you can go straight there. The difference in ages never changes, so just subtract today's ages. The answer is 6."
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2019_005_07": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Riya is 26 and Rohan is 11. We want the difference in their ages, but 3 years ago.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Riya = 26 years, Rohan = 11 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Difference 3 years ago = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word ago means we go back in time, so both ages get smaller. 3 years ago Riya was 26 minus 3, which is 23.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "26 − 3 = 23"
+     }
+    ]
+   },
+   {
+    "say": "Rohan was 3 years younger too. 11 minus 3 is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "11 − 3 = 8"
+     }
+    ]
+   },
+   {
+    "say": "So back then they were 23 and 8. What is the gap between those two ages?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "18",
+      "12"
+     ],
+     "answer": 0,
+     "ifNot": "For a gap, take the smaller age away from the bigger one: 23 minus 8."
+    }
+   },
+   {
+    "say": "23 minus 8 is 15. The difference 3 years ago was 15 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "23 − 8 = 15"
+     },
+     {
+      "op": "mark",
+      "line": "w3",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now look at today's ages. 26 minus 11 is also 15. The very same gap!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "26 − 11 = 15"
+     },
+     {
+      "op": "mark",
+      "line": "w4",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is why. Every birthday adds 1 year to both of them, so the gap between two ages never changes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference 3 years ago = 15 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "15 years"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So remember: the gap between two people's ages stays the same, in the past, today and for ever. Here it is 15."
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2022_035_06": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Two ages today: 35 for Tara and 31 for Dev. The question jumps 4 years ahead and asks what the ages add up to then.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Tara = 35 years, Dev = 31 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Sum after 4 years = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word after means we go forward in time, so ages go up. After 4 years Tara will be 35 plus 4, which is 39.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "35 + 4 = 39"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "39"
+      },
+      "text": "Tara",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Dev. What do we do with Dev's age?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "leave it as 31",
+      "take away 4",
+      "add 4 too"
+     ],
+     "answer": 2,
+     "ifNot": "Time passes for everybody. Dev also grows 4 years older, so we add 4 to 31 as well."
+    }
+   },
+   {
+    "say": "Dev grows older as well. 31 plus 4 is 35.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "31 + 4 = 35"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "35"
+      },
+      "text": "Dev",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we add the two new ages. 39 plus 35 is 74.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "39 + 35 = 74"
+     }
+    ]
+   },
+   {
+    "say": "So after 4 years, their ages will add up to 74.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum after 4 years = 74 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "74 years"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a quick check. Today they add up to 66. Each of them gains 4 years, so we add 4 twice. We reach 74 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "35 + 31 = 66"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "66 + 4 + 4 = 74"
+     }
+    ]
+   },
+   {
+    "say": "So when time passes, everyone in the sum grows older. Two people means the years are added twice."
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "5 years ago, a mother's age and her daughter's age added up to 5 x. We want what they will add up to 5 years from now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "5 years ago: mother + daughter = 5x",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "5 years from now: mother + daughter = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Do not worry about the 5 x. It is just a name for a number we are not told. All we need is how much the sum grows."
+   },
+   {
+    "say": "From 5 years ago to 5 years from now. How many years is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "0 years",
+      "5 years",
+      "10 years"
+     ],
+     "answer": 2,
+     "ifNot": "From 5 years ago up to today is 5 years. From today to 5 years ahead is 5 more. So 5 plus 5."
+    }
+   },
+   {
+    "say": "5 plus 5 is 10. So 10 years go by.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "5 + 5 = 10"
+     }
+    ]
+   },
+   {
+    "say": "Now the trap. In those 10 years, how much does the sum of the two ages grow?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "by 5",
+      "by 10",
+      "by 20"
+     ],
+     "answer": 2,
+     "ifNot": "The mother grows 10 years older. The daughter grows 10 years older too. Two people, so 10 and 10 more."
+    }
+   },
+   {
+    "say": "10 for the mother and 10 for the daughter. 10 plus 10 is 20. The sum grows by 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "10 + 10 = 20"
+     }
+    ]
+   },
+   {
+    "say": "The sum was 5 x. Now it is 20 bigger. So the answer is 5 x plus 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum 5 years from now = 5x + 20",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "5x + 20"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let us test it with real ages. Say they were 30 and 5 back then, which adds up to 35. Ten years on they are 40 and 15, which adds up to 55. And 55 is 35 plus 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "30 + 5 = 35"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "40 + 15 = 55"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "35 + 20 = 55"
+     }
+    ]
+   },
+   {
+    "say": "When time passes, every person in the sum grows older. Two people, 10 years each, makes 20 more. So it is 5 x plus 20."
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "6 years ago, a husband's and wife's ages added up to 48. Today the husband, wife and son add up to 63. How old will the son be 6 years from now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "6 years ago: husband + wife = 48",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Now: husband + wife + son = 63",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Son's age 6 years from now = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Three different times are mixed up here: 6 years ago, now, and 6 years from now. Let us bring everything to now first."
+   },
+   {
+    "say": "6 years ago the husband and wife added up to 48. What do the two of them add up to now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "48",
+      "54",
+      "60"
+     ],
+     "answer": 2,
+     "ifNot": "The husband is 6 years older now, and the wife is 6 years older too. So add 6 twice."
+    }
+   },
+   {
+    "say": "48, plus 6 for the husband, plus 6 for the wife. That is 60. This is the trap: two people, so we add 6 twice.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "48 + 6 + 6 = 60"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "60"
+      },
+      "text": "husband + wife now",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now all three add up to 63. Take away the parents' 60 and the son is left. 63 minus 60 is 3. The son is 3 years old now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "63 − 60 = 3"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "3",
+       "nth": 2
+      },
+      "text": "son now",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Is 3 our answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, 3 is the answer",
+      "not yet: add 6 years"
+     ],
+     "answer": 1,
+     "ifNot": "Read the last line again. It asks for the son's age 6 years from now, not his age today."
+    }
+   },
+   {
+    "say": "6 years from now he will be 3 plus 6, which is 9. So the son will be 9 years old.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q3",
+      "target": {
+       "text": "6 years from now"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "3 + 6 = 9"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "The son will be 9 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So bring every sum to the same time first. And when time moves, add the years once for each person."
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_035": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "3 years ago, the ages of Nirav and Vipul added up to 38. Vipul is 2 years younger than Nirav. We want Vipul's age after 2 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "3 years ago: Nirav + Vipul = 38",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Vipul is 2 years younger than Nirav",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Vipul's age after 2 years = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First bring the sum to today. 3 years ago they added up to 38. What do their ages add up to now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "38",
+      "41",
+      "44"
+     ],
+     "answer": 2,
+     "ifNot": "Nirav is 3 years older now, and Vipul is 3 years older too. So add 3 twice."
+    }
+   },
+   {
+    "say": "38 plus 3 plus 3 is 44. Two people, so the 3 is added twice.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "38 + 3 + 3 = 44"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "44"
+      },
+      "text": "sum now",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we split the 44 between them. Look at the bars. Nirav's bar is the same as Vipul's bar, plus 2 extra years.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 4,
+           "label": "?",
+           "tone": "a"
+          }
+         ],
+         "label": "Vipul"
+        },
+        {
+         "segments": [
+          {
+           "units": 4,
+           "label": "?",
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "label": "2",
+           "tone": "c"
+          }
+         ],
+         "label": "Nirav"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Take away Nirav's 2 extra years. 44 minus 2 is 42. Now we have two equal bars.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "44 − 2 = 42"
+     }
+    ]
+   },
+   {
+    "say": "Half of 42 is 21. So Vipul is 21 years old now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "42 ÷ 2 = 21"
+     },
+     {
+      "op": "note",
+      "line": "w3",
+      "target": {
+       "text": "21"
+      },
+      "text": "Vipul now",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The question asks for Vipul's age after 2 years. So what do we do?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "21 − 2",
+      "21 + 2",
+      "nothing: 21 is the answer"
+     ],
+     "answer": 1,
+     "ifNot": "After means going forward in time. Vipul will be 2 years older than he is now."
+    }
+   },
+   {
+    "say": "21 plus 2 is 23. So after 2 years Vipul will be 23 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "21 + 2 = 23"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Vipul will be 23 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "23"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check today's ages. Vipul is 21, so Nirav is 2 more, which is 23. And 21 plus 23 is 44. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "21 + 23 = 44"
+     }
+    ]
+   },
+   {
+    "say": "So: bring the sum to today, take away the extra years, halve, and then move to the time the question asks about."
+   }
+  ]
+ },
+ "G4A_AGES_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Asha is 9 years old now. We want her age after 6 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Asha is 9 years old now",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "After 6 years she will be ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "After 6 years. Are we moving forward in time, or back?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "back: she gets younger",
+      "forward: she gets older"
+     ],
+     "answer": 1,
+     "ifNot": "After means later on, in the future. As the years go by, Asha grows older."
+    }
+   },
+   {
+    "say": "Every birthday adds 1 to her age. 6 birthdays add 6. So we add: 9 plus 6. Count on 6 from 9: 10, 11, 12, 13, 14, 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "9 + 6 = 15"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "10, 11, 12, 13, 14, 15",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "numberLine",
+       "min": 9,
+       "max": 15,
+       "step": 1,
+       "points": [
+        {
+         "at": 9,
+         "label": "now"
+        }
+       ],
+       "hops": [
+        {
+         "from": 9,
+         "to": 15,
+         "label": "+ 6"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "So Asha will be 15 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Asha will be 15 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two slips to watch for. 9 minus 6 would be her age 6 years ago. And 9 times 6 is far too big: each year adds only 1."
+   },
+   {
+    "say": "Check: 15 minus 6 takes us back to 9, her age now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "15 − 6 = 9"
+     }
+    ]
+   },
+   {
+    "say": "The word after means forward in time, so add the years."
+   }
+  ]
+ },
+ "G4A_AGES_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera is 10 years old and her father is 38. How many years older than Meera is her father?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Meera is 10. Her father is 38.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "How many years older is her father?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How many years older. Those words ask for the gap between the two ages.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q2",
+      "target": {
+       "text": "How many years older"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "How do we find the gap between two numbers?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "38 + 10",
+      "38 − 10",
+      "38 ÷ 10"
+     ],
+     "answer": 1,
+     "ifNot": "Adding would put the two ages together. For how much older, take the smaller age away from the bigger one."
+    }
+   },
+   {
+    "say": "38 minus 10. Take one ten away from 38 and we have 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "38 − 10 = 28"
+     }
+    ]
+   },
+   {
+    "say": "So her father is 28 years older than Meera.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Her father is 28 years older",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "28"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: start at Meera's age, 10, and add 28. We land on 38, her father's age.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "10 + 28 = 38"
+     }
+    ]
+   },
+   {
+    "say": "Here is a nice fact. When Meera was born, her father was 28. And he will always be 28 years older than her."
+   },
+   {
+    "say": "So the words how much older mean: subtract the smaller age from the bigger one."
+   }
+  ]
+ },
+ "G4A_AGES_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Tina is 8 years old. Her mother is 4 times as old as Tina. How old is her mother?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Tina is 8 years old",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Her mother is 4 times as old. Mother = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "4 times as old. Picture Tina's age as one block of 8. Her mother's age is 4 of those blocks.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "label": "8",
+           "tone": "a"
+          }
+         ],
+         "label": "Tina"
+        },
+        {
+         "segments": [
+          {
+           "units": 1,
+           "label": "8",
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "label": "8",
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "label": "8",
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "label": "8",
+           "tone": "b"
+          }
+         ],
+         "label": "Mother"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "So which sum gives the mother's age?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 + 4",
+      "8 × 4",
+      "8 ÷ 4"
+     ],
+     "answer": 1,
+     "ifNot": "The words times as old tell us to multiply. 8 plus 4 would make her only 4 years older than Tina."
+    }
+   },
+   {
+    "say": "8 times 4. Count four 8s: 8, 16, 24, 32.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "8, 16, 24, 32",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "8 × 4 = 32"
+     }
+    ]
+   },
+   {
+    "say": "So her mother is 32 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Her mother is 32 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "32"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Does it make sense? A mother is much older than her 8 year old child, and 32 sounds right."
+   },
+   {
+    "say": "Remember: times as old means multiply."
+   }
+  ]
+ },
+ "G4A_AGES_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four years ago, Zoya was 6 years old. How old is she now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Four years ago, Zoya was 6",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "How old is she now?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Four years ago is in the past. To come back to today, does her age go up or down?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "up",
+      "down"
+     ],
+     "answer": 0,
+     "ifNot": "She was 6 back then. Since then she has had 4 more birthdays, so she is older today."
+    }
+   },
+   {
+    "say": "From then to now, 4 years have passed. So we add 4. 6 plus 4 is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "6 + 4 = 10"
+     },
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "numberLine",
+       "min": 6,
+       "max": 10,
+       "step": 1,
+       "points": [
+        {
+         "at": 6,
+         "label": "4 years ago"
+        },
+        {
+         "at": 10,
+         "label": "now"
+        }
+       ],
+       "hops": [
+        {
+         "from": 6,
+         "to": 10,
+         "label": "+ 4"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "So Zoya is 10 years old now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Zoya is 10 years old now",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to see the word ago and subtract. But the 6 is already her age in the past. Coming forward to today, we add."
+   },
+   {
+    "say": "Check: go back 4 years from 10 and we get 6, just as the question says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "10 − 4 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So first ask where you are on the timeline. From the past up to now, add."
+   }
+  ]
+ },
+ "G4A_AGES_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Dev was born in the year 2015. How old was he on his birthday in 2024?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Dev was born in 2015",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "His age on his birthday in 2024 = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "On each birthday Dev's age goes up by 1. So his age is the number of years from 2015 to 2024."
+   },
+   {
+    "say": "How do we find the number of years from 2015 to 2024?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2024 + 2015",
+      "2024 − 2015",
+      "count both years: 10"
+     ],
+     "answer": 1,
+     "ifNot": "The years between two dates come from subtracting the earlier year from the later one."
+    }
+   },
+   {
+    "say": "2024 minus 2015 is 9. You can count the hops on the line too: 9 hops take you from 2015 to 2024.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "2024 − 2015 = 9"
+     },
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "numberLine",
+       "min": 2015,
+       "max": 2024,
+       "step": 1,
+       "points": [
+        {
+         "at": 2015,
+         "label": "born"
+        },
+        {
+         "at": 2024,
+         "label": "birthday"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "So Dev was 9 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Dev was 9 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is counting 2015 itself as year 1. But in 2015 Dev was a newborn baby, 0 years old. His first birthday came in 2016.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n1",
+      "text": "2015: born (age 0)     2016: age 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So age on a birthday is that year minus the birth year."
+   }
+  ]
+ },
+ "G4A_AGES_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rohan's father is 36 years old. Rohan is one-third as old as his father. How old is Rohan?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rohan's father is 36 years old",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Rohan is one-third as old. Rohan = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "One-third means: cut the father's age into 3 equal parts, and take 1 of them.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "label": "?",
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "label": "?",
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "label": "?",
+           "tone": "a"
+          }
+         ],
+         "label": "Father",
+         "brace": "36"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "So what do we do with 36?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "36 × 3",
+      "36 − 3",
+      "36 ÷ 3"
+     ],
+     "answer": 2,
+     "ifNot": "Cutting into 3 equal parts is dividing by 3. Rohan is younger than his father, so the answer must be smaller than 36."
+    }
+   },
+   {
+    "say": "36 divided by 3 is 12, because 3 times 12 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "3 × 12 = 36"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "36 ÷ 3 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So Rohan is 12 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Rohan is 12 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: one-third is not the same as half. Half of 36 would be 18. A third means 3 equal parts, so each part is smaller.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n1",
+      "text": "Half of 36 is 18: not what we want",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So one-third as old means divide by 3."
+   }
+  ]
+ },
+ "G4A_AGES_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Anil is 3 years older than his brother Sunil today. How many years older will Anil be after 10 years?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Anil is 3 years older than Sunil today",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "After 10 years, how many years older is Anil?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "No ages are given, so let us try some. Say Sunil is 5 today. Then Anil is 5 plus 3, which is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "Try: Sunil is 5 today",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "5 + 3 = 8"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "8"
+      },
+      "text": "Anil",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now jump 10 years ahead. Sunil will be 15 and Anil will be 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "5 + 10 = 15"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "8 + 10 = 18"
+     }
+    ]
+   },
+   {
+    "say": "So after 10 years, how many years older is Anil?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "7",
+      "13"
+     ],
+     "answer": 0,
+     "ifNot": "Take Sunil's new age away from Anil's new age: 18 minus 15."
+    }
+   },
+   {
+    "say": "18 minus 15 is 3. Still 3 years older!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "18 − 15 = 3"
+     }
+    ]
+   },
+   {
+    "say": "That is no accident. Both brothers grow older by the same 10 years. So the gap between them stays exactly the same."
+   },
+   {
+    "say": "So Anil will still be 3 years older.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Anil will still be 3 years older",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The gap between two people's ages never changes. Not after 10 years, not ever."
+   }
+  ]
+ },
+ "G4A_AGES_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi is 12 years old now. In how many years will he be 20?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Ravi is 12 years old now",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "In how many years will he be 20?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We know his age now, 12, and his age later, 20. We want the number of years in between."
+   },
+   {
+    "say": "How do we find the years in between?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "20 + 12",
+      "20 − 12",
+      "20 × 12"
+     ],
+     "answer": 1,
+     "ifNot": "Adding 20 and 12 would join the two ages together. For the years in between, take the age now away from the age later."
+    }
+   },
+   {
+    "say": "20 minus 12 is 8. You can also count on from 12 until you reach 20. That takes 8 hops.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "20 − 12 = 8"
+     },
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "numberLine",
+       "min": 12,
+       "max": 20,
+       "step": 1,
+       "points": [
+        {
+         "at": 12,
+         "label": "now"
+        },
+        {
+         "at": 20,
+         "label": "later"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "So Ravi will be 20 in 8 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Ravi will be 20 in 8 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "8 years"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 12 plus 8 is 20. Yes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "12 + 8 = 20"
+     }
+    ]
+   },
+   {
+    "say": "So the age later, minus the age now, gives the years in between."
+   }
+  ]
+ },
+ "G4A_AGES_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Amit is 3 years older than Bina. Bina is 2 years older than Chirag. Chirag is 7. How old is Amit?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Amit is 3 years older than Bina",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Bina is 2 years older than Chirag",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Chirag is 7. Amit = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "This is a chain of three children. Which child's age do we know for sure?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Amit",
+      "Bina",
+      "Chirag"
+     ],
+     "answer": 2,
+     "ifNot": "Only one age is given as a number: Chirag is 7. So the chain starts with Chirag."
+    }
+   },
+   {
+    "say": "Start with Chirag, who is 7. Bina is 2 years older than Chirag. So Bina is 7 plus 2, which is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "7 + 2 = 9"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "9"
+      },
+      "text": "Bina",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next link. Amit is 3 years older than Bina. Careful: older than Bina, not older than Chirag.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "than Bina"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "9 plus 3 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "9 + 3 = 12"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "12"
+      },
+      "text": "Amit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So Amit is 12 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Amit is 12 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the order: Chirag 7, Bina 9, Amit 12. Each one is older than the one before, just as the question says."
+   },
+   {
+    "say": "So start from the age you know and walk along the chain, one person at a time."
+   }
+  ]
+ },
+ "G4A_AGES_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Farhan is 11 years old. His sister Rehana is 3 years younger. How old was Rehana 2 years ago?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Farhan is 11. Rehana is 3 years younger.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "How old was Rehana 2 years ago?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are two steps here. First Rehana's age now. Then we go back 2 years."
+   },
+   {
+    "say": "Rehana is 3 years younger than Farhan. So how old is she now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "11 + 3 = 14",
+      "11 − 3 = 8",
+      "11 − 2 = 9"
+     ],
+     "answer": 1,
+     "ifNot": "Younger means a smaller age. So take 3 away from Farhan's 11."
+    }
+   },
+   {
+    "say": "11 minus 3 is 8. Rehana is 8 now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "11 − 3 = 8"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "8"
+      },
+      "text": "Rehana now",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "But the question asks about 2 years ago. Ago means back in time, so her age was smaller. 8 minus 2 is 6.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q2",
+      "target": {
+       "text": "2 years ago"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "8 − 2 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So Rehana was 6 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Rehana was 6 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to stop at 8. That is her age now. And 8 plus 2 would be her age two years from now, not two years ago."
+   },
+   {
+    "say": "So find the age now first, then move along the timeline: back for ago, forward for after."
+   }
+  ]
+ },
+ "G4A_AGES_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Diya is 7 and her mother is 35. After 7 years, how many times as old as Diya will her mother be?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Diya is 7. Her mother is 35.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "After 7 years, mother = ? times Diya's age",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Today her mother is 5 times as old, because 5 times 7 is 35. But be careful: that will not stay true. After 7 years both ages change.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "5 × 7 = 35"
+     }
+    ]
+   },
+   {
+    "say": "After 7 years Diya will be 7 plus 7, which is 14. Her mother will be 35 plus 7, which is 42.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "7 + 7 = 14"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "14"
+      },
+      "text": "Diya",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "35 + 7 = 42"
+     },
+     {
+      "op": "note",
+      "line": "w3",
+      "target": {
+       "text": "42"
+      },
+      "text": "mother",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "How do we find how many times as old the mother is?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "42 − 14",
+      "42 + 14",
+      "42 ÷ 14"
+     ],
+     "answer": 2,
+     "ifNot": "42 minus 14 gives the gap in years. The words how many times ask how many 14s fit into 42, and that is dividing."
+    }
+   },
+   {
+    "say": "14 times 3 is 42. So 42 divided by 14 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "14 × 3 = 42"
+     },
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "42 ÷ 14 = 3"
+     }
+    ]
+   },
+   {
+    "say": "So her mother will be 3 times as old as Diya.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Her mother will be 3 times as old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "3 times"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice what happened. The gap stays at 28 years for ever. But the number of times changed, from 5 times down to 3 times.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "42 − 14 = 28"
+     }
+    ]
+   },
+   {
+    "say": "So for how many times as old at a later date: find both new ages first, then divide."
+   }
+  ]
+ },
+ "G4A_AGES_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The ages of Anu and her mother add up to 44 years. Anu is 8. How old was her mother when Anu was born?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Anu + her mother = 44 years. Anu is 8.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Mother's age when Anu was born = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First the mother's age now. Together they are 44, and Anu is 8. So her mother is 44 minus 8, which is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "44 − 8 = 36"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "36"
+      },
+      "text": "mother now",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now go back to the day Anu was born. How many years ago was that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 years ago",
+      "36 years ago",
+      "44 years ago"
+     ],
+     "answer": 0,
+     "ifNot": "Anu is 8 years old. So she was born 8 years ago."
+    }
+   },
+   {
+    "say": "Anu was born 8 years ago. Her mother was 8 years younger then. 36 minus 8 is 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "36 − 8 = 28"
+     }
+    ]
+   },
+   {
+    "say": "So her mother was 28 years old when Anu was born.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Her mother was 28 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "28"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 36 is her mother's age today. We had to take 8 away twice: once to split the sum, and once to go back in time."
+   },
+   {
+    "say": "Check: when Anu was 0, her mother was 28. Today they are 8 and 36, and 8 plus 36 is 44. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "8 + 36 = 44"
+     }
+    ]
+   },
+   {
+    "say": "So find the age now, then go back by the child's age to reach the day the child was born."
+   }
+  ]
+ },
+ "G4A_AGES_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The ages of two sisters add up to 20 years. One is 4 years older than the other. How old is the older sister?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Two sisters' ages add up to 20",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "One is 4 years older. The older sister = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Look at the bars. The older sister's bar is the same as the younger one's, plus 4 extra years.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 4,
+           "label": "?",
+           "tone": "a"
+          }
+         ],
+         "label": "Younger"
+        },
+        {
+         "segments": [
+          {
+           "units": 4,
+           "label": "?",
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "label": "4",
+           "tone": "c"
+          }
+         ],
+         "label": "Older"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "If we take away those 4 extra years, what is left of the 20?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10",
+      "16",
+      "24"
+     ],
+     "answer": 1,
+     "ifNot": "Taking away means subtracting. 20 minus 4 is 16."
+    }
+   },
+   {
+    "say": "20 minus 4 is 16. Now the two bars are equal, and together they make 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "20 − 4 = 16"
+     }
+    ]
+   },
+   {
+    "say": "Half of 16 is 8. So the younger sister is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "16 ÷ 2 = 8"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "8"
+      },
+      "text": "younger sister",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The older sister gets her 4 years back. 8 plus 4 is 12. So the older sister is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "8 + 4 = 12"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "The older sister is 12 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 8 plus 12 is 20, and 12 is 4 more than 8. Both clues fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "8 + 12 = 20"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to halve the 20 straight away. That would make the sisters the same age, and one is older."
+   },
+   {
+    "say": "So: take away the extra, halve, then add the extra back for the older one."
+   }
+  ]
+ },
+ "G4A_AGES_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A father is 3 times as old as his son. Their ages add up to 48 years. How old is the son?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "A father is 3 times as old as his son",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Their ages add up to 48. The son = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Think of the son's age as 1 block. The father is 3 times as old, so he is 3 of the same blocks.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          }
+         ],
+         "label": "Son"
+        },
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          }
+         ],
+         "label": "Father"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "How many equal blocks are there altogether?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "3",
+      "4"
+     ],
+     "answer": 2,
+     "ifNot": "Count the son's own block too. 1 block for the son, and 3 for the father."
+    }
+   },
+   {
+    "say": "1 plus 3 is 4 blocks. This is the trap: do not forget the son's own block.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "1 + 3 = 4"
+     }
+    ]
+   },
+   {
+    "say": "The 4 blocks add up to 48. So one block is 48 divided by 4, which is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "48 ÷ 4 = 12"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "12"
+      },
+      "text": "one block",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The son is one block. So the son is 12 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "The son is 12 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the father is 3 times 12, which is 36. And 12 plus 36 is 48. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × 12 = 36"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "12 + 36 = 48"
+     }
+    ]
+   },
+   {
+    "say": "So when one age is so many times another, draw blocks, count them all, and share the total."
+   }
+  ]
+ },
+ "G4A_AGES_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Three years ago, Kiran was 9 years old. How old will she be 4 years from now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Three years ago, Kiran was 9",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "How old will she be 4 years from now?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are two jumps on the timeline: from the past up to today, and then from today into the future."
+   },
+   {
+    "say": "First jump. She was 9 three years ago. So how old is she today?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6",
+      "9",
+      "12"
+     ],
+     "answer": 2,
+     "ifNot": "From three years ago up to today, 3 years have passed. She is older now: 9 plus 3."
+    }
+   },
+   {
+    "say": "9 plus 3 is 12. Kiran is 12 today.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "9 + 3 = 12"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "12"
+      },
+      "text": "today",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Second jump: 4 years from now. 12 plus 4 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "12 + 4 = 16"
+     },
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "numberLine",
+       "min": 9,
+       "max": 16,
+       "step": 1,
+       "points": [
+        {
+         "at": 9,
+         "label": "then"
+        },
+        {
+         "at": 12,
+         "label": "today"
+        }
+       ],
+       "hops": [
+        {
+         "from": 9,
+         "to": 12,
+         "label": "+ 3"
+        },
+        {
+         "from": 12,
+         "to": 16,
+         "label": "+ 4"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "So Kiran will be 16 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Kiran will be 16 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to add the 4 straight to the 9. That skips the 3 years that have already gone by."
+   },
+   {
+    "say": "A quick check: from three years ago to four years ahead is 7 years in all. And 9 plus 7 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 + 4 = 7"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "9 + 7 = 16"
+     }
+    ]
+   },
+   {
+    "say": "So always find today's age first, then jump to the time the question asks about."
+   }
+  ]
+ },
+ "G4A_AGES_016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The ages of Geeta and Hari add up to 25 years now. What did their ages add up to 3 years ago?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Geeta + Hari = 25 years now",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "What did their ages add up to 3 years ago?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Three years ago. So we go back in time, and the ages were smaller."
+   },
+   {
+    "say": "How many people were 3 years younger back then?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only Geeta",
+      "only Hari",
+      "both of them"
+     ],
+     "answer": 2,
+     "ifNot": "Time goes back for everybody. Geeta was 3 years younger, and Hari was 3 years younger too."
+    }
+   },
+   {
+    "say": "Geeta was 3 years younger, and so was Hari. 3 plus 3 is 6. So the sum was 6 years smaller.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "3 + 3 = 6"
+     }
+    ]
+   },
+   {
+    "say": "25 minus 6 is 19. So three years ago their ages added up to 19 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "25 − 6 = 19"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Their ages added up to 19 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "19"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to take away 3 only once. The sum has two people in it, so the 3 comes off twice."
+   },
+   {
+    "say": "Let us test it with real ages. Say Geeta is 12 and Hari is 13 now. Three years ago they were 9 and 10, which adds up to 19.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "12 + 13 = 25"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "9 + 10 = 19"
+     }
+    ]
+   },
+   {
+    "say": "So when a sum of ages moves in time, it moves once for every person in it."
+   }
+  ]
+ },
+ "G4A_AGES_017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Jay's grandfather is 72. Jay's father is half as old as the grandfather. Jay is one-quarter as old as his father. How old is Jay?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Grandfather is 72. Father is half as old.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Jay is one-quarter as old as his father. Jay = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We work down the family, one step at a time. First the father. Half of 72 is 36. So the father is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "72 ÷ 2 = 36"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "36"
+      },
+      "text": "father",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Jay is one-quarter as old as his father. So we take one-quarter of which number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "36",
+      "72"
+     ],
+     "answer": 0,
+     "ifNot": "Read it again: one-quarter as old as his father. The father is 36, so we take a quarter of 36, not of the grandfather's 72."
+    }
+   },
+   {
+    "say": "One-quarter means 4 equal parts. So divide 36 by 4. 36 divided by 4 is 9.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q2",
+      "target": {
+       "text": "his father"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "36 ÷ 4 = 9"
+     }
+    ]
+   },
+   {
+    "say": "So Jay is 9 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Jay is 9 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by climbing back up the family. 9 times 4 is 36, the father. And 36 times 2 is 72, the grandfather.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "9 × 4 = 36"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "36 × 2 = 72"
+     }
+    ]
+   },
+   {
+    "say": "So use each age to find the next one. Half means divide by 2. One-quarter means divide by 4."
+   }
+  ]
+ },
+ "G4A_AGES_018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Varun is 9 years old. His father is 27 years older than him. How old will his father be when Varun is 15?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Varun is 9. His father is 27 years older.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Father's age when Varun is 15 = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is the key fact about ages. The gap between two people never changes. The father is 27 years older today, and he always will be.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "27 years older"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So when Varun is 15, how do we find his father's age?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9 + 27",
+      "15 + 27",
+      "15 + 9"
+     ],
+     "answer": 1,
+     "ifNot": "At that time Varun is 15, and his father is still 27 years older than him. So add 27 to 15."
+    }
+   },
+   {
+    "say": "15 plus 27. First 15 plus 20 is 35. Then 7 more is 42.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "15 + 20 = 35"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "35 + 7 = 42"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "15 + 27 = 42"
+     }
+    ]
+   },
+   {
+    "say": "So his father will be 42 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "His father will be 42 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "42"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is another way. The father is 9 plus 27, which is 36 now. Varun reaches 15 in 6 years, and 36 plus 6 is 42. The same answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "9 + 27 = 36"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "15 − 9 = 6"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "36 + 6 = 42"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 36 is the father's age now. The question asks for his age later, when Varun is 15."
+   },
+   {
+    "say": "So remember: the gap between two ages stays the same for ever. Use it at any time you like."
+   }
+  ]
+ },
+ "G4A_AGES_019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rahul is 10 and his father is 40. After how many years will the father be 3 times as old as Rahul?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rahul is 10. His father is 40.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "After ? years, father = 3 times Rahul's age",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Today the father is 4 times as old, since 4 times 10 is 40. As the years pass, both ages go up together, and that number of times gets smaller."
+   },
+   {
+    "say": "One thing never changes: the gap. 40 minus 10 is 30. The father is always 30 years older.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "40 − 10 = 30"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "30"
+      },
+      "text": "the gap",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "When the father is 3 times as old, picture Rahul as 1 block and his father as 3 blocks. The father's 2 extra blocks are the gap.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          }
+         ],
+         "label": "Rahul"
+        },
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "tone": "c"
+          },
+          {
+           "units": 1,
+           "tone": "c"
+          }
+         ],
+         "label": "Father"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The 2 extra blocks make 30 years. So how big is 1 block?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10",
+      "15",
+      "30"
+     ],
+     "answer": 1,
+     "ifNot": "2 blocks are 30 years. So one block is half of 30."
+    }
+   },
+   {
+    "say": "30 divided by 2 is 15. One block is Rahul's age at that time. So Rahul will be 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "30 ÷ 2 = 15"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "15"
+      },
+      "text": "Rahul then",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Rahul is 10 now. He will be 15 after 15 minus 10, which is 5 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "15 − 10 = 5"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "After 5 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: after 5 years the father is 45. And 3 times 15 is 45. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "40 + 5 = 45"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "3 × 15 = 45"
+     }
+    ]
+   },
+   {
+    "say": "You could also test a choice. After 10 years they would be 20 and 50. But 3 times 20 is 60, not 50. So 10 years is too late.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "10 + 10 = 20"
+     },
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "40 + 10 = 50"
+     },
+     {
+      "op": "write",
+      "id": "c5",
+      "text": "3 × 20 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So use the gap. It never changes, and here it is 2 blocks. The answer is after 5 years."
+   }
+  ]
+ },
+ "G4A_AGES_020": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ali is 14 and his sister Sara is 8. How old was Ali when Sara was exactly half his age?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Ali is 14. His sister Sara is 8.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Ali's age when Sara was half his age = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the gap. 14 minus 8 is 6. Ali is always 6 years older than Sara.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "14 − 8 = 6"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "6"
+      },
+      "text": "the gap",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "When Sara is half of Ali's age, Sara is 1 block and Ali is 2 blocks. So Ali's extra block, the gap, is the same size as Sara's age.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          }
+         ],
+         "label": "Sara"
+        },
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "tone": "c"
+          }
+         ],
+         "label": "Ali"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The gap is 6 years. So how old was Sara at that time?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "6",
+      "7"
+     ],
+     "answer": 1,
+     "ifNot": "Sara's block and the gap block are the same size. The gap is 6, so Sara was 6."
+    }
+   },
+   {
+    "say": "Sara was 6. Ali was 6 years older: 6 plus 6 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "6 + 6 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So Ali was 12 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Ali was 12 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: half of 12 is 6. Yes, Sara was exactly half of Ali's age.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "12 ÷ 2 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Two traps. 6 was Sara's age, but the question asks for Ali. And half of 14 is 7, but when Ali was 7, Sara was only 1."
+   },
+   {
+    "say": "So when one person is double the other, the younger one's age is equal to the gap."
+   }
+  ]
+ },
+ "G4A_AGES_021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Five years ago, a mother was 7 times as old as her daughter. The mother is 33 now. How old is the daughter now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Five years ago: mother = 7 times daughter",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Mother is 33 now. Daughter now = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The 7 times clue is about five years ago. So we must go back to that time before we use it. That is the trap: do not divide 33 by 7.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "Five years ago"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Five years ago the mother was 33 minus 5, which is 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "33 − 5 = 28"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "28"
+      },
+      "text": "mother then",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Back then she was 7 times as old as her daughter. So how old was the daughter then?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "28 × 7",
+      "28 ÷ 7 = 4",
+      "28 − 7 = 21"
+     ],
+     "answer": 1,
+     "ifNot": "The mother's age was 7 times the daughter's. So the daughter's age is the mother's 28 shared into 7 equal parts."
+    }
+   },
+   {
+    "say": "28 divided by 7 is 4. The daughter was 4 years old then.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "28 ÷ 7 = 4"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "4"
+      },
+      "text": "daughter then",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now come back to today. 5 years have passed, so the daughter is 4 plus 5, which is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "4 + 5 = 9"
+     }
+    ]
+   },
+   {
+    "say": "So the daughter is 9 years old now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "The daughter is 9 years old now",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful to add the 5 years just once, and only at the end. 4 was her age back then. 9 is her age now."
+   },
+   {
+    "say": "So go to the time the clue talks about, do the sum there, then come back to today."
+   }
+  ]
+ },
+ "G4A_AGES_022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Aman is twice as old as Bhavna. Four years ago, Aman was three times as old as Bhavna was then. How old is Bhavna now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Aman is twice as old as Bhavna",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "4 years ago, Aman was 3 times as old as Bhavna",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Bhavna now = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Two clues, and both must be true. A good plan: try an age for Bhavna, use the first clue to get Aman's age, then test the second clue."
+   },
+   {
+    "say": "Try Bhavna as 12. Then Aman is twice that, which is 24. Four years ago they were 8 and 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "2 × 12 = 24"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "12 − 4 = 8"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "24 − 4 = 20"
+     }
+    ]
+   },
+   {
+    "say": "Four years ago Aman should be 3 times as old as Bhavna. Is 20 equal to 3 times 8?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, it fits",
+      "not quite: 3 × 8 = 24"
+     ],
+     "answer": 1,
+     "ifNot": "3 times 8 is 24. But Aman was 20 then, so the second clue does not fit."
+    }
+   },
+   {
+    "say": "So 12 does not work. Cross it out, and let us try a smaller age: 8.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "w1",
+      "target": {
+       "text": "12"
+      }
+     }
+    ]
+   },
+   {
+    "say": "If Bhavna is 8, Aman is twice that, which is 16. Four years ago they were 4 and 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "2 × 8 = 16"
+     },
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "8 − 4 = 4"
+     },
+     {
+      "op": "write",
+      "id": "w6",
+      "text": "16 − 4 = 12"
+     }
+    ]
+   },
+   {
+    "say": "And 3 times 4 is 12. Yes! This time both clues fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w7",
+      "text": "3 × 4 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So Bhavna is 8 years old now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Bhavna is 8 years old now",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Mind the traps. 16 is Aman's age. And 4 was Bhavna's age four years ago. The question asks for Bhavna now."
+   },
+   {
+    "say": "When two clues must both be true, try an age, and test it against every clue."
+   }
+  ]
+ },
+ "G4A_AGES_023": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A grandfather is 9 times as old as his grandson. Their ages add up to 70. How old will the grandfather be when the grandson is 10?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Grandfather is 9 times as old as his grandson",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Their ages add up to 70",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Grandfather's age when the grandson is 10 = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The grandson is 1 block and the grandfather is 9 blocks. Together that is 10 blocks.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          }
+         ],
+         "label": "Grandson"
+        },
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          }
+         ],
+         "label": "Grandfather"
+        }
+       ]
+      }
+     },
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "1 + 9 = 10"
+     }
+    ]
+   },
+   {
+    "say": "10 blocks make 70, so one block is 7. The grandson is 7 now, and the grandfather is 9 times 7, which is 63.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "70 ÷ 10 = 7"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "9 × 7 = 63"
+     },
+     {
+      "op": "note",
+      "line": "w3",
+      "target": {
+       "text": "63"
+      },
+      "text": "grandfather now",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The grandson is 7 now. In how many years will he be 10?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 years",
+      "7 years",
+      "10 years"
+     ],
+     "answer": 0,
+     "ifNot": "From 7 up to 10 is 3 steps: 8, 9, 10. So 3 years."
+    }
+   },
+   {
+    "say": "10 minus 7 is 3. So we move 3 years ahead.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "10 − 7 = 3"
+     }
+    ]
+   },
+   {
+    "say": "Now the trap. Do we multiply by 9 again? We do not. He is 9 times as old only today. Later on, both of them simply grow 3 years older."
+   },
+   {
+    "say": "63 plus 3 is 66. So the grandfather will be 66 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "63 + 3 = 66"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "The grandfather will be 66 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "66"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So find both ages now, using blocks. Then move both people forward by the same number of years."
+   }
+  ]
+ },
+ "G4A_AGES_024": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Neel says that in 6 years he will be twice as old as he was 2 years ago. How old is Neel now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "In 6 years, Neel will be twice as old",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "as he was 2 years ago. Neel now = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are two moments: 2 years ago, and 6 years from now. At the later moment he is twice as old. So the earlier age is 1 block, and the later age is 2 blocks.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          }
+         ],
+         "label": "2 years ago"
+        },
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "tone": "c"
+          }
+         ],
+         "label": "In 6 years"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "How many years are there from 2 years ago to 6 years from now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 years",
+      "6 years",
+      "8 years"
+     ],
+     "answer": 2,
+     "ifNot": "From 2 years ago up to today is 2 years. From today onwards is 6 more. So 2 plus 6."
+    }
+   },
+   {
+    "say": "2 plus 6 is 8 years. In those 8 years his age grows by exactly one block. So one block is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "2 + 6 = 8"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "8"
+      },
+      "text": "one block",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "That means 2 years ago Neel was 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "2 years ago: Neel was 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Come forward 2 years to today. 8 plus 2 is 10. So Neel is 10 now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "8 + 2 = 10"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Neel is 10 years old now",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: in 6 years he will be 16. And twice 8 is 16. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "10 + 6 = 16"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "2 × 8 = 16"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 8 was his age 2 years ago, and 16 will be his age in 6 years. Today he is 10."
+   },
+   {
+    "say": "So mark the two moments, count the years between them, and ask what that stretch of time must equal."
+   }
+  ]
+ },
+ "G4A_AGES_025": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Three sisters were born 2 years apart, one after another. Their ages add up to 27. How old is the youngest?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Three sisters, born 2 years apart",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Their ages add up to 27. Youngest = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Picture the three ages in a row. The youngest is 2 below the middle sister. The oldest is 2 above her. So the middle sister's age is the fair share."
+   },
+   {
+    "say": "If the 27 years are shared equally among the three, what does each get?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8",
+      "9",
+      "13"
+     ],
+     "answer": 1,
+     "ifNot": "Sharing equally among 3 means dividing by 3. 27 divided by 3 is 9."
+    }
+   },
+   {
+    "say": "27 divided by 3 is 9. That is the middle sister's age.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "27 ÷ 3 = 9"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "9"
+      },
+      "text": "middle sister",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The youngest is 2 years younger than the middle one. 9 minus 2 is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "9 − 2 = 7"
+     }
+    ]
+   },
+   {
+    "say": "So the youngest sister is 7 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "The youngest sister is 7 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the oldest is 9 plus 2, which is 11. And 7 plus 9 plus 11 is 27. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "9 + 2 = 11"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "7 + 9 + 11 = 27"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 9 is the middle sister and 11 is the oldest. The question wants the youngest."
+   },
+   {
+    "say": "When ages are equally spaced, the middle one is the total divided by how many there are."
+   }
+  ]
+ },
+ "G4A_AGES_026": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Five years ago a family had 4 members with an average age of 19. Since then a baby was born. Today the 5 members have an average age of 20. How old is the baby?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "5 years ago: 4 members, average age 19",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Today: 5 members (a new baby), average age 20",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Baby's age = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "An average hides a total. An average of 19 for 4 people means their ages added up to 4 times 19, which is 76.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "4 × 19 = 76"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "76"
+      },
+      "text": "total 5 years ago",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Those same 4 people are each 5 years older today. How much bigger is their total now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 years",
+      "5 years",
+      "20 years"
+     ],
+     "answer": 2,
+     "ifNot": "Each of the 4 people grew 5 years older. That is 5, four times over: 4 times 5."
+    }
+   },
+   {
+    "say": "4 times 5 is 20. So today those four add up to 76 plus 20, which is 96.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "4 × 5 = 20"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "76 + 20 = 96"
+     },
+     {
+      "op": "note",
+      "line": "w3",
+      "target": {
+       "text": "96"
+      },
+      "text": "the 4 today",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the whole family today: 5 members with an average of 20. Their total is 5 times 20, which is 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "5 × 20 = 100"
+     },
+     {
+      "op": "note",
+      "line": "w4",
+      "target": {
+       "text": "100"
+      },
+      "text": "all 5 today",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The only difference between those two totals is the baby. 100 minus 96 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "100 − 96 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So the baby is 4 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "The baby is 4 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to compare 100 with 76 straight away. That forgets that the four older members have each grown 5 years."
+   },
+   {
+    "say": "So turn averages into totals. Then remember that everyone grows older as time passes."
+   }
+  ]
+ },
+ "G4A_AGES_027": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The ages of a father, a mother and their son add up to 75. The son is 3. What did the family's ages add up to five years ago?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Father + mother + son = 75 years. The son is 3.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Five years ago, the family's ages added up to ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Five years ago. The son is only 3 now. So where was he five years ago?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "he was 2",
+      "he was 8",
+      "not born yet"
+     ],
+     "answer": 2,
+     "ifNot": "He is 3 now, so he was born 3 years ago. Five years ago is before that. He was not in the family yet."
+    }
+   },
+   {
+    "say": "Not born yet! That is the trap in this question. Five years ago the family was only the father and the mother.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "The son is 3"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So take the son out. The parents add up to 75 minus 3, which is 72 now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "75 − 3 = 72"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "72"
+      },
+      "text": "parents now",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Five years ago the father was 5 years younger, and the mother was 5 years younger. 5 plus 5 is 10 years less.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "5 + 5 = 10"
+     }
+    ]
+   },
+   {
+    "say": "72 minus 10 is 62. So five years ago the family's ages added up to 62 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "72 − 10 = 62"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Five years ago: 62 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "62"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "If we had taken 5 years off all three people, we would have counted a boy who was not there yet."
+   },
+   {
+    "say": "So when you go back in time, check that each person had been born."
+   }
+  ]
+ },
+ "G4A_AGES_028": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "When Meera was born, her mother was 26. Today her mother is exactly 3 times as old as Meera. How old is her mother today?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "When Meera was born, her mother was 26",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Today her mother is 3 times as old. Mother = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "When Meera was 0, her mother was 26. So her mother is 26 years older than her. And that gap never changes.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "26"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Today the mother is 3 times as old. So Meera is 1 block and her mother is 3 blocks. The 2 extra blocks are the gap.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          }
+         ],
+         "label": "Meera"
+        },
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "tone": "c"
+          },
+          {
+           "units": 1,
+           "tone": "c"
+          }
+         ],
+         "label": "Mother"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The 2 extra blocks make 26 years. So how big is 1 block?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "13",
+      "26",
+      "52"
+     ],
+     "answer": 0,
+     "ifNot": "2 blocks are 26 years. One block is half of that: 26 divided by 2."
+    }
+   },
+   {
+    "say": "26 divided by 2 is 13. One block is 13, and that is Meera's age today.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "26 ÷ 2 = 13"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "13"
+      },
+      "text": "Meera today",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Her mother is 3 blocks. 3 times 13 is 39. So her mother is 39 today.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "3 × 13 = 39"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Her mother is 39 years old today",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "39"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 39 minus 13 is 26. The gap is right, and 39 is 3 times 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "39 − 13 = 26"
+     }
+    ]
+   },
+   {
+    "say": "Mind the traps. 26 is the gap, not Meera's age, so 26 times 3 does not work. And 13 is Meera, not her mother."
+   },
+   {
+    "say": "So use the gap that never changes, together with the blocks."
+   }
+  ]
+ },
+ "G4A_AGES_029": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Anu and Bela are 20 together. Bela and Charu are 26 together. Anu and Charu are 24 together. How old is Charu?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Anu + Bela = 20     Bela + Charu = 26",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Anu + Charu = 24     Charu = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Look at the three sums. Each girl appears in exactly two of them."
+   },
+   {
+    "say": "So if we add all three sums together, what do we get?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "each girl counted once",
+      "each girl counted twice",
+      "each girl counted 3 times"
+     ],
+     "answer": 1,
+     "ifNot": "Count the names. Anu is in two of the sums. Bela is in two. Charu is in two. So every girl is counted twice."
+    }
+   },
+   {
+    "say": "20 plus 26 plus 24 is 70. That is every girl counted twice.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "20 + 26 + 24 = 70"
+     }
+    ]
+   },
+   {
+    "say": "So halve it. 70 divided by 2 is 35. The three girls together are 35 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "70 ÷ 2 = 35"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "35"
+      },
+      "text": "all three",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the neat part. Anu and Bela together are 20. Take them away from 35, and only Charu is left.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "Anu + Bela = 20"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "35 − 20 = 15"
+     }
+    ]
+   },
+   {
+    "say": "35 minus 20 is 15. So Charu is 15 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Charu is 15 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: Anu is 35 minus 26, which is 9. And Anu plus Charu is 9 plus 15, which is 24. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "35 − 26 = 9"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "9 + 15 = 24"
+     }
+    ]
+   },
+   {
+    "say": "When everyone appears twice, add everything and halve. Then take away the pair you do not need."
+   }
+  ]
+ },
+ "G4A_AGES_030": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A father is 40. His three children are 4, 6 and 8. After how many years will the father's age equal the sum of his children's ages?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Father is 40. His children are 4, 6 and 8.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "After ? years: father = sum of the children",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Today the children add up to 4 plus 6 plus 8, which is 18. The father is 40. So he is ahead by 40 minus 18, which is 22.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "4 + 6 + 8 = 18"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "40 − 18 = 22"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "22"
+      },
+      "text": "the gap",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now watch one year go by. The father gains 1 year. But there are three children, and each gains 1. So the children's sum gains 3."
+   },
+   {
+    "say": "So each year, by how much does the gap close?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "by 1",
+      "by 2",
+      "by 3"
+     ],
+     "answer": 1,
+     "ifNot": "The children's sum goes up by 3, but the father also goes up by 1. The children catch up by 3 minus 1."
+    }
+   },
+   {
+    "say": "3 minus 1 is 2. The gap closes by 2 every year. This is the trap: not by 3, because the father keeps growing older too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "3 − 1 = 2"
+     }
+    ]
+   },
+   {
+    "say": "The gap is 22, and it closes by 2 a year. 22 divided by 2 is 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "22 ÷ 2 = 11"
+     }
+    ]
+   },
+   {
+    "say": "So it happens after 11 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "After 11 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "11"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: in 11 years the father is 51. The children are 15, 17 and 19, and they add up to 51 too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "40 + 11 = 51"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "15 + 17 + 19 = 51"
+     }
+    ]
+   },
+   {
+    "say": "So find the gap, find how fast it closes each year, and divide."
+   }
+  ]
+ },
+ "G4A_AGES_031": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A mother was 28 when her twin daughters were born. Today the mother and the two twins add up to 64. How old is each twin?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Mother was 28 when her twins were born",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Today: mother + twin + twin = 64. Each twin = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "On the day the twins were born, they were both 0. So the three ages added up to just 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "28 + 0 + 0 = 28"
+     }
+    ]
+   },
+   {
+    "say": "Today the total is 64. So it has grown by 64 minus 28, which is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "64 − 28 = 36"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "36"
+      },
+      "text": "growth",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Each year that passes, how much does the total of the three ages grow?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "by 1",
+      "by 2",
+      "by 3"
+     ],
+     "answer": 2,
+     "ifNot": "Three people each have a birthday: the mother and both twins. So the total goes up by 3 every year."
+    }
+   },
+   {
+    "say": "By 3 each year. The trap is to forget the mother. She grows older too!"
+   },
+   {
+    "say": "The total grew by 36, at 3 a year. 36 divided by 3 is 12. So 12 years have passed.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "36 ÷ 3 = 12"
+     }
+    ]
+   },
+   {
+    "say": "12 years since they were born. So each twin is 12 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Each twin is 12 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the mother is 28 plus 12, which is 40. And 40 plus 12 plus 12 is 64. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "28 + 12 = 40"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "40 + 12 + 12 = 64"
+     }
+    ]
+   },
+   {
+    "say": "So count how many people are growing older. The total grows by that many every year."
+   }
+  ]
+ },
+ "G4A_AGES_032": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A father's age and his son's age use the same two digits, swapped round. The father is 27 years older. The son is a teenager, 13 to 19. How old is the father?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Father's and son's ages: same 2 digits, swapped",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Father is 27 years older. Son is 13 to 19.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Father = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The son is a teenager, so there are only a few ages to test. For each one, swap the digits to get the father's age, then check the gap of 27."
+   },
+   {
+    "say": "Start with 13. Swap the digits and we get 31. The gap is 31 minus 13, which is 18. Too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "31 − 13 = 18"
+     }
+    ]
+   },
+   {
+    "say": "Next, the son is 14. Swap the digits. How old is the father?",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "Next try: the son is 14",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "41",
+      "44"
+     ],
+     "answer": 1,
+     "ifNot": "14 is written with a 1 and a 4. Swap them round and we get 41."
+    }
+   },
+   {
+    "say": "41 minus 14 is 27. That is exactly the gap we want!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "41 − 14 = 27"
+     },
+     {
+      "op": "mark",
+      "line": "w2",
+      "target": {
+       "text": "27"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Should we keep going? Try 15 and 51: they are 36 apart. Each year older for the son makes the gap bigger. So 14 is the only one.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "51 − 15 = 36"
+     }
+    ]
+   },
+   {
+    "say": "So the son is 14 and the father is 41 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "The father is 41 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "41"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Other pairs, like 25 and 52, are also 27 apart. But a son of 25 is not a teenager. Every clue must fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "52 − 25 = 27"
+     }
+    ]
+   },
+   {
+    "say": "When only a few ages are possible, test them one by one against every clue."
+   }
+  ]
+ },
+ "G4A_AGES_033": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Asha is 8. She tells her older sister Bina: when I am as old as you are now, you will be 20. How old is Bina now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Asha is 8. Bina is older.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "When Asha is as old as Bina is now, Bina will be 20",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Bina now = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let us untangle Asha's sentence. Asha needs some years to reach Bina's age. In those very same years, Bina grows too, and reaches 20."
+   },
+   {
+    "say": "So there are two equal steps. One from 8 up to Bina's age now. And one from Bina's age now up to 20.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "label": "step",
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "label": "step",
+           "tone": "b"
+          }
+         ],
+         "brace": "from 8 to 20"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The two equal steps together go from 8 to 20. How long are the two steps together?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 years",
+      "20 years",
+      "28 years"
+     ],
+     "answer": 0,
+     "ifNot": "From 8 up to 20: take 8 away from 20."
+    }
+   },
+   {
+    "say": "20 minus 8 is 12. That is two steps. So one step is 12 divided by 2, which is 6 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "20 − 8 = 12"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "12 ÷ 2 = 6"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "6"
+      },
+      "text": "one step",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Bina's age is one step above Asha's 8. 8 plus 6 is 14. So Bina is 14 now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "8 + 6 = 14"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Bina is 14 years old now",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "14"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: in 6 years Asha will be 14, which is Bina's age now. And Bina will be 14 plus 6, which is 20. Just as Asha said.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "14 + 6 = 20"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at 12. That is two steps, not Bina's age. Bina is exactly halfway between 8 and 20."
+   },
+   {
+    "say": "So the gap between two sisters stays the same. Here it fits twice between 8 and 20."
+   }
+  ]
+ },
+ "G4A_AGES_034": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's age this year is a multiple of 3. Last year it was a multiple of 4. Next year it will be a multiple of 5. He is under 60. How old is he?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "This year: a multiple of 3. Last year: a multiple of 4.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Next year: a multiple of 5. Under 60. Ravi = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Three clues, and all must be true together. Let us start with the easiest one to spot: next year's age is a multiple of 5."
+   },
+   {
+    "say": "Multiples of 5 end in 0 or 5. So what digit does this year's age end in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "0 or 5",
+      "1 or 6",
+      "9 or 4"
+     ],
+     "answer": 2,
+     "ifNot": "This year is 1 less than next year. 1 less than a number ending in 0 ends in 9. 1 less than a number ending in 5 ends in 4."
+    }
+   },
+   {
+    "say": "So this year's age ends in 9 or 4. Which of those, under 60, are multiples of 3? They are 9, 24, 39 and 54.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "Ends in 9 or 4, multiple of 3: 9, 24, 39, 54",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the last clue. Take 1 away from each to get last year's age: 8, 23, 38 and 53.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "Last year: 8, 23, 38, 53",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which of those is a multiple of 4?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8",
+      "23",
+      "38"
+     ],
+     "answer": 0,
+     "ifNot": "4 times 2 is 8. None of the others is in the 4 times table."
+    }
+   },
+   {
+    "say": "Only 8 works. So last year Ravi was 8, and this year he is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "4 × 2 = 8"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Ravi is 9 years old this year",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check all three clues. 9 is 3 times 3. Last year's 8 is 4 times 2. Next year's 10 is 5 times 2. All of them fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3 × 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "5 × 2 = 10"
+     }
+    ]
+   },
+   {
+    "say": "Look at 21. It is a multiple of 3, and last year's 20 is a multiple of 4. Tempting! But next year's 22 is not a multiple of 5. Every clue must fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "21: last year 20 fits, next year 22 does not",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "With several clues, use one to make a short list, then test the list against the others."
+   }
+  ]
+ },
+ "G4A_AGES_035": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ritu and her two brothers are all more than 4 years old. Five years from now their ages will add up to 50. What did they add up to 2 years ago?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Ritu and her 2 brothers: three children",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "In 5 years their ages will add up to 50",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "What did they add up to 2 years ago?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We are given a sum in the future and asked for a sum in the past. And there are three children, so every year counts three times."
+   },
+   {
+    "say": "From 5 years ahead, back to 2 years ago. How many years back is that altogether?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 years",
+      "5 years",
+      "7 years"
+     ],
+     "answer": 2,
+     "ifNot": "First 5 years back to today, then 2 more years back. So 5 plus 2."
+    }
+   },
+   {
+    "say": "5 plus 2 is 7 years back.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "5 + 2 = 7"
+     }
+    ]
+   },
+   {
+    "say": "Each of the three children was 7 years younger. So the sum was smaller by 3 times 7, which is 21. The trap is to take 7 off only once.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "3 × 7 = 21"
+     }
+    ]
+   },
+   {
+    "say": "50 minus 21 is 29. So two years ago their ages added up to 29 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "50 − 21 = 29"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Two years ago: 29 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "29"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check in two steps. Back to today: take off 3 times 5, which is 15, leaving 35. Back 2 more years: take off 3 times 2, which is 6, leaving 29.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "50 − 15 = 35"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "35 − 6 = 29"
+     }
+    ]
+   },
+   {
+    "say": "And why are we told they are all more than 4 years old? So that we know all three were already born 2 years ago."
+   },
+   {
+    "say": "So when a sum of ages moves in time, multiply the years by the number of people."
+   }
+  ]
+ },
+ "G4A_AGES_036": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A mother is 5 times as old as her daughter. In 6 years their ages will add up to 60. How old is the daughter now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "A mother is 5 times as old as her daughter",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "In 6 years their ages will add up to 60",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Daughter now = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "One clue is about today: 5 times as old. The other is about 6 years from now: the sum of 60. We must bring them to the same time."
+   },
+   {
+    "say": "In 6 years they add up to 60. So what do they add up to today?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "48",
+      "54",
+      "66"
+     ],
+     "answer": 0,
+     "ifNot": "Both of them will be 6 years older. So today's sum is smaller by 6 for the mother, and by 6 again for the daughter."
+    }
+   },
+   {
+    "say": "60, minus 6, minus 6, is 48. Two people, so the 6 comes off twice. That is the trap here.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "60 − 6 − 6 = 48"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "48"
+      },
+      "text": "sum today",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Today the daughter is 1 block and the mother is 5 blocks. That is 6 blocks.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          }
+         ],
+         "label": "Daughter"
+        },
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          }
+         ],
+         "label": "Mother"
+        }
+       ]
+      }
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "1 + 5 = 6"
+     }
+    ]
+   },
+   {
+    "say": "6 blocks make 48. 48 divided by 6 is 8. The daughter is one block, so she is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "48 ÷ 6 = 8"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "The daughter is 8 years old now",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the mother is 5 times 8, which is 40. In 6 years they are 14 and 46, and 14 plus 46 is 60.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "5 × 8 = 40"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "14 + 46 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So bring the sum to the same time as the other clue. Then use blocks."
+   }
+  ]
+ },
+ "G4A_AGES_037": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The ages of two cousins multiply to give 84. The older one is 5 years older. What do their two ages add up to?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Two cousins: their ages multiply to give 84",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "The older is 5 years older. Ages add up to ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We need two numbers that multiply to 84. Let us list the pairs, starting small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "1 × 84     2 × 42     3 × 28",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "4 × 21     6 × 14     7 × 12",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We want the pair that is 5 apart. Which one is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 and 21",
+      "6 and 14",
+      "7 and 12"
+     ],
+     "answer": 2,
+     "ifNot": "Find the gap in each pair. 4 and 21 are much too far apart. 14 minus 6 is 8. But 12 minus 7 is 5."
+    }
+   },
+   {
+    "say": "12 minus 7 is 5, and 7 times 12 is 84. So the cousins are 7 and 12.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "p2",
+      "target": {
+       "text": "7 × 12"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "12 − 7 = 5"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "7 × 12 = 84"
+     }
+    ]
+   },
+   {
+    "say": "Now read the question again. It does not ask for either age. It asks what the two ages add up to.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q2",
+      "target": {
+       "text": "add up to"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "7 plus 12 is 19. So their ages add up to 19.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "7 + 12 = 19"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Their ages add up to 19",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "19"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Pairs like 6 and 14 also multiply to 84, but they are 8 apart, not 5. Both clues must fit."
+   },
+   {
+    "say": "So list the pairs that multiply to the number, then pick the pair with the right gap."
+   }
+  ]
+ },
+ "G4A_AGES_038": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kabir's age in months is the same number as his grandfather's age in years. Their ages add up to 78 years. How old is Kabir?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Kabir's age in months = grandfather's age in years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Their ages add up to 78 years. Kabir = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A strange clue! Let us try it out. If Kabir were 1 year old, he would be 12 months old. So his grandfather would be 12 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f1",
+      "text": "1 year = 12 months",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the grandfather's age is always how many times Kabir's age?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 times",
+      "12 times",
+      "78 times"
+     ],
+     "answer": 1,
+     "ifNot": "Every year of Kabir's age is 12 months. So the number of months is 12 times the number of years."
+    }
+   },
+   {
+    "say": "So Kabir is 1 block and his grandfather is 12 blocks. Together that is 13 blocks.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          }
+         ],
+         "label": "Kabir"
+        },
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          }
+         ],
+         "label": "Grandfather"
+        }
+       ]
+      }
+     },
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "1 + 12 = 13"
+     }
+    ]
+   },
+   {
+    "say": "13 blocks make 78 years. 13 times 6 is 78, so one block is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "13 × 6 = 78"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "78 ÷ 13 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Kabir is one block. So Kabir is 6 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Kabir is 6 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 6 years is 6 times 12, which is 72 months. So his grandfather is 72 years old. And 6 plus 72 is 78.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "6 × 12 = 72"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "6 + 72 = 78"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 72 is the grandfather's age, and 12 is only the number of months in a year. The question asks for Kabir."
+   },
+   {
+    "say": "So change both ages to the same unit, see how many times one is of the other, then use blocks."
+   }
+  ]
+ },
+ "G4A_AGES_039": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Tara's age and her uncle's age are in the ratio 2 to 5. Six years ago they were in the ratio 1 to 4. How old is her uncle now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Tara : her uncle = 2 : 5 now",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Six years ago it was 1 : 4. Uncle now = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Careful: the 2 and the 5 are not ages. They are parts. So we cannot just take 6 away from them. We need real ages."
+   },
+   {
+    "say": "Real ages in the ratio 2 to 5 come from multiplying both by the same number. Both must be more than 6, so start at 8 and 20. Then 10 and 25, 12 and 30, 14 and 35.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "Now: 8 and 20, 10 and 25, 12 and 30, 14 and 35",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Take 6 years off each pair. We get 2 and 14, 4 and 19, 6 and 24, 8 and 29.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "6 years ago: 2 and 14, 4 and 19, 6 and 24, 8 and 29",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Six years ago the ratio was 1 to 4. So the uncle was 4 times Tara's age. Which pair fits?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 and 14",
+      "4 and 19",
+      "6 and 24"
+     ],
+     "answer": 2,
+     "ifNot": "Multiply the smaller number by 4 and see if you get the bigger one. Only 4 times 6 gives its partner, 24."
+    }
+   },
+   {
+    "say": "4 times 6 is 24. So six years ago Tara was 6 and her uncle was 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "4 × 6 = 24"
+     },
+     {
+      "op": "mark",
+      "line": "w2",
+      "target": {
+       "text": "6 and 24"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Come back to today. Tara is 6 plus 6, which is 12. Her uncle is 24 plus 6, which is 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "6 + 6 = 12"
+     },
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "24 + 6 = 30"
+     }
+    ]
+   },
+   {
+    "say": "So her uncle is 30 years old now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Her uncle is 30 years old now",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "30"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check today's ratio. Divide 12 and 30 by 6 and we get 2 and 5. Yes, 2 to 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "12 ÷ 6 = 2"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "30 ÷ 6 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So list real ages that fit one clue, then test them against the other clue."
+   }
+  ]
+ },
+ "PYQ_2016_Q10": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Sarika was born in 2006 and Surya was born in 2013. In which year will Sarika be twice the age of Surya?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Sarika was born in 2006. Surya was born in 2013.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "In which year is Sarika twice as old as Surya?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, how much older is Sarika? 2013 minus 2006 is 7. Sarika is 7 years older, and she always will be.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "2013 − 2006 = 7"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "7"
+      },
+      "text": "the gap",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "When Sarika is twice Surya's age, Surya is 1 block and Sarika is 2 blocks. Sarika's extra block is the gap.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "fig",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          }
+         ],
+         "label": "Surya"
+        },
+        {
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "tone": "c"
+          }
+         ],
+         "label": "Sarika"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The gap is 7 years. So how old is Surya when Sarika is twice his age?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 and a half",
+      "7",
+      "14"
+     ],
+     "answer": 1,
+     "ifNot": "The extra block is the gap, which is 7. Surya's block is the same size. So Surya is 7."
+    }
+   },
+   {
+    "say": "Surya is 7, and Sarika is 7 plus 7, which is 14. And 14 is twice 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "7 + 7 = 14"
+     }
+    ]
+   },
+   {
+    "say": "Now, in which year is Surya 7 years old? He was born in 2013, so add 7. 2013 plus 7 is 2020.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "2013 + 7 = 2020"
+     }
+    ]
+   },
+   {
+    "say": "So the year is 2020.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "The year is 2020",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "2020"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with Sarika. 2020 minus 2006 is 14. So in 2020 she is 14 and Surya is 7. Exactly twice.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "2020 − 2006 = 14"
+     }
+    ]
+   },
+   {
+    "say": "What about 2019, one year earlier? Then they would be 13 and 6, and twice 6 is 12, not 13. So only 2020 works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "In 2019: Sarika 13, Surya 6",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "2 × 6 = 12"
+     }
+    ]
+   },
+   {
+    "say": "The gap between two ages never changes. When one is double the other, the younger one's age equals the gap."
+   }
+  ]
+ },
+ "PYQ_2019_Q05": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "6 years ago, the ages of a husband and wife added up to 48. Now the husband, wife and son add up to 63. What will the son's age be, 6 years hence?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "6 years ago: husband + wife = 48",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Now: husband + wife + son = 63",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Son's age 6 years from now = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Three different times are mixed up here: 6 years ago, now, and 6 years from now. The word hence means from now. Let us bring everything to now first."
+   },
+   {
+    "say": "6 years ago the husband and wife added up to 48. What do the two of them add up to now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "48",
+      "54",
+      "60"
+     ],
+     "answer": 2,
+     "ifNot": "The husband is 6 years older now, and the wife is 6 years older too. So add 6 twice."
+    }
+   },
+   {
+    "say": "48, plus 6 for the husband, plus 6 for the wife. That is 60. This is the trap: two people, so we add 6 twice.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "48 + 6 + 6 = 60"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "60"
+      },
+      "text": "husband + wife now",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now all three add up to 63. Take away the parents' 60 and the son is left. 63 minus 60 is 3. The son is 3 years old now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "63 − 60 = 3"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "3",
+       "nth": 2
+      },
+      "text": "son now",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Is 3 our answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, 3 is the answer",
+      "not yet: add 6 years"
+     ],
+     "answer": 1,
+     "ifNot": "Read the last line again. It asks for the son's age 6 years from now, not his age today."
+    }
+   },
+   {
+    "say": "6 years from now he will be 3 plus 6, which is 9. So the son will be 9 years old.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q3",
+      "target": {
+       "text": "6 years from now"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "3 + 6 = 9"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "The son will be 9 years old",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So bring every sum to the same time first. And when time moves, add the years once for each person."
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_010_04_p2b": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Nikhil is 39 and Diya is 32. We want the sum of their ages, but after 6 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Nikhil = 39 years, Diya = 32 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Sum after 6 years = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word after means we go forward in time, so ages go up. After 6 years Nikhil will be 39 plus 6, which is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "39 + 6 = 45"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "45"
+      },
+      "text": "Nikhil",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Diya. What do we do with Diya's age?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "leave it as 32",
+      "add 6 too",
+      "take away 6"
+     ],
+     "answer": 1,
+     "ifNot": "Time passes for everybody. Diya also grows 6 years older, so we add 6 to 32 as well."
+    }
+   },
+   {
+    "say": "Diya grows older as well. 32 plus 6 is 38.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "32 + 6 = 38"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "38"
+      },
+      "text": "Diya",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Sum means add. So add the two new ages: 45 plus 38 makes 83.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "45 + 38 = 83"
+     }
+    ]
+   },
+   {
+    "say": "So after 6 years, their ages will add up to 83.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum after 6 years = 83 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "83 years"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a quick check. Today they add up to 71. Each of them gains 6 years, so we add 6 twice. We reach 83 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "39 + 32 = 71"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "71 + 6 + 6 = 83"
+     }
+    ]
+   },
+   {
+    "say": "Remember the trap: adding the years only once. Two people grow older, so the sum grows twice as much."
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2017_018_04_p2b": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Vivek is 30 and Meera is 24. We want the sum of their ages, but after 4 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Vivek = 30 years, Meera = 24 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Sum after 4 years = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word after means we go forward in time, so ages go up. After 4 years Vivek will be 30 plus 4, which is 34.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "30 + 4 = 34"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "34"
+      },
+      "text": "Vivek",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Meera. What do we do with Meera's age?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 4 too",
+      "leave it as 24",
+      "take away 4"
+     ],
+     "answer": 0,
+     "ifNot": "Time passes for everybody. Meera also grows 4 years older, so we add 4 to 24 as well."
+    }
+   },
+   {
+    "say": "Meera grows older as well. 24 plus 4 is 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "24 + 4 = 28"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "28"
+      },
+      "text": "Meera",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we add the two new ages. 34 plus 28 is 62.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "34 + 28 = 62"
+     }
+    ]
+   },
+   {
+    "say": "So after 4 years, their ages will add up to 62.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum after 4 years = 62 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "62 years"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a quick check. Today they add up to 54. Each of them gains 4 years, so we add 4 twice. We reach 62 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "30 + 24 = 54"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "54 + 4 + 4 = 62"
+     }
+    ]
+   },
+   {
+    "say": "Remember the trap: adding the years only once. Two people grow older, so the sum grows twice as much."
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2019_005_01": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Two ages today: 50 for Karan and 20 for Ananya. The question takes us back 7 years and asks for the gap between them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Karan = 50 years, Ananya = 20 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Difference 7 years ago = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word ago means we go back in time, so both ages get smaller. 7 years ago Karan was 50 minus 7, which is 43.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "50 − 7 = 43"
+     }
+    ]
+   },
+   {
+    "say": "Ananya was 7 years younger too. 20 minus 7 is 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "20 − 7 = 13"
+     }
+    ]
+   },
+   {
+    "say": "So back then they were 43 and 13. What is the gap between those two ages?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "37",
+      "23",
+      "30"
+     ],
+     "answer": 2,
+     "ifNot": "For a gap, take the smaller age away from the bigger one: 43 minus 13."
+    }
+   },
+   {
+    "say": "43 minus 13 is 30. The difference 7 years ago was 30 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "43 − 13 = 30"
+     },
+     {
+      "op": "mark",
+      "line": "w3",
+      "target": {
+       "text": "30"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now look at today's ages. 50 minus 20 is also 30. The very same gap!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "50 − 20 = 30"
+     },
+     {
+      "op": "mark",
+      "line": "w4",
+      "target": {
+       "text": "30"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "That is no accident. Both of them grew older by the same 7 years, so the gap between them did not change.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference 7 years ago = 30 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "30 years"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So remember: the gap between two people's ages stays the same, in the past, today and for ever. Here it is 30."
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2019_005_04_p2b": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Two ages today: 10 for Isha and 25 for Siddharth. The question jumps 10 years ahead and asks what the ages add up to then.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Isha = 10 years, Siddharth = 25 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Sum after 10 years = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word after means we go forward in time, so ages go up. After 10 years Isha will be 10 plus 10, which is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "10 + 10 = 20"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "20"
+      },
+      "text": "Isha",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Siddharth. What do we do with Siddharth's age?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "leave it as 25",
+      "add 10 too",
+      "take away 10"
+     ],
+     "answer": 1,
+     "ifNot": "Time passes for everybody. Siddharth also grows 10 years older, so we add 10 to 25 as well."
+    }
+   },
+   {
+    "say": "Siddharth grows older as well. 25 plus 10 is 35.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "25 + 10 = 35"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "35"
+      },
+      "text": "Siddharth",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Sum means add. So add the two new ages: 20 plus 35 makes 55.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "20 + 35 = 55"
+     }
+    ]
+   },
+   {
+    "say": "So after 10 years, their ages will add up to 55.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum after 10 years = 55 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "55 years"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a quick check. Today they add up to 35. Each of them gains 10 years, so we add 10 twice. We reach 55 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "10 + 25 = 35"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "35 + 10 + 10 = 55"
+     }
+    ]
+   },
+   {
+    "say": "Remember the trap: adding the years only once. Two people grow older, so the sum grows twice as much."
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_038_04_p2b": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Two ages today: 35 for Sahil and 12 for Ananya. The question jumps 3 years ahead and asks what the ages add up to then.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Sahil = 35 years, Ananya = 12 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Sum after 3 years = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word after means we go forward in time, so ages go up. After 3 years Sahil will be 35 plus 3, which is 38.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "35 + 3 = 38"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "38"
+      },
+      "text": "Sahil",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Ananya. What do we do with Ananya's age?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "leave it as 12",
+      "add 3 too",
+      "take away 3"
+     ],
+     "answer": 1,
+     "ifNot": "Time passes for everybody. Ananya also grows 3 years older, so we add 3 to 12 as well."
+    }
+   },
+   {
+    "say": "Ananya grows older as well. 12 plus 3 is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "12 + 3 = 15"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "15"
+      },
+      "text": "Ananya",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Sum means add. So add the two new ages: 38 plus 15 makes 53.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "38 + 15 = 53"
+     }
+    ]
+   },
+   {
+    "say": "So after 3 years, their ages will add up to 53.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum after 3 years = 53 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "53 years"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a quick check. Today they add up to 47. Each of them gains 3 years, so we add 3 twice. We reach 53 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "35 + 12 = 47"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "47 + 3 + 3 = 53"
+     }
+    ]
+   },
+   {
+    "say": "So when time passes, everyone in the sum grows older. Two people means the years are added twice."
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2021_010_04": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Two ages today: 30 for Karan and 32 for Ananya. The question jumps 8 years ahead and asks what the ages add up to then.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Karan = 30 years, Ananya = 32 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Sum after 8 years = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word after means we go forward in time, so ages go up. After 8 years Karan will be 30 plus 8, which is 38.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "30 + 8 = 38"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "38"
+      },
+      "text": "Karan",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Ananya. What do we do with Ananya's age?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "leave it as 32",
+      "take away 8",
+      "add 8 too"
+     ],
+     "answer": 2,
+     "ifNot": "Time passes for everybody. Ananya also grows 8 years older, so we add 8 to 32 as well."
+    }
+   },
+   {
+    "say": "Ananya grows older as well. 32 plus 8 is 40.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "32 + 8 = 40"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "40"
+      },
+      "text": "Ananya",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we add the two new ages. 38 plus 40 is 78.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "38 + 40 = 78"
+     }
+    ]
+   },
+   {
+    "say": "So after 8 years, their ages will add up to 78.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum after 8 years = 78 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "78 years"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a quick check. Today they add up to 62. Each of them gains 8 years, so we add 8 twice. We reach 78 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "30 + 32 = 62"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "62 + 8 + 8 = 78"
+     }
+    ]
+   },
+   {
+    "say": "So when time passes, everyone in the sum grows older. Two people means the years are added twice."
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2022_035_01": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Siddharth is 33 and Kavya is 21. We want the difference in their ages, but 7 years ago.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Siddharth = 33 years, Kavya = 21 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Difference 7 years ago = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word ago means we go back in time, so both ages get smaller. 7 years ago Siddharth was 33 minus 7, which is 26.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "33 − 7 = 26"
+     }
+    ]
+   },
+   {
+    "say": "Kavya was 7 years younger too. 21 minus 7 is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "21 − 7 = 14"
+     }
+    ]
+   },
+   {
+    "say": "So back then they were 26 and 14. What is the gap between those two ages?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12",
+      "19",
+      "5"
+     ],
+     "answer": 0,
+     "ifNot": "For a gap, take the smaller age away from the bigger one: 26 minus 14."
+    }
+   },
+   {
+    "say": "26 minus 14 is 12. The difference 7 years ago was 12 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "26 − 14 = 12"
+     },
+     {
+      "op": "mark",
+      "line": "w3",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now look at today's ages. 33 minus 21 is also 12. The very same gap!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "33 − 21 = 12"
+     },
+     {
+      "op": "mark",
+      "line": "w4",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is why. Every birthday adds 1 year to both of them, so the gap between two ages never changes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference 7 years ago = 12 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "12 years"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So remember: the gap between two people's ages stays the same, in the past, today and for ever. Here it is 12."
+   }
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH13_002_01": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Two ages today: 31 for Aarav and 26 for Neha. The question takes us back 7 years and asks for the gap between them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Aarav = 31 years, Neha = 26 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Difference 7 years ago = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word ago means we go back in time, so both ages get smaller. 7 years ago Aarav was 31 minus 7, which is 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "31 − 7 = 24"
+     }
+    ]
+   },
+   {
+    "say": "Neha was 7 years younger too. 26 minus 7 is 19.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "26 − 7 = 19"
+     }
+    ]
+   },
+   {
+    "say": "So back then they were 24 and 19. What is the gap between those two ages?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12",
+      "5",
+      "24"
+     ],
+     "answer": 1,
+     "ifNot": "For a gap, take the smaller age away from the bigger one: 24 minus 19."
+    }
+   },
+   {
+    "say": "24 minus 19 is 5. The difference 7 years ago was 5 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "24 − 19 = 5"
+     },
+     {
+      "op": "mark",
+      "line": "w3",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now look at today's ages. 31 minus 26 is also 5. The very same gap!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "31 − 26 = 5"
+     },
+     {
+      "op": "mark",
+      "line": "w4",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "That is no accident. Both of them grew older by the same 7 years, so the gap between them did not change.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference 7 years ago = 5 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "5 years"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Next time you can go straight there. The difference in ages never changes, so just subtract today's ages. The answer is 5."
+   }
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH13_002_04": {
+  "origin": "rule",
+  "beats": [
+   {
+    "say": "Tara is 15 and Vivek is 31. We want the sum of their ages, but after 5 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Tara = 15 years, Vivek = 31 years",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Sum after 5 years = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The word after means we go forward in time, so ages go up. After 5 years Tara will be 15 plus 5, which is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "15 + 5 = 20"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "20"
+      },
+      "text": "Tara",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Vivek. What do we do with Vivek's age?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "leave it as 31",
+      "take away 5",
+      "add 5 too"
+     ],
+     "answer": 2,
+     "ifNot": "Time passes for everybody. Vivek also grows 5 years older, so we add 5 to 31 as well."
+    }
+   },
+   {
+    "say": "Vivek grows older as well. 31 plus 5 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "31 + 5 = 36"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "36"
+      },
+      "text": "Vivek",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we add the two new ages. 20 plus 36 is 56.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "20 + 36 = 56"
+     }
+    ]
+   },
+   {
+    "say": "So after 5 years, their ages will add up to 56.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum after 5 years = 56 years",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "56 years"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a quick check. Today they add up to 46. Each of them gains 5 years, so we add 5 twice. We reach 56 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "15 + 31 = 46"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "46 + 5 + 5 = 56"
+     }
+    ]
+   },
+   {
+    "say": "So when time passes, everyone in the sum grows older. Two people means the years are added twice."
+   }
+  ]
+ }
+}

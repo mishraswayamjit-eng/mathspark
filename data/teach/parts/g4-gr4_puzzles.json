@@ -1,0 +1,8534 @@
+{
+ "EXT_G4_FP_2020_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "There are 25 trays. 15 of them have a cup and 21 have a plate. Some trays have both. How many?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "25 trays.  Cups: 15.  Plates: 21.  Both = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "venn",
+       "leftTitle": "Cups: 15",
+       "rightTitle": "Plates: 21",
+       "left": "cup only",
+       "both": "?",
+       "right": "plate only",
+       "note": "25 trays in all. How many have both?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Let's add the trays with cups and the trays with plates. 15 plus 21 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15 + 21 = 36"
+     }
+    ]
+   },
+   {
+    "say": "But there are only 25 trays! Why did we get 36?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "we added badly",
+      "some trays are empty",
+      "trays with both were counted twice"
+     ],
+     "answer": 2,
+     "ifNot": "A tray with a cup and a plate is in the 15, and it is in the 21 as well. So it got counted two times."
+    }
+   },
+   {
+    "say": "Every tray with both was counted once with the cups and once again with the plates. So the extra count is exactly the trays with both.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "36"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "36 take away 25 is 11. So 11 trays have both a cup and a plate.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "36 − 25 = 11",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "11"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check. Cup only: 15 take away 11 is 4. Plate only: 21 take away 11 is 10. And 4 plus 11 plus 10 is 25 trays. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "15 − 11 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "21 − 11 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4 + 11 + 10 = 25"
+     }
+    ]
+   },
+   {
+    "say": "When two groups overlap, add them, then take away the real total. What is left over is the overlap."
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The teacher has a 3-digit odd number. Its hundreds digit is more than 8. Its tens digit is 4 more than its ones digit. We want the sum of its digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3-digit odd number",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "hundreds > 8,  tens = ones + 4",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "sum of digits = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Take one clue at a time. The hundreds digit is more than 8. Which digit can that be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only 9",
+      "8 or 9",
+      "any digit"
+     ],
+     "answer": 0,
+     "ifNot": "Digits stop at 9. The only digit bigger than 8 is 9."
+    }
+   },
+   {
+    "say": "So the hundreds digit is 9. Next clue: the number is odd. So its ones digit is odd: 1, 3, 5, 7 or 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "hundreds digit: 9",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "ones digit: 1, 3, 5, 7 or 9",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The tens digit is 4 more than the ones digit, and it must still be a single digit. Which ones digits are possible?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1, 3 or 5",
+      "1, 3, 5, 7 or 9",
+      "only 1"
+     ],
+     "answer": 0,
+     "ifNot": "Try 7. Adding 4 gives more than 9, and that is not a single digit. So the ones digit can only be 1, 3 or 5."
+    }
+   },
+   {
+    "say": "Ones digit 1 gives tens digit 5: the number 951. Ones digit 3 gives 973. Ones digit 5 gives 995. Three numbers fit the clues!",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "1",
+         "5",
+         "951"
+        ],
+        [
+         "3",
+         "7",
+         "973"
+        ],
+        [
+         "5",
+         "9",
+         "995"
+        ]
+       ],
+       "headers": [
+        "Ones",
+        "Tens",
+        "Number"
+       ],
+       "note": "Tens digit = ones digit + 4"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Add the digits of each one. 951 gives 15. 973 gives 19. 995 gives 23.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "9 + 5 + 1 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "9 + 7 + 3 = 19"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "9 + 9 + 5 = 23"
+     }
+    ]
+   },
+   {
+    "say": "Now look at the choices. 19 and 23 are not there, but 15 is. So the teacher's number must be 951.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "15"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "So the sum of the digits is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "Sum of digits = 15",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Use one clue at a time to cut down the possibilities. Then test whatever is left."
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Our number is 2, 1, 3, and then two hidden digits, a and b. Divide it by 100 and the remainder is less than 10. And all five digits add up to 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5-digit number 213ab",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "÷ 100 leaves a remainder under 10",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "digits add up to 13.  b = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "When you divide a number by 100, what is the remainder? Think of 21345. It is 213 hundreds, and 45 left over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "21345 = 213 hundreds + 45",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "its first three digits",
+      "its last digit",
+      "its last two digits"
+     ],
+     "answer": 2,
+     "ifNot": "Look at 21345. The hundreds use up 213, and the 45 at the end is left over. The remainder is the last two digits."
+    }
+   },
+   {
+    "say": "So here the remainder is the two-digit ending, a b. And it is less than 10. An ending below 10 must start with 0. So a is 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "remainder = ab, less than 10",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "a = 0",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now add the digits we know: 2 plus 1 plus 3 plus 0. That is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "2 + 1 + 3 + 0 = 6"
+     }
+    ]
+   },
+   {
+    "say": "All five digits add up to 13, and we have 6 so far. So what is b?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6",
+      "7",
+      "13"
+     ],
+     "answer": 1,
+     "ifNot": "b is what must be added to 6 to reach 13. And 13 take away 6 is 7."
+    }
+   },
+   {
+    "say": "13 take away 6 is 7. So b is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "13 − 6 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "b = 7",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "b = 7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check. The number is 21307. Its digits add up to 13. And dividing by 100 leaves 7, which is less than 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "21307",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "2 + 1 + 3 + 0 + 7 = 13"
+     }
+    ]
+   },
+   {
+    "say": "The remainder clue looked scary, but it only told us that a is 0. Turn each clue into a plain fact about the digits."
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two 3-digit numbers are multiplied. One ends in 7 and the other ends in 8. The boxes hide the other digits. Which choice could be the product?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(□□7) × (□□8) = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "10552     9786     308256     9950006",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We can't see the hidden digits. But we can still work out the last digit of the product. What is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5, because 7 + 8 = 15",
+      "8, the bigger digit",
+      "6, because 7 × 8 = 56"
+     ],
+     "answer": 2,
+     "ifNot": "The last digit of a product comes only from the last digits of the two numbers. 7 times 8 is 56, so the product ends in 6."
+    }
+   },
+   {
+    "say": "7 times 8 is 56, so the product must end in 6. One choice ends in 2, so we cross it out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "7 × 8 = 56"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "10552"
+      },
+      "note": "ends in 2"
+     }
+    ]
+   },
+   {
+    "say": "Now think about size. What is the smallest 3-digit number that ends in 7?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "107",
+      "100",
+      "117"
+     ],
+     "answer": 0,
+     "ifNot": "A 3-digit number starts with at least 1, and the middle digit can be 0. So the smallest one ending in 7 is 107."
+    }
+   },
+   {
+    "say": "The smallest numbers that fit are 107 and 108. Their product is 11556. So 9786 is too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "107 × 108 = 11556"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "9786"
+      },
+      "note": "too small"
+     }
+    ]
+   },
+   {
+    "say": "The largest numbers that fit are 997 and 998. Their product is 995006. So 9950006 is too big.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "997 × 998 = 995006"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "9950006"
+      },
+      "note": "too big"
+     }
+    ]
+   },
+   {
+    "say": "Only one choice is left: 308256. It ends in 6, and it is the right size.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "308256"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "308256",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "308256"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And it really can be made. For example, 507 times 608 is exactly 308256.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "507 × 608 = 308256"
+     }
+    ]
+   },
+   {
+    "say": "When digits are hidden, test what you can: the last digit, and the smallest and largest the answer could be."
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_034": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is a square of numbers. Top row: 4, 5, 7. Middle row: 2, 2, 2. Bottom row: 64, 100 and A. The secret is in the columns.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4, 5, 7 / 2, 2, 2 / 64, 100, A",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "4",
+         "5",
+         "7"
+        ],
+        [
+         "2",
+         "2",
+         "2"
+        ],
+        [
+         "64",
+         "100",
+         "A"
+        ]
+       ],
+       "note": "Each column follows the same rule"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Look down the first column: 4, then 2, then 64. What can we do with 4 and 2 to make 64?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply them, then double",
+      "multiply them, then times itself",
+      "add them, then times itself"
+     ],
+     "answer": 1,
+     "ifNot": "4 times 2 is 8, and 8 times 8 is 64. Adding gives 6, and 6 times 6 is not 64."
+    }
+   },
+   {
+    "say": "4 times 2 is 8. And 8 times 8 is 64. That fits the first column.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 × 2 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 × 8 = 64"
+     }
+    ]
+   },
+   {
+    "say": "A rule must work every time, so test the second column. 5 times 2 is 10, and 10 times 10 is 100. It works again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 × 2 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "10 × 10 = 100"
+     }
+    ]
+   },
+   {
+    "say": "Now the third column. 7 times 2 is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7 × 2 = 14"
+     }
+    ]
+   },
+   {
+    "say": "So what is A?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "14 × 2",
+      "9 × 9",
+      "14 × 14"
+     ],
+     "answer": 2,
+     "ifNot": "The second step of the rule is to multiply the result by itself. So A is 14 times 14."
+    }
+   },
+   {
+    "say": "14 times 14. 14 tens are 140, and 14 fours are 56. Together that is 196.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "14 × 10 = 140"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "14 × 4 = 56"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "140 + 56 = 196"
+     }
+    ]
+   },
+   {
+    "say": "So A is 196.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "14 × 14 = 196",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "196"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Find a rule in one complete column, test it on another, and only then use it on the column with the gap."
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A 2-digit number ending in 8 is multiplied by a 3-digit number ending in 7. The stars hide the other digits. Which choice can be the product?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(*8) × (**7) = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "977006     97706     1506     97704",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We can't see the hidden digits. But we can still work out the last digit of the product. What is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6, because 8 × 7 = 56",
+      "5, because 8 + 7 = 15",
+      "8, the bigger digit"
+     ],
+     "answer": 0,
+     "ifNot": "The last digit of a product comes only from the last digits of the two numbers. 8 times 7 is 56, so the product ends in 6."
+    }
+   },
+   {
+    "say": "8 times 7 is 56, so the product must end in 6. One choice ends in 4, so we cross it out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 × 7 = 56"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "97704"
+      },
+      "note": "ends in 4"
+     }
+    ]
+   },
+   {
+    "say": "Now the size. What is the smallest 2-digit number that ends in 8?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "18",
+      "28",
+      "08"
+     ],
+     "answer": 0,
+     "ifNot": "A 2-digit number cannot start with 0. So the smallest one ending in 8 is 18."
+    }
+   },
+   {
+    "say": "The smallest numbers that fit are 18 and 107. Their product is 1926. So 1506 is too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "18 × 107 = 1926"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "1506"
+      },
+      "note": "too small"
+     }
+    ]
+   },
+   {
+    "say": "The largest numbers that fit are 98 and 997. Their product is 97706. So 977006 is too big. And look: 97706 itself is one of the choices!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "98 × 997 = 97706"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "977006"
+      },
+      "note": "too big"
+     }
+    ]
+   },
+   {
+    "say": "Only one choice is left: 97706. It ends in 6, and it is the right size.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "97706"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "97706",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "97706"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "With hidden digits, check the last digit first. Then squeeze the answer between the smallest and the largest product."
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_028": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square of numbers. Each column follows the same rule, going down. We must find Z, in the middle of the third column.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Each column follows the same rule.  Z = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "7",
+         "13",
+         "24"
+        ],
+        [
+         "3",
+         "6",
+         "Z"
+        ],
+        [
+         "16",
+         "49",
+         "169"
+        ]
+       ],
+       "note": "Each column follows the same rule. Z = ?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The first column is 7, 3 and 16. The second is 13, 6 and 49. Which rule works for both columns?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "subtract, then times itself",
+      "add, then add 6",
+      "multiply, then take away 5"
+     ],
+     "answer": 0,
+     "ifNot": "7 take away 3 is 4, and 4 times 4 is 16. 13 take away 6 is 7, and 7 times 7 is 49. That rule fits both columns."
+    }
+   },
+   {
+    "say": "7 take away 3 is 4, and 4 times 4 is 16. 13 take away 6 is 7, and 7 times 7 is 49. The rule fits both.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "7 − 3 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 × 4 = 16"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "13 − 6 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "7 × 7 = 49"
+     }
+    ]
+   },
+   {
+    "say": "The third column is 24, then Z, then 169. This time we know the bottom number and not the middle. So we work backwards."
+   },
+   {
+    "say": "Which number, multiplied by itself, makes 169?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12",
+      "14",
+      "13"
+     ],
+     "answer": 2,
+     "ifNot": "Try 13. 13 times 13 is 169."
+    }
+   },
+   {
+    "say": "13 times 13 is 169. So 24 take away Z must be 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "13 × 13 = 169"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "24 − Z = 13",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Careful: 13 is not Z. Z is what we take from 24 to leave 13. 24 take away 13 is 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "24 − 13 = 11"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "Z = 11",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "Z = 11"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the whole column. 24 take away 11 is 13, and 13 times 13 is 169. So Z is 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "24 − 11 = 13"
+     }
+    ]
+   },
+   {
+    "say": "When the gap is in the middle of a rule, find the rule from the full columns, then run it backwards."
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A 3-digit number ending in 6 is multiplied by a 2-digit number ending in 9. The stars hide the other digits. Which choice can be the product?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(★★6) × (★9) = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "1854     986004     51684     40548",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We can't see the hidden digits. But we can still work out the last digit of the product. What is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4, because 6 × 9 = 54",
+      "5, because 6 + 9 = 15",
+      "9, the bigger digit"
+     ],
+     "answer": 0,
+     "ifNot": "The last digit of a product comes only from the last digits of the two numbers. 6 times 9 is 54, so the product ends in 4."
+    }
+   },
+   {
+    "say": "6 times 9 is 54, so the product must end in 4. But look: all four choices end in 4! So we need another test.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6 × 9 = 54"
+     }
+    ]
+   },
+   {
+    "say": "So let's test the size. What are the smallest numbers that fit: a 3-digit number ending in 6 and a 2-digit number ending in 9?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "106 and 19",
+      "116 and 29",
+      "100 and 10"
+     ],
+     "answer": 0,
+     "ifNot": "The first digit must be at least 1, and a middle digit can be 0. So the smallest are 106 and 19."
+    }
+   },
+   {
+    "say": "The smallest numbers that fit are 106 and 19. Their product is 2014. So 1854 is too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "106 × 19 = 2014"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "1854"
+      },
+      "note": "too small"
+     }
+    ]
+   },
+   {
+    "say": "The largest numbers that fit are 996 and 99. Their product is 98604. So 986004 is too big.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "996 × 99 = 98604"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "986004"
+      },
+      "note": "too big"
+     }
+    ]
+   },
+   {
+    "say": "Two choices are still standing: 51684 and 40548. This is the hard part. The product must divide exactly by a 2-digit number ending in 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4b",
+      "text": "divides by 19, 29, 39, ... or 99?",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is 40548 divided by each of them. Every time something is left over. So 40548 cannot be made.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "÷ by",
+         "19",
+         "29",
+         "39",
+         "49"
+        ],
+        [
+         "left over",
+         "2",
+         "6",
+         "27",
+         "25"
+        ],
+        [
+         "÷ by",
+         "59",
+         "69",
+         "79",
+         "89"
+        ],
+        [
+         "left over",
+         "15",
+         "45",
+         "21",
+         "53"
+        ],
+        [
+         "÷ by",
+         "99",
+         "·",
+         "·",
+         "·"
+        ],
+        [
+         "left over",
+         "57",
+         "·",
+         "·",
+         "·"
+        ]
+       ],
+       "note": "40548 never divides exactly"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "40548"
+      },
+      "note": "cannot be made"
+     }
+    ]
+   },
+   {
+    "say": "Only one choice is left: 51684. It ends in 4, and it is the right size.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "51684"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "51684",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "51684"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And this one really can be made: 876 times 59 is exactly 51684.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "876 × 59 = 51684"
+     }
+    ]
+   },
+   {
+    "say": "Most hidden-digit puzzles fall to the last digit and the size. When two choices are still standing, test whether each one can really be made."
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_029": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Each column of this square follows the same rule, going down. We must find Q at the bottom of the third column.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Each column follows the same rule.  Q = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "3",
+         "7",
+         "8"
+        ],
+        [
+         "9",
+         "21",
+         "24"
+        ],
+        [
+         "81",
+         "441",
+         "Q"
+        ]
+       ],
+       "note": "Each column follows the same rule. Q = ?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Look at the first two columns. 3 goes to 9, and 7 goes to 21. How do we get from the top number to the middle one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply by 3",
+      "multiply it by itself",
+      "add 6"
+     ],
+     "answer": 0,
+     "ifNot": "3 times 3 is 9, and 7 times 3 is 21. Multiplying by 3 works in both columns."
+    }
+   },
+   {
+    "say": "3 times 3 is 9. 7 times 3 is 21. And in the third column, 8 times 3 is 24. Good, the rule holds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "7 × 3 = 21"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8 × 3 = 24"
+     }
+    ]
+   },
+   {
+    "say": "Now from the middle to the bottom. 9 becomes 81, and 21 becomes 441. What is the rule?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply it by itself",
+      "multiply by 21",
+      "multiply by 9"
+     ],
+     "answer": 0,
+     "ifNot": "9 times 9 is 81. And 21 times 21 is 441. Each middle number is multiplied by itself."
+    }
+   },
+   {
+    "say": "9 times 9 is 81, and 21 times 21 is 441. So each bottom number is the middle number times itself.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "9 × 9 = 81"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "21 × 21 = 441"
+     }
+    ]
+   },
+   {
+    "say": "So Q is 24 times 24. Split it: 24 twenties are 480, and 24 fours are 96.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "24 × 20 = 480"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "24 × 4 = 96"
+     }
+    ]
+   },
+   {
+    "say": "480 plus 96 is 576. So Q is 576.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "24 × 24 = 576",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "576"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A rule can have two steps. Find each step from the complete columns, then follow both steps down the last column."
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In a magic square, every row, every column and both diagonals add up to the same total. We must find m plus n.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Magic square.  m + n = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "n",
+         "□",
+         "6"
+        ],
+        [
+         "4",
+         "x",
+         "m"
+        ],
+        [
+         "16",
+         "□",
+         "□"
+        ]
+       ],
+       "note": "A magic square. Find m + n"
+      }
+     }
+    ]
+   },
+   {
+    "say": "We don't know the total yet. But look at two lines that both pass through x: the middle row 4, x, m, and the diagonal 6, x, 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "row: 4 + x + m",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "diagonal: 6 + x + 16",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Both lines have the same total, and both contain x. So what must be equal?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 + m and 6 + 16",
+      "m and x",
+      "4 and 6"
+     ],
+     "answer": 0,
+     "ifNot": "Take x away from both lines. What is left must still be equal: 4 plus m on one line, 6 plus 16 on the other."
+    }
+   },
+   {
+    "say": "6 plus 16 is 22. So 4 plus m is 22 too, and m is 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "6 + 16 = 22"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "22 − 4 = 18"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "m = 18",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now for the magic total. Here is a fact about every 3 by 3 magic square: each line adds up to 3 times the middle number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "line total = 3 × middle number",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The diagonal is 22 plus x, and that must be 3 lots of x. So 22 is 2 lots of x. That makes x 11, and the magic total 3 times 11, which is 33.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "22 ÷ 2 = 11"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "3 × 11 = 33"
+     }
+    ]
+   },
+   {
+    "say": "The first column is n, 4 and 16, and it must add up to 33. So what is n?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "11",
+      "20",
+      "13"
+     ],
+     "answer": 2,
+     "ifNot": "4 plus 16 is 20. And 33 take away 20 is 13."
+    }
+   },
+   {
+    "say": "4 plus 16 is 20, and 33 take away 20 is 13. So n is 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "4 + 16 = 20"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "33 − 20 = 13"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "n = 13",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "m is 18 and n is 13. So m plus n is 31.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l13",
+      "text": "18 + 13 = 31",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l13",
+      "target": {
+       "text": "31"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the finished square. Every row, column and diagonal adds up to 33.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "13",
+         "14",
+         "6"
+        ],
+        [
+         "4",
+         "11",
+         "18"
+        ],
+        [
+         "16",
+         "8",
+         "9"
+        ]
+       ],
+       "note": "Every line adds up to 33"
+      }
+     }
+    ]
+   },
+   {
+    "say": "In a magic square, compare two lines that share a box. And remember: each line is 3 times the middle number."
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A 3-digit number ending in 8 is multiplied by a 2-digit number ending in 6. The stars hide the other digits. Which choice can be the product?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(★★8) × (★6) = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "1658     980808     87604     43928",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We can't see the hidden digits. But we can still work out the last digit of the product. What is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4, because 8 + 6 = 14",
+      "6, the smaller digit",
+      "8, because 8 × 6 = 48"
+     ],
+     "answer": 2,
+     "ifNot": "The last digit of a product comes only from the last digits of the two numbers. 8 times 6 is 48, so the product ends in 8."
+    }
+   },
+   {
+    "say": "8 times 6 is 48, so the product must end in 8. One choice ends in 4, so we cross it out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 × 6 = 48"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "87604"
+      },
+      "note": "ends in 4"
+     }
+    ]
+   },
+   {
+    "say": "Next, the size. What are the smallest numbers that fit: a 3-digit number ending in 8 and a 2-digit number ending in 6?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "108 and 16",
+      "118 and 26",
+      "100 and 10"
+     ],
+     "answer": 0,
+     "ifNot": "The first digit must be at least 1, and any middle digit can be 0. So the smallest are 108 and 16."
+    }
+   },
+   {
+    "say": "The smallest numbers that fit are 108 and 16. Their product is 1728. So 1658 is too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "108 × 16 = 1728"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "1658"
+      },
+      "note": "too small"
+     }
+    ]
+   },
+   {
+    "say": "The largest numbers that fit are 998 and 96. Their product is 95808. So 980808 is too big.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "998 × 96 = 95808"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "980808"
+      },
+      "note": "too big"
+     }
+    ]
+   },
+   {
+    "say": "Only one choice is left: 43928. It ends in 8, and it is the right size.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "43928"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "43928",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "43928"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And it really can be made. For example, 578 times 76 is exactly 43928.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "578 × 76 = 43928"
+     }
+    ]
+   },
+   {
+    "say": "The last digit rules out one choice, and the size rules out two more. That is how to beat hidden digits."
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_035": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "63 students stand in a queue. You are 13th from the beginning. Your friend is 19th from the end. How many students are between you?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Queue of 63.  You: 13th from the beginning.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Friend: 19th from the end.  Between = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 4.65,
+           "tone": "a"
+          },
+          {
+           "units": 1.94,
+           "label": "You",
+           "tone": "b"
+          },
+          {
+           "units": 12.0,
+           "label": "?",
+           "tone": "unknown"
+          },
+          {
+           "units": 3.1,
+           "label": "Friend",
+           "tone": "b"
+          },
+          {
+           "units": 6.97,
+           "tone": "a"
+          }
+         ],
+         "brace": "63 students"
+        }
+       ],
+       "note": "You are 13th from the beginning. Your friend is 19th from the end"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The two places are counted from different ends. So let's find your friend's place from the beginning. First: how many students stand behind your friend?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "19",
+      "18",
+      "20"
+     ],
+     "answer": 1,
+     "ifNot": "Your friend is the 19th from the end. So 18 students come after your friend."
+    }
+   },
+   {
+    "say": "18 students stand behind your friend. So your friend's place from the beginning is 63 take away 18, which is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "19 − 1 = 18"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "63 − 18 = 45"
+     }
+    ]
+   },
+   {
+    "say": "You are 13th and your friend is 45th. So the students between you are in places 14 up to 44.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "You: 13th     Friend: 45th",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "between: places 14 to 44",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How many places are there from 14 to 44?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "31",
+      "30",
+      "32"
+     ],
+     "answer": 0,
+     "ifNot": "44 take away 14 is 30, but that leaves out one end. Places 14 and 44 both count, so add 1."
+    }
+   },
+   {
+    "say": "44 take away 14 is 30. But place 14 and place 44 are both students between you, so add 1. That makes 31.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "44 − 14 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "30 + 1 = 31",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "31"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Another way: 45 take away 13 is 32, but that count includes your friend. Take away 1 more, and again we get 31.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "45 − 13 = 32"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "32 − 1 = 31"
+     }
+    ]
+   },
+   {
+    "say": "Change both places so they are counted from the same end. Then count only the places strictly between."
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two 3-digit numbers are multiplied. One ends in 4 and the other ends in 8. The stars hide the other digits. Which choice could be the product?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(**4) × (**8) = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "672672     564976     9092012     10992",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We can't see the hidden digits. But we can still work out the last digit of the product. What is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8, the bigger digit",
+      "4, the smaller digit",
+      "2, because 4 × 8 = 32"
+     ],
+     "answer": 2,
+     "ifNot": "The last digit of a product comes only from the last digits of the two numbers. 4 times 8 is 32, so the product ends in 2."
+    }
+   },
+   {
+    "say": "4 times 8 is 32, so the product must end in 2. One choice ends in 6, so we cross it out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 × 8 = 32"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "564976"
+      },
+      "note": "ends in 6"
+     }
+    ]
+   },
+   {
+    "say": "Now the size. What is the smallest 3-digit number that ends in 4?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "104",
+      "114",
+      "004"
+     ],
+     "answer": 0,
+     "ifNot": "A 3-digit number starts with at least 1, and its middle digit can be 0. So the smallest one ending in 4 is 104."
+    }
+   },
+   {
+    "say": "The smallest numbers that fit are 104 and 108. Their product is 11232. So 10992 is too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "104 × 108 = 11232"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "10992"
+      },
+      "note": "too small"
+     }
+    ]
+   },
+   {
+    "say": "The largest numbers that fit are 994 and 998. Their product is 992012. So 9092012 is too big.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "994 × 998 = 992012"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "9092012"
+      },
+      "note": "too big"
+     }
+    ]
+   },
+   {
+    "say": "Only one choice is left: 672672. It ends in 2, and it is the right size.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "672672"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "672672",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "672672"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And it really can be made. For example, 784 times 858 is exactly 672672.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "784 × 858 = 672672"
+     }
+    ]
+   },
+   {
+    "say": "First the last digit, then the smallest and largest products. Three quick tests, and only one choice is still standing."
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH15_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A magic square has top row 4, 3, 8 and middle row 9, 5, 1. The bottom row is empty. When we finish it, which number will not be used?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Top: 4, 3, 8.  Middle: 9, 5, 1.  Bottom: ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "4",
+         "3",
+         "8"
+        ],
+        [
+         "9",
+         "5",
+         "1"
+        ],
+        [
+         "□",
+         "□",
+         "□"
+        ]
+       ],
+       "note": "Complete the magic square. Which number is not used?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The top row is full, so add it. 4 plus 3 plus 8 is 15. Every line must add up to 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 + 3 + 8 = 15"
+     }
+    ]
+   },
+   {
+    "say": "The first column already has 4 and 9. What goes below them?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "13",
+      "2",
+      "6"
+     ],
+     "answer": 1,
+     "ifNot": "4 plus 9 is 13. To reach 15 we need 2 more."
+    }
+   },
+   {
+    "say": "First column: 15 take away 4 and 9 leaves 2. Second column: take away 3 and 5, which leaves 7. Third column: take away 8 and 1, which leaves 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 − 4 − 9 = 2"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "15 − 3 − 5 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "15 − 8 − 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So the bottom row is 2, 7, 6. Check it: 2 plus 7 plus 6 is 15 as well.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "4",
+         "3",
+         "8"
+        ],
+        [
+         "9",
+         "5",
+         "1"
+        ],
+        [
+         "2",
+         "7",
+         "6"
+        ]
+       ],
+       "note": "Every line adds up to 15"
+      }
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "2 + 7 + 6 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Look at the finished square. Which numbers does it use?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "some numbers twice",
+      "1 to 9, once each",
+      "only even numbers"
+     ],
+     "answer": 1,
+     "ifNot": "Read them off: 4, 3, 8, 9, 5, 1, 2, 7, 6. That is every number from 1 to 9, once each."
+    }
+   },
+   {
+    "say": "The square uses only 1 to 9. So 3, 6 and 9 are all in it. The number that is not used is 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "11 is not used",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "11"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Finish the square first, using the magic total. Then the question about which numbers are used answers itself."
+   }
+  ]
+ },
+ "G4A_PUZZLES_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In a magic square, every row, every column and both diagonals add up to the same total. One number in Row 3 is missing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Magic square.  Row 3: 5, ?, 3",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "9",
+         "2",
+         "7"
+        ],
+        [
+         "4",
+         "6",
+         "8"
+        ],
+        [
+         "5",
+         "?",
+         "3"
+        ]
+       ],
+       "note": "Every row, column and diagonal has the same total"
+      }
+     }
+    ]
+   },
+   {
+    "say": "To find the missing number we need the magic total. Which line can give it to us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "a full line, like Row 1",
+      "Row 3",
+      "we have to guess"
+     ],
+     "answer": 0,
+     "ifNot": "Row 3 has a gap, so we cannot add it yet. Row 1 is complete: 9, 2 and 7."
+    }
+   },
+   {
+    "say": "Row 1 is 9 plus 2 plus 7, which is 18. So the magic total is 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 + 2 + 7 = 18"
+     }
+    ]
+   },
+   {
+    "say": "Row 3 must make 18 too. It already has 5 and 3, which make 8. And 18 take away 8 is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 + 3 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "18 − 8 = 10"
+     }
+    ]
+   },
+   {
+    "say": "So the missing number is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 + 10 + 3 = 18",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with the middle column, which also holds the gap. 2 plus 6 plus 10 is 18. It works there too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "2 + 6 + 10 = 18"
+     }
+    ]
+   },
+   {
+    "say": "In a magic square, find the total from any full line. Then every gap is just a subtraction."
+   }
+  ]
+ },
+ "G4A_PUZZLES_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A number riddle! It is a 2-digit number. Its tens digit is 4. And its two digits add up to 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Tens digit: 4.  The digits add up to 11.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "4",
+         "?"
+        ]
+       ],
+       "headers": [
+        "Tens",
+        "Ones"
+       ],
+       "note": "The two digits add up to 11"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The tens digit is 4, so the number is forty-something. We only need the ones digit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 _",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The two digits add up to 11, and one of them is 4. What is the other?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "1",
+      "7"
+     ],
+     "answer": 2,
+     "ifNot": "4 plus what makes 11? Take 4 away from 11, and 7 is left."
+    }
+   },
+   {
+    "say": "11 take away 4 is 7. So the ones digit is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "11 − 4 = 7"
+     }
+    ]
+   },
+   {
+    "say": "Tens digit 4, ones digit 7. The number is 47.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "47",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "47"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the order. 74 also has digits that add up to 11, but its tens digit is 7. Ours must have the 4 in the tens place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "74: the tens digit is 7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Check: 4 plus 7 is 11. In digit riddles, write down the place of each digit before you do anything else.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4 + 7 = 11"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_PUZZLES_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here P is a hidden digit. 4 P means a two-digit number: 4 tens and P ones. Careful, it does not mean 4 times P.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4P + 25 = 71",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "balance",
+       "left": "4P + 25",
+       "right": "71",
+       "note": "4P is a two-digit number. Which digit is P?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The number 4 P, plus 25, makes 71. How do we find the number 4 P?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "71 − 25",
+      "25 − 4",
+      "71 + 25"
+     ],
+     "answer": 0,
+     "ifNot": "Something plus 25 gives 71. To undo the adding, take 25 away from 71."
+    }
+   },
+   {
+    "say": "71 take away 25 is 46. So the number 4 P is 46.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "71 − 25 = 46"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4P = 46",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "4 P is 46. So which digit is P?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "6",
+      "46"
+     ],
+     "answer": 1,
+     "ifNot": "P sits in the ones place. The ones digit of 46 is 6."
+    }
+   },
+   {
+    "say": "P is the ones digit, so P is 6.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "P = 6",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "P = 6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by putting it back. 46 plus 25 is 71. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "46 + 25 = 71"
+     }
+    ]
+   },
+   {
+    "say": "When a letter hides a digit, find the whole number first by working backwards. Then read off the digit in the right place."
+   }
+  ]
+ },
+ "G4A_PUZZLES_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A picture puzzle. A star plus a star makes 14. A star plus a moon makes 10. What is the moon worth?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "star + star = 14",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "star + moon = 10",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1.0,
+           "label": "star",
+           "tone": "a"
+          },
+          {
+           "units": 1.0,
+           "label": "star",
+           "tone": "a"
+          }
+         ],
+         "brace": "14"
+        },
+        {
+         "segments": [
+          {
+           "units": 1.0,
+           "label": "star",
+           "tone": "b"
+          },
+          {
+           "units": 1.0,
+           "label": "moon",
+           "tone": "b"
+          }
+         ],
+         "brace": "10"
+        }
+       ],
+       "note": "What is the moon worth?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Which clue should we use first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it makes no difference",
+      "star + moon = 10",
+      "star + star = 14"
+     ],
+     "answer": 2,
+     "ifNot": "The first clue has only stars in it. So it can tell us what one star is worth."
+    }
+   },
+   {
+    "say": "Two equal stars make 14. So one star is half of 14, which is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "14 ÷ 2 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "star = 7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now use the second clue. A star plus a moon is 10, and we know the star is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "7 + moon = 10",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "10 take away 7 is 3. So the moon is worth 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "10 − 7 = 3"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "moon = 3",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "moon = 3"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the star and the moon are not equal, so we must not halve the 10. We use the 7 we found."
+   },
+   {
+    "say": "Check both clues. 7 plus 7 is 14, and 7 plus 3 is 10. Start with the clue that has only one kind of picture.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "7 + 7 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "7 + 3 = 10"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_PUZZLES_005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four children, three clues. Amit is taller than Bina. Bina is taller than Chetan. Divya is shorter than Chetan. Who is the tallest?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Amit is taller than Bina",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Bina is taller than Chetan",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Divya is shorter than Chetan",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's line them up, with the tallest on the left. Clue 1 says Amit is taller than Bina. So Amit goes first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "Amit, Bina",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Clue 2 says Bina is taller than Chetan. Where does Chetan go in our line?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "after Bina",
+      "before Amit",
+      "between Amit and Bina"
+     ],
+     "answer": 0,
+     "ifNot": "Chetan is shorter than Bina. So he stands after her in the line."
+    }
+   },
+   {
+    "say": "So far the line is Amit, Bina, Chetan.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Amit, Bina, Chetan",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Careful with clue 3. It says shorter, not taller. Divya is shorter than Chetan, so she goes at the end.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "shorter"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "Amit, Bina, Chetan, Divya",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The tallest is at the front of the line. That is Amit.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "Amit"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "Tallest: Amit",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "Tallest: Amit"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "For puzzles like this, build one line, a clue at a time. And watch closely for the words taller and shorter."
+   }
+  ]
+ },
+ "G4A_PUZZLES_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In this magic square every row adds up to 21. One row has 4, 11 and a missing number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 + 11 + ? = 21",
+      "tone": "given"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "4",
+         "11",
+         "?"
+        ]
+       ],
+       "note": "Every row adds up to 21"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Start with the two numbers we know. 4 plus 11 is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 + 11 = 15"
+     }
+    ]
+   },
+   {
+    "say": "The row must reach 21, and we have 15 so far. What do we work out?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15 − 4",
+      "21 − 15",
+      "21 + 15"
+     ],
+     "answer": 1,
+     "ifNot": "21 is the total of the whole row. The missing number is the gap between 15 and 21."
+    }
+   },
+   {
+    "say": "21 take away 15 is 6. So the missing number is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "21 − 15 = 6",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the slip to watch for. The 21 is the total of the row. It is not another number to add on."
+   },
+   {
+    "say": "Check: 4 plus 11 plus 6 is 21. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 + 11 + 6 = 21"
+     }
+    ]
+   },
+   {
+    "say": "When you know the total and all the parts but one, add the parts you know and subtract from the total."
+   }
+  ]
+ },
+ "G4A_PUZZLES_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two signs have gone missing: 8, something, 4, something, 2, equals 10. We must put the right signs back.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "8 __ 4 __ 2 = 10",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "8 is already close to 10, so let's try plus first. 8 plus 4 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 + 4 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Now we have 12, and we need 10. What should we do with the 2?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add it",
+      "take it away",
+      "multiply by it"
+     ],
+     "answer": 1,
+     "ifNot": "12 is 2 more than 10. So we must take the 2 away."
+    }
+   },
+   {
+    "say": "12 take away 2 is 10. So the signs are plus, then minus.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 + 4 − 2 = 10",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "8 + 4 − 2 = 10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's make sure nothing else works. Minus then plus gives 6. Plus then plus gives 14. Times then minus gives 30. None of those is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8 − 4 + 2 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "8 + 4 + 2 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 × 4 − 2 = 30"
+     }
+    ]
+   },
+   {
+    "say": "With missing signs, make a sensible first try, see how far off you are, and then fix it."
+   }
+  ]
+ },
+ "G4A_PUZZLES_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A palindrome reads the same forwards and backwards, like 353. One of these four numbers is a palindrome. Let's find it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Palindrome: the same forwards and backwards",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "1212     1221     1122     2121",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The test is simple: write the number backwards and see if it changes. Take the first one. Its digits are 1, 2, 1, 2. Backwards that is 2, 1, 2, 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1212 backwards is 2121",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "That is a different number, so it is not a palindrome. Now take the digits 1, 2, 2, 1. What do you get when you write them backwards?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1, 2, 2, 1",
+      "2, 2, 1, 1",
+      "2, 1, 1, 2"
+     ],
+     "answer": 0,
+     "ifNot": "Start from the last digit and go back: 1, then 2, then 2, then 1. The same as before."
+    }
+   },
+   {
+    "say": "It is the same both ways. The first digit matches the last, and the two middle digits match each other.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1221 backwards is 1221",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "1221"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The other two change as well. 1122 turns into 2211, and 2121 turns into 1212.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1122 backwards is 2211",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2121 backwards is 1212",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the palindrome number is 1221.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1221",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "1221"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A quick test for a palindrome: the first digit must match the last, the second must match the second from last, and so on."
+   }
+  ]
+ },
+ "G4A_PUZZLES_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A magic square with two letters hiding in it, P and Q. Every row, column and diagonal has the same total. We want P plus Q.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Magic square.  P + Q = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "16",
+         "2",
+         "P"
+        ],
+        [
+         "6",
+         "Q",
+         "14"
+        ],
+        [
+         "8",
+         "18",
+         "4"
+        ]
+       ],
+       "note": "Every row, column and diagonal has the same total. P + Q = ?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "First we need the magic total. Which row can give it to us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Row 3: 8, 18, 4",
+      "Row 2: 6, Q, 14",
+      "Row 1: 16, 2, P"
+     ],
+     "answer": 0,
+     "ifNot": "Rows 1 and 2 each hide a letter. Row 3 is complete, so we can add it."
+    }
+   },
+   {
+    "say": "8 plus 18 plus 4 is 30. So every line adds up to 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 + 18 + 4 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Row 1 is 16, 2 and P. 16 plus 2 is 18, and 30 take away 18 is 12. So P is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "16 + 2 = 18"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "30 − 18 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "P = 12",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Row 2 is 6, Q and 14. 6 plus 14 is 20, and 30 take away 20 is 10. So Q is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "6 + 14 = 20"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "30 − 20 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "Q = 10",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We have P and we have Q. What does the question want?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the magic total",
+      "P + Q",
+      "just P"
+     ],
+     "answer": 1,
+     "ifNot": "Read the last line of the question again. It asks for P plus Q."
+    }
+   },
+   {
+    "say": "12 plus 10 is 22. So P plus Q is 22. Don't stop at 30: that is the magic total.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "12 + 10 = 22",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "22"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check Q with a diagonal: 16 plus 10 plus 4 is 30. Find the total from a full line, fill the gaps, then answer what was asked.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "16 + 10 + 4 = 30"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_PUZZLES_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "P is the same hidden digit both times. 3 P is a number in the thirties. P 8 is a number ending in 8. Together they make 82.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3P + P8 = 82",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "3",
+         "P"
+        ],
+        [
+         "P",
+         "8"
+        ],
+        [
+         "8",
+         "2"
+        ]
+       ],
+       "headers": [
+        "Tens",
+        "Ones"
+       ],
+       "note": "3P + P8 = 82: the top two rows add up to the bottom row"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Write it as a column sum and start with the ones column, just as we always do. In the ones column we add P and 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "ones column: P + 8 ends in 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "P plus 8 must end in 2, and P is a single digit. Which digit works?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "6",
+      "4"
+     ],
+     "answer": 2,
+     "ifNot": "8 plus 4 makes a number that ends in 2. Taking 2 from 8 gives 6, but here the digits are added, not subtracted."
+    }
+   },
+   {
+    "say": "4 plus 8 is 12. That ends in 2, and 1 ten is carried over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 + 8 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Now test the whole sum with P as 4. The two numbers are 34 and 48. And 34 plus 48 is 82. It works!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "34 + 48 = 82"
+     }
+    ]
+   },
+   {
+    "say": "So P is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "P = 4",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "P = 4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Look at the tens as well. 3 tens and 4 tens and the 1 carried over make 8 tens. Everything fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3 + 4 + 1 = 8"
+     }
+    ]
+   },
+   {
+    "say": "In a letter sum, start with the ones column. It often gives the digit away. Then check the whole sum."
+   }
+  ]
+ },
+ "G4A_PUZZLES_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "P and Q are digits. The numbers P Q and Q P add up to 77. And P is 1 more than Q. We want the number P Q.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "PQ + QP = 77,  P is 1 more than Q",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "P",
+         "Q"
+        ],
+        [
+         "Q",
+         "P"
+        ]
+       ],
+       "headers": [
+        "Tens",
+        "Ones"
+       ],
+       "note": "PQ + QP = 77, and P is 1 more than Q"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Stack them as a column sum. In the ones column we add Q and P. In the tens column we add P and Q. The same two digits each time!"
+   },
+   {
+    "say": "The total is 77. So what is P plus Q?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7",
+      "77",
+      "14"
+     ],
+     "answer": 0,
+     "ifNot": "Each column adds P and Q, and each column of the answer shows a 7. So P plus Q is 7."
+    }
+   },
+   {
+    "say": "So we need two digits that add up to 7, where one is 1 more than the other.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "P + Q = 7",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "P is 1 more than Q",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which pair of digits is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 and 2",
+      "6 and 1",
+      "4 and 3"
+     ],
+     "answer": 2,
+     "ifNot": "5 and 2 make 7, but they are 3 apart. 4 and 3 make 7 and are just 1 apart."
+    }
+   },
+   {
+    "say": "P is the bigger one. So P is 4 and Q is 3, and the number P Q is 43. Careful: not 34.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "P = 4,  Q = 3",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l4b",
+      "text": "so PQ is 43, not 34",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Check: 43 plus 34 is 77. So the number is 43.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "43 + 34 = 77"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "PQ = 43",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "43"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When two letters swap places in a sum, look at one column at a time. Each column tells you what the letters add up to."
+   }
+  ]
+ },
+ "G4A_PUZZLES_012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "I think of a number. I double it and then add 3. The answer is 17. What was my number?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "? × 2 + 3 = 17",
+      "tone": "given"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "balance",
+       "left": "? × 2 + 3",
+       "right": "17",
+       "note": "Double the number, then add 3. The answer is 17"
+      }
+     }
+    ]
+   },
+   {
+    "say": "To get back to the start, we undo the steps. Which step do we undo first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it makes no difference",
+      "the adding of 3",
+      "the doubling"
+     ],
+     "answer": 1,
+     "ifNot": "Adding 3 was done last. It is like shoes and socks: the last thing on is the first thing off."
+    }
+   },
+   {
+    "say": "To undo adding 3, take 3 away. 17 take away 3 is 14. So the doubled number was 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "17 − 3 = 14"
+     }
+    ]
+   },
+   {
+    "say": "Now undo the doubling. How?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "halve 14",
+      "double 14",
+      "take 2 away from 14"
+     ],
+     "answer": 0,
+     "ifNot": "Doubling means times 2. Halving is what undoes it."
+    }
+   },
+   {
+    "say": "Half of 14 is 7. So the number was 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "14 ÷ 2 = 7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by going forwards. 7 doubled is 14, and 14 plus 3 is 17. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "7 × 2 + 3 = 17"
+     }
+    ]
+   },
+   {
+    "say": "To find a starting number, work backwards. Undo the last step first, using the opposite move each time."
+   }
+  ]
+ },
+ "G4A_PUZZLES_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Isha, Jay, Kiran and Lata each have one pet: a cat, a dog, a parrot and a rabbit. We have three clues, and we want Lata's pet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Jay: cat.   Kiran: rabbit.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Isha: not the dog.   Lata: ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "cat, dog, parrot, rabbit",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Jay has the cat and Kiran has the rabbit. Which pets are left for Isha and Lata?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the dog and the parrot",
+      "the cat and the dog",
+      "the parrot and the rabbit"
+     ],
+     "answer": 0,
+     "ifNot": "Cross off the cat and the rabbit. The two pets left are the dog and the parrot."
+    }
+   },
+   {
+    "say": "Cross off the cat for Jay, and the rabbit for Kiran. The dog and the parrot are left.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l3",
+      "target": {
+       "text": "cat"
+      },
+      "note": "Jay"
+     },
+     {
+      "op": "strike",
+      "line": "l3",
+      "target": {
+       "text": "rabbit"
+      },
+      "note": "Kiran"
+     }
+    ]
+   },
+   {
+    "say": "Now the last clue. Isha does not have the dog. So Isha must have the parrot.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l3",
+      "target": {
+       "text": "parrot"
+      },
+      "note": "Isha"
+     }
+    ]
+   },
+   {
+    "say": "Only one pet is left, and only one child. So Lata has the dog.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "dog"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "Lata: dog",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "Lata: dog"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is everyone with their pet. Every clue fits.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "Isha",
+         "parrot"
+        ],
+        [
+         "Jay",
+         "cat"
+        ],
+        [
+         "Kiran",
+         "rabbit"
+        ],
+        [
+         "Lata",
+         "dog"
+        ]
+       ],
+       "headers": [
+        "Child",
+        "Pet"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "In a matching puzzle, use the sure clues first and cross things off. A clue that says not is useful once only two choices are left."
+   }
+  ]
+ },
+ "G4A_PUZZLES_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A number riddle with three clues. It is a 2-digit number less than 50. It is a multiple of 7. And its digits add up to 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2-digit, less than 50, multiple of 7",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "digits add up to 6",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the clue that leaves the fewest numbers. The 2-digit multiples of 7 below 50 are 14, 21, 28, 35, 42 and 49.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "14, 21, 28, 35, 42, 49",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the last clue. Which of these has digits that add up to 6?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "35",
+      "42",
+      "21"
+     ],
+     "answer": 1,
+     "ifNot": "4 plus 2 is 6. Check the others: 3 plus 5 is 8, and 2 plus 1 is 3."
+    }
+   },
+   {
+    "say": "Add the digits of each. 14 gives 5. 21 gives 3. 28 gives 10. 35 gives 8. 42 gives 6. 49 gives 13.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "14",
+         "21",
+         "28",
+         "35",
+         "42"
+        ],
+        [
+         "5",
+         "3",
+         "10",
+         "8",
+         "6"
+        ]
+       ],
+       "note": "Top: the multiple of 7. Below: its digits added"
+      }
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "49: 4 + 9 = 13",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Only 42 has digits that add up to 6. So the number is 42.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "42"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "42",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "42"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 24 also has digits that add up to 6. But 24 is not in the 7 times table. 42 is, because 7 times 6 is 42.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "24 is not a multiple of 7",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "7 × 6 = 42"
+     }
+    ]
+   },
+   {
+    "say": "With several clues, list the numbers that fit one clue. Then let the other clues cross numbers off."
+   }
+  ]
+ },
+ "G4A_PUZZLES_015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A pencil and an eraser cost 12 rupees together. Two pencils and an eraser cost 19 rupees. How much is the eraser?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "pencil + eraser = ₹12",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 pencils + eraser = ₹19",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 1.0,
+           "label": "pencil",
+           "tone": "a"
+          },
+          {
+           "units": 1.0,
+           "label": "eraser",
+           "tone": "b"
+          }
+         ],
+         "brace": "₹12"
+        },
+        {
+         "segments": [
+          {
+           "units": 1.0,
+           "label": "pencil",
+           "tone": "b"
+          },
+          {
+           "units": 1.0,
+           "label": "eraser",
+           "tone": "b"
+          },
+          {
+           "units": 1.0,
+           "label": "pencil",
+           "tone": "b"
+          }
+         ],
+         "brace": "₹19"
+        }
+       ],
+       "note": "How much does the eraser cost?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Compare the two purchases. What extra thing is in the second one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1 more pencil",
+      "nothing extra",
+      "1 more eraser"
+     ],
+     "answer": 0,
+     "ifNot": "Both have an eraser. The first has 1 pencil and the second has 2. So the only extra is 1 pencil."
+    }
+   },
+   {
+    "say": "The only difference is 1 extra pencil, and the price went up from 12 to 19. So a pencil costs 7 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "19 − 12 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "pencil = ₹7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A pencil and an eraser cost 12 rupees together, and the pencil is 7. So what do we work out for the eraser?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 − 7",
+      "19 − 7",
+      "12 ÷ 2"
+     ],
+     "answer": 0,
+     "ifNot": "The pencil and the eraser together make 12. Take the pencil's 7 away, and the eraser is left."
+    }
+   },
+   {
+    "say": "12 take away 7 is 5. So the eraser costs 5 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 − 7 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "eraser = ₹5",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "eraser = ₹5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check both purchases. 7 plus 5 is 12. And 7 plus 7 plus 5 is 19. Both fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "7 + 5 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "7 + 7 + 5 = 19"
+     }
+    ]
+   },
+   {
+    "say": "When two purchases are nearly the same, look at what is different. The difference in price belongs to the extra thing."
+   }
+  ]
+ },
+ "G4A_PUZZLES_016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "R is a hidden digit in the three-digit number 2 R 5. When that number is multiplied by 3, the answer is 735.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2R5 × 3 = 735",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "balance",
+       "left": "2R5 × 3",
+       "right": "735",
+       "note": "R stands for one digit"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Some number times 3 gives 735. How do we find that number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "735 × 3",
+      "735 ÷ 3",
+      "735 − 3"
+     ],
+     "answer": 1,
+     "ifNot": "Dividing undoes multiplying. So divide 735 by 3."
+    }
+   },
+   {
+    "say": "Split 735 into 600 and 135. 600 divided by 3 is 200. 135 divided by 3 is 45. So the number is 245.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "735 = 600 + 135"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "600 ÷ 3 = 200"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "135 ÷ 3 = 45"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "735 ÷ 3 = 245"
+     }
+    ]
+   },
+   {
+    "say": "So 2 R 5 is 245. Which digit is R?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "4",
+      "2"
+     ],
+     "answer": 1,
+     "ifNot": "R is the middle digit, in the tens place. The tens digit of 245 is 4."
+    }
+   },
+   {
+    "say": "R is in the tens place, and the tens digit of 245 is 4. So R is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "2R5 = 245",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "R = 4",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "R = 4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 245 times 3. 200 threes are 600 and 45 threes are 135. Together that is 735. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "245 × 3 = 735"
+     }
+    ]
+   },
+   {
+    "say": "To find a hidden digit, find the whole number first by undoing the sum. Then pick out the digit in the right place."
+   }
+  ]
+ },
+ "G4A_PUZZLES_017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Five children ran a race. We have three clues about the order they finished in. Who came second?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Dev: after Farah, before Esha",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Hari: between Dev and Esha",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Gita: last.   Who was 2nd?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Take the first clue. Dev finished after Farah but before Esha. So the order is Farah, then Dev, then Esha.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "Farah, Dev, Esha",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the second clue. Hari finished between Dev and Esha. What is the order now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Farah, Hari, Dev, Esha",
+      "Farah, Dev, Hari, Esha",
+      "Farah, Dev, Esha, Hari"
+     ],
+     "answer": 1,
+     "ifNot": "Between Dev and Esha means after Dev and before Esha. So Hari slots in right there."
+    }
+   },
+   {
+    "say": "Hari slots in between Dev and Esha: Farah, Dev, Hari, Esha.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Farah, Dev, Hari, Esha",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Gita finished last. So the full order is Farah, Dev, Hari, Esha, Gita.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "Farah, Dev, Hari, Esha, Gita",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now count from the front. Farah is 1st, and Dev is 2nd.",
+    "board": [
+     {
+      "op": "note",
+      "line": "l6",
+      "target": {
+       "text": "Farah"
+      },
+      "text": "1st",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "l6",
+      "target": {
+       "text": "Dev"
+      },
+      "text": "2nd",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "2nd: Dev",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "2nd: Dev"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "For an order puzzle, write the names in a line and slot each new clue into it. Then just read off the place you want."
+   }
+  ]
+ },
+ "G4A_PUZZLES_018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "On a dice, opposite faces always add up to 7. Neha can see the faces 1, 2 and 3. What do the three hidden faces add up to?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Opposite faces add up to 7.  She sees 1, 2, 3.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "1",
+         "?"
+        ],
+        [
+         "2",
+         "?"
+        ],
+        [
+         "3",
+         "?"
+        ]
+       ],
+       "headers": [
+        "Face she sees",
+        "Opposite face"
+       ],
+       "note": "Opposite faces always add up to 7"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Each hidden face is opposite a face she can see. Which face is opposite the 1?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "7",
+      "6"
+     ],
+     "answer": 2,
+     "ifNot": "The two opposite faces add up to 7. 1 plus what makes 7? It is 6."
+    }
+   },
+   {
+    "say": "Opposite 1 is 6. Opposite 2 is 5. Opposite 3 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "7 − 1 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "7 − 2 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "7 − 3 = 4"
+     }
+    ]
+   },
+   {
+    "say": "Now add the hidden faces. 6 plus 5 plus 4 is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6 + 5 + 4 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is another way to check. All six faces add up to 21. The faces she sees add up to 6. And 21 take away 6 is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1 + 2 + 3 + 4 + 5 + 6 = 21"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "1 + 2 + 3 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "21 − 6 = 15"
+     }
+    ]
+   },
+   {
+    "say": "The slip here is to add the faces she can see. Read the question: we want the faces she cannot see."
+   },
+   {
+    "say": "So the hidden faces total 15. Use the rule to find each hidden face, then add them up."
+   }
+  ]
+ },
+ "G4A_PUZZLES_019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A magic square with many blank boxes. Every row, column and diagonal has the same total. We must find Q.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Magic square.  Q = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "P",
+         "16",
+         "9"
+        ],
+        [
+         "□",
+         "11",
+         "□"
+        ],
+        [
+         "13",
+         "□",
+         "Q"
+        ]
+       ],
+       "note": "Every row, column and diagonal has the same total. Q = ?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "We need the magic total, so we need one complete line. Which line is complete?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Row 1",
+      "Row 3",
+      "the diagonal 9, 11, 13"
+     ],
+     "answer": 2,
+     "ifNot": "Row 1 hides P, and Row 3 has a blank and Q. But the diagonal from 9 down to 13 has all three numbers."
+    }
+   },
+   {
+    "say": "9 plus 11 plus 13 is 33. So every line adds up to 33.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 + 11 + 13 = 33"
+     }
+    ]
+   },
+   {
+    "say": "Row 1 is P, 16 and 9. 16 plus 9 is 25, and 33 take away 25 is 8. So P is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "16 + 9 = 25"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "33 − 25 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "P = 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now we want Q. Which line holds Q and two numbers we know?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the last column",
+      "Row 3",
+      "the diagonal P, 11, Q"
+     ],
+     "answer": 2,
+     "ifNot": "Row 3 and the last column each have a blank box as well as Q. The diagonal from P to Q is missing only Q."
+    }
+   },
+   {
+    "say": "The diagonal is 8, 11 and Q. 8 plus 11 is 19, and 33 take away 19 is 14. So Q is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 + 11 = 19"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "33 − 19 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "Q = 14",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "Q = 14"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the whole square filled in. Every row, column and diagonal makes 33.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "8",
+         "16",
+         "9"
+        ],
+        [
+         "12",
+         "11",
+         "10"
+        ],
+        [
+         "13",
+         "6",
+         "14"
+        ]
+       ],
+       "note": "Every line adds up to 33"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Don't forget the diagonals! When rows and columns have too many blanks, a diagonal may be the line that helps."
+   }
+  ]
+ },
+ "G4A_PUZZLES_020": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A two-digit number ending in 3 is multiplied by a two-digit number ending in 4. We don't know the other digits. Which choice can be the product?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(□3) × (□4) = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "1037     9872     1032     172",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We can't see the hidden digits. But we can still work out the last digit of the product. What is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2, because 3 × 4 = 12",
+      "7, because 3 + 4 = 7",
+      "4, the bigger digit"
+     ],
+     "answer": 0,
+     "ifNot": "The last digit of a product comes only from the last digits of the two numbers. 3 times 4 is 12, so the product ends in 2."
+    }
+   },
+   {
+    "say": "3 times 4 is 12, so the product must end in 2. One choice ends in 7, so we cross it out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 4 = 12"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "1037"
+      },
+      "note": "ends in 7"
+     }
+    ]
+   },
+   {
+    "say": "Next, the size. What is the smallest two-digit number that ends in 3?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "03",
+      "13",
+      "23"
+     ],
+     "answer": 1,
+     "ifNot": "A two-digit number cannot start with 0. So the smallest one ending in 3 is 13."
+    }
+   },
+   {
+    "say": "The smallest numbers that fit are 13 and 14. Their product is 182. So 172 is too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "13 × 14 = 182"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "172"
+      },
+      "note": "too small"
+     }
+    ]
+   },
+   {
+    "say": "The largest numbers that fit are 93 and 94. Their product is 8742. So 9872 is too big.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "93 × 94 = 8742"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "9872"
+      },
+      "note": "too big"
+     }
+    ]
+   },
+   {
+    "say": "Only one choice is left: 1032. It ends in 2, and it is the right size.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "1032"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "1032",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "1032"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And it really can be made. For example, 43 times 24 is exactly 1032.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "43 × 24 = 1032"
+     }
+    ]
+   },
+   {
+    "say": "Check the last digit, then the smallest and largest products. Those three tests can settle a puzzle without knowing the hidden digits."
+   }
+  ]
+ },
+ "G4A_PUZZLES_021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "P and Q are two different digits. P plus P plus P gives the two-digit number Q P. We want P plus Q.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "P + P + P = QP",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "P plus P plus P is 3 times P. And look at the answer, Q P: its last digit is P again. So 3 times P must end in P.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × P ends in the digit P",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "and 3 × P has two digits",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are only nine digits to try. Here is each one, times 3.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "1",
+         "2",
+         "3",
+         "4",
+         "5"
+        ],
+        [
+         "3",
+         "6",
+         "9",
+         "12",
+         "15"
+        ]
+       ],
+       "note": "Top: P.   Below: 3 × P"
+      }
+     },
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "6",
+         "7",
+         "8",
+         "9"
+        ],
+        [
+         "18",
+         "21",
+         "24",
+         "27"
+        ]
+       ],
+       "note": "Top: P.   Below: 3 × P"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Which answer is a two-digit number that ends in the digit we started with?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "18, from P = 6",
+      "15, from P = 5",
+      "12, from P = 4"
+     ],
+     "answer": 1,
+     "ifNot": "15 ends in 5, and it came from 5. The others end in a digit that is different from the one we started with."
+    }
+   },
+   {
+    "say": "5 plus 5 plus 5 is 15. So P is 5. And Q P is 15, so Q is 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 + 5 + 5 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "P = 5,  Q = 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Careful with the last step. The question wants P plus Q. That is 5 plus 1, which is 6. Not 15, and not just 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "5 + 1 = 6",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When a letter puzzle has only a few possible digits, test them all in a tidy table. Then answer exactly what was asked."
+   }
+  ]
+ },
+ "G4A_PUZZLES_022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A 3-digit riddle. The hundreds digit is double the ones digit. The tens digit is the hundreds digit plus the ones digit. All three add up to 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "hundreds = double the ones",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "tens = hundreds + ones",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "digits add up to 12",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Everything depends on the ones digit. So let's try a ones digit and build the number from it."
+   },
+   {
+    "say": "Try ones digit 1. The hundreds digit is double that, 2. The tens digit is 2 plus 1, which is 3. But the digits add up to only 6. Too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "ones 1:  hundreds 2,  tens 3",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 + 3 + 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Try ones digit 2. The hundreds digit is double that, 4. So what is the tens digit?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6",
+      "8",
+      "2"
+     ],
+     "answer": 0,
+     "ifNot": "The tens digit is the hundreds digit plus the ones digit. That is 4 plus 2."
+    }
+   },
+   {
+    "say": "The tens digit is 4 plus 2, which is 6. Now add all three digits: 4 plus 6 plus 2 is 12. Every clue fits!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "ones 2:  hundreds 4,  tens 6",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "4 + 6 + 2 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Put the digits in their places: 4 hundreds, 6 tens, 2 ones. The number is 462.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "462",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "462"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the order. The same digits the other way round would not fit, because the hundreds digit must be double the ones digit."
+   },
+   {
+    "say": "When clues link the digits together, pick one digit to try. Build the rest from it, and test the total."
+   }
+  ]
+ },
+ "G4A_PUZZLES_023": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A farmer has hens and goats. Together they have 10 heads and 28 legs. How many goats are there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "10 heads, 28 legs.  Goats = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "10 heads means 10 animals. Here is a clever trick: pretend that all 10 are hens. Hens have 2 legs, so that would be 20 legs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 × 2 = 20"
+     }
+    ]
+   },
+   {
+    "say": "But there are 28 legs, which is 8 more than 20. Where do the 8 extra legs come from?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "28 − 20 = 8"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the goats: 2 extra legs each",
+      "a counting mistake",
+      "some extra hens"
+     ],
+     "answer": 0,
+     "ifNot": "A goat has 4 legs and a hen has 2. So every goat brings 2 more legs than we counted."
+    }
+   },
+   {
+    "say": "Each goat has 2 more legs than a hen. So 8 extra legs means 8 divided by 2 goats. That is 4 goats.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 − 2 = 2"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "8 ÷ 2 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So the farmer has 4 goats.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4 goats",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "4 goats"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check. 4 goats and 6 hens make 10 animals. The goats have 16 legs and the hens have 12. And 16 plus 12 is 28.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "10 − 4 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "4 × 4 = 16"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "6 × 2 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "16 + 12 = 28"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 6 is the number of hens. The question asks for the goats, and that is 4."
+   },
+   {
+    "say": "Pretend they are all the same kind, see how many legs are missing, and share the extra legs out. That trick works every time."
+   }
+  ]
+ },
+ "G4A_PUZZLES_024": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The digits of a 2-digit number add up to 9. Swap the two digits, and the new number is 27 more. What is the first number?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "digits add up to 9",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "swap the digits: 27 more",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "After the swap the number gets bigger. So in the first number, which digit is the smaller one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the ones digit",
+      "the tens digit",
+      "they are equal"
+     ],
+     "answer": 1,
+     "ifNot": "The swap moves the ones digit into the tens place. If the number grows, the ones digit was the bigger one."
+    }
+   },
+   {
+    "say": "So we want digits that add up to 9, with the smaller digit in the tens place. That gives 18, 27, 36 and 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "18, 27, 36, 45",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Swap the digits of each one and subtract. 81 minus 18 is 63. 72 minus 27 is 45. 63 minus 36 is 27. 54 minus 45 is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "81 − 18 = 63"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "72 − 27 = 45"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "63 − 36 = 27"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "54 − 45 = 9"
+     }
+    ]
+   },
+   {
+    "say": "Only one of them grows by exactly 27. It is 36, which turns into 63.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "27"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "36"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the first number is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "36",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "36"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 63 is the number after the swap. The question asks for the first number, the smaller one."
+   },
+   {
+    "say": "List the numbers that fit the first clue, then test each one against the second clue. A short list makes a hard puzzle easy."
+   }
+  ]
+ },
+ "G4A_PUZZLES_025": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A laddoo is hidden in one of three boxes. Each box has a label, but only one of the three labels is true. Where is the laddoo?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Box 1 says: it is in this box",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Box 2 says: it is not in this box",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "Box 3 says: it is not in Box 1",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We can't tell which label to trust. So let's test each box in turn, and count how many labels would be true."
+   },
+   {
+    "say": "Suppose it is in Box 1. Then label 1 is true. Label 2 says it is not in Box 2, and that is true as well. Does Box 1 fit?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no, 2 labels would be true",
+      "yes, label 1 is true"
+     ],
+     "answer": 0,
+     "ifNot": "Only one label may be true. With the laddoo in Box 1, labels 1 and 2 are both true. That is one too many."
+    }
+   },
+   {
+    "say": "Box 1 gives two true labels, so it is out. Now suppose it is in Box 3. Label 2 is true, and label 3 is true. Two again, so Box 3 is out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "in Box 1: labels 1 and 2 are true",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "in Box 3: labels 2 and 3 are true",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now suppose it is in Box 2. Label 1 is not true. Label 2 says it is not in this box, so that is not true either. Label 3 is true.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "in Box 2: only label 3 is true",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Exactly one true label! That is what the puzzle needs. So the laddoo is in Box 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "Box 2",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "Box 2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here are all three tests side by side. Only one row has exactly one true label.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "Box 1",
+         "true",
+         "true",
+         "not true"
+        ],
+        [
+         "Box 3",
+         "not true",
+         "true",
+         "true"
+        ],
+        [
+         "Box 2",
+         "not true",
+         "not true",
+         "true"
+        ]
+       ],
+       "headers": [
+        "If it is in",
+        "Label 1",
+        "Label 2",
+        "Label 3"
+       ],
+       "note": "Only one label may be true"
+      }
+     }
+    ]
+   },
+   {
+    "say": "When you can't trust the clues, don't guess. Test each possibility and see which one fits the rule."
+   }
+  ]
+ },
+ "PYQ_2018_Q24": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A boy has six cards: three 4s and three 9s. He uses 5 of them to make a 3-digit number and a 2-digit number. Which choice can be their difference?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Cards: 4, 4, 4, 9, 9, 9.  Use 5 cards.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3-digit number − 2-digit number = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "359     450     550     150",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Every digit is a 4 or a 9. So the ones digit of the answer comes from a 4 or a 9, take away a 4 or a 9. What can it be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "0 or 5",
+      "4 or 9",
+      "any digit"
+     ],
+     "answer": 0,
+     "ifNot": "4 take away 4 is 0, and 9 take away 9 is 0. 9 take away 4 is 5. So only 0 or 5 can appear."
+    }
+   },
+   {
+    "say": "Equal digits leave 0. 9 take away 4 leaves 5. And 4 take away 9 borrows a ten: 14 take away 9 is 5. So the answer ends in 0 or 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 − 4 = 0"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "9 − 4 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "14 − 9 = 5"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "359"
+      },
+      "note": "ends in 9"
+     }
+    ]
+   },
+   {
+    "say": "Now the size. Suppose the 3-digit number starts with 4. The smallest difference is 444 take away 99, which is 345. The largest is 499 take away 44, which is 455.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "444 − 99 = 345"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "499 − 44 = 455"
+     }
+    ]
+   },
+   {
+    "say": "So 150 is too small. And if the 3-digit number starts with 9, the difference is at least 944 take away 99, which is 845. 550 falls in the gap.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "944 − 99 = 845"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "150"
+      },
+      "note": "too small"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "550"
+      },
+      "note": "between 455 and 845"
+     }
+    ]
+   },
+   {
+    "say": "Only 450 is left. But can he really make it? Which of these works with his cards?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "499 − 49",
+      "494 − 44",
+      "449 − 99"
+     ],
+     "answer": 0,
+     "ifNot": "494 take away 44 does make 450, but it needs four 4s, and he has only three. 499 take away 49 uses two 4s and three 9s."
+    }
+   },
+   {
+    "say": "499 take away 49 is 450. It uses two 4s and three 9s, and he has those cards. So the difference can be 450.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "450"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "499 − 49 = 450",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "450"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When you can't try every case, test the last digit and the size. Then make sure the choice that is left can really be built."
+   }
+  ]
+ },
+ "PYQ_2018_Q33": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A palindrome reads the same backwards. A 3-digit palindrome is added to 2018, and the total is a 4-digit palindrome. We want the sum of the 3-digit number's digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3-digit palindrome + 2018 = 4-digit palindrome",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "sum of its digits = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, how big is the total? The smallest 3-digit palindrome is 101 and the largest is 999. So the total is between 2119 and 3017.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2018 + 101 = 2119"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2018 + 999 = 3017"
+     }
+    ]
+   },
+   {
+    "say": "Could the total start with 3? The only palindrome that small is 3003. But 3003 take away 2018 is 985, and 985 is not a palindrome.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3003 − 2018 = 985"
+     }
+    ]
+   },
+   {
+    "say": "So the total starts with 2. It is a palindrome, so it ends with 2 as well. Now, 2018 ends in 8. So what must our 3-digit number end in?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "total: 2 _ _ 2",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6",
+      "0",
+      "4"
+     ],
+     "answer": 2,
+     "ifNot": "8 plus 4 makes a number that ends in 2. So the ones digit must be 4."
+    }
+   },
+   {
+    "say": "8 plus 4 is 12, which ends in 2. So our palindrome ends in 4, and it must start with 4 too. It looks like 4, something, 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "8 + 4 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "palindrome: 4 ? 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Try the middle digit. 404 gives 2422. 414 gives 2432. 424 gives 2442. Only the last one reads the same backwards!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "404 + 2018 = 2422"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "414 + 2018 = 2432"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "424 + 2018 = 2442"
+     },
+     {
+      "op": "mark",
+      "line": "l11",
+      "target": {
+       "text": "2442"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "So the 3-digit palindrome is 424. Its digits are 4, 2 and 4, and they add up to 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "4 + 2 + 4 = 10",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l12",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Use the ends first. The size gave us the first digit of the total, and the ones digits gave us the last digit. Then only a few tries were left."
+   }
+  ]
+ },
+ "PYQ_2019_Q31": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In this 3 by 3 magic square, every row, column and diagonal adds up to 54. Which number can be in the central box?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 by 3 magic square.  Every line adds up to 54.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Central box = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "□",
+         "□",
+         "□"
+        ],
+        [
+         "□",
+         "?",
+         "□"
+        ],
+        [
+         "□",
+         "□",
+         "□"
+        ]
+       ],
+       "note": "Every line of 3 boxes adds up to 54"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Let's learn from a magic square we know well. This one uses 1 to 9. Every line adds up to 15, and the centre is 5.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "2",
+         "7",
+         "6"
+        ],
+        [
+         "9",
+         "5",
+         "1"
+        ],
+        [
+         "4",
+         "3",
+         "8"
+        ]
+       ],
+       "note": "Every line adds up to 15"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Look at 15 and 5. How is the centre related to the line total?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it is one third of it",
+      "it is 10 less than it",
+      "it is half of it"
+     ],
+     "answer": 0,
+     "ifNot": "3 times 5 is 15. So the centre is the line total divided by 3."
+    }
+   },
+   {
+    "say": "15 divided by 3 is 5. And this is true for every 3 by 3 magic square: the centre is the line total divided by 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 ÷ 3 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "centre = line total ÷ 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So divide 54 by 3. Split 54 into 30 and 24. 30 divided by 3 is 10, and 24 divided by 3 is 8. Together that is 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "30 ÷ 3 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "24 ÷ 3 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "54 ÷ 3 = 18",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "18"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: three 18s make 54. So the central box holds 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "18 + 18 + 18 = 54"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to halve the total. A line has 3 boxes, so the centre is one third of it, not one half."
+   },
+   {
+    "say": "Remember this for any 3 by 3 magic square: the line total is 3 times the centre, and the centre is the line total divided by 3."
+   }
+  ]
+ },
+ "Q_CH15_001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "What makes a square of numbers magic? Let's look at a real 3 by 3 magic square and find out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "In a 3 × 3 magic square, the sums are ... ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "m19",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "2",
+         "7",
+         "6"
+        ],
+        [
+         "9",
+         "5",
+         "1"
+        ],
+        [
+         "4",
+         "3",
+         "8"
+        ]
+       ],
+       "note": "A magic square made from 1 to 9"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Add each row. 2 plus 7 plus 6 is 15. 9 plus 5 plus 1 is 15. 4 plus 3 plus 8 is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 + 7 + 6 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9 + 5 + 1 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 + 3 + 8 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Now add the first column: 2 plus 9 plus 4. What do you expect?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "a smaller number",
+      "a bigger number",
+      "15 again"
+     ],
+     "answer": 2,
+     "ifNot": "2 plus 9 plus 4 also makes 15. The same as the rows."
+    }
+   },
+   {
+    "say": "The column makes 15 too. And the diagonals: 2 plus 5 plus 8 is 15, and 6 plus 5 plus 4 is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 + 9 + 4 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "2 + 5 + 8 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "6 + 5 + 4 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Every row, every column and both diagonals give the same sum. That is the magic."
+   },
+   {
+    "say": "Careful: 15 is the sum only for this square, built from 1 to 9. Another magic square can have a different sum. What never changes is that the sums match."
+   },
+   {
+    "say": "So in a magic square, the sums of the rows, columns and diagonals are equal.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "The sums are equal",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "The sums are equal"
+      },
+      "shape": "circle"
+     }
+    ]
+   }
+  ]
+ },
+ "Q_CH15_002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The magic constant is the sum of each row. How is it tied to the number in the central box? Let's test with a square we know.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Magic constant = ? × central box number",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "m19",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "2",
+         "7",
+         "6"
+        ],
+        [
+         "9",
+         "5",
+         "1"
+        ],
+        [
+         "4",
+         "3",
+         "8"
+        ]
+       ],
+       "note": "A magic square made from 1 to 9"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Add a row: 2 plus 7 plus 6 is 15. So the magic constant here is 15. And the central box holds 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 + 7 + 6 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "centre: 5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Look at 15 and 5. How do you get 15 from 5?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 × 5",
+      "3 × 5",
+      "9 × 5"
+     ],
+     "answer": 1,
+     "ifNot": "2 times 5 is only 10. 3 times 5 is 15. So the constant is 3 times the centre."
+    }
+   },
+   {
+    "say": "15 is 3 times 5. And that makes sense: a row has 3 boxes, and the centre number is the fair share for each box.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 × 5 = 15"
+     }
+    ]
+   },
+   {
+    "say": "One square is not proof, so test another. In this magic square the centre is 6, and the top row is 9 plus 2 plus 7, which is 18. And 3 times 6 is 18.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "9",
+         "2",
+         "7"
+        ],
+        [
+         "4",
+         "6",
+         "8"
+        ],
+        [
+         "5",
+         "10",
+         "3"
+        ]
+       ],
+       "note": "Another magic square"
+      }
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "9 + 2 + 7 = 18"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3 × 6 = 18"
+     }
+    ]
+   },
+   {
+    "say": "It works again. So the magic constant equals 3 times the central box number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "Magic constant = 3 × central box number",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "Magic constant = 3 × central box number"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 9 times the centre gives the sum of all nine boxes. One row is only 3 times the centre."
+   },
+   {
+    "say": "To discover a rule, test it on an example you know well. Then test it once more on a different one."
+   }
+  ]
+ },
+ "Q_CH15_003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This time we add all nine numbers of a 3 by 3 magic square. How is that total tied to the central box? Let's test with a square we know.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Sum of all nine numbers = ? × central box number",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "m19",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "2",
+         "7",
+         "6"
+        ],
+        [
+         "9",
+         "5",
+         "1"
+        ],
+        [
+         "4",
+         "3",
+         "8"
+        ]
+       ],
+       "note": "A magic square made from 1 to 9"
+      }
+     }
+    ]
+   },
+   {
+    "say": "This square has three rows, and each row adds up to 15. So all nine numbers add up to 15 plus 15 plus 15, which is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15 + 15 + 15 = 45"
+     }
+    ]
+   },
+   {
+    "say": "The centre is 5. So 45 is how many times the centre?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 times",
+      "6 times",
+      "9 times"
+     ],
+     "answer": 2,
+     "ifNot": "9 times 5 is 45. 3 times 5 is only 15, and that is just one row."
+    }
+   },
+   {
+    "say": "9 times 5 is 45. So here the sum of all nine numbers is 9 times the centre.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9 × 5 = 45"
+     }
+    ]
+   },
+   {
+    "say": "Here is why it always works. One row adds up to 3 times the centre. There are 3 rows. And 3 times 3 is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "one row = 3 × centre",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "three rows = 3 × 3 × centre",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3 × 3 = 9"
+     }
+    ]
+   },
+   {
+    "say": "So the sum of all nine numbers equals 9 times the central box number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "Sum of all nine = 9 × central box number",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "Sum of all nine = 9 × central box number"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at 3 times the centre. That is one row only. The question asks for all nine numbers, which is three rows."
+   }
+  ]
+ },
+ "Q_CH15_004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This magic square hides two letters, A and B. Every row, column and diagonal adds up to the same total. Let's find both.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Magic square.  Find A and B.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "9",
+         "15",
+         "6"
+        ],
+        [
+         "A",
+         "10",
+         "13"
+        ],
+        [
+         "14",
+         "5",
+         "B"
+        ]
+       ],
+       "note": "A magic square. Find A and B"
+      }
+     }
+    ]
+   },
+   {
+    "say": "First we need the magic total. Which row can give it to us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the bottom row",
+      "the middle row",
+      "the top row: 9, 15, 6"
+     ],
+     "answer": 2,
+     "ifNot": "The middle row hides A and the bottom row hides B. The top row is complete."
+    }
+   },
+   {
+    "say": "9 plus 15 plus 6 is 30. So every line adds up to 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 + 15 + 6 = 30"
+     }
+    ]
+   },
+   {
+    "say": "The middle row is A, 10 and 13. 10 plus 13 is 23, and 30 take away 23 is 7. So A is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "10 + 13 = 23"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "30 − 23 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "A = 7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The bottom row is 14, 5 and B. So what is B?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12",
+      "7",
+      "11"
+     ],
+     "answer": 2,
+     "ifNot": "Add 14 and 5 first. Then see how many more are needed to reach 30."
+    }
+   },
+   {
+    "say": "14 plus 5 is 19, and 30 take away 19 is 11. So B is 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "14 + 5 = 19"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "30 − 19 = 11"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "B = 11",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Check A with the first column: 9 plus 7 plus 14 is 30. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "9 + 7 + 14 = 30"
+     }
+    ]
+   },
+   {
+    "say": "So A is 7 and B is 11. Careful not to swap them: A sits in the row with 10 and 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "A = 7, B = 11",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "A = 7, B = 11"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Find the magic total from a full line. Then each letter is the total, take away the other two numbers in its line."
+   }
+  ]
+ },
+ "Q_CH15_006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A magic square has 4 and 8 in the top corners and 5 in the centre. When it is finished, which of the four choices will not be in it?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Top row: 4, ?, 8.   Centre: 5.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "4",
+         "?",
+         "8"
+        ],
+        [
+         "?",
+         "5",
+         "?"
+        ],
+        [
+         "?",
+         "?",
+         "?"
+        ]
+       ],
+       "note": "Complete the magic square. Which number is NOT used?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "We have no complete line. Can we still find the magic total?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no, we need a full row",
+      "yes: 3 times the centre",
+      "yes: 4 plus 8"
+     ],
+     "answer": 1,
+     "ifNot": "In a 3 by 3 magic square, every line adds up to 3 times the centre number."
+    }
+   },
+   {
+    "say": "3 times 5 is 15. So every row, column and diagonal adds up to 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 5 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Top row: 4 plus 8 is 12, so the box between them is 15 take away 12, which is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 + 8 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "15 − 12 = 3"
+     }
+    ]
+   },
+   {
+    "say": "Every line through the centre already has the 5. So its two ends must add up to 10. Opposite 4 goes 6. Opposite 8 goes 2. Opposite 3 goes 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "15 − 5 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4 + 6 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "8 + 2 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "3 + 7 = 10"
+     }
+    ]
+   },
+   {
+    "say": "So the bottom row is 2, 7, 6. Two boxes are left, both in the middle row.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "4",
+         "3",
+         "8"
+        ],
+        [
+         "?",
+         "5",
+         "?"
+        ],
+        [
+         "2",
+         "7",
+         "6"
+        ]
+       ],
+       "note": "Every line adds up to 15"
+      }
+     }
+    ]
+   },
+   {
+    "say": "First column: 4 and 2 are there, so the middle box is 9. Last column: 8 and 6 are there, so the middle box is 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "15 − 4 − 2 = 9"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "15 − 8 − 6 = 1"
+     }
+    ]
+   },
+   {
+    "say": "The finished square uses 1, 2, 3, 4, 5, 6, 7, 8 and 9. Every box was forced by the total of 15, so nothing bigger than 9 can fit.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f3",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "4",
+         "3",
+         "8"
+        ],
+        [
+         "9",
+         "5",
+         "1"
+        ],
+        [
+         "2",
+         "7",
+         "6"
+        ]
+       ],
+       "note": "The finished square"
+      }
+     }
+    ]
+   },
+   {
+    "say": "So 3, 6 and 9 are all used. The number that is not used is 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "11 is not used",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l11",
+      "target": {
+       "text": "11"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The key idea: once you know the centre, you know the total. And once you know the total, every box is fixed."
+   }
+  ]
+ },
+ "Q_CH15_007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The nine numbers from 3 to 11 are put into a magic square. Which of them goes in the central box?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Numbers 3 to 11 in a magic square.  Centre = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "numberLine",
+       "min": 3,
+       "max": 11,
+       "step": 1,
+       "note": "The numbers 3 to 11 make a magic square. Which goes in the centre?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Write the nine numbers in order: 3, 4, 5, 6, 7, 8, 9, 10, 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3, 4, 5, 6, 7, 8, 9, 10, 11",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The centre of a magic square holds a special one of these numbers. Which one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the smallest number",
+      "the middle number",
+      "the biggest number"
+     ],
+     "answer": 1,
+     "ifNot": "The centre sits in four lines at once. So it must be the fair, middle-sized number, not the biggest or the smallest."
+    }
+   },
+   {
+    "say": "The middle number has four numbers before it and four after it. That is 7.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "group",
+      "line": "l2",
+      "targets": [
+       {
+        "text": "3"
+       },
+       {
+        "text": "4"
+       },
+       {
+        "text": "5"
+       },
+       {
+        "text": "6"
+       }
+      ],
+      "label": "four before"
+     },
+     {
+      "op": "group",
+      "line": "l2",
+      "targets": [
+       {
+        "text": "8"
+       },
+       {
+        "text": "9"
+       },
+       {
+        "text": "10"
+       },
+       {
+        "text": "11"
+       }
+      ],
+      "label": "four after"
+     }
+    ]
+   },
+   {
+    "say": "Let's check with the totals. Pair the ends: 3 and 11 make 14, and so do 4 and 10. 4 pairs of 14 make 56, and the 7 in the middle brings it to 63.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 + 11 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 × 14 = 56"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "56 + 7 = 63"
+     }
+    ]
+   },
+   {
+    "say": "Three rows share the 63, so each row adds up to 21. And the centre is a row total divided by 3. 21 divided by 3 is 7. It agrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "63 ÷ 3 = 21"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "21 ÷ 3 = 7"
+     }
+    ]
+   },
+   {
+    "say": "So the number in the central box is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "Centre = 7",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "Centre = 7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When a magic square is made from nine numbers in a row, the middle number of the list always sits in the centre."
+   }
+  ]
+ },
+ "Q_CH15_008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A 3 by 3 magic square has 8 in the centre. We must find its magic constant, the total of each line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Centre: 8.   Magic constant = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "□",
+         "□",
+         "□"
+        ],
+        [
+         "□",
+         "8",
+         "□"
+        ],
+        [
+         "□",
+         "□",
+         "□"
+        ]
+       ],
+       "note": "Magic constant = ?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Think of the magic square made from 1 to 9. Its centre is 5 and every line adds up to 15. And 15 is 3 times 5.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "m19",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "2",
+         "7",
+         "6"
+        ],
+        [
+         "9",
+         "5",
+         "1"
+        ],
+        [
+         "4",
+         "3",
+         "8"
+        ]
+       ],
+       "note": "A magic square made from 1 to 9"
+      }
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 5 = 15"
+     }
+    ]
+   },
+   {
+    "say": "That rule holds for every 3 by 3 magic square. So with 8 in the centre, what do we work out?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9 × 8",
+      "2 × 8",
+      "3 × 8"
+     ],
+     "answer": 2,
+     "ifNot": "The magic constant is 3 times the centre, because a line has 3 boxes. So it is 3 times 8."
+    }
+   },
+   {
+    "say": "3 times 8 is 24. So the magic constant is 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 × 8 = 24",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "24"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is one magic square with 8 in the centre. 5 plus 10 plus 9 is 24, and every other line makes 24 as well.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "5",
+         "10",
+         "9"
+        ],
+        [
+         "12",
+         "8",
+         "4"
+        ],
+        [
+         "7",
+         "6",
+         "11"
+        ]
+       ],
+       "note": "Every line adds up to 24"
+      }
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 + 10 + 9 = 24"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 9 times 8 would be the sum of all nine boxes. One line is only 3 times the centre."
+   },
+   {
+    "say": "So remember: in a 3 by 3 magic square, the magic constant is always 3 times the number in the centre."
+   }
+  ]
+ },
+ "Q_CH15_009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This magic square has fractions in it. Every row, column and diagonal adds up to the same total. We must find the number in the middle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Magic square with fractions. Find the ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "2",
+         "7/3",
+         "2/3"
+        ],
+        [
+         "1/3",
+         "?",
+         "3"
+        ],
+        [
+         "8/3",
+         "1",
+         "4/3"
+        ]
+       ],
+       "note": "Every row, column and diagonal has the same total"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The top row is complete: 2, 7 thirds and 2 thirds. To add them, turn everything into thirds. 2 wholes is 6 thirds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 = 6/3"
+     }
+    ]
+   },
+   {
+    "say": "6 thirds plus 7 thirds plus 2 thirds is 15 thirds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6/3 + 7/3 + 2/3 = 15/3"
+     }
+    ]
+   },
+   {
+    "say": "15 thirds. What is that as a whole number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "5",
+      "45"
+     ],
+     "answer": 1,
+     "ifNot": "3 thirds make 1 whole. So 15 thirds is 15 divided by 3, which is 5."
+    }
+   },
+   {
+    "say": "So every line adds up to 5. Now the middle row: 1 third, the gap, and 3. Write 3 as 9 thirds. 1 third plus 9 thirds is 10 thirds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "15/3 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 = 9/3"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1/3 + 9/3 = 10/3"
+     }
+    ]
+   },
+   {
+    "say": "The row must reach 15 thirds, and we have 10 thirds. How much more do we need?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "25/3",
+      "5/3"
+     ],
+     "answer": 2,
+     "ifNot": "15 thirds take away 10 thirds leaves 5 thirds."
+    }
+   },
+   {
+    "say": "15 thirds take away 10 thirds is 5 thirds. So the missing number is 5 thirds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "15/3 − 10/3 = 5/3",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "5/3",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 5 is the total of each line. The missing number is 5 thirds, which is much smaller."
+   },
+   {
+    "say": "Check with the middle column: 7 thirds plus 5 thirds plus 1 whole is 15 thirds. With fractions, put everything in the same parts first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "7/3 + 5/3 + 3/3 = 15/3"
+     }
+    ]
+   }
+  ]
+ },
+ "Q_CH15_010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In this square every row, column and diagonal has the same sum. Three letters are hiding: X, Y and Z. We want all three added together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Equal sums.  X + Y + Z = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "Z",
+         "□",
+         "4"
+        ],
+        [
+         "□",
+         "Y",
+         "15"
+        ],
+        [
+         "X",
+         "□",
+         "8"
+        ]
+       ],
+       "note": "Rows, columns and diagonals have equal sums. X + Y + Z = ?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "We need the magic sum first. Which line is complete?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the last column: 4, 15, 8",
+      "the middle row",
+      "the top row"
+     ],
+     "answer": 0,
+     "ifNot": "Every row has a blank box or a letter. The last column has three numbers: 4, 15 and 8."
+    }
+   },
+   {
+    "say": "4 plus 15 plus 8 is 27. So every line adds up to 27.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 + 15 + 8 = 27"
+     }
+    ]
+   },
+   {
+    "say": "Y is in the centre. And the centre is always the magic sum divided by 3. 27 divided by 3 is 9. So Y is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "27 ÷ 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "Y = 9",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "One diagonal is Z, Y and 8. We know Y is 9. So what is Z?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "17",
+      "10",
+      "19"
+     ],
+     "answer": 1,
+     "ifNot": "9 plus 8 is 17. And 27 take away 17 is 10."
+    }
+   },
+   {
+    "say": "9 plus 8 is 17, and 27 take away 17 is 10. So Z is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "9 + 8 = 17"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "27 − 17 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "Z = 10",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The other diagonal is 4, Y and X. 4 plus 9 is 13, and 27 take away 13 is 14. So X is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "4 + 9 = 13"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "27 − 13 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "X = 14",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop early. The question wants all three letters added: 14 plus 9 plus 10 is 33.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "14 + 9 + 10 = 33",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l11",
+      "target": {
+       "text": "33"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the whole square. Every line makes 27. Find the sum, then the centre, then use the diagonals.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "10",
+         "13",
+         "4"
+        ],
+        [
+         "3",
+         "9",
+         "15"
+        ],
+        [
+         "14",
+         "5",
+         "8"
+        ]
+       ],
+       "note": "Every line adds up to 27"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "Q_CH15_011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Three columns of numbers, and one gap. Each column follows the same secret rule, going down.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Each column follows the same rule. Find the ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "4",
+         "6",
+         "8"
+        ],
+        [
+         "3",
+         "4",
+         "?"
+        ],
+        [
+         "49",
+         "100",
+         "169"
+        ]
+       ],
+       "note": "Each column follows the same rule. Find the missing number"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The first column is 4, 3 and 49. The second is 6, 4 and 100. Which rule fits both?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply, then add 37",
+      "add, then times itself",
+      "subtract, then times 49"
+     ],
+     "answer": 1,
+     "ifNot": "4 plus 3 is 7, and 7 times 7 is 49. 6 plus 4 is 10, and 10 times 10 is 100."
+    }
+   },
+   {
+    "say": "4 plus 3 is 7, and 7 times 7 is 49. 6 plus 4 is 10, and 10 times 10 is 100. The rule fits both columns.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 + 3 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "7 × 7 = 49"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "6 + 4 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "10 × 10 = 100"
+     }
+    ]
+   },
+   {
+    "say": "The third column is 8, the gap, and 169. We know the bottom number this time, so we work backwards."
+   },
+   {
+    "say": "Which number, multiplied by itself, makes 169?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "14",
+      "13",
+      "12"
+     ],
+     "answer": 1,
+     "ifNot": "Try 13. 13 times 13 is 169."
+    }
+   },
+   {
+    "say": "13 times 13 is 169. So the top two numbers must add up to 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "13 × 13 = 169"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "8 + ? = 13"
+     }
+    ]
+   },
+   {
+    "say": "8 plus what makes 13? 13 take away 8 is 5. So the missing number is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "13 − 8 = 5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 8 plus 5 is 13, and 13 times 13 is 169. Just like the other two columns.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "8 + 5 = 13"
+     }
+    ]
+   },
+   {
+    "say": "The key idea: test a rule on the complete columns before you use it. Then run it backwards to fill the gap."
+   }
+  ]
+ },
+ "Q_CH15_013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Three rows of numbers. Each row follows the same rule, and the last number of the bottom row is missing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Each row follows the same rule. Find the ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "3",
+         "4",
+         "25"
+        ],
+        [
+         "5",
+         "7",
+         "71"
+        ],
+        [
+         "6",
+         "8",
+         "?"
+        ]
+       ],
+       "note": "Each row follows the same rule. Find the missing number"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Top row: 3, 4 and 25. Here is one idea. 3 times 3, plus 4 times 4, is 25. It fits!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 3 + 4 × 4 = 25"
+     }
+    ]
+   },
+   {
+    "say": "Before we trust that rule, what must we do?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "nothing, it fits",
+      "test it on the second row",
+      "use it on the last row"
+     ],
+     "answer": 1,
+     "ifNot": "A rule must fit every row. One row can fit just by luck."
+    }
+   },
+   {
+    "say": "Second row: 5, 7 and 71. But 5 times 5, plus 7 times 7, is 74, not 71. So that rule is out. That was the trap!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 × 5 + 7 × 7 = 74"
+     }
+    ]
+   },
+   {
+    "say": "Try again. Multiply the first two numbers: 3 times 4 is 12. Double it to get 24. Add 1 to get 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 × 4 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 × 2 = 24"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "24 + 1 = 25"
+     }
+    ]
+   },
+   {
+    "say": "Test it on the second row. 5 times 7 is 35. Double it to get 70. Add 1 to get 71. This rule fits both rows.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "5 × 7 = 35"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "35 × 2 = 70"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "70 + 1 = 71"
+     }
+    ]
+   },
+   {
+    "say": "Now the last row: 6 and 8. What is the first step?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 × 6 + 8 × 8 = 100",
+      "6 + 8 = 14",
+      "6 × 8 = 48"
+     ],
+     "answer": 2,
+     "ifNot": "The rule that fits both rows starts by multiplying the two numbers. 6 times 8 is 48."
+    }
+   },
+   {
+    "say": "6 times 8 is 48. Double it to get 96. Add 1 to get 97. So the missing number is 97.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "6 × 8 = 48"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "48 × 2 = 96"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "96 + 1 = 97",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l12",
+      "target": {
+       "text": "97"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A rule that fits one row is only a guess. It becomes the rule when it fits every row."
+   }
+  ]
+ },
+ "Q_CH15_014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "These sums look silly. 5 plus 3 is not 28! So the plus sign here must be a secret code. Let's crack it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 + 3 = 28",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 + 1 = 810",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 + 6 = 214",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 + 4 = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Look at 5 and 3 giving 28. Try the real sum: 5 plus 3 is 8. And try the difference: 5 take away 3 is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 − 3 = 2"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "5 + 3 = 8"
+     }
+    ]
+   },
+   {
+    "say": "We have a 2 and an 8. How could they make 28?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply 2 by 8",
+      "add 2 and 8",
+      "write the 2, then the 8"
+     ],
+     "answer": 2,
+     "ifNot": "Multiplying or adding 2 and 8 does not give 28. But write the 2 and then the 8 next to each other, and you see 28."
+    }
+   },
+   {
+    "say": "So the code is: write the difference first, then the sum. This is the trap: 28 is not one number. It is two parts stuck together.",
+    "board": [
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "28"
+      },
+      "text": "2 then 8",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Test it. 9 and 1: the difference is 8 and the sum is 10. That gives 8, then 10. And 8 and 6: difference 2, sum 14. That gives 2, then 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "9 − 1 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "9 + 1 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "8 − 6 = 2"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "8 + 6 = 14"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "810"
+      },
+      "text": "8 then 10",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "214"
+      },
+      "text": "2 then 14",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The code fits every line. Now 5 and 4. What are the difference and the sum?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1 and 9",
+      "1 and 20",
+      "9 and 1"
+     ],
+     "answer": 0,
+     "ifNot": "5 take away 4 is 1. 5 plus 4 is 9. The difference comes first, then the sum."
+    }
+   },
+   {
+    "say": "The difference is 1 and the sum is 9. Write the 1, then the 9. That makes 19.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "5 − 4 = 1"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "5 + 4 = 9"
+     },
+     {
+      "op": "write",
+      "id": "l13",
+      "text": "19",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l13",
+      "target": {
+       "text": "19"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When sums look impossible, the signs are a code. Try the real sum, difference and product, and see how the answer is built from them."
+   }
+  ]
+ },
+ "Q_CH15_017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The numbers 11 to 19 fill a 3 by 3 magic square. We want the magic constant, the total of each line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Numbers 11 to 19.  Magic constant = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "numberLine",
+       "min": 11,
+       "max": 19,
+       "step": 1,
+       "note": "The numbers 11 to 19 fill the square. Magic constant = ?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Write the nine numbers in order: 11, 12, 13, 14, 15, 16, 17, 18, 19.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "11, 12, 13, 14, 15, 16, 17, 18, 19",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "One of these goes in the centre of the square. Which one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "11, the smallest",
+      "15, the middle number",
+      "19, the biggest"
+     ],
+     "answer": 1,
+     "ifNot": "The centre always holds the middle number of the list. 15 has four numbers before it and four after it."
+    }
+   },
+   {
+    "say": "15 goes in the centre. And the magic constant is always 3 times the centre.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "3 times 15 is 45. So the magic constant is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 × 15 = 45",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "45"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check another way. Pair the ends: 11 and 19 make 30. There are 4 pairs like that, which makes 120. The 15 in the middle brings it to 135.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "11 + 19 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "4 × 30 = 120"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "120 + 15 = 135"
+     }
+    ]
+   },
+   {
+    "say": "Three rows share the 135 equally. 135 divided by 3 is 45. The same answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "135 ÷ 3 = 45"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at 135. That is the sum of all nine numbers. One line is a third of it."
+   }
+  ]
+ },
+ "Q_CH15_020": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Three blue balls balance two red balls. And one red ball balances three green balls. How many green balls balance the three blue ones?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3 blue = 2 red",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1 red = 3 green",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 blue = ? green",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 2.0,
+           "tone": "b"
+          },
+          {
+           "units": 2.0,
+           "tone": "b"
+          },
+          {
+           "units": 2.0,
+           "tone": "b"
+          }
+         ],
+         "label": "blue"
+        },
+        {
+         "segments": [
+          {
+           "units": 3.0,
+           "tone": "a"
+          },
+          {
+           "units": 3.0,
+           "tone": "a"
+          }
+         ],
+         "label": "red"
+        }
+       ],
+       "note": "Three blue = two red. One red = three green"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Blue and green are never compared directly. Red is the bridge between them. So let's swap the reds for greens."
+   },
+   {
+    "say": "3 blues are worth 2 reds. Each red is worth 3 greens. So what are 2 reds worth?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9 greens",
+      "6 greens",
+      "3 greens"
+     ],
+     "answer": 1,
+     "ifNot": "One red is 3 greens. So two reds are 3 greens, and 3 greens more."
+    }
+   },
+   {
+    "say": "2 reds are 2 lots of 3 greens. 2 times 3 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 × 3 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 red = 6 green",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So 3 blues balance 2 reds, and 2 reds balance 6 greens. That means 3 blues balance 6 greens.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3 blue = 6 green",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "3 blue = 6 green"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The slip is to multiply the 3 blues by the 3 greens and say 9. But the 3 greens belong to each red, and there are only 2 reds."
+   },
+   {
+    "say": "When two things are not compared directly, find the thing that links them, and swap it for its equal."
+   }
+  ]
+ },
+ "Q_CH15_021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "All nine numbers in a 3 by 3 magic square add up to 72. What is the number in the centre?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "All nine numbers add up to 72.  Centre = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "□",
+         "□",
+         "□"
+        ],
+        [
+         "□",
+         "?",
+         "□"
+        ],
+        [
+         "□",
+         "□",
+         "□"
+        ]
+       ],
+       "note": "All nine numbers add up to 72. Centre = ?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The square has 3 rows, and in a magic square the rows have equal sums. So how do we find the sum of one row?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "72 ÷ 3",
+      "72 − 3",
+      "72 ÷ 2"
+     ],
+     "answer": 0,
+     "ifNot": "The 3 rows have equal sums and share the 72. So one row is 72 divided by 3."
+    }
+   },
+   {
+    "say": "Split 72 into 60 and 12. 60 divided by 3 is 20, and 12 divided by 3 is 4. So each row adds up to 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 ÷ 3 = 20"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 ÷ 3 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "72 ÷ 3 = 24"
+     }
+    ]
+   },
+   {
+    "say": "Now, the centre. What part of a row total is the centre number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "one third",
+      "one half",
+      "all of it"
+     ],
+     "answer": 0,
+     "ifNot": "A row total is always 3 times the centre. So the centre is one third of the row total."
+    }
+   },
+   {
+    "say": "24 divided by 3 is 8. So the centre number is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "24 ÷ 3 = 8",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 24 is the sum of one row, not the centre. We had to divide by 3 twice."
+   },
+   {
+    "say": "Check: all nine boxes add up to 9 times the centre, and 9 times 8 is 72. So you could also divide 72 by 9 straight away.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "9 × 8 = 72"
+     }
+    ]
+   }
+  ]
+ },
+ "Q_CH15_022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A cross has 5 in the centre. The numbers 1, 3, 7 and 9 go at the four ends, so that both lines through the centre have the same sum. Which number is opposite 1?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Cross: 5 in the centre.  Ends: 1, 3, 7, 9.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Both lines have the same sum.  Opposite 1 = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "·",
+         "1",
+         "·"
+        ],
+        [
+         "?",
+         "5",
+         "?"
+        ],
+        [
+         "·",
+         "?",
+         "·"
+        ]
+       ],
+       "note": "3, 7 and 9 go at the other ends. Both lines have the same sum"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Each line is one end, the 5, and the opposite end. Both lines share the 5. So the two ends of one line must add up to the same as the two ends of the other."
+   },
+   {
+    "say": "So split 1, 3, 7 and 9 into two pairs with equal sums. Which pairs?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1 + 9 and 3 + 7",
+      "1 + 3 and 7 + 9",
+      "1 + 7 and 3 + 9"
+     ],
+     "answer": 0,
+     "ifNot": "1 plus 9 is 10, and 3 plus 7 is 10. Those are the two equal pairs."
+    }
+   },
+   {
+    "say": "1 plus 9 is 10, and 3 plus 7 is 10. So 1 and 9 sit at the two ends of one line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1 + 9 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 + 7 = 10"
+     }
+    ]
+   },
+   {
+    "say": "One line is 1, 5, 9, and the other is 3, 5, 7. Both add up to 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "1 + 5 + 9 = 15"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3 + 5 + 7 = 15"
+     },
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "·",
+         "1",
+         "·"
+        ],
+        [
+         "3",
+         "5",
+         "7"
+        ],
+        [
+         "·",
+         "9",
+         "·"
+        ]
+       ],
+       "note": "Both lines add up to 15"
+      }
+     }
+    ]
+   },
+   {
+    "say": "So the number opposite 1 is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "Opposite 1: 9",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "Opposite 1: 9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "When two lines share a middle number, forget the middle. Just make the ends of each line add up to the same amount."
+   }
+  ]
+ },
+ "Q_CH15_023": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A magic square has 6, 15 and 3 in its first row. We want two things: the magic constant, and the number in the centre.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "First row: 6, 15, 3.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "Magic constant = ?   Centre = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "6",
+         "15",
+         "3"
+        ],
+        [
+         "□",
+         "?",
+         "□"
+        ],
+        [
+         "□",
+         "□",
+         "□"
+        ]
+       ],
+       "note": "Find the magic constant and the centre number"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The magic constant is the sum of any row. Add the first row: 6 plus 15 plus 3 is 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6 + 15 + 3 = 24"
+     }
+    ]
+   },
+   {
+    "say": "Now the centre. How do we get it from the magic constant, 24?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "24 ÷ 2",
+      "pick a number from the first row",
+      "24 ÷ 3"
+     ],
+     "answer": 2,
+     "ifNot": "The magic constant is always 3 times the centre. So the centre is the constant divided by 3."
+    }
+   },
+   {
+    "say": "24 divided by 3 is 8. So the centre is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "24 ÷ 3 = 8"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. The centre is a new number. It is not 6, 15 or 3 from the first row, and it is not 24 itself."
+   },
+   {
+    "say": "So the constant is 24 and the centre is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Constant = 24, Centre = 8",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "Constant = 24, Centre = 8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the finished square, with 8 in the centre. Every row, column and diagonal makes 24.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f2",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "6",
+         "15",
+         "3"
+        ],
+        [
+         "5",
+         "8",
+         "11"
+        ],
+        [
+         "13",
+         "1",
+         "10"
+        ]
+       ],
+       "note": "Every line adds up to 24"
+      }
+     }
+    ]
+   },
+   {
+    "say": "One full row gives you the magic constant. Divide that by 3 and you have the centre."
+   }
+  ]
+ },
+ "Q_CH15_024": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A, B and C are three numbers. We know them only in pairs: A plus B is 10, B plus C is 15, and A plus C is 11. We want all three added together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "A + B = 10",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "B + C = 15",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "A + C = 11",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "A + B + C = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We can't see any single letter. So let's add all three sums together: 10 plus 15 plus 11 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "10 + 15 + 11 = 36"
+     }
+    ]
+   },
+   {
+    "say": "In that total of 36, how many times is each letter counted?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "three times",
+      "once",
+      "twice"
+     ],
+     "answer": 2,
+     "ifNot": "A is in the first sum and the third. B is in the first and the second. C is in the second and the third. Each letter appears twice."
+    }
+   },
+   {
+    "say": "So 36 is two lots of A plus B plus C. Every letter was counted twice.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "A + B + B + C + A + C = 36",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So halve it. Half of 36 is 18. The trap is to stop at 36, which counts every letter twice.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "36 ÷ 2 = 18",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "18"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check. C is 18 take away 10, which is 8. A is 18 take away 15, which is 3. B is 18 take away 11, which is 7. And 3 plus 7 is 10, as the first clue says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "18 − 10 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "18 − 15 = 3"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "18 − 11 = 7"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "3 + 7 = 10"
+     }
+    ]
+   },
+   {
+    "say": "So A plus B plus C is 18. When you only know things in pairs, add all the pairs and see how many times each one was counted."
+   }
+  ]
+ },
+ "Q_CH15_025": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rohan makes a 3 by 3 magic square from 9 odd numbers in a row, starting from 5. Which number goes in the centre?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "9 odd numbers in a row, starting from 5.  Centre = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Odd numbers go up in 2s. Starting from 5, the nine of them are 5, 7, 9, 11, 13, 15, 17, 19 and 21.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5, 7, 9, 11, 13, 15, 17, 19, 21",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The centre of the magic square holds the middle number of this list. Which is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "13",
+      "11"
+     ],
+     "answer": 1,
+     "ifNot": "The middle of nine numbers is the 5th one, with four before it and four after it. Count along: 5, 7, 9, 11, and then 13."
+    }
+   },
+   {
+    "say": "The 5th number is 13. It has four numbers before it and four after it.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "13"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "group",
+      "line": "l2",
+      "targets": [
+       {
+        "text": "5"
+       },
+       {
+        "text": "7"
+       },
+       {
+        "text": "9"
+       },
+       {
+        "text": "11"
+       }
+      ],
+      "label": "four before"
+     },
+     {
+      "op": "group",
+      "line": "l2",
+      "targets": [
+       {
+        "text": "15"
+       },
+       {
+        "text": "17"
+       },
+       {
+        "text": "19"
+       },
+       {
+        "text": "21"
+       }
+      ],
+      "label": "four after"
+     }
+    ]
+   },
+   {
+    "say": "Check. The magic constant would be 3 times 13, which is 39. And the smallest, middle and largest numbers do add up to 39.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 × 13 = 39"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 + 13 + 21 = 39"
+     }
+    ]
+   },
+   {
+    "say": "So the number in the centre is 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "Centre = 13",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "Centre = 13"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 9 is how many numbers there are, not the answer. Write the list out and find the one in the middle."
+   }
+  ]
+ },
+ "Q_CH16_019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Each letter is worth its place in the alphabet: A is 1, B is 2, C is 3, and so on. We want the letters of the word MATH added up.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "A = 1, B = 2, C = 3, ...   M + A + T + H = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "table",
+       "rows": [
+        [
+         "?",
+         "1",
+         "?",
+         "?"
+        ]
+       ],
+       "headers": [
+        "M",
+        "A",
+        "T",
+        "H"
+       ],
+       "note": "A = 1, B = 2, C = 3 and so on. Add the four letters"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Count along the alphabet. A is 1. H is the 8th letter. Keep going to 10 for J, and M is the 13th letter.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "A B C D E F G H I J K L M",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "A = 1,  H = 8,  M = 13",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "T comes later. After M come N, O, P, Q, R and S, which are 14, 15, 16, 17, 18 and 19. So what is T?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "N 14,  O 15,  P 16,  Q 17,  R 18,  S 19",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "21",
+      "19",
+      "20"
+     ],
+     "answer": 2,
+     "ifNot": "S is 19, and T comes straight after S. So T is 20."
+    }
+   },
+   {
+    "say": "T is the 20th letter. So the four letters are worth 13, 1, 20 and 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "M = 13,  A = 1,  T = 20,  H = 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now add them. 13 plus 1 is 14. Add 20 to get 34. Add 8 to get 42.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "13 + 1 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "14 + 20 = 34"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "34 + 8 = 42"
+     }
+    ]
+   },
+   {
+    "say": "So the letters of MATH add up to 42.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "13 + 1 + 20 + 8 = 42",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "42"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "It is easy to be one place out when counting letters. Two handy markers: J is the 10th letter and T is the 20th."
+   }
+  ]
+ }
+}

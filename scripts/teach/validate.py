@@ -451,13 +451,16 @@ def check_script(qid, script, q):
 # ── Running it ───────────────────────────────────────────────────────────────
 
 def load_seed():
-    return bank.load_by_id(topic_id="grade5")
+    """Every question a lesson may be written for: Grade 5 and Grade 4."""
+    questions = bank.load_by_id(topic_id="grade5")
+    questions.update((q["id"], q) for q in bank.load_bank(4))
+    return questions
 
 
 def show(qid, questions):
     q = questions.get(qid)
     if not q:
-        sys.exit("not a Grade 5 question: %s" % qid)
+        sys.exit("not a Grade 4 or Grade 5 question: %s" % qid)
     print("QUESTION  %s" % q["questionText"])
     print("CHOICES   %s   (key %s)" % (" | ".join(option_texts(q)), q.get("correctAnswer")))
     for s in q.get("stepByStep") or []:
@@ -509,7 +512,7 @@ def main():
         kinds = collections.Counter()
         for qid, script in part.items():
             if qid not in questions:
-                problems.append("%s: %s is not a Grade 5 question" % (name, qid))
+                problems.append("%s: %s is not a Grade 4 or Grade 5 question" % (name, qid))
                 continue
             if qid in merged:
                 problems.append("%s: %s already has a lesson in %s" % (name, qid, owner[qid]))
