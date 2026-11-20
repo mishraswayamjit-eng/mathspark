@@ -1,0 +1,8018 @@
+{
+ "BOOST_EXT_G4_FP_2016_010_07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "47",
+       "tone": "a"
+      }
+     ],
+     "label": "Arjun"
+    },
+    {
+     "segments": [
+      {
+       "units": 2.3,
+       "label": "9",
+       "tone": "b"
+      }
+     ],
+     "label": "Riya"
+    }
+   ],
+   "note": "6 years ago, what was the difference in their ages?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.47,
+        "label": "41",
+        "tone": "a"
+       },
+       {
+        "units": 1.53,
+        "label": "6 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Arjun",
+      "brace": "47"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.3,
+        "label": "9",
+        "tone": "b"
+       }
+      ],
+      "label": "Riya"
+     }
+    ],
+    "note": "Arjun's age 6 years ago: 47 − 6 = 41",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.47,
+        "label": "41",
+        "tone": "a"
+       },
+       {
+        "units": 1.53,
+        "label": "6 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Arjun",
+      "brace": "47"
+     },
+     {
+      "segments": [
+       {
+        "units": 0.77,
+        "label": "9 − 6",
+        "tone": "b"
+       },
+       {
+        "units": 1.53,
+        "label": "6 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Riya",
+      "brace": "9"
+     }
+    ],
+    "note": "Riya's age 6 years ago",
+    "highlight": [
+     "b1s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "41",
+        "tone": "a"
+       }
+      ],
+      "label": "Arjun then"
+     },
+     {
+      "segments": [
+       {
+        "units": 0.88,
+        "label": "9 − 6",
+        "tone": "b"
+       }
+      ],
+      "label": "Riya then"
+     }
+    ],
+    "note": "Compare the two ages 6 years ago"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.3,
+        "label": "9",
+        "tone": "b"
+       },
+       {
+        "units": 9.7,
+        "label": "38",
+        "tone": "c"
+       }
+      ],
+      "label": "Arjun",
+      "brace": "47"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.3,
+        "label": "9",
+        "tone": "b"
+       }
+      ],
+      "label": "Riya"
+     }
+    ],
+    "note": "The gap is the same today: 47 − 9 = 38",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2017_018_06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 8.53,
+       "label": "27",
+       "tone": "a"
+      },
+      {
+       "units": 3.16,
+       "label": "10 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Arjun"
+    },
+    {
+     "segments": [
+      {
+       "units": 8.84,
+       "label": "28",
+       "tone": "b"
+      },
+      {
+       "units": 3.16,
+       "label": "10 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Riya"
+    }
+   ],
+   "note": "After 10 years, what do their ages add up to?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.53,
+        "label": "27",
+        "tone": "a"
+       },
+       {
+        "units": 3.16,
+        "label": "10 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Arjun",
+      "brace": "37"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.84,
+        "label": "28",
+        "tone": "b"
+       },
+       {
+        "units": 3.16,
+        "label": "10 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Riya",
+      "brace": "38"
+     }
+    ],
+    "note": "Each of them is 10 years older",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.53,
+        "label": "27",
+        "tone": "a"
+       },
+       {
+        "units": 3.16,
+        "label": "10 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Arjun",
+      "brace": "37"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.84,
+        "label": "28",
+        "tone": "b"
+       },
+       {
+        "units": 3.16,
+        "label": "10 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Riya",
+      "brace": "38"
+     }
+    ],
+    "note": "37 + 38 = 75",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2017_018_07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "40",
+       "tone": "a"
+      }
+     ],
+     "label": "Siya"
+    },
+    {
+     "segments": [
+      {
+       "units": 10.2,
+       "label": "34",
+       "tone": "b"
+      }
+     ],
+     "label": "Aditya"
+    }
+   ],
+   "note": "10 years ago, what was the difference in their ages?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.2,
+        "label": "34",
+        "tone": "b"
+       },
+       {
+        "units": 1.8,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Siya",
+      "brace": "40"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.2,
+        "label": "34",
+        "tone": "b"
+       }
+      ],
+      "label": "Aditya"
+     }
+    ],
+    "note": "Both grow older together, so the gap never changes",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.2,
+        "label": "34",
+        "tone": "b"
+       },
+       {
+        "units": 1.8,
+        "label": "6",
+        "tone": "c"
+       }
+      ],
+      "label": "Siya",
+      "brace": "40"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.2,
+        "label": "34",
+        "tone": "b"
+       }
+      ],
+      "label": "Aditya"
+     }
+    ],
+    "note": "40 − 34 = 6",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2019_005_07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "26",
+       "tone": "a"
+      }
+     ],
+     "label": "Riya"
+    },
+    {
+     "segments": [
+      {
+       "units": 5.08,
+       "label": "11",
+       "tone": "b"
+      }
+     ],
+     "label": "Rohan"
+    }
+   ],
+   "note": "3 years ago, what was the difference in their ages?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.62,
+        "label": "23",
+        "tone": "a"
+       },
+       {
+        "units": 1.38,
+        "label": "3 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Riya",
+      "brace": "26"
+     },
+     {
+      "segments": [
+       {
+        "units": 5.08,
+        "label": "11",
+        "tone": "b"
+       }
+      ],
+      "label": "Rohan"
+     }
+    ],
+    "note": "Riya's age 3 years ago: 26 − 3 = 23",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.62,
+        "label": "23",
+        "tone": "a"
+       },
+       {
+        "units": 1.38,
+        "label": "3 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Riya",
+      "brace": "26"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.69,
+        "label": "11 − 3",
+        "tone": "b"
+       },
+       {
+        "units": 1.38,
+        "label": "3 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Rohan",
+      "brace": "11"
+     }
+    ],
+    "note": "Rohan's age 3 years ago",
+    "highlight": [
+     "b1s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "23",
+        "tone": "a"
+       }
+      ],
+      "label": "Riya then"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.17,
+        "label": "11 − 3",
+        "tone": "b"
+       }
+      ],
+      "label": "Rohan then"
+     }
+    ],
+    "note": "Compare the two ages 3 years ago"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.08,
+        "label": "11",
+        "tone": "b"
+       },
+       {
+        "units": 6.92,
+        "label": "15",
+        "tone": "c"
+       }
+      ],
+      "label": "Riya",
+      "brace": "26"
+     },
+     {
+      "segments": [
+       {
+        "units": 5.08,
+        "label": "11",
+        "tone": "b"
+       }
+      ],
+      "label": "Rohan"
+     }
+    ],
+    "note": "The gap is the same today: 26 − 11 = 15",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2022_035_06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.77,
+       "label": "35",
+       "tone": "a"
+      },
+      {
+       "units": 1.23,
+       "label": "4 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Tara"
+    },
+    {
+     "segments": [
+      {
+       "units": 9.54,
+       "label": "31",
+       "tone": "b"
+      },
+      {
+       "units": 1.23,
+       "label": "4 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Dev"
+    }
+   ],
+   "note": "After 4 years, what do their ages add up to?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.77,
+        "label": "35",
+        "tone": "a"
+       },
+       {
+        "units": 1.23,
+        "label": "4 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Tara",
+      "brace": "39"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.54,
+        "label": "31",
+        "tone": "b"
+       },
+       {
+        "units": 1.23,
+        "label": "4 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Dev",
+      "brace": "35"
+     }
+    ],
+    "note": "Each of them is 4 years older",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.77,
+        "label": "35",
+        "tone": "a"
+       },
+       {
+        "units": 1.23,
+        "label": "4 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Tara",
+      "brace": "39"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.54,
+        "label": "31",
+        "tone": "b"
+       },
+       {
+        "units": 1.23,
+        "label": "4 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Dev",
+      "brace": "35"
+     }
+    ],
+    "note": "39 + 35 = 74",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "5 years ago",
+     "5x"
+    ],
+    [
+     "Now",
+     "?"
+    ],
+    [
+     "5 years from now",
+     "?"
+    ]
+   ],
+   "headers": [
+    "When",
+    "Sum of ages"
+   ],
+   "note": "A mother and her daughter"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 years ago",
+      "5x"
+     ],
+     [
+      "Now",
+      "?"
+     ],
+     [
+      "5 years from now",
+      "?"
+     ]
+    ],
+    "headers": [
+     "When",
+     "Sum of ages"
+    ],
+    "note": "From 5 years ago to 5 years from now is 5 + 5 = 10 years"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 years ago",
+      "5x"
+     ],
+     [
+      "Now",
+      "?"
+     ],
+     [
+      "5 years from now",
+      "?"
+     ]
+    ],
+    "headers": [
+     "When",
+     "Sum of ages"
+    ],
+    "note": "Two people each grow 10 years older: 2 × 10 = 20",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 years ago",
+      "5x"
+     ],
+     [
+      "Now",
+      "5x + 10"
+     ],
+     [
+      "5 years from now",
+      "5x + 20"
+     ]
+    ],
+    "headers": [
+     "When",
+     "Sum of ages"
+    ],
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 9.14,
+       "label": "Husband + wife 48",
+       "tone": "a"
+      }
+     ],
+     "label": "6 years ago"
+    },
+    {
+     "segments": [
+      {
+       "units": 11.43,
+       "label": "Husband + wife ?",
+       "tone": "unknown"
+      },
+      {
+       "units": 0.57,
+       "label": "Son ?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Now",
+     "brace": "63"
+    }
+   ],
+   "note": "Find the son's age 6 years from now"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.14,
+        "label": "Husband + wife 48",
+        "tone": "a"
+       }
+      ],
+      "label": "6 years ago"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.43,
+        "label": "48 + 12",
+        "tone": "b"
+       },
+       {
+        "units": 0.57,
+        "label": "Son ?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Now",
+      "brace": "63"
+     }
+    ],
+    "note": "Each is 6 years older now, so add 12",
+    "highlight": [
+     "b1s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.14,
+        "label": "Husband + wife 48",
+        "tone": "a"
+       }
+      ],
+      "label": "6 years ago"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.43,
+        "label": "48 + 12",
+        "tone": "b"
+       },
+       {
+        "units": 0.57,
+        "label": "Son ?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Now",
+      "brace": "63"
+     }
+    ],
+    "note": "What is left of 63 is the son's age now",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "now",
+        "tone": "a"
+       },
+       {
+        "units": 8.0,
+        "label": "6 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Son",
+      "brace": "?"
+     }
+    ],
+    "note": "Add 6 years to his age now"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "now",
+        "tone": "a"
+       },
+       {
+        "units": 8.0,
+        "label": "6 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Son",
+      "brace": "9"
+     }
+    ],
+    "note": "The son will be 9 years old"
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_035": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.96,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Vipul"
+    },
+    {
+     "segments": [
+      {
+       "units": 10.96,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.04,
+       "label": "2",
+       "tone": "c"
+      }
+     ],
+     "label": "Nirav"
+    }
+   ],
+   "note": "3 years ago their ages added up to 38. Vipul is 2 years younger."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.96,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Vipul"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.96,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.04,
+        "label": "2",
+        "tone": "c"
+       }
+      ],
+      "label": "Nirav"
+     }
+    ],
+    "note": "Both are 3 years older now, so add 6 to 38"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.96,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Vipul"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.96,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.04,
+        "label": "2",
+        "tone": "c"
+       }
+      ],
+      "label": "Nirav"
+     }
+    ],
+    "note": "Take away the extra 2 years, then share equally",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.96,
+        "label": "21 now",
+        "tone": "a"
+       },
+       {
+        "units": 1.04,
+        "label": "2 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Vipul",
+      "brace": "23"
+     }
+    ],
+    "note": "21 + 2 = 23"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 7.2,
+       "label": "9 now",
+       "tone": "a"
+      },
+      {
+       "units": 4.8,
+       "label": "6 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Asha",
+     "brace": "?"
+    }
+   ],
+   "note": "Asha's age after 6 years"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.2,
+        "label": "9 now",
+        "tone": "a"
+       },
+       {
+        "units": 4.8,
+        "label": "6 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Asha",
+      "brace": "15"
+     }
+    ],
+    "note": "9 + 6 = 15"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3.16,
+       "label": "10",
+       "tone": "a"
+      }
+     ],
+     "label": "Meera"
+    },
+    {
+     "segments": [
+      {
+       "units": 3.16,
+       "label": "10",
+       "tone": "a"
+      },
+      {
+       "units": 8.84,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Father",
+     "brace": "38"
+    }
+   ],
+   "note": "How many years older is her father?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.16,
+        "label": "10",
+        "tone": "a"
+       }
+      ],
+      "label": "Meera"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.16,
+        "label": "10",
+        "tone": "a"
+       },
+       {
+        "units": 8.84,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Father",
+      "brace": "38"
+     }
+    ],
+    "note": "The extra piece is how much older he is",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.16,
+        "label": "10",
+        "tone": "a"
+       }
+      ],
+      "label": "Meera"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.16,
+        "label": "10",
+        "tone": "a"
+       },
+       {
+        "units": 8.84,
+        "label": "28",
+        "tone": "c"
+       }
+      ],
+      "label": "Father",
+      "brace": "38"
+     }
+    ],
+    "note": "38 − 10 = 28",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3.0,
+       "label": "8",
+       "tone": "a"
+      }
+     ],
+     "label": "Tina"
+    },
+    {
+     "segments": [
+      {
+       "units": 3.0,
+       "label": "8",
+       "tone": "b"
+      },
+      {
+       "units": 3.0,
+       "label": "8",
+       "tone": "b"
+      },
+      {
+       "units": 3.0,
+       "label": "8",
+       "tone": "b"
+      },
+      {
+       "units": 3.0,
+       "label": "8",
+       "tone": "b"
+      }
+     ],
+     "label": "Mother",
+     "brace": "?"
+    }
+   ],
+   "note": "Her mother is 4 times as old as Tina"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "8",
+        "tone": "a"
+       }
+      ],
+      "label": "Tina"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "label": "Mother",
+      "brace": "32"
+     }
+    ],
+    "note": "8 × 4 = 32",
+    "highlight": [
+     "b1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 7.2,
+       "label": "6 then",
+       "tone": "a"
+      },
+      {
+       "units": 4.8,
+       "label": "four years",
+       "tone": "c"
+      }
+     ],
+     "label": "Zoya",
+     "brace": "? now"
+    }
+   ],
+   "note": "Four years have passed since she was 6"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.2,
+        "label": "6 then",
+        "tone": "a"
+       },
+       {
+        "units": 4.8,
+        "label": "4 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Zoya",
+      "brace": "10 now"
+     }
+    ],
+    "note": "6 + 4 = 10"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2015,
+   "max": 2024,
+   "step": 1,
+   "tickLabels": "none",
+   "points": [
+    {
+     "at": 2015,
+     "label": "born 2015"
+    },
+    {
+     "at": 2024,
+     "label": "2024"
+    }
+   ],
+   "note": "Each step is one birthday"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "numberLine",
+    "min": 2015,
+    "max": 2024,
+    "step": 1,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 2015,
+      "label": "born 2015"
+     },
+     {
+      "at": 2024,
+      "label": "2024"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2015,
+      "to": 2024,
+      "label": "9 years"
+     }
+    ],
+    "note": "2024 − 2015 = 9"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4.0,
+       "tone": "a"
+      },
+      {
+       "units": 4.0,
+       "tone": "a"
+      },
+      {
+       "units": 4.0,
+       "tone": "a"
+      }
+     ],
+     "label": "Father",
+     "brace": "36"
+    },
+    {
+     "segments": [
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Rohan"
+    }
+   ],
+   "note": "Rohan is one-third as old as his father"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "a"
+       }
+      ],
+      "label": "Father",
+      "brace": "36"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       }
+      ],
+      "label": "Rohan"
+     }
+    ],
+    "note": "36 ÷ 3 = 12",
+    "highlight": [
+     "b1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 7.5,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Sunil"
+    },
+    {
+     "segments": [
+      {
+       "units": 7.5,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.5,
+       "label": "3",
+       "tone": "c"
+      }
+     ],
+     "label": "Anil"
+    }
+   ],
+   "note": "After 10 years, how much older is Anil than Sunil?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.5,
+        "label": "5",
+        "tone": "a"
+       }
+      ],
+      "label": "Sunil"
+     },
+     {
+      "segments": [
+       {
+        "units": 7.5,
+        "label": "5",
+        "tone": "b"
+       },
+       {
+        "units": 4.5,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Anil",
+      "brace": "8"
+     }
+    ],
+    "note": "Suppose Sunil is 5, so Anil is 8"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.33,
+        "label": "5",
+        "tone": "a"
+       },
+       {
+        "units": 6.67,
+        "label": "10",
+        "tone": "b"
+       }
+      ],
+      "label": "Sunil",
+      "brace": "15"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.33,
+        "label": "5",
+        "tone": "a"
+       },
+       {
+        "units": 6.67,
+        "label": "10",
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Anil",
+      "brace": "18"
+     }
+    ],
+    "note": "After 10 years Sunil is 15 and Anil is 18"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.33,
+        "label": "5",
+        "tone": "a"
+       },
+       {
+        "units": 6.67,
+        "label": "10",
+        "tone": "b"
+       }
+      ],
+      "label": "Sunil",
+      "brace": "15"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.33,
+        "label": "5",
+        "tone": "a"
+       },
+       {
+        "units": 6.67,
+        "label": "10",
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Anil",
+      "brace": "18"
+     }
+    ],
+    "note": "18 − 15 = 3: the gap stays the same",
+    "highlight": [
+     "b1s2"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 7.2,
+       "label": "12 now",
+       "tone": "a"
+      },
+      {
+       "units": 4.8,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Ravi",
+     "brace": "20"
+    }
+   ],
+   "note": "How many more years until Ravi is 20?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.2,
+        "label": "12 now",
+        "tone": "a"
+       },
+       {
+        "units": 4.8,
+        "label": "8",
+        "tone": "c"
+       }
+      ],
+      "label": "Ravi",
+      "brace": "20"
+     }
+    ],
+    "note": "20 − 12 = 8",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 7.0,
+       "label": "7",
+       "tone": "a"
+      }
+     ],
+     "label": "Chirag"
+    },
+    {
+     "segments": [
+      {
+       "units": 7.0,
+       "label": "7",
+       "tone": "a"
+      },
+      {
+       "units": 2.0,
+       "label": "2",
+       "tone": "b"
+      }
+     ],
+     "label": "Bina"
+    },
+    {
+     "segments": [
+      {
+       "units": 7.0,
+       "label": "7",
+       "tone": "a"
+      },
+      {
+       "units": 2.0,
+       "label": "2",
+       "tone": "b"
+      },
+      {
+       "units": 3.0,
+       "label": "3",
+       "tone": "c"
+      }
+     ],
+     "label": "Amit",
+     "brace": "?"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.0,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "label": "Chirag"
+     },
+     {
+      "segments": [
+       {
+        "units": 7.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 2.0,
+        "label": "2",
+        "tone": "b"
+       }
+      ],
+      "label": "Bina",
+      "brace": "9"
+     },
+     {
+      "segments": [
+       {
+        "units": 7.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 2.0,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Amit",
+      "brace": "?"
+     }
+    ],
+    "note": "7 + 2 = 9",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.0,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "label": "Chirag"
+     },
+     {
+      "segments": [
+       {
+        "units": 7.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 2.0,
+        "label": "2",
+        "tone": "b"
+       }
+      ],
+      "label": "Bina",
+      "brace": "9"
+     },
+     {
+      "segments": [
+       {
+        "units": 7.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 2.0,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Amit",
+      "brace": "12"
+     }
+    ],
+    "note": "9 + 3 = 12",
+    "highlight": [
+     "b2"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 8.73,
+       "tone": "a"
+      },
+      {
+       "units": 3.27,
+       "label": "3",
+       "tone": "c"
+      }
+     ],
+     "label": "Farhan",
+     "brace": "11"
+    },
+    {
+     "segments": [
+      {
+       "units": 8.73,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Rehana"
+    }
+   ],
+   "note": "Rehana is 3 years younger. How old was she 2 years ago?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.73,
+        "label": "8",
+        "tone": "a"
+       },
+       {
+        "units": 3.27,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Farhan",
+      "brace": "11"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.73,
+        "label": "8",
+        "tone": "a"
+       }
+      ],
+      "label": "Rehana"
+     }
+    ],
+    "note": "11 − 3 = 8: Rehana's age now",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.73,
+        "label": "8",
+        "tone": "a"
+       },
+       {
+        "units": 3.27,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Farhan",
+      "brace": "11"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.55,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 2.18,
+        "label": "2",
+        "tone": "b"
+       }
+      ],
+      "label": "Rehana",
+      "brace": "8"
+     }
+    ],
+    "note": "8 − 2 = 6",
+    "highlight": [
+     "b1s0"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2.0,
+       "label": "7",
+       "tone": "a"
+      },
+      {
+       "units": 2.0,
+       "label": "7",
+       "tone": "c"
+      }
+     ],
+     "label": "Diya"
+    },
+    {
+     "segments": [
+      {
+       "units": 10.0,
+       "label": "35",
+       "tone": "b"
+      },
+      {
+       "units": 2.0,
+       "label": "7",
+       "tone": "c"
+      }
+     ],
+     "label": "Mother"
+    }
+   ],
+   "note": "After 7 years, how many times as old as Diya is her mother?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "c"
+       }
+      ],
+      "label": "Diya",
+      "brace": "14"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "35",
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "c"
+       }
+      ],
+      "label": "Mother"
+     }
+    ],
+    "note": "7 + 7 = 14",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "c"
+       }
+      ],
+      "label": "Diya",
+      "brace": "14"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "35",
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "c"
+       }
+      ],
+      "label": "Mother",
+      "brace": "42"
+     }
+    ],
+    "note": "35 + 7 = 42",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "14",
+        "tone": "a"
+       }
+      ],
+      "label": "Diya"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "14",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "14",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "14",
+        "tone": "b"
+       }
+      ],
+      "label": "Mother",
+      "brace": "42"
+     }
+    ],
+    "note": "42 ÷ 14 = 3"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2.18,
+       "label": "Anu 8",
+       "tone": "a"
+      },
+      {
+       "units": 9.82,
+       "label": "Mother ?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "44"
+    }
+   ],
+   "note": "How old was her mother when Anu was born?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.18,
+        "label": "Anu 8",
+        "tone": "a"
+       },
+       {
+        "units": 9.82,
+        "label": "Mother 36",
+        "tone": "b"
+       }
+      ],
+      "brace": "44"
+     }
+    ],
+    "note": "44 − 8 = 36",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.33,
+        "label": "28 at Anu's birth",
+        "tone": "b"
+       },
+       {
+        "units": 2.67,
+        "label": "8 years",
+        "tone": "a"
+       }
+      ],
+      "label": "Mother",
+      "brace": "36"
+     }
+    ],
+    "note": "36 − 8 = 28",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 8.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Younger"
+    },
+    {
+     "segments": [
+      {
+       "units": 8.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.0,
+       "label": "4",
+       "tone": "c"
+      }
+     ],
+     "label": "Older"
+    }
+   ],
+   "note": "Their ages add up to 20 years. One is 4 years older."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Younger"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "c"
+       }
+      ],
+      "label": "Older"
+     }
+    ],
+    "note": "20 − 4 = 16: two equal pieces are left",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.0,
+        "label": "8",
+        "tone": "a"
+       }
+      ],
+      "label": "Younger"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.0,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "c"
+       }
+      ],
+      "label": "Older"
+     }
+    ],
+    "note": "Half of 16 is 8"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.0,
+        "label": "8",
+        "tone": "a"
+       }
+      ],
+      "label": "Younger"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.0,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "c"
+       }
+      ],
+      "label": "Older",
+      "brace": "12"
+     }
+    ],
+    "note": "8 + 4 = 12",
+    "highlight": [
+     "b1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Son"
+    },
+    {
+     "segments": [
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Father"
+    }
+   ],
+   "note": "Their ages add up to 48 years"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Son"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Father"
+     }
+    ],
+    "note": "1 part and 3 parts make 4 equal parts"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "a"
+       }
+      ],
+      "label": "Son"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       }
+      ],
+      "label": "Father"
+     }
+    ],
+    "note": "48 ÷ 4 = 12"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "a"
+       }
+      ],
+      "label": "Son"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       }
+      ],
+      "label": "Father"
+     }
+    ],
+    "note": "The son is 12 years old",
+    "highlight": [
+     "b0"
+    ]
+   }
+  ]
+ },
+ "G4A_AGES_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6.75,
+       "label": "9 then",
+       "tone": "a"
+      },
+      {
+       "units": 2.25,
+       "label": "three years",
+       "tone": "b"
+      },
+      {
+       "units": 3.0,
+       "label": "4 years",
+       "tone": "c"
+      }
+     ],
+     "label": "Kiran",
+     "brace": "?"
+    }
+   ],
+   "note": "From three years ago, to today, to 4 years from now"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.75,
+        "label": "9 then",
+        "tone": "a"
+       },
+       {
+        "units": 2.25,
+        "label": "3 years",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "4 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Kiran",
+      "brace": "?"
+     }
+    ],
+    "note": "Today: 9 + 3 = 12",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.0,
+        "label": "12 today",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "4 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Kiran",
+      "brace": "16"
+     }
+    ],
+    "note": "12 + 4 = 16"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 8.73,
+       "label": "age then",
+       "tone": "a"
+      },
+      {
+       "units": 3.27,
+       "label": "3 years",
+       "tone": "c"
+      }
+     ],
+     "label": "Geeta"
+    },
+    {
+     "segments": [
+      {
+       "units": 8.73,
+       "label": "age then",
+       "tone": "b"
+      },
+      {
+       "units": 3.27,
+       "label": "3 years",
+       "tone": "c"
+      }
+     ],
+     "label": "Hari"
+    }
+   ],
+   "note": "Now their ages add up to 25. What about 3 years ago?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.73,
+        "label": "age then",
+        "tone": "a"
+       },
+       {
+        "units": 3.27,
+        "label": "3 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Geeta"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.73,
+        "label": "age then",
+        "tone": "b"
+       },
+       {
+        "units": 3.27,
+        "label": "3 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Hari"
+     }
+    ],
+    "note": "Three years ago each was 3 years younger",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.73,
+        "label": "age then",
+        "tone": "a"
+       },
+       {
+        "units": 3.27,
+        "label": "3 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Geeta"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.73,
+        "label": "age then",
+        "tone": "b"
+       },
+       {
+        "units": 3.27,
+        "label": "3 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Hari"
+     }
+    ],
+    "note": "3 + 3 = 6 years less in all",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.73,
+        "label": "age then",
+        "tone": "a"
+       },
+       {
+        "units": 3.27,
+        "label": "3 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Geeta"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.73,
+        "label": "age then",
+        "tone": "b"
+       },
+       {
+        "units": 3.27,
+        "label": "3 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Hari"
+     }
+    ],
+    "note": "25 − 6 = 19",
+    "highlight": [
+     "b0s0",
+     "b1s0"
+    ]
+   }
+  ]
+ },
+ "G4A_AGES_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "72",
+       "tone": "a"
+      }
+     ],
+     "label": "Grandfather"
+    },
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Father"
+    },
+    {
+     "segments": [
+      {
+       "units": 1.5,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Jay"
+    }
+   ],
+   "note": "Father: half of grandfather. Jay: one-quarter of father."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "36",
+        "tone": "a"
+       },
+       {
+        "units": 6.0,
+        "label": "36",
+        "tone": "a"
+       }
+      ],
+      "label": "Grandfather"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "36",
+        "tone": "b"
+       }
+      ],
+      "label": "Father"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.5,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Jay"
+     }
+    ],
+    "note": "72 ÷ 2 = 36",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "36",
+        "tone": "a"
+       },
+       {
+        "units": 6.0,
+        "label": "36",
+        "tone": "a"
+       }
+      ],
+      "label": "Grandfather"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.5,
+        "label": "9",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "9",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "9",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "9",
+        "tone": "b"
+       }
+      ],
+      "label": "Father",
+      "brace": "36"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.5,
+        "label": "9",
+        "tone": "c"
+       }
+      ],
+      "label": "Jay"
+     }
+    ],
+    "note": "36 ÷ 4 = 9",
+    "highlight": [
+     "b2"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3.0,
+       "label": "9",
+       "tone": "a"
+      }
+     ],
+     "label": "Varun"
+    },
+    {
+     "segments": [
+      {
+       "units": 3.0,
+       "label": "9",
+       "tone": "b"
+      },
+      {
+       "units": 9.0,
+       "label": "27",
+       "tone": "c"
+      }
+     ],
+     "label": "Father"
+    }
+   ],
+   "note": "How old is his father when Varun is 15?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "9",
+        "tone": "a"
+       }
+      ],
+      "label": "Varun"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "9",
+        "tone": "b"
+       },
+       {
+        "units": 9.0,
+        "label": "27",
+        "tone": "c"
+       }
+      ],
+      "label": "Father"
+     }
+    ],
+    "note": "The gap of 27 years never changes",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.29,
+        "label": "15",
+        "tone": "a"
+       }
+      ],
+      "label": "Varun"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.29,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 7.71,
+        "label": "27",
+        "tone": "c"
+       }
+      ],
+      "label": "Father",
+      "brace": "42"
+     }
+    ],
+    "note": "15 + 27 = 42",
+    "highlight": [
+     "b1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3.0,
+       "label": "10",
+       "tone": "a"
+      }
+     ],
+     "label": "Rahul"
+    },
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "40",
+       "tone": "b"
+      }
+     ],
+     "label": "Father"
+    }
+   ],
+   "note": "After how many years will the father be 3 times as old?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "10",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "label": "Rahul",
+      "brace": "15"
+     },
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "40",
+        "tone": "b"
+       }
+      ],
+      "label": "Father"
+     }
+    ],
+    "note": "Try 5 years: 10 + 5 = 15",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.67,
+        "label": "10",
+        "tone": "a"
+       },
+       {
+        "units": 1.33,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "label": "Rahul",
+      "brace": "15"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.67,
+        "label": "40",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "label": "Father",
+      "brace": "45"
+     }
+    ],
+    "note": "40 + 5 = 45",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "15",
+        "tone": "a"
+       }
+      ],
+      "label": "Rahul"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "15",
+        "tone": "b"
+       }
+      ],
+      "label": "Father",
+      "brace": "45"
+     }
+    ],
+    "note": "45 is 3 times 15"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "14",
+       "tone": "a"
+      }
+     ],
+     "label": "Ali"
+    },
+    {
+     "segments": [
+      {
+       "units": 6.86,
+       "label": "8",
+       "tone": "b"
+      }
+     ],
+     "label": "Sara"
+    }
+   ],
+   "note": "Earlier, Sara was exactly half Ali's age. How old was Ali then?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.86,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 5.14,
+        "label": "6",
+        "tone": "c"
+       }
+      ],
+      "label": "Ali",
+      "brace": "14"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.86,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "label": "Sara"
+     }
+    ],
+    "note": "14 − 8 = 6: Ali is always 6 years older",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "Sara's age",
+        "tone": "b"
+       },
+       {
+        "units": 6.0,
+        "label": "6",
+        "tone": "c"
+       }
+      ],
+      "label": "Ali then"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "6",
+        "tone": "b"
+       }
+      ],
+      "label": "Sara then"
+     }
+    ],
+    "note": "Half his age: Sara's age equals the gap, so she was 6"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 6.0,
+        "label": "6",
+        "tone": "c"
+       }
+      ],
+      "label": "Ali then",
+      "brace": "12"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "6",
+        "tone": "b"
+       }
+      ],
+      "label": "Sara then"
+     }
+    ],
+    "note": "6 + 6 = 12",
+    "highlight": [
+     "b0"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Daughter then"
+    },
+    {
+     "segments": [
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Mother then"
+    }
+   ],
+   "note": "Five years ago, Mother was 7 times as old. She is 33 now."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.71,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Daughter then"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.71,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.71,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.71,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.71,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.71,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.71,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.71,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Mother then",
+      "brace": "28"
+     }
+    ],
+    "note": "33 − 5 = 28",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.71,
+        "label": "4",
+        "tone": "a"
+       }
+      ],
+      "label": "Daughter then"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.71,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 1.71,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 1.71,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 1.71,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 1.71,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 1.71,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 1.71,
+        "label": "4",
+        "tone": "b"
+       }
+      ],
+      "label": "Mother then",
+      "brace": "28"
+     }
+    ],
+    "note": "28 ÷ 7 = 4"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.33,
+        "label": "4",
+        "tone": "a"
+       },
+       {
+        "units": 6.67,
+        "label": "5 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Daughter now",
+      "brace": "9"
+     }
+    ],
+    "note": "4 + 5 = 9"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Bhavna"
+    },
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Aman"
+    }
+   ],
+   "note": "Four years ago Aman was three times as old as Bhavna"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "8",
+        "tone": "a"
+       }
+      ],
+      "label": "Bhavna"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 6.0,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "label": "Aman",
+      "brace": "16"
+     }
+    ],
+    "note": "Try Bhavna as 8: Aman is 2 × 8 = 16"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "a"
+       }
+      ],
+      "label": "Bhavna then"
+     },
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "16 − 4 = 12",
+        "tone": "b"
+       }
+      ],
+      "label": "Aman then"
+     }
+    ],
+    "note": "Four years ago: 8 − 4 = 4 and 16 − 4 = 12"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "a"
+       }
+      ],
+      "label": "Bhavna then"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "b"
+       }
+      ],
+      "label": "Aman then",
+      "brace": "12"
+     }
+    ],
+    "note": "12 is 3 times 4, so both clues fit"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1.33,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Grandson"
+    },
+    {
+     "segments": [
+      {
+       "units": 1.33,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.33,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.33,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.33,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.33,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.33,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.33,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.33,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.33,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Grandfather"
+    }
+   ],
+   "note": "Their ages add up to 70 years"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "label": "Grandson"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       }
+      ],
+      "label": "Grandfather"
+     }
+    ],
+    "note": "10 equal parts are 70, so one part is 70 ÷ 10 = 7"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "label": "Grandson"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "b"
+       }
+      ],
+      "label": "Grandfather",
+      "brace": "63"
+     }
+    ],
+    "note": "9 × 7 = 63",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.33,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 0.57,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Grandson",
+      "brace": "10"
+     },
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "63",
+        "tone": "b"
+       }
+      ],
+      "label": "Grandfather"
+     }
+    ],
+    "note": "10 − 7 = 3 years from now",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.27,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 0.55,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Grandson",
+      "brace": "10"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.45,
+        "label": "63",
+        "tone": "b"
+       },
+       {
+        "units": 0.55,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Grandfather",
+      "brace": "66"
+     }
+    ],
+    "note": "63 + 3 = 66",
+    "highlight": [
+     "b1"
+    ]
+   }
+  ]
+ },
+ "G4A_AGES_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "2 years ago"
+    },
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.5,
+       "label": "2",
+       "tone": "b"
+      },
+      {
+       "units": 4.5,
+       "label": "6",
+       "tone": "c"
+      }
+     ],
+     "label": "In 6 years"
+    }
+   ],
+   "note": "In 6 years he will be twice as old as he was 2 years ago"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "2 years ago"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.5,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 4.5,
+        "label": "6",
+        "tone": "c"
+       }
+      ],
+      "label": "In 6 years"
+     }
+    ],
+    "note": "From 2 years ago to 6 years from now: 2 + 6 = 8 years",
+    "highlight": [
+     "b1s1",
+     "b1s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "8",
+        "tone": "a"
+       }
+      ],
+      "label": "2 years ago"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 4.5,
+        "label": "6",
+        "tone": "c"
+       }
+      ],
+      "label": "In 6 years"
+     }
+    ],
+    "note": "Twice as old: the 8 extra years equal his age 2 years ago"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.6,
+        "label": "8",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "2",
+        "tone": "b"
+       }
+      ],
+      "label": "Now",
+      "brace": "10"
+     }
+    ],
+    "note": "8 + 2 = 10"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "8",
+        "tone": "a"
+       }
+      ],
+      "label": "2 years ago"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 4.5,
+        "label": "6",
+        "tone": "c"
+       }
+      ],
+      "label": "In 6 years",
+      "brace": "16"
+     }
+    ],
+    "note": "Check: in 6 years he is 16, which is twice 8",
+    "highlight": [
+     "b1"
+    ]
+   }
+  ]
+ },
+ "G4A_AGES_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 7.64,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Youngest"
+    },
+    {
+     "segments": [
+      {
+       "units": 7.64,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.18,
+       "label": "2",
+       "tone": "c"
+      }
+     ],
+     "label": "Middle"
+    },
+    {
+     "segments": [
+      {
+       "units": 7.64,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.18,
+       "label": "2",
+       "tone": "c"
+      },
+      {
+       "units": 2.18,
+       "label": "2",
+       "tone": "c"
+      }
+     ],
+     "label": "Oldest"
+    }
+   ],
+   "note": "Born 2 years apart. Their ages add up to 27 years."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.33,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.67,
+        "label": "2",
+        "tone": "c"
+       }
+      ],
+      "label": "Youngest",
+      "brace": "9"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.33,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.67,
+        "label": "2",
+        "tone": "c"
+       }
+      ],
+      "label": "Middle",
+      "brace": "9"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.33,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.67,
+        "label": "2",
+        "tone": "c"
+       }
+      ],
+      "label": "Oldest",
+      "brace": "9"
+     }
+    ],
+    "note": "Move 2 from the oldest to the youngest: 27 ÷ 3 = 9",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.64,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "label": "Youngest"
+     },
+     {
+      "segments": [
+       {
+        "units": 7.64,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 2.18,
+        "label": "2",
+        "tone": "c"
+       }
+      ],
+      "label": "Middle",
+      "brace": "9"
+     },
+     {
+      "segments": [
+       {
+        "units": 7.64,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.18,
+        "label": "2",
+        "tone": "c"
+       },
+       {
+        "units": 2.18,
+        "label": "2",
+        "tone": "c"
+       }
+      ],
+      "label": "Oldest"
+     }
+    ],
+    "note": "9 − 2 = 7",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.64,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "label": "Youngest"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.82,
+        "label": "9",
+        "tone": "b"
+       }
+      ],
+      "label": "Middle"
+     },
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "11",
+        "tone": "c"
+       }
+      ],
+      "label": "Oldest"
+     }
+    ],
+    "note": "Check: 7 + 9 + 11 = 27"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_026": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "5 years ago",
+     "4",
+     "19"
+    ],
+    [
+     "Today",
+     "5",
+     "20"
+    ]
+   ],
+   "headers": [
+    "When",
+    "Members",
+    "Average age"
+   ],
+   "note": "A baby was born in between"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 years ago",
+      "4",
+      "19",
+      "4 × 19"
+     ],
+     [
+      "Today",
+      "5",
+      "20",
+      "?"
+     ]
+    ],
+    "headers": [
+     "When",
+     "Members",
+     "Average age",
+     "Total age"
+    ],
+    "note": "Total age = members × average age",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 years ago",
+      "4",
+      "19",
+      "4 × 19"
+     ],
+     [
+      "Today",
+      "5",
+      "20",
+      "?"
+     ]
+    ],
+    "headers": [
+     "When",
+     "Members",
+     "Average age",
+     "Total age"
+    ],
+    "note": "The same 4 people today: 4 × 19 + 4 × 5"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 years ago",
+      "4",
+      "19",
+      "4 × 19"
+     ],
+     [
+      "Today",
+      "5",
+      "20",
+      "5 × 20"
+     ]
+    ],
+    "headers": [
+     "When",
+     "Members",
+     "Average age",
+     "Total age"
+    ],
+    "note": "All 5 members today: 5 × 20",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 years ago",
+      "4",
+      "19",
+      "4 × 19"
+     ],
+     [
+      "Today",
+      "5",
+      "20",
+      "5 × 20"
+     ]
+    ],
+    "headers": [
+     "When",
+     "Members",
+     "Average age",
+     "Total age"
+    ],
+    "note": "The baby is the difference: 4 years old"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_027": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 11.52,
+       "label": "Father and Mother",
+       "tone": "a"
+      },
+      {
+       "units": 0.48,
+       "label": "Son 3",
+       "tone": "c"
+      }
+     ],
+     "label": "Now",
+     "brace": "75"
+    }
+   ],
+   "note": "Five years ago the son was not born yet"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.52,
+        "label": "Father and Mother",
+        "tone": "a"
+       },
+       {
+        "units": 0.48,
+        "label": "Son 3",
+        "tone": "c"
+       }
+      ],
+      "label": "Now",
+      "brace": "75"
+     }
+    ],
+    "note": "The son is 3, so 5 years ago he was not born yet",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.52,
+        "label": "75 − 3",
+        "tone": "a"
+       },
+       {
+        "units": 0.48,
+        "label": "Son 3",
+        "tone": "c"
+       }
+      ],
+      "label": "Now",
+      "brace": "75"
+     }
+    ],
+    "note": "Take the son's 3 years away for the two parents",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.33,
+        "label": "62",
+        "tone": "a"
+       },
+       {
+        "units": 1.67,
+        "label": "5 + 5",
+        "tone": "c"
+       }
+      ],
+      "label": "5 years ago",
+      "brace": "75 − 3"
+     }
+    ],
+    "note": "Each parent was 5 years younger: 62",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Meera"
+    },
+    {
+     "segments": [
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Mother"
+    }
+   ],
+   "note": "Mother was 26 when Meera was born. Now she is 3 times as old."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Meera"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Mother"
+     }
+    ],
+    "note": "Mother is always 26 years older",
+    "highlight": [
+     "b1s1",
+     "b1s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Meera"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Mother"
+     }
+    ],
+    "note": "3 − 1 = 2 parts make the gap of 26",
+    "highlight": [
+     "b1s1",
+     "b1s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "13",
+        "tone": "a"
+       }
+      ],
+      "label": "Meera"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "13",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "13",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "13",
+        "tone": "b"
+       }
+      ],
+      "label": "Mother"
+     }
+    ],
+    "note": "26 ÷ 2 = 13"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "13",
+        "tone": "a"
+       }
+      ],
+      "label": "Meera"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "13",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "13",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "13",
+        "tone": "b"
+       }
+      ],
+      "label": "Mother",
+      "brace": "39"
+     }
+    ],
+    "note": "3 × 13 = 39",
+    "highlight": [
+     "b1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_029": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Anu + Bela",
+     "20"
+    ],
+    [
+     "Bela + Charu",
+     "26"
+    ],
+    [
+     "Anu + Charu",
+     "24"
+    ]
+   ],
+   "headers": [
+    "Pair",
+    "Ages together"
+   ],
+   "note": "How old is Charu?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Anu + Bela",
+      "20"
+     ],
+     [
+      "Bela + Charu",
+      "26"
+     ],
+     [
+      "Anu + Charu",
+      "24"
+     ]
+    ],
+    "headers": [
+     "Pair",
+     "Ages together"
+    ],
+    "note": "Add the three totals: each child is counted twice",
+    "highlight": [
+     "r0",
+     "r1",
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Anu + Bela",
+      "20"
+     ],
+     [
+      "Bela + Charu",
+      "26"
+     ],
+     [
+      "Anu + Charu",
+      "24"
+     ]
+    ],
+    "headers": [
+     "Pair",
+     "Ages together"
+    ],
+    "note": "Half of that is Anu, Bela and Charu together"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Anu + Bela",
+      "20"
+     ],
+     [
+      "Bela + Charu",
+      "26"
+     ],
+     [
+      "Anu + Charu",
+      "24"
+     ]
+    ],
+    "headers": [
+     "Pair",
+     "Ages together"
+    ],
+    "note": "35 − 20 = 15 is left for Charu",
+    "highlight": [
+     "r0"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_030": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "40",
+       "tone": "a"
+      }
+     ],
+     "label": "Father"
+    },
+    {
+     "segments": [
+      {
+       "units": 1.2,
+       "label": "4",
+       "tone": "b"
+      },
+      {
+       "units": 1.8,
+       "label": "6",
+       "tone": "b"
+      },
+      {
+       "units": 2.4,
+       "label": "8",
+       "tone": "b"
+      }
+     ],
+     "label": "Children"
+    }
+   ],
+   "note": "When will the children's ages add up to the father's age?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "40",
+        "tone": "a"
+       }
+      ],
+      "label": "Father"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.2,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 1.8,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 2.4,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "label": "Children",
+      "brace": "18"
+     }
+    ],
+    "note": "4 + 6 + 8 = 18",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.4,
+        "label": "18",
+        "tone": "b"
+       },
+       {
+        "units": 6.6,
+        "label": "22",
+        "tone": "c"
+       }
+      ],
+      "label": "Father",
+      "brace": "40"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.2,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 1.8,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 2.4,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "label": "Children",
+      "brace": "18"
+     }
+    ],
+    "note": "40 − 18 = 22 is the gap",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.4,
+        "label": "18",
+        "tone": "b"
+       },
+       {
+        "units": 6.6,
+        "label": "22",
+        "tone": "c"
+       }
+      ],
+      "label": "Father",
+      "brace": "40"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.2,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 1.8,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 2.4,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "label": "Children",
+      "brace": "18"
+     }
+    ],
+    "note": "Each year the gap closes by 3 − 1 = 2",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.4,
+        "label": "18",
+        "tone": "b"
+       },
+       {
+        "units": 6.6,
+        "label": "22",
+        "tone": "c"
+       }
+      ],
+      "label": "Father",
+      "brace": "40"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.2,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 1.8,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 2.4,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "label": "Children",
+      "brace": "18"
+     }
+    ],
+    "note": "22 ÷ 2 = 11 years",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "51",
+        "tone": "a"
+       }
+      ],
+      "label": "Father"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.53,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "17",
+        "tone": "b"
+       },
+       {
+        "units": 4.47,
+        "label": "19",
+        "tone": "b"
+       }
+      ],
+      "label": "Children",
+      "brace": "51"
+     }
+    ],
+    "note": "Check: 15 + 17 + 19 = 51"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_031": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5.25,
+       "label": "28",
+       "tone": "a"
+      },
+      {
+       "units": 2.25,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.25,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.25,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "64"
+    }
+   ],
+   "note": "Mother was 28 at the start. Then all three grow older together."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.25,
+        "label": "28",
+        "tone": "a"
+       },
+       {
+        "units": 2.25,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.25,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.25,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "64"
+     }
+    ],
+    "note": "At the birth the three ages added up to 28",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.25,
+        "label": "28",
+        "tone": "a"
+       },
+       {
+        "units": 2.25,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.25,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.25,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "64"
+     }
+    ],
+    "note": "64 − 28 = 36 years added since then",
+    "highlight": [
+     "b0s1",
+     "b0s2",
+     "b0s3"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.25,
+        "label": "28",
+        "tone": "a"
+       },
+       {
+        "units": 2.25,
+        "label": "12",
+        "tone": "c"
+       },
+       {
+        "units": 2.25,
+        "label": "12",
+        "tone": "c"
+       },
+       {
+        "units": 2.25,
+        "label": "12",
+        "tone": "c"
+       }
+      ],
+      "brace": "64"
+     }
+    ],
+    "note": "36 ÷ 3 = 12 years for each person"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.4,
+        "label": "28",
+        "tone": "a"
+       },
+       {
+        "units": 3.6,
+        "label": "12",
+        "tone": "c"
+       }
+      ],
+      "label": "Mother",
+      "brace": "40"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.6,
+        "label": "12",
+        "tone": "c"
+       }
+      ],
+      "label": "Twin"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.6,
+        "label": "12",
+        "tone": "c"
+       }
+      ],
+      "label": "Twin"
+     }
+    ],
+    "note": "Check: 40 + 12 + 12 = 64"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_032": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "31",
+      "?",
+      "71",
+      "?"
+     ],
+     [
+      "41",
+      "?",
+      "81",
+      "?"
+     ],
+     [
+      "51",
+      "?",
+      "91",
+      "?"
+     ],
+     [
+      "61",
+      "?",
+      "–",
+      "–"
+     ]
+    ],
+    "headers": [
+     "Father",
+     "Gap",
+     "Father",
+     "Gap"
+    ],
+    "note": "The son is 13 to 19. Swap the digits for the father."
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "31",
+      "18",
+      "71",
+      "54"
+     ],
+     [
+      "41",
+      "27",
+      "81",
+      "63"
+     ],
+     [
+      "51",
+      "36",
+      "91",
+      "72"
+     ],
+     [
+      "61",
+      "45",
+      "–",
+      "–"
+     ]
+    ],
+    "headers": [
+     "Father",
+     "Gap",
+     "Father",
+     "Gap"
+    ],
+    "note": "Gap = father's age take away the son's age"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "14",
+      "41",
+      "27"
+     ]
+    ],
+    "headers": [
+     "Son",
+     "Father",
+     "Gap"
+    ],
+    "note": "Only 14 and 41 have a gap of 27",
+    "highlight": [
+     "r0"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_033": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 8,
+   "max": 20,
+   "step": 1,
+   "tickLabels": "ends",
+   "points": [
+    {
+     "at": 8,
+     "label": "Asha now"
+    },
+    {
+     "at": 20,
+     "label": "Bina then"
+    }
+   ],
+   "note": "When Asha is as old as Bina is now, Bina will be 20"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 8,
+    "max": 20,
+    "step": 1,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 8,
+      "label": "Asha now"
+     },
+     {
+      "at": 20,
+      "label": "Bina then"
+     }
+    ],
+    "note": "Asha grows up to Bina's age while Bina grows up to 20"
+   },
+   {
+    "kind": "numberLine",
+    "min": 8,
+    "max": 20,
+    "step": 1,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 8,
+      "label": "Asha now"
+     },
+     {
+      "at": 20,
+      "label": "Bina then"
+     }
+    ],
+    "hops": [
+     {
+      "from": 8,
+      "to": 20,
+      "label": "12"
+     }
+    ],
+    "note": "Two equal steps together: 20 − 8 = 12"
+   },
+   {
+    "kind": "numberLine",
+    "min": 8,
+    "max": 20,
+    "step": 1,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 8,
+      "label": "Asha now"
+     },
+     {
+      "at": 20,
+      "label": "Bina then"
+     }
+    ],
+    "hops": [
+     {
+      "from": 8,
+      "to": 14,
+      "label": "half"
+     },
+     {
+      "from": 14,
+      "to": 20,
+      "label": "half"
+     }
+    ],
+    "note": "Each step is half of 12"
+   },
+   {
+    "kind": "numberLine",
+    "min": 8,
+    "max": 20,
+    "step": 1,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 8,
+      "label": "Asha now"
+     },
+     {
+      "at": 14,
+      "label": "Bina now"
+     },
+     {
+      "at": 20,
+      "label": "Bina then"
+     }
+    ],
+    "hops": [
+     {
+      "from": 8,
+      "to": 14,
+      "label": "half"
+     },
+     {
+      "from": 14,
+      "to": 20,
+      "label": "half"
+     }
+    ],
+    "note": "One step above 8 is 14",
+    "highlight": [
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 8,
+    "max": 20,
+    "step": 1,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 8,
+      "label": "Asha now"
+     },
+     {
+      "at": 14,
+      "label": "Bina now"
+     },
+     {
+      "at": 20,
+      "label": "Bina then"
+     }
+    ],
+    "hops": [
+     {
+      "from": 8,
+      "to": 14,
+      "label": "6"
+     },
+     {
+      "from": 14,
+      "to": 20,
+      "label": "6"
+     }
+    ],
+    "note": "Check: in 6 years Asha is 14 and Bina is 20"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_034": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "?",
+      "?"
+     ],
+     [
+      "24",
+      "?",
+      "?"
+     ],
+     [
+      "39",
+      "?",
+      "?"
+     ],
+     [
+      "54",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "This year",
+     "Last year",
+     "Multiple of 4?"
+    ],
+    "note": "Multiples of 3 under 60 that end in 9 or 4"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "8",
+      "yes"
+     ],
+     [
+      "24",
+      "23",
+      "no"
+     ],
+     [
+      "39",
+      "38",
+      "no"
+     ],
+     [
+      "54",
+      "53",
+      "no"
+     ]
+    ],
+    "headers": [
+     "This year",
+     "Last year",
+     "Multiple of 4?"
+    ],
+    "note": "Only 8 is a multiple of 4",
+    "highlight": [
+     "r0"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_035": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "2 years ago",
+     "?"
+    ],
+    [
+     "Today",
+     "?"
+    ],
+    [
+     "Five years on",
+     "50"
+    ]
+   ],
+   "headers": [
+    "When",
+    "Ages add up to"
+   ],
+   "note": "Three children, each more than 4 years old"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 years ago",
+      "?"
+     ],
+     [
+      "Today",
+      "35"
+     ],
+     [
+      "Five years on",
+      "50"
+     ]
+    ],
+    "headers": [
+     "When",
+     "Ages add up to"
+    ],
+    "note": "50 − 3 × 5 = 35",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 years ago",
+      "29"
+     ],
+     [
+      "Today",
+      "35"
+     ],
+     [
+      "Five years on",
+      "50"
+     ]
+    ],
+    "headers": [
+     "When",
+     "Ages add up to"
+    ],
+    "note": "35 − 3 × 2 = 29",
+    "highlight": [
+     "r0"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_036": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2.4,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Daughter"
+    },
+    {
+     "segments": [
+      {
+       "units": 2.4,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.4,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.4,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.4,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.4,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Mother"
+    }
+   ],
+   "note": "In 6 years their ages will add up to 60 years"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Daughter"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.4,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.4,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.4,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.4,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Mother"
+     }
+    ],
+    "note": "Take 6 years off each of them: 60 − 6 − 6 today"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Daughter"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.4,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.4,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.4,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.4,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Mother"
+     }
+    ],
+    "note": "1 + 5 = 6 equal parts"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "8",
+        "tone": "a"
+       }
+      ],
+      "label": "Daughter"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 2.4,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 2.4,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 2.4,
+        "label": "8",
+        "tone": "b"
+       },
+       {
+        "units": 2.4,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "label": "Mother"
+     }
+    ],
+    "note": "Each part is 8 years"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.09,
+        "label": "8",
+        "tone": "a"
+       },
+       {
+        "units": 1.57,
+        "label": "6",
+        "tone": "c"
+       }
+      ],
+      "label": "Daughter",
+      "brace": "14"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.43,
+        "label": "40",
+        "tone": "b"
+       },
+       {
+        "units": 1.57,
+        "label": "6",
+        "tone": "c"
+       }
+      ],
+      "label": "Mother",
+      "brace": "46"
+     }
+    ],
+    "note": "Check: 14 + 46 = 60"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_037": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 and 84",
+      "?"
+     ],
+     [
+      "2 and 42",
+      "?"
+     ],
+     [
+      "3 and 28",
+      "?"
+     ],
+     [
+      "4 and 21",
+      "?"
+     ],
+     [
+      "6 and 14",
+      "?"
+     ],
+     [
+      "7 and 12",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Multiply to 84",
+     "Gap"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 and 84",
+      "83"
+     ],
+     [
+      "2 and 42",
+      "40"
+     ],
+     [
+      "3 and 28",
+      "25"
+     ],
+     [
+      "4 and 21",
+      "17"
+     ],
+     [
+      "6 and 14",
+      "8"
+     ],
+     [
+      "7 and 12",
+      "5"
+     ]
+    ],
+    "headers": [
+     "Multiply to 84",
+     "Gap"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 and 84",
+      "83"
+     ],
+     [
+      "2 and 42",
+      "40"
+     ],
+     [
+      "3 and 28",
+      "25"
+     ],
+     [
+      "4 and 21",
+      "17"
+     ],
+     [
+      "6 and 14",
+      "8"
+     ],
+     [
+      "7 and 12",
+      "5"
+     ]
+    ],
+    "headers": [
+     "Multiply to 84",
+     "Gap"
+    ],
+    "note": "Only 7 and 12 are 5 apart",
+    "highlight": [
+     "r5"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 and 84",
+      "83"
+     ],
+     [
+      "2 and 42",
+      "40"
+     ],
+     [
+      "3 and 28",
+      "25"
+     ],
+     [
+      "4 and 21",
+      "17"
+     ],
+     [
+      "6 and 14",
+      "8"
+     ],
+     [
+      "7 and 12",
+      "5"
+     ]
+    ],
+    "headers": [
+     "Multiply to 84",
+     "Gap"
+    ],
+    "note": "7 + 12 = 19",
+    "highlight": [
+     "r5"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_AGES_038": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Kabir"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Grandfather"
+     }
+    ],
+    "note": "A year has 12 months, so Grandfather is 12 times as old"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Kabir"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Grandfather"
+     }
+    ],
+    "note": "1 part and 12 parts add up to 78 years"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "a"
+       }
+      ],
+      "label": "Kabir"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       }
+      ],
+      "label": "Grandfather"
+     }
+    ],
+    "note": "Each part is 6 years"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "a"
+       }
+      ],
+      "label": "Kabir"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "6",
+        "tone": "b"
+       }
+      ],
+      "label": "Grandfather",
+      "brace": "72"
+     }
+    ],
+    "note": "Check: 6 + 72 = 78"
+   },
+   null
+  ]
+ },
+ "G4A_AGES_039": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2.4,
+       "tone": "a"
+      },
+      {
+       "units": 2.4,
+       "tone": "a"
+      }
+     ],
+     "label": "Tara"
+    },
+    {
+     "segments": [
+      {
+       "units": 2.4,
+       "tone": "b"
+      },
+      {
+       "units": 2.4,
+       "tone": "b"
+      },
+      {
+       "units": 2.4,
+       "tone": "b"
+      },
+      {
+       "units": 2.4,
+       "tone": "b"
+      },
+      {
+       "units": 2.4,
+       "tone": "b"
+      }
+     ],
+     "label": "Uncle"
+    }
+   ],
+   "note": "Now 2 : 5. Six years ago their ages were in the ratio 1 : 4."
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "8 and 20",
+      "?"
+     ],
+     [
+      "10 and 25",
+      "?"
+     ],
+     [
+      "12 and 30",
+      "?"
+     ],
+     [
+      "14 and 35",
+      "?"
+     ],
+     [
+      "16 and 40",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Now (2 : 5)",
+     "6 years ago"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "8 and 20",
+      "2 and 14"
+     ],
+     [
+      "10 and 25",
+      "4 and 19"
+     ],
+     [
+      "12 and 30",
+      "6 and 24"
+     ],
+     [
+      "14 and 35",
+      "8 and 29"
+     ],
+     [
+      "16 and 40",
+      "10 and 34"
+     ]
+    ],
+    "headers": [
+     "Now (2 : 5)",
+     "6 years ago"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "8 and 20",
+      "2 and 14"
+     ],
+     [
+      "10 and 25",
+      "4 and 19"
+     ],
+     [
+      "12 and 30",
+      "6 and 24"
+     ],
+     [
+      "14 and 35",
+      "8 and 29"
+     ],
+     [
+      "16 and 40",
+      "10 and 34"
+     ]
+    ],
+    "headers": [
+     "Now (2 : 5)",
+     "6 years ago"
+    ],
+    "note": "4 × 6 = 24, so 6 and 24 are in the ratio 1 : 4",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "8 and 20",
+      "2 and 14"
+     ],
+     [
+      "10 and 25",
+      "4 and 19"
+     ],
+     [
+      "12 and 30",
+      "6 and 24"
+     ],
+     [
+      "14 and 35",
+      "8 and 29"
+     ],
+     [
+      "16 and 40",
+      "10 and 34"
+     ]
+    ],
+    "headers": [
+     "Now (2 : 5)",
+     "6 years ago"
+    ],
+    "note": "That pair is 12 and 30 now",
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "PYQ_2016_Q10": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2006,
+   "max": 2022,
+   "step": 1,
+   "tickLabels": "none",
+   "points": [
+    {
+     "at": 2006,
+     "label": "2006"
+    },
+    {
+     "at": 2013,
+     "label": "2013"
+    }
+   ],
+   "note": "Sarika is born in 2006 and Surya in 2013"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 2006,
+    "max": 2022,
+    "step": 1,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 2006,
+      "label": "2006"
+     },
+     {
+      "at": 2013,
+      "label": "2013"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2006,
+      "to": 2013,
+      "label": "2013 − 2006"
+     }
+    ],
+    "note": "Sarika is older by 2013 − 2006 years"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "label": "Surya"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 6.0,
+        "label": "7",
+        "tone": "c"
+       }
+      ],
+      "label": "Sarika",
+      "brace": "14"
+     }
+    ],
+    "note": "Twice as old: the gap of 7 equals Surya's age"
+   },
+   {
+    "kind": "numberLine",
+    "min": 2006,
+    "max": 2022,
+    "step": 1,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 2006,
+      "label": "2006"
+     },
+     {
+      "at": 2013,
+      "label": "2013"
+     },
+     {
+      "at": 2020,
+      "label": "2020"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2013,
+      "to": 2020,
+      "label": "7 years"
+     }
+    ],
+    "note": "2013 + 7 = 2020",
+    "highlight": [
+     "p2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2006,
+    "max": 2022,
+    "step": 1,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 2006,
+      "label": "2006"
+     },
+     {
+      "at": 2013,
+      "label": "2013"
+     },
+     {
+      "at": 2020,
+      "label": "2020"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2006,
+      "to": 2020,
+      "label": "14 years"
+     },
+     {
+      "from": 2013,
+      "to": 2020,
+      "label": "7 years"
+     }
+    ],
+    "note": "In 2020 Sarika is 14 and Surya is 7"
+   }
+  ]
+ },
+ "PYQ_2019_Q05": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 9.14,
+       "label": "Husband + wife 48",
+       "tone": "a"
+      }
+     ],
+     "label": "6 years ago"
+    },
+    {
+     "segments": [
+      {
+       "units": 11.43,
+       "label": "Husband + wife ?",
+       "tone": "unknown"
+      },
+      {
+       "units": 0.57,
+       "label": "Son ?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Now",
+     "brace": "63"
+    }
+   ],
+   "note": "Find the son's age 6 years from now"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.14,
+        "label": "Husband + wife 48",
+        "tone": "a"
+       }
+      ],
+      "label": "6 years ago"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.43,
+        "label": "Husband + wife 60",
+        "tone": "b"
+       },
+       {
+        "units": 0.57,
+        "label": "Son ?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Now",
+      "brace": "63"
+     }
+    ],
+    "note": "Each is 6 years older: 48 + 6 + 6 = 60",
+    "highlight": [
+     "b1s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.14,
+        "label": "Husband + wife 48",
+        "tone": "a"
+       }
+      ],
+      "label": "6 years ago"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.43,
+        "label": "Husband + wife 60",
+        "tone": "b"
+       },
+       {
+        "units": 0.57,
+        "label": "Son ?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Now",
+      "brace": "63"
+     }
+    ],
+    "note": "Take the parents' 60 away from 63 for the son's age now",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "now",
+        "tone": "a"
+       },
+       {
+        "units": 8.0,
+        "label": "6 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Son",
+      "brace": "9"
+     }
+    ],
+    "note": "6 years from now he will be 9"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_010_04_p2b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.4,
+       "label": "39",
+       "tone": "a"
+      },
+      {
+       "units": 1.6,
+       "label": "6 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Nikhil"
+    },
+    {
+     "segments": [
+      {
+       "units": 8.53,
+       "label": "32",
+       "tone": "b"
+      },
+      {
+       "units": 1.6,
+       "label": "6 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Diya"
+    }
+   ],
+   "note": "After 6 years, what do their ages add up to?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.4,
+        "label": "39",
+        "tone": "a"
+       },
+       {
+        "units": 1.6,
+        "label": "6 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Nikhil",
+      "brace": "45"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.53,
+        "label": "32",
+        "tone": "b"
+       },
+       {
+        "units": 1.6,
+        "label": "6 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Diya",
+      "brace": "38"
+     }
+    ],
+    "note": "Each of them is 6 years older",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.4,
+        "label": "39",
+        "tone": "a"
+       },
+       {
+        "units": 1.6,
+        "label": "6 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Nikhil",
+      "brace": "45"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.53,
+        "label": "32",
+        "tone": "b"
+       },
+       {
+        "units": 1.6,
+        "label": "6 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Diya",
+      "brace": "38"
+     }
+    ],
+    "note": "45 + 38 = 83",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2017_018_04_p2b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.59,
+       "label": "30",
+       "tone": "a"
+      },
+      {
+       "units": 1.41,
+       "label": "4 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Vivek"
+    },
+    {
+     "segments": [
+      {
+       "units": 8.47,
+       "label": "24",
+       "tone": "b"
+      },
+      {
+       "units": 1.41,
+       "label": "4 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Meera"
+    }
+   ],
+   "note": "After 4 years, what do their ages add up to?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.59,
+        "label": "30",
+        "tone": "a"
+       },
+       {
+        "units": 1.41,
+        "label": "4 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Vivek",
+      "brace": "34"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.47,
+        "label": "24",
+        "tone": "b"
+       },
+       {
+        "units": 1.41,
+        "label": "4 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Meera",
+      "brace": "28"
+     }
+    ],
+    "note": "Each of them is 4 years older",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.59,
+        "label": "30",
+        "tone": "a"
+       },
+       {
+        "units": 1.41,
+        "label": "4 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Vivek",
+      "brace": "34"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.47,
+        "label": "24",
+        "tone": "b"
+       },
+       {
+        "units": 1.41,
+        "label": "4 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Meera",
+      "brace": "28"
+     }
+    ],
+    "note": "34 + 28 = 62",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2019_005_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "50",
+       "tone": "a"
+      }
+     ],
+     "label": "Karan"
+    },
+    {
+     "segments": [
+      {
+       "units": 4.8,
+       "label": "20",
+       "tone": "b"
+      }
+     ],
+     "label": "Ananya"
+    }
+   ],
+   "note": "7 years ago, what was the difference in their ages?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.32,
+        "label": "43",
+        "tone": "a"
+       },
+       {
+        "units": 1.68,
+        "label": "7 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Karan",
+      "brace": "50"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.8,
+        "label": "20",
+        "tone": "b"
+       }
+      ],
+      "label": "Ananya"
+     }
+    ],
+    "note": "Karan's age 7 years ago: 50 − 7 = 43",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.32,
+        "label": "43",
+        "tone": "a"
+       },
+       {
+        "units": 1.68,
+        "label": "7 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Karan",
+      "brace": "50"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.12,
+        "label": "20 − 7",
+        "tone": "b"
+       },
+       {
+        "units": 1.68,
+        "label": "7 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Ananya",
+      "brace": "20"
+     }
+    ],
+    "note": "Ananya's age 7 years ago",
+    "highlight": [
+     "b1s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "43",
+        "tone": "a"
+       }
+      ],
+      "label": "Karan then"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.63,
+        "label": "20 − 7",
+        "tone": "b"
+       }
+      ],
+      "label": "Ananya then"
+     }
+    ],
+    "note": "Compare the two ages 7 years ago"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.8,
+        "label": "20",
+        "tone": "b"
+       },
+       {
+        "units": 7.2,
+        "label": "30",
+        "tone": "c"
+       }
+      ],
+      "label": "Karan",
+      "brace": "50"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.8,
+        "label": "20",
+        "tone": "b"
+       }
+      ],
+      "label": "Ananya"
+     }
+    ],
+    "note": "The gap is the same today: 50 − 20 = 30",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2019_005_04_p2b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3.43,
+       "label": "10",
+       "tone": "a"
+      },
+      {
+       "units": 3.43,
+       "label": "10 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Isha"
+    },
+    {
+     "segments": [
+      {
+       "units": 8.57,
+       "label": "25",
+       "tone": "b"
+      },
+      {
+       "units": 3.43,
+       "label": "10 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Siddharth"
+    }
+   ],
+   "note": "After 10 years, what do their ages add up to?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.43,
+        "label": "10",
+        "tone": "a"
+       },
+       {
+        "units": 3.43,
+        "label": "10 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Isha",
+      "brace": "20"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.57,
+        "label": "25",
+        "tone": "b"
+       },
+       {
+        "units": 3.43,
+        "label": "10 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Siddharth",
+      "brace": "35"
+     }
+    ],
+    "note": "Each of them is 10 years older",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.43,
+        "label": "10",
+        "tone": "a"
+       },
+       {
+        "units": 3.43,
+        "label": "10 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Isha",
+      "brace": "20"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.57,
+        "label": "25",
+        "tone": "b"
+       },
+       {
+        "units": 3.43,
+        "label": "10 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Siddharth",
+      "brace": "35"
+     }
+    ],
+    "note": "20 + 35 = 55",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_038_04_p2b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 11.05,
+       "label": "35",
+       "tone": "a"
+      },
+      {
+       "units": 0.95,
+       "label": "3 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Sahil"
+    },
+    {
+     "segments": [
+      {
+       "units": 3.79,
+       "label": "12",
+       "tone": "b"
+      },
+      {
+       "units": 0.95,
+       "label": "3 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Ananya"
+    }
+   ],
+   "note": "After 3 years, what do their ages add up to?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.05,
+        "label": "35",
+        "tone": "a"
+       },
+       {
+        "units": 0.95,
+        "label": "3 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Sahil",
+      "brace": "38"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.79,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 0.95,
+        "label": "3 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Ananya",
+      "brace": "15"
+     }
+    ],
+    "note": "Each of them is 3 years older",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.05,
+        "label": "35",
+        "tone": "a"
+       },
+       {
+        "units": 0.95,
+        "label": "3 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Sahil",
+      "brace": "38"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.79,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 0.95,
+        "label": "3 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Ananya",
+      "brace": "15"
+     }
+    ],
+    "note": "38 + 15 = 53",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2021_010_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 9.0,
+       "label": "30",
+       "tone": "a"
+      },
+      {
+       "units": 2.4,
+       "label": "8 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Karan"
+    },
+    {
+     "segments": [
+      {
+       "units": 9.6,
+       "label": "32",
+       "tone": "b"
+      },
+      {
+       "units": 2.4,
+       "label": "8 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Ananya"
+    }
+   ],
+   "note": "After 8 years, what do their ages add up to?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.0,
+        "label": "30",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "8 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Karan",
+      "brace": "38"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.6,
+        "label": "32",
+        "tone": "b"
+       },
+       {
+        "units": 2.4,
+        "label": "8 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Ananya",
+      "brace": "40"
+     }
+    ],
+    "note": "Each of them is 8 years older",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.0,
+        "label": "30",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "8 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Karan",
+      "brace": "38"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.6,
+        "label": "32",
+        "tone": "b"
+       },
+       {
+        "units": 2.4,
+        "label": "8 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Ananya",
+      "brace": "40"
+     }
+    ],
+    "note": "38 + 40 = 78",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2022_035_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "33",
+       "tone": "a"
+      }
+     ],
+     "label": "Siddharth"
+    },
+    {
+     "segments": [
+      {
+       "units": 7.64,
+       "label": "21",
+       "tone": "b"
+      }
+     ],
+     "label": "Kavya"
+    }
+   ],
+   "note": "7 years ago, what was the difference in their ages?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.45,
+        "label": "26",
+        "tone": "a"
+       },
+       {
+        "units": 2.55,
+        "label": "7 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Siddharth",
+      "brace": "33"
+     },
+     {
+      "segments": [
+       {
+        "units": 7.64,
+        "label": "21",
+        "tone": "b"
+       }
+      ],
+      "label": "Kavya"
+     }
+    ],
+    "note": "Siddharth's age 7 years ago: 33 − 7 = 26",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.45,
+        "label": "26",
+        "tone": "a"
+       },
+       {
+        "units": 2.55,
+        "label": "7 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Siddharth",
+      "brace": "33"
+     },
+     {
+      "segments": [
+       {
+        "units": 5.09,
+        "label": "21 − 7",
+        "tone": "b"
+       },
+       {
+        "units": 2.55,
+        "label": "7 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Kavya",
+      "brace": "21"
+     }
+    ],
+    "note": "Kavya's age 7 years ago",
+    "highlight": [
+     "b1s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "26",
+        "tone": "a"
+       }
+      ],
+      "label": "Siddharth then"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.46,
+        "label": "21 − 7",
+        "tone": "b"
+       }
+      ],
+      "label": "Kavya then"
+     }
+    ],
+    "note": "Compare the two ages 7 years ago"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.64,
+        "label": "21",
+        "tone": "b"
+       },
+       {
+        "units": 4.36,
+        "label": "12",
+        "tone": "c"
+       }
+      ],
+      "label": "Siddharth",
+      "brace": "33"
+     },
+     {
+      "segments": [
+       {
+        "units": 7.64,
+        "label": "21",
+        "tone": "b"
+       }
+      ],
+      "label": "Kavya"
+     }
+    ],
+    "note": "The gap is the same today: 33 − 21 = 12",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH13_002_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "31",
+       "tone": "a"
+      }
+     ],
+     "label": "Aarav"
+    },
+    {
+     "segments": [
+      {
+       "units": 10.06,
+       "label": "26",
+       "tone": "b"
+      }
+     ],
+     "label": "Neha"
+    }
+   ],
+   "note": "7 years ago, what was the difference in their ages?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.06,
+        "label": "26",
+        "tone": "b"
+       },
+       {
+        "units": 1.94,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Aarav",
+      "brace": "31"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.06,
+        "label": "26",
+        "tone": "b"
+       }
+      ],
+      "label": "Neha"
+     }
+    ],
+    "note": "Both grow older together, so the gap never changes",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.06,
+        "label": "26",
+        "tone": "b"
+       },
+       {
+        "units": 1.94,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "label": "Aarav",
+      "brace": "31"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.06,
+        "label": "26",
+        "tone": "b"
+       }
+      ],
+      "label": "Neha"
+     }
+    ],
+    "note": "31 − 26 = 5",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH13_002_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5.0,
+       "label": "15",
+       "tone": "a"
+      },
+      {
+       "units": 1.67,
+       "label": "5 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Tara"
+    },
+    {
+     "segments": [
+      {
+       "units": 10.33,
+       "label": "31",
+       "tone": "b"
+      },
+      {
+       "units": 1.67,
+       "label": "5 more",
+       "tone": "c"
+      }
+     ],
+     "label": "Vivek"
+    }
+   ],
+   "note": "After 5 years, what do their ages add up to?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.0,
+        "label": "15",
+        "tone": "a"
+       },
+       {
+        "units": 1.67,
+        "label": "5 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Tara",
+      "brace": "20"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.33,
+        "label": "31",
+        "tone": "b"
+       },
+       {
+        "units": 1.67,
+        "label": "5 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Vivek",
+      "brace": "36"
+     }
+    ],
+    "note": "Each of them is 5 years older",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.0,
+        "label": "15",
+        "tone": "a"
+       },
+       {
+        "units": 1.67,
+        "label": "5 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Tara",
+      "brace": "20"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.33,
+        "label": "31",
+        "tone": "b"
+       },
+       {
+        "units": 1.67,
+        "label": "5 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Vivek",
+      "brace": "36"
+     }
+    ],
+    "note": "20 + 36 = 56",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
+   }
+  ]
+ }
+}

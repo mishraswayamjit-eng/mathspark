@@ -1,0 +1,6046 @@
+{
+ "BOOST_EXT_G4_FP_2017_011_06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "Rs.5",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.5",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.5",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.5",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.5",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.50 paid"
+    }
+   ],
+   "note": "5 rulers at Rs.5 each, then the change"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.25",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Rs.50 paid"
+     }
+    ],
+    "note": "Total cost = 5 × 5 = Rs.25",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "Rs.25",
+        "tone": "a"
+       },
+       {
+        "units": 10.0,
+        "label": "Rs.25",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.50 paid"
+     }
+    ],
+    "note": "Change = Rs.50 − Rs.25 = Rs.25",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2024_014_06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "Rs.15",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.15",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.15",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.55 paid"
+    }
+   ],
+   "note": "3 sharpeners at Rs.15 each, then the change"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "Rs.45",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Rs.55 paid"
+     }
+    ],
+    "note": "Total cost = 15 × 3 = Rs.45",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "Rs.45",
+        "tone": "a"
+       },
+       {
+        "units": 2.222,
+        "label": "Rs.10",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.55 paid"
+     }
+    ],
+    "note": "Change = Rs.55 − Rs.45 = Rs.10",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 9,
+       "label": "45 min",
+       "tone": "a"
+      },
+      {
+       "units": 3,
+       "tone": "unknown"
+      }
+     ],
+     "brace": "1 hour = 60 min"
+    }
+   ],
+   "note": "What part of an hour is 45 min?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9,
+        "label": "45 min",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "tone": "unknown"
+       }
+      ],
+      "brace": "1 hour = 60 min"
+     }
+    ],
+    "note": "45 minutes is 45 out of 60 of an hour",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "tone": "unknown"
+       }
+      ],
+      "brace": "1 hour"
+     }
+    ],
+    "note": "Three quarters of an hour is 0.75 of an hour"
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G4_FP_2020_032": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.0,
+       "label": "1.3",
+       "tone": "a"
+      }
+     ]
+    },
+    {
+     "segments": [
+      {
+       "units": 2.222,
+       "label": "0.13",
+       "tone": "b"
+      },
+      {
+       "units": 7.778,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ]
+    }
+   ],
+   "note": "How much longer is the top bar?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "1.30",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 2.222,
+        "label": "0.13",
+        "tone": "b"
+       },
+       {
+        "units": 7.778,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ]
+     }
+    ],
+    "note": "Write 1.3 as 1.30 so the places line up"
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "1.30",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 2.222,
+        "label": "0.13",
+        "tone": "b"
+       },
+       {
+        "units": 7.778,
+        "label": "1.17",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "1.3 is greater than 0.13 by 1.17",
+    "highlight": [
+     "b1s1"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_026": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4.004",
+      "4.004"
+     ],
+     [
+      "4.04",
+      "4.040"
+     ],
+     [
+      "4.4",
+      "4.400"
+     ],
+     [
+      "4.444",
+      "4.444"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4.004",
+      "4.004"
+     ],
+     [
+      "4.04",
+      "4.040"
+     ],
+     [
+      "4.4",
+      "4.400"
+     ],
+     [
+      "4.444",
+      "4.444"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "Already in order, smallest first"
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_024": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.0075",
+      "0.0075"
+     ],
+     [
+      "0.219",
+      "0.2190"
+     ],
+     [
+      "0.082",
+      "0.0820"
+     ],
+     [
+      "0.07",
+      "0.0700"
+     ],
+     [
+      "0.008",
+      "0.0080"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.219",
+      "0.2190"
+     ],
+     [
+      "0.082",
+      "0.0820"
+     ],
+     [
+      "0.07",
+      "0.0700"
+     ],
+     [
+      "0.008",
+      "0.0080"
+     ],
+     [
+      "0.0075",
+      "0.0075"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "Descending: biggest first"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.219",
+      "0.2190"
+     ],
+     [
+      "0.082",
+      "0.0820"
+     ],
+     [
+      "0.07",
+      "0.0700"
+     ],
+     [
+      "0.008",
+      "0.0080"
+     ],
+     [
+      "0.0075",
+      "0.0075"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "The 1st is 0.219 and the 4th is 0.008",
+    "highlight": [
+     "r0",
+     "r3"
+    ]
+   },
+   null
+  ]
+ },
+ "EXT_G4_WS2_CH11_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "grid",
+   "rows": 10,
+   "cols": 10,
+   "shaded": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ]
+   ],
+   "note": "0.28 of the big square is shaded"
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 10,
+    "cols": 10,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      0,
+      7
+     ],
+     [
+      0,
+      8
+     ],
+     [
+      0,
+      9
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      1,
+      7
+     ],
+     [
+      1,
+      8
+     ],
+     [
+      1,
+      9
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      2,
+      6
+     ],
+     [
+      2,
+      7
+     ]
+    ],
+    "note": "0.28 means 28 hundredths: 28 of the 100 small squares"
+   },
+   null,
+   null,
+   {
+    "kind": "grid",
+    "rows": 10,
+    "cols": 10,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      0,
+      7
+     ],
+     [
+      0,
+      8
+     ],
+     [
+      0,
+      9
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      1,
+      7
+     ],
+     [
+      1,
+      8
+     ],
+     [
+      1,
+      9
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      2,
+      6
+     ],
+     [
+      2,
+      7
+     ]
+    ],
+    "note": "0.28 = 7/25"
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH11_002": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 1,
+    "step": 0.05,
+    "points": [
+     {
+      "at": 0.05,
+      "label": "0.05"
+     },
+     {
+      "at": 0.5,
+      "label": "0.50"
+     }
+    ],
+    "note": "5 hundredths and 50 hundredths",
+    "tickLabels": "ends"
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 1,
+    "step": 0.05,
+    "points": [
+     {
+      "at": 0.05,
+      "label": "0.05"
+     },
+     {
+      "at": 0.5,
+      "label": "0.5"
+     }
+    ],
+    "note": "0.5 is the greater number",
+    "highlight": [
+     "p1"
+    ],
+    "tickLabels": "ends"
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH11_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 4.7,
+   "max": 4.8,
+   "step": 0.01,
+   "points": [
+    {
+     "at": 4.756,
+     "label": "4.756"
+    }
+   ],
+   "note": "Which tenth is 4.756 nearer to?",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "4.756",
+    "note": "The tenths digit is 7. The digit after it is 5",
+    "highlight": [
+     "d1",
+     "d2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 4.7,
+    "max": 4.8,
+    "step": 0.01,
+    "points": [
+     {
+      "at": 4.7,
+      "label": "4.7"
+     },
+     {
+      "at": 4.756,
+      "label": "4.756"
+     },
+     {
+      "at": 4.8,
+      "label": "4.8"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4.756,
+      "to": 4.8
+     }
+    ],
+    "note": "The next digit is 5 or more, so round up: 7 becomes 8",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 4.7,
+    "max": 4.8,
+    "step": 0.01,
+    "points": [
+     {
+      "at": 4.756
+     },
+     {
+      "at": 4.8,
+      "label": "4.8"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4.756,
+      "to": 4.8
+     }
+    ],
+    "note": "4.756 rounds to 4.8",
+    "highlight": [
+     "p1"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_DECIMALS_001": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "536.429",
+    "note": "4 tenths, 2 hundredths and 9 thousandths",
+    "highlight": [
+     "d3",
+     "d4",
+     "d5"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "536.429",
+    "note": "The digit in the hundredths place is 2",
+    "highlight": [
+     "d4"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_002": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "placeChart",
+    "number": "7.09",
+    "note": "0 in the tenths place and 9 in the hundredths place",
+    "highlight": [
+     "d1",
+     "d2"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_003": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "placeChart",
+    "number": "4.307",
+    "note": "3 tenths, 0 hundredths and 7 thousandths",
+    "highlight": [
+     "d1",
+     "d2",
+     "d3"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 4.3,
+   "max": 4.4,
+   "step": 0.01,
+   "points": [
+    {
+     "at": 4.3,
+     "label": "4.3"
+    },
+    {
+     "at": 4.4,
+     "label": "4.4"
+    }
+   ],
+   "note": "Which number lies between 4.3 and 4.4?",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 4.3,
+    "max": 4.4,
+    "step": 0.01,
+    "points": [
+     {
+      "at": 4.3,
+      "label": "4.30"
+     },
+     {
+      "at": 4.4,
+      "label": "4.40"
+     }
+    ],
+    "note": "Write the ends as 4.30 and 4.40",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 4.3,
+    "max": 4.4,
+    "step": 0.01,
+    "points": [
+     {
+      "at": 4.3,
+      "label": "4.30"
+     },
+     {
+      "at": 4.35,
+      "label": "4.35"
+     },
+     {
+      "at": 4.4,
+      "label": "4.40"
+     }
+    ],
+    "note": "4.35 is more than 4.30 and less than 4.40",
+    "highlight": [
+     "p1"
+    ],
+    "tickLabels": "none"
+   },
+   null
+  ]
+ },
+ "G4A_DECIMALS_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "Home",
+    "School",
+    "Library"
+   ],
+   "legs": [
+    {
+     "top": "1.6 km"
+    },
+    {
+     "top": "0.85 km"
+    }
+   ],
+   "note": "Total distance = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "Home",
+     "School",
+     "Library"
+    ],
+    "legs": [
+     {
+      "top": "1.60 km"
+     },
+     {
+      "top": "0.85 km"
+     }
+    ],
+    "note": "Write both with two decimal places"
+   },
+   null,
+   {
+    "kind": "journey",
+    "places": [
+     "Home",
+     "School",
+     "Library"
+    ],
+    "legs": [
+     {
+      "top": "1.60 km"
+     },
+     {
+      "top": "0.85 km"
+     }
+    ],
+    "note": "Riya walks 2.45 km in all",
+    "highlight": [
+     "l0",
+     "l1"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.0,
+       "label": "1.35 m",
+       "tone": "a"
+      },
+      {
+       "units": 10.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "5 m"
+    }
+   ],
+   "note": "A piece is cut off. How much is left?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "1.35 m",
+        "tone": "a"
+       },
+       {
+        "units": 10.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "5.00 m"
+     }
+    ],
+    "note": "Write 5 m as 5.00 m"
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.699,
+        "label": "1.35 m",
+        "tone": "a"
+       },
+       {
+        "units": 10.0,
+        "label": "3.65 m",
+        "tone": "b"
+       }
+      ],
+      "brace": "5.00 m"
+     }
+    ],
+    "note": "3.65 m of rope is left",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "4.50",
+   "note": "Multiply by 10: where does each digit move?"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "45.00",
+    "note": "Each digit moves one place to the left"
+   },
+   {
+    "kind": "placeChart",
+    "number": "45.00",
+    "note": "10 pencils cost Rs. 45.00"
+   }
+  ]
+ },
+ "G4A_DECIMALS_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "fractionBars",
+   "bars": [
+    {
+     "parts": 20,
+     "shaded": 7,
+     "label": "7/20"
+    }
+   ],
+   "note": "7/20 as a decimal = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 20,
+      "shaded": 7,
+      "label": "7/20"
+     }
+    ],
+    "note": "Each of the 20 parts is 5 hundredths"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 20,
+      "shaded": 7,
+      "label": "7/20 = 0.35"
+     }
+    ],
+    "note": "35 hundredths is written 0.35"
+   }
+  ]
+ },
+ "G4A_DECIMALS_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      }
+     ],
+     "brace": "7.2 m"
+    }
+   ],
+   "note": "6 equal pieces"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       }
+      ],
+      "brace": "72 tenths"
+     }
+    ],
+    "note": "7.2 m is 72 tenths of a metre"
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "1.2 m",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "1.2 m",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "1.2 m",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "1.2 m",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "1.2 m",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "1.2 m",
+        "tone": "b"
+       }
+      ],
+      "brace": "7.2 m"
+     }
+    ],
+    "note": "12 tenths is 1.2, so each piece is 1.2 m"
+   }
+  ]
+ },
+ "G4A_DECIMALS_010": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "8.05",
+    "note": "8 rupees and 5 paise is Rs. 8.05",
+    "highlight": [
+     "d1",
+     "d2"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Anil",
+     "3.38 m"
+    ],
+    [
+     "Bharat",
+     "3.045 m"
+    ],
+    [
+     "Chirag",
+     "3.4 m"
+    ],
+    [
+     "Dinesh",
+     "3.405 m"
+    ]
+   ],
+   "headers": [
+    "Child",
+    "Jump"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Anil",
+      "3.38 m",
+      "3.380"
+     ],
+     [
+      "Bharat",
+      "3.045 m",
+      "3.045"
+     ],
+     [
+      "Chirag",
+      "3.4 m",
+      "3.400"
+     ],
+     [
+      "Dinesh",
+      "3.405 m",
+      "3.405"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Jump",
+     "Same places"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Dinesh",
+      "3.405"
+     ],
+     [
+      "Chirag",
+      "3.400"
+     ],
+     [
+      "Anil",
+      "3.380"
+     ],
+     [
+      "Bharat",
+      "3.045"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Jump"
+    ],
+    "note": "Longest jump first"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Dinesh",
+      "3.405"
+     ],
+     [
+      "Chirag",
+      "3.400"
+     ],
+     [
+      "Anil",
+      "3.380"
+     ],
+     [
+      "Bharat",
+      "3.045"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Jump"
+    ],
+    "note": "Chirag came second",
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "5.252",
+   "note": "Compare the values of the two marked 2s",
+   "highlight": [
+    "d1",
+    "d3"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "5.252",
+    "note": "The first 2 is in the tenths place: 0.2",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "5.252",
+    "note": "The second 2 is in the thousandths place: 0.002",
+    "highlight": [
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "5.252",
+    "note": "Two places apart, and each place is 10 times as large",
+    "highlight": [
+     "d1",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "5.252",
+    "note": "0.2 is 100 times as large as 0.002",
+    "highlight": [
+     "d1",
+     "d3"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1.786,
+       "label": "2.5",
+       "tone": "a"
+      },
+      {
+       "units": 1.339,
+       "label": "0.375",
+       "tone": "b"
+      },
+      {
+       "units": 10.0,
+       "label": "14",
+       "tone": "c"
+      }
+     ],
+     "brace": "? kg"
+    }
+   ],
+   "note": "Three parcels, in kg. Total weight = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.786,
+        "label": "2.500",
+        "tone": "a"
+       },
+       {
+        "units": 1.339,
+        "label": "0.375",
+        "tone": "b"
+       },
+       {
+        "units": 10.0,
+        "label": "14.000",
+        "tone": "c"
+       }
+      ],
+      "brace": "?"
+     }
+    ],
+    "note": "Give every weight three decimal places"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.786,
+        "label": "2.500",
+        "tone": "a"
+       },
+       {
+        "units": 1.339,
+        "label": "0.375",
+        "tone": "b"
+       },
+       {
+        "units": 10.0,
+        "label": "14.000",
+        "tone": "c"
+       }
+      ],
+      "brace": "?"
+     }
+    ],
+    "note": "Add the first two",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.786,
+        "label": "2.5",
+        "tone": "a"
+       },
+       {
+        "units": 1.339,
+        "label": "0.375",
+        "tone": "b"
+       },
+       {
+        "units": 10.0,
+        "label": "14",
+        "tone": "c"
+       }
+      ],
+      "brace": "16.875 kg"
+     }
+    ],
+    "note": "The total weight is 16.875 kg"
+   }
+  ]
+ },
+ "G4A_DECIMALS_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.0,
+       "label": "10",
+       "tone": "a"
+      }
+     ]
+    },
+    {
+     "segments": [
+      {
+       "units": 3.607,
+       "label": "3.607",
+       "tone": "b"
+      },
+      {
+       "units": 6.393,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ]
+    }
+   ],
+   "note": "How much longer is the top bar?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "10.000",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 3.607,
+        "label": "3.607",
+        "tone": "b"
+       },
+       {
+        "units": 6.393,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ]
+     }
+    ],
+    "note": "Write 10 as 10.000"
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "10.000",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 3.607,
+        "label": "3.607",
+        "tone": "b"
+       },
+       {
+        "units": 6.393,
+        "label": "6.393",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "6.393 + 3.607 = 10",
+    "highlight": [
+     "b1s1"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "0.045",
+   "note": "First multiply by 1000, then divide by 10"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "45",
+    "note": "× 1000: every digit moves three places to the left"
+   },
+   {
+    "kind": "placeChart",
+    "number": "4.5",
+    "note": "÷ 10: every digit moves one place to the right"
+   },
+   {
+    "kind": "placeChart",
+    "number": "4.5",
+    "note": "The answer is 4.5"
+   }
+  ]
+ },
+ "G4A_DECIMALS_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "3.7",
+   "note": "The number in the box, times 100, gives this"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "0.037",
+    "note": "3.7 ÷ 100: every digit moves two places to the right",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "0.037",
+    "note": "0.037 × 100 = 3.7"
+   }
+  ]
+ },
+ "G4A_DECIMALS_018": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.58",
+      "0.580"
+     ],
+     [
+      "3/5",
+      "0.600"
+     ],
+     [
+      "5/8",
+      "0.625"
+     ],
+     [
+      "0.65",
+      "0.650"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "As a decimal"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.58",
+      "0.580"
+     ],
+     [
+      "3/5",
+      "0.600"
+     ],
+     [
+      "5/8",
+      "0.625"
+     ],
+     [
+      "0.65",
+      "0.650"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "As a decimal"
+    ],
+    "note": "The greatest is 0.65",
+    "highlight": [
+     "r3"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_019": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 4,
+      "shaded": 4,
+      "label": "1"
+     },
+     {
+      "parts": 4,
+      "shaded": 3,
+      "label": "3/4"
+     }
+    ],
+    "note": "1.75 is 1 3/4"
+   }
+  ]
+ },
+ "G4A_DECIMALS_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.0,
+       "label": "37.50",
+       "tone": "a"
+      },
+      {
+       "units": 3.4,
+       "label": "12.75",
+       "tone": "b"
+      },
+      {
+       "units": 2.153,
+       "label": "4.25",
+       "tone": "c"
+      },
+      {
+       "units": 4.844,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs. 100"
+    }
+   ],
+   "note": "Notebook, pen, eraser (in rupees), and the change"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "37.50",
+        "tone": "a"
+       },
+       {
+        "units": 3.4,
+        "label": "12.75",
+        "tone": "b"
+       },
+       {
+        "units": 2.153,
+        "label": "4.25",
+        "tone": "c"
+       },
+       {
+        "units": 4.844,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Rs. 100"
+     }
+    ],
+    "note": "Add the pen and the eraser",
+    "highlight": [
+     "b0s1",
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "37.50",
+        "tone": "a"
+       },
+       {
+        "units": 3.4,
+        "label": "12.75",
+        "tone": "b"
+       },
+       {
+        "units": 2.153,
+        "label": "4.25",
+        "tone": "c"
+       },
+       {
+        "units": 4.844,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Rs. 100"
+     }
+    ],
+    "note": "Add the notebook to get the total bill",
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2"
+    ]
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.242,
+        "label": "37.50",
+        "tone": "a"
+       },
+       {
+        "units": 2.802,
+        "label": "12.75",
+        "tone": "b"
+       },
+       {
+        "units": 2.442,
+        "label": "4.25",
+        "tone": "c"
+       },
+       {
+        "units": 10.0,
+        "label": "45.50",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs. 100"
+     }
+    ],
+    "note": "Tara gets Rs. 45.50 as change",
+    "highlight": [
+     "b0s3"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      }
+     ],
+     "brace": "Rs. 342"
+    }
+   ],
+   "note": "Four equal shares"
+  },
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs. 85.50",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs. 85.50",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs. 85.50",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs. 85.50",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs. 342"
+     }
+    ],
+    "note": "Each friend pays 85 rupees and 50 paise"
+   }
+  ]
+ },
+ "G4A_DECIMALS_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2.4,
+   "max": 2.5,
+   "step": 0.01,
+   "points": [
+    {
+     "at": 2.4,
+     "label": "2.4"
+    },
+    {
+     "at": 2.5,
+     "label": "2.5"
+    }
+   ],
+   "note": "Which number is exactly halfway?",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 2.4,
+    "max": 2.5,
+    "step": 0.01,
+    "points": [
+     {
+      "at": 2.4,
+      "label": "2.40"
+     },
+     {
+      "at": 2.5,
+      "label": "2.50"
+     }
+    ],
+    "note": "Write the ends as 2.40 and 2.50",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 2.4,
+    "max": 2.5,
+    "step": 0.01,
+    "points": [
+     {
+      "at": 2.4,
+      "label": "2.40"
+     },
+     {
+      "at": 2.5,
+      "label": "2.50"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2.4,
+      "to": 2.5,
+      "label": "0.10"
+     }
+    ],
+    "note": "The gap is 0.10, and half of the gap is 0.05",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 2.4,
+    "max": 2.5,
+    "step": 0.01,
+    "points": [
+     {
+      "at": 2.4,
+      "label": "2.40"
+     },
+     {
+      "at": 2.5,
+      "label": "2.50"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2.4,
+      "to": 2.45,
+      "label": "+0.05"
+     }
+    ],
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 2.4,
+    "max": 2.5,
+    "step": 0.01,
+    "points": [
+     {
+      "at": 2.4,
+      "label": "2.40"
+     },
+     {
+      "at": 2.45,
+      "label": "2.45"
+     },
+     {
+      "at": 2.5,
+      "label": "2.50"
+     }
+    ],
+    "note": "2.45 is exactly halfway",
+    "highlight": [
+     "p1"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_DECIMALS_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.0,
+       "label": "6 shirts",
+       "tone": "a"
+      },
+      {
+       "units": 10.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "20 m"
+    }
+   ],
+   "note": "Each shirt uses 2.25 m of cloth"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "6 shirts",
+        "tone": "a"
+       },
+       {
+        "units": 10.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "20 m"
+     }
+    ],
+    "note": "Find the cloth used for 6 shirts: 6 lots of 2.25 m",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "6 shirts",
+        "tone": "a"
+       },
+       {
+        "units": 4.815,
+        "label": "6.5 m",
+        "tone": "b"
+       }
+      ],
+      "brace": "20 m"
+     }
+    ],
+    "note": "6.5 m of cloth is left",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 0.4,
+   "max": 1.3,
+   "step": 0.3,
+   "points": [
+    {
+     "at": 0.4,
+     "label": "0.4"
+    },
+    {
+     "at": 0.7,
+     "label": "0.7"
+    },
+    {
+     "at": 1.0,
+     "label": "1.0"
+    },
+    {
+     "at": 1.3,
+     "label": "1.3"
+    }
+   ],
+   "hops": [
+    {
+     "from": 0.4,
+     "to": 0.7,
+     "label": "?"
+    },
+    {
+     "from": 0.7,
+     "to": 1.0,
+     "label": "?"
+    },
+    {
+     "from": 1.0,
+     "to": 1.3,
+     "label": "?"
+    }
+   ],
+   "note": "How big is each jump?",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   null,
+   null,
+   null,
+   {
+    "kind": "numberLine",
+    "min": 0.4,
+    "max": 2.5,
+    "step": 0.3,
+    "points": [
+     {
+      "at": 0.4,
+      "label": "1st"
+     },
+     {
+      "at": 2.5,
+      "label": "8th"
+     }
+    ],
+    "note": "7 jumps from the 1st number reach 2.5",
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_DECIMALS_027": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      }
+     ],
+     "brace": "3 litres"
+    }
+   ],
+   "note": "8 equal glasses"
+  },
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "0.375",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       }
+      ],
+      "brace": "3 litres"
+     }
+    ],
+    "note": "Each glass has 0.375 litre of juice",
+    "highlight": [
+     "b0s0"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 36,
+   "max": 39,
+   "step": 0.25,
+   "points": [
+    {
+     "at": 36.8,
+     "label": "36.8 cm"
+    }
+   ],
+   "note": "Up 1.5 cm, then down 0.75 cm",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 36,
+    "max": 39,
+    "step": 0.25,
+    "points": [
+     {
+      "at": 36.8,
+      "label": "36.8"
+     },
+     {
+      "at": 38.3,
+      "label": "38.3"
+     }
+    ],
+    "hops": [
+     {
+      "from": 36.8,
+      "to": 38.3,
+      "label": "+1.5"
+     }
+    ],
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 36,
+    "max": 39,
+    "step": 0.25,
+    "points": [
+     {
+      "at": 36.8
+     },
+     {
+      "at": 37.55,
+      "label": "37.55"
+     },
+     {
+      "at": 38.3
+     }
+    ],
+    "hops": [
+     {
+      "from": 36.8,
+      "to": 38.3,
+      "label": "+1.5"
+     },
+     {
+      "from": 38.3,
+      "to": 37.55,
+      "label": "−0.75"
+     }
+    ],
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 36,
+    "max": 39,
+    "step": 0.25,
+    "points": [
+     {
+      "at": 36.8
+     },
+     {
+      "at": 37.55,
+      "label": "37.55"
+     },
+     {
+      "at": 38.3
+     }
+    ],
+    "hops": [
+     {
+      "from": 36.8,
+      "to": 38.3,
+      "label": "+1.5"
+     },
+     {
+      "from": 38.3,
+      "to": 37.55,
+      "label": "−0.75"
+     }
+    ],
+    "note": "The water is now 37.55 cm deep",
+    "highlight": [
+     "p1"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_DECIMALS_029": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "8.530",
+    "note": "Greatest: the digits from biggest to smallest"
+   },
+   {
+    "kind": "placeChart",
+    "number": "0.358",
+    "note": "Smallest: the digits from smallest to biggest"
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_DECIMALS_031": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1.5,
+   "max": 4,
+   "step": 2.5,
+   "points": [
+    {
+     "at": 1.5,
+     "label": "1.5 cm"
+    },
+    {
+     "at": 4,
+     "label": "4 cm"
+    }
+   ],
+   "note": "It grows 0.25 cm every day",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 1.5,
+    "max": 4,
+    "step": 2.5,
+    "points": [
+     {
+      "at": 1.5,
+      "label": "1.5 cm"
+     },
+     {
+      "at": 4,
+      "label": "4 cm"
+     }
+    ],
+    "hops": [
+     {
+      "from": 1.5,
+      "to": 4,
+      "label": "?"
+     }
+    ],
+    "note": "How much does it still have to grow?",
+    "tickLabels": "none"
+   },
+   null,
+   null,
+   {
+    "kind": "numberLine",
+    "min": 1.5,
+    "max": 4,
+    "step": 0.25,
+    "points": [
+     {
+      "at": 1.5,
+      "label": "1.5 cm"
+     },
+     {
+      "at": 4,
+      "label": "4 cm"
+     }
+    ],
+    "note": "10 jumps of 0.25 cm, one each day, reach 4 cm",
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_DECIMALS_033": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "62.5",
+   "note": "This is the number after it was multiplied by 10"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "6.25",
+    "note": "Undo the multiplying: 62.5 ÷ 10 = 6.25"
+   },
+   {
+    "kind": "placeChart",
+    "number": "0.625",
+    "note": "Now divide by 10, as Rahul was asked to"
+   },
+   {
+    "kind": "placeChart",
+    "number": "0.625",
+    "note": "His answer should have been 0.625"
+   }
+  ]
+ },
+ "G4A_DECIMALS_034": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.4",
+      "0.400"
+     ],
+     [
+      "3/8",
+      "0.375"
+     ],
+     [
+      "0.38",
+      "0.380"
+     ],
+     [
+      "7/20",
+      "0.350"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "As a decimal"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7/20",
+      "0.350"
+     ],
+     [
+      "3/8",
+      "0.375"
+     ],
+     [
+      "0.38",
+      "0.380"
+     ],
+     [
+      "0.4",
+      "0.400"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "As a decimal"
+    ],
+    "note": "In order, smallest first"
+   }
+  ]
+ },
+ "G4A_DECIMALS_035": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.0,
+       "label": "3.45",
+       "tone": "a"
+      },
+      {
+       "units": 8.116,
+       "label": "2.8",
+       "tone": "b"
+      },
+      {
+       "units": 9.058,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "10"
+    }
+   ],
+   "note": "Three numbers that add up to 10"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "3.45",
+        "tone": "a"
+       },
+       {
+        "units": 8.116,
+        "label": "2.8",
+        "tone": "b"
+       },
+       {
+        "units": 9.058,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "10"
+     }
+    ],
+    "note": "Add the two numbers you know",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.2,
+        "label": "3.45",
+        "tone": "a"
+       },
+       {
+        "units": 7.467,
+        "label": "2.8",
+        "tone": "b"
+       },
+       {
+        "units": 10.0,
+        "label": "3.75",
+        "tone": "c"
+       }
+      ],
+      "brace": "10"
+     }
+    ],
+    "note": "The smallest of the three is 2.8",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.2,
+        "label": "3.45",
+        "tone": "a"
+       },
+       {
+        "units": 7.467,
+        "label": "2.8",
+        "tone": "b"
+       },
+       {
+        "units": 10.0,
+        "label": "3.75",
+        "tone": "c"
+       }
+      ],
+      "brace": "10"
+     }
+    ],
+    "note": "The third number is 0.95 greater than the smallest",
+    "highlight": [
+     "b0s1",
+     "b0s2"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_036": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2,
+       "label": "half the oil",
+       "tone": "a"
+      },
+      {
+       "units": 2,
+       "label": "half the oil",
+       "tone": "a"
+      }
+     ],
+     "label": "Full",
+     "brace": "2.35 kg"
+    },
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2,
+       "label": "half the oil",
+       "tone": "a"
+      }
+     ],
+     "label": "Half used",
+     "brace": "1.3 kg"
+    }
+   ],
+   "note": "The empty bottle weighs the same both times"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2,
+        "label": "half the oil",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "half the oil",
+        "tone": "a"
+       }
+      ],
+      "label": "Full",
+      "brace": "2.35 kg"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2,
+        "label": "half the oil",
+        "tone": "a"
+       }
+      ],
+      "label": "Half used",
+      "brace": "1.3 kg"
+     }
+    ],
+    "note": "The weight that went missing is half of the oil",
+    "highlight": [
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2,
+        "label": "half the oil",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "half the oil",
+        "tone": "a"
+       }
+      ],
+      "label": "Full",
+      "brace": "2.35 kg"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2,
+        "label": "half the oil",
+        "tone": "a"
+       }
+      ],
+      "label": "Half used",
+      "brace": "1.3 kg"
+     }
+    ],
+    "note": "All the oil weighs twice as much",
+    "highlight": [
+     "b0s1",
+     "b0s2"
+    ]
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "0.25 kg",
+        "tone": "c"
+       },
+       {
+        "units": 2,
+        "label": "half the oil",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "half the oil",
+        "tone": "a"
+       }
+      ],
+      "label": "Full",
+      "brace": "2.35 kg"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "0.25 kg",
+        "tone": "c"
+       },
+       {
+        "units": 2,
+        "label": "half the oil",
+        "tone": "a"
+       }
+      ],
+      "label": "Half used",
+      "brace": "1.3 kg"
+     }
+    ],
+    "note": "The empty bottle weighs 0.25 kg",
+    "highlight": [
+     "b0s0"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_039": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Mon",
+      "Rs. 2.50"
+     ],
+     [
+      "Tue",
+      "Rs. 3.00"
+     ],
+     [
+      "Wed",
+      "Rs. 3.50"
+     ],
+     [
+      "Thu",
+      "Rs. 4.00"
+     ],
+     [
+      "Fri",
+      "Rs. 4.50"
+     ],
+     [
+      "Sat",
+      "Rs. 5.00"
+     ]
+    ],
+    "headers": [
+     "Day",
+     "Saved"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Mon",
+      "Rs. 2.50"
+     ],
+     [
+      "Tue",
+      "Rs. 3.00"
+     ],
+     [
+      "Wed",
+      "Rs. 3.50"
+     ],
+     [
+      "Thu",
+      "Rs. 4.00"
+     ],
+     [
+      "Fri",
+      "Rs. 4.50"
+     ],
+     [
+      "Sat",
+      "Rs. 5.00"
+     ]
+    ],
+    "headers": [
+     "Day",
+     "Saved"
+    ],
+    "note": "First + last, second + fifth, third + fourth: each Rs. 7.50"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Mon",
+      "Rs. 2.50"
+     ],
+     [
+      "Tue",
+      "Rs. 3.00"
+     ],
+     [
+      "Wed",
+      "Rs. 3.50"
+     ],
+     [
+      "Thu",
+      "Rs. 4.00"
+     ],
+     [
+      "Fri",
+      "Rs. 4.50"
+     ],
+     [
+      "Sat",
+      "Rs. 5.00"
+     ]
+    ],
+    "headers": [
+     "Day",
+     "Saved"
+    ],
+    "note": "Three pairs of Rs. 7.50 make Rs. 22.50"
+   }
+  ]
+ },
+ "G4A_DECIMALS_040": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 8,
+      "shaded": 1,
+      "label": "1 m"
+     }
+    ],
+    "note": "0.125 m is one eighth of a metre: 8 pieces in 1 m"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 8,
+      "shaded": 8,
+      "label": "1 m"
+     },
+     {
+      "parts": 8,
+      "shaded": 8,
+      "label": "1 m"
+     }
+    ],
+    "note": "2 m gives 16 pieces"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 8,
+      "shaded": 8,
+      "label": "1 m"
+     },
+     {
+      "parts": 8,
+      "shaded": 8,
+      "label": "1 m"
+     },
+     {
+      "parts": 8,
+      "shaded": 4,
+      "label": "half a metre"
+     }
+    ],
+    "note": "The extra half metre gives 4 more pieces"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 8,
+      "shaded": 8,
+      "label": "1 m"
+     },
+     {
+      "parts": 8,
+      "shaded": 8,
+      "label": "1 m"
+     },
+     {
+      "parts": 8,
+      "shaded": 4,
+      "label": "half a metre"
+     }
+    ],
+    "note": "16 + 4 = 20 pieces"
+   }
+  ]
+ },
+ "G4A_DECIMALS_041": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Asha",
+     "12.5"
+    ],
+    [
+     "Bina",
+     "12.45"
+    ],
+    [
+     "Chetan",
+     "12.058"
+    ],
+    [
+     "Dev",
+     "12.6"
+    ],
+    [
+     "Esha",
+     "12.509"
+    ]
+   ],
+   "headers": [
+    "Child",
+    "Seconds"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Asha",
+      "12.500"
+     ],
+     [
+      "Bina",
+      "12.450"
+     ],
+     [
+      "Chetan",
+      "12.058"
+     ],
+     [
+      "Dev",
+      "12.600"
+     ],
+     [
+      "Esha",
+      "12.509"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Seconds"
+    ],
+    "note": "Every time with three decimal places"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Chetan",
+      "12.058"
+     ],
+     [
+      "Bina",
+      "12.450"
+     ],
+     [
+      "Asha",
+      "12.500"
+     ],
+     [
+      "Esha",
+      "12.509"
+     ],
+     [
+      "Dev",
+      "12.600"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Seconds"
+    ],
+    "note": "Least time first"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Chetan",
+      "12.058"
+     ],
+     [
+      "Bina",
+      "12.450"
+     ],
+     [
+      "Asha",
+      "12.500"
+     ],
+     [
+      "Esha",
+      "12.509"
+     ],
+     [
+      "Dev",
+      "12.600"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Seconds"
+    ],
+    "note": "Chetan came first",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Chetan",
+      "12.058"
+     ],
+     [
+      "Bina",
+      "12.450"
+     ],
+     [
+      "Asha",
+      "12.500"
+     ],
+     [
+      "Esha",
+      "12.509"
+     ],
+     [
+      "Dev",
+      "12.600"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Seconds"
+    ],
+    "note": "Bina came second",
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_043": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "49.50",
+    "note": "The largest number that starts with 49"
+   },
+   {
+    "kind": "placeChart",
+    "number": "50.49",
+    "note": "The smallest number that starts with 50"
+   },
+   {
+    "kind": "numberLine",
+    "min": 49.4,
+    "max": 50.6,
+    "step": 0.1,
+    "points": [
+     {
+      "at": 49.5,
+      "label": "49.50"
+     },
+     {
+      "at": 50,
+      "label": "50"
+     },
+     {
+      "at": 50.49,
+      "label": "50.49"
+     }
+    ],
+    "note": "The gap 0.49 is smaller than the gap 0.50",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 49.4,
+    "max": 50.6,
+    "step": 0.1,
+    "points": [
+     {
+      "at": 49.5,
+      "label": "49.50"
+     },
+     {
+      "at": 50,
+      "label": "50"
+     },
+     {
+      "at": 50.49,
+      "label": "50.49"
+     }
+    ],
+    "note": "50.49 is closest to 50",
+    "highlight": [
+     "p2"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_DECIMALS_045": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5.263,
+       "label": "₹12.50",
+       "tone": "a"
+      },
+      {
+       "units": 10.0,
+       "label": "toy",
+       "tone": "b"
+      },
+      {
+       "units": 2.807,
+       "label": "₹5",
+       "tone": "c"
+      },
+      {
+       "units": 7.895,
+       "label": "₹18.75",
+       "tone": "a"
+      }
+     ],
+     "brace": "?"
+    }
+   ],
+   "note": "Snack, toy, ride, and the money he came home with"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.263,
+        "label": "₹12.50",
+        "tone": "a"
+       },
+       {
+        "units": 10.0,
+        "label": "toy",
+        "tone": "b"
+       },
+       {
+        "units": 2.807,
+        "label": "₹5",
+        "tone": "c"
+       },
+       {
+        "units": 7.895,
+        "label": "₹18.75",
+        "tone": "a"
+       }
+      ],
+      "brace": "?"
+     }
+    ],
+    "note": "Undo the ride: add back ₹5",
+    "highlight": [
+     "b0s2",
+     "b0s3"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.263,
+        "label": "₹12.50",
+        "tone": "a"
+       },
+       {
+        "units": 10.0,
+        "label": "toy",
+        "tone": "b"
+       },
+       {
+        "units": 2.807,
+        "label": "₹5",
+        "tone": "c"
+       },
+       {
+        "units": 7.895,
+        "label": "₹18.75",
+        "tone": "a"
+       }
+      ],
+      "brace": "?"
+     }
+    ],
+    "note": "The toy cost half, so it matches the two pieces after it",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.263,
+        "label": "₹12.50",
+        "tone": "a"
+       },
+       {
+        "units": 10.0,
+        "label": "toy",
+        "tone": "b"
+       },
+       {
+        "units": 2.807,
+        "label": "₹5",
+        "tone": "c"
+       },
+       {
+        "units": 7.895,
+        "label": "₹18.75",
+        "tone": "a"
+       }
+      ],
+      "brace": "?"
+     }
+    ],
+    "note": "Undo the snack: add back ₹12.50",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.263,
+        "label": "₹12.50",
+        "tone": "a"
+       },
+       {
+        "units": 10.0,
+        "label": "toy",
+        "tone": "b"
+       },
+       {
+        "units": 2.807,
+        "label": "₹5",
+        "tone": "c"
+       },
+       {
+        "units": 7.895,
+        "label": "₹18.75",
+        "tone": "a"
+       }
+      ],
+      "brace": "₹60"
+     }
+    ],
+    "note": "Kabir took ₹60 to the fair"
+   }
+  ]
+ },
+ "G4A_DECIMALS_046": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "numberLine",
+    "min": 0.2,
+    "max": 0.55,
+    "step": 0.05,
+    "points": [
+     {
+      "at": 0.25,
+      "label": "1/4"
+     },
+     {
+      "at": 0.5,
+      "label": "1/2"
+     }
+    ],
+    "note": "The ends are 0.250 and 0.500",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 0.2,
+    "max": 0.55,
+    "step": 0.05,
+    "points": [
+     {
+      "at": 0.25,
+      "label": "1/4"
+     },
+     {
+      "at": 0.255
+     },
+     {
+      "at": 0.26
+     },
+     {
+      "at": 0.3
+     },
+     {
+      "at": 0.45
+     },
+     {
+      "at": 0.5,
+      "label": "1/2"
+     }
+    ],
+    "note": "0.255, 0.26, 0.3 and 0.45 lie between them: 4 numbers",
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_DECIMALS_047": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 0.3,
+   "max": 0.31,
+   "step": 0.001,
+   "points": [
+    {
+     "at": 0.3,
+     "label": "0.3"
+    },
+    {
+     "at": 0.31,
+     "label": "0.31"
+    }
+   ],
+   "note": "Numbers with three decimal digits between these two",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 0.3,
+    "max": 0.31,
+    "step": 0.001,
+    "points": [
+     {
+      "at": 0.3,
+      "label": "0.300"
+     },
+     {
+      "at": 0.31,
+      "label": "0.310"
+     }
+    ],
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 0.3,
+    "max": 0.31,
+    "step": 0.001,
+    "points": [
+     {
+      "at": 0.3,
+      "label": "0.300"
+     },
+     {
+      "at": 0.31,
+      "label": "0.310"
+     }
+    ],
+    "note": "0.301 up to 0.309 sit on the ticks in between",
+    "tickLabels": "none"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 0.3,
+    "max": 0.31,
+    "step": 0.001,
+    "points": [
+     {
+      "at": 0.3,
+      "label": "0.300"
+     },
+     {
+      "at": 0.31,
+      "label": "0.310"
+     }
+    ],
+    "note": "9 numbers lie between the two ends",
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_DECIMALS_048": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2.5",
+      "2.500"
+     ],
+     [
+      "2.45",
+      "2.450"
+     ],
+     [
+      "2.405",
+      "2.405"
+     ],
+     [
+      "2.08",
+      "2.080"
+     ],
+     [
+      "2.6",
+      "2.600"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2.08",
+      "2.080"
+     ],
+     [
+      "2.405",
+      "2.405"
+     ],
+     [
+      "2.45",
+      "2.450"
+     ],
+     [
+      "2.5",
+      "2.500"
+     ],
+     [
+      "2.6",
+      "2.600"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "In order, smallest first"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2.08",
+      "2.080"
+     ],
+     [
+      "2.405",
+      "2.405"
+     ],
+     [
+      "2.45",
+      "2.450"
+     ],
+     [
+      "2.5",
+      "2.500"
+     ],
+     [
+      "2.6",
+      "2.600"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "The smallest is 2.08 and the middle one is 2.45",
+    "highlight": [
+     "r0",
+     "r2"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_DECIMALS_049": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.5,
+       "label": "₹7.50",
+       "tone": "b"
+      }
+     ],
+     "label": "Notebook"
+    },
+    {
+     "segments": [
+      {
+       "units": 2,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Pen"
+    }
+   ],
+   "note": "2 notebooks and 3 pens cost ₹65 in all"
+  },
+  "stepFigures": [
+   null,
+   null,
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "₹10",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "₹7.50",
+        "tone": "b"
+       }
+      ],
+      "label": "Notebook"
+     },
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "₹10",
+        "tone": "a"
+       }
+      ],
+      "label": "Pen"
+     }
+    ],
+    "note": "One notebook costs ₹7.50 more than a pen: ₹17.50",
+    "highlight": [
+     "b0"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_050": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "0.47",
+   "note": "This is the number after it was divided by 10"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "4.7",
+    "note": "Undo the division: 0.47 × 10 = 4.7"
+   },
+   {
+    "kind": "placeChart",
+    "number": "47",
+    "note": "Now multiply by 10, as Arun was asked to"
+   },
+   {
+    "kind": "placeChart",
+    "number": "47",
+    "note": "Arun should have got 47"
+   }
+  ]
+ },
+ "G4A_DECIMALS_051": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 5.3,
+   "max": 5.8,
+   "step": 0.1,
+   "points": [
+    {
+     "at": 5.4,
+     "label": "5.4"
+    },
+    {
+     "at": 5.68,
+     "label": "5.68"
+    }
+   ],
+   "note": "5.□8 must lie between these two numbers",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 5.3,
+    "max": 5.8,
+    "step": 0.1,
+    "points": [
+     {
+      "at": 5.4,
+      "label": "5.40"
+     },
+     {
+      "at": 5.68,
+      "label": "5.68"
+     }
+    ],
+    "tickLabels": "none"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 5.3,
+    "max": 5.8,
+    "step": 0.1,
+    "points": [
+     {
+      "at": 5.4,
+      "label": "5.40"
+     },
+     {
+      "at": 5.48,
+      "label": "5.48"
+     },
+     {
+      "at": 5.58,
+      "label": "5.58"
+     },
+     {
+      "at": 5.68,
+      "label": "5.68"
+     }
+    ],
+    "note": "5.48 and 5.58 lie between 5.40 and 5.68",
+    "highlight": [
+     "p1",
+     "p2"
+    ],
+    "tickLabels": "none"
+   },
+   null
+  ]
+ },
+ "G4A_DECIMALS_052": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.0,
+       "label": "tea",
+       "tone": "a"
+      },
+      {
+       "units": 4.5,
+       "label": "samosas",
+       "tone": "b"
+      },
+      {
+       "units": 7.25,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "₹100"
+    }
+   ],
+   "note": "Tea at ₹12.50 a cup, samosas at ₹7.50 each, and the change"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "tea",
+        "tone": "a"
+       },
+       {
+        "units": 4.5,
+        "label": "samosas",
+        "tone": "b"
+       },
+       {
+        "units": 7.25,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "₹100"
+     }
+    ],
+    "note": "Four cups of tea",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "tea",
+        "tone": "a"
+       },
+       {
+        "units": 4.5,
+        "label": "3 samosas",
+        "tone": "b"
+       },
+       {
+        "units": 7.25,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "₹100"
+     }
+    ],
+    "note": "All except one eat a samosa: 3 samosas",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "tea",
+        "tone": "a"
+       },
+       {
+        "units": 4.5,
+        "label": "3 samosas",
+        "tone": "b"
+       },
+       {
+        "units": 5.5,
+        "label": "₹27.50",
+        "tone": "c"
+       }
+      ],
+      "brace": "₹100"
+     }
+    ],
+    "note": "The change is ₹27.50",
+    "highlight": [
+     "b0s2"
+    ]
+   }
+  ]
+ },
+ "G4A_DECIMALS_053": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Anu",
+     "0.6"
+    ],
+    [
+     "Bala",
+     "5/8"
+    ],
+    [
+     "Charu",
+     "0.58"
+    ],
+    [
+     "Dinu",
+     "13/20"
+    ]
+   ],
+   "headers": [
+    "Child",
+    "Drank"
+   ]
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Anu",
+      "0.6",
+      "0.600"
+     ],
+     [
+      "Bala",
+      "5/8",
+      "0.625"
+     ],
+     [
+      "Charu",
+      "0.58",
+      "0.580"
+     ],
+     [
+      "Dinu",
+      "13/20",
+      "0.650"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Drank",
+     "As a decimal"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Anu",
+      "0.6",
+      "0.600"
+     ],
+     [
+      "Bala",
+      "5/8",
+      "0.625"
+     ],
+     [
+      "Charu",
+      "0.58",
+      "0.580"
+     ],
+     [
+      "Dinu",
+      "13/20",
+      "0.650"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Drank",
+     "As a decimal"
+    ],
+    "note": "The smallest amount drunk is 0.580",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Anu",
+      "0.6",
+      "0.600"
+     ],
+     [
+      "Bala",
+      "5/8",
+      "0.625"
+     ],
+     [
+      "Charu",
+      "0.58",
+      "0.580"
+     ],
+     [
+      "Dinu",
+      "13/20",
+      "0.650"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Drank",
+     "As a decimal"
+    ],
+    "note": "Charu drank the least, so she has the most left",
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "PYQ_2016_Q02": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.0,
+       "label": "9.07",
+       "tone": "a"
+      }
+     ]
+    },
+    {
+     "segments": [
+      {
+       "units": 8.71,
+       "label": "7.9",
+       "tone": "b"
+      },
+      {
+       "units": 1.29,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ]
+    }
+   ],
+   "note": "How much longer is the top bar?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "9.07",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 8.71,
+        "label": "7.90",
+        "tone": "b"
+       },
+       {
+        "units": 1.29,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ]
+     }
+    ],
+    "note": "Write 7.9 as 7.90"
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "9.07",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 8.71,
+        "label": "7.90",
+        "tone": "b"
+       },
+       {
+        "units": 1.29,
+        "label": "1.17",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "7.90 + 1.17 = 9.07",
+    "highlight": [
+     "b1s1"
+    ]
+   }
+  ]
+ },
+ "PYQ_2016_Q30": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.023",
+      "0.0230"
+     ],
+     [
+      "0.23",
+      "0.2300"
+     ],
+     [
+      "0.0023",
+      "0.0023"
+     ],
+     [
+      "2.3",
+      "2.3000"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.023",
+      "0.0230"
+     ],
+     [
+      "0.23",
+      "0.2300"
+     ],
+     [
+      "0.0023",
+      "0.0023"
+     ],
+     [
+      "2.3",
+      "2.3000"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "The smallest is 0.0023 and the greatest is 2.3",
+    "highlight": [
+     "r2",
+     "r3"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "PYQ_2017_Q07": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.0,
+       "label": "Rs. 39.46",
+       "tone": "a"
+      },
+      {
+       "units": 10.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs. 50"
+    }
+   ],
+   "note": "Groceries, and the change"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "numberLine",
+    "min": 39,
+    "max": 50,
+    "step": 1,
+    "points": [
+     {
+      "at": 39.46,
+      "label": "39.46"
+     },
+     {
+      "at": 40,
+      "label": "40"
+     }
+    ],
+    "hops": [
+     {
+      "from": 39.46,
+      "to": 40,
+      "label": "0.54"
+     }
+    ],
+    "note": "Count up from 39.46 to 40",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 39,
+    "max": 50,
+    "step": 1,
+    "points": [
+     {
+      "at": 39.46,
+      "label": "39.46"
+     },
+     {
+      "at": 40,
+      "label": "40"
+     },
+     {
+      "at": 50,
+      "label": "50"
+     }
+    ],
+    "hops": [
+     {
+      "from": 39.46,
+      "to": 40,
+      "label": "0.54"
+     },
+     {
+      "from": 40,
+      "to": 50,
+      "label": "10"
+     }
+    ],
+    "note": "Then count up from 40 to 50",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "Rs. 39.46",
+        "tone": "a"
+       },
+       {
+        "units": 2.671,
+        "label": "Rs. 10.54",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs. 50"
+     }
+    ],
+    "note": "Add the two jumps: Rs. 10.54",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "PYQ_2017_Q17": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.0,
+       "label": "9.7",
+       "tone": "a"
+      }
+     ]
+    },
+    {
+     "segments": [
+      {
+       "units": 2.222,
+       "label": "0.97",
+       "tone": "b"
+      },
+      {
+       "units": 7.778,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ]
+    }
+   ],
+   "note": "How far apart are the two numbers?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "9.70",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 2.222,
+        "label": "0.97",
+        "tone": "b"
+       },
+       {
+        "units": 7.778,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ]
+     }
+    ],
+    "note": "Write 9.7 as 9.70 so the points line up"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "9.70",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 2.222,
+        "label": "0.97",
+        "tone": "b"
+       },
+       {
+        "units": 7.778,
+        "label": "8.73",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "0.97 + 8.73 = 9.70",
+    "highlight": [
+     "b1s1"
+    ]
+   }
+  ]
+ },
+ "PYQ_2018_Q06": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.007",
+      "0.007"
+     ],
+     [
+      "0.07",
+      "0.070"
+     ],
+     [
+      "7.07",
+      "7.070"
+     ],
+     [
+      "0.70",
+      "0.700"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ]
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.007",
+      "0.007"
+     ],
+     [
+      "0.07",
+      "0.070"
+     ],
+     [
+      "7.07",
+      "7.070"
+     ],
+     [
+      "0.70",
+      "0.700"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "7 thousandths is the least",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "PYQ_2018_Q08": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "7.256",
+    "note": "The digits after the decimal point are 2, 5 and 6",
+    "highlight": [
+     "d1",
+     "d2",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "7.256",
+    "note": "The 5 is in the hundredths place",
+    "highlight": [
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "7.256",
+    "note": "5 hundredths is 5/100",
+    "highlight": [
+     "d2"
+    ]
+   }
+  ]
+ },
+ "PYQ_2019_Q01": {
+  "origin": "authored",
+  "figure": {
+   "kind": "fractionBars",
+   "bars": [
+    {
+     "parts": 8,
+     "shaded": 1,
+     "label": "1/8"
+    }
+   ],
+   "note": "9 wholes and this 1/8: write it as a decimal"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 8,
+      "shaded": 1,
+      "label": "1/8"
+     }
+    ],
+    "note": "8 × 125 = 1000, so 1/8 is 125 thousandths"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 8,
+      "shaded": 1,
+      "label": "1/8 = 0.125"
+     }
+    ]
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 8,
+      "shaded": 1,
+      "label": "1/8 = 0.125"
+     }
+    ],
+    "note": "9 1/8 as a decimal is 9.125"
+   }
+  ]
+ },
+ "PYQ_2019_Q19": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "0.357",
+    "note": "One place: 0.0357 becomes 0.357"
+   },
+   {
+    "kind": "placeChart",
+    "number": "3.57",
+    "note": "One more place: 0.0357 × 100 = 3.57"
+   }
+  ]
+ },
+ "Q_CH11_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "12.5",
+   "note": "Divide by 10: where does each digit move?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "12.5",
+    "note": "The decimal point moves 1 place to the left"
+   },
+   {
+    "kind": "placeChart",
+    "number": "1.25",
+    "note": "12.5 ÷ 10 = 1.25"
+   }
+  ]
+ },
+ "Q_CH11_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "12.5",
+   "note": "Divide by 100: where does each digit move?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "12.5",
+    "note": "100 has 2 zeros, so the point moves 2 places left"
+   },
+   {
+    "kind": "placeChart",
+    "number": "0.125",
+    "note": "12.5 ÷ 100 = 0.125"
+   }
+  ]
+ },
+ "Q_CH11_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "12.5",
+   "note": "Divide by 10000: where does each digit move?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "0.125",
+    "note": "Dividing by 10 twice gives 1.25, then 0.125"
+   },
+   null,
+   null
+  ]
+ },
+ "Q_CH11_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "7.06",
+   "note": "Divide by 10: where does each digit move?"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "7.06",
+    "note": "Every digit moves one place to the right"
+   },
+   {
+    "kind": "placeChart",
+    "number": "0.706",
+    "note": "7 tenths, 0 hundredths and 6 thousandths",
+    "highlight": [
+     "d1",
+     "d2",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "0.706",
+    "note": "7.06 ÷ 10 = 0.706"
+   }
+  ]
+ },
+ "Q_CH11_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "652.7",
+   "note": "Divide by 100: where does each digit move?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "65.27",
+    "note": "One place: 652.7 becomes 65.27"
+   },
+   {
+    "kind": "placeChart",
+    "number": "6.527",
+    "note": "One more place: 652.7 ÷ 100 = 6.527"
+   }
+  ]
+ },
+ "Q_CH11_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "3.8",
+   "note": "Divide by 100: where does each digit move?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "0.38",
+    "note": "One place: 3.8 becomes 0.38"
+   },
+   {
+    "kind": "placeChart",
+    "number": "0.038",
+    "note": "One more place: a zero fills the gap",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "0.038",
+    "note": "3.8 ÷ 100 = 0.038"
+   }
+  ]
+ },
+ "Q_CH11_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "fractionBars",
+   "bars": [
+    {
+     "parts": 4,
+     "shaded": 3,
+     "label": "3/4"
+    }
+   ],
+   "note": "3/4 as a decimal = ?"
+  },
+  "stepFigures": [
+   null,
+   null,
+   null,
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 4,
+      "shaded": 3,
+      "label": "3/4 = 0.75"
+     }
+    ]
+   }
+  ]
+ },
+ "Q_CH11_012": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 8,
+      "shaded": 1,
+      "label": "1/8"
+     }
+    ],
+    "note": "0.125 is 1/8, and it cannot be made simpler"
+   },
+   null
+  ]
+ },
+ "Q_CH11_013": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.5",
+      "0.500"
+     ],
+     [
+      "0.05",
+      "0.050"
+     ],
+     [
+      "0.55",
+      "0.550"
+     ],
+     [
+      "0.505",
+      "0.505"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ]
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.5",
+      "0.500"
+     ],
+     [
+      "0.05",
+      "0.050"
+     ],
+     [
+      "0.55",
+      "0.550"
+     ],
+     [
+      "0.505",
+      "0.505"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "0.55 is the greatest",
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "Q_CH11_020": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "45.783",
+    "note": "Name the place of each digit"
+   },
+   {
+    "kind": "placeChart",
+    "number": "45.783",
+    "note": "8 is the second digit after the decimal point",
+    "highlight": [
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "45.783",
+    "note": "8 is in the hundredths place",
+    "highlight": [
+     "d3"
+    ]
+   }
+  ]
+ },
+ "Q_CH11_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Apples",
+     "2.5 kg",
+     "₹120 per kg"
+    ],
+    [
+     "Oranges",
+     "1.25 kg",
+     "₹80 per kg"
+    ]
+   ],
+   "headers": [
+    "Fruit",
+    "Weight",
+    "Price"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Apples",
+      "2.5 kg",
+      "₹300"
+     ],
+     [
+      "Oranges",
+      "1.25 kg",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Fruit",
+     "Weight",
+     "Cost"
+    ],
+    "note": "2 kg cost ₹240 and half a kg costs ₹60",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Apples",
+      "2.5 kg",
+      "₹300"
+     ],
+     [
+      "Oranges",
+      "1.25 kg",
+      "₹100"
+     ]
+    ],
+    "headers": [
+     "Fruit",
+     "Weight",
+     "Cost"
+    ],
+    "note": "1 kg costs ₹80 and a quarter of a kg costs ₹20",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Apples",
+      "2.5 kg",
+      "₹300"
+     ],
+     [
+      "Oranges",
+      "1.25 kg",
+      "₹100"
+     ]
+    ],
+    "headers": [
+     "Fruit",
+     "Weight",
+     "Cost"
+    ],
+    "note": "Riya spent ₹400 in total"
+   }
+  ]
+ },
+ "Q_CH11_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "809",
+   "note": "Divide by 10: where does each digit move?"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "809.0",
+    "note": "Write 809 as 809.0"
+   },
+   {
+    "kind": "placeChart",
+    "number": "80.9",
+    "note": "The point moves one place to the left. The 0 stays"
+   },
+   {
+    "kind": "placeChart",
+    "number": "80.9",
+    "note": "809 ÷ 10 = 80.9"
+   }
+  ]
+ },
+ "Q_CH11_024": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3.3",
+      "3.300"
+     ],
+     [
+      "3.03",
+      "3.030"
+     ],
+     [
+      "3.303",
+      "3.303"
+     ],
+     [
+      "3.33",
+      "3.330"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ]
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3.03",
+      "3.030"
+     ],
+     [
+      "3.3",
+      "3.300"
+     ],
+     [
+      "3.303",
+      "3.303"
+     ],
+     [
+      "3.33",
+      "3.330"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "In order, smallest first"
+   }
+  ]
+ },
+ "Q_CH12_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "40 rupees",
+       "tone": "a"
+      }
+     ],
+     "label": "1 dollar"
+    },
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "100 rupees",
+       "tone": "b"
+      }
+     ],
+     "label": "?"
+    }
+   ],
+   "note": "How many 40s fit into 100?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "40 rupees",
+        "tone": "a"
+       }
+      ],
+      "label": "1 dollar"
+     },
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "40",
+        "tone": "a"
+       },
+       {
+        "units": 4,
+        "label": "40",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "20",
+        "tone": "unknown"
+       }
+      ],
+      "label": "?"
+     }
+    ],
+    "note": "Two dollars use 80 rupees, and 20 rupees are left"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "40 rupees",
+        "tone": "a"
+       }
+      ],
+      "label": "1 dollar"
+     },
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "40",
+        "tone": "a"
+       },
+       {
+        "units": 4,
+        "label": "40",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "20",
+        "tone": "unknown"
+       }
+      ],
+      "label": "?"
+     }
+    ],
+    "note": "20 rupees is half of 40 rupees: half a dollar",
+    "highlight": [
+     "b1s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "40 rupees",
+        "tone": "a"
+       }
+      ],
+      "label": "1 dollar"
+     },
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "40",
+        "tone": "a"
+       },
+       {
+        "units": 4,
+        "label": "40",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "20",
+        "tone": "b"
+       }
+      ],
+      "label": "2.5"
+     }
+    ],
+    "note": "100 rupees give 2.5 dollars"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_012_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.97 paid"
+    }
+   ],
+   "note": "9 sharpeners at Rs.8 each, then the change"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9,
+        "label": "Rs.72",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Rs.97 paid"
+     }
+    ],
+    "note": "Total cost = 8 × 9 = Rs.72",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "Rs.72",
+        "tone": "a"
+       },
+       {
+        "units": 3.472,
+        "label": "Rs.25",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.97 paid"
+     }
+    ],
+    "note": "Change = Rs.97 − Rs.72 = Rs.25",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_016_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.70 paid"
+    }
+   ],
+   "note": "9 notebooks at Rs.5 each, then the change"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9,
+        "label": "Rs.45",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Rs.70 paid"
+     }
+    ],
+    "note": "Total cost = 5 × 9 = Rs.45",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "Rs.45",
+        "tone": "a"
+       },
+       {
+        "units": 5.556,
+        "label": "Rs.25",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.70 paid"
+     }
+    ],
+    "note": "Change = Rs.70 − Rs.45 = Rs.25",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2017_021_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.128 paid"
+    }
+   ],
+   "note": "9 crayons at Rs.12 each, then the change"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9,
+        "label": "Rs.108",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Rs.128 paid"
+     }
+    ],
+    "note": "Total cost = 12 × 9 = Rs.108",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "Rs.108",
+        "tone": "a"
+       },
+       {
+        "units": 1.852,
+        "label": "Rs.20",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.128 paid"
+     }
+    ],
+    "note": "Change = Rs.128 − Rs.108 = Rs.20",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2022_025_04_p2b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "Rs.10",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.10",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.10",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.10",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.10",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.10",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.110 paid"
+    }
+   ],
+   "note": "6 erasers at Rs.10 each, then the change"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6,
+        "label": "Rs.60",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Rs.110 paid"
+     }
+    ],
+    "note": "Total cost = 10 × 6 = Rs.60",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "Rs.60",
+        "tone": "a"
+       },
+       {
+        "units": 8.333,
+        "label": "Rs.50",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.110 paid"
+     }
+    ],
+    "note": "Change = Rs.110 − Rs.60 = Rs.50",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_014_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "Rs.15",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.15",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.15",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.15",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.65 paid"
+    }
+   ],
+   "note": "4 erasers at Rs.15 each, then the change"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.60",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Rs.65 paid"
+     }
+    ],
+    "note": "Total cost = 15 × 4 = Rs.60",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "Rs.60",
+        "tone": "a"
+       },
+       {
+        "units": 1.204,
+        "label": "Rs.5",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.65 paid"
+     }
+    ],
+    "note": "Change = Rs.65 − Rs.60 = Rs.5",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2025_023_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "Rs.8",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.8",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.8",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.8",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.8",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "Rs.8",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.53 paid"
+    }
+   ],
+   "note": "6 rulers at Rs.8 each, then the change"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6,
+        "label": "Rs.48",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Rs.53 paid"
+     }
+    ],
+    "note": "Total cost = 8 × 6 = Rs.48",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "Rs.48",
+        "tone": "a"
+       },
+       {
+        "units": 1.227,
+        "label": "Rs.5",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.53 paid"
+     }
+    ],
+    "note": "Change = Rs.53 − Rs.48 = Rs.5",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ }
+}

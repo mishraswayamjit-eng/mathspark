@@ -1,0 +1,3388 @@
+{
+ "EXT_G4_FP_2021_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "?",
+   "breadth": "?",
+   "note": "Rows = chairs in each row, so the hall is a square"
+  },
+  "stepFigures": [
+   null,
+   null,
+   null,
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "18",
+    "breadth": "18",
+    "inside": "18 × 18",
+    "note": "Try 18 rows of 18 chairs"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "18",
+    "breadth": "18",
+    "inside": "324 men",
+    "note": "18 rows of 18 chairs hold 324 men"
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_032": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 28,
+    "note": "Break 28 into prime factors"
+   },
+   {
+    "kind": "factorTree",
+    "number": 28,
+    "note": "The two 2s make a pair. The 7 has no partner",
+    "highlight": [
+     "primes"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G4_FP_2022_022": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 588,
+    "note": "Break 588 into prime factors"
+   },
+   {
+    "kind": "factorTree",
+    "number": 588,
+    "note": "The 2s pair up and the 7s pair up. The 3 has no partner",
+    "highlight": [
+     "primes"
+    ]
+   },
+   null,
+   null,
+   null
+  ]
+ },
+ "EXT_G4_FP_2023_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1220,
+   "max": 1300,
+   "step": 10,
+   "points": [
+    {
+     "at": 1234,
+     "label": "1234"
+    }
+   ],
+   "note": "How far is the next square number?",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "numberLine",
+    "min": 1220,
+    "max": 1300,
+    "step": 10,
+    "points": [
+     {
+      "at": 1234,
+      "label": "1234"
+     },
+     {
+      "at": 1296,
+      "label": "1296"
+     }
+    ],
+    "hops": [
+     {
+      "from": 1234,
+      "to": 1296,
+      "label": "+62"
+     }
+    ],
+    "note": "36 × 36 = 1296 is the next square",
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_009": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 16,
+        "label": "16",
+        "tone": "a"
+       },
+       {
+        "units": 16,
+        "label": "16",
+        "tone": "a"
+       },
+       {
+        "units": 16,
+        "label": "16",
+        "tone": "a"
+       },
+       {
+        "units": 16,
+        "label": "16",
+        "tone": "a"
+       },
+       {
+        "units": 16,
+        "label": "16",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "unknown"
+       }
+      ],
+      "brace": "81"
+     }
+    ],
+    "note": "Five 16s fit into 81, with a little left over"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 16,
+        "label": "16",
+        "tone": "a"
+       },
+       {
+        "units": 16,
+        "label": "16",
+        "tone": "a"
+       },
+       {
+        "units": 16,
+        "label": "16",
+        "tone": "a"
+       },
+       {
+        "units": 16,
+        "label": "16",
+        "tone": "a"
+       },
+       {
+        "units": 16,
+        "label": "16",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       }
+      ],
+      "brace": "81"
+     }
+    ],
+    "highlight": [
+     "b0s5"
+    ],
+    "note": "The piece left over is 1"
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH16_013": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "144",
+      "12"
+     ],
+     [
+      "169",
+      "13"
+     ],
+     [
+      "196",
+      "14"
+     ],
+     [
+      "256",
+      "16"
+     ],
+     [
+      "324",
+      "18"
+     ],
+     [
+      "400",
+      "20"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Square of"
+    ]
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "144",
+      "12"
+     ],
+     [
+      "169",
+      "13"
+     ],
+     [
+      "196",
+      "14"
+     ],
+     [
+      "256",
+      "16"
+     ],
+     [
+      "324",
+      "18"
+     ],
+     [
+      "400",
+      "20"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Square of"
+    ],
+    "note": "169 is the square of 13: the only odd number",
+    "highlight": [
+     "r1"
+    ]
+   },
+   null
+  ]
+ },
+ "EXT_G4_WS2_CH16_014": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "81",
+      "9"
+     ],
+     [
+      "121",
+      "11"
+     ],
+     [
+      "169",
+      "13"
+     ],
+     [
+      "289",
+      "17"
+     ],
+     [
+      "361",
+      "19"
+     ],
+     [
+      "529",
+      "23"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Square of"
+    ]
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "81",
+      "9"
+     ],
+     [
+      "121",
+      "11"
+     ],
+     [
+      "169",
+      "13"
+     ],
+     [
+      "289",
+      "17"
+     ],
+     [
+      "361",
+      "19"
+     ],
+     [
+      "529",
+      "23"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Square of"
+    ],
+    "note": "9 is not prime: it is 3 times 3",
+    "highlight": [
+     "r0"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_SQUARES_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "grid",
+   "rows": 12,
+   "cols": 12,
+   "note": "12 rows of 12: how many small squares?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "grid",
+    "rows": 12,
+    "cols": 12,
+    "shaded": [
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      11
+     ],
+     [
+      1,
+      10
+     ],
+     [
+      1,
+      11
+     ],
+     [
+      2,
+      10
+     ],
+     [
+      2,
+      11
+     ],
+     [
+      3,
+      10
+     ],
+     [
+      3,
+      11
+     ],
+     [
+      4,
+      10
+     ],
+     [
+      4,
+      11
+     ],
+     [
+      5,
+      10
+     ],
+     [
+      5,
+      11
+     ],
+     [
+      6,
+      10
+     ],
+     [
+      6,
+      11
+     ],
+     [
+      7,
+      10
+     ],
+     [
+      7,
+      11
+     ],
+     [
+      8,
+      10
+     ],
+     [
+      8,
+      11
+     ],
+     [
+      9,
+      10
+     ],
+     [
+      9,
+      11
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      10,
+      11
+     ],
+     [
+      11,
+      10
+     ],
+     [
+      11,
+      11
+     ]
+    ],
+    "note": "12 × 10 = 120 and 12 × 2 = 24"
+   },
+   {
+    "kind": "grid",
+    "rows": 12,
+    "cols": 12,
+    "note": "120 + 24 = 144"
+   }
+  ]
+ },
+ "G4A_SQUARES_002": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "grid",
+    "rows": 8,
+    "cols": 8,
+    "note": "64 is 8 × 8, so 64 makes a square"
+   }
+  ]
+ },
+ "G4A_SQUARES_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "?",
+   "breadth": "?",
+   "inside": "81 squares",
+   "note": "The same number in every row and every column"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "grid",
+    "rows": 9,
+    "cols": 9,
+    "note": "9 × 9 = 81 fits"
+   },
+   {
+    "kind": "grid",
+    "rows": 9,
+    "cols": 9,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      0,
+      7
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "note": "9 small squares in each row"
+   }
+  ]
+ },
+ "G4A_SQUARES_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "inside": "49 squares",
+   "note": "What is the next bigger square?"
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 7,
+    "cols": 7,
+    "note": "49 is 7 × 7"
+   },
+   null,
+   {
+    "kind": "grid",
+    "rows": 8,
+    "cols": 8,
+    "shaded": [
+     [
+      0,
+      7
+     ],
+     [
+      1,
+      7
+     ],
+     [
+      2,
+      7
+     ],
+     [
+      3,
+      7
+     ],
+     [
+      4,
+      7
+     ],
+     [
+      5,
+      7
+     ],
+     [
+      6,
+      7
+     ],
+     [
+      7,
+      7
+     ],
+     [
+      7,
+      0
+     ],
+     [
+      7,
+      1
+     ],
+     [
+      7,
+      2
+     ],
+     [
+      7,
+      3
+     ],
+     [
+      7,
+      4
+     ],
+     [
+      7,
+      5
+     ],
+     [
+      7,
+      6
+     ]
+    ],
+    "note": "One more row and column: 8 × 8 = 64"
+   }
+  ]
+ },
+ "G4A_SQUARES_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "grid",
+   "rows": 11,
+   "cols": 11,
+   "note": "11 rows with 11 saplings in each row"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "grid",
+    "rows": 11,
+    "cols": 11,
+    "shaded": [
+     [
+      0,
+      10
+     ],
+     [
+      1,
+      10
+     ],
+     [
+      2,
+      10
+     ],
+     [
+      3,
+      10
+     ],
+     [
+      4,
+      10
+     ],
+     [
+      5,
+      10
+     ],
+     [
+      6,
+      10
+     ],
+     [
+      7,
+      10
+     ],
+     [
+      8,
+      10
+     ],
+     [
+      9,
+      10
+     ],
+     [
+      10,
+      10
+     ]
+    ],
+    "note": "11 × 10 = 110, and one more 11 makes 121"
+   },
+   {
+    "kind": "grid",
+    "rows": 11,
+    "cols": 11,
+    "note": "Ravi plants 121 saplings"
+   }
+  ]
+ },
+ "G4A_SQUARES_009": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 9,
+    "cols": 9,
+    "note": "9 × 9 = 81 has two digits"
+   },
+   {
+    "kind": "grid",
+    "rows": 10,
+    "cols": 10,
+    "note": "10 × 10 = 100 has three digits"
+   },
+   null
+  ]
+ },
+ "G4A_SQUARES_010": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 5,
+    "cols": 5,
+    "note": "5 × 5 = 25 is the square just below 30"
+   },
+   null,
+   {
+    "kind": "grid",
+    "rows": 5,
+    "cols": 6,
+    "shaded": [
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      3,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "note": "30 − 25 = 5 must be taken away"
+   }
+  ]
+ },
+ "G4A_SQUARES_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "grid",
+   "rows": 6,
+   "cols": 6,
+   "note": "The square of 6"
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 6,
+    "cols": 6,
+    "note": "6 × 6 = 36"
+   },
+   {
+    "kind": "grid",
+    "rows": 6,
+    "cols": 6,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ]
+    ],
+    "note": "Take 6 away: 36 − 6 = 30"
+   },
+   null
+  ]
+ },
+ "G4A_SQUARES_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 50,
+   "max": 150,
+   "step": 10,
+   "note": "Which perfect squares lie between 50 and 150?",
+   "tickLabels": "ends"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 150,
+    "step": 10,
+    "points": [
+     {
+      "at": 64,
+      "label": "64"
+     }
+    ],
+    "note": "7 × 7 = 49 is just below 50, so start at 8 × 8 = 64",
+    "tickLabels": "ends"
+   },
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 150,
+    "step": 10,
+    "points": [
+     {
+      "at": 64,
+      "label": "64"
+     },
+     {
+      "at": 81,
+      "label": "81"
+     },
+     {
+      "at": 100,
+      "label": "100"
+     },
+     {
+      "at": 121,
+      "label": "121"
+     },
+     {
+      "at": 144,
+      "label": "144"
+     }
+    ],
+    "tickLabels": "ends"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 150,
+    "step": 10,
+    "points": [
+     {
+      "at": 64,
+      "label": "64"
+     },
+     {
+      "at": 81,
+      "label": "81"
+     },
+     {
+      "at": 100,
+      "label": "100"
+     },
+     {
+      "at": 121,
+      "label": "121"
+     },
+     {
+      "at": 144,
+      "label": "144"
+     }
+    ],
+    "note": "5 perfect squares lie between 50 and 150",
+    "tickLabels": "ends"
+   }
+  ]
+ },
+ "G4A_SQUARES_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "grid",
+   "rows": 10,
+   "cols": 10,
+   "shaded": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ]
+   ],
+   "note": "A 10 by 10 square with a 6 by 6 square shaded inside it"
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 10,
+    "cols": 10,
+    "note": "10 × 10 = 100"
+   },
+   {
+    "kind": "grid",
+    "rows": 10,
+    "cols": 10,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      3,
+      5
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      3
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      5,
+      0
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      5,
+      2
+     ],
+     [
+      5,
+      3
+     ],
+     [
+      5,
+      4
+     ],
+     [
+      5,
+      5
+     ]
+    ],
+    "note": "The shaded square is 6 × 6 = 36"
+   },
+   {
+    "kind": "grid",
+    "rows": 10,
+    "cols": 10,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      3,
+      5
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      3
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      5,
+      0
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      5,
+      2
+     ],
+     [
+      5,
+      3
+     ],
+     [
+      5,
+      4
+     ],
+     [
+      5,
+      5
+     ]
+    ],
+    "note": "100 − 36 = 64 squares are not shaded"
+   }
+  ]
+ },
+ "G4A_SQUARES_016": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "grid",
+    "rows": 6,
+    "cols": 6,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      3
+     ],
+     [
+      4,
+      4
+     ]
+    ],
+    "note": "36 is 6 × 6"
+   },
+   {
+    "kind": "grid",
+    "rows": 6,
+    "cols": 6,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      3
+     ],
+     [
+      4,
+      4
+     ]
+    ],
+    "note": "Each L-shape adds the next odd number: 1, 3, 5, 7, 9, 11"
+   }
+  ]
+ },
+ "G4A_SQUARES_017": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 12,
+    "cols": 12,
+    "note": "12 × 12 = 144"
+   },
+   {
+    "kind": "grid",
+    "rows": 12,
+    "cols": 12,
+    "note": "13 × 13 = 169 is too many, so the square uses 144 children"
+   },
+   {
+    "kind": "grid",
+    "rows": 12,
+    "cols": 12,
+    "note": "150 − 144 = 6 children are left out"
+   }
+  ]
+ },
+ "G4A_SQUARES_018": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 190,
+    "max": 230,
+    "step": 5,
+    "points": [
+     {
+      "at": 196,
+      "label": "196"
+     },
+     {
+      "at": 200
+     }
+    ],
+    "note": "14 × 14 = 196 cannot hold all 200 plants",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 190,
+    "max": 230,
+    "step": 5,
+    "points": [
+     {
+      "at": 200,
+      "label": "200"
+     },
+     {
+      "at": 225,
+      "label": "225"
+     }
+    ],
+    "note": "15 × 15 = 225 is the first square above 200",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 190,
+    "max": 230,
+    "step": 5,
+    "points": [
+     {
+      "at": 200,
+      "label": "200"
+     },
+     {
+      "at": 225,
+      "label": "225"
+     }
+    ],
+    "hops": [
+     {
+      "from": 200,
+      "to": 225,
+      "label": "+25"
+     }
+    ],
+    "highlight": [
+     "h0"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_SQUARES_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "?",
+   "breadth": "?",
+   "inside": "441 soldiers",
+   "note": "Every soldier in the front row holds a flag"
+  },
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "21",
+    "breadth": "21",
+    "inside": "441 soldiers",
+    "note": "21 × 21 = 441"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "21",
+    "breadth": "21",
+    "inside": "441 soldiers",
+    "note": "The front row has 21 soldiers, so there are 21 flags",
+    "highlight": [
+     "length"
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_021": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "numberLine",
+    "min": 140,
+    "max": 170,
+    "step": 5,
+    "points": [
+     {
+      "at": 144,
+      "label": "144"
+     },
+     {
+      "at": 164,
+      "label": "164"
+     },
+     {
+      "at": 169,
+      "label": "169"
+     }
+    ],
+    "note": "164 falls between the squares 144 and 169",
+    "highlight": [
+     "p1"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_SQUARES_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "inside": "64 tiles",
+   "note": "How many more tiles make the next bigger square?"
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 8,
+    "cols": 8,
+    "note": "64 is 8 × 8"
+   },
+   {
+    "kind": "grid",
+    "rows": 9,
+    "cols": 9,
+    "shaded": [
+     [
+      0,
+      8
+     ],
+     [
+      1,
+      8
+     ],
+     [
+      2,
+      8
+     ],
+     [
+      3,
+      8
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      5,
+      8
+     ],
+     [
+      6,
+      8
+     ],
+     [
+      7,
+      8
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      1
+     ],
+     [
+      8,
+      2
+     ],
+     [
+      8,
+      3
+     ],
+     [
+      8,
+      4
+     ],
+     [
+      8,
+      5
+     ],
+     [
+      8,
+      6
+     ],
+     [
+      8,
+      7
+     ]
+    ],
+    "note": "The next square is 9 × 9 = 81"
+   },
+   {
+    "kind": "grid",
+    "rows": 9,
+    "cols": 9,
+    "shaded": [
+     [
+      0,
+      8
+     ],
+     [
+      1,
+      8
+     ],
+     [
+      2,
+      8
+     ],
+     [
+      3,
+      8
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      5,
+      8
+     ],
+     [
+      6,
+      8
+     ],
+     [
+      7,
+      8
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      1
+     ],
+     [
+      8,
+      2
+     ],
+     [
+      8,
+      3
+     ],
+     [
+      8,
+      4
+     ],
+     [
+      8,
+      5
+     ],
+     [
+      8,
+      6
+     ],
+     [
+      8,
+      7
+     ]
+    ],
+    "note": "81 − 64 = 17 more tiles"
+   }
+  ]
+ },
+ "G4A_SQUARES_030": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 950,
+    "max": 1030,
+    "step": 10,
+    "points": [
+     {
+      "at": 961,
+      "label": "961"
+     },
+     {
+      "at": 1000,
+      "label": "1000"
+     },
+     {
+      "at": 1024,
+      "label": "1024"
+     }
+    ],
+    "note": "31 × 31 = 961 and 32 × 32 = 1024",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 950,
+    "max": 1030,
+    "step": 10,
+    "points": [
+     {
+      "at": 961,
+      "label": "961"
+     },
+     {
+      "at": 1000,
+      "label": "1000"
+     },
+     {
+      "at": 1024,
+      "label": "1024"
+     }
+    ],
+    "note": "961 is the largest perfect square below 1000",
+    "highlight": [
+     "p0"
+    ],
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 950,
+    "max": 1030,
+    "step": 10,
+    "points": [
+     {
+      "at": 961,
+      "label": "961"
+     },
+     {
+      "at": 1000,
+      "label": "1000"
+     }
+    ],
+    "hops": [
+     {
+      "from": 1000,
+      "to": 961,
+      "label": "−39"
+     }
+    ],
+    "highlight": [
+     "h0"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_SQUARES_031": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 225,
+    "max": 256,
+    "step": 1,
+    "points": [
+     {
+      "at": 225,
+      "label": "225"
+     },
+     {
+      "at": 256,
+      "label": "256"
+     }
+    ],
+    "note": "15 × 15 = 225 and 16 × 16 = 256",
+    "tickLabels": "none"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 225,
+    "max": 256,
+    "step": 1,
+    "points": [
+     {
+      "at": 225
+     },
+     {
+      "at": 226,
+      "label": "226"
+     },
+     {
+      "at": 255,
+      "label": "255"
+     },
+     {
+      "at": 256
+     }
+    ],
+    "note": "The numbers in between run from 226 to 255",
+    "tickLabels": "none"
+   },
+   null
+  ]
+ },
+ "G4A_SQUARES_032": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "numberLine",
+    "min": 140,
+    "max": 170,
+    "step": 5,
+    "points": [
+     {
+      "at": 144,
+      "label": "144"
+     },
+     {
+      "at": 169,
+      "label": "169"
+     }
+    ],
+    "hops": [
+     {
+      "from": 144,
+      "to": 169,
+      "label": "25"
+     }
+    ],
+    "note": "12 × 12 = 144 and 13 × 13 = 169 are 25 apart",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 140,
+    "max": 170,
+    "step": 5,
+    "points": [
+     {
+      "at": 144,
+      "label": "144"
+     },
+     {
+      "at": 169,
+      "label": "169"
+     }
+    ],
+    "hops": [
+     {
+      "from": 144,
+      "to": 149,
+      "label": "+5"
+     }
+    ],
+    "note": "He has 5 more than the smaller square, 144",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 140,
+    "max": 170,
+    "step": 5,
+    "points": [
+     {
+      "at": 144,
+      "label": "144"
+     },
+     {
+      "at": 149,
+      "label": "149"
+     },
+     {
+      "at": 169,
+      "label": "169"
+     }
+    ],
+    "hops": [
+     {
+      "from": 144,
+      "to": 149,
+      "label": "+5"
+     },
+     {
+      "from": 149,
+      "to": 169,
+      "label": "+20"
+     }
+    ],
+    "note": "144 + 5 = 149 trees",
+    "highlight": [
+     "p1"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_SQUARES_033": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "15",
+    "breadth": "15",
+    "inside": "225 stamps",
+    "note": "15 × 15 = 225"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "15",
+    "breadth": "15",
+    "inside": "225 stamps",
+    "note": "15 stamps in each row of the big square",
+    "highlight": [
+     "length"
+    ]
+   }
+  ]
+ },
+ "G4A_SQUARES_034": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "25",
+      "36"
+     ],
+     [
+      "49",
+      "64",
+      "81"
+     ]
+    ],
+    "note": "The two-digit perfect squares"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "7"
+     ],
+     [
+      "25",
+      "7"
+     ],
+     [
+      "36",
+      "9"
+     ],
+     [
+      "49",
+      "13"
+     ],
+     [
+      "64",
+      "10"
+     ],
+     [
+      "81",
+      "9"
+     ]
+    ],
+    "headers": [
+     "Square",
+     "Digit sum"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "7"
+     ],
+     [
+      "25",
+      "7"
+     ],
+     [
+      "36",
+      "9"
+     ],
+     [
+      "49",
+      "13"
+     ],
+     [
+      "64",
+      "10"
+     ],
+     [
+      "81",
+      "9"
+     ]
+    ],
+    "headers": [
+     "Square",
+     "Digit sum"
+    ],
+    "note": "4 + 9 = 13",
+    "highlight": [
+     "r3"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_SQUARES_037": {
+  "origin": "authored",
+  "figure": {
+   "kind": "grid",
+   "rows": 4,
+   "cols": 4,
+   "shaded": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "note": "1 + 3 + 5 + 7 = 16 fills a 4 by 4 square"
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 4,
+    "cols": 4,
+    "shaded": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      3
+     ]
+    ],
+    "note": "Adding 2, 3 or 4 odd numbers fills a 2, 3 or 4 square"
+   },
+   null,
+   null,
+   null
+  ]
+ },
+ "G4A_SQUARES_039": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "inside": "144 children",
+   "note": "Children on the outside edge hold a flag",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 12,
+    "cols": 12,
+    "note": "144 children: 12 on each side"
+   },
+   {
+    "kind": "grid",
+    "rows": 12,
+    "cols": 12,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      0,
+      7
+     ],
+     [
+      0,
+      8
+     ],
+     [
+      0,
+      9
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      11
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      11
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      11
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      11
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      11
+     ],
+     [
+      5,
+      0
+     ],
+     [
+      5,
+      11
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      6,
+      11
+     ],
+     [
+      7,
+      0
+     ],
+     [
+      7,
+      11
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      11
+     ],
+     [
+      9,
+      0
+     ],
+     [
+      9,
+      11
+     ],
+     [
+      10,
+      0
+     ],
+     [
+      10,
+      11
+     ],
+     [
+      11,
+      0
+     ],
+     [
+      11,
+      1
+     ],
+     [
+      11,
+      2
+     ],
+     [
+      11,
+      3
+     ],
+     [
+      11,
+      4
+     ],
+     [
+      11,
+      5
+     ],
+     [
+      11,
+      6
+     ],
+     [
+      11,
+      7
+     ],
+     [
+      11,
+      8
+     ],
+     [
+      11,
+      9
+     ],
+     [
+      11,
+      10
+     ],
+     [
+      11,
+      11
+     ]
+    ],
+    "note": "Four sides of 12 would count each corner twice"
+   },
+   {
+    "kind": "grid",
+    "rows": 12,
+    "cols": 12,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      0,
+      7
+     ],
+     [
+      0,
+      8
+     ],
+     [
+      0,
+      9
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      11
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      11
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      11
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      11
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      11
+     ],
+     [
+      5,
+      0
+     ],
+     [
+      5,
+      11
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      6,
+      11
+     ],
+     [
+      7,
+      0
+     ],
+     [
+      7,
+      11
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      11
+     ],
+     [
+      9,
+      0
+     ],
+     [
+      9,
+      11
+     ],
+     [
+      10,
+      0
+     ],
+     [
+      10,
+      11
+     ],
+     [
+      11,
+      0
+     ],
+     [
+      11,
+      1
+     ],
+     [
+      11,
+      2
+     ],
+     [
+      11,
+      3
+     ],
+     [
+      11,
+      4
+     ],
+     [
+      11,
+      5
+     ],
+     [
+      11,
+      6
+     ],
+     [
+      11,
+      7
+     ],
+     [
+      11,
+      8
+     ],
+     [
+      11,
+      9
+     ],
+     [
+      11,
+      10
+     ],
+     [
+      11,
+      11
+     ]
+    ],
+    "note": "Take away the 4 corners that were counted twice"
+   },
+   {
+    "kind": "grid",
+    "rows": 12,
+    "cols": 12,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      0,
+      7
+     ],
+     [
+      0,
+      8
+     ],
+     [
+      0,
+      9
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      11
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      11
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      11
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      11
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      11
+     ],
+     [
+      5,
+      0
+     ],
+     [
+      5,
+      11
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      6,
+      11
+     ],
+     [
+      7,
+      0
+     ],
+     [
+      7,
+      11
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      11
+     ],
+     [
+      9,
+      0
+     ],
+     [
+      9,
+      11
+     ],
+     [
+      10,
+      0
+     ],
+     [
+      10,
+      11
+     ],
+     [
+      11,
+      0
+     ],
+     [
+      11,
+      1
+     ],
+     [
+      11,
+      2
+     ],
+     [
+      11,
+      3
+     ],
+     [
+      11,
+      4
+     ],
+     [
+      11,
+      5
+     ],
+     [
+      11,
+      6
+     ],
+     [
+      11,
+      7
+     ],
+     [
+      11,
+      8
+     ],
+     [
+      11,
+      9
+     ],
+     [
+      11,
+      10
+     ],
+     [
+      11,
+      11
+     ]
+    ],
+    "note": "44 children hold a flag"
+   }
+  ]
+ },
+ "G4A_SQUARES_040": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     2,
+     2
+    ],
+    [
+     10,
+     2
+    ],
+    [
+     10,
+     10
+    ],
+    [
+     2,
+     10
+    ]
+   ],
+   "rightAngles": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "dashed": [
+    {
+     "from": 0,
+     "to": 2
+    },
+    {
+     "from": 1,
+     "to": 3
+    }
+   ],
+   "note": "A square floor of 225 tiles. Both diagonals are red"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      2
+     ],
+     [
+      10,
+      2
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      2,
+      10
+     ]
+    ],
+    "rightAngles": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2,
+      "label": "15 tiles"
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "15 tiles in each row, so each diagonal has 15 tiles"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      2
+     ],
+     [
+      10,
+      2
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      2,
+      10
+     ]
+    ],
+    "rightAngles": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2,
+      "label": "15 tiles"
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "15 is odd, so the diagonals cross on one middle tile"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      2
+     ],
+     [
+      10,
+      2
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      2,
+      10
+     ]
+    ],
+    "rightAngles": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2,
+      "label": "15 tiles"
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "The middle tile is counted once: 29 red tiles"
+   }
+  ]
+ },
+ "G4A_SQUARES_045": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "10"
+     ],
+     [
+      "4",
+      "13"
+     ],
+     [
+      "9",
+      "18"
+     ],
+     [
+      "16",
+      "25"
+     ],
+     [
+      "25",
+      "34"
+     ],
+     [
+      "36",
+      "45"
+     ]
+    ],
+    "headers": [
+     "Age now",
+     "In 9 years"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "10"
+     ],
+     [
+      "4",
+      "13"
+     ],
+     [
+      "9",
+      "18"
+     ],
+     [
+      "16",
+      "25"
+     ],
+     [
+      "25",
+      "34"
+     ],
+     [
+      "36",
+      "45"
+     ]
+    ],
+    "headers": [
+     "Age now",
+     "In 9 years"
+    ],
+    "note": "16 and 25 are both perfect squares",
+    "highlight": [
+     "r3"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_SQUARES_046": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 12,
+    "note": "12 is 2 × 2 × 3, so it needs one more 3"
+   },
+   null,
+   null,
+   null
+  ]
+ },
+ "PYQ_2016_Q31": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "?",
+   "breadth": "?",
+   "note": "Rows = chairs in each column, so the hall is a square"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "18",
+    "breadth": "18",
+    "inside": "324 men",
+    "note": "18 times 18 is 324"
+   },
+   null,
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "18",
+    "breadth": "18",
+    "inside": "324 men",
+    "note": "The hall can hold 324 men"
+   }
+  ]
+ },
+ "PYQ_2017_Q38": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4 × 4",
+      "16"
+     ],
+     [
+      "5 × 5",
+      "25"
+     ],
+     [
+      "6 × 6",
+      "36"
+     ],
+     [
+      "7 × 7",
+      "49"
+     ],
+     [
+      "8 × 8",
+      "64"
+     ],
+     [
+      "9 × 9",
+      "81"
+     ]
+    ],
+    "note": "The square numbers with two digits"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4 × 4",
+      "16"
+     ],
+     [
+      "5 × 5",
+      "25"
+     ],
+     [
+      "6 × 6",
+      "36"
+     ],
+     [
+      "7 × 7",
+      "49"
+     ],
+     [
+      "8 × 8",
+      "64"
+     ],
+     [
+      "9 × 9",
+      "81"
+     ]
+    ],
+    "note": "The even ones are 16, 36 and 64",
+    "highlight": [
+     "r0",
+     "r2",
+     "r4"
+    ]
+   },
+   null
+  ]
+ },
+ "PYQ_2019_Q26": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 670,
+   "max": 730,
+   "step": 10,
+   "points": [
+    {
+     "at": 710,
+     "label": "710"
+    }
+   ],
+   "note": "How far is the next square number?",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 670,
+    "max": 730,
+    "step": 10,
+    "points": [
+     {
+      "at": 676,
+      "label": "676"
+     },
+     {
+      "at": 710,
+      "label": "710"
+     },
+     {
+      "at": 729,
+      "label": "729"
+     }
+    ],
+    "note": "26 × 26 = 676 and 27 × 27 = 729",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 670,
+    "max": 730,
+    "step": 10,
+    "points": [
+     {
+      "at": 710,
+      "label": "710"
+     },
+     {
+      "at": 729,
+      "label": "729"
+     }
+    ],
+    "hops": [
+     {
+      "from": 710,
+      "to": 729,
+      "label": "?"
+     }
+    ],
+    "tickLabels": "none"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 670,
+    "max": 730,
+    "step": 10,
+    "points": [
+     {
+      "at": 710,
+      "label": "710"
+     },
+     {
+      "at": 729,
+      "label": "729"
+     }
+    ],
+    "hops": [
+     {
+      "from": 710,
+      "to": 729,
+      "label": "+19"
+     }
+    ],
+    "highlight": [
+     "h0"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_031_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "?",
+   "breadth": "?",
+   "inside": "576 squares",
+   "note": "A square made of 576 small squares: how many in each row?"
+  },
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "24",
+    "breadth": "24",
+    "inside": "576 squares",
+    "note": "24 × 24 = 576, so the square root is 24"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_003_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "?",
+   "breadth": "?",
+   "inside": "16 squares",
+   "note": "A square made of 16 small squares: how many in each row?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "grid",
+    "rows": 4,
+    "cols": 4,
+    "note": "4 × 4 = 16, so the square root is 4"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH16_013_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "23",
+   "breadth": "23",
+   "inside": "?",
+   "note": "23 rows with 23 in each row"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "23 × 20",
+      "460"
+     ],
+     [
+      "23 × 3",
+      "69"
+     ]
+    ],
+    "note": "Split the square into two easier parts"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "23",
+    "breadth": "23",
+    "inside": "529",
+    "note": "The square of 23 is 529"
+   }
+  ]
+ }
+}

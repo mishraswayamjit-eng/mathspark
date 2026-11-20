@@ -1,0 +1,11936 @@
+{
+ "BOOST_EXT_G4_FP_2021_024_07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "15 cm",
+   "breadth": "11 cm",
+   "inside": "Area = ?",
+   "proportion": 1.36
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "15 cm",
+    "breadth": "11 cm",
+    "proportion": 1.36,
+    "note": "Area = 15 × 11",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "15 cm",
+    "breadth": "11 cm",
+    "inside": "165 sq.cm",
+    "proportion": 1.36,
+    "note": "15 × 11 = 165 sq.cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2024_032_05": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "24 cm",
+   "breadth": "11 cm",
+   "inside": "Area = ?",
+   "proportion": 2.18
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "24 cm",
+    "breadth": "11 cm",
+    "proportion": 2.18,
+    "note": "Area = 24 × 11",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "24 cm",
+    "breadth": "11 cm",
+    "inside": "264 sq.cm",
+    "proportion": 2.18,
+    "note": "24 × 11 = 264 sq.cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2025_014_06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     12,
+     1.44
+    ],
+    [
+     0,
+     1.44
+    ]
+   ],
+   "edges": [
+    "25 cm",
+    null,
+    null,
+    "3 cm"
+   ],
+   "note": "Perimeter = ?",
+   "highlight": [
+    "e0",
+    "e1",
+    "e2",
+    "e3"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      1.44
+     ],
+     [
+      0,
+      1.44
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     null,
+     null,
+     "3 cm"
+    ],
+    "note": "Perimeter = 2 × (length + width)",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      1.44
+     ],
+     [
+      0,
+      1.44
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     null,
+     null,
+     "3 cm"
+    ],
+    "note": "2 × (25 + 3) = 56 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_WS2_CH12_005_05": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "15 cm",
+   "breadth": "9 cm",
+   "proportion": 1.67,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "15 cm",
+    "breadth": "9 cm",
+    "proportion": 1.67,
+    "note": "Perimeter = 2 × (length + width)",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "15 cm",
+    "breadth": "9 cm",
+    "proportion": 1.67,
+    "note": "2 × (15 + 9) = 48 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_WS2_CH12_005_07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     12,
+     3.0
+    ],
+    [
+     0,
+     3.0
+    ]
+   ],
+   "edges": [
+    "16 cm",
+    null,
+    null,
+    "4 cm"
+   ],
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      3.0
+     ],
+     [
+      0,
+      3.0
+     ]
+    ],
+    "edges": [
+     "16 cm",
+     null,
+     null,
+     "4 cm"
+    ],
+    "note": "Area = 16 × 4",
+    "highlight": [
+     "e0",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      3.0
+     ],
+     [
+      0,
+      3.0
+     ]
+    ],
+    "edges": [
+     "16 cm",
+     null,
+     null,
+     "4 cm"
+    ],
+    "note": "16 × 4 = 64 sq.cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "8 ft",
+   "breadth": "?",
+   "proportion": 1.33,
+   "note": "The length is 2 more than the width. Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "8 ft",
+    "breadth": "8 − 2 ft",
+    "proportion": 1.33,
+    "note": "The width is 2 less than the length",
+    "highlight": [
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "8 ft",
+    "breadth": "8 − 2 ft",
+    "proportion": 1.33,
+    "note": "Area = length × width",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "8 ft",
+    "breadth": "8 − 2 ft",
+    "inside": "48 sq ft",
+    "proportion": 1.33,
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "16 cm",
+   "breadth": "12 cm",
+   "proportion": 1.33,
+   "note": "The same wire is bent into a square. Side = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "16 cm",
+    "breadth": "12 cm",
+    "proportion": 1.33,
+    "note": "16 + 12 = 28 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "16 cm",
+    "breadth": "12 cm",
+    "proportion": 1.33,
+    "note": "Whole wire = 2 × 28 cm",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "?",
+    "note": "56 cm shared among 4 equal sides",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "14 cm",
+    "note": "56 ÷ 4 = 14 cm",
+    "highlight": [
+     "length"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_038": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "3a",
+   "breadth": "2a",
+   "proportion": 1.5,
+   "note": "a is the side of a square with perimeter 28 cm. Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "a",
+    "note": "4 equal sides: a = 28 ÷ 4",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "21 cm",
+    "breadth": "14 cm",
+    "proportion": 1.5,
+    "note": "3 × 7 = 21 cm and 2 × 7 = 14 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      5.71
+     ],
+     [
+      12.0,
+      8.0
+     ],
+     [
+      0,
+      8.0
+     ],
+     [
+      0,
+      5.71
+     ]
+    ],
+    "edges": [
+     "21 cm",
+     "10 cm",
+     "4 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "21 × 10 = 210 and 21 × 4 = 84"
+   },
+   {
+    "kind": "rectangle",
+    "length": "21 cm",
+    "breadth": "14 cm",
+    "inside": "294 cm²",
+    "proportion": 1.5,
+    "note": "294 is not among the choices",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "?",
+   "note": "Perimeter = 132 cm. Area = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "132 ÷ 4 cm",
+    "note": "4 equal sides share 132 cm",
+    "highlight": [
+     "length"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      10.91
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      10.91
+     ]
+    ],
+    "edges": [
+     "33 cm",
+     "30 cm",
+     null,
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "First part: 33 × 30",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      10.91
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      10.91
+     ]
+    ],
+    "edges": [
+     "33 cm",
+     "30 cm",
+     "3 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Second part: 33 × 3",
+    "highlight": [
+     "e2"
+    ]
+   },
+   null,
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "33 cm",
+    "breadth": "33 cm",
+    "inside": "1089 sq cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "equilateral",
+   "sides": {
+    "ab": "12 cm",
+    "bc": "12 cm",
+    "ca": "12 cm"
+   },
+   "note": "A square has the same perimeter. Area of the square = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "12 cm",
+     "bc": "12 cm",
+     "ca": "12 cm"
+    },
+    "note": "Perimeter = 3 × 12 cm",
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "?",
+    "note": "Same perimeter, shared among 4 equal sides",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "side",
+    "breadth": "side",
+    "note": "Area = side × side",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "inside": "81 sq.cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "equilateral",
+   "sides": {
+    "ab": "16 cm",
+    "bc": "16 cm",
+    "ca": "16 cm"
+   },
+   "note": "A square has the same perimeter. Area of the square = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "16 cm",
+     "bc": "16 cm",
+     "ca": "16 cm"
+    },
+    "note": "Perimeter = 3 × 16 cm",
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "48 ÷ 4 cm",
+    "note": "48 cm shared among 4 equal sides",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "inside": "144 cm.sq",
+    "note": "Area = side × side",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "grid": {
+    "cols": 4,
+    "rows": 2
+   },
+   "note": "One circle fits in each square. Radius = 4 cm. Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "4 cm",
+    "diameter": "2 × 4 cm",
+    "note": "The diameter is twice the radius",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "4 diameters",
+    "grid": {
+     "cols": 4,
+     "rows": 2
+    },
+    "note": "The length holds 4 circles side by side",
+    "highlight": [
+     "length"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "4 diameters",
+    "breadth": "2 diameters",
+    "grid": {
+     "cols": 4,
+     "rows": 2
+    },
+    "note": "The breadth holds 2 circles",
+    "highlight": [
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "4 diameters",
+    "breadth": "2 diameters",
+    "grid": {
+     "cols": 4,
+     "rows": 2
+    },
+    "note": "Area = length × breadth = 512 cm.sq",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_032": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "length",
+   "breadth": "breadth",
+   "proportion": 1.38,
+   "note": "Perimeter = 76 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "length",
+    "breadth": "breadth",
+    "proportion": 1.38,
+    "note": "length + breadth = 76 ÷ 2",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Pair",
+     "Sum"
+    ],
+    "rows": [
+     [
+      "22 + 16",
+      "38"
+     ],
+     [
+      "11 + 27",
+      "38"
+     ],
+     [
+      "29 + 9",
+      "38"
+     ]
+    ],
+    "note": "These three all fit"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Pair",
+     "Sum"
+    ],
+    "rows": [
+     [
+      "22 + 16",
+      "38"
+     ],
+     [
+      "11 + 27",
+      "38"
+     ],
+     [
+      "29 + 9",
+      "38"
+     ],
+     [
+      "24 + 16",
+      "?"
+     ]
+    ],
+    "highlight": [
+     "r3"
+    ]
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Pair",
+     "Sum"
+    ],
+    "rows": [
+     [
+      "22 + 16",
+      "38"
+     ],
+     [
+      "11 + 27",
+      "38"
+     ],
+     [
+      "29 + 9",
+      "38"
+     ],
+     [
+      "24 + 16",
+      "40"
+     ]
+    ],
+    "note": "40 is not 38, so this pair does not fit",
+    "highlight": [
+     "r3"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "?",
+   "breadth": "12 cm",
+   "proportion": 1.17,
+   "note": "Perimeter = 52 cm. Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "?",
+    "breadth": "12 cm",
+    "proportion": 1.17,
+    "note": "length + breadth = 52 ÷ 2",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "?",
+    "breadth": "12 cm",
+    "proportion": 1.17,
+    "note": "length = half the perimeter − 12",
+    "highlight": [
+     "length"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      8.57
+     ],
+     [
+      12.0,
+      10.29
+     ],
+     [
+      0,
+      10.29
+     ],
+     [
+      0,
+      8.57
+     ]
+    ],
+    "edges": [
+     "14 cm",
+     "10 cm",
+     "2 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "14 × 10 = 140 and 14 × 2 = 28"
+   },
+   {
+    "kind": "rectangle",
+    "length": "14 cm",
+    "breadth": "12 cm",
+    "inside": "168 cm sq",
+    "proportion": 1.17,
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH20_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     12,
+     7
+    ],
+    [
+     0,
+     7
+    ]
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "angles",
+    "layout": "single",
+    "parts": [
+     {
+      "label": "90°",
+      "size": 90
+     }
+    ],
+    "note": "A right angle is a square corner"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      0,
+      7
+     ]
+    ],
+    "rightAngles": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "note": "Every corner of a rectangle is a square corner"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      0,
+      7
+     ]
+    ],
+    "rightAngles": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "note": "4 right angles"
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH20_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     2,
+     0
+    ],
+    [
+     10,
+     1
+    ],
+    [
+     12,
+     7
+    ],
+    [
+     0,
+     6
+    ]
+   ],
+   "corners": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      0
+     ],
+     [
+      10,
+      1
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "corners": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     }
+    ],
+    "note": "A diagonal joins two opposite corners"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      0
+     ],
+     [
+      10,
+      1
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "corners": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "Two opposite pairs: A and C, B and D"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      0
+     ],
+     [
+      10,
+      1
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "corners": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "2 diagonals"
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH20_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0.0,
+     8.55
+    ],
+    [
+     11.0,
+     8.55
+    ],
+    [
+     11.0,
+     1.67
+    ],
+    [
+     1.51,
+     0.0
+    ]
+   ],
+   "corners": [
+    "80°",
+    "90°",
+    "100°",
+    "?"
+   ],
+   "rightAngles": [
+    1
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      8.55
+     ],
+     [
+      11.0,
+      8.55
+     ],
+     [
+      11.0,
+      1.67
+     ],
+     [
+      1.51,
+      0.0
+     ]
+    ],
+    "corners": [
+     "80°",
+     "90°",
+     "100°",
+     "?"
+    ],
+    "rightAngles": [
+     1
+    ],
+    "note": "The four angles add up to 360°"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      8.55
+     ],
+     [
+      11.0,
+      8.55
+     ],
+     [
+      11.0,
+      1.67
+     ],
+     [
+      1.51,
+      0.0
+     ]
+    ],
+    "corners": [
+     "80°",
+     "90°",
+     "100°",
+     "?"
+    ],
+    "rightAngles": [
+     1
+    ],
+    "note": "80° + 90° + 100°"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      8.55
+     ],
+     [
+      11.0,
+      8.55
+     ],
+     [
+      11.0,
+      1.67
+     ],
+     [
+      1.51,
+      0.0
+     ]
+    ],
+    "corners": [
+     "80°",
+     "90°",
+     "100°",
+     "?"
+    ],
+    "rightAngles": [
+     1
+    ],
+    "note": "? = 360° − (80° + 90° + 100°)"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      8.55
+     ],
+     [
+      11.0,
+      8.55
+     ],
+     [
+      11.0,
+      1.67
+     ],
+     [
+      1.51,
+      0.0
+     ]
+    ],
+    "corners": [
+     "80°",
+     "90°",
+     "100°",
+     "90°"
+    ],
+    "rightAngles": [
+     1,
+     3
+    ],
+    "note": "The fourth angle is 90°"
+   }
+  ]
+ },
+ "G4A_QUADS_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     4.5,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     7.5,
+     6
+    ],
+    [
+     0,
+     6
+    ]
+   ],
+   "edges": [
+    "s",
+    "s",
+    "s",
+    "s"
+   ],
+   "note": "All four sides are equal. No corner is a right angle"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "s",
+     "s",
+     "s",
+     "s"
+    ],
+    "rightAngles": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "note": "A square has four right angles, so it does not fit"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      4.5,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      7.5,
+      6
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "edges": [
+     "s",
+     "s",
+     "s",
+     "s"
+    ],
+    "note": "Four equal sides, no right angles: a rhombus"
+   }
+  ]
+ },
+ "G4A_QUADS_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     1.71,
+     0
+    ],
+    [
+     10.71,
+     0
+    ],
+    [
+     9,
+     4.7
+    ],
+    [
+     0,
+     4.7
+    ]
+   ],
+   "corners": [
+    null,
+    null,
+    "?",
+    "70°"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      1.71,
+      0
+     ],
+     [
+      10.71,
+      0
+     ],
+     [
+      9,
+      4.7
+     ],
+     [
+      0,
+      4.7
+     ]
+    ],
+    "corners": [
+     null,
+     null,
+     "?",
+     "70°"
+    ],
+    "note": "Angles next to each other: 70° + ? = 180°",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      1.71,
+      0
+     ],
+     [
+      10.71,
+      0
+     ],
+     [
+      9,
+      4.7
+     ],
+     [
+      0,
+      4.7
+     ]
+    ],
+    "corners": [
+     null,
+     null,
+     "?",
+     "70°"
+    ],
+    "note": "? = 180° − 70°",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      1.71,
+      0
+     ],
+     [
+      10.71,
+      0
+     ],
+     [
+      9,
+      4.7
+     ],
+     [
+      0,
+      4.7
+     ]
+    ],
+    "corners": [
+     null,
+     null,
+     "110°",
+     "70°"
+    ],
+    "note": "70° + 110° = 180°",
+    "highlight": [
+     "e2"
+    ]
+   }
+  ]
+ },
+ "G4A_QUADS_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     4.5,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     7.5,
+     6
+    ],
+    [
+     0,
+     6
+    ]
+   ],
+   "edges": [
+    "?",
+    null,
+    null,
+    null
+   ],
+   "note": "Rhombus. Perimeter = 52 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      4.5,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      7.5,
+      6
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "edges": [
+     "side",
+     "side",
+     "side",
+     "side"
+    ],
+    "note": "4 equal sides: 4 × side = 52 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      4.5,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      7.5,
+      6
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "edges": [
+     "side",
+     "side",
+     "side",
+     "side"
+    ],
+    "note": "side = 52 ÷ 4",
+    "highlight": [
+     "e0"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      4.5,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      7.5,
+      6
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "edges": [
+     "13 cm",
+     "13 cm",
+     "13 cm",
+     "13 cm"
+    ],
+    "note": "4 × 13 = 52 cm"
+   }
+  ]
+ },
+ "G4A_QUADS_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "25 cm",
+   "note": "Lace all around the edge: ₹3 for every centimetre",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     "25 cm",
+     "25 cm",
+     "25 cm"
+    ],
+    "note": "Lace = 25 + 25 + 25 + 25 = 100 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     "25 cm",
+     "25 cm",
+     "25 cm"
+    ],
+    "note": "100 cm at ₹3 each: 100 × 3 = ₹300",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_QUADS_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "18 cm",
+   "note": "The same wire makes a rectangle: length = 2 × breadth"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "18 cm",
+     "18 cm",
+     "18 cm",
+     "18 cm"
+    ],
+    "note": "Wire = 18 + 18 + 18 + 18 = 72 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      6
+     ],
+     [
+      6,
+      6
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "edges": [
+     "b",
+     "b",
+     "b",
+     "b",
+     "b",
+     "b"
+    ],
+    "note": "Round the rectangle: 6 breadths = 72 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3",
+     "e4",
+     "e5"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "2 × 12 cm",
+    "breadth": "12 cm",
+    "proportion": 2.0,
+    "note": "72 ÷ 6 = 12 cm for the breadth",
+    "highlight": [
+     "length"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "2 × 12 cm",
+    "breadth": "12 cm",
+    "proportion": 2.0,
+    "note": "Area = length × breadth",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "2 × 12 cm",
+    "breadth": "12 cm",
+    "inside": "288 cm²",
+    "proportion": 2.0,
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "G4A_QUADS_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     1.0,
+     0
+    ],
+    [
+     11.0,
+     0
+    ],
+    [
+     12.0,
+     0
+    ],
+    [
+     12.0,
+     1.0
+    ],
+    [
+     12.0,
+     8.0
+    ],
+    [
+     12.0,
+     9.0
+    ],
+    [
+     11.0,
+     9.0
+    ],
+    [
+     1.0,
+     9.0
+    ],
+    [
+     0,
+     9.0
+    ],
+    [
+     0,
+     8.0
+    ],
+    [
+     0,
+     1.0
+    ]
+   ],
+   "edges": [
+    "2 m",
+    "20 m",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    "14 m",
+    null
+   ],
+   "dashed": [
+    {
+     "from": 1,
+     "to": 8
+    },
+    {
+     "from": 2,
+     "to": 7
+    },
+    {
+     "from": 11,
+     "to": 4
+    },
+    {
+     "from": 10,
+     "to": 5
+    }
+   ],
+   "note": "Garden inside, path all around. Area of the path = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      1.0,
+      0
+     ],
+     [
+      11.0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      1.0
+     ],
+     [
+      12.0,
+      8.0
+     ],
+     [
+      12.0,
+      9.0
+     ],
+     [
+      11.0,
+      9.0
+     ],
+     [
+      1.0,
+      9.0
+     ],
+     [
+      0,
+      9.0
+     ],
+     [
+      0,
+      8.0
+     ],
+     [
+      0,
+      1.0
+     ]
+    ],
+    "edges": [
+     "2 m",
+     "20 m",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "14 m",
+     null
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 8
+     },
+     {
+      "from": 2,
+      "to": 7
+     },
+     {
+      "from": 11,
+      "to": 4
+     },
+     {
+      "from": 10,
+      "to": 5
+     }
+    ],
+    "note": "2 m on each side: add 4 m to the length and to the width"
+   },
+   {
+    "kind": "rectangle",
+    "length": "20 + 4 m",
+    "breadth": "14 + 4 m",
+    "proportion": 1.33,
+    "note": "Garden with the path: 432 m²",
+    "highlight": [
+     "fill"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "20 m",
+    "breadth": "14 m",
+    "proportion": 1.43,
+    "note": "Garden alone: 20 × 14",
+    "highlight": [
+     "fill"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      1.0,
+      0
+     ],
+     [
+      11.0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      1.0
+     ],
+     [
+      12.0,
+      8.0
+     ],
+     [
+      12.0,
+      9.0
+     ],
+     [
+      11.0,
+      9.0
+     ],
+     [
+      1.0,
+      9.0
+     ],
+     [
+      0,
+      9.0
+     ],
+     [
+      0,
+      8.0
+     ],
+     [
+      0,
+      1.0
+     ]
+    ],
+    "edges": [
+     "2 m",
+     "20 m",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "14 m",
+     null
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 8
+     },
+     {
+      "from": 2,
+      "to": 7
+     },
+     {
+      "from": 11,
+      "to": 4
+     },
+     {
+      "from": 10,
+      "to": 5
+     }
+    ],
+    "note": "Path = 432 − (20 × 14) = 152 m²"
+   },
+   null
+  ]
+ },
+ "G4A_QUADS_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "6 m",
+   "breadth": "4 m",
+   "proportion": 1.5,
+   "note": "Square tiles of side 50 cm cover the floor"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "6 m",
+    "grid": {
+     "cols": 12,
+     "rows": 1
+    },
+    "note": "Two tiles make 1 m, so 6 × 2 tiles along the length"
+   },
+   {
+    "kind": "rectangle",
+    "length": "6 m",
+    "breadth": "4 m",
+    "proportion": 1.5,
+    "note": "4 × 2 rows of tiles along the 4 m width",
+    "highlight": [
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "6 m",
+    "breadth": "4 m",
+    "proportion": 1.5,
+    "note": "Tiles = tiles in a row × number of rows",
+    "highlight": [
+     "fill"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "6 m",
+    "breadth": "4 m",
+    "inside": "96 tiles",
+    "proportion": 1.5,
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "G4A_QUADS_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     12,
+     12
+    ],
+    [
+     6,
+     12
+    ],
+    [
+     0,
+     12
+    ]
+   ],
+   "edges": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    "12 cm"
+   ],
+   "dashed": [
+    {
+     "from": 1,
+     "to": 4
+    }
+   ],
+   "note": "One straight cut makes two equal rectangles"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      12
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      0,
+      12
+     ]
+    ],
+    "edges": [
+     "half of 12 cm",
+     null,
+     null,
+     null,
+     null,
+     "12 cm"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "Each rectangle: 12 cm long, half of 12 cm wide",
+    "highlight": [
+     "e0",
+     "e5"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      12
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      0,
+      12
+     ]
+    ],
+    "edges": [
+     "half of 12 cm",
+     null,
+     null,
+     null,
+     null,
+     "12 cm"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "Add the four sides of one rectangle",
+    "highlight": [
+     "e0",
+     "e4",
+     "e5"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      12
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      0,
+      12
+     ]
+    ],
+    "edges": [
+     "half of 12 cm",
+     null,
+     null,
+     null,
+     null,
+     "12 cm"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "Perimeter of each rectangle = 36 cm",
+    "highlight": [
+     "e0",
+     "e4",
+     "e5"
+    ]
+   }
+  ]
+ },
+ "G4A_QUADS_009": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "rightAngles": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "note": "A square always has four right angles"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      0
+     ],
+     [
+      10,
+      6
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      2,
+      6
+     ]
+    ],
+    "note": "A rhombus can lean over, like a diamond"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      3,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      9,
+      5
+     ],
+     [
+      0,
+      5
+     ]
+    ],
+    "note": "A parallelogram can lean over too"
+   },
+   null
+  ]
+ },
+ "G4A_QUADS_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "20 cm",
+   "breadth": "15 cm",
+   "proportion": 1.33,
+   "note": "Length 5 cm longer, width 5 cm shorter. Area?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "20 cm",
+    "breadth": "15 cm",
+    "proportion": 1.33,
+    "note": "Area at the start: 20 × 15",
+    "highlight": [
+     "fill"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "20 + 5 cm",
+    "breadth": "15 − 5 cm",
+    "proportion": 2.5,
+    "note": "New length and new width",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "25 cm",
+    "breadth": "10 cm",
+    "proportion": 2.5,
+    "note": "New area: 25 × 10",
+    "highlight": [
+     "fill"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_QUADS_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "12 m",
+   "breadth": "9 m",
+   "proportion": 1.33,
+   "note": "Carpet ₹150 per sq m. Wall strip ₹40 per m"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "12 m",
+    "breadth": "9 m",
+    "proportion": 1.33,
+    "note": "Carpet covers the floor: 12 × 9 sq m, at ₹150 each",
+    "highlight": [
+     "fill"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 m",
+    "breadth": "9 m",
+    "proportion": 1.33,
+    "note": "Strip goes round: 2 × (12 + 9) m, at ₹40 each",
+    "highlight": [
+     "border"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_QUADS_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "30 m",
+   "breadth": "20 m",
+   "proportion": 1.5,
+   "note": "A post every 5 m, with one at each corner",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "30 m",
+    "breadth": "20 m",
+    "proportion": 1.5,
+    "note": "Distance around: 2 × (30 + 20) = 100 m",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "30 m",
+    "breadth": "20 m",
+    "proportion": 1.5,
+    "note": "Gaps of 5 m: 100 ÷ 5 = 20 gaps",
+    "highlight": [
+     "border"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_QUADS_013": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      0.63
+     ],
+     [
+      0,
+      0.63
+     ]
+    ],
+    "edges": [
+     "19 cm",
+     null,
+     null,
+     "1 cm"
+    ],
+    "note": "Thinnest: 19 × 1 = 19 sq cm"
+   },
+   {
+    "kind": "rectangle",
+    "length": "11 cm",
+    "breadth": "9 cm",
+    "proportion": 1.22,
+    "note": "Closest sides: 11 × 9 = 99 sq cm",
+    "highlight": [
+     "fill"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_QUADS_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "15 cm",
+   "note": "Same wire, new rectangle: length 4 cm more than 15 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "15 cm",
+     "15 cm",
+     "15 cm",
+     "15 cm"
+    ],
+    "note": "Wire = 15 + 15 + 15 + 15 = 60 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "19 cm",
+    "breadth": "?",
+    "proportion": 1.73,
+    "note": "Length + breadth = half of 60 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   null,
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "15 cm",
+    "breadth": "15 cm",
+    "note": "Square: 15 × 15",
+    "highlight": [
+     "fill"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_QUADS_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     5.6,
+     0
+    ],
+    [
+     6.4,
+     0
+    ],
+    [
+     12.0,
+     0
+    ],
+    [
+     12.0,
+     3.6
+    ],
+    [
+     12.0,
+     4.4
+    ],
+    [
+     12.0,
+     8.0
+    ],
+    [
+     6.4,
+     8.0
+    ],
+    [
+     5.6,
+     8.0
+    ],
+    [
+     0,
+     8.0
+    ],
+    [
+     0,
+     4.4
+    ],
+    [
+     0,
+     3.6
+    ]
+   ],
+   "edges": [
+    null,
+    "2 m",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    "2 m",
+    null
+   ],
+   "dashed": [
+    {
+     "from": 1,
+     "to": 8
+    },
+    {
+     "from": 2,
+     "to": 7
+    },
+    {
+     "from": 11,
+     "to": 4
+    },
+    {
+     "from": 10,
+     "to": 5
+    }
+   ],
+   "note": "Park 30 m by 20 m. Two paths cross in the middle"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      5.6,
+      0
+     ],
+     [
+      6.4,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      3.6
+     ],
+     [
+      12.0,
+      4.4
+     ],
+     [
+      12.0,
+      8.0
+     ],
+     [
+      6.4,
+      8.0
+     ],
+     [
+      5.6,
+      8.0
+     ],
+     [
+      0,
+      8.0
+     ],
+     [
+      0,
+      4.4
+     ],
+     [
+      0,
+      3.6
+     ]
+    ],
+    "edges": [
+     null,
+     "2 m",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "2 m",
+     null
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 8
+     },
+     {
+      "from": 2,
+      "to": 7
+     },
+     {
+      "from": 11,
+      "to": 4
+     },
+     {
+      "from": 10,
+      "to": 5
+     }
+    ],
+    "note": "Path along the length: 30 × 2",
+    "highlight": [
+     "e10",
+     "e4"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      5.6,
+      0
+     ],
+     [
+      6.4,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      3.6
+     ],
+     [
+      12.0,
+      4.4
+     ],
+     [
+      12.0,
+      8.0
+     ],
+     [
+      6.4,
+      8.0
+     ],
+     [
+      5.6,
+      8.0
+     ],
+     [
+      0,
+      8.0
+     ],
+     [
+      0,
+      4.4
+     ],
+     [
+      0,
+      3.6
+     ]
+    ],
+    "edges": [
+     null,
+     "2 m",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "2 m",
+     null
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 8
+     },
+     {
+      "from": 2,
+      "to": 7
+     },
+     {
+      "from": 11,
+      "to": 4
+     },
+     {
+      "from": 10,
+      "to": 5
+     }
+    ],
+    "note": "Path across the width: 20 × 2",
+    "highlight": [
+     "e1",
+     "e7"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      5.6,
+      0
+     ],
+     [
+      6.4,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      3.6
+     ],
+     [
+      12.0,
+      4.4
+     ],
+     [
+      12.0,
+      8.0
+     ],
+     [
+      6.4,
+      8.0
+     ],
+     [
+      5.6,
+      8.0
+     ],
+     [
+      0,
+      8.0
+     ],
+     [
+      0,
+      4.4
+     ],
+     [
+      0,
+      3.6
+     ]
+    ],
+    "edges": [
+     null,
+     "2 m",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "2 m",
+     null
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 8
+     },
+     {
+      "from": 2,
+      "to": 7
+     },
+     {
+      "from": 11,
+      "to": 4
+     },
+     {
+      "from": 10,
+      "to": 5
+     }
+    ],
+    "note": "The middle square, 2 × 2, belongs to both paths"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      5.6,
+      0
+     ],
+     [
+      6.4,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      3.6
+     ],
+     [
+      12.0,
+      4.4
+     ],
+     [
+      12.0,
+      8.0
+     ],
+     [
+      6.4,
+      8.0
+     ],
+     [
+      5.6,
+      8.0
+     ],
+     [
+      0,
+      8.0
+     ],
+     [
+      0,
+      4.4
+     ],
+     [
+      0,
+      3.6
+     ]
+    ],
+    "edges": [
+     null,
+     "2 m",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "2 m",
+     null
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 8
+     },
+     {
+      "from": 2,
+      "to": 7
+     },
+     {
+      "from": 11,
+      "to": 4
+     },
+     {
+      "from": 10,
+      "to": 5
+     }
+    ],
+    "note": "30 × 2 + 20 × 2 − 2 × 2 = 96 sq m"
+   },
+   null
+  ]
+ },
+ "G4A_QUADS_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     1.09,
+     0
+    ],
+    [
+     10.91,
+     0
+    ],
+    [
+     12.0,
+     0
+    ],
+    [
+     12.0,
+     1.09
+    ],
+    [
+     12.0,
+     10.91
+    ],
+    [
+     12.0,
+     12.0
+    ],
+    [
+     10.91,
+     12.0
+    ],
+    [
+     1.09,
+     12.0
+    ],
+    [
+     0,
+     12.0
+    ],
+    [
+     0,
+     10.91
+    ],
+    [
+     0,
+     1.09
+    ]
+   ],
+   "edges": [
+    "1 m",
+    "?",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "dashed": [
+    {
+     "from": 1,
+     "to": 8
+    },
+    {
+     "from": 2,
+     "to": 7
+    },
+    {
+     "from": 11,
+     "to": 4
+    },
+    {
+     "from": 10,
+     "to": 5
+    }
+   ],
+   "note": "Path all around a square garden. Path area = 40 sq m"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      1.09,
+      0
+     ],
+     [
+      10.91,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      1.09
+     ],
+     [
+      12.0,
+      10.91
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      10.91,
+      12.0
+     ],
+     [
+      1.09,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      10.91
+     ],
+     [
+      0,
+      1.09
+     ]
+    ],
+    "edges": [
+     "1 m",
+     "?",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 8
+     },
+     {
+      "from": 2,
+      "to": 7
+     },
+     {
+      "from": 11,
+      "to": 4
+     },
+     {
+      "from": 10,
+      "to": 5
+     }
+    ],
+    "note": "Each corner of the path is a square, 1 m by 1 m",
+    "highlight": [
+     "e0",
+     "e2",
+     "e5",
+     "e8"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      1.09,
+      0
+     ],
+     [
+      10.91,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      1.09
+     ],
+     [
+      12.0,
+      10.91
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      10.91,
+      12.0
+     ],
+     [
+      1.09,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      10.91
+     ],
+     [
+      0,
+      1.09
+     ]
+    ],
+    "edges": [
+     "1 m",
+     "?",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 8
+     },
+     {
+      "from": 2,
+      "to": 7
+     },
+     {
+      "from": 11,
+      "to": 4
+     },
+     {
+      "from": 10,
+      "to": 5
+     }
+    ],
+    "note": "Take the corners from 40 sq m: the four strips are left",
+    "highlight": [
+     "e1",
+     "e4",
+     "e7",
+     "e10"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      1.09,
+      0
+     ],
+     [
+      10.91,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      1.09
+     ],
+     [
+      12.0,
+      10.91
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      10.91,
+      12.0
+     ],
+     [
+      1.09,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      10.91
+     ],
+     [
+      0,
+      1.09
+     ]
+    ],
+    "edges": [
+     "1 m",
+     "?",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 8
+     },
+     {
+      "from": 2,
+      "to": 7
+     },
+     {
+      "from": 11,
+      "to": 4
+     },
+     {
+      "from": 10,
+      "to": 5
+     }
+    ],
+    "note": "Each strip has the same area",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      1.09,
+      0
+     ],
+     [
+      10.91,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      1.09
+     ],
+     [
+      12.0,
+      10.91
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      10.91,
+      12.0
+     ],
+     [
+      1.09,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      10.91
+     ],
+     [
+      0,
+      1.09
+     ]
+    ],
+    "edges": [
+     "1 m",
+     "9 m",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 8
+     },
+     {
+      "from": 2,
+      "to": 7
+     },
+     {
+      "from": 11,
+      "to": 4
+     },
+     {
+      "from": 10,
+      "to": 5
+     }
+    ],
+    "note": "9 sq m and 1 m wide, so the strip is 9 m long",
+    "highlight": [
+     "e1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_QUADS_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "length",
+   "breadth": "breadth",
+   "inside": "24 sq cm",
+   "note": "Length × 2 and breadth × 3. New area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "6 cm",
+    "breadth": "4 cm",
+    "inside": "24 sq cm",
+    "proportion": 1.5,
+    "note": "Try 6 cm by 4 cm"
+   },
+   {
+    "kind": "rectangle",
+    "length": "6 × 2 cm",
+    "breadth": "4 × 3 cm",
+    "proportion": 1.0,
+    "note": "Length 2 times as long, breadth 3 times as long",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "12 cm",
+    "inside": "144 sq cm",
+    "proportion": 1.0,
+    "highlight": [
+     "fill"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_QUADS_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     9.23,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     12,
+     6.46
+    ],
+    [
+     9.23,
+     6.46
+    ],
+    [
+     0,
+     6.46
+    ]
+   ],
+   "edges": [
+    null,
+    "3 cm",
+    null,
+    null,
+    null,
+    null
+   ],
+   "dashed": [
+    {
+     "from": 1,
+     "to": 4
+    }
+   ],
+   "note": "3 cm longer: the extra strip is 21 sq cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      9.23,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      6.46
+     ],
+     [
+      9.23,
+      6.46
+     ],
+     [
+      0,
+      6.46
+     ]
+    ],
+    "edges": [
+     null,
+     "3 cm",
+     "21 ÷ 3 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "Strip of 21 sq cm, 3 cm wide: breadth = 21 ÷ 3",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      8.4
+     ],
+     [
+      12,
+      10.8
+     ],
+     [
+      0,
+      10.8
+     ],
+     [
+      0,
+      8.4
+     ]
+    ],
+    "edges": [
+     "20 ÷ 2 cm",
+     null,
+     "2 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Strip of 20 sq cm, 2 cm wide: length = 20 ÷ 2",
+    "highlight": [
+     "e0"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "10 cm",
+    "breadth": "7 cm",
+    "proportion": 1.43,
+    "note": "The rectangle is 10 cm long and 7 cm wide"
+   },
+   {
+    "kind": "rectangle",
+    "length": "10 cm",
+    "breadth": "7 cm",
+    "proportion": 1.43,
+    "note": "Perimeter = 2 × (10 + 7) = 34 cm",
+    "highlight": [
+     "border"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_QUADS_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "grid",
+   "rows": 4,
+   "cols": 9,
+   "note": "One way to use all 36 tiles: 4 by 9"
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 4,
+    "cols": 9,
+    "note": "The two sides multiply to give 36: 4 × 9 = 36"
+   },
+   null,
+   {
+    "kind": "grid",
+    "rows": 6,
+    "cols": 6,
+    "note": "6 by 6 is a square. After this the pairs repeat"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Side",
+     "Side"
+    ],
+    "rows": [
+     [
+      "1",
+      "36"
+     ],
+     [
+      "2",
+      "18"
+     ],
+     [
+      "3",
+      "12"
+     ],
+     [
+      "4",
+      "9"
+     ],
+     [
+      "6",
+      "6"
+     ]
+    ],
+    "note": "Each pair multiplies to 36"
+   },
+   null
+  ]
+ },
+ "G4A_QUADS_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "grid",
+   "rows": 3,
+   "cols": 3
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 3,
+    "cols": 3,
+    "note": "Small squares: 3 rows of 3, which is 9"
+   },
+   {
+    "kind": "grid",
+    "rows": 3,
+    "cols": 3,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "note": "A 2 by 2 block: 2 places across and 2 places down"
+   },
+   {
+    "kind": "grid",
+    "rows": 3,
+    "cols": 3,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "note": "1 square is the whole 3 by 3 board"
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_QUADS_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0.0,
+     0
+    ],
+    [
+     2.4,
+     0
+    ],
+    [
+     4.8,
+     0
+    ],
+    [
+     7.2,
+     0
+    ],
+    [
+     9.6,
+     0
+    ],
+    [
+     12.0,
+     0
+    ],
+    [
+     12.0,
+     2.4
+    ],
+    [
+     9.6,
+     2.4
+    ],
+    [
+     7.2,
+     2.4
+    ],
+    [
+     4.8,
+     2.4
+    ],
+    [
+     2.4,
+     2.4
+    ],
+    [
+     0.0,
+     2.4
+    ]
+   ],
+   "dashed": [
+    {
+     "from": 1,
+     "to": 10
+    },
+    {
+     "from": 2,
+     "to": 9
+    },
+    {
+     "from": 3,
+     "to": 8
+    },
+    {
+     "from": 4,
+     "to": 7
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      0
+     ],
+     [
+      2.4,
+      0
+     ],
+     [
+      4.8,
+      0
+     ],
+     [
+      7.2,
+      0
+     ],
+     [
+      9.6,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      2.4
+     ],
+     [
+      9.6,
+      2.4
+     ],
+     [
+      7.2,
+      2.4
+     ],
+     [
+      4.8,
+      2.4
+     ],
+     [
+      2.4,
+      2.4
+     ],
+     [
+      0.0,
+      2.4
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 10
+     },
+     {
+      "from": 2,
+      "to": 9
+     },
+     {
+      "from": 3,
+      "to": 8
+     },
+     {
+      "from": 4,
+      "to": 7
+     }
+    ],
+    "note": "1 small square on its own is a square: not counted",
+    "highlight": [
+     "e0"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      0
+     ],
+     [
+      2.4,
+      0
+     ],
+     [
+      4.8,
+      0
+     ],
+     [
+      7.2,
+      0
+     ],
+     [
+      9.6,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      2.4
+     ],
+     [
+      9.6,
+      2.4
+     ],
+     [
+      7.2,
+      2.4
+     ],
+     [
+      4.8,
+      2.4
+     ],
+     [
+      2.4,
+      2.4
+     ],
+     [
+      0.0,
+      2.4
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 10
+     },
+     {
+      "from": 2,
+      "to": 9
+     },
+     {
+      "from": 3,
+      "to": 8
+     },
+     {
+      "from": 4,
+      "to": 7
+     }
+    ],
+    "note": "2 squares long: 4 of them. 3 squares long: 3 of them",
+    "highlight": [
+     "e0",
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      0
+     ],
+     [
+      2.4,
+      0
+     ],
+     [
+      4.8,
+      0
+     ],
+     [
+      7.2,
+      0
+     ],
+     [
+      9.6,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      2.4
+     ],
+     [
+      9.6,
+      2.4
+     ],
+     [
+      7.2,
+      2.4
+     ],
+     [
+      4.8,
+      2.4
+     ],
+     [
+      2.4,
+      2.4
+     ],
+     [
+      0.0,
+      2.4
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 10
+     },
+     {
+      "from": 2,
+      "to": 9
+     },
+     {
+      "from": 3,
+      "to": 8
+     },
+     {
+      "from": 4,
+      "to": 7
+     }
+    ],
+    "note": "4 squares long: 2 of them. The whole strip: 1",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      0
+     ],
+     [
+      2.4,
+      0
+     ],
+     [
+      4.8,
+      0
+     ],
+     [
+      7.2,
+      0
+     ],
+     [
+      9.6,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      2.4
+     ],
+     [
+      9.6,
+      2.4
+     ],
+     [
+      7.2,
+      2.4
+     ],
+     [
+      4.8,
+      2.4
+     ],
+     [
+      2.4,
+      2.4
+     ],
+     [
+      0.0,
+      2.4
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 10
+     },
+     {
+      "from": 2,
+      "to": 9
+     },
+     {
+      "from": 3,
+      "to": 8
+     },
+     {
+      "from": 4,
+      "to": 7
+     }
+    ],
+    "note": "4 + 3 + 2 + 1 = 10"
+   },
+   null
+  ]
+ },
+ "G4A_QUADS_022": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      4.5,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      7.5,
+      6
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "edges": [
+     "s",
+     "s",
+     "s",
+     "s"
+    ],
+    "note": "A leaning rhombus: four equal sides, no right angles"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      0,
+      7
+     ]
+    ],
+    "rightAngles": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "note": "A long rectangle: four right angles, sides not all equal"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      0
+     ],
+     [
+      9.5,
+      4
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      2.5,
+      4
+     ]
+    ],
+    "edges": [
+     "short",
+     "long",
+     "long",
+     "short"
+    ],
+    "note": "A kite: the equal sides are next to each other"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      4.5,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      7.5,
+      6
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "edges": [
+     "s",
+     "s",
+     "s",
+     "s"
+    ],
+    "note": "In every rhombus the opposite sides are parallel",
+    "highlight": [
+     "e0",
+     "e2"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_QUADS_023": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "rightAngles": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "note": "Four right angles: a square"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      1.94,
+      11.0
+     ],
+     [
+      9.23,
+      11.0
+     ],
+     [
+      10.5,
+      3.82
+     ],
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "corners": [
+     "100°",
+     "100°",
+     "100°",
+     "60°"
+    ],
+    "note": "Three obtuse angles are possible"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      6.88
+     ],
+     [
+      11.0,
+      6.88
+     ],
+     [
+      11.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.94
+     ]
+    ],
+    "corners": [
+     "90°",
+     "90°",
+     "80°",
+     "100°"
+    ],
+    "rightAngles": [
+     0,
+     1
+    ],
+    "note": "Two right angles and one acute angle are possible"
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_QUADS_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     12,
+     12
+    ],
+    [
+     9,
+     12
+    ],
+    [
+     6,
+     12
+    ],
+    [
+     3,
+     12
+    ],
+    [
+     0,
+     12
+    ]
+   ],
+   "dashed": [
+    {
+     "from": 1,
+     "to": 8
+    },
+    {
+     "from": 2,
+     "to": 7
+    },
+    {
+     "from": 3,
+     "to": 6
+    }
+   ],
+   "note": "4 equal strips. Each strip has a perimeter of 40 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      9,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      12
+     ],
+     [
+      9,
+      12
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      3,
+      12
+     ],
+     [
+      0,
+      12
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 8
+     },
+     {
+      "from": 2,
+      "to": 7
+     },
+     {
+      "from": 3,
+      "to": 6
+     }
+    ],
+    "note": "One strip: long side + short side = 40 ÷ 2",
+    "highlight": [
+     "e0",
+     "e9"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "short",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "short",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "short",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "short",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "short",
+        "tone": "b"
+       }
+      ],
+      "brace": "20 cm"
+     }
+    ],
+    "note": "Long side = 4 short sides, so 20 cm is 5 equal parts"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      9,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      12
+     ],
+     [
+      9,
+      12
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      3,
+      12
+     ],
+     [
+      0,
+      12
+     ]
+    ],
+    "edges": [
+     "4 cm",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "4 × 4 cm"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 8
+     },
+     {
+      "from": 2,
+      "to": 7
+     },
+     {
+      "from": 3,
+      "to": 6
+     }
+    ],
+    "note": "The long side of a strip is the side of the square",
+    "highlight": [
+     "e9"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "inside": "256 sq cm",
+    "note": "Area = side × side",
+    "highlight": [
+     "fill"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_QUADS_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "length",
+   "breadth": "breadth",
+   "grid": {
+    "cols": 3,
+    "rows": 1
+   },
+   "note": "The length is 3 times the breadth"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "3 × breadth",
+    "breadth": "breadth",
+    "grid": {
+     "cols": 3,
+     "rows": 1
+    },
+    "note": "Area = 3 equal squares, each breadth × breadth"
+   },
+   {
+    "kind": "rectangle",
+    "length": "3 × breadth",
+    "breadth": "breadth",
+    "grid": {
+     "cols": 3,
+     "rows": 1
+    },
+    "note": "Divide each area by 3 to get one square"
+   },
+   {
+    "kind": "rectangle",
+    "length": "3 × breadth",
+    "breadth": "breadth",
+    "grid": {
+     "cols": 3,
+     "rows": 1
+    },
+    "note": "Only 25 is a number multiplied by itself",
+    "highlight": [
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "15 cm",
+    "breadth": "5 cm",
+    "grid": {
+     "cols": 3,
+     "rows": 1
+    },
+    "note": "Breadth 5 cm, length 15 cm"
+   },
+   {
+    "kind": "rectangle",
+    "length": "15 cm",
+    "breadth": "5 cm",
+    "grid": {
+     "cols": 3,
+     "rows": 1
+    },
+    "note": "Area = 75 sq cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "G4A_QUADS_026": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     10,
+     10
+    ],
+    [
+     0,
+     10
+    ]
+   ],
+   "edges": [
+    null,
+    "4 cm",
+    "4 cm",
+    null,
+    "10 cm",
+    "10 cm"
+   ],
+   "note": "A 4 cm square is cut from one corner. Perimeter = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      10,
+      4
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      0,
+      10
+     ]
+    ],
+    "edges": [
+     null,
+     "4 cm",
+     "4 cm",
+     null,
+     "10 cm",
+     "10 cm"
+    ],
+    "note": "Two edges are still 10 cm long",
+    "highlight": [
+     "e4",
+     "e5"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      10,
+      4
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      0,
+      10
+     ]
+    ],
+    "edges": [
+     "10 − 4 cm",
+     "4 cm",
+     "4 cm",
+     "10 − 4 cm",
+     "10 cm",
+     "10 cm"
+    ],
+    "note": "Two edges are now shorter",
+    "highlight": [
+     "e0",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      10,
+      4
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      0,
+      10
+     ]
+    ],
+    "edges": [
+     "10 − 4 cm",
+     "4 cm",
+     "4 cm",
+     "10 − 4 cm",
+     "10 cm",
+     "10 cm"
+    ],
+    "note": "The notch adds two new edges of 4 cm",
+    "highlight": [
+     "e1",
+     "e2"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      6,
+      4
+     ],
+     [
+      10,
+      4
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      0,
+      10
+     ]
+    ],
+    "edges": [
+     "10 − 4 cm",
+     "4 cm",
+     "4 cm",
+     "10 − 4 cm",
+     "10 cm",
+     "10 cm"
+    ],
+    "note": "Add all six edges: 40 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3",
+     "e4",
+     "e5"
+    ]
+   },
+   null
+  ]
+ },
+ "PH3_EXT_G4_FP_2017_035_02_b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "26 cm",
+   "breadth": "20 cm",
+   "inside": "Area = ?",
+   "proportion": 1.3
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "26 cm",
+    "breadth": "20 cm",
+    "proportion": 1.3,
+    "note": "Area = 26 × 20",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   null,
+   {
+    "kind": "rectangle",
+    "length": "26 cm",
+    "breadth": "20 cm",
+    "inside": "520 sq cm",
+    "proportion": 1.3,
+    "note": "26 × 20 = 520 sq cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "PH3_EXT_G4_FP_2017_035_03_b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "14 cm",
+   "breadth": "7 cm",
+   "proportion": 2.0,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "14 cm",
+    "breadth": "7 cm",
+    "proportion": 2.0,
+    "note": "14 + 7 = 21 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "14 cm",
+    "breadth": "7 cm",
+    "proportion": 2.0,
+    "note": "Double 21: 2 × 21",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "14 cm",
+    "breadth": "7 cm",
+    "proportion": 2.0,
+    "note": "Perimeter = 42 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "PH3_EXT_G4_FP_2018_012_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "21 cm",
+   "breadth": "20 cm",
+   "proportion": 1.05,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "21 cm",
+    "breadth": "20 cm",
+    "proportion": 1.05,
+    "note": "21 + 20 = 41 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "21 cm",
+    "breadth": "20 cm",
+    "proportion": 1.05,
+    "note": "Double 41: 2 × 41",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "21 cm",
+    "breadth": "20 cm",
+    "proportion": 1.05,
+    "note": "Perimeter = 82 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "PH3_EXT_G4_FP_2022_013_03_b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "13 cm",
+   "breadth": "6 cm",
+   "inside": "Area = ?",
+   "proportion": 2.17
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "13 cm",
+    "breadth": "6 cm",
+    "proportion": 2.17,
+    "note": "Area = 13 × 6",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      9.23,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      5.54
+     ],
+     [
+      9.23,
+      5.54
+     ],
+     [
+      0,
+      5.54
+     ]
+    ],
+    "edges": [
+     "10 cm",
+     "3 cm",
+     null,
+     null,
+     null,
+     "6 cm"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "10 × 6 = 60 and 3 × 6 = 18, and 60 + 18 = 78"
+   },
+   {
+    "kind": "rectangle",
+    "length": "13 cm",
+    "breadth": "6 cm",
+    "inside": "78 sq cm",
+    "proportion": 2.17,
+    "note": "13 × 6 = 78 sq cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "PH3_EXT_G4_FP_2023_033_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "7 cm",
+   "breadth": "3 cm",
+   "proportion": 2.33,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "7 cm",
+    "breadth": "3 cm",
+    "proportion": 2.33,
+    "note": "7 + 3 = 10 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "7 cm",
+    "breadth": "3 cm",
+    "proportion": 2.33,
+    "note": "Double 10: 2 × 10",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "7 cm",
+    "breadth": "3 cm",
+    "proportion": 2.33,
+    "note": "Perimeter = 20 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH12_001_03_b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "24 cm",
+   "breadth": "12 cm",
+   "inside": "Area = ?",
+   "proportion": 2.0
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "24 cm",
+    "breadth": "12 cm",
+    "proportion": 2.0,
+    "note": "Area = 24 × 12",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      5.0
+     ],
+     [
+      12.0,
+      6.0
+     ],
+     [
+      0,
+      6.0
+     ],
+     [
+      0,
+      5.0
+     ]
+    ],
+    "edges": [
+     "24 cm",
+     "10 cm",
+     "2 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "24 × 10 = 240 and 24 × 2 = 48"
+   },
+   {
+    "kind": "rectangle",
+    "length": "24 cm",
+    "breadth": "12 cm",
+    "inside": "288 sq cm",
+    "proportion": 2.0,
+    "note": "24 × 12 = 288 sq cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "PYQ_2016_Q24": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "4 cm",
+   "breadth": "1 cm",
+   "grid": {
+    "cols": 4,
+    "rows": 1
+   },
+   "note": "Cut into 4 equal squares"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      5,
+      0
+     ],
+     [
+      5,
+      5
+     ],
+     [
+      0,
+      5
+     ]
+    ],
+    "edges": [
+     "1 cm",
+     "1 cm",
+     "1 cm",
+     "1 cm"
+    ],
+    "note": "One square: 4 sides of 1 cm, so 4 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "4 cm",
+    "breadth": "1 cm",
+    "grid": {
+     "cols": 4,
+     "rows": 1
+    },
+    "note": "Four squares: 4 × 4 cm"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      3.0
+     ],
+     [
+      0,
+      3.0
+     ]
+    ],
+    "edges": [
+     "4 cm",
+     null,
+     null,
+     "1 cm"
+    ],
+    "note": "Rectangle: 2 × (4 + 1) = 10 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   null
+  ]
+ },
+ "PYQ_2016_Q29": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "12 ÷ 4 cm",
+    "note": "Square: 12 cm shared among 4 sides",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "12 ÷ 3 cm"
+    },
+    "note": "Triangle: 12 cm shared among 3 sides",
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "a"
+       }
+      ],
+      "label": "Square side"
+     },
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "4 cm",
+        "tone": "b"
+       }
+      ],
+      "label": "Triangle side"
+     }
+    ],
+    "note": "More sides to share among, so each side is shorter"
+   },
+   null
+  ]
+ },
+ "PYQ_2017_Q21": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "length",
+   "breadth": "breadth",
+   "grid": {
+    "cols": 2,
+    "rows": 1
+   },
+   "note": "The length is 2 breadths"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      6
+     ],
+     [
+      6,
+      6
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "edges": [
+     "b",
+     "b",
+     "b",
+     "b",
+     "b",
+     "b"
+    ],
+    "note": "Round the rectangle: 4 breadths and 2 more breadths",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3",
+     "e4",
+     "e5"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      6
+     ],
+     [
+      6,
+      6
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "edges": [
+     "b",
+     "b",
+     "b",
+     "b",
+     "b",
+     "b"
+    ],
+    "note": "Perimeter = 6 breadths, so it is a multiple of 6",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3",
+     "e4",
+     "e5"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "rectangle",
+    "length": "46 cm",
+    "breadth": "23 cm",
+    "proportion": 2.0,
+    "note": "6 × 23 = 138 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "PYQ_2017_Q35": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "?",
+   "note": "Perimeter = 14 cm",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "?",
+     "?",
+     "?",
+     "?"
+    ],
+    "note": "4 equal sides: 14 ÷ 4",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "3.5 cm",
+     "3.5 cm",
+     "3.5 cm",
+     "3.5 cm"
+    ],
+    "note": "3.5 cm is 3 cm and half a centimetre",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   null,
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "3 cm 5 mm",
+     "3 cm 5 mm",
+     "3 cm 5 mm",
+     "3 cm 5 mm"
+    ],
+    "note": "Half a centimetre is 5 mm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   }
+  ]
+ },
+ "PYQ_2018_Q39": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "3 cm",
+   "breadth": "1 cm",
+   "grid": {
+    "cols": 3,
+    "rows": 1
+   },
+   "note": "Cut into 3 square pieces"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "3 cm",
+    "breadth": "1 cm",
+    "grid": {
+     "cols": 3,
+     "rows": 1
+    },
+    "note": "Each square is 4 cm round. Three squares: 3 × 4 cm"
+   },
+   {
+    "kind": "rectangle",
+    "length": "3 cm",
+    "breadth": "1 cm",
+    "proportion": 3.0,
+    "note": "Rectangle: 2 × (3 + 1) cm",
+    "highlight": [
+     "border"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "PYQ_2019_Q30": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0.0,
+     0
+    ],
+    [
+     4.0,
+     0
+    ],
+    [
+     8.0,
+     0
+    ],
+    [
+     12.0,
+     0
+    ],
+    [
+     12.0,
+     4.0
+    ],
+    [
+     8.0,
+     4.0
+    ],
+    [
+     4.0,
+     4.0
+    ],
+    [
+     0.0,
+     4.0
+    ]
+   ],
+   "dashed": [
+    {
+     "from": 1,
+     "to": 6
+    },
+    {
+     "from": 2,
+     "to": 5
+    }
+   ],
+   "note": "Each square has a perimeter of 36 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "?",
+    "note": "One square: its equal sides share 36 cm",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      0
+     ],
+     [
+      4.0,
+      0
+     ],
+     [
+      8.0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      4.0
+     ],
+     [
+      8.0,
+      4.0
+     ],
+     [
+      4.0,
+      4.0
+     ],
+     [
+      0.0,
+      4.0
+     ]
+    ],
+    "edges": [
+     "side",
+     "side",
+     "side",
+     null,
+     null,
+     null,
+     null,
+     "side"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 6
+     },
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "3 sides long and 1 side wide"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      0
+     ],
+     [
+      4.0,
+      0
+     ],
+     [
+      8.0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      4.0
+     ],
+     [
+      8.0,
+      4.0
+     ],
+     [
+      4.0,
+      4.0
+     ],
+     [
+      0.0,
+      4.0
+     ]
+    ],
+    "edges": [
+     "side",
+     "side",
+     "side",
+     null,
+     null,
+     null,
+     null,
+     "side"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 6
+     },
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Perimeter = 2 × (3 sides + 1 side)",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3",
+     "e4",
+     "e5",
+     "e6",
+     "e7"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      0
+     ],
+     [
+      4.0,
+      0
+     ],
+     [
+      8.0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      4.0
+     ],
+     [
+      8.0,
+      4.0
+     ],
+     [
+      4.0,
+      4.0
+     ],
+     [
+      0.0,
+      4.0
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 6
+     },
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Perimeter of the rectangle = 72 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3",
+     "e4",
+     "e5",
+     "e6",
+     "e7"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "13 cm",
+   "breadth": "?",
+   "proportion": 1.62,
+   "note": "Perimeter = 42 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "13 cm",
+    "breadth": "?",
+    "proportion": 1.62,
+    "note": "length + breadth = 42 ÷ 2",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "13 cm",
+    "breadth": "?",
+    "proportion": 1.62,
+    "note": "breadth = half the perimeter − 13",
+    "highlight": [
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "13 cm",
+    "breadth": "8 cm",
+    "proportion": 1.62,
+    "note": "Check: 13 + 8 = 21, and twice 21 is 42",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_001_V01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "30 cm",
+   "breadth": "15 cm",
+   "inside": "Area = ?",
+   "proportion": 2.0
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "30 cm",
+    "breadth": "15 cm",
+    "proportion": 2.0,
+    "note": "Area = 30 × 15",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      4.0
+     ],
+     [
+      12.0,
+      6.0
+     ],
+     [
+      0,
+      6.0
+     ],
+     [
+      0,
+      4.0
+     ]
+    ],
+    "edges": [
+     "30 cm",
+     "10 cm",
+     "5 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "First part: 30 × 10",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      4.0
+     ],
+     [
+      12.0,
+      6.0
+     ],
+     [
+      0,
+      6.0
+     ],
+     [
+      0,
+      4.0
+     ]
+    ],
+    "edges": [
+     "30 cm",
+     "10 cm",
+     "5 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Second part: 30 × 5",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "30 cm",
+    "breadth": "15 cm",
+    "inside": "450 cm²",
+    "proportion": 2.0,
+    "note": "30 × 15 = 450 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_001_V03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "15 cm",
+   "inside": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "15 cm",
+    "breadth": "15 cm",
+    "note": "Area = 15 × 15",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      8.0
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      8.0
+     ]
+    ],
+    "edges": [
+     "15 cm",
+     "10 cm",
+     "5 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "First part: 15 × 10",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      8.0
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      8.0
+     ]
+    ],
+    "edges": [
+     "15 cm",
+     "10 cm",
+     "5 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Second part: 15 × 5",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "15 cm",
+    "breadth": "15 cm",
+    "inside": "225 cm²",
+    "note": "15 × 15 = 225 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_001_V10": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "7 cm",
+   "breadth": "3 cm",
+   "inside": "Area = ?",
+   "proportion": 2.33
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "7 cm",
+    "breadth": "3 cm",
+    "proportion": 2.33,
+    "note": "Area = 7 × 3",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "7 cm",
+    "breadth": "3 cm",
+    "grid": {
+     "cols": 7,
+     "rows": 3
+    },
+    "note": "7 columns of 3 unit squares"
+   },
+   {
+    "kind": "rectangle",
+    "length": "7 cm",
+    "breadth": "3 cm",
+    "inside": "21 cm²",
+    "proportion": 2.33,
+    "note": "7 × 3 = 21 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_003_V07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "3 cm",
+   "inside": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "3 cm",
+    "breadth": "3 cm",
+    "note": "Area = 3 × 3",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "3 cm",
+    "breadth": "3 cm",
+    "grid": {
+     "cols": 3,
+     "rows": 3
+    },
+    "note": "3 columns of 3 unit squares"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "3 cm",
+    "breadth": "3 cm",
+    "inside": "9 cm²",
+    "note": "3 × 3 = 9 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_003_V08": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "30 cm",
+   "breadth": "23 cm",
+   "proportion": 1.3,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "30 cm",
+    "breadth": "23 cm",
+    "proportion": 1.3,
+    "note": "30 + 23 = 53 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "30 cm",
+    "breadth": "23 cm",
+    "proportion": 1.3,
+    "note": "2 × 53 = 106 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_004_V01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "3 cm",
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "3 cm",
+     "3 cm",
+     "3 cm",
+     "3 cm"
+    ],
+    "note": "4 equal sides: perimeter = 4 × 3",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "3 cm",
+     "3 cm",
+     "3 cm",
+     "3 cm"
+    ],
+    "note": "3 + 3 + 3 + 3",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "3 cm",
+     "3 cm",
+     "3 cm",
+     "3 cm"
+    ],
+    "note": "4 × 3 = 12 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_004_V07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "25 cm",
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     "25 cm",
+     "25 cm",
+     "25 cm"
+    ],
+    "note": "4 equal sides: perimeter = 4 × 25",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     "25 cm",
+     "25 cm",
+     "25 cm"
+    ],
+    "note": "4 × 25 = 100 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_006_V09": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "25 cm",
+   "inside": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "25 cm",
+    "breadth": "25 cm",
+    "note": "Area = 25 × 25",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      9.6
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      9.6
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     "20 cm",
+     "5 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "First part: 25 × 20",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      9.6
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      9.6
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     "20 cm",
+     "5 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Second part: 25 × 5",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "25 cm",
+    "breadth": "25 cm",
+    "inside": "625 cm²",
+    "note": "25 × 25 = 625 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_006_V10": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "18 cm",
+   "breadth": "8 cm",
+   "inside": "Area = ?",
+   "proportion": 2.25
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "18 cm",
+    "breadth": "8 cm",
+    "proportion": 2.25,
+    "note": "Area = 18 × 8",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6.67,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      5.33
+     ],
+     [
+      6.67,
+      5.33
+     ],
+     [
+      0,
+      5.33
+     ]
+    ],
+    "edges": [
+     "10 cm",
+     "8 cm",
+     null,
+     null,
+     null,
+     "8 cm"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "First part: 8 × 10",
+    "highlight": [
+     "e0"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6.67,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      5.33
+     ],
+     [
+      6.67,
+      5.33
+     ],
+     [
+      0,
+      5.33
+     ]
+    ],
+    "edges": [
+     "10 cm",
+     "8 cm",
+     null,
+     null,
+     null,
+     "8 cm"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "Second part: 8 × 8",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "18 cm",
+    "breadth": "8 cm",
+    "inside": "144 cm²",
+    "proportion": 2.25,
+    "note": "18 × 8 = 144 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_007_V04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "14 cm",
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "14 cm",
+     "14 cm",
+     "14 cm",
+     "14 cm"
+    ],
+    "note": "4 equal sides: perimeter = 4 × 14",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "14 cm",
+     "14 cm",
+     "14 cm",
+     "14 cm"
+    ],
+    "note": "4 × 14 = 56 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_021_V01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "7 cm",
+   "breadth": "4 cm",
+   "proportion": 1.75,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "7 cm",
+    "breadth": "4 cm",
+    "proportion": 1.75,
+    "note": "7 + 4 = 11 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "7 cm",
+    "breadth": "4 cm",
+    "proportion": 1.75,
+    "note": "2 × 11 = 22 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_021_V08": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "13 cm",
+   "breadth": "8 cm",
+   "proportion": 1.62,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "13 cm",
+    "breadth": "8 cm",
+    "proportion": 1.62,
+    "note": "13 + 8 = 21 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "13 cm",
+    "breadth": "8 cm",
+    "proportion": 1.62,
+    "note": "2 × 21 = 42 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "Q_CH19_002_V09": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "8 cm",
+   "breadth": "3 cm",
+   "inside": "Area = ?",
+   "proportion": 2.67
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "8 cm",
+    "breadth": "3 cm",
+    "proportion": 2.67,
+    "note": "Area = 8 × 3",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "8 cm",
+    "breadth": "3 cm",
+    "grid": {
+     "cols": 8,
+     "rows": 3
+    },
+    "note": "8 columns of 3 unit squares"
+   },
+   {
+    "kind": "rectangle",
+    "length": "8 cm",
+    "breadth": "3 cm",
+    "inside": "24 cm²",
+    "proportion": 2.67,
+    "note": "8 × 3 = 24 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH19_017_V04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "29 cm",
+   "breadth": "14 cm",
+   "inside": "Area = ?",
+   "proportion": 2.07
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "29 cm",
+    "breadth": "14 cm",
+    "proportion": 2.07,
+    "note": "Area = 29 × 14",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      4.14
+     ],
+     [
+      12.0,
+      5.79
+     ],
+     [
+      0,
+      5.79
+     ],
+     [
+      0,
+      4.14
+     ]
+    ],
+    "edges": [
+     "29 cm",
+     "10 cm",
+     "4 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "First part: 29 × 10",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      4.14
+     ],
+     [
+      12.0,
+      5.79
+     ],
+     [
+      0,
+      5.79
+     ],
+     [
+      0,
+      4.14
+     ]
+    ],
+    "edges": [
+     "29 cm",
+     "10 cm",
+     "4 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Second part: 29 × 4",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "29 cm",
+    "breadth": "14 cm",
+    "inside": "406 cm²",
+    "proportion": 2.07,
+    "note": "29 × 14 = 406 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH19_017_V06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "5 cm",
+   "breadth": "3 cm",
+   "proportion": 1.67,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "5 cm",
+    "breadth": "3 cm",
+    "proportion": 1.67,
+    "note": "5 + 3 = 8 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "5 cm",
+    "breadth": "3 cm",
+    "proportion": 1.67,
+    "note": "2 × 8 = 16 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "Q_CH19_017_V10": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "6 cm",
+   "inside": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "6 cm",
+    "breadth": "6 cm",
+    "note": "Area = 6 × 6",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "6 cm",
+    "breadth": "6 cm",
+    "grid": {
+     "cols": 6,
+     "rows": 6
+    },
+    "note": "6 columns of 6 unit squares"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "6 cm",
+    "breadth": "6 cm",
+    "inside": "36 cm²",
+    "note": "6 × 6 = 36 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH19_018_V08": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "29 cm",
+   "breadth": "15 cm",
+   "proportion": 1.93,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "29 cm",
+    "breadth": "15 cm",
+    "proportion": 1.93,
+    "note": "29 + 15 = 44 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "29 cm",
+    "breadth": "15 cm",
+    "proportion": 1.93,
+    "note": "2 × 44 = 88 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "Q_CH19_025_V07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "22 cm",
+   "inside": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "22 cm",
+    "breadth": "22 cm",
+    "note": "Area = 22 × 22",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      10.91
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      10.91
+     ]
+    ],
+    "edges": [
+     "22 cm",
+     "20 cm",
+     "2 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "First part: 22 × 20",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      10.91
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      10.91
+     ]
+    ],
+    "edges": [
+     "22 cm",
+     "20 cm",
+     "2 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Second part: 22 × 2",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "22 cm",
+    "breadth": "22 cm",
+    "inside": "484 cm²",
+    "note": "22 × 22 = 484 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     2,
+     0
+    ],
+    [
+     10,
+     1
+    ],
+    [
+     12,
+     7
+    ],
+    [
+     0,
+     6
+    ]
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      0
+     ],
+     [
+      10,
+      1
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     }
+    ],
+    "note": "One diagonal cuts the shape into 2 triangles"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      0
+     ],
+     [
+      10,
+      1
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     }
+    ],
+    "note": "Each triangle has 180°: 2 × 180°"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      0
+     ],
+     [
+      10,
+      1
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "note": "The four angles add up to 360°"
+   }
+  ]
+ },
+ "Q_CH20_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     12,
+     7
+    ],
+    [
+     0,
+     7
+    ]
+   ],
+   "note": "A rectangle that is not a square"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      3.5
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      6,
+      7
+     ],
+     [
+      0,
+      7
+     ],
+     [
+      0,
+      3.5
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 7,
+      "to": 3
+     }
+    ],
+    "note": "Fold top onto bottom: the halves match"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      3.5
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      6,
+      7
+     ],
+     [
+      0,
+      7
+     ],
+     [
+      0,
+      3.5
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 7,
+      "to": 3
+     },
+     {
+      "from": 1,
+      "to": 5
+     }
+    ],
+    "note": "Fold left onto right: the halves match again"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      0,
+      7
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     }
+    ],
+    "note": "Corner to corner: the halves do not land on each other"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      6,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      3.5
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      6,
+      7
+     ],
+     [
+      0,
+      7
+     ],
+     [
+      0,
+      3.5
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 7,
+      "to": 3
+     },
+     {
+      "from": 1,
+      "to": 5
+     }
+    ],
+    "note": "2 axes of symmetry"
+   }
+  ]
+ },
+ "Q_CH20_002_V06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "4 cm",
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "4 cm",
+     "4 cm",
+     "4 cm",
+     "4 cm"
+    ],
+    "note": "4 equal sides: perimeter = 4 × 4",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "4 cm",
+     "4 cm",
+     "4 cm",
+     "4 cm"
+    ],
+    "note": "4 + 4 + 4 + 4",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "4 cm",
+     "4 cm",
+     "4 cm",
+     "4 cm"
+    ],
+    "note": "4 × 4 = 16 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "11 cm",
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "11 cm",
+     "11 cm",
+     "11 cm",
+     "11 cm"
+    ],
+    "note": "4 equal sides: perimeter = 4 × 11",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "11 cm",
+     "11 cm",
+     "11 cm",
+     "11 cm"
+    ],
+    "note": "11 + 11 + 11 + 11 = 4 × 11",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "11 cm",
+     "11 cm",
+     "11 cm",
+     "11 cm"
+    ],
+    "note": "Perimeter = 44 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_003_V05": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "8 cm",
+   "inside": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "8 cm",
+    "breadth": "8 cm",
+    "note": "Area = 8 × 8",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "8 cm",
+    "breadth": "8 cm",
+    "grid": {
+     "cols": 8,
+     "rows": 8
+    },
+    "note": "8 columns of 8 unit squares"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "8 cm",
+    "breadth": "8 cm",
+    "inside": "64 cm²",
+    "note": "8 × 8 = 64 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "9 m",
+   "inside": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "9 m",
+    "breadth": "9 m",
+    "grid": {
+     "cols": 9,
+     "rows": 9
+    },
+    "note": "9 rows of 9 unit squares"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "9 m",
+    "breadth": "9 m",
+    "grid": {
+     "cols": 9,
+     "rows": 9
+    },
+    "note": "Each small square is 1 sq. m, so area is in sq. m"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "9 m",
+    "breadth": "9 m",
+    "inside": "81 sq. m",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "12 cm",
+   "breadth": "7 cm",
+   "proportion": 1.71,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "7 cm",
+    "proportion": 1.71,
+    "note": "12 + 7 = 19 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "7 cm",
+    "proportion": 1.71,
+    "note": "Two lengths and two breadths: double 19",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "7 cm",
+    "proportion": 1.71,
+    "note": "Perimeter = 38 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "15 cm",
+   "breadth": "8 cm",
+   "inside": "Area = ?",
+   "proportion": 1.88
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "15 cm",
+    "breadth": "8 cm",
+    "proportion": 1.88,
+    "note": "Area = 15 × 8",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8.0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      6.4
+     ],
+     [
+      8.0,
+      6.4
+     ],
+     [
+      0,
+      6.4
+     ]
+    ],
+    "edges": [
+     "10 cm",
+     "5 cm",
+     null,
+     null,
+     null,
+     "8 cm"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "10 × 8 = 80 and 5 × 8 = 40, and 80 + 40 = 120"
+   },
+   {
+    "kind": "rectangle",
+    "length": "15 cm",
+    "breadth": "8 cm",
+    "inside": "120 cm²",
+    "proportion": 1.88,
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_006_V04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "6 cm",
+   "breadth": "3 cm",
+   "inside": "Area = ?",
+   "proportion": 2.0
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "6 cm",
+    "breadth": "3 cm",
+    "proportion": 2.0,
+    "note": "Area = 6 × 3",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "6 cm",
+    "breadth": "3 cm",
+    "grid": {
+     "cols": 6,
+     "rows": 3
+    },
+    "note": "6 columns of 3 unit squares"
+   },
+   {
+    "kind": "rectangle",
+    "length": "6 cm",
+    "breadth": "3 cm",
+    "inside": "18 cm²",
+    "proportion": 2.0,
+    "note": "6 × 3 = 18 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_007": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "8",
+    "grid": {
+     "cols": 8,
+     "rows": 8
+    },
+    "note": "Perimeter 4 × 8 = 32, area 8 × 8 = 64: not equal"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "6",
+    "grid": {
+     "cols": 6,
+     "rows": 6
+    },
+    "note": "Perimeter 4 × 6 = 24, area 6 × 6 = 36: not equal"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "4",
+    "grid": {
+     "cols": 4,
+     "rows": 4
+    },
+    "note": "Perimeter 16 and area 16: equal"
+   },
+   null
+  ]
+ },
+ "Q_CH20_007_V02": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "14 cm",
+   "breadth": "6 cm",
+   "inside": "Area = ?",
+   "proportion": 2.33
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "14 cm",
+    "breadth": "6 cm",
+    "proportion": 2.33,
+    "note": "Area = 14 × 6",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8.57,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      5.14
+     ],
+     [
+      8.57,
+      5.14
+     ],
+     [
+      0,
+      5.14
+     ]
+    ],
+    "edges": [
+     "10 cm",
+     "4 cm",
+     null,
+     null,
+     null,
+     "6 cm"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "First part: 6 × 10",
+    "highlight": [
+     "e0"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8.57,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      5.14
+     ],
+     [
+      8.57,
+      5.14
+     ],
+     [
+      0,
+      5.14
+     ]
+    ],
+    "edges": [
+     "10 cm",
+     "4 cm",
+     null,
+     null,
+     null,
+     "6 cm"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "Second part: 6 × 4",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "14 cm",
+    "breadth": "6 cm",
+    "inside": "84 cm²",
+    "proportion": 2.33,
+    "note": "14 × 6 = 84 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_007_V06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     12,
+     2.77
+    ],
+    [
+     0,
+     2.77
+    ]
+   ],
+   "edges": [
+    "13 cm",
+    null,
+    null,
+    "3 cm"
+   ],
+   "note": "Perimeter = ?",
+   "highlight": [
+    "e0",
+    "e1",
+    "e2",
+    "e3"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      2.77
+     ],
+     [
+      0,
+      2.77
+     ]
+    ],
+    "edges": [
+     "13 cm",
+     null,
+     null,
+     "3 cm"
+    ],
+    "note": "13 + 3 = 16 cm",
+    "highlight": [
+     "e0",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      2.77
+     ],
+     [
+      0,
+      2.77
+     ]
+    ],
+    "edges": [
+     "13 cm",
+     null,
+     null,
+     "3 cm"
+    ],
+    "note": "2 × 16 = 32 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "length",
+   "breadth": "breadth",
+   "proportion": 1.91,
+   "note": "Perimeter = 32 m"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "length",
+    "breadth": "breadth",
+    "proportion": 1.91,
+    "note": "length + breadth = 32 ÷ 2",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Pair",
+     "Sum"
+    ],
+    "rows": [
+     [
+      "18 + 14",
+      "32"
+     ]
+    ],
+    "note": "That is the whole perimeter, not half: too big",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Pair",
+     "Sum"
+    ],
+    "rows": [
+     [
+      "18 + 14",
+      "32"
+     ],
+     [
+      "8 + 7",
+      "15"
+     ]
+    ],
+    "note": "15 is 1 short of 16",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Pair",
+     "Sum"
+    ],
+    "rows": [
+     [
+      "18 + 14",
+      "32"
+     ],
+     [
+      "8 + 7",
+      "15"
+     ],
+     [
+      "10.5 + 5.5",
+      "16"
+     ]
+    ],
+    "note": "This pair adds to 16: it fits",
+    "highlight": [
+     "r2"
+    ]
+   },
+   null
+  ]
+ },
+ "Q_CH20_008_V04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "19 cm",
+   "breadth": "16 cm",
+   "proportion": 1.19,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "19 cm",
+    "breadth": "16 cm",
+    "proportion": 1.19,
+    "note": "19 + 16 = 35 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "19 cm",
+    "breadth": "16 cm",
+    "proportion": 1.19,
+    "note": "2 × 35 = 70 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "2m + 5n",
+   "breadth": "m − 3n",
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "2m + 5n",
+    "breadth": "m − 3n",
+    "note": "(2m + 5n) + (m − 3n) = 3m + 2n",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "2m + 5n",
+    "breadth": "m − 3n",
+    "note": "2 × (3m + 2n) = 6m + 4n",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "(3a − 5) cm",
+   "breadth": "(a + 5) cm",
+   "proportion": 1.0,
+   "note": "Perimeter = 40 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "(3a − 5) cm",
+    "breadth": "(a + 5) cm",
+    "proportion": 1.0,
+    "note": "(3a − 5) + (a + 5) = 4a",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "(3a − 5) cm",
+    "breadth": "(a + 5) cm",
+    "proportion": 1.0,
+    "note": "2 × 4a = 8a = 40",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "10 cm",
+    "breadth": "10 cm",
+    "proportion": 1.0,
+    "note": "a = 5 makes both sides 10 cm"
+   }
+  ]
+ },
+ "Q_CH20_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "350 m",
+   "breadth": "120 m",
+   "proportion": 2.92,
+   "note": "Ten rounds of the field = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "350 m",
+    "breadth": "120 m",
+    "proportion": 2.92,
+    "note": "350 + 120",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "350 m",
+    "breadth": "120 m",
+    "proportion": 2.92,
+    "note": "One full round = 940 m",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "350 m",
+    "breadth": "120 m",
+    "proportion": 2.92,
+    "note": "Ten rounds: 10 × 940 m",
+    "highlight": [
+     "border"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "Q_CH20_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5,
+       "tone": "a"
+      },
+      {
+       "units": 2,
+       "label": "2 cm",
+       "tone": "b"
+      }
+     ],
+     "label": "Length"
+    },
+    {
+     "segments": [
+      {
+       "units": 5,
+       "tone": "a"
+      }
+     ],
+     "label": "Breadth"
+    }
+   ],
+   "note": "Length + breadth = 12 cm. They differ by 2 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "2 cm",
+        "tone": "b"
+       }
+      ],
+      "label": "Length"
+     },
+     {
+      "segments": [
+       {
+        "units": 5,
+        "tone": "a"
+       }
+      ],
+      "label": "Breadth"
+     }
+    ],
+    "note": "Take away the 2 cm: 12 − 2 = 10 cm is two breadths",
+    "highlight": [
+     "b0s0",
+     "b1s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "10 ÷ 2",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "2 cm",
+        "tone": "b"
+       }
+      ],
+      "label": "Length"
+     },
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "10 ÷ 2",
+        "tone": "a"
+       }
+      ],
+      "label": "Breadth"
+     }
+    ],
+    "note": "Halve 10 cm to get the breadth",
+    "highlight": [
+     "b1s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "breadth",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "2 cm",
+        "tone": "b"
+       }
+      ],
+      "label": "Length"
+     },
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "breadth",
+        "tone": "a"
+       }
+      ],
+      "label": "Breadth"
+     }
+    ],
+    "note": "The length is 2 cm more than the breadth",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "7 cm",
+    "breadth": "5 cm",
+    "proportion": 1.4,
+    "note": "7 + 5 = 12. Area = 7 × 5",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "7 cm",
+    "breadth": "5 cm",
+    "inside": "35 cm²",
+    "proportion": 1.4,
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_012_V01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "9 cm",
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "9 cm",
+     "9 cm",
+     "9 cm",
+     "9 cm"
+    ],
+    "note": "4 equal sides: perimeter = 4 × 9",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "9 cm",
+     "9 cm",
+     "9 cm",
+     "9 cm"
+    ],
+    "note": "9 + 9 + 9 + 9",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "9 cm",
+     "9 cm",
+     "9 cm",
+     "9 cm"
+    ],
+    "note": "4 × 9 = 36 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_013": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "5.5 cm",
+     "5.5 cm",
+     "5.5 cm",
+     "5.5 cm"
+    ],
+    "note": "Square: 4 sides of 5.5 cm, so 22 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "6 cm",
+     "bc": "6 cm",
+     "ca": "6 cm"
+    },
+    "note": "Triangle: 3 sides of 6 cm, so 18 cm",
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "5 cm",
+    "breadth": "3 cm",
+    "proportion": 1.67,
+    "note": "Rectangle: two of 5 cm and two of 3 cm, so 16 cm",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      4.5,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      7.5,
+      6
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "edges": [
+     "5 cm",
+     "5 cm",
+     "5 cm",
+     "5 cm"
+    ],
+    "note": "Rhombus: 4 sides of 5 cm, so 20 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "barChart",
+    "bars": [
+     {
+      "label": "Square",
+      "value": 22
+     },
+     {
+      "label": "Triangle",
+      "value": 18
+     },
+     {
+      "label": "Rectangle",
+      "value": 16
+     },
+     {
+      "label": "Rhombus",
+      "value": 20
+     }
+    ],
+    "unit": "cm",
+    "note": "The smallest is 16 cm",
+    "highlight": [
+     "b2"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "6 cm",
+   "note": "An equilateral triangle has the same perimeter. Its side = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "6 cm",
+     "6 cm",
+     "6 cm",
+     "6 cm"
+    ],
+    "note": "Square: 4 × 6 = 24 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "s",
+     "bc": "s",
+     "ca": "s"
+    },
+    "note": "Triangle: 3 × s = 24",
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ]
+   },
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "8 cm",
+     "bc": "8 cm",
+     "ca": "8 cm"
+    },
+    "note": "s = 24 ÷ 3 = 8 cm"
+   }
+  ]
+ },
+ "Q_CH20_014_V05": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "19 cm",
+   "inside": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "19 cm",
+    "breadth": "19 cm",
+    "note": "Area = 19 × 19",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      6.32
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      6.32
+     ]
+    ],
+    "edges": [
+     "19 cm",
+     "10 cm",
+     "9 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "First part: 19 × 10",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      6.32
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      6.32
+     ]
+    ],
+    "edges": [
+     "19 cm",
+     "10 cm",
+     "9 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Second part: 19 × 9",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "19 cm",
+    "breadth": "19 cm",
+    "inside": "361 cm²",
+    "note": "19 × 19 = 361 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     12,
+     3.0
+    ],
+    [
+     0,
+     3.0
+    ]
+   ],
+   "edges": [
+    "16 cm",
+    null,
+    null,
+    "4 cm"
+   ],
+   "note": "A square has the same area. Perimeter of the square = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      3.0
+     ],
+     [
+      0,
+      3.0
+     ]
+    ],
+    "edges": [
+     "16 cm",
+     null,
+     null,
+     "4 cm"
+    ],
+    "note": "Area = 16 × 4 = 64 square cm",
+    "highlight": [
+     "fill"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "8 cm",
+    "breadth": "8 cm",
+    "grid": {
+     "cols": 8,
+     "rows": 8
+    },
+    "note": "8 × 8 = 64, so the side is 8 cm"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "8 cm",
+     "8 cm",
+     "8 cm",
+     "8 cm"
+    ],
+    "note": "Perimeter = 4 × 8 = 32 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   null
+  ]
+ },
+ "Q_CH20_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     12,
+     3.0
+    ],
+    [
+     0,
+     3.0
+    ]
+   ],
+   "edges": [
+    "16 cm",
+    null,
+    null,
+    "4 cm"
+   ],
+   "note": "A square has the same perimeter. Area of the square = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      3.0
+     ],
+     [
+      0,
+      3.0
+     ]
+    ],
+    "edges": [
+     "16 cm",
+     null,
+     null,
+     "4 cm"
+    ],
+    "note": "Perimeter = 2 × (16 + 4)",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "?",
+     "?",
+     "?",
+     "?"
+    ],
+    "note": "40 cm shared among 4 equal sides: 10 cm each",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "10 cm",
+    "breadth": "10 cm",
+    "note": "Area = 10 × 10",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "10 cm",
+    "breadth": "10 cm",
+    "inside": "100 sq. cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_016_V04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "12 cm",
+   "breadth": "11 cm",
+   "proportion": 1.09,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "11 cm",
+    "proportion": 1.09,
+    "note": "12 + 11 = 23 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "11 cm",
+    "proportion": 1.09,
+    "note": "2 × 23 = 46 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_016_V08": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "25 cm",
+   "breadth": "16 cm",
+   "inside": "Area = ?",
+   "proportion": 1.56
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "25 cm",
+    "breadth": "16 cm",
+    "proportion": 1.56,
+    "note": "Area = 25 × 16",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      4.8
+     ],
+     [
+      12.0,
+      7.68
+     ],
+     [
+      0,
+      7.68
+     ],
+     [
+      0,
+      4.8
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     "10 cm",
+     "6 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "First part: 25 × 10",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      4.8
+     ],
+     [
+      12.0,
+      7.68
+     ],
+     [
+      0,
+      7.68
+     ],
+     [
+      0,
+      4.8
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     "10 cm",
+     "6 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Second part: 25 × 6",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "25 cm",
+    "breadth": "16 cm",
+    "inside": "400 cm²",
+    "proportion": 1.56,
+    "note": "25 × 16 = 400 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     3,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     0,
+     5
+    ]
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      3,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      9,
+      5
+     ],
+     [
+      0,
+      5
+     ]
+    ],
+    "note": "Opposite sides run the same way and never meet",
+    "highlight": [
+     "e0",
+     "e2"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      3,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      9,
+      5
+     ],
+     [
+      0,
+      5
+     ]
+    ],
+    "edges": [
+     "a",
+     "b",
+     "a",
+     "b"
+    ],
+    "note": "Each side is as long as the side facing it"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      3,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      9,
+      5
+     ],
+     [
+      0,
+      5
+     ]
+    ],
+    "edges": [
+     "a",
+     "b",
+     "a",
+     "b"
+    ],
+    "note": "Opposite sides are parallel and equal",
+    "highlight": [
+     "e0",
+     "e2"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     6,
+     0
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     6,
+     12
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "note": "A rhombus"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      0
+     ],
+     [
+      10,
+      6
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      2,
+      6
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "A rhombus folds onto itself in 2 ways"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      0
+     ],
+     [
+      10,
+      6
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      2,
+      6
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "The fold lines are its two diagonals"
+   }
+  ]
+ },
+ "Q_CH20_019": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      0,
+      7
+     ]
+    ],
+    "rightAngles": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "note": "A rectangle: four right angles"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "s",
+     "s",
+     "s",
+     "s"
+    ],
+    "rightAngles": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "note": "A square: four right angles and four equal sides"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      4.5,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      7.5,
+      6
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "edges": [
+     "s",
+     "s",
+     "s",
+     "s"
+    ],
+    "note": "A slanted rhombus has no right angles: not a square"
+   },
+   null
+  ]
+ },
+ "Q_CH20_019_V09": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "26 cm",
+   "breadth": "24 cm",
+   "inside": "Area = ?",
+   "proportion": 1.08
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "26 cm",
+    "breadth": "24 cm",
+    "proportion": 1.08,
+    "note": "Area = 26 × 24",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      9.23
+     ],
+     [
+      12.0,
+      11.08
+     ],
+     [
+      0,
+      11.08
+     ],
+     [
+      0,
+      9.23
+     ]
+    ],
+    "edges": [
+     "26 cm",
+     "20 cm",
+     "4 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "First part: 26 × 20",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      9.23
+     ],
+     [
+      12.0,
+      11.08
+     ],
+     [
+      0,
+      11.08
+     ],
+     [
+      0,
+      9.23
+     ]
+    ],
+    "edges": [
+     "26 cm",
+     "20 cm",
+     "4 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Second part: 26 × 4",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "26 cm",
+    "breadth": "24 cm",
+    "inside": "624 cm²",
+    "proportion": 1.08,
+    "note": "26 × 24 = 624 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     3,
+     0
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     12,
+     5
+    ],
+    [
+     0,
+     5
+    ]
+   ],
+   "note": "Exactly one pair of parallel sides",
+   "highlight": [
+    "e0",
+    "e2"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      3,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      9,
+      5
+     ],
+     [
+      0,
+      5
+     ]
+    ],
+    "note": "A parallelogram has two pairs of parallel sides",
+    "highlight": [
+     "e0",
+     "e2"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      0
+     ],
+     [
+      9.5,
+      4
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      2.5,
+      4
+     ]
+    ],
+    "note": "A kite usually has no parallel sides at all"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      3,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      12,
+      5
+     ],
+     [
+      0,
+      5
+     ]
+    ],
+    "note": "One pair of parallel sides; the other two are not",
+    "highlight": [
+     "e0",
+     "e2"
+    ]
+   },
+   null
+  ]
+ },
+ "Q_CH20_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     6,
+     0
+    ],
+    [
+     9.5,
+     4
+    ],
+    [
+     6,
+     12
+    ],
+    [
+     2.5,
+     4
+    ]
+   ],
+   "note": "A kite"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      0
+     ],
+     [
+      9.5,
+      4
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      2.5,
+      4
+     ]
+    ],
+    "edges": [
+     "short",
+     "long",
+     "long",
+     "short"
+    ],
+    "note": "Two short sides together, two long sides together"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      0
+     ],
+     [
+      9.5,
+      4
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      2.5,
+      4
+     ]
+    ],
+    "edges": [
+     "short",
+     "long",
+     "long",
+     "short"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     }
+    ],
+    "note": "Fold along this line: one half lands on the other"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      0
+     ],
+     [
+      9.5,
+      4
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      2.5,
+      4
+     ]
+    ],
+    "edges": [
+     "short",
+     "long",
+     "long",
+     "short"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "This fold puts a short side on a long side"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      0
+     ],
+     [
+      9.5,
+      4
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      2.5,
+      4
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     }
+    ],
+    "note": "1 axis of symmetry"
+   }
+  ]
+ },
+ "Q_CH20_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0.0,
+     9.64
+    ],
+    [
+     11.0,
+     9.64
+    ],
+    [
+     10.4,
+     2.79
+    ],
+    [
+     0.0,
+     0.0
+    ]
+   ],
+   "corners": [
+    "90°",
+    "85°",
+    "110°",
+    "?"
+   ],
+   "rightAngles": [
+    0
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      9.64
+     ],
+     [
+      11.0,
+      9.64
+     ],
+     [
+      10.4,
+      2.79
+     ],
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "corners": [
+     "90°",
+     "85°",
+     "110°",
+     "?"
+    ],
+    "rightAngles": [
+     0
+    ],
+    "note": "The four angles add up to 360°"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      9.64
+     ],
+     [
+      11.0,
+      9.64
+     ],
+     [
+      10.4,
+      2.79
+     ],
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "corners": [
+     "90°",
+     "85°",
+     "110°",
+     "?"
+    ],
+    "rightAngles": [
+     0
+    ],
+    "note": "90° + 85° + 110°"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      9.64
+     ],
+     [
+      11.0,
+      9.64
+     ],
+     [
+      10.4,
+      2.79
+     ],
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "corners": [
+     "90°",
+     "85°",
+     "110°",
+     "?"
+    ],
+    "rightAngles": [
+     0
+    ],
+    "note": "? = 360° − (90° + 85° + 110°)"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0.0,
+      9.64
+     ],
+     [
+      11.0,
+      9.64
+     ],
+     [
+      10.4,
+      2.79
+     ],
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "corners": [
+     "90°",
+     "85°",
+     "110°",
+     "75°"
+    ],
+    "rightAngles": [
+     0
+    ],
+    "note": "The fourth angle is 75°"
+   }
+  ]
+ },
+ "Q_CH20_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "?",
+   "inside": "144 cm²"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "?",
+    "breadth": "?",
+    "inside": "144 cm²",
+    "note": "side × side = 144",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   null,
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "12 cm",
+    "breadth": "12 cm",
+    "grid": {
+     "cols": 12,
+     "rows": 12
+    },
+    "note": "12 rows of 12 unit squares: 12 × 12 = 144"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "12 cm",
+    "breadth": "12 cm",
+    "inside": "144 cm²",
+    "highlight": [
+     "length"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_023_V04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     12,
+     3.65
+    ],
+    [
+     0,
+     3.65
+    ]
+   ],
+   "edges": [
+    "23 cm",
+    null,
+    null,
+    "7 cm"
+   ],
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      3.65
+     ],
+     [
+      0,
+      3.65
+     ]
+    ],
+    "edges": [
+     "23 cm",
+     null,
+     null,
+     "7 cm"
+    ],
+    "note": "Area = 23 × 7",
+    "highlight": [
+     "e0",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      10.43,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      3.65
+     ],
+     [
+      10.43,
+      3.65
+     ],
+     [
+      0,
+      3.65
+     ]
+    ],
+    "edges": [
+     "20 cm",
+     "3 cm",
+     null,
+     null,
+     null,
+     "7 cm"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "First part: 7 × 20",
+    "highlight": [
+     "e0"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      10.43,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      3.65
+     ],
+     [
+      10.43,
+      3.65
+     ],
+     [
+      0,
+      3.65
+     ]
+    ],
+    "edges": [
+     "20 cm",
+     "3 cm",
+     null,
+     null,
+     null,
+     "7 cm"
+    ],
+    "dashed": [
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "Second part: 7 × 3",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      3.65
+     ],
+     [
+      0,
+      3.65
+     ]
+    ],
+    "edges": [
+     "23 cm",
+     null,
+     null,
+     "7 cm"
+    ],
+    "note": "23 × 7 = 161 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "12 cm",
+   "breadth": "?",
+   "inside": "96 cm²",
+   "proportion": 1.5
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "?",
+    "inside": "96 cm²",
+    "proportion": 1.5,
+    "note": "12 × breadth = 96",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "?",
+    "inside": "96 cm²",
+    "proportion": 1.5,
+    "note": "breadth = 96 ÷ 12",
+    "highlight": [
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "8 cm",
+    "grid": {
+     "cols": 12,
+     "rows": 8
+    },
+    "note": "Check: 12 × 8 = 96"
+   }
+  ]
+ },
+ "Q_CH20_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     0,
+     8
+    ]
+   ],
+   "corners": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "dashed": [
+    {
+     "from": 0,
+     "to": 2
+    },
+    {
+     "from": 1,
+     "to": 3
+    }
+   ],
+   "note": "The diagonals AC and BD"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "corners": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "Like a rectangle: AC and BD are equal"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "corners": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "Like a rhombus: they cut each other in half at 90°"
+   },
+   null
+  ]
+ },
+ "Q_CH20_025_V03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "28 cm",
+   "breadth": "26 cm",
+   "proportion": 1.08,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "28 cm",
+    "breadth": "26 cm",
+    "proportion": 1.08,
+    "note": "28 + 26 = 54 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "28 cm",
+    "breadth": "26 cm",
+    "proportion": 1.08,
+    "note": "2 × 54 = 108 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_025_V10": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "19 cm",
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "19 cm",
+     "19 cm",
+     "19 cm",
+     "19 cm"
+    ],
+    "note": "4 equal sides: perimeter = 4 × 19",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "19 cm",
+     "19 cm",
+     "19 cm",
+     "19 cm"
+    ],
+    "note": "4 × 19 = 76 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_020_V02": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "12 cm",
+   "inside": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "12 cm",
+    "breadth": "12 cm",
+    "note": "Area = 12 × 12",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      10.0
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      10.0
+     ]
+    ],
+    "edges": [
+     "12 cm",
+     "10 cm",
+     "2 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "First part: 12 × 10",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      10.0
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      10.0
+     ]
+    ],
+    "edges": [
+     "12 cm",
+     "10 cm",
+     "2 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Second part: 12 × 2",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "12 cm",
+    "breadth": "12 cm",
+    "inside": "144 cm²",
+    "note": "12 × 12 = 144 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_020_V05": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "21 cm",
+   "breadth": "16 cm",
+   "inside": "Area = ?",
+   "proportion": 1.31
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "21 cm",
+    "breadth": "16 cm",
+    "proportion": 1.31,
+    "note": "Area = 21 × 16",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      5.71
+     ],
+     [
+      12.0,
+      9.14
+     ],
+     [
+      0,
+      9.14
+     ],
+     [
+      0,
+      5.71
+     ]
+    ],
+    "edges": [
+     "21 cm",
+     "10 cm",
+     "6 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "First part: 21 × 10",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      5.71
+     ],
+     [
+      12.0,
+      9.14
+     ],
+     [
+      0,
+      9.14
+     ],
+     [
+      0,
+      5.71
+     ]
+    ],
+    "edges": [
+     "21 cm",
+     "10 cm",
+     "6 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "Second part: 21 × 6",
+    "highlight": [
+     "e2"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "21 cm",
+    "breadth": "16 cm",
+    "inside": "336 cm²",
+    "proportion": 1.31,
+    "note": "21 × 16 = 336 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_020_V07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "29 cm",
+   "breadth": "20 cm",
+   "proportion": 1.45,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "29 cm",
+    "breadth": "20 cm",
+    "proportion": 1.45,
+    "note": "29 + 20 = 49 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "29 cm",
+    "breadth": "20 cm",
+    "proportion": 1.45,
+    "note": "2 × 49 = 98 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_024_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "9 cm",
+   "breadth": "5 cm",
+   "inside": "Area = ?",
+   "proportion": 1.8
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "9 cm",
+    "breadth": "5 cm",
+    "proportion": 1.8,
+    "note": "Area = 9 × 5",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "9 cm",
+    "breadth": "5 cm",
+    "inside": "45 sq.cm",
+    "proportion": 1.8,
+    "note": "9 × 5 = 45 sq.cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_028_02_p2b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "12 cm",
+   "breadth": "10 cm",
+   "inside": "Area = ?",
+   "proportion": 1.2
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "10 cm",
+    "proportion": 1.2,
+    "note": "Area = 12 × 10",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "10 cm",
+    "inside": "120 sq.cm",
+    "proportion": 1.2,
+    "note": "12 × 10 = 120 sq.cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2019_030_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     12,
+     2.4
+    ],
+    [
+     0,
+     2.4
+    ]
+   ],
+   "edges": [
+    "25 cm",
+    null,
+    null,
+    "5 cm"
+   ],
+   "note": "Perimeter = ?",
+   "highlight": [
+    "e0",
+    "e1",
+    "e2",
+    "e3"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      2.4
+     ],
+     [
+      0,
+      2.4
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     null,
+     null,
+     "5 cm"
+    ],
+    "note": "Perimeter = 2 × (length + width)",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      2.4
+     ],
+     [
+      0,
+      2.4
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     null,
+     null,
+     "5 cm"
+    ],
+    "note": "2 × (25 + 5) = 60 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_028_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "5 cm",
+   "breadth": "3 cm",
+   "proportion": 1.67,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "5 cm",
+    "breadth": "3 cm",
+    "proportion": 1.67,
+    "note": "Perimeter = 2 × (length + width)",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "5 cm",
+    "breadth": "3 cm",
+    "proportion": 1.67,
+    "note": "2 × (5 + 3) = 16 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2021_025_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "19 cm",
+   "breadth": "12 cm",
+   "inside": "Area = ?",
+   "proportion": 1.58
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "19 cm",
+    "breadth": "12 cm",
+    "proportion": 1.58,
+    "note": "Area = 19 × 12",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "19 cm",
+    "breadth": "12 cm",
+    "inside": "228 sq.cm",
+    "proportion": 1.58,
+    "note": "19 × 12 = 228 sq.cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2021_037_04_p2b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "25 cm",
+   "breadth": "20 cm",
+   "proportion": 1.25,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "25 cm",
+    "breadth": "20 cm",
+    "proportion": 1.25,
+    "note": "Perimeter = 2 × (length + width)",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "25 cm",
+    "breadth": "20 cm",
+    "proportion": 1.25,
+    "note": "2 × (25 + 20) = 90 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2023_012_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "17 cm",
+   "inside": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "17 cm",
+    "breadth": "17 cm",
+    "note": "Area = 17 × 17",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "17 cm",
+    "breadth": "17 cm",
+    "inside": "289 sq.cm",
+    "note": "17 × 17 = 289 sq.cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2023_033_04_p2b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "25 cm",
+   "breadth": "24 cm",
+   "inside": "Area = ?",
+   "proportion": 1.04
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "25 cm",
+    "breadth": "24 cm",
+    "proportion": 1.04,
+    "note": "Area = 25 × 24",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "25 cm",
+    "breadth": "24 cm",
+    "inside": "600 sq.cm",
+    "proportion": 1.04,
+    "note": "25 × 24 = 600 sq.cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2025_025_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "23 cm",
+   "breadth": "15 cm",
+   "proportion": 1.53,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "23 cm",
+    "breadth": "15 cm",
+    "proportion": 1.53,
+    "note": "Perimeter = 2 × (length + width)",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "23 cm",
+    "breadth": "15 cm",
+    "proportion": 1.53,
+    "note": "2 × (23 + 15) = 76 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH12_005_03_p2b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "rectangle",
+   "length": "12 cm",
+   "breadth": "5 cm",
+   "proportion": 2.4,
+   "note": "Perimeter = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "5 cm",
+    "proportion": 2.4,
+    "note": "Perimeter = 2 × (length + width)",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "5 cm",
+    "proportion": 2.4,
+    "note": "2 × (12 + 5) = 34 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ }
+}

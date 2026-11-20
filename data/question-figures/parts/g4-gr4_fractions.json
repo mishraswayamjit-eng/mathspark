@@ -1,0 +1,9409 @@
+{
+ "BOOST_EXT_G4_FP_2016_011_05": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "5/6",
+      "parts": 6,
+      "shaded": 5
+     },
+     {
+      "label": "1/3",
+      "parts": 3,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Pieces of different sizes. Cut both into 6"
+   },
+   {
+    "bars": [
+     {
+      "label": "5/6",
+      "parts": 6,
+      "shaded": 5
+     },
+     {
+      "label": "1/3 = 2/6",
+      "parts": 6,
+      "shaded": 2
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "5/6",
+      "parts": 6,
+      "shaded": 5
+     },
+     {
+      "label": "1/3 = 2/6",
+      "parts": 6,
+      "shaded": 2
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "5 is more than 2"
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2016_030_07": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "36 marbles",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "4/6 given away. How many are left?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "36 marbles",
+      "segments": [
+       {
+        "label": "24 given",
+        "tone": "a",
+        "units": 4
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 2
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "4/6 of 36 = 24"
+   },
+   {
+    "bars": [
+     {
+      "brace": "36 marbles",
+      "segments": [
+       {
+        "label": "24 given",
+        "tone": "a",
+        "units": 4
+       },
+       {
+        "label": "12 left",
+        "tone": "b",
+        "units": 2
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "36 − 24 = 12"
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2018_035_07": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "24",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "1/3 of 24 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 3,
+    "kind": "set",
+    "note": "24 shared into 3 equal groups: 8 in each",
+    "total": 24
+   },
+   {
+    "groups": 3,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "1 group of 8: 8 × 1 = 8",
+    "shadedGroups": 1,
+    "total": 24
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2019_024_07": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "2/6",
+      "parts": 6,
+      "shaded": 2
+     },
+     {
+      "label": "7/8",
+      "parts": 8,
+      "shaded": 7
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Pieces of different sizes. Cut both into 24"
+   },
+   {
+    "bars": [
+     {
+      "label": "2/6 = 8/24",
+      "parts": 24,
+      "shaded": 8
+     },
+     {
+      "label": "7/8 = 21/24",
+      "parts": 24,
+      "shaded": 21
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "2/6 = 8/24",
+      "parts": 24,
+      "shaded": 8
+     },
+     {
+      "label": "7/8 = 21/24",
+      "parts": 24,
+      "shaded": 21
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "21 is more than 8"
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2020_012_07": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "72",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "5/8 of 72 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "72",
+      "segments": [
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "72 ÷ 8 = 9 in each piece"
+   },
+   {
+    "bars": [
+     {
+      "brace": "72",
+      "segments": [
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4"
+    ],
+    "kind": "barModel",
+    "note": "5 pieces: 9 × 5 = 45"
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2021_001_07": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "36 marbles",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "3/4 given away. How many are left?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "36 marbles",
+      "segments": [
+       {
+        "label": "27 given",
+        "tone": "a",
+        "units": 3
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "3/4 of 36 = 27"
+   },
+   {
+    "bars": [
+     {
+      "brace": "36 marbles",
+      "segments": [
+       {
+        "label": "27 given",
+        "tone": "a",
+        "units": 3
+       },
+       {
+        "label": "9 left",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "36 − 27 = 9"
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2021_002_06": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "48 marbles",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "2/3 given away. How many are left?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "48 marbles",
+      "segments": [
+       {
+        "label": "32 given",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "2/3 of 48 = 32"
+   },
+   {
+    "bars": [
+     {
+      "brace": "48 marbles",
+      "segments": [
+       {
+        "label": "32 given",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "16 left",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "48 − 32 = 16"
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2022_028_07": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "3/6",
+      "parts": 6,
+      "shaded": 3
+     },
+     {
+      "label": "4/7",
+      "parts": 7,
+      "shaded": 4
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Pieces of different sizes. Cut both into 42"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/6 = 21/42",
+      "parts": 6,
+      "shaded": 3
+     },
+     {
+      "label": "4/7 = 24/42",
+      "parts": 7,
+      "shaded": 4
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Both written with 42 below"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/6 = 21/42",
+      "parts": 6,
+      "shaded": 3
+     },
+     {
+      "label": "4/7 = 24/42",
+      "parts": 7,
+      "shaded": 4
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "24 is more than 21"
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2024_015_05": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "2/3",
+      "parts": 3,
+      "shaded": 2
+     },
+     {
+      "label": "4/7",
+      "parts": 7,
+      "shaded": 4
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Pieces of different sizes. Cut both into 21"
+   },
+   {
+    "bars": [
+     {
+      "label": "2/3 = 14/21",
+      "parts": 21,
+      "shaded": 14
+     },
+     {
+      "label": "4/7 = 12/21",
+      "parts": 21,
+      "shaded": 12
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "2/3 = 14/21",
+      "parts": 21,
+      "shaded": 14
+     },
+     {
+      "label": "4/7 = 12/21",
+      "parts": 21,
+      "shaded": 12
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "14 is more than 12"
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2025_003_06": {
+  "figure": {
+   "bars": [
+    {
+     "label": "8/10",
+     "parts": 10,
+     "shaded": 8
+    },
+    {
+     "label": "1/10",
+     "parts": 10,
+     "shaded": 1
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "9/10",
+      "parts": 10,
+      "shaded": 9
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "8 + 1 = 9 pieces shaded"
+   },
+   {
+    "bars": [
+     {
+      "label": "9/10",
+      "parts": 10,
+      "shaded": 9
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "9/10 is already in its simplest form"
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2025_039_05": {
+  "figure": {
+   "bars": [
+    {
+     "label": "6/12",
+     "parts": 12,
+     "shaded": 6
+    },
+    {
+     "label": "2/12",
+     "parts": 12,
+     "shaded": 2
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "8/12",
+      "parts": 12,
+      "shaded": 8
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "6 + 2 = 8 pieces shaded"
+   },
+   {
+    "bars": [
+     {
+      "label": "8/12",
+      "parts": 12,
+      "shaded": 8
+     },
+     {
+      "label": "2/3",
+      "parts": 3,
+      "shaded": 2
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "The same amount, in bigger pieces"
+   }
+  ]
+ },
+ "BOOST_EXT_G4_WS2_CH11_001_07": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "72 marbles",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "1/8 given away. How many are left?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "72 marbles",
+      "segments": [
+       {
+        "label": "9 given",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 7
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "1/8 of 72 = 9"
+   },
+   {
+    "bars": [
+     {
+      "brace": "72 marbles",
+      "segments": [
+       {
+        "label": "9 given",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "63 left",
+        "tone": "b",
+        "units": 7
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "72 − 9 = 63"
+   }
+  ]
+ },
+ "BOOST_EXT_G4_WS2_CH12_004_05": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "96",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "2/8 of 96 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "96",
+      "segments": [
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "96 ÷ 8 = 12 in each piece"
+   },
+   {
+    "bars": [
+     {
+      "brace": "96",
+      "segments": [
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "2 pieces: 12 × 2 = 24"
+   }
+  ]
+ },
+ "BOOST_EXT_G4_WS2_CH15_004_07": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "90 marbles",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "2/3 given away. How many are left?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "90 marbles",
+      "segments": [
+       {
+        "label": "60 given",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "2/3 of 90 = 60"
+   },
+   {
+    "bars": [
+     {
+      "brace": "90 marbles",
+      "segments": [
+       {
+        "label": "60 given",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "30 left",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "90 − 60 = 30"
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_002": {
+  "figure": {
+   "bars": [
+    {
+     "label": "1/9",
+     "parts": 9,
+     "shaded": 1
+    },
+    {
+     "label": "1/18",
+     "parts": 18,
+     "shaded": 1
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "1/9 + 1/18 = 1/□"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1/9 = 2/18",
+      "parts": 18,
+      "shaded": 2
+     },
+     {
+      "label": "1/18",
+      "parts": 18,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now both are eighteenths"
+   },
+   null,
+   {
+    "bars": [
+     {
+      "label": "3/18",
+      "parts": 18,
+      "shaded": 3
+     },
+     {
+      "label": "1/6",
+      "parts": 6,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "The same amount, in bigger pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/6",
+      "parts": 6,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "The box is 6"
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_002": {
+  "figure": {
+   "bars": [
+    {
+     "label": "2/7",
+     "parts": 7,
+     "shaded": 2
+    },
+    {
+     "label": "2/7",
+     "parts": 7,
+     "shaded": 2
+    },
+    {
+     "label": "2/7",
+     "parts": 7,
+     "shaded": 2
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "2/7 + 2/7 + 2/7 = ★/21"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "6/7",
+      "parts": 7,
+      "shaded": 6
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "2 + 2 + 2 = 6 sevenths"
+   },
+   {
+    "bars": [
+     {
+      "label": "6/7",
+      "parts": 7,
+      "shaded": 6
+     },
+     {
+      "label": "★/21",
+      "parts": 21,
+      "shaded": 0
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "7 × 3 = 21: cut every piece into 3"
+   },
+   {
+    "bars": [
+     {
+      "label": "6/7",
+      "parts": 7,
+      "shaded": 6
+     },
+     {
+      "label": "18/21",
+      "parts": 21,
+      "shaded": 18
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "The same amount: 18 small pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "18/21",
+      "parts": 21,
+      "shaded": 18
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "The star is 18"
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_014": {
+  "figure": {
+   "kind": "balance",
+   "left": "M/14 + M/14 + M/14",
+   "right": "162/126"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "M/14 + M/14 + M/14",
+    "note": "Divide 162 and 126 by 9 to get fourteenths",
+    "right": "162/126"
+   },
+   {
+    "kind": "balance",
+    "left": "M + M + M",
+    "note": "The bottoms are both 14, so the tops must match",
+    "right": "18"
+   },
+   {
+    "kind": "balance",
+    "left": "M + M + M",
+    "note": "Share 18 equally among the three M",
+    "right": "18"
+   },
+   {
+    "kind": "balance",
+    "left": "M",
+    "note": "M is 6",
+    "right": "6"
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_025": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "headers": [
+     "Fraction",
+     "Top doubled",
+     "Bottom"
+    ],
+    "kind": "table",
+    "note": "Each doubled top is more than the bottom: more than half",
+    "rows": [
+     [
+      "2/3",
+      "4",
+      "3"
+     ],
+     [
+      "11/15",
+      "22",
+      "15"
+     ],
+     [
+      "5/7",
+      "10",
+      "7"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "Fraction",
+     "Top doubled",
+     "Bottom"
+    ],
+    "highlight": [
+     "r3"
+    ],
+    "kind": "table",
+    "note": "26 is less than 29, so 13/29 is less than half",
+    "rows": [
+     [
+      "2/3",
+      "4",
+      "3"
+     ],
+     [
+      "11/15",
+      "22",
+      "15"
+     ],
+     [
+      "5/7",
+      "10",
+      "7"
+     ],
+     [
+      "13/29",
+      "26",
+      "29"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "Fraction",
+     "Top doubled",
+     "Bottom"
+    ],
+    "highlight": [
+     "r3"
+    ],
+    "kind": "table",
+    "note": "13/29 is the smallest",
+    "rows": [
+     [
+      "2/3",
+      "4",
+      "3"
+     ],
+     [
+      "11/15",
+      "22",
+      "15"
+     ],
+     [
+      "5/7",
+      "10",
+      "7"
+     ],
+     [
+      "13/29",
+      "26",
+      "29"
+     ]
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_005": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "bars": [
+     {
+      "label": "1/12",
+      "parts": 12,
+      "shaded": 1
+     },
+     {
+      "label": "1/10",
+      "parts": 10,
+      "shaded": 1
+     },
+     {
+      "label": "1/7",
+      "parts": 7,
+      "shaded": 1
+     },
+     {
+      "label": "1/8",
+      "parts": 8,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Fewer pieces in the whole means bigger pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/12",
+      "parts": 12,
+      "shaded": 1
+     },
+     {
+      "label": "1/10",
+      "parts": 10,
+      "shaded": 1
+     },
+     {
+      "label": "1/7",
+      "parts": 7,
+      "shaded": 1
+     },
+     {
+      "label": "1/8",
+      "parts": 8,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b2"
+    ],
+    "kind": "fractionBars",
+    "note": "7 is the smallest bottom number: the biggest pieces"
+   },
+   null
+  ]
+ },
+ "EXT_G4_FP_2025_003": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "headers": [
+     "Fraction",
+     "Top doubled",
+     "Bottom"
+    ],
+    "kind": "table",
+    "note": "Each doubled top is less than the bottom: less than half",
+    "rows": [
+     [
+      "14/29",
+      "28",
+      "29"
+     ],
+     [
+      "9/19",
+      "18",
+      "19"
+     ],
+     [
+      "7/22",
+      "14",
+      "22"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "Fraction",
+     "Top doubled",
+     "Bottom"
+    ],
+    "highlight": [
+     "r3"
+    ],
+    "kind": "table",
+    "note": "34 is more than 21, so 17/21 is more than half",
+    "rows": [
+     [
+      "14/29",
+      "28",
+      "29"
+     ],
+     [
+      "9/19",
+      "18",
+      "19"
+     ],
+     [
+      "7/22",
+      "14",
+      "22"
+     ],
+     [
+      "17/21",
+      "34",
+      "21"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "Fraction",
+     "Top doubled",
+     "Bottom"
+    ],
+    "highlight": [
+     "r3"
+    ],
+    "kind": "table",
+    "note": "17/21 is the greatest",
+    "rows": [
+     [
+      "14/29",
+      "28",
+      "29"
+     ],
+     [
+      "9/19",
+      "18",
+      "19"
+     ],
+     [
+      "7/22",
+      "14",
+      "22"
+     ],
+     [
+      "17/21",
+      "34",
+      "21"
+     ]
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_039": {
+  "figure": {
+   "kind": "balance",
+   "left": "5/□ + 8/□ + 11/□",
+   "right": "2"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5/□ + 8/□ + 11/□",
+    "note": "The bottoms are the same, so add the tops",
+    "right": "2"
+   },
+   {
+    "kind": "balance",
+    "left": "24/□",
+    "note": "5 + 8 + 11 = 24",
+    "right": "2"
+   },
+   {
+    "kind": "balance",
+    "left": "24/□",
+    "note": "24 divided by which number gives 2?",
+    "right": "2"
+   },
+   {
+    "kind": "balance",
+    "left": "24/12",
+    "note": "24 ÷ 12 = 2, so the denominator is 12",
+    "right": "2"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_001": {
+  "figure": {
+   "bars": [
+    {
+     "label": "7/8 litre",
+     "parts": 8,
+     "shaded": 7
+    },
+    {
+     "label": "5/12 litre",
+     "parts": 12,
+     "shaded": 5
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "7/8 − 5/12 = ?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "7/8 litre",
+      "parts": 8,
+      "shaded": 7
+     },
+     {
+      "label": "5/12 litre",
+      "parts": 12,
+      "shaded": 5
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Cut both into 24 equal pieces"
+   },
+   null,
+   null,
+   {
+    "bars": [
+     {
+      "label": "11/24 litre",
+      "parts": 24,
+      "shaded": 11
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "11/24 litre of lassi is left"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_002": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "5 1/4 m",
+     "label": "Ribbon",
+     "segments": [
+      {
+       "label": "2 2/3 m",
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "label": "?",
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "2 2/3 m is cut off. How long is the ribbon now?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   null,
+   {
+    "bars": [
+     {
+      "brace": "5 1/4 m",
+      "label": "Ribbon",
+      "segments": [
+       {
+        "label": "2 2/3 m",
+        "tone": "a",
+        "units": 2.67
+       },
+       {
+        "label": "2 7/12 m",
+        "tone": "b",
+        "units": 2.58
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "The ribbon is now 2 7/12 m long"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_003": {
+  "figure": {
+   "bars": [
+    {
+     "label": "1 cake = 6 slices",
+     "parts": 6,
+     "shaded": 6
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "47 slices sold. How many cakes?",
+   "shape": "circle"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1 cake = 6 slices",
+      "parts": 6,
+      "shaded": 6
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "47 slices, each one sixth of a cake: 47/6",
+    "shape": "circle"
+   },
+   null,
+   {
+    "bars": [
+     {
+      "label": "7 whole cakes",
+      "parts": 6,
+      "shaded": 6
+     },
+     {
+      "label": "and 5/6 of a cake",
+      "parts": 6,
+      "shaded": 5
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "47 ÷ 6 = 7 remainder 5",
+    "shape": "circle"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_005": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   null,
+   {
+    "bars": [
+     {
+      "label": "7/12",
+      "parts": 12,
+      "shaded": 7
+     },
+     {
+      "label": "5/8",
+      "parts": 8,
+      "shaded": 5
+     },
+     {
+      "label": "2/3",
+      "parts": 3,
+      "shaded": 2
+     },
+     {
+      "label": "3/4",
+      "parts": 4,
+      "shaded": 3
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Smallest at the top, greatest at the bottom"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_006": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "bars": [
+     {
+      "label": "1/4",
+      "parts": 4,
+      "shaded": 1
+     },
+     {
+      "label": "1/5",
+      "parts": 5,
+      "shaded": 1
+     },
+     {
+      "label": "1/7",
+      "parts": 7,
+      "shaded": 1
+     },
+     {
+      "label": "1/10",
+      "parts": 10,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "More pieces in the whole means smaller pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "Bala 3/4",
+      "parts": 4,
+      "shaded": 3
+     },
+     {
+      "label": "Asha 3/5",
+      "parts": 5,
+      "shaded": 3
+     },
+     {
+      "label": "Dev 3/7",
+      "parts": 7,
+      "shaded": 3
+     },
+     {
+      "label": "Chitra 3/10",
+      "parts": 10,
+      "shaded": 3
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Longest at the top, shortest at the bottom"
+   },
+   {
+    "bars": [
+     {
+      "label": "Bala 3/4",
+      "parts": 4,
+      "shaded": 3
+     },
+     {
+      "label": "Asha 3/5",
+      "parts": 5,
+      "shaded": 3
+     },
+     {
+      "label": "Dev 3/7",
+      "parts": 7,
+      "shaded": 3
+     },
+     {
+      "label": "Chitra 3/10",
+      "parts": 10,
+      "shaded": 3
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Asha ran the second longest distance"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_007": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "Rs. 240",
+     "segments": [
+      {
+       "label": "3/8",
+       "tone": "a",
+       "units": 9
+      },
+      {
+       "label": "1/3",
+       "tone": "b",
+       "units": 8
+      },
+      {
+       "label": "?",
+       "tone": "unknown",
+       "units": 8
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "Ball 3/8, book 1/3. How much is left?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "Rs. 240",
+      "segments": [
+       {
+        "label": "Rs. 90",
+        "tone": "a",
+        "units": 9
+       },
+       {
+        "label": "1/3",
+        "tone": "b",
+        "units": 8
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 8
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "One eighth is 30, so three eighths is 90"
+   },
+   {
+    "bars": [
+     {
+      "brace": "Rs. 240",
+      "segments": [
+       {
+        "label": "Rs. 90",
+        "tone": "a",
+        "units": 9
+       },
+       {
+        "label": "1/3",
+        "tone": "b",
+        "units": 8
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 8
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "Now find 1/3 of 240"
+   },
+   null,
+   {
+    "bars": [
+     {
+      "brace": "Rs. 240",
+      "segments": [
+       {
+        "label": "Rs. 90",
+        "tone": "a",
+        "units": 9
+       },
+       {
+        "label": "book",
+        "tone": "b",
+        "units": 8
+       },
+       {
+        "label": "Rs. 70",
+        "tone": "c",
+        "units": 7
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s2"
+    ],
+    "kind": "barModel",
+    "note": "Ravi has Rs. 70 left"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_008": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "18",
+     "label": "Girls",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      }
+     ]
+    },
+    {
+     "brace": "?",
+     "label": "Class",
+     "segments": [
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "3/5 of the class are girls. Whole class = ?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "18",
+      "label": "Girls",
+      "segments": [
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       }
+      ]
+     },
+     {
+      "brace": "?",
+      "label": "Class",
+      "segments": [
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "barModel",
+    "note": "3 equal parts make 18"
+   },
+   {
+    "bars": [
+     {
+      "brace": "18",
+      "label": "Girls",
+      "segments": [
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       }
+      ]
+     },
+     {
+      "brace": "?",
+      "label": "Class",
+      "segments": [
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "One part is 18 ÷ 3"
+   },
+   {
+    "bars": [
+     {
+      "brace": "18",
+      "label": "Girls",
+      "segments": [
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       }
+      ]
+     },
+     {
+      "brace": "?",
+      "label": "Class",
+      "segments": [
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "barModel",
+    "note": "The whole class is 5 parts"
+   },
+   {
+    "bars": [
+     {
+      "brace": "18",
+      "label": "Girls",
+      "segments": [
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       }
+      ]
+     },
+     {
+      "brace": "30 children",
+      "label": "Class",
+      "segments": [
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "There are 30 children in the class"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_009": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "? pages",
+     "segments": [
+      {
+       "label": "read 2/7",
+       "tone": "a",
+       "units": 2
+      },
+      {
+       "label": "150 pages",
+       "tone": "b",
+       "units": 5
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "2/7 is read. 150 pages are still to read"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "? pages",
+      "segments": [
+       {
+        "label": "read 2/7",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "150 pages",
+        "tone": "b",
+        "units": 5
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "The pages still to read are the rest of the book"
+   },
+   {
+    "bars": [
+     {
+      "brace": "? pages",
+      "segments": [
+       {
+        "label": "30",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "5/7 of the book is 150 pages, so 1/7 is 30 pages"
+   },
+   {
+    "bars": [
+     {
+      "brace": "? pages",
+      "segments": [
+       {
+        "label": "30",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "barModel",
+    "note": "The whole book is seven sevenths"
+   },
+   {
+    "bars": [
+     {
+      "brace": "210 pages",
+      "segments": [
+       {
+        "label": "30",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "The book has 210 pages"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_010": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "3 1/2",
+     "segments": [
+      {
+       "label": "1 5/6",
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "label": "?",
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "3 1/2 − ? = 1 5/6"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "3 1/2",
+      "segments": [
+       {
+        "label": "1 5/6",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "The missing number is 3 1/2 − 1 5/6"
+   },
+   null,
+   null,
+   {
+    "bars": [
+     {
+      "brace": "3 1/2",
+      "segments": [
+       {
+        "label": "1 5/6",
+        "tone": "a",
+        "units": 1.83
+       },
+       {
+        "label": "1 2/3",
+        "tone": "b",
+        "units": 1.67
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "1 2/3 must be subtracted"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_011": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "headers": [
+     "Colour",
+     "Beads"
+    ],
+    "highlight": [
+     "r1"
+    ],
+    "kind": "table",
+    "note": "Count each colour in the row",
+    "rows": [
+     [
+      "Red",
+      "6"
+     ],
+     [
+      "Blue",
+      "4"
+     ],
+     [
+      "Green",
+      "2"
+     ]
+    ]
+   },
+   {
+    "bars": [
+     {
+      "label": "4/12 are blue",
+      "parts": 12,
+      "shaded": 4
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "4 blue beads out of 12"
+   },
+   {
+    "bars": [
+     {
+      "label": "4/12",
+      "parts": 12,
+      "shaded": 4
+     },
+     {
+      "label": "1/3",
+      "parts": 3,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Divide the top and bottom by 4"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/3 are blue",
+      "parts": 3,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_013": {
+  "figure": {
+   "bars": [
+    {
+     "label": "1/2 litre",
+     "parts": 2,
+     "shaded": 1
+    },
+    {
+     "label": "3/4 litre",
+     "parts": 4,
+     "shaded": 3
+    },
+    {
+     "label": "5/8 litre",
+     "parts": 8,
+     "shaded": 5
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "How much in all?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1/2 litre",
+      "parts": 2,
+      "shaded": 1
+     },
+     {
+      "label": "3/4 litre",
+      "parts": 4,
+      "shaded": 3
+     },
+     {
+      "label": "5/8 litre",
+      "parts": 8,
+      "shaded": 5
+     }
+    ],
+    "highlight": [
+     "b0",
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Change 1/2 and 3/4 to eighths"
+   },
+   null,
+   {
+    "bars": [
+     {
+      "label": "8/8 = 1 litre",
+      "parts": 8,
+      "shaded": 8
+     },
+     {
+      "label": "7/8 litre",
+      "parts": 8,
+      "shaded": 7
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "15/8 is 8/8 and 7/8 more: 1 7/8 litres"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_014": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "bars": [
+     {
+      "brace": "360 min",
+      "segments": [
+       {
+        "label": "90 min",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "90 minutes fits into 360 minutes four times"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/4 of the day",
+      "parts": 4,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Maths takes 1/4 of the school day"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_015": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "bars": [
+     {
+      "label": "1/3 = 4/12",
+      "parts": 12,
+      "shaded": 4
+     },
+     {
+      "label": "5/12",
+      "parts": 12,
+      "shaded": 5
+     },
+     {
+      "label": "1/2 = 6/12",
+      "parts": 12,
+      "shaded": 6
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "5/12 is more than 4/12 and less than 6/12"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/3 = 4/12",
+      "parts": 12,
+      "shaded": 4
+     },
+     {
+      "label": "5/12",
+      "parts": 12,
+      "shaded": 5
+     },
+     {
+      "label": "1/2 = 6/12",
+      "parts": 12,
+      "shaded": 6
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "5/12 lies between 1/3 and 1/2"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_016": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "? m",
+     "segments": [
+      {
+       "label": "2 3/4 m",
+       "tone": "a",
+       "units": 2.75
+      },
+      {
+       "label": "1 5/6 m",
+       "tone": "b",
+       "units": 1.83
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "Kurta and shirt together"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   null,
+   {
+    "bars": [
+     {
+      "brace": "4 7/12 m",
+      "segments": [
+       {
+        "label": "2 3/4 m",
+        "tone": "a",
+        "units": 2.75
+       },
+       {
+        "label": "1 5/6 m",
+        "tone": "b",
+        "units": 1.83
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "barModel",
+    "note": "3 + 1 7/12 = 4 7/12 m of cloth"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_017": {
+  "figure": {
+   "bars": [
+    {
+     "parts": 4,
+     "shaded": 0
+    },
+    {
+     "parts": 4,
+     "shaded": 0
+    },
+    {
+     "parts": 4,
+     "shaded": 0
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "3 pizzas shared equally among 4 children",
+   "shape": "circle"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "parts": 4,
+      "shaded": 1
+     },
+     {
+      "parts": 4,
+      "shaded": 1
+     },
+     {
+      "parts": 4,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "One quarter of each pizza: 3/4 of a pizza for each child",
+    "shape": "circle"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/4",
+      "parts": 4,
+      "shaded": 3
+     },
+     {
+      "label": "6/8",
+      "parts": 8,
+      "shaded": 6
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Cut each quarter into two eighths"
+   },
+   {
+    "bars": [
+     {
+      "label": "the share: 6/8",
+      "parts": 8,
+      "shaded": 6
+     },
+     {
+      "label": "eaten: 3/8",
+      "parts": 8,
+      "shaded": 3
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Half of 6 eighths is 3 eighths"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_019": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "50 overs",
+     "segments": [
+      {
+       "label": "35 bowled",
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "label": "?",
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "What fraction is still to be bowled?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "50 overs",
+      "segments": [
+       {
+        "label": "35 bowled",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "Overs left = 50 − 35"
+   },
+   null,
+   null,
+   {
+    "bars": [
+     {
+      "label": "3/10 still to bowl",
+      "parts": 10,
+      "shaded": 3
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "3/10 of the overs is still to be bowled"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_020": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "□",
+     "segments": [
+      {
+       "label": "2/3",
+       "tone": "a",
+       "units": 2
+      },
+      {
+       "label": "3/4",
+       "tone": "b",
+       "units": 2.25
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "Take 2/3 away from the box and 3/4 is left"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "□",
+      "segments": [
+       {
+        "label": "2/3",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "3/4",
+        "tone": "b",
+        "units": 2.25
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "barModel",
+    "note": "So the box is 3/4 + 2/3"
+   },
+   null,
+   null,
+   {
+    "bars": [
+     {
+      "brace": "1 5/12",
+      "segments": [
+       {
+        "label": "2/3",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "3/4",
+        "tone": "b",
+        "units": 2.25
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "17/12 is one whole and 5/12"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_021": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "?",
+     "segments": [
+      {
+       "label": "books",
+       "tone": "a",
+       "units": 2
+      },
+      {
+       "label": "pen",
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "label": "Rs. 90",
+       "tone": "c",
+       "units": 3
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "Books: 1/3 of the money. Pen: 1/4 of the rest"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "?",
+      "segments": [
+       {
+        "label": "books",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "Rs. 30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "Rs. 30",
+        "tone": "c",
+        "units": 1
+       },
+       {
+        "label": "Rs. 30",
+        "tone": "c",
+        "units": 1
+       },
+       {
+        "label": "Rs. 30",
+        "tone": "c",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "3/4 of the rest is Rs. 90, so 1/4 of it is Rs. 30"
+   },
+   {
+    "bars": [
+     {
+      "brace": "?",
+      "segments": [
+       {
+        "label": "books",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "Rs. 30",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "Rs. 30",
+        "tone": "c",
+        "units": 1
+       },
+       {
+        "label": "Rs. 30",
+        "tone": "c",
+        "units": 1
+       },
+       {
+        "label": "Rs. 30",
+        "tone": "c",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4"
+    ],
+    "kind": "barModel",
+    "note": "The money left after the books was 4 quarters"
+   },
+   {
+    "bars": [
+     {
+      "brace": "?",
+      "segments": [
+       {
+        "label": "Rs. 60",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "Rs. 60",
+        "tone": "b",
+        "units": 2
+       },
+       {
+        "label": "Rs. 60",
+        "tone": "b",
+        "units": 2
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1",
+     "b0s2"
+    ],
+    "kind": "barModel",
+    "note": "Rs. 120 is 2/3 of the money, so 1/3 is Rs. 60"
+   },
+   {
+    "bars": [
+     {
+      "brace": "Rs. 180",
+      "segments": [
+       {
+        "label": "Rs. 60",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "Rs. 60",
+        "tone": "b",
+        "units": 2
+       },
+       {
+        "label": "Rs. 60",
+        "tone": "b",
+        "units": 2
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "3 × 60 = Rs. 180 at first"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_022": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "? mangoes",
+     "segments": [
+      {
+       "label": "ripe 2/5",
+       "tone": "a",
+       "units": 6
+      },
+      {
+       "label": "raw 1/3",
+       "tone": "b",
+       "units": 5
+      },
+      {
+       "label": "16",
+       "tone": "c",
+       "units": 4
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "The remaining 16 mangoes are half-ripe"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "bars": [
+     {
+      "brace": "? mangoes",
+      "segments": [
+       {
+        "label": "ripe",
+        "tone": "a",
+        "units": 6
+       },
+       {
+        "label": "raw",
+        "tone": "b",
+        "units": 5
+       },
+       {
+        "label": "4",
+        "tone": "c",
+        "units": 1
+       },
+       {
+        "label": "4",
+        "tone": "c",
+        "units": 1
+       },
+       {
+        "label": "4",
+        "tone": "c",
+        "units": 1
+       },
+       {
+        "label": "4",
+        "tone": "c",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s2",
+     "b0s3",
+     "b0s4",
+     "b0s5"
+    ],
+    "kind": "barModel",
+    "note": "4/15 of the basket is 16 mangoes, so 1/15 is 4"
+   },
+   {
+    "bars": [
+     {
+      "brace": "60 mangoes",
+      "segments": [
+       {
+        "label": "ripe 2/5",
+        "tone": "a",
+        "units": 6
+       },
+       {
+        "label": "raw 1/3",
+        "tone": "b",
+        "units": 5
+       },
+       {
+        "label": "16",
+        "tone": "c",
+        "units": 4
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "15 × 4 = 60 mangoes"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_025": {
+  "figure": {
+   "headers": [
+    "When",
+    "Water"
+   ],
+   "kind": "table",
+   "note": "How much water is in the tank now?",
+   "rows": [
+    [
+     "At the start",
+     "10 litres"
+    ],
+    [
+     "Morning",
+     "3 3/4 used"
+    ],
+    [
+     "Afternoon",
+     "2 5/8 used"
+    ],
+    [
+     "Evening",
+     "1 1/2 poured in"
+    ]
+   ]
+  },
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   null,
+   {
+    "headers": [
+     "When",
+     "Water"
+    ],
+    "highlight": [
+     "r4"
+    ],
+    "kind": "table",
+    "rows": [
+     [
+      "At the start",
+      "10 litres"
+     ],
+     [
+      "Morning",
+      "3 3/4 used"
+     ],
+     [
+      "Afternoon",
+      "2 5/8 used"
+     ],
+     [
+      "Evening",
+      "1 1/2 poured in"
+     ],
+     [
+      "Now",
+      "5 1/8 litres"
+     ]
+    ]
+   }
+  ]
+ },
+ "G4A_FRACTIONS_026": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "? m",
+     "segments": [
+      {
+       "label": "1/3",
+       "tone": "a",
+       "units": 4
+      },
+      {
+       "label": "10 m",
+       "tone": "b",
+       "units": 5
+      },
+      {
+       "label": "1/4 left",
+       "tone": "c",
+       "units": 3
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "How long was the rope at first?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "? m",
+      "segments": [
+       {
+        "label": "1/3",
+        "tone": "a",
+        "units": 4
+       },
+       {
+        "label": "10 m",
+        "tone": "b",
+        "units": 5
+       },
+       {
+        "label": "1/4 left",
+        "tone": "c",
+        "units": 3
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s2"
+    ],
+    "kind": "barModel",
+    "note": "The first piece is 1/3 and the piece left is 1/4 of the rope"
+   },
+   {
+    "bars": [
+     {
+      "brace": "? m",
+      "segments": [
+       {
+        "label": "1/3",
+        "tone": "a",
+        "units": 4
+       },
+       {
+        "label": "10 m",
+        "tone": "b",
+        "units": 5
+       },
+       {
+        "label": "1/4 left",
+        "tone": "c",
+        "units": 3
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "The 10 m piece is the other part of the rope"
+   },
+   {
+    "bars": [
+     {
+      "brace": "? m",
+      "segments": [
+       {
+        "label": "1/3",
+        "tone": "a",
+        "units": 4
+       },
+       {
+        "label": "2 m",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "2 m",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "2 m",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "2 m",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "2 m",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "1/4",
+        "tone": "c",
+        "units": 3
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "5/12 of the rope is 10 m, so 1/12 is 2 m"
+   },
+   {
+    "bars": [
+     {
+      "brace": "24 m",
+      "segments": [
+       {
+        "label": "1/3",
+        "tone": "a",
+        "units": 4
+       },
+       {
+        "label": "10 m",
+        "tone": "b",
+        "units": 5
+       },
+       {
+        "label": "1/4 left",
+        "tone": "c",
+        "units": 3
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "12 × 2 = 24 m"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_028": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "72 marbles",
+     "segments": [
+      {
+       "label": "Arun 1/4",
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "label": "what is left",
+       "tone": "unknown",
+       "units": 3
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "Bina takes 2/3 of what is left. Chetan gets the rest"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "72 marbles",
+      "segments": [
+       {
+        "label": "Arun 18",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 3
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "1/4 of 72 = 18"
+   },
+   {
+    "bars": [
+     {
+      "brace": "72 marbles",
+      "segments": [
+       {
+        "label": "Arun 18",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "54 left",
+        "tone": "b",
+        "units": 3
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "72 − 18 = 54"
+   },
+   {
+    "bars": [
+     {
+      "brace": "72 marbles",
+      "segments": [
+       {
+        "label": "Arun 18",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "Bina 36",
+        "tone": "b",
+        "units": 2
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "2/3 of 54 = 36"
+   },
+   {
+    "bars": [
+     {
+      "brace": "72 marbles",
+      "segments": [
+       {
+        "label": "Arun 18",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "Bina 36",
+        "tone": "b",
+        "units": 2
+       },
+       {
+        "label": "Chetan 18",
+        "tone": "c",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s2"
+    ],
+    "kind": "barModel",
+    "note": "54 − 36 = 18"
+   },
+   {
+    "bars": [
+     {
+      "label": "Bina",
+      "segments": [
+       {
+        "label": "18",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "18",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     },
+     {
+      "label": "Chetan",
+      "segments": [
+       {
+        "label": "18",
+        "tone": "c",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "36 − 18 = 18 more for Bina"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_029": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "headers": [
+     "Fraction",
+     "Top doubled",
+     "Bottom"
+    ],
+    "kind": "table",
+    "note": "Each doubled top is less than the bottom: less than 1/2",
+    "rows": [
+     [
+      "5/11",
+      "10",
+      "11"
+     ],
+     [
+      "9/20",
+      "18",
+      "20"
+     ],
+     [
+      "49/100",
+      "98",
+      "100"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "Fraction",
+     "Top doubled",
+     "Bottom"
+    ],
+    "highlight": [
+     "r3",
+     "r4",
+     "r5"
+    ],
+    "kind": "table",
+    "note": "These doubled tops are more than the bottoms",
+    "rows": [
+     [
+      "5/11",
+      "10",
+      "11"
+     ],
+     [
+      "9/20",
+      "18",
+      "20"
+     ],
+     [
+      "49/100",
+      "98",
+      "100"
+     ],
+     [
+      "7/13",
+      "14",
+      "13"
+     ],
+     [
+      "13/25",
+      "26",
+      "25"
+     ],
+     [
+      "8/15",
+      "16",
+      "15"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "Fraction",
+     "Top doubled",
+     "Bottom"
+    ],
+    "highlight": [
+     "r3",
+     "r4",
+     "r5"
+    ],
+    "kind": "table",
+    "note": "3 of the fractions are greater than 1/2",
+    "rows": [
+     [
+      "5/11",
+      "10",
+      "11"
+     ],
+     [
+      "9/20",
+      "18",
+      "20"
+     ],
+     [
+      "49/100",
+      "98",
+      "100"
+     ],
+     [
+      "7/13",
+      "14",
+      "13"
+     ],
+     [
+      "13/25",
+      "26",
+      "25"
+     ],
+     [
+      "8/15",
+      "16",
+      "15"
+     ]
+    ]
+   }
+  ]
+ },
+ "G4A_FRACTIONS_030": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "6 1/2 m",
+     "label": "Ribbon",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 6.5
+      }
+     ]
+    },
+    {
+     "label": "One gift",
+     "segments": [
+      {
+       "label": "3/4 m",
+       "tone": "b",
+       "units": 0.75
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "As many gifts as she can. How much is left over?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "3 m",
+      "segments": [
+       {
+        "label": "3/4 m",
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "label": "3/4 m",
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "label": "3/4 m",
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "label": "3/4 m",
+        "tone": "b",
+        "units": 0.75
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "4 gifts use 3 m of ribbon"
+   },
+   {
+    "bars": [
+     {
+      "brace": "6 m",
+      "segments": [
+       {
+        "label": "3/4 m",
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "label": "3/4 m",
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "label": "3/4 m",
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "label": "3/4 m",
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "label": "3/4 m",
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "label": "3/4 m",
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "label": "3/4 m",
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "label": "3/4 m",
+        "tone": "b",
+        "units": 0.75
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "8 gifts use 6 m. A ninth gift does not fit"
+   },
+   {
+    "bars": [
+     {
+      "brace": "6 1/2 m",
+      "segments": [
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 0.5
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s8"
+    ],
+    "kind": "barModel",
+    "note": "8 gifts use 6 m of the 6 1/2 m"
+   },
+   {
+    "bars": [
+     {
+      "brace": "6 1/2 m",
+      "segments": [
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "tone": "b",
+        "units": 0.75
+       },
+       {
+        "label": "1/2 m",
+        "tone": "c",
+        "units": 0.5
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s8"
+    ],
+    "kind": "barModel",
+    "note": "1/2 m of ribbon is left over"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_031": {
+  "figure": {
+   "bars": [
+    {
+     "label": "1/2",
+     "parts": 2,
+     "shaded": 1
+    },
+    {
+     "label": "1/4",
+     "parts": 4,
+     "shaded": 1
+    },
+    {
+     "label": "1/8",
+     "parts": 8,
+     "shaded": 1
+    },
+    {
+     "label": "1/16",
+     "parts": 16,
+     "shaded": 1
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "What must be added to make exactly 1?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "15/16",
+      "parts": 16,
+      "shaded": 15
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "8 + 4 + 2 + 1 = 15 sixteenths"
+   },
+   {
+    "bars": [
+     {
+      "label": "15/16",
+      "parts": 16,
+      "shaded": 15
+     },
+     {
+      "label": "16/16 = 1",
+      "parts": 16,
+      "shaded": 16
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "One whole is 16/16"
+   },
+   {
+    "bars": [
+     {
+      "label": "15/16",
+      "parts": 16,
+      "shaded": 15
+     },
+     {
+      "label": "1/16",
+      "parts": 16,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "15/16 + 1/16 = 16/16"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_032": {
+  "figure": {
+   "bars": [
+    {
+     "label": "Boys",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      }
+     ]
+    },
+    {
+     "label": "Girls",
+     "segments": [
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "5/9 are boys. There are 40 more boys than girls"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "Boys",
+      "segments": [
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       }
+      ]
+     },
+     {
+      "label": "Girls",
+      "segments": [
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "Boys are 5 of the 9 parts. Girls are the rest"
+   },
+   {
+    "bars": [
+     {
+      "label": "Boys",
+      "segments": [
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "40",
+        "tone": "c",
+        "units": 1
+       }
+      ]
+     },
+     {
+      "label": "Girls",
+      "segments": [
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s4"
+    ],
+    "kind": "barModel",
+    "note": "The gap between boys and girls is one part"
+   },
+   {
+    "bars": [
+     {
+      "label": "Boys",
+      "segments": [
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "40",
+        "tone": "c",
+        "units": 1
+       }
+      ]
+     },
+     {
+      "label": "Girls",
+      "segments": [
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s4"
+    ],
+    "kind": "barModel",
+    "note": "So 1/9 of the school is 40 pupils"
+   },
+   {
+    "bars": [
+     {
+      "label": "Boys",
+      "segments": [
+       {
+        "label": "40",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "40",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "40",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "40",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "40",
+        "tone": "c",
+        "units": 1
+       }
+      ]
+     },
+     {
+      "label": "Girls",
+      "segments": [
+       {
+        "label": "40",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "40",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "40",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "40",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "9 × 40 = 360 pupils"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_033": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   null,
+   {
+    "bars": [
+     {
+      "label": "1/4 = 6/24",
+      "parts": 24,
+      "shaded": 6
+     },
+     {
+      "label": "11/24",
+      "parts": 24,
+      "shaded": 11
+     },
+     {
+      "label": "2/3 = 16/24",
+      "parts": 24,
+      "shaded": 16
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "11/24 is 5/24 away from each"
+   }
+  ]
+ },
+ "G4A_FRACTIONS_034": {
+  "figure": {
+   "headers": [
+    "People",
+    "Cups of rice"
+   ],
+   "kind": "table",
+   "rows": [
+    [
+     "4",
+     "1 1/2"
+    ],
+    [
+     "10",
+     "?"
+    ]
+   ]
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "headers": [
+     "People",
+     "Cups of rice"
+    ],
+    "kind": "table",
+    "note": "10 people = 4 + 4 + 2 people",
+    "rows": [
+     [
+      "4",
+      "1 1/2"
+     ],
+     [
+      "4",
+      "1 1/2"
+     ],
+     [
+      "2",
+      "?"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "People",
+     "Cups of rice"
+    ],
+    "highlight": [
+     "r0"
+    ],
+    "kind": "table",
+    "note": "4 people need 1 1/2 cups, so 8 people need 3 cups",
+    "rows": [
+     [
+      "8",
+      "3"
+     ],
+     [
+      "2",
+      "?"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "People",
+     "Cups of rice"
+    ],
+    "highlight": [
+     "r1"
+    ],
+    "kind": "table",
+    "note": "Half of 1 1/2 cups is 3/4 cup",
+    "rows": [
+     [
+      "8",
+      "3"
+     ],
+     [
+      "2",
+      "3/4"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "People",
+     "Cups of rice"
+    ],
+    "highlight": [
+     "r2"
+    ],
+    "kind": "table",
+    "note": "3 + 3/4 = 3 3/4 cups",
+    "rows": [
+     [
+      "8",
+      "3"
+     ],
+     [
+      "2",
+      "3/4"
+     ],
+     [
+      "10",
+      "3 3/4"
+     ]
+    ]
+   }
+  ]
+ },
+ "G4A_FRACTIONS_035": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "headers": [
+     "Girl",
+     "Done",
+     "In 36ths"
+    ],
+    "kind": "table",
+    "note": "All three written in thirty-sixths",
+    "rows": [
+     [
+      "Asha",
+      "5/6",
+      "30/36"
+     ],
+     [
+      "Bela",
+      "7/9",
+      "28/36"
+     ],
+     [
+      "Charu",
+      "3/4",
+      "27/36"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "Girl",
+     "Done",
+     "In 36ths"
+    ],
+    "highlight": [
+     "r0",
+     "r2"
+    ],
+    "kind": "table",
+    "note": "Asha has done the most and Charu the least",
+    "rows": [
+     [
+      "Asha",
+      "5/6",
+      "30/36"
+     ],
+     [
+      "Bela",
+      "7/9",
+      "28/36"
+     ],
+     [
+      "Charu",
+      "3/4",
+      "27/36"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "Girl",
+     "Done",
+     "In 36ths"
+    ],
+    "highlight": [
+     "r0",
+     "r2"
+    ],
+    "kind": "table",
+    "note": "30/36 − 27/36 = 3/36",
+    "rows": [
+     [
+      "Asha",
+      "5/6",
+      "30/36"
+     ],
+     [
+      "Bela",
+      "7/9",
+      "28/36"
+     ],
+     [
+      "Charu",
+      "3/4",
+      "27/36"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "Girl",
+     "Done",
+     "In 36ths"
+    ],
+    "highlight": [
+     "r0",
+     "r2"
+    ],
+    "kind": "table",
+    "note": "3/36 = 1/12 of the homework",
+    "rows": [
+     [
+      "Asha",
+      "5/6",
+      "30/36"
+     ],
+     [
+      "Bela",
+      "7/9",
+      "28/36"
+     ],
+     [
+      "Charu",
+      "3/4",
+      "27/36"
+     ]
+    ]
+   }
+  ]
+ },
+ "PYQ_2016_Q08": {
+  "figure": {
+   "bars": [
+    {
+     "label": "1/4",
+     "parts": 4,
+     "shaded": 1
+    },
+    {
+     "label": "2/3",
+     "parts": 3,
+     "shaded": 2
+    },
+    {
+     "label": "1/2",
+     "parts": 2,
+     "shaded": 1
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "1/4 + 2/3 − 1/2 = ?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1/4",
+      "parts": 4,
+      "shaded": 1
+     },
+     {
+      "label": "2/3",
+      "parts": 3,
+      "shaded": 2
+     },
+     {
+      "label": "1/2",
+      "parts": 2,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Cut every strip into 12 equal pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/4 = 3/12",
+      "parts": 12,
+      "shaded": 3
+     },
+     {
+      "label": "2/3 = 8/12",
+      "parts": 12,
+      "shaded": 8
+     },
+     {
+      "label": "1/2 = 6/12",
+      "parts": 12,
+      "shaded": 6
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "5/12",
+      "parts": 12,
+      "shaded": 5
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "3 + 8 − 6 = 5 twelfths"
+   },
+   {
+    "bars": [
+     {
+      "label": "5/12",
+      "parts": 12,
+      "shaded": 5
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "1/4 + 2/3 − 1/2 = 5/12"
+   }
+  ]
+ },
+ "PYQ_2016_Q25": {
+  "figure": {
+   "bars": [
+    {
+     "label": "1 friend: 1/3",
+     "parts": 3,
+     "shaded": 1
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "12 friends. How many pizzas?",
+   "shape": "circle"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1 pizza: 3 friends",
+      "parts": 3,
+      "shaded": 3
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Three thirds make one whole pizza",
+    "shape": "circle"
+   },
+   {
+    "groups": 4,
+    "item": "friends",
+    "kind": "set",
+    "note": "Groups of 3 friends: 12 ÷ 3 = 4",
+    "total": 12
+   },
+   {
+    "groups": 4,
+    "item": "friends",
+    "kind": "set",
+    "note": "4 groups, so 4 pizzas",
+    "total": 12
+   }
+  ]
+ },
+ "PYQ_2017_Q03": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1/17",
+      "parts": 17,
+      "shaded": 1
+     },
+     {
+      "label": "1/18",
+      "parts": 18,
+      "shaded": 1
+     },
+     {
+      "label": "1/19",
+      "parts": 19,
+      "shaded": 1
+     },
+     {
+      "label": "1/20",
+      "parts": 20,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "The piece each fraction is short of a whole"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/17",
+      "parts": 17,
+      "shaded": 1
+     },
+     {
+      "label": "1/18",
+      "parts": 18,
+      "shaded": 1
+     },
+     {
+      "label": "1/19",
+      "parts": 19,
+      "shaded": 1
+     },
+     {
+      "label": "1/20",
+      "parts": 20,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b3"
+    ],
+    "kind": "fractionBars",
+    "note": "1/20 is the smallest of the missing pieces"
+   },
+   null,
+   {
+    "bars": [
+     {
+      "label": "19/20",
+      "parts": 20,
+      "shaded": 19
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "19/20 is the closest to 1, so it is the largest"
+   }
+  ]
+ },
+ "PYQ_2018_Q35": {
+  "figure": {
+   "bars": [
+    {
+     "label": "after Saturday",
+     "parts": 2,
+     "shaded": 1
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "Shaded: the cake left after Saturday"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1/2 left",
+      "parts": 2,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "After Saturday, half of the cake is left"
+   },
+   {
+    "bars": [
+     {
+      "label": "the half left",
+      "parts": 2,
+      "shaded": 1
+     },
+     {
+      "label": "1/3 of that half",
+      "parts": 3,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "He eats two thirds of the half, so one third of it is left"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/6 of the cake",
+      "parts": 6,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "The half cut into 3 parts: each is 1/6 of the cake"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/6 of the cake",
+      "parts": 6,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "1/6 of the cake is left for Monday"
+   }
+  ]
+ },
+ "Q_CH07_002": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "3/7",
+      "parts": 7,
+      "shaded": 3
+     },
+     {
+      "label": "5/7",
+      "parts": 7,
+      "shaded": 5
+     },
+     {
+      "label": "2/7",
+      "parts": 7,
+      "shaded": 2
+     },
+     {
+      "label": "6/7",
+      "parts": 7,
+      "shaded": 6
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Every piece is one seventh, so the pieces are the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/7",
+      "parts": 7,
+      "shaded": 3
+     },
+     {
+      "label": "5/7",
+      "parts": 7,
+      "shaded": 5
+     },
+     {
+      "label": "2/7",
+      "parts": 7,
+      "shaded": 2
+     },
+     {
+      "label": "6/7",
+      "parts": 7,
+      "shaded": 6
+     }
+    ],
+    "highlight": [
+     "b3"
+    ],
+    "kind": "fractionBars",
+    "note": "6 is the biggest top number: the most pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/7",
+      "parts": 7,
+      "shaded": 3
+     },
+     {
+      "label": "5/7",
+      "parts": 7,
+      "shaded": 5
+     },
+     {
+      "label": "2/7",
+      "parts": 7,
+      "shaded": 2
+     },
+     {
+      "label": "6/7",
+      "parts": 7,
+      "shaded": 6
+     }
+    ],
+    "highlight": [
+     "b3"
+    ],
+    "kind": "fractionBars",
+    "note": "6/7 is the largest"
+   }
+  ]
+ },
+ "Q_CH07_003": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "bars": [
+     {
+      "label": "1/4",
+      "parts": 4,
+      "shaded": 1
+     },
+     {
+      "label": "1/8",
+      "parts": 8,
+      "shaded": 1
+     },
+     {
+      "label": "1/5",
+      "parts": 5,
+      "shaded": 1
+     },
+     {
+      "label": "1/2",
+      "parts": 2,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "More pieces in the whole means smaller pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/4",
+      "parts": 4,
+      "shaded": 3
+     },
+     {
+      "label": "3/8",
+      "parts": 8,
+      "shaded": 3
+     },
+     {
+      "label": "3/5",
+      "parts": 5,
+      "shaded": 3
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "3 eighths is the least amount"
+   }
+  ]
+ },
+ "Q_CH07_004": {
+  "figure": {
+   "bars": [
+    {
+     "parts": 5,
+     "shaded": 5
+    },
+    {
+     "parts": 5,
+     "shaded": 5
+    },
+    {
+     "parts": 5,
+     "shaded": 5
+    },
+    {
+     "parts": 5,
+     "shaded": 2
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "3 2/5 = ?/5"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "parts": 5,
+      "shaded": 5
+     },
+     {
+      "parts": 5,
+      "shaded": 5
+     },
+     {
+      "parts": 5,
+      "shaded": 5
+     },
+     {
+      "parts": 5,
+      "shaded": 2
+     }
+    ],
+    "highlight": [
+     "b0",
+     "b1",
+     "b2"
+    ],
+    "kind": "fractionBars",
+    "note": "Each whole is 5 fifths: 3 × 5 = 15 fifths"
+   },
+   {
+    "bars": [
+     {
+      "parts": 5,
+      "shaded": 5
+     },
+     {
+      "parts": 5,
+      "shaded": 5
+     },
+     {
+      "parts": 5,
+      "shaded": 5
+     },
+     {
+      "parts": 5,
+      "shaded": 2
+     }
+    ],
+    "highlight": [
+     "b3"
+    ],
+    "kind": "fractionBars",
+    "note": "15 + 2 = 17 fifths"
+   },
+   {
+    "bars": [
+     {
+      "parts": 5,
+      "shaded": 5
+     },
+     {
+      "parts": 5,
+      "shaded": 5
+     },
+     {
+      "parts": 5,
+      "shaded": 5
+     },
+     {
+      "parts": 5,
+      "shaded": 2
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "3 2/5 = 17/5"
+   }
+  ]
+ },
+ "Q_CH07_006": {
+  "figure": {
+   "bars": [
+    {
+     "label": "3/8",
+     "parts": 8,
+     "shaded": 3
+    },
+    {
+     "label": "5/8",
+     "parts": 8,
+     "shaded": 5
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "8/8",
+      "parts": 8,
+      "shaded": 8
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "3 + 5 = 8 eighths"
+   },
+   {
+    "bars": [
+     {
+      "label": "8/8 = 1",
+      "parts": 8,
+      "shaded": 8
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "8 eighths make one whole"
+   }
+  ]
+ },
+ "Q_CH07_007": {
+  "figure": {
+   "bars": [
+    {
+     "label": "1/3",
+     "parts": 3,
+     "shaded": 1
+    },
+    {
+     "label": "1/4",
+     "parts": 4,
+     "shaded": 1
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1/3",
+      "parts": 3,
+      "shaded": 1
+     },
+     {
+      "label": "1/4",
+      "parts": 4,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Different sizes. Cut both into 12 equal pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/3 = 4/12",
+      "parts": 12,
+      "shaded": 4
+     },
+     {
+      "label": "1/4 = 3/12",
+      "parts": 12,
+      "shaded": 3
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "7/12",
+      "parts": 12,
+      "shaded": 7
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "4 + 3 = 7 twelfths"
+   }
+  ]
+ },
+ "Q_CH07_008": {
+  "figure": {
+   "bars": [
+    {
+     "label": "5/6",
+     "parts": 6,
+     "shaded": 5
+    },
+    {
+     "label": "1/3",
+     "parts": 3,
+     "shaded": 1
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "5/6 − 1/3 = ?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "5/6",
+      "parts": 6,
+      "shaded": 5
+     },
+     {
+      "label": "1/3 = 2/6",
+      "parts": 6,
+      "shaded": 2
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Now both are sixths"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/6",
+      "parts": 6,
+      "shaded": 3
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "5 − 2 = 3 sixths"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/6",
+      "parts": 6,
+      "shaded": 3
+     },
+     {
+      "label": "1/2",
+      "parts": 2,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "The same amount, in bigger pieces"
+   }
+  ]
+ },
+ "Q_CH07_009": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "10",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "3/5 of 10 = ?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "groups": 5,
+    "kind": "set",
+    "note": "10 shared into 5 equal groups: 2 in each",
+    "total": 10
+   },
+   {
+    "groups": 5,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "3 groups of 2: 3 × 2 = 6",
+    "shadedGroups": 3,
+    "total": 10
+   },
+   {
+    "groups": 5,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "3/5 × 10 = 6",
+    "shadedGroups": 3,
+    "total": 10
+   }
+  ]
+ },
+ "Q_CH07_010": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "45",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "2/3 of 45 = ?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "groups": 3,
+    "kind": "set",
+    "note": "45 shared into 3 equal groups: 15 in each",
+    "total": 45
+   },
+   {
+    "groups": 3,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "Two thirds is 2 of these groups",
+    "shadedGroups": 2,
+    "total": 45
+   },
+   {
+    "groups": 3,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "2 groups of 15 make 30",
+    "shadedGroups": 2,
+    "total": 45
+   }
+  ]
+ },
+ "Q_CH07_010_V01": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "12 sweets",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "1/4 given away = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 4,
+    "item": "sweets",
+    "kind": "set",
+    "note": "12 sweets in 4 equal groups",
+    "total": 12
+   },
+   {
+    "groups": 4,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "1 of the 4 groups is given away",
+    "shadedGroups": 1,
+    "total": 12
+   },
+   {
+    "groups": 4,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "One group is 3 sweets",
+    "shadedGroups": 1,
+    "total": 12
+   }
+  ]
+ },
+ "Q_CH07_010_V04": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "8 sweets",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "1/2 given away = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 2,
+    "item": "sweets",
+    "kind": "set",
+    "note": "8 sweets in 2 equal groups",
+    "total": 8
+   },
+   {
+    "groups": 2,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "1 of the 2 groups is given away",
+    "shadedGroups": 1,
+    "total": 8
+   },
+   {
+    "groups": 2,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "One group is 4 sweets",
+    "shadedGroups": 1,
+    "total": 8
+   }
+  ]
+ },
+ "Q_CH07_010_V08": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "72 sweets",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "5/6 given away = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "72 sweets",
+      "segments": [
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "72 sweets in 6 equal groups"
+   },
+   {
+    "bars": [
+     {
+      "brace": "72 sweets",
+      "segments": [
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4"
+    ],
+    "kind": "barModel",
+    "note": "5 of the 6 groups are given away"
+   },
+   {
+    "bars": [
+     {
+      "brace": "72 sweets",
+      "segments": [
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4"
+    ],
+    "kind": "barModel",
+    "note": "5 × 12 = 60 sweets given away"
+   }
+  ]
+ },
+ "Q_CH07_011": {
+  "figure": {
+   "bars": [
+    {
+     "label": "3/4",
+     "parts": 4,
+     "shaded": 3
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "Which fraction is the same amount?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "bars": [
+     {
+      "label": "3/4",
+      "parts": 4,
+      "shaded": 3
+     },
+     {
+      "label": "6/8",
+      "parts": 8,
+      "shaded": 6
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Each piece is cut into 2: 3 × 2 = 6 and 4 × 2 = 8"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/4",
+      "parts": 4,
+      "shaded": 3
+     },
+     {
+      "label": "6/8",
+      "parts": 8,
+      "shaded": 6
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "6/8 is the same amount as 3/4"
+   }
+  ]
+ },
+ "Q_CH07_012": {
+  "figure": {
+   "bars": [
+    {
+     "label": "18/24",
+     "parts": 24,
+     "shaded": 18
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "18/24",
+      "parts": 24,
+      "shaded": 18
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "6 divides both 18 and 24"
+   },
+   {
+    "bars": [
+     {
+      "label": "18/24",
+      "parts": 24,
+      "shaded": 18
+     },
+     {
+      "label": "3/4",
+      "parts": 4,
+      "shaded": 3
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "18 ÷ 6 = 3 and 24 ÷ 6 = 4"
+   },
+   {
+    "bars": [
+     {
+      "label": "18/24",
+      "parts": 24,
+      "shaded": 18
+     },
+     {
+      "label": "3/4",
+      "parts": 4,
+      "shaded": 3
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "The same amount, in bigger pieces"
+   }
+  ]
+ },
+ "Q_CH07_013": {
+  "figure": {
+   "bars": [
+    {
+     "label": "Riya: 2/5",
+     "parts": 5,
+     "shaded": 2
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "1/5 was left over. What fraction did the others eat?",
+   "shape": "circle"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "whole pizza: 5/5",
+      "parts": 5,
+      "shaded": 5
+     }
+    ],
+    "kind": "fractionBars",
+    "shape": "circle"
+   },
+   {
+    "bars": [
+     {
+      "label": "2/5 + 1/5 = 3/5",
+      "parts": 5,
+      "shaded": 3
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Riya's share and the leftover together",
+    "shape": "circle"
+   },
+   null,
+   {
+    "bars": [
+     {
+      "label": "the others: 2/5",
+      "parts": 5,
+      "shaded": 2
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "5/5 − 3/5 = 2/5",
+    "shape": "circle"
+   }
+  ]
+ },
+ "Q_CH07_013_V03": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "22 sweets",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "1/2 given away = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 2,
+    "item": "sweets",
+    "kind": "set",
+    "note": "22 sweets in 2 equal groups",
+    "total": 22
+   },
+   {
+    "groups": 2,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "1 of the 2 groups is given away",
+    "shadedGroups": 1,
+    "total": 22
+   },
+   {
+    "groups": 2,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "One group is 11 sweets",
+    "shadedGroups": 1,
+    "total": 22
+   }
+  ]
+ },
+ "Q_CH07_013_V07": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "25 sweets",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "3/5 given away = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 5,
+    "item": "sweets",
+    "kind": "set",
+    "note": "25 sweets in 5 equal groups",
+    "total": 25
+   },
+   {
+    "groups": 5,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "3 of the 5 groups are given away",
+    "shadedGroups": 3,
+    "total": 25
+   },
+   {
+    "groups": 5,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "3 × 5 = 15 sweets given away",
+    "shadedGroups": 3,
+    "total": 25
+   }
+  ]
+ },
+ "Q_CH07_013_V09": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "12 sweets",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "1/4 given away = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 4,
+    "item": "sweets",
+    "kind": "set",
+    "note": "12 sweets in 4 equal groups",
+    "total": 12
+   },
+   {
+    "groups": 4,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "1 of the 4 groups is given away",
+    "shadedGroups": 1,
+    "total": 12
+   },
+   {
+    "groups": 4,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "One group is 3 sweets",
+    "shadedGroups": 1,
+    "total": 12
+   }
+  ]
+ },
+ "Q_CH07_013_V10": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "18 sweets",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "1/2 given away = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 2,
+    "item": "sweets",
+    "kind": "set",
+    "note": "18 sweets in 2 equal groups",
+    "total": 18
+   },
+   {
+    "groups": 2,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "1 of the 2 groups is given away",
+    "shadedGroups": 1,
+    "total": 18
+   },
+   {
+    "groups": 2,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "One group is 9 sweets",
+    "shadedGroups": 1,
+    "total": 18
+   }
+  ]
+ },
+ "Q_CH07_014": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "bars": [
+     {
+      "label": "2/3 = 8/12",
+      "parts": 12,
+      "shaded": 8
+     },
+     {
+      "label": "3/4 = 9/12",
+      "parts": 12,
+      "shaded": 9
+     },
+     {
+      "label": "5/6 = 10/12",
+      "parts": 12,
+      "shaded": 10
+     },
+     {
+      "label": "1/2 = 6/12",
+      "parts": 12,
+      "shaded": 6
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "6/12",
+      "parts": 12,
+      "shaded": 6
+     },
+     {
+      "label": "8/12",
+      "parts": 12,
+      "shaded": 8
+     },
+     {
+      "label": "9/12",
+      "parts": 12,
+      "shaded": 9
+     },
+     {
+      "label": "10/12",
+      "parts": 12,
+      "shaded": 10
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Smallest at the top"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/2",
+      "parts": 12,
+      "shaded": 6
+     },
+     {
+      "label": "2/3",
+      "parts": 12,
+      "shaded": 8
+     },
+     {
+      "label": "3/4",
+      "parts": 12,
+      "shaded": 9
+     },
+     {
+      "label": "5/6",
+      "parts": 12,
+      "shaded": 10
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "In ascending order"
+   }
+  ]
+ },
+ "Q_CH07_015": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "cols": 5,
+    "kind": "grid",
+    "note": "2 of the 3 rows and 3 of the 5 columns: 6 of the 15 squares",
+    "rows": 3,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "bars": [
+     {
+      "label": "6/15",
+      "parts": 15,
+      "shaded": 6
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "6 ÷ 3 = 2 and 15 ÷ 3 = 5"
+   },
+   {
+    "bars": [
+     {
+      "label": "6/15",
+      "parts": 15,
+      "shaded": 6
+     },
+     {
+      "label": "2/5",
+      "parts": 5,
+      "shaded": 2
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "The same amount, in bigger pieces"
+   }
+  ]
+ },
+ "Q_CH07_015_V07": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "36 sweets",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "1/4 given away = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 4,
+    "item": "sweets",
+    "kind": "set",
+    "note": "36 sweets in 4 equal groups",
+    "total": 36
+   },
+   {
+    "groups": 4,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "1 of the 4 groups is given away",
+    "shadedGroups": 1,
+    "total": 36
+   },
+   {
+    "groups": 4,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "One group is 9 sweets",
+    "shadedGroups": 1,
+    "total": 36
+   }
+  ]
+ },
+ "Q_CH07_016": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "bars": [
+     {
+      "label": "1/3",
+      "parts": 3,
+      "shaded": 1
+     },
+     {
+      "label": "2/3",
+      "parts": 3,
+      "shaded": 2
+     },
+     {
+      "label": "3/3 = 1 whole",
+      "parts": 3,
+      "shaded": 3
+     }
+    ],
+    "highlight": [
+     "b2"
+    ],
+    "kind": "fractionBars",
+    "note": "1/3 + 2/3 = 3/3, which is one whole"
+   },
+   null
+  ]
+ },
+ "Q_CH07_018": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "headers": [
+     "Fraction",
+     "Top doubled",
+     "Bottom"
+    ],
+    "kind": "table",
+    "note": "Each doubled top is bigger than the bottom: more than half",
+    "rows": [
+     [
+      "3/4",
+      "6",
+      "4"
+     ],
+     [
+      "5/6",
+      "10",
+      "6"
+     ],
+     [
+      "7/8",
+      "14",
+      "8"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "Fraction",
+     "Top doubled",
+     "Bottom"
+    ],
+    "highlight": [
+     "r3"
+    ],
+    "kind": "table",
+    "note": "2 is smaller than 4, so 1/4 is less than half",
+    "rows": [
+     [
+      "3/4",
+      "6",
+      "4"
+     ],
+     [
+      "5/6",
+      "10",
+      "6"
+     ],
+     [
+      "7/8",
+      "14",
+      "8"
+     ],
+     [
+      "1/4",
+      "2",
+      "4"
+     ]
+    ]
+   },
+   {
+    "headers": [
+     "Fraction",
+     "Top doubled",
+     "Bottom"
+    ],
+    "highlight": [
+     "r3"
+    ],
+    "kind": "table",
+    "note": "1/4 lies between 0 and 1/2",
+    "rows": [
+     [
+      "3/4",
+      "6",
+      "4"
+     ],
+     [
+      "5/6",
+      "10",
+      "6"
+     ],
+     [
+      "7/8",
+      "14",
+      "8"
+     ],
+     [
+      "1/4",
+      "2",
+      "4"
+     ]
+    ]
+   }
+  ]
+ },
+ "Q_CH07_020": {
+  "figure": {
+   "bars": [
+    {
+     "label": "3/4 full",
+     "parts": 4,
+     "shaded": 3
+    },
+    {
+     "label": "1/3 used",
+     "parts": 3,
+     "shaded": 1
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "What fraction is left?"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "3/4 full",
+      "parts": 4,
+      "shaded": 3
+     },
+     {
+      "label": "1/3 used",
+      "parts": 3,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Different sizes. Cut both into 12 equal pieces"
+   },
+   null,
+   null,
+   null,
+   {
+    "bars": [
+     {
+      "label": "5/12 left",
+      "parts": 12,
+      "shaded": 5
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "5/12 of the tank is left"
+   }
+  ]
+ },
+ "Q_CH07_021": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "5/8",
+      "parts": 8,
+      "shaded": 5
+     },
+     {
+      "label": "3/5",
+      "parts": 5,
+      "shaded": 3
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Pieces of different sizes. Use 40 as the common bottom"
+   },
+   null,
+   null,
+   {
+    "bars": [
+     {
+      "label": "5/8 = 25/40",
+      "parts": 8,
+      "shaded": 5
+     },
+     {
+      "label": "3/5 = 24/40",
+      "parts": 5,
+      "shaded": 3
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "25/40 is more than 24/40"
+   }
+  ]
+ },
+ "Q_CH07_022": {
+  "figure": {
+   "bars": [
+    {
+     "parts": 3,
+     "shaded": 3
+    },
+    {
+     "parts": 3,
+     "shaded": 3
+    },
+    {
+     "parts": 3,
+     "shaded": 3
+    },
+    {
+     "parts": 3,
+     "shaded": 3
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "4 wholes = ?/3"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1 whole = 3/3",
+      "parts": 3,
+      "shaded": 3
+     }
+    ],
+    "kind": "fractionBars"
+   },
+   {
+    "bars": [
+     {
+      "parts": 3,
+      "shaded": 3
+     },
+     {
+      "parts": 3,
+      "shaded": 3
+     },
+     {
+      "parts": 3,
+      "shaded": 3
+     },
+     {
+      "parts": 3,
+      "shaded": 3
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "4 wholes are 12 thirds"
+   },
+   {
+    "bars": [
+     {
+      "parts": 3,
+      "shaded": 3
+     },
+     {
+      "parts": 3,
+      "shaded": 3
+     },
+     {
+      "parts": 3,
+      "shaded": 3
+     },
+     {
+      "parts": 3,
+      "shaded": 3
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "4 = 12/3"
+   }
+  ]
+ },
+ "Q_CH07_023": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "bars": [
+     {
+      "label": "8/24 of a day",
+      "parts": 24,
+      "shaded": 8
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "8 hours out of 24 hours"
+   },
+   {
+    "bars": [
+     {
+      "label": "8/24",
+      "parts": 24,
+      "shaded": 8
+     },
+     {
+      "label": "1/3",
+      "parts": 3,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Divide the top and bottom by 8"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/3 of a day",
+      "parts": 3,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars"
+   }
+  ]
+ },
+ "Q_CH07_023_V01": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "40 sweets",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "2/4 given away = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 4,
+    "item": "sweets",
+    "kind": "set",
+    "note": "40 sweets in 4 equal groups",
+    "total": 40
+   },
+   {
+    "groups": 4,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "2 of the 4 groups are given away",
+    "shadedGroups": 2,
+    "total": 40
+   },
+   {
+    "groups": 4,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "2 × 10 = 20 sweets given away",
+    "shadedGroups": 2,
+    "total": 40
+   }
+  ]
+ },
+ "Q_CH07_024": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "20 m",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "3/4 of the rope is used"
+  },
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "20 m",
+      "segments": [
+       {
+        "label": "5 m",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "5 m",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "5 m",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "5 m",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "One quarter of 20 m is 5 m"
+   },
+   {
+    "bars": [
+     {
+      "brace": "20 m",
+      "segments": [
+       {
+        "label": "5 m",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "5 m",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "5 m",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "5 m",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2"
+    ],
+    "kind": "barModel",
+    "note": "Three quarters is 3 of these parts"
+   },
+   {
+    "bars": [
+     {
+      "brace": "20 m",
+      "segments": [
+       {
+        "label": "5 m",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "5 m",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "5 m",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "5 m",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2"
+    ],
+    "kind": "barModel",
+    "note": "15 m of the rope is used"
+   }
+  ]
+ },
+ "Q_CH07_024_V01": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "96 sweets",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "4/8 given away = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "96 sweets",
+      "segments": [
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "96 sweets in 8 equal groups"
+   },
+   {
+    "bars": [
+     {
+      "brace": "96 sweets",
+      "segments": [
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3"
+    ],
+    "kind": "barModel",
+    "note": "4 of the 8 groups are given away"
+   },
+   {
+    "bars": [
+     {
+      "brace": "96 sweets",
+      "segments": [
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3"
+    ],
+    "kind": "barModel",
+    "note": "4 × 12 = 48 sweets given away"
+   }
+  ]
+ },
+ "Q_CH07_024_V03": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "24 sweets",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "3/4 given away = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 4,
+    "item": "sweets",
+    "kind": "set",
+    "note": "24 sweets in 4 equal groups",
+    "total": 24
+   },
+   {
+    "groups": 4,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "3 of the 4 groups are given away",
+    "shadedGroups": 3,
+    "total": 24
+   },
+   {
+    "groups": 4,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "3 × 6 = 18 sweets given away",
+    "shadedGroups": 3,
+    "total": 24
+   }
+  ]
+ },
+ "Q_CH07_024_V07": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "18 sweets",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "3/6 given away = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 6,
+    "item": "sweets",
+    "kind": "set",
+    "note": "18 sweets in 6 equal groups",
+    "total": 18
+   },
+   {
+    "groups": 6,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "3 of the 6 groups are given away",
+    "shadedGroups": 3,
+    "total": 18
+   },
+   {
+    "groups": 6,
+    "highlight": [
+     "shaded"
+    ],
+    "item": "sweets",
+    "kind": "set",
+    "note": "3 × 3 = 9 sweets given away",
+    "shadedGroups": 3,
+    "total": 18
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_008_04": {
+  "figure": {
+   "bars": [
+    {
+     "label": "3/8",
+     "parts": 8,
+     "shaded": 3
+    },
+    {
+     "label": "?/24",
+     "parts": 24,
+     "shaded": 0
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "3/8",
+      "parts": 8,
+      "shaded": 3
+     },
+     {
+      "label": "?/24",
+      "parts": 24,
+      "shaded": 0
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Each piece is cut into 3: 8 × 3 = 24 pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/8",
+      "parts": 8,
+      "shaded": 3
+     },
+     {
+      "label": "9/24",
+      "parts": 24,
+      "shaded": 9
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Same amount shaded: 3 × 3 = 9"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_025_02": {
+  "figure": {
+   "bars": [
+    {
+     "label": "3/8",
+     "parts": 8,
+     "shaded": 3
+    },
+    {
+     "label": "1/8",
+     "parts": 8,
+     "shaded": 1
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "4/8",
+      "parts": 8,
+      "shaded": 4
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "3 + 1 = 4 pieces shaded"
+   },
+   {
+    "bars": [
+     {
+      "label": "4/8",
+      "parts": 8,
+      "shaded": 4
+     },
+     {
+      "label": "1/2",
+      "parts": 2,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "The same amount, in bigger pieces"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_030_04": {
+  "figure": {
+   "bars": [
+    {
+     "label": "1/5",
+     "parts": 5,
+     "shaded": 1
+    },
+    {
+     "label": "?/20",
+     "parts": 20,
+     "shaded": 0
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1/5",
+      "parts": 5,
+      "shaded": 1
+     },
+     {
+      "label": "?/20",
+      "parts": 20,
+      "shaded": 0
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Each piece is cut into 4: 5 × 4 = 20 pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/5",
+      "parts": 5,
+      "shaded": 1
+     },
+     {
+      "label": "4/20",
+      "parts": 20,
+      "shaded": 4
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Same amount shaded: 1 × 4 = 4"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2017_003_03": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "36 marbles",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "1/4 given away. How many are left?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "36 marbles",
+      "segments": [
+       {
+        "label": "9 given",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 3
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "1/4 of 36 = 9"
+   },
+   {
+    "bars": [
+     {
+      "brace": "36 marbles",
+      "segments": [
+       {
+        "label": "9 given",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "27 left",
+        "tone": "b",
+        "units": 3
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "36 − 9 = 27"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2017_026_03": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "40 marbles",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "3/8 given away. How many are left?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "40 marbles",
+      "segments": [
+       {
+        "label": "15 given",
+        "tone": "a",
+        "units": 3
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 5
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "3/8 of 40 = 15"
+   },
+   {
+    "bars": [
+     {
+      "brace": "40 marbles",
+      "segments": [
+       {
+        "label": "15 given",
+        "tone": "a",
+        "units": 3
+       },
+       {
+        "label": "25 left",
+        "tone": "b",
+        "units": 5
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "40 − 15 = 25"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2018_018_03_p2b": {
+  "figure": {
+   "bars": [
+    {
+     "label": "5/8",
+     "parts": 8,
+     "shaded": 5
+    },
+    {
+     "label": "2/8",
+     "parts": 8,
+     "shaded": 2
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "7/8",
+      "parts": 8,
+      "shaded": 7
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "5 + 2 = 7 pieces shaded"
+   },
+   {
+    "bars": [
+     {
+      "label": "7/8",
+      "parts": 8,
+      "shaded": 7
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "7/8 is already in its simplest form"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2018_025_04": {
+  "figure": {
+   "bars": [
+    {
+     "label": "2/5",
+     "parts": 5,
+     "shaded": 2
+    },
+    {
+     "label": "?/10",
+     "parts": 10,
+     "shaded": 0
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "2/5",
+      "parts": 5,
+      "shaded": 2
+     },
+     {
+      "label": "?/10",
+      "parts": 10,
+      "shaded": 0
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Each piece is cut into 2: 5 × 2 = 10 pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "2/5",
+      "parts": 5,
+      "shaded": 2
+     },
+     {
+      "label": "4/10",
+      "parts": 10,
+      "shaded": 4
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Same amount shaded: 2 × 2 = 4"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2018_035_03_p2b": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "6/7",
+      "parts": 7,
+      "shaded": 6
+     },
+     {
+      "label": "7/8",
+      "parts": 8,
+      "shaded": 7
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Pieces of different sizes. Cut both into 56"
+   },
+   {
+    "bars": [
+     {
+      "label": "6/7 = 48/56",
+      "parts": 7,
+      "shaded": 6
+     },
+     {
+      "label": "7/8 = 49/56",
+      "parts": 8,
+      "shaded": 7
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Both written with 56 below"
+   },
+   {
+    "bars": [
+     {
+      "label": "6/7 = 48/56",
+      "parts": 7,
+      "shaded": 6
+     },
+     {
+      "label": "7/8 = 49/56",
+      "parts": 8,
+      "shaded": 7
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "49 is more than 48"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2019_009_03_p2b": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "42",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "6/7 of 42 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 7,
+    "kind": "set",
+    "note": "42 shared into 7 equal groups: 6 in each",
+    "total": 42
+   },
+   {
+    "groups": 7,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "6 groups of 6: 6 × 6 = 36",
+    "shadedGroups": 6,
+    "total": 42
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_002_04": {
+  "figure": {
+   "bars": [
+    {
+     "label": "1/8",
+     "parts": 8,
+     "shaded": 1
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "1/8 = ?/40"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1/8",
+      "parts": 8,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Each piece is cut into 5: 8 × 5 = 40 pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/8 = 5/40",
+      "parts": 8,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "1 × 5 = 5 of the small pieces are shaded"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_012_01": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1/5",
+      "parts": 5,
+      "shaded": 1
+     },
+     {
+      "label": "5/7",
+      "parts": 7,
+      "shaded": 5
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Pieces of different sizes. Cut both into 35"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/5 = 7/35",
+      "parts": 5,
+      "shaded": 1
+     },
+     {
+      "label": "5/7 = 25/35",
+      "parts": 7,
+      "shaded": 5
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Both written with 35 below"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/5 = 7/35",
+      "parts": 5,
+      "shaded": 1
+     },
+     {
+      "label": "5/7 = 25/35",
+      "parts": 7,
+      "shaded": 5
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "25 is more than 7"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_013_01": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1/5",
+      "parts": 5,
+      "shaded": 1
+     },
+     {
+      "label": "1/3",
+      "parts": 3,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Pieces of different sizes. Cut both into 15"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/5 = 3/15",
+      "parts": 15,
+      "shaded": 3
+     },
+     {
+      "label": "1/3 = 5/15",
+      "parts": 15,
+      "shaded": 5
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/5 = 3/15",
+      "parts": 15,
+      "shaded": 3
+     },
+     {
+      "label": "1/3 = 5/15",
+      "parts": 15,
+      "shaded": 5
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "5 is more than 3"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_013_03": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "72 marbles",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "2/4 given away. How many are left?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "72 marbles",
+      "segments": [
+       {
+        "label": "36 given",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 2
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "2/4 of 72 = 36"
+   },
+   {
+    "bars": [
+     {
+      "brace": "72 marbles",
+      "segments": [
+       {
+        "label": "36 given",
+        "tone": "a",
+        "units": 2
+       },
+       {
+        "label": "36 left",
+        "tone": "b",
+        "units": 2
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "72 − 36 = 36"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2020_013_03_p2b": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "36",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "2/9 of 36 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 9,
+    "kind": "set",
+    "note": "36 shared into 9 equal groups: 4 in each",
+    "total": 36
+   },
+   {
+    "groups": 9,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "2 groups of 4: 4 × 2 = 8",
+    "shadedGroups": 2,
+    "total": 36
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2021_001_02": {
+  "figure": {
+   "bars": [
+    {
+     "label": "4/8",
+     "parts": 8,
+     "shaded": 4
+    },
+    {
+     "label": "6/8",
+     "parts": 8,
+     "shaded": 6
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "8/8 = 1",
+      "parts": 8,
+      "shaded": 8
+     },
+     {
+      "label": "2/8",
+      "parts": 8,
+      "shaded": 2
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "4 + 6 = 10 pieces: one whole and 2 more"
+   },
+   {
+    "bars": [
+     {
+      "label": "4/4 = 1",
+      "parts": 4,
+      "shaded": 4
+     },
+     {
+      "label": "1/4",
+      "parts": 4,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "10/8 = 5/4: one whole and 1/4"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2022_004_01": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "3/4",
+      "parts": 4,
+      "shaded": 3
+     },
+     {
+      "label": "2/3",
+      "parts": 3,
+      "shaded": 2
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Pieces of different sizes. Cut both into 12"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/4 = 9/12",
+      "parts": 12,
+      "shaded": 9
+     },
+     {
+      "label": "2/3 = 8/12",
+      "parts": 12,
+      "shaded": 8
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/4 = 9/12",
+      "parts": 12,
+      "shaded": 9
+     },
+     {
+      "label": "2/3 = 8/12",
+      "parts": 12,
+      "shaded": 8
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "9 is more than 8"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2022_028_02": {
+  "figure": {
+   "bars": [
+    {
+     "label": "9/12",
+     "parts": 12,
+     "shaded": 9
+    },
+    {
+     "label": "9/12",
+     "parts": 12,
+     "shaded": 9
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "9/12",
+      "parts": 12,
+      "shaded": 9
+     },
+     {
+      "label": "9/12",
+      "parts": 12,
+      "shaded": 9
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "9 + 9 = 18 pieces: more than one whole"
+   },
+   {
+    "bars": [
+     {
+      "label": "2/2 = 1",
+      "parts": 2,
+      "shaded": 2
+     },
+     {
+      "label": "1/2",
+      "parts": 2,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "18/12 = 3/2: one whole and 1/2"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2023_013_03": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "36 marbles",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "1/4 given away. How many are left?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "36 marbles",
+      "segments": [
+       {
+        "label": "9 given",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 3
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "1/4 of 36 = 9"
+   },
+   {
+    "bars": [
+     {
+      "brace": "36 marbles",
+      "segments": [
+       {
+        "label": "9 given",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "27 left",
+        "tone": "b",
+        "units": 3
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "36 − 9 = 27"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2023_029_02": {
+  "figure": {
+   "bars": [
+    {
+     "label": "7/10",
+     "parts": 10,
+     "shaded": 7
+    },
+    {
+     "label": "8/10",
+     "parts": 10,
+     "shaded": 8
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "10/10 = 1",
+      "parts": 10,
+      "shaded": 10
+     },
+     {
+      "label": "5/10",
+      "parts": 10,
+      "shaded": 5
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "7 + 8 = 15 pieces: one whole and 5 more"
+   },
+   {
+    "bars": [
+     {
+      "label": "2/2 = 1",
+      "parts": 2,
+      "shaded": 2
+     },
+     {
+      "label": "1/2",
+      "parts": 2,
+      "shaded": 1
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "15/10 = 3/2: one whole and 1/2"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_015_04_p2b": {
+  "figure": {
+   "bars": [
+    {
+     "label": "3/8",
+     "parts": 8,
+     "shaded": 3
+    },
+    {
+     "label": "?/16",
+     "parts": 16,
+     "shaded": 0
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "3/8",
+      "parts": 8,
+      "shaded": 3
+     },
+     {
+      "label": "?/16",
+      "parts": 16,
+      "shaded": 0
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Each piece is cut into 2: 8 × 2 = 16 pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/8",
+      "parts": 8,
+      "shaded": 3
+     },
+     {
+      "label": "6/16",
+      "parts": 16,
+      "shaded": 6
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Same amount shaded: 3 × 2 = 6"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_033_03_p2b": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "56",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "3/7 of 56 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 7,
+    "kind": "set",
+    "note": "56 shared into 7 equal groups: 8 in each",
+    "total": 56
+   },
+   {
+    "groups": 7,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "3 groups of 8: 8 × 3 = 24",
+    "shadedGroups": 3,
+    "total": 56
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2025_003_03_p2b": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "3/4",
+      "parts": 4,
+      "shaded": 3
+     },
+     {
+      "label": "4/6",
+      "parts": 6,
+      "shaded": 4
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Pieces of different sizes. Cut both into 12"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/4 = 9/12",
+      "parts": 12,
+      "shaded": 9
+     },
+     {
+      "label": "4/6 = 8/12",
+      "parts": 12,
+      "shaded": 8
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/4 = 9/12",
+      "parts": 12,
+      "shaded": 9
+     },
+     {
+      "label": "4/6 = 8/12",
+      "parts": 12,
+      "shaded": 8
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "9 is more than 8"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2025_022_04": {
+  "figure": {
+   "bars": [
+    {
+     "label": "1/3",
+     "parts": 3,
+     "shaded": 1
+    },
+    {
+     "label": "?/15",
+     "parts": 15,
+     "shaded": 0
+    }
+   ],
+   "kind": "fractionBars"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1/3",
+      "parts": 3,
+      "shaded": 1
+     },
+     {
+      "label": "?/15",
+      "parts": 15,
+      "shaded": 0
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Each piece is cut into 5: 3 × 5 = 15 pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/3",
+      "parts": 3,
+      "shaded": 1
+     },
+     {
+      "label": "5/15",
+      "parts": 15,
+      "shaded": 5
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "Same amount shaded: 1 × 5 = 5"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH12_004_04_p2b": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "24",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "5/8 of 24 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "groups": 8,
+    "kind": "set",
+    "note": "24 shared into 8 equal groups: 3 in each",
+    "total": 24
+   },
+   {
+    "groups": 8,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "5 groups of 3: 3 × 5 = 15",
+    "shadedGroups": 5,
+    "total": 24
+   }
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH16_010_03": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "60 marbles",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      },
+      {
+       "tone": "unknown",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "1/4 given away. How many are left?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "60 marbles",
+      "segments": [
+       {
+        "label": "15 given",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "?",
+        "tone": "unknown",
+        "units": 3
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "kind": "barModel",
+    "note": "1/4 of 60 = 15"
+   },
+   {
+    "bars": [
+     {
+      "brace": "60 marbles",
+      "segments": [
+       {
+        "label": "15 given",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "45 left",
+        "tone": "b",
+        "units": 3
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "60 − 15 = 45"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH16_010_03_p2b": {
+  "figure": {
+   "bars": [
+    {
+     "brace": "90",
+     "segments": [
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "a",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      },
+      {
+       "tone": "b",
+       "units": 1
+      }
+     ]
+    }
+   ],
+   "kind": "barModel",
+   "note": "2/6 of 90 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "brace": "90",
+      "segments": [
+       {
+        "label": "15",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "90 ÷ 6 = 15 in each piece"
+   },
+   {
+    "bars": [
+     {
+      "brace": "90",
+      "segments": [
+       {
+        "label": "15",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "2 pieces: 15 × 2 = 30"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_WS2_CH16_010_04_p2b": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "1/6",
+      "parts": 6,
+      "shaded": 1
+     },
+     {
+      "label": "4/5",
+      "parts": 5,
+      "shaded": 4
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Pieces of different sizes. Cut both into 30"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/6 = 5/30",
+      "parts": 6,
+      "shaded": 1
+     },
+     {
+      "label": "4/5 = 24/30",
+      "parts": 5,
+      "shaded": 4
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Both written with 30 below"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/6 = 5/30",
+      "parts": 6,
+      "shaded": 1
+     },
+     {
+      "label": "4/5 = 24/30",
+      "parts": 5,
+      "shaded": 4
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "24 is more than 5"
+   }
+  ]
+ },
+ "VAR_G4_vary_fraction_arithmetic_V102": {
+  "figure": {
+   "bars": [
+    {
+     "label": "13/15",
+     "parts": 15,
+     "shaded": 13
+    },
+    {
+     "label": "2/3",
+     "parts": 3,
+     "shaded": 2
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "13/15 + 2/3 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "13/15",
+      "parts": 15,
+      "shaded": 13
+     },
+     {
+      "label": "2/3 = 10/15",
+      "parts": 15,
+      "shaded": 10
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "13/15",
+      "parts": 15,
+      "shaded": 13
+     },
+     {
+      "label": "2/3 = 10/15",
+      "parts": 15,
+      "shaded": 10
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "13 + 10 = 23 pieces: more than one whole"
+   },
+   {
+    "bars": [
+     {
+      "label": "13/15",
+      "parts": 15,
+      "shaded": 13
+     },
+     {
+      "label": "2/3 = 10/15",
+      "parts": 15,
+      "shaded": 10
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "13/15 + 2/3 = 23/15: more than one whole"
+   }
+  ]
+ },
+ "VAR_G4_vary_fraction_arithmetic_V138": {
+  "figure": {
+   "bars": [
+    {
+     "label": "13/15",
+     "parts": 15,
+     "shaded": 13
+    },
+    {
+     "label": "2/5",
+     "parts": 5,
+     "shaded": 2
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "13/15 − 2/5 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "13/15",
+      "parts": 15,
+      "shaded": 13
+     },
+     {
+      "label": "2/5 = 6/15",
+      "parts": 15,
+      "shaded": 6
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "7/15",
+      "parts": 15,
+      "shaded": 7
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "13 − 6 = 7 pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "7/15",
+      "parts": 15,
+      "shaded": 7
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "13/15 − 2/5 = 7/15"
+   }
+  ]
+ },
+ "VAR_G4_vary_fraction_arithmetic_V169": {
+  "figure": {
+   "bars": [
+    {
+     "label": "3/10",
+     "parts": 10,
+     "shaded": 3
+    },
+    {
+     "label": "7/10",
+     "parts": 10,
+     "shaded": 7
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "3/10 + 7/10 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "10/10",
+      "parts": 10,
+      "shaded": 10
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "3 + 7 = 10 pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "10/10 = 1",
+      "parts": 10,
+      "shaded": 10
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "Every piece is shaded: one whole"
+   }
+  ]
+ },
+ "VAR_G4_vary_fraction_arithmetic_V17": {
+  "figure": {
+   "bars": [
+    {
+     "label": "9/10",
+     "parts": 10,
+     "shaded": 9
+    },
+    {
+     "label": "3/10",
+     "parts": 10,
+     "shaded": 3
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "9/10 − 3/10 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "6/10",
+      "parts": 10,
+      "shaded": 6
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "9 − 3 = 6 pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "6/10",
+      "parts": 10,
+      "shaded": 6
+     },
+     {
+      "label": "3/5",
+      "parts": 5,
+      "shaded": 3
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "The same amount, in bigger pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "6/10",
+      "parts": 10,
+      "shaded": 6
+     },
+     {
+      "label": "3/5",
+      "parts": 5,
+      "shaded": 3
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "The same amount, in bigger pieces"
+   }
+  ]
+ },
+ "VAR_G4_vary_fraction_arithmetic_V176": {
+  "figure": {
+   "bars": [
+    {
+     "label": "11/12",
+     "parts": 12,
+     "shaded": 11
+    },
+    {
+     "label": "1/2",
+     "parts": 2,
+     "shaded": 1
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "11/12 − 1/2 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "11/12",
+      "parts": 12,
+      "shaded": 11
+     },
+     {
+      "label": "1/2 = 6/12",
+      "parts": 12,
+      "shaded": 6
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "5/12",
+      "parts": 12,
+      "shaded": 5
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "11 − 6 = 5 pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "5/12",
+      "parts": 12,
+      "shaded": 5
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "11/12 − 1/2 = 5/12"
+   }
+  ]
+ },
+ "VAR_G4_vary_fraction_arithmetic_V188": {
+  "figure": {
+   "bars": [
+    {
+     "label": "11/12",
+     "parts": 12,
+     "shaded": 11
+    },
+    {
+     "label": "7/12",
+     "parts": 12,
+     "shaded": 7
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "11/12 − 7/12 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "4/12",
+      "parts": 12,
+      "shaded": 4
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "11 − 7 = 4 pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "4/12",
+      "parts": 12,
+      "shaded": 4
+     },
+     {
+      "label": "1/3",
+      "parts": 3,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "The same amount, in bigger pieces"
+   },
+   {
+    "bars": [
+     {
+      "label": "4/12",
+      "parts": 12,
+      "shaded": 4
+     },
+     {
+      "label": "1/3",
+      "parts": 3,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "The same amount, in bigger pieces"
+   }
+  ]
+ },
+ "VAR_G4_vary_fraction_arithmetic_V28": {
+  "figure": {
+   "bars": [
+    {
+     "label": "11/12",
+     "parts": 12,
+     "shaded": 11
+    },
+    {
+     "label": "2/3",
+     "parts": 3,
+     "shaded": 2
+    }
+   ],
+   "kind": "fractionBars",
+   "note": "11/12 + 2/3 = ?"
+  },
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "bars": [
+     {
+      "label": "11/12",
+      "parts": 12,
+      "shaded": 11
+     },
+     {
+      "label": "2/3 = 8/12",
+      "parts": 12,
+      "shaded": 8
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "Now every piece is the same size"
+   },
+   {
+    "bars": [
+     {
+      "label": "11/12",
+      "parts": 12,
+      "shaded": 11
+     },
+     {
+      "label": "2/3 = 8/12",
+      "parts": 12,
+      "shaded": 8
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "11 + 8 = 19 pieces: more than one whole"
+   },
+   {
+    "bars": [
+     {
+      "label": "11/12",
+      "parts": 12,
+      "shaded": 11
+     },
+     {
+      "label": "2/3 = 8/12",
+      "parts": 12,
+      "shaded": 8
+     }
+    ],
+    "kind": "fractionBars",
+    "note": "11/12 + 2/3 = 19/12: more than one whole"
+   }
+  ]
+ }
+}

@@ -1,0 +1,7041 @@
+{
+ "EXT_G4_FP_2021_015": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2006,
+   "max": 2010,
+   "step": 1,
+   "points": [
+    {
+     "at": 2006,
+     "label": "Sun"
+    },
+    {
+     "at": 2010,
+     "label": "?"
+    }
+   ],
+   "note": "1st January, year by year"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 2006,
+    "max": 2010,
+    "step": 1,
+    "points": [
+     {
+      "at": 2006,
+      "label": "Sun"
+     },
+     {
+      "at": 2010,
+      "label": "?"
+     }
+    ],
+    "note": "An ordinary year moves a date on by 1 weekday",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2006,
+    "max": 2010,
+    "step": 1,
+    "points": [
+     {
+      "at": 2006,
+      "label": "Sun"
+     },
+     {
+      "at": 2007,
+      "label": "Mon"
+     },
+     {
+      "at": 2008,
+      "label": "Tue"
+     },
+     {
+      "at": 2010,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2006,
+      "to": 2007,
+      "label": "+1"
+     },
+     {
+      "from": 2007,
+      "to": 2008,
+      "label": "+1"
+     }
+    ],
+    "note": "2006 and 2007 are ordinary years: on by 1 each time",
+    "highlight": [
+     "p2",
+     "h1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2006,
+    "max": 2010,
+    "step": 1,
+    "points": [
+     {
+      "at": 2006,
+      "label": "Sun"
+     },
+     {
+      "at": 2007,
+      "label": "Mon"
+     },
+     {
+      "at": 2008,
+      "label": "Tue"
+     },
+     {
+      "at": 2009,
+      "label": "Thu"
+     },
+     {
+      "at": 2010,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2006,
+      "to": 2007,
+      "label": "+1"
+     },
+     {
+      "from": 2007,
+      "to": 2008,
+      "label": "+1"
+     },
+     {
+      "from": 2008,
+      "to": 2009,
+      "label": "+2"
+     }
+    ],
+    "note": "2008 is a leap year, so the day moves on by 2",
+    "highlight": [
+     "p3",
+     "h2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2006,
+    "max": 2010,
+    "step": 1,
+    "points": [
+     {
+      "at": 2006,
+      "label": "Sun"
+     },
+     {
+      "at": 2007,
+      "label": "Mon"
+     },
+     {
+      "at": 2008,
+      "label": "Tue"
+     },
+     {
+      "at": 2009,
+      "label": "Thu"
+     },
+     {
+      "at": 2010,
+      "label": "Fri"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2006,
+      "to": 2007,
+      "label": "+1"
+     },
+     {
+      "from": 2007,
+      "to": 2008,
+      "label": "+1"
+     },
+     {
+      "from": 2008,
+      "to": 2009,
+      "label": "+2"
+     },
+     {
+      "from": 2009,
+      "to": 2010,
+      "label": "+1"
+     }
+    ],
+    "note": "2009 is an ordinary year: 1st January 2010 is a Friday",
+    "highlight": [
+     "p4",
+     "h3"
+    ]
+   }
+  ]
+ },
+ "PYQ_2018_Q28": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2006,
+   "max": 2010,
+   "step": 1,
+   "points": [
+    {
+     "at": 2006,
+     "label": "Sun"
+    },
+    {
+     "at": 2010,
+     "label": "?"
+    }
+   ],
+   "note": "1st January, year by year"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 2006,
+    "max": 2010,
+    "step": 1,
+    "points": [
+     {
+      "at": 2006,
+      "label": "Sun"
+     },
+     {
+      "at": 2010,
+      "label": "?"
+     }
+    ],
+    "note": "An ordinary year moves a date on by 1 weekday",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2006,
+    "max": 2010,
+    "step": 1,
+    "points": [
+     {
+      "at": 2006,
+      "label": "Sun"
+     },
+     {
+      "at": 2007,
+      "label": "Mon"
+     },
+     {
+      "at": 2008,
+      "label": "Tue"
+     },
+     {
+      "at": 2010,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2006,
+      "to": 2007,
+      "label": "+1"
+     },
+     {
+      "from": 2007,
+      "to": 2008,
+      "label": "+1"
+     }
+    ],
+    "note": "2006 and 2007 are ordinary years: on by 1 each time",
+    "highlight": [
+     "p2",
+     "h1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2006,
+    "max": 2010,
+    "step": 1,
+    "points": [
+     {
+      "at": 2006,
+      "label": "Sun"
+     },
+     {
+      "at": 2007,
+      "label": "Mon"
+     },
+     {
+      "at": 2008,
+      "label": "Tue"
+     },
+     {
+      "at": 2009,
+      "label": "Thu"
+     },
+     {
+      "at": 2010,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2006,
+      "to": 2007,
+      "label": "+1"
+     },
+     {
+      "from": 2007,
+      "to": 2008,
+      "label": "+1"
+     },
+     {
+      "from": 2008,
+      "to": 2009,
+      "label": "+2"
+     }
+    ],
+    "note": "2008 is a leap year, so the day moves on by 2",
+    "highlight": [
+     "p3",
+     "h2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2006,
+    "max": 2010,
+    "step": 1,
+    "points": [
+     {
+      "at": 2006,
+      "label": "Sun"
+     },
+     {
+      "at": 2007,
+      "label": "Mon"
+     },
+     {
+      "at": 2008,
+      "label": "Tue"
+     },
+     {
+      "at": 2009,
+      "label": "Thu"
+     },
+     {
+      "at": 2010,
+      "label": "Fri"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2006,
+      "to": 2007,
+      "label": "+1"
+     },
+     {
+      "from": 2007,
+      "to": 2008,
+      "label": "+1"
+     },
+     {
+      "from": 2008,
+      "to": 2009,
+      "label": "+2"
+     },
+     {
+      "from": 2009,
+      "to": 2010,
+      "label": "+1"
+     }
+    ],
+    "note": "2009 is an ordinary year: 1st January 2010 is a Friday",
+    "highlight": [
+     "p4",
+     "h3"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_038": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2023,
+   "max": 2028,
+   "step": 1,
+   "points": [
+    {
+     "at": 2023,
+     "label": "Thu"
+    }
+   ],
+   "note": "Republic Day, year by year"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "numberLine",
+    "min": 2023,
+    "max": 2028,
+    "step": 1,
+    "points": [
+     {
+      "at": 2023,
+      "label": "Thu"
+     },
+     {
+      "at": 2024,
+      "label": "Fri"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2023,
+      "to": 2024,
+      "label": "+1"
+     }
+    ],
+    "note": "No leap day in between: 2024 gives Friday",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2023,
+    "max": 2028,
+    "step": 1,
+    "points": [
+     {
+      "at": 2023,
+      "label": "Thu"
+     },
+     {
+      "at": 2024,
+      "label": "Fri"
+     },
+     {
+      "at": 2025,
+      "label": "Sun"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2023,
+      "to": 2024,
+      "label": "+1"
+     },
+     {
+      "from": 2024,
+      "to": 2025,
+      "label": "+2"
+     }
+    ],
+    "note": "Past 29th February 2024 the day moves on by 2",
+    "highlight": [
+     "p2",
+     "h1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2023,
+    "max": 2028,
+    "step": 1,
+    "points": [
+     {
+      "at": 2023,
+      "label": "Thu"
+     },
+     {
+      "at": 2024,
+      "label": "Fri"
+     },
+     {
+      "at": 2025,
+      "label": "Sun"
+     },
+     {
+      "at": 2026,
+      "label": "Mon"
+     },
+     {
+      "at": 2027,
+      "label": "Tue"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2023,
+      "to": 2024,
+      "label": "+1"
+     },
+     {
+      "from": 2024,
+      "to": 2025,
+      "label": "+2"
+     },
+     {
+      "from": 2025,
+      "to": 2026,
+      "label": "+1"
+     },
+     {
+      "from": 2026,
+      "to": 2027,
+      "label": "+1"
+     }
+    ],
+    "note": "2026 gives Monday and 2027 gives Tuesday",
+    "highlight": [
+     "p4",
+     "h3"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2023,
+    "max": 2028,
+    "step": 1,
+    "points": [
+     {
+      "at": 2023,
+      "label": "Thu"
+     },
+     {
+      "at": 2024,
+      "label": "Fri"
+     },
+     {
+      "at": 2025,
+      "label": "Sun"
+     },
+     {
+      "at": 2026,
+      "label": "Mon"
+     },
+     {
+      "at": 2027,
+      "label": "Tue"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2023,
+      "to": 2024,
+      "label": "+1"
+     },
+     {
+      "from": 2024,
+      "to": 2025,
+      "label": "+2"
+     },
+     {
+      "from": 2025,
+      "to": 2026,
+      "label": "+1"
+     },
+     {
+      "from": 2026,
+      "to": 2027,
+      "label": "+1"
+     }
+    ],
+    "note": "Republic Day falls on a Tuesday in 2027",
+    "highlight": [
+     "p4",
+     "h3"
+    ]
+   }
+  ],
+  "usesOptions": true
+ },
+ "EXT_G4_FP_2024_036": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2024,
+   "max": 2031,
+   "step": 1,
+   "points": [
+    {
+     "at": 2024,
+     "label": "Thu"
+    }
+   ],
+   "note": "Independence Day, year by year"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "numberLine",
+    "min": 2024,
+    "max": 2031,
+    "step": 1,
+    "points": [
+     {
+      "at": 2024,
+      "label": "Thu"
+     },
+     {
+      "at": 2025,
+      "label": "Fri"
+     },
+     {
+      "at": 2026,
+      "label": "Sat"
+     },
+     {
+      "at": 2027,
+      "label": "Sun"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2024,
+      "to": 2025,
+      "label": "+1"
+     },
+     {
+      "from": 2025,
+      "to": 2026,
+      "label": "+1"
+     },
+     {
+      "from": 2026,
+      "to": 2027,
+      "label": "+1"
+     }
+    ],
+    "note": "2025 Friday, 2026 Saturday, 2027 Sunday",
+    "highlight": [
+     "p3",
+     "h2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2024,
+    "max": 2031,
+    "step": 1,
+    "points": [
+     {
+      "at": 2024,
+      "label": "Thu"
+     },
+     {
+      "at": 2025,
+      "label": "Fri"
+     },
+     {
+      "at": 2026,
+      "label": "Sat"
+     },
+     {
+      "at": 2027,
+      "label": "Sun"
+     },
+     {
+      "at": 2028,
+      "label": "Tue"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2024,
+      "to": 2025,
+      "label": "+1"
+     },
+     {
+      "from": 2025,
+      "to": 2026,
+      "label": "+1"
+     },
+     {
+      "from": 2026,
+      "to": 2027,
+      "label": "+1"
+     },
+     {
+      "from": 2027,
+      "to": 2028,
+      "label": "+2"
+     }
+    ],
+    "note": "Past 29th February 2028 the day moves on by 2",
+    "highlight": [
+     "p4",
+     "h3"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2024,
+    "max": 2031,
+    "step": 1,
+    "points": [
+     {
+      "at": 2024,
+      "label": "Thu"
+     },
+     {
+      "at": 2025,
+      "label": "Fri"
+     },
+     {
+      "at": 2026,
+      "label": "Sat"
+     },
+     {
+      "at": 2027,
+      "label": "Sun"
+     },
+     {
+      "at": 2028,
+      "label": "Tue"
+     },
+     {
+      "at": 2029,
+      "label": "Wed"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2024,
+      "to": 2025,
+      "label": "+1"
+     },
+     {
+      "from": 2025,
+      "to": 2026,
+      "label": "+1"
+     },
+     {
+      "from": 2026,
+      "to": 2027,
+      "label": "+1"
+     },
+     {
+      "from": 2027,
+      "to": 2028,
+      "label": "+2"
+     },
+     {
+      "from": 2028,
+      "to": 2029,
+      "label": "+1"
+     }
+    ],
+    "note": "One more year: Wednesday in 2029",
+    "highlight": [
+     "p5",
+     "h4"
+    ]
+   }
+  ],
+  "usesOptions": true
+ },
+ "PYQ_2016_Q27": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2016,
+   "max": 2022,
+   "step": 1,
+   "points": [
+    {
+     "at": 2016,
+     "label": "Tue"
+    }
+   ],
+   "note": "Republic Day, year by year"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "numberLine",
+    "min": 2016,
+    "max": 2022,
+    "step": 1,
+    "points": [
+     {
+      "at": 2016,
+      "label": "Tue"
+     },
+     {
+      "at": 2017,
+      "label": "Thu"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2016,
+      "to": 2017,
+      "label": "+2"
+     }
+    ],
+    "note": "2016 is a leap year: Tuesday moves on by 2 to Thursday",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2016,
+    "max": 2022,
+    "step": 1,
+    "points": [
+     {
+      "at": 2016,
+      "label": "Tue"
+     },
+     {
+      "at": 2017,
+      "label": "Thu"
+     },
+     {
+      "at": 2018,
+      "label": "Fri"
+     },
+     {
+      "at": 2019,
+      "label": "Sat"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2016,
+      "to": 2017,
+      "label": "+2"
+     },
+     {
+      "from": 2017,
+      "to": 2018,
+      "label": "+1"
+     },
+     {
+      "from": 2018,
+      "to": 2019,
+      "label": "+1"
+     }
+    ],
+    "note": "On by 1 each year: 2018 Friday, 2019 Saturday",
+    "highlight": [
+     "p3",
+     "h2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2016,
+    "max": 2022,
+    "step": 1,
+    "points": [
+     {
+      "at": 2016,
+      "label": "Tue"
+     },
+     {
+      "at": 2017,
+      "label": "Thu"
+     },
+     {
+      "at": 2018,
+      "label": "Fri"
+     },
+     {
+      "at": 2019,
+      "label": "Sat"
+     },
+     {
+      "at": 2020,
+      "label": "Sun"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2016,
+      "to": 2017,
+      "label": "+2"
+     },
+     {
+      "from": 2017,
+      "to": 2018,
+      "label": "+1"
+     },
+     {
+      "from": 2018,
+      "to": 2019,
+      "label": "+1"
+     },
+     {
+      "from": 2019,
+      "to": 2020,
+      "label": "+1"
+     }
+    ],
+    "note": "No 29 February in between: on by 1 to Sunday",
+    "highlight": [
+     "p4",
+     "h3"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2016,
+    "max": 2022,
+    "step": 1,
+    "points": [
+     {
+      "at": 2016,
+      "label": "Tue"
+     },
+     {
+      "at": 2017,
+      "label": "Thu"
+     },
+     {
+      "at": 2018,
+      "label": "Fri"
+     },
+     {
+      "at": 2019,
+      "label": "Sat"
+     },
+     {
+      "at": 2020,
+      "label": "Sun"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2016,
+      "to": 2017,
+      "label": "+2"
+     },
+     {
+      "from": 2017,
+      "to": 2018,
+      "label": "+1"
+     },
+     {
+      "from": 2018,
+      "to": 2019,
+      "label": "+1"
+     },
+     {
+      "from": 2019,
+      "to": 2020,
+      "label": "+1"
+     }
+    ],
+    "note": "Republic Day falls on a Sunday in 2020",
+    "highlight": [
+     "p4",
+     "h3"
+    ]
+   }
+  ],
+  "usesOptions": true
+ },
+ "PYQ_2019_Q33": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2019,
+   "max": 2021,
+   "step": 1,
+   "points": [
+    {
+     "at": 2019,
+     "label": "Mon"
+    }
+   ],
+   "note": "10th birthday on a Monday. 12th birthday: ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 2019,
+    "max": 2021,
+    "step": 1,
+    "points": [
+     {
+      "at": 2019,
+      "label": "Mon"
+     },
+     {
+      "at": 2021,
+      "label": "?"
+     }
+    ],
+    "note": "The 12th birthday is on 15th April 2021, two years later",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2019,
+    "max": 2021,
+    "step": 1,
+    "points": [
+     {
+      "at": 2019,
+      "label": "Mon"
+     },
+     {
+      "at": 2020,
+      "label": "Wed"
+     },
+     {
+      "at": 2021,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2019,
+      "to": 2020,
+      "label": "+2"
+     }
+    ],
+    "note": "Past 29th February 2020: Monday moves on by 2",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2019,
+    "max": 2021,
+    "step": 1,
+    "points": [
+     {
+      "at": 2019,
+      "label": "Mon"
+     },
+     {
+      "at": 2020,
+      "label": "Wed"
+     },
+     {
+      "at": 2021,
+      "label": "Thu"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2019,
+      "to": 2020,
+      "label": "+2"
+     },
+     {
+      "from": 2020,
+      "to": 2021,
+      "label": "+1"
+     }
+    ],
+    "note": "No leap day this time: Wednesday moves on by 1",
+    "highlight": [
+     "p2",
+     "h1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2019,
+    "max": 2021,
+    "step": 1,
+    "points": [
+     {
+      "at": 2019,
+      "label": "Mon"
+     },
+     {
+      "at": 2020,
+      "label": "Wed"
+     },
+     {
+      "at": 2021,
+      "label": "Thu"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2019,
+      "to": 2020,
+      "label": "+2"
+     },
+     {
+      "from": 2020,
+      "to": 2021,
+      "label": "+1"
+     }
+    ],
+    "note": "The 12th birthday falls on a Thursday",
+    "highlight": [
+     "p2",
+     "h1"
+    ]
+   }
+  ]
+ },
+ "Q_CH17_003": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2023,
+   "max": 2024,
+   "step": 1,
+   "points": [
+    {
+     "at": 2023,
+     "label": "Sun"
+    },
+    {
+     "at": 2024,
+     "label": "?"
+    }
+   ],
+   "note": "1st January, one year on"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 2023,
+    "max": 2024,
+    "step": 1,
+    "points": [
+     {
+      "at": 2023,
+      "label": "Sun"
+     },
+     {
+      "at": 2024,
+      "label": "?"
+     }
+    ],
+    "note": "All of 2023 lies in between: 365 days",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2023,
+    "max": 2024,
+    "step": 1,
+    "points": [
+     {
+      "at": 2023,
+      "label": "Sun"
+     },
+     {
+      "at": 2024,
+      "label": "?"
+     }
+    ],
+    "note": "365 days is 52 weeks and 1 day",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2023,
+    "max": 2024,
+    "step": 1,
+    "points": [
+     {
+      "at": 2023,
+      "label": "Sun"
+     },
+     {
+      "at": 2024,
+      "label": "Mon"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2023,
+      "to": 2024,
+      "label": "+1"
+     }
+    ],
+    "note": "One day after Sunday: 1st January 2024 was a Monday",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   }
+  ]
+ },
+ "Q_CH17_004": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2024,
+   "max": 2025,
+   "step": 1,
+   "points": [
+    {
+     "at": 2024,
+     "label": "Mon"
+    },
+    {
+     "at": 2025,
+     "label": "?"
+    }
+   ],
+   "note": "1st January, one year on"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 2024,
+    "max": 2025,
+    "step": 1,
+    "points": [
+     {
+      "at": 2024,
+      "label": "Mon"
+     },
+     {
+      "at": 2025,
+      "label": "?"
+     }
+    ],
+    "note": "2024 is a leap year: 366 days",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2024,
+    "max": 2025,
+    "step": 1,
+    "points": [
+     {
+      "at": 2024,
+      "label": "Mon"
+     },
+     {
+      "at": 2025,
+      "label": "Wed"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2024,
+      "to": 2025,
+      "label": "+2"
+     }
+    ],
+    "note": "2 extra days: Monday + 2 = Wednesday",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2024,
+    "max": 2025,
+    "step": 1,
+    "points": [
+     {
+      "at": 2024,
+      "label": "Mon"
+     },
+     {
+      "at": 2025,
+      "label": "Wed"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2024,
+      "to": 2025,
+      "label": "+2"
+     }
+    ],
+    "note": "1st January 2025 is a Wednesday",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   }
+  ]
+ },
+ "Q_CH17_005": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1993,
+   "max": 1997,
+   "step": 1,
+   "points": [
+    {
+     "at": 1993,
+     "label": "Tue"
+    },
+    {
+     "at": 1997,
+     "label": "?"
+    }
+   ],
+   "note": "Republic Day, four years on"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 1993,
+    "max": 1997,
+    "step": 1,
+    "points": [
+     {
+      "at": 1993,
+      "label": "Tue"
+     },
+     {
+      "at": 1997,
+      "label": "?"
+     }
+    ],
+    "note": "From 1993 to 1997 is 4 years",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1993,
+    "max": 1997,
+    "step": 1,
+    "points": [
+     {
+      "at": 1993,
+      "label": "Tue"
+     },
+     {
+      "at": 1997,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 1993,
+      "to": 1997,
+      "label": "+5"
+     }
+    ],
+    "note": "Odd days: 1 + 1 + 1 + 2 = 5",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1993,
+    "max": 1997,
+    "step": 1,
+    "points": [
+     {
+      "at": 1993,
+      "label": "Tue"
+     },
+     {
+      "at": 1997,
+      "label": "Sun"
+     }
+    ],
+    "hops": [
+     {
+      "from": 1993,
+      "to": 1997,
+      "label": "+5"
+     }
+    ],
+    "note": "Tuesday + 5 days = Sunday",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1993,
+    "max": 1997,
+    "step": 1,
+    "points": [
+     {
+      "at": 1993,
+      "label": "Tue"
+     },
+     {
+      "at": 1997,
+      "label": "Sun"
+     }
+    ],
+    "hops": [
+     {
+      "from": 1993,
+      "to": 1997,
+      "label": "+5"
+     }
+    ],
+    "note": "Republic Day 1997 was a Sunday",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   }
+  ]
+ },
+ "Q_CH17_006": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2007,
+   "max": 2008,
+   "step": 1,
+   "points": [
+    {
+     "at": 2007,
+     "label": "Fri"
+    },
+    {
+     "at": 2008,
+     "label": "?"
+    }
+   ],
+   "note": "Republic Day, one year on"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 2007,
+    "max": 2008,
+    "step": 1,
+    "points": [
+     {
+      "at": 2007,
+      "label": "Fri"
+     },
+     {
+      "at": 2008,
+      "label": "?"
+     }
+    ],
+    "note": "The leap day of 2008 comes later, in February",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2007,
+    "max": 2008,
+    "step": 1,
+    "points": [
+     {
+      "at": 2007,
+      "label": "Fri"
+     },
+     {
+      "at": 2008,
+      "label": "?"
+     }
+    ],
+    "note": "365 days is 52 weeks and 1 day",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2007,
+    "max": 2008,
+    "step": 1,
+    "points": [
+     {
+      "at": 2007,
+      "label": "Fri"
+     },
+     {
+      "at": 2008,
+      "label": "Sat"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2007,
+      "to": 2008,
+      "label": "+1"
+     }
+    ],
+    "note": "The day moves on by 1, from Friday to Saturday",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   }
+  ]
+ },
+ "Q_CH17_016": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2003,
+   "max": 2004,
+   "step": 1,
+   "points": [
+    {
+     "at": 2003,
+     "label": "Tue"
+    },
+    {
+     "at": 2004,
+     "label": "?"
+    }
+   ],
+   "note": "1st April, one year on"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 2003,
+    "max": 2004,
+    "step": 1,
+    "points": [
+     {
+      "at": 2003,
+      "label": "Tue"
+     },
+     {
+      "at": 2004,
+      "label": "?"
+     }
+    ],
+    "note": "29th February 2004 comes before 1st April: 366 days",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2003,
+    "max": 2004,
+    "step": 1,
+    "points": [
+     {
+      "at": 2003,
+      "label": "Tue"
+     },
+     {
+      "at": 2004,
+      "label": "?"
+     }
+    ],
+    "note": "366 days make 52 full weeks and 2 days",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2003,
+    "max": 2004,
+    "step": 1,
+    "points": [
+     {
+      "at": 2003,
+      "label": "Tue"
+     },
+     {
+      "at": 2004,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2003,
+      "to": 2004,
+      "label": "+2"
+     }
+    ],
+    "note": "Only the 2 extra days matter",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2003,
+    "max": 2004,
+    "step": 1,
+    "points": [
+     {
+      "at": 2003,
+      "label": "Tue"
+     },
+     {
+      "at": 2004,
+      "label": "Thu"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2003,
+      "to": 2004,
+      "label": "+2"
+     }
+    ],
+    "note": "Two days after Tuesday is Thursday",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   }
+  ]
+ },
+ "Q_CH17_022": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2014,
+   "max": 2018,
+   "step": 1,
+   "points": [
+    {
+     "at": 2014,
+     "label": "Sun"
+    }
+   ],
+   "note": "5th birthday: 3rd August 2014, a Sunday"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 2014,
+    "max": 2018,
+    "step": 1,
+    "points": [
+     {
+      "at": 2014,
+      "label": "Sun"
+     },
+     {
+      "at": 2015,
+      "label": "Mon"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2014,
+      "to": 2015,
+      "label": "+1"
+     }
+    ],
+    "note": "6th birthday, 2015: no leap day, so 1 day on",
+    "highlight": [
+     "p1",
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2014,
+    "max": 2018,
+    "step": 1,
+    "points": [
+     {
+      "at": 2014,
+      "label": "Sun"
+     },
+     {
+      "at": 2015,
+      "label": "Mon"
+     },
+     {
+      "at": 2016,
+      "label": "Wed"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2014,
+      "to": 2015,
+      "label": "+1"
+     },
+     {
+      "from": 2015,
+      "to": 2016,
+      "label": "+2"
+     }
+    ],
+    "note": "7th birthday, 2016: past 29th February, so 2 days on",
+    "highlight": [
+     "p2",
+     "h1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2014,
+    "max": 2018,
+    "step": 1,
+    "points": [
+     {
+      "at": 2014,
+      "label": "Sun"
+     },
+     {
+      "at": 2015,
+      "label": "Mon"
+     },
+     {
+      "at": 2016,
+      "label": "Wed"
+     },
+     {
+      "at": 2017,
+      "label": "Thu"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2014,
+      "to": 2015,
+      "label": "+1"
+     },
+     {
+      "from": 2015,
+      "to": 2016,
+      "label": "+2"
+     },
+     {
+      "from": 2016,
+      "to": 2017,
+      "label": "+1"
+     }
+    ],
+    "note": "8th birthday, 2017: 1 day on, a Thursday",
+    "highlight": [
+     "p3",
+     "h2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2014,
+    "max": 2018,
+    "step": 1,
+    "points": [
+     {
+      "at": 2014,
+      "label": "Sun"
+     },
+     {
+      "at": 2015,
+      "label": "Mon"
+     },
+     {
+      "at": 2016,
+      "label": "Wed"
+     },
+     {
+      "at": 2017,
+      "label": "Thu"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2014,
+      "to": 2015,
+      "label": "+1"
+     },
+     {
+      "from": 2015,
+      "to": 2016,
+      "label": "+2"
+     },
+     {
+      "from": 2016,
+      "to": 2017,
+      "label": "+1"
+     }
+    ],
+    "note": "The 8th birthday falls on a Thursday",
+    "highlight": [
+     "p3",
+     "h2"
+    ]
+   }
+  ]
+ },
+ "Q_CH17_025": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 2000,
+   "max": 2006,
+   "step": 1,
+   "points": [
+    {
+     "at": 2000,
+     "label": "Mon"
+    }
+   ],
+   "note": "2nd October, year by year"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 2000,
+    "max": 2006,
+    "step": 1,
+    "points": [
+     {
+      "at": 2000,
+      "label": "Mon"
+     }
+    ],
+    "note": "Usually 365 days: 52 weeks and 1 day, so on by 1",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2000,
+    "max": 2006,
+    "step": 1,
+    "points": [
+     {
+      "at": 2000,
+      "label": "Mon"
+     },
+     {
+      "at": 2001,
+      "label": "Tue"
+     },
+     {
+      "at": 2002,
+      "label": "Wed"
+     },
+     {
+      "at": 2003,
+      "label": "Thu"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2000,
+      "to": 2001,
+      "label": "+1"
+     },
+     {
+      "from": 2001,
+      "to": 2002,
+      "label": "+1"
+     },
+     {
+      "from": 2002,
+      "to": 2003,
+      "label": "+1"
+     }
+    ],
+    "note": "2001 Tuesday, 2002 Wednesday, 2003 Thursday",
+    "highlight": [
+     "p3",
+     "h2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2000,
+    "max": 2006,
+    "step": 1,
+    "points": [
+     {
+      "at": 2000,
+      "label": "Mon"
+     },
+     {
+      "at": 2001,
+      "label": "Tue"
+     },
+     {
+      "at": 2002,
+      "label": "Wed"
+     },
+     {
+      "at": 2003,
+      "label": "Thu"
+     },
+     {
+      "at": 2004,
+      "label": "Sat"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2000,
+      "to": 2001,
+      "label": "+1"
+     },
+     {
+      "from": 2001,
+      "to": 2002,
+      "label": "+1"
+     },
+     {
+      "from": 2002,
+      "to": 2003,
+      "label": "+1"
+     },
+     {
+      "from": 2003,
+      "to": 2004,
+      "label": "+2"
+     }
+    ],
+    "note": "Past 29th February 2004: a jump of 2 days to Saturday",
+    "highlight": [
+     "p4",
+     "h3"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2000,
+    "max": 2006,
+    "step": 1,
+    "points": [
+     {
+      "at": 2000,
+      "label": "Mon"
+     },
+     {
+      "at": 2001,
+      "label": "Tue"
+     },
+     {
+      "at": 2002,
+      "label": "Wed"
+     },
+     {
+      "at": 2003,
+      "label": "Thu"
+     },
+     {
+      "at": 2004,
+      "label": "Sat"
+     },
+     {
+      "at": 2005,
+      "label": "Sun"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2000,
+      "to": 2001,
+      "label": "+1"
+     },
+     {
+      "from": 2001,
+      "to": 2002,
+      "label": "+1"
+     },
+     {
+      "from": 2002,
+      "to": 2003,
+      "label": "+1"
+     },
+     {
+      "from": 2003,
+      "to": 2004,
+      "label": "+2"
+     },
+     {
+      "from": 2004,
+      "to": 2005,
+      "label": "+1"
+     }
+    ],
+    "note": "One more ordinary year: Saturday moves on to Sunday",
+    "highlight": [
+     "p5",
+     "h4"
+    ]
+   }
+  ],
+  "usesOptions": true
+ },
+ "EXT_G4_WS2_CH17_009": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5.42,
+       "label": "April",
+       "tone": "a"
+      },
+      {
+       "units": 12.0,
+       "label": "May",
+       "tone": "b"
+      },
+      {
+       "units": 2.04,
+       "label": "June",
+       "tone": "a"
+      }
+     ],
+     "brace": "17 April to 3 June: ?"
+    }
+   ],
+   "note": "How many days long was the vacation?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.42,
+        "label": "April",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "b"
+       },
+       {
+        "units": 2.04,
+        "label": "June",
+        "tone": "a"
+       }
+      ],
+      "brace": "17 April to 3 June: ?"
+     }
+    ],
+    "note": "April: the 17th to the 30th, counting the 17th too, is 14 days",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.42,
+        "label": "April",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "b"
+       },
+       {
+        "units": 2.04,
+        "label": "June",
+        "tone": "a"
+       }
+      ],
+      "brace": "17 April to 3 June: ?"
+     }
+    ],
+    "note": "May has 31 days",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.42,
+        "label": "April",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "b"
+       },
+       {
+        "units": 2.04,
+        "label": "June",
+        "tone": "a"
+       }
+      ],
+      "brace": "17 April to 3 June: ?"
+     }
+    ],
+    "note": "June gives 3 days, from the 1st to the 3rd",
+    "highlight": [
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.42,
+        "label": "April",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "b"
+       },
+       {
+        "units": 2.04,
+        "label": "June",
+        "tone": "a"
+       }
+      ],
+      "brace": "48 days"
+     }
+    ],
+    "note": "14 + 31 + 3 = 48 days"
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH17_010": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.48,
+        "label": "April",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "April: count from the 22nd to the 30th, counting the 22nd too",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.48,
+        "label": "April",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "b"
+       }
+      ],
+      "brace": "40 days"
+     }
+    ],
+    "note": "The vacation days left after April go into May",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.48,
+        "label": "April",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "b"
+       }
+      ],
+      "brace": "40 days"
+     }
+    ],
+    "note": "May has exactly 31 days: the last day is 31st May",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.48,
+        "label": "April",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "b"
+       }
+      ],
+      "brace": "40 days"
+     }
+    ],
+    "note": "School reopens the next day, 1st June"
+   }
+  ]
+ },
+ "G4A_TIME_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 11.61,
+       "label": "June",
+       "tone": "a"
+      },
+      {
+       "units": 12.0,
+       "label": "July",
+       "tone": "b"
+      }
+     ],
+     "brace": "? days"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.61,
+        "label": "June",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "July",
+        "tone": "b"
+       }
+      ],
+      "brace": "? days"
+     }
+    ],
+    "note": "June has 30 days",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.61,
+        "label": "June",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "July",
+        "tone": "b"
+       }
+      ],
+      "brace": "? days"
+     }
+    ],
+    "note": "July has 31 days",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.61,
+        "label": "June",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "July",
+        "tone": "b"
+       }
+      ],
+      "brace": "61 days"
+     }
+    ],
+    "note": "June and July have 61 days altogether"
+   }
+  ]
+ },
+ "G4A_TIME_012": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 9.0,
+       "label": "February",
+       "tone": "a"
+      },
+      {
+       "units": 5.0,
+       "label": "March",
+       "tone": "b"
+      }
+     ],
+     "brace": "20 Feb to 5 Mar: ? days"
+    }
+   ],
+   "note": "The year is 2024"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.0,
+        "label": "February",
+        "tone": "a"
+       },
+       {
+        "units": 5.0,
+        "label": "March",
+        "tone": "b"
+       }
+      ],
+      "brace": "20 Feb to 5 Mar: ? days"
+     }
+    ],
+    "note": "2024 is a leap year, so February has 29 days",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.0,
+        "label": "February",
+        "tone": "a"
+       },
+       {
+        "units": 5.0,
+        "label": "March",
+        "tone": "b"
+       }
+      ],
+      "brace": "20 Feb to 5 Mar: ? days"
+     }
+    ],
+    "note": "Count the days left in February after the 20th",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.0,
+        "label": "February",
+        "tone": "a"
+       },
+       {
+        "units": 5.0,
+        "label": "March",
+        "tone": "b"
+       }
+      ],
+      "brace": "20 Feb to 5 Mar: ? days"
+     }
+    ],
+    "note": "Add the 5 days of March",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.0,
+        "label": "February",
+        "tone": "a"
+       },
+       {
+        "units": 5.0,
+        "label": "March",
+        "tone": "b"
+       }
+      ],
+      "brace": "14 days"
+     }
+    ],
+    "note": "5 March 2024 is 14 days after 20 February 2024"
+   }
+  ]
+ },
+ "Q_CH17_002": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "March",
+       "tone": "a"
+      },
+      {
+       "units": 11.61,
+       "label": "April",
+       "tone": "b"
+      },
+      {
+       "units": 2.64,
+       "label": "1 May",
+       "tone": "a"
+      }
+     ],
+     "brace": "1 March to 1 May: ? days"
+    }
+   ],
+   "note": "Both dates are counted"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "March",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "April",
+        "tone": "b"
+       },
+       {
+        "units": 2.64,
+        "label": "1 May",
+        "tone": "a"
+       }
+      ],
+      "brace": "1 March to 1 May: ? days"
+     }
+    ],
+    "note": "All of March, the 1st to the 31st: 31 days",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "March",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "April",
+        "tone": "b"
+       },
+       {
+        "units": 2.64,
+        "label": "1 May",
+        "tone": "a"
+       }
+      ],
+      "brace": "1 March to 1 May: ? days"
+     }
+    ],
+    "note": "All of April: 30 days",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "March",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "April",
+        "tone": "b"
+       },
+       {
+        "units": 2.64,
+        "label": "1 May",
+        "tone": "a"
+       }
+      ],
+      "brace": "1 March to 1 May: ? days"
+     }
+    ],
+    "note": "1 May itself: 1 more day",
+    "highlight": [
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "March",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "April",
+        "tone": "b"
+       },
+       {
+        "units": 2.64,
+        "label": "1 May",
+        "tone": "a"
+       }
+      ],
+      "brace": "62 days"
+     }
+    ],
+    "note": "31 + 30 + 1 = 62 days"
+   }
+  ]
+ },
+ "Q_CH17_020": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6.4,
+       "label": "August",
+       "tone": "a"
+      },
+      {
+       "units": 12.0,
+       "label": "September",
+       "tone": "b"
+      },
+      {
+       "units": 2.11,
+       "label": "October",
+       "tone": "a"
+      }
+     ],
+     "brace": "15 Aug to 2 Oct: ? days"
+    }
+   ],
+   "note": "15th August itself is not counted"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.4,
+        "label": "August",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "September",
+        "tone": "b"
+       },
+       {
+        "units": 2.11,
+        "label": "October",
+        "tone": "a"
+       }
+      ],
+      "brace": "15 Aug to 2 Oct: ? days"
+     }
+    ],
+    "note": "August: the 16th to the 31st is 16 days",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.4,
+        "label": "August",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "September",
+        "tone": "b"
+       },
+       {
+        "units": 2.11,
+        "label": "October",
+        "tone": "a"
+       }
+      ],
+      "brace": "15 Aug to 2 Oct: ? days"
+     }
+    ],
+    "note": "All 30 days of September are counted",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.4,
+        "label": "August",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "September",
+        "tone": "b"
+       },
+       {
+        "units": 2.11,
+        "label": "October",
+        "tone": "a"
+       }
+      ],
+      "brace": "15 Aug to 2 Oct: ? days"
+     }
+    ],
+    "note": "October: the 1st and the 2nd, which is 2 days",
+    "highlight": [
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.4,
+        "label": "August",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "September",
+        "tone": "b"
+       },
+       {
+        "units": 2.11,
+        "label": "October",
+        "tone": "a"
+       }
+      ],
+      "brace": "48 days"
+     }
+    ],
+    "note": "16 + 30 + 2 = 48 days"
+   }
+  ]
+ },
+ "Q_CH17_009": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "October",
+       "tone": "a"
+      },
+      {
+       "units": 5.79,
+       "label": "November",
+       "tone": "b"
+      }
+     ],
+     "brace": "2 Oct (Wed) → 14 Nov (?)"
+    }
+   ],
+   "note": "Count the days from Gandhi Jayanti to Children's Day"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "October",
+        "tone": "a"
+       },
+       {
+        "units": 5.79,
+        "label": "November",
+        "tone": "b"
+       }
+      ],
+      "brace": "2 Oct (Wed) → 14 Nov (?)"
+     }
+    ],
+    "note": "29 days left in October + 14 in November = 43 days"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "October",
+        "tone": "a"
+       },
+       {
+        "units": 5.79,
+        "label": "November",
+        "tone": "b"
+       }
+      ],
+      "brace": "2 Oct (Wed) → 14 Nov (?)"
+     }
+    ],
+    "note": "43 days = 6 weeks + 1 day"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "October",
+        "tone": "a"
+       },
+       {
+        "units": 5.79,
+        "label": "November",
+        "tone": "b"
+       }
+      ],
+      "brace": "2 Oct Wed → 14 Nov Thu"
+     }
+    ],
+    "note": "Wednesday + 1 = Thursday"
+   }
+  ]
+ },
+ "Q_CH17_010": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5.86,
+       "label": "Jan",
+       "tone": "a"
+      },
+      {
+       "units": 11.23,
+       "label": "Feb",
+       "tone": "b"
+      },
+      {
+       "units": 12.0,
+       "label": "Mar",
+       "tone": "a"
+      },
+      {
+       "units": 11.61,
+       "label": "Apr",
+       "tone": "b"
+      },
+      {
+       "units": 12.0,
+       "label": "May",
+       "tone": "a"
+      },
+      {
+       "units": 11.61,
+       "label": "Jun",
+       "tone": "b"
+      },
+      {
+       "units": 12.0,
+       "label": "Jul",
+       "tone": "a"
+      },
+      {
+       "units": 5.86,
+       "label": "Aug",
+       "tone": "b"
+      }
+     ],
+     "brace": "26 Jan (Sun)→15 Aug (?)"
+    }
+   ],
+   "note": "The year is 2020"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.86,
+        "label": "Jan",
+        "tone": "a"
+       },
+       {
+        "units": 11.23,
+        "label": "Feb",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Mar",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Apr",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Jun",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Jul",
+        "tone": "a"
+       },
+       {
+        "units": 5.86,
+        "label": "Aug",
+        "tone": "b"
+       }
+      ],
+      "brace": "26 Jan (Sun)→15 Aug (?)"
+     }
+    ],
+    "note": "Days: 5 + 29 + 31 + 30 + 31 + 30 + 31 + 15"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.86,
+        "label": "Jan",
+        "tone": "a"
+       },
+       {
+        "units": 11.23,
+        "label": "Feb",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Mar",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Apr",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Jun",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Jul",
+        "tone": "a"
+       },
+       {
+        "units": 5.86,
+        "label": "Aug",
+        "tone": "b"
+       }
+      ],
+      "brace": "26 Jan (Sun)→15 Aug (?)"
+     }
+    ],
+    "note": "Total = 202 days"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.86,
+        "label": "Jan",
+        "tone": "a"
+       },
+       {
+        "units": 11.23,
+        "label": "Feb",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Mar",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Apr",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Jun",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Jul",
+        "tone": "a"
+       },
+       {
+        "units": 5.86,
+        "label": "Aug",
+        "tone": "b"
+       }
+      ],
+      "brace": "26 Jan Sun → 15 Aug Sat"
+     }
+    ],
+    "note": "Sunday + 6 = Saturday"
+   }
+  ]
+ },
+ "Q_CH17_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5.6,
+       "label": "March",
+       "tone": "a"
+      },
+      {
+       "units": 12.0,
+       "label": "April",
+       "tone": "b"
+      },
+      {
+       "units": 5.6,
+       "label": "May",
+       "tone": "a"
+      }
+     ],
+     "brace": "17 March (Wed) → May"
+    }
+   ],
+   "note": "The final is on the second Sunday in May"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.6,
+        "label": "March",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "April",
+        "tone": "b"
+       },
+       {
+        "units": 5.6,
+        "label": "May",
+        "tone": "a"
+       }
+      ],
+      "brace": "17 March (Wed) → May"
+     }
+    ],
+    "note": "Mar(14) + Apr(30) + May(1) = 45 days to 1 May"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.6,
+        "label": "March",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "April",
+        "tone": "b"
+       },
+       {
+        "units": 5.6,
+        "label": "May",
+        "tone": "a"
+       }
+      ],
+      "brace": "17 March (Wed) → May"
+     }
+    ],
+    "note": "45 ÷ 7 = 6 R 3. Wednesday + 3 = Saturday, so 1 May is a Saturday"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Sat",
+      "Sun",
+      "Sun"
+     ]
+    ],
+    "headers": [
+     "1 May",
+     "2 May",
+     "9 May"
+    ],
+    "note": "The second Sunday is the 9th of May"
+   }
+  ]
+ },
+ "Q_CH17_017": {
+  "origin": "rule",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 11.61,
+       "label": "Jan",
+       "tone": "a"
+      },
+      {
+       "units": 10.84,
+       "label": "Feb",
+       "tone": "b"
+      },
+      {
+       "units": 12.0,
+       "label": "Mar",
+       "tone": "a"
+      },
+      {
+       "units": 11.61,
+       "label": "Apr",
+       "tone": "b"
+      },
+      {
+       "units": 12.0,
+       "label": "May",
+       "tone": "a"
+      },
+      {
+       "units": 11.61,
+       "label": "Jun",
+       "tone": "b"
+      },
+      {
+       "units": 12.0,
+       "label": "Jul",
+       "tone": "a"
+      },
+      {
+       "units": 12.0,
+       "label": "Aug",
+       "tone": "b"
+      },
+      {
+       "units": 11.61,
+       "label": "Sep",
+       "tone": "a"
+      },
+      {
+       "units": 12.0,
+       "label": "Oct",
+       "tone": "b"
+      },
+      {
+       "units": 11.61,
+       "label": "Nov",
+       "tone": "a"
+      },
+      {
+       "units": 9.68,
+       "label": "Dec",
+       "tone": "b"
+      }
+     ],
+     "brace": "1 Jan (Tue) → 25 Dec (?)"
+    }
+   ],
+   "note": "The year is 2019"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.61,
+        "label": "Jan",
+        "tone": "a"
+       },
+       {
+        "units": 10.84,
+        "label": "Feb",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Mar",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Apr",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Jun",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Jul",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Aug",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Sep",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Oct",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Nov",
+        "tone": "a"
+       },
+       {
+        "units": 9.68,
+        "label": "Dec",
+        "tone": "b"
+       }
+      ],
+      "brace": "1 Jan (Tue) → 25 Dec (?)"
+     }
+    ],
+    "note": "2019 is not a leap year. Count the days month by month"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.61,
+        "label": "Jan",
+        "tone": "a"
+       },
+       {
+        "units": 10.84,
+        "label": "Feb",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Mar",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Apr",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Jun",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Jul",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Aug",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Sep",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Oct",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Nov",
+        "tone": "a"
+       },
+       {
+        "units": 9.68,
+        "label": "Dec",
+        "tone": "b"
+       }
+      ],
+      "brace": "1 Jan (Tue) → 25 Dec (?)"
+     }
+    ],
+    "note": "358 days = 51 weeks and 1 day"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.61,
+        "label": "Jan",
+        "tone": "a"
+       },
+       {
+        "units": 10.84,
+        "label": "Feb",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Mar",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Apr",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Jun",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Jul",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Aug",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Sep",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Oct",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Nov",
+        "tone": "a"
+       },
+       {
+        "units": 9.68,
+        "label": "Dec",
+        "tone": "b"
+       }
+      ],
+      "brace": "1 Jan Tue → 25 Dec Wed"
+     }
+    ],
+    "note": "Tuesday + 1 = Wednesday"
+   }
+  ]
+ },
+ "Q_CH17_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 9.68,
+       "label": "Sep",
+       "tone": "a"
+      },
+      {
+       "units": 12.0,
+       "label": "Oct",
+       "tone": "b"
+      },
+      {
+       "units": 11.61,
+       "label": "Nov",
+       "tone": "a"
+      },
+      {
+       "units": 9.68,
+       "label": "Dec",
+       "tone": "b"
+      }
+     ],
+     "brace": "5 Sep (Mon) → Christmas"
+    }
+   ],
+   "note": "Count the days from Teachers' Day to Christmas"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.68,
+        "label": "Sep",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Oct",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Nov",
+        "tone": "a"
+       },
+       {
+        "units": 9.68,
+        "label": "Dec",
+        "tone": "b"
+       }
+      ],
+      "brace": "5 Sep (Mon) → Christmas"
+     }
+    ],
+    "note": "Sep(25) + Oct(31) + Nov(30) + Dec(25) = 111 days"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.68,
+        "label": "Sep",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Oct",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Nov",
+        "tone": "a"
+       },
+       {
+        "units": 9.68,
+        "label": "Dec",
+        "tone": "b"
+       }
+      ],
+      "brace": "5 Sep (Mon) → Christmas"
+     }
+    ],
+    "note": "111 ÷ 7 = 15 R 6"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.68,
+        "label": "Sep",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Oct",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Nov",
+        "tone": "a"
+       },
+       {
+        "units": 9.68,
+        "label": "Dec",
+        "tone": "b"
+       }
+      ],
+      "brace": "5 Sep Mon → 25 Dec Sun"
+     }
+    ],
+    "note": "Monday + 6 = Sunday"
+   }
+  ]
+ },
+ "PYQ_2017_Q13": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.23,
+        "label": "Apr",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Jun",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Jul",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Aug",
+        "tone": "a"
+       },
+       {
+        "units": 6.08,
+        "label": "Sep",
+        "tone": "b"
+       }
+      ],
+      "brace": "1 Apr (Sat) → 5 Sep (?)"
+     }
+    ],
+    "note": "Days after 1 April: 29 + 31 + 30 + 31 + 31 + 5"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.23,
+        "label": "Apr",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Jun",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Jul",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Aug",
+        "tone": "a"
+       },
+       {
+        "units": 6.08,
+        "label": "Sep",
+        "tone": "b"
+       }
+      ],
+      "brace": "1 Apr (Sat) → 5 Sep (?)"
+     }
+    ],
+    "note": "29 + 31 + 30 + 31 + 31 + 5 = 157 days"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.23,
+        "label": "Apr",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Jun",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Jul",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Aug",
+        "tone": "a"
+       },
+       {
+        "units": 6.08,
+        "label": "Sep",
+        "tone": "b"
+       }
+      ],
+      "brace": "1 Apr (Sat) → 5 Sep (?)"
+     }
+    ],
+    "note": "157 days is 22 weeks and 3 days"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.23,
+        "label": "Apr",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Jun",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Jul",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Aug",
+        "tone": "a"
+       },
+       {
+        "units": 6.08,
+        "label": "Sep",
+        "tone": "b"
+       }
+      ],
+      "brace": "1 Apr Sat → 5 Sep Tue"
+     }
+    ],
+    "note": "Three days after Saturday is Tuesday"
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1,
+   "max": 17,
+   "step": 1,
+   "points": [
+    {
+     "at": 17,
+     "label": "Sat"
+    },
+    {
+     "at": 1,
+     "label": "?"
+    }
+   ],
+   "note": "The 17th is a Saturday. Which day is the 1st?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 17,
+    "step": 1,
+    "points": [
+     {
+      "at": 17,
+      "label": "Sat"
+     },
+     {
+      "at": 10,
+      "label": "Sat"
+     },
+     {
+      "at": 1,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 17,
+      "to": 10,
+      "label": "−7"
+     }
+    ],
+    "note": "Go back 7 days: the 10th is also a Saturday",
+    "highlight": [
+     "h0",
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 17,
+    "step": 1,
+    "points": [
+     {
+      "at": 17,
+      "label": "Sat"
+     },
+     {
+      "at": 10,
+      "label": "Sat"
+     },
+     {
+      "at": 3,
+      "label": "Sat"
+     }
+    ],
+    "hops": [
+     {
+      "from": 17,
+      "to": 10,
+      "label": "−7"
+     },
+     {
+      "from": 10,
+      "to": 3,
+      "label": "−7"
+     }
+    ],
+    "note": "Go back 7 more days: the 3rd is also a Saturday",
+    "highlight": [
+     "h1",
+     "p2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Thu",
+      "Fri",
+      "Sat"
+     ]
+    ],
+    "headers": [
+     "1st",
+     "2nd",
+     "3rd"
+    ],
+    "note": "Count back from the 3rd"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Thu",
+      "Fri",
+      "Sat"
+     ]
+    ],
+    "headers": [
+     "1st",
+     "2nd",
+     "3rd"
+    ],
+    "note": "The first day of the month was a Thursday"
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_027": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1,
+   "max": 31,
+   "step": 1,
+   "points": [
+    {
+     "at": 15,
+     "label": "Thu"
+    }
+   ],
+   "note": "August 2024. Which day came 5 times?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 31,
+    "step": 1,
+    "points": [
+     {
+      "at": 15,
+      "label": "Thu"
+     },
+     {
+      "at": 8,
+      "label": "Thu"
+     },
+     {
+      "at": 1,
+      "label": "Thu"
+     }
+    ],
+    "hops": [
+     {
+      "from": 15,
+      "to": 8,
+      "label": "1 week"
+     },
+     {
+      "from": 8,
+      "to": 1,
+      "label": "1 week"
+     }
+    ],
+    "note": "Count back in sevens: the 8th and the 1st are Thursdays too",
+    "highlight": [
+     "p1",
+     "p2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 31,
+    "step": 1,
+    "points": [
+     {
+      "at": 15,
+      "label": "Thu"
+     },
+     {
+      "at": 8,
+      "label": "Thu"
+     },
+     {
+      "at": 1,
+      "label": "Thu"
+     }
+    ],
+    "note": "August has 31 days: 4 full weeks and 3 days more"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Thu",
+      "Fri",
+      "Sat"
+     ]
+    ],
+    "headers": [
+     "29th",
+     "30th",
+     "31st"
+    ],
+    "note": "The 3 extra dates: these three days come 5 times"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Thu",
+      "Fri",
+      "Sat"
+     ]
+    ],
+    "headers": [
+     "29th",
+     "30th",
+     "31st"
+    ],
+    "note": "Of the days in the choices, only Saturday is here"
+   }
+  ]
+ },
+ "PYQ_2019_Q08": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1,
+   "max": 30,
+   "step": 1,
+   "points": [
+    {
+     "at": 19,
+     "label": "Thu"
+    }
+   ],
+   "note": "April 2018. Which days came 5 times?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "points": [
+     {
+      "at": 19,
+      "label": "Thu"
+     },
+     {
+      "at": 12,
+      "label": "Thu"
+     },
+     {
+      "at": 5,
+      "label": "Thu"
+     }
+    ],
+    "hops": [
+     {
+      "from": 19,
+      "to": 12,
+      "label": "−7"
+     },
+     {
+      "from": 12,
+      "to": 5,
+      "label": "−7"
+     }
+    ],
+    "note": "Go back in steps of 7: the 12th and the 5th are Thursdays",
+    "highlight": [
+     "p1",
+     "p2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
+     ]
+    ],
+    "headers": [
+     "1st",
+     "2nd",
+     "3rd",
+     "4th",
+     "5th"
+    ],
+    "note": "Count back from Thursday the 5th"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Sun",
+      "Mon",
+      "Sun",
+      "Mon"
+     ]
+    ],
+    "headers": [
+     "1st",
+     "2nd",
+     "29th",
+     "30th"
+    ],
+    "note": "April has 30 days: 4 weeks and 2 days"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Sun",
+      "Mon",
+      "Sun",
+      "Mon"
+     ]
+    ],
+    "headers": [
+     "1st",
+     "2nd",
+     "29th",
+     "30th"
+    ],
+    "note": "Sunday and Monday come 5 times"
+   }
+  ]
+ },
+ "Q_CH17_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1,
+   "max": 30,
+   "step": 1,
+   "points": [
+    {
+     "at": 9,
+     "label": "Mon"
+    }
+   ],
+   "note": "April 1990. Which days came five times?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "points": [
+     {
+      "at": 9,
+      "label": "Mon"
+     },
+     {
+      "at": 2,
+      "label": "Mon"
+     }
+    ],
+    "hops": [
+     {
+      "from": 9,
+      "to": 2,
+      "label": "−7"
+     }
+    ],
+    "note": "Monday the 2nd, so the 1st of April was a Sunday",
+    "highlight": [
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "points": [
+     {
+      "at": 9,
+      "label": "Mon"
+     },
+     {
+      "at": 2,
+      "label": "Mon"
+     }
+    ],
+    "note": "April has 30 days: 4 full weeks and 2 days more"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Sun",
+      "Mon",
+      "Sun",
+      "Mon"
+     ]
+    ],
+    "headers": [
+     "1st",
+     "2nd",
+     "29th",
+     "30th"
+    ],
+    "note": "The 2 extra days fall on the same days as the 1st and 2nd"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Sundays",
+      "1, 8, 15, 22, 29"
+     ],
+     [
+      "Mondays",
+      "2, 9, 16, 23, 30"
+     ]
+    ],
+    "note": "Sunday and Monday occurred five times"
+   }
+  ]
+ },
+ "Q_CH17_008": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "like the 1st",
+      "like the 2nd",
+      "like the 3rd"
+     ]
+    ],
+    "headers": [
+     "29th",
+     "30th",
+     "31st"
+    ],
+    "note": "July has 31 days: 4 weeks and 3 days"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Wed",
+      "Thu",
+      "Fri"
+     ]
+    ],
+    "headers": [
+     "1 July",
+     "2 July",
+     "3 July"
+    ],
+    "note": "The days that come 5 times start the month"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+     ]
+    ],
+    "headers": [
+     "1st",
+     "2nd",
+     "3rd",
+     "4th",
+     "5th"
+    ],
+    "note": "5 July is the first Sunday"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Sun",
+      "Sun",
+      "Sun",
+      "Sun"
+     ]
+    ],
+    "headers": [
+     "5th",
+     "12th",
+     "19th",
+     "26th"
+    ],
+    "note": "Add 7 each time to find the other Sundays"
+   }
+  ]
+ },
+ "G4A_TIME_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 0,
+   "max": 10,
+   "step": 1,
+   "points": [
+    {
+     "at": 0,
+     "label": "Wed"
+    },
+    {
+     "at": 10,
+     "label": "?"
+    }
+   ],
+   "note": "Today is Wednesday. Which day is it 10 days from today?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 10,
+    "step": 1,
+    "points": [
+     {
+      "at": 0,
+      "label": "Wed"
+     },
+     {
+      "at": 7,
+      "label": "Wed"
+     },
+     {
+      "at": 10,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 0,
+      "to": 7,
+      "label": "+7"
+     }
+    ],
+    "note": "After 7 days it is Wednesday again",
+    "highlight": [
+     "h0",
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 10,
+    "step": 1,
+    "points": [
+     {
+      "at": 0,
+      "label": "Wed"
+     },
+     {
+      "at": 7,
+      "label": "Wed"
+     },
+     {
+      "at": 10,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 0,
+      "to": 7,
+      "label": "+7"
+     },
+     {
+      "from": 7,
+      "to": 10
+     }
+    ],
+    "note": "Count the days still to go, from day 7 to day 10",
+    "highlight": [
+     "h1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 10,
+    "step": 1,
+    "points": [
+     {
+      "at": 0,
+      "label": "Wed"
+     },
+     {
+      "at": 7,
+      "label": "Wed"
+     },
+     {
+      "at": 10,
+      "label": "Sat"
+     }
+    ],
+    "hops": [
+     {
+      "from": 0,
+      "to": 7,
+      "label": "+7"
+     },
+     {
+      "from": 7,
+      "to": 10,
+      "label": "Thu, Fri, Sat"
+     }
+    ],
+    "note": "Three days after Wednesday",
+    "highlight": [
+     "h1",
+     "p2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 10,
+    "step": 1,
+    "points": [
+     {
+      "at": 0,
+      "label": "Wed"
+     },
+     {
+      "at": 7,
+      "label": "Wed"
+     },
+     {
+      "at": 10,
+      "label": "Sat"
+     }
+    ],
+    "hops": [
+     {
+      "from": 0,
+      "to": 7,
+      "label": "+7"
+     },
+     {
+      "from": 7,
+      "to": 10
+     }
+    ],
+    "note": "It will be Saturday",
+    "highlight": [
+     "p2"
+    ]
+   }
+  ]
+ },
+ "G4A_TIME_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 5,
+   "max": 23,
+   "step": 1,
+   "points": [
+    {
+     "at": 5,
+     "label": "Tue"
+    },
+    {
+     "at": 23,
+     "label": "?"
+    }
+   ],
+   "note": "The 5th is a Tuesday. Which day is the 23rd?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 5,
+    "max": 23,
+    "step": 1,
+    "points": [
+     {
+      "at": 5,
+      "label": "Tue"
+     },
+     {
+      "at": 23,
+      "label": "?"
+     }
+    ],
+    "note": "The Tuesdays are 7 days apart"
+   },
+   {
+    "kind": "numberLine",
+    "min": 5,
+    "max": 23,
+    "step": 1,
+    "points": [
+     {
+      "at": 5,
+      "label": "Tue"
+     },
+     {
+      "at": 19,
+      "label": "Tue"
+     },
+     {
+      "at": 23,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 5,
+      "to": 19,
+      "label": "+7 +7"
+     }
+    ],
+    "note": "So the 19th is a Tuesday",
+    "highlight": [
+     "h0",
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 5,
+    "max": 23,
+    "step": 1,
+    "points": [
+     {
+      "at": 5,
+      "label": "Tue"
+     },
+     {
+      "at": 19,
+      "label": "Tue"
+     },
+     {
+      "at": 23,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 5,
+      "to": 19,
+      "label": "+7 +7"
+     },
+     {
+      "from": 19,
+      "to": 23
+     }
+    ],
+    "note": "Count the days from the 19th to the 23rd",
+    "highlight": [
+     "h1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 5,
+    "max": 23,
+    "step": 1,
+    "points": [
+     {
+      "at": 5,
+      "label": "Tue"
+     },
+     {
+      "at": 19,
+      "label": "Tue"
+     },
+     {
+      "at": 23,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 5,
+      "to": 19,
+      "label": "+7 +7"
+     },
+     {
+      "from": 19,
+      "to": 23,
+      "label": "Wed Thu Fri Sat"
+     }
+    ],
+    "note": "Four days after Tuesday",
+    "highlight": [
+     "h1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 5,
+    "max": 23,
+    "step": 1,
+    "points": [
+     {
+      "at": 5,
+      "label": "Tue"
+     },
+     {
+      "at": 19,
+      "label": "Tue"
+     },
+     {
+      "at": 23,
+      "label": "Sat"
+     }
+    ],
+    "hops": [
+     {
+      "from": 5,
+      "to": 19,
+      "label": "+7 +7"
+     },
+     {
+      "from": 19,
+      "to": 23
+     }
+    ],
+    "note": "The 23rd is a Saturday",
+    "highlight": [
+     "p2"
+    ]
+   }
+  ]
+ },
+ "G4A_TIME_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1,
+   "max": 30,
+   "step": 1,
+   "points": [
+    {
+     "at": 1,
+     "label": "Sat"
+    }
+   ],
+   "note": "A month of 30 days. How many Sundays?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "points": [
+     {
+      "at": 2,
+      "label": "Sun"
+     }
+    ],
+    "note": "The 1st is a Saturday, so the 2nd is the first Sunday",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "points": [
+     {
+      "at": 2,
+      "label": "Sun"
+     },
+     {
+      "at": 9,
+      "label": "Sun"
+     },
+     {
+      "at": 16,
+      "label": "Sun"
+     },
+     {
+      "at": 23,
+      "label": "Sun"
+     },
+     {
+      "at": 30,
+      "label": "Sun"
+     }
+    ],
+    "hops": [
+     {
+      "from": 2,
+      "to": 9,
+      "label": "+7"
+     },
+     {
+      "from": 9,
+      "to": 16,
+      "label": "+7"
+     },
+     {
+      "from": 16,
+      "to": 23,
+      "label": "+7"
+     },
+     {
+      "from": 23,
+      "to": 30,
+      "label": "+7"
+     }
+    ],
+    "note": "Add 7 each time"
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "points": [
+     {
+      "at": 2,
+      "label": "Sun"
+     },
+     {
+      "at": 9,
+      "label": "Sun"
+     },
+     {
+      "at": 16,
+      "label": "Sun"
+     },
+     {
+      "at": 23,
+      "label": "Sun"
+     },
+     {
+      "at": 30,
+      "label": "Sun"
+     }
+    ],
+    "note": "The 30th is still inside the month",
+    "highlight": [
+     "p4"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "points": [
+     {
+      "at": 2,
+      "label": "Sun"
+     },
+     {
+      "at": 9,
+      "label": "Sun"
+     },
+     {
+      "at": 16,
+      "label": "Sun"
+     },
+     {
+      "at": 23,
+      "label": "Sun"
+     },
+     {
+      "at": 30,
+      "label": "Sun"
+     }
+    ],
+    "note": "There are 5 Sundays in this month"
+   }
+  ]
+ },
+ "Q_CH17_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "14 Feb 1992",
+     "Friday"
+    ],
+    [
+     "13 Feb 1993",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Date",
+    "Day"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "14 Feb 1992",
+      "Friday"
+     ],
+     [
+      "14 Feb 1993",
+      "?"
+     ],
+     [
+      "13 Feb 1993",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Date",
+     "Day"
+    ],
+    "note": "1992 is a leap year: 366 days from 14 Feb 1992 to 14 Feb 1993",
+    "highlight": [
+     "r0",
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "14 Feb 1992",
+      "Friday"
+     ],
+     [
+      "14 Feb 1993",
+      "Sunday"
+     ],
+     [
+      "13 Feb 1993",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Date",
+     "Day"
+    ],
+    "note": "Friday + 2 = Sunday",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "14 Feb 1992",
+      "Friday"
+     ],
+     [
+      "14 Feb 1993",
+      "Sunday"
+     ],
+     [
+      "13 Feb 1993",
+      "Saturday"
+     ]
+    ],
+    "headers": [
+     "Date",
+     "Day"
+    ],
+    "note": "One day before Sunday is Saturday",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "14 Feb 1992",
+      "Friday"
+     ],
+     [
+      "14 Feb 1993",
+      "Sunday"
+     ],
+     [
+      "13 Feb 1993",
+      "Saturday"
+     ]
+    ],
+    "headers": [
+     "Date",
+     "Day"
+    ],
+    "note": "13 Feb 1993 was a Saturday",
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH17_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1990,
+   "max": 2004,
+   "step": 1,
+   "tickLabels": "ends",
+   "note": "Leap years between 1990 and 2004 = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 1990,
+    "max": 2004,
+    "step": 1,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 1992,
+      "label": "1992"
+     }
+    ],
+    "note": "1990 does not divide by 4 exactly, but 1992 does",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1990,
+    "max": 2004,
+    "step": 1,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 1992,
+      "label": "1992"
+     },
+     {
+      "at": 1996,
+      "label": "1996"
+     },
+     {
+      "at": 2000,
+      "label": "2000"
+     }
+    ],
+    "hops": [
+     {
+      "from": 1992,
+      "to": 1996,
+      "label": "+4"
+     },
+     {
+      "from": 1996,
+      "to": 2000,
+      "label": "+4"
+     },
+     {
+      "from": 2000,
+      "to": 2004,
+      "label": "+4"
+     }
+    ],
+    "note": "Keep adding 4 years. The next one would be 2004"
+   },
+   {
+    "kind": "numberLine",
+    "min": 1990,
+    "max": 2004,
+    "step": 1,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 1992,
+      "label": "1992"
+     },
+     {
+      "at": 1996,
+      "label": "1996"
+     },
+     {
+      "at": 2000,
+      "label": "2000"
+     }
+    ],
+    "note": "2004 is an end year, so it is not between 1990 and 2004"
+   },
+   {
+    "kind": "numberLine",
+    "min": 1990,
+    "max": 2004,
+    "step": 1,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 1992,
+      "label": "1992"
+     },
+     {
+      "at": 1996,
+      "label": "1996"
+     },
+     {
+      "at": 2000,
+      "label": "2000"
+     }
+    ],
+    "note": "1992, 1996 and 2000: that is 3 leap years",
+    "highlight": [
+     "p0",
+     "p1",
+     "p2"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_033": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "clock",
+    "hour": 6,
+    "minute": 30,
+    "note": "At half past six the minute hand points exactly at 6",
+    "highlight": [
+     "minute"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 6,
+    "minute": 30,
+    "note": "The hour hand has moved halfway from 6 to 7",
+    "highlight": [
+     "hour"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 6,
+    "minute": 30,
+    "showAngle": true,
+    "note": "Half of one 30° gap: the angle is 15°",
+    "highlight": [
+     "angle"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_011": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "angles",
+    "layout": "single",
+    "parts": [
+     {
+      "label": "30°",
+      "size": 30
+     }
+    ],
+    "note": "In 5 minutes the minute hand turns 30 degrees"
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_022": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "clock",
+    "hour": 7,
+    "minute": 30,
+    "note": "At 7:30 the minute hand is on 6. The hour hand is past 7",
+    "highlight": [
+     "hour",
+     "minute"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 7,
+    "minute": 30,
+    "showAngle": true,
+    "note": "From 6 to 7 is 30°. From 7 to the hour hand is 15°"
+   },
+   {
+    "kind": "clock",
+    "hour": 7,
+    "minute": 30,
+    "showAngle": true,
+    "note": "30° + 15° = 45°, so the time is 07:30",
+    "highlight": [
+     "angle"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_034": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 8,
+   "minute": 30,
+   "showAngle": true,
+   "note": "Angle between the hands = ?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "clock",
+    "hour": 8,
+    "minute": 30,
+    "note": "Minute hand on 6. Hour hand halfway between 8 and 9",
+    "highlight": [
+     "minute",
+     "hour"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 8,
+    "minute": 30,
+    "showAngle": true,
+    "note": "From 6 to 8 is two gaps of 30°"
+   },
+   {
+    "kind": "clock",
+    "hour": 8,
+    "minute": 30,
+    "showAngle": true,
+    "note": "The hour hand is half a gap, 15°, past 8",
+    "highlight": [
+     "hour"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 8,
+    "minute": 30,
+    "showAngle": true,
+    "note": "The angle is 75°, which is not listed",
+    "highlight": [
+     "angle"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH17_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 3,
+   "minute": 45,
+   "note": "Kriya's watch shows 3:45 pm. It is 5 minutes fast"
+  },
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 3,
+    "minute": 40,
+    "note": "Real time: 5 minutes before 3:45 pm is 3:40 pm"
+   },
+   {
+    "kind": "clock",
+    "hour": 3,
+    "minute": 40,
+    "note": "Priya's watch is 10 minutes behind the real time",
+    "highlight": [
+     "minute"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 3,
+    "minute": 30,
+    "note": "Priya's watch shows 3:30 pm"
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH17_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 6,
+   "minute": 0,
+   "note": "Real time 6:00 am. The clock loses 10 minutes every hour"
+  },
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 6,
+    "minute": 0,
+    "note": "Count the hours from 1:00 am to 6:00 am"
+   },
+   {
+    "kind": "clock",
+    "hour": 6,
+    "minute": 0,
+    "note": "The clock loses 10 minutes in each of those hours"
+   },
+   {
+    "kind": "clock",
+    "hour": 5,
+    "minute": 10,
+    "note": "50 minutes behind 6:00 am: the clock shows 5:10 am"
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH17_007": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "clock",
+    "hour": 3,
+    "minute": 15,
+    "note": "The watch shows 3 hours 15 minutes after noon"
+   },
+   null,
+   {
+    "kind": "clock",
+    "hour": 3,
+    "minute": 0,
+    "note": "3 real hours after noon: the actual time is 3:00 pm"
+   }
+  ]
+ },
+ "PYQ_2017_Q32": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 8,
+   "minute": 0,
+   "note": "Real time 8:00 p.m. The watch gains 2 minutes every hour"
+  },
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 8,
+    "minute": 0,
+    "note": "From 8:00 a.m. to 8:00 p.m. is 12 hours"
+   },
+   {
+    "kind": "clock",
+    "hour": 8,
+    "minute": 0,
+    "note": "In 12 hours the watch gains 24 minutes"
+   },
+   {
+    "kind": "clock",
+    "hour": 8,
+    "minute": 0,
+    "note": "A watch that gains is ahead: add the 24 minutes",
+    "highlight": [
+     "minute"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 8,
+    "minute": 24,
+    "note": "24 minutes after 8:00 p.m.: the watch shows 8:24 p.m."
+   }
+  ]
+ },
+ "PYQ_2018_Q14": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 10,
+   "minute": 0,
+   "note": "Real time 10 p.m. The watch loses 30 seconds every hour"
+  },
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 10,
+    "minute": 0,
+    "note": "From 8:00 a.m. to 10:00 p.m. is 14 hours"
+   },
+   {
+    "kind": "clock",
+    "hour": 10,
+    "minute": 0,
+    "note": "In 14 hours the watch loses 420 seconds"
+   },
+   {
+    "kind": "clock",
+    "hour": 10,
+    "minute": 0,
+    "note": "420 seconds is 7 minutes"
+   },
+   {
+    "kind": "clock",
+    "hour": 9,
+    "minute": 53,
+    "note": "7 minutes before 10:00 p.m.: the watch shows 9:53 p.m."
+   }
+  ]
+ },
+ "G4A_TIME_001": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "clock",
+    "hour": 5,
+    "minute": 20,
+    "note": "17:20 is 5:20 pm"
+   }
+  ]
+ },
+ "G4A_TIME_007": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 6,
+    "minute": 45,
+    "note": "A quarter to 7 is 15 minutes before 7 o'clock: 6:45"
+   },
+   {
+    "kind": "clock",
+    "hour": 6,
+    "minute": 45,
+    "note": "It is evening, so the time is 6:45 pm"
+   },
+   null,
+   {
+    "kind": "clock",
+    "hour": 6,
+    "minute": 45,
+    "note": "On the 24-hour clock 6:45 pm is 18:45"
+   }
+  ]
+ },
+ "Q_CH17_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 3,
+   "minute": 45,
+   "note": "3:45 PM"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "clock",
+    "hour": 3,
+    "minute": 45,
+    "note": "Add 12 to the 3 hours to get hour 15",
+    "highlight": [
+     "hour"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 3,
+    "minute": 45,
+    "note": "The minutes stay the same: 3:45 PM is 15:45"
+   }
+  ]
+ },
+ "PYQ_2018_Q18": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 4,
+      "shaded": 3,
+      "label": "45 min"
+     }
+    ],
+    "shape": "circle",
+    "note": "45 minutes is 3/4 of an hour"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 4,
+      "shaded": 3,
+      "label": "0.75 hr"
+     }
+    ],
+    "shape": "circle",
+    "note": "3/4 is the same as 75/100, which is 0.75"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 4,
+      "shaded": 3,
+      "label": "0.75 hr"
+     }
+    ],
+    "shape": "circle",
+    "note": "3 whole hours and 0.75 of an hour: 3.75 hr"
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_026": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 4,
+   "minute": 30,
+   "note": "4:30 pm on 15th April. The minute hand then turns 30 times"
+  },
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 4,
+    "minute": 30,
+    "note": "Each full turn of the minute hand is 1 hour: 30 hours",
+    "highlight": [
+     "minute"
+    ]
+   },
+   null,
+   {
+    "kind": "journey",
+    "places": [
+     "15 Apr 4:30pm",
+     "16 Apr 4:30pm"
+    ],
+    "legs": [
+     {
+      "top": "24 h"
+     }
+    ],
+    "note": "24 hours later it is the same time on the next day",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "15 Apr 4:30pm",
+     "16 Apr 4:30pm",
+     "16 Apr 10:30pm"
+    ],
+    "legs": [
+     {
+      "top": "24 h"
+     },
+     {
+      "top": "6 h"
+     }
+    ],
+    "note": "6 hours after 4:30 pm is 10:30 pm",
+    "highlight": [
+     "l1"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 10,
+   "minute": 30,
+   "note": "10:30 am on 21st April. The minute hand then turns 42 times"
+  },
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 10,
+    "minute": 30,
+    "note": "Each full turn of the minute hand is 1 hour: 42 hours",
+    "highlight": [
+     "minute"
+    ]
+   },
+   null,
+   {
+    "kind": "journey",
+    "places": [
+     "21 Apr 10:30am",
+     "22 Apr 10:30am"
+    ],
+    "legs": [
+     {
+      "top": "24 h"
+     }
+    ],
+    "note": "24 hours later it is the same time on the next day",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "21 Apr 10:30am",
+     "22 Apr 10:30am",
+     "22 Apr 10:30pm"
+    ],
+    "legs": [
+     {
+      "top": "24 h"
+     },
+     {
+      "top": "12 h"
+     }
+    ],
+    "note": "12 hours more. There are still 6 hours to add",
+    "highlight": [
+     "l1"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "22 Apr 10:30am",
+     "22 Apr 10:30pm",
+     "23 Apr 4:30am"
+    ],
+    "legs": [
+     {
+      "top": "12 h"
+     },
+     {
+      "top": "6 h"
+     }
+    ],
+    "note": "6 hours after 10:30 pm is 4:30 am the next day",
+    "highlight": [
+     "l1"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "2 Mar 12:00am",
+    "?"
+   ],
+   "legs": [
+    {
+     "top": "2023 min"
+    }
+   ],
+   "note": "What is the date and time 2023 minutes later?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "2 Mar 12:00am",
+     "?"
+    ],
+    "legs": [
+     {
+      "top": "2023 min"
+     }
+    ],
+    "note": "33 hours use up 1980 minutes"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "2 Mar 12:00am",
+     "?"
+    ],
+    "legs": [
+     {
+      "top": "33 h 43 min"
+     }
+    ],
+    "note": "2023 minutes is 33 hours 43 minutes",
+    "highlight": [
+     "l0"
+    ]
+   },
+   null,
+   {
+    "kind": "journey",
+    "places": [
+     "2 Mar 12:00am",
+     "3 Mar 12:00am",
+     "?"
+    ],
+    "legs": [
+     {
+      "top": "24 h"
+     },
+     {}
+    ],
+    "note": "24 hours later it is 12:00 am on 3rd March",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "2 Mar 12:00am",
+     "3 Mar 12:00am",
+     "3 Mar 9:43am"
+    ],
+    "legs": [
+     {
+      "top": "24 h"
+     },
+     {
+      "top": "9 h 43 min"
+     }
+    ],
+    "note": "9 hours 43 minutes later it is 9:43 am on 3rd March",
+    "highlight": [
+     "l1"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_029": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "7:00 am",
+    "next bus"
+   ],
+   "legs": [
+    {
+     "top": "36 min"
+    }
+   ],
+   "note": "A bus leaves every 36 min. You arrive at 8:50 am"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7:00 am",
+      "7:36 am",
+      "8:12 am",
+      "8:48 am"
+     ]
+    ],
+    "note": "The buses leave 36 minutes apart"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7:00 am",
+      "7:36 am",
+      "8:12 am",
+      "8:48 am"
+     ]
+    ],
+    "note": "The 8:48 am bus has just left when you arrive at 8:50 am",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "8:48 am",
+     "next bus"
+    ],
+    "legs": [
+     {
+      "top": "36 min"
+     }
+    ],
+    "note": "48 + 36 = 84 minutes, which is 1 hour 24 minutes",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "8:48 am",
+     "9:24 am"
+    ],
+    "legs": [
+     {
+      "top": "36 min"
+     }
+    ],
+    "note": "The next bus is at 9:24 am"
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH17_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "Pune",
+    "Mumbai"
+   ],
+   "legs": [
+    {
+     "top": "planned 3 h 40 min",
+     "bottom": "late by ?"
+    }
+   ],
+   "note": "Left at quarter past eight, reached at quarter to 1"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "Pune 8:15 am",
+     "Mumbai 12:45pm"
+    ],
+    "legs": [
+     {
+      "top": "planned 3 h 40 min",
+      "bottom": "late by ?"
+     }
+    ],
+    "note": "Quarter past eight is 8:15 am. Quarter to 1 is 12:45 pm"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Pune 8:15 am",
+     "Mumbai 12:45pm"
+    ],
+    "legs": [
+     {
+      "top": "took 4 h 30 min",
+      "bottom": "planned 3 h 40 min"
+     }
+    ],
+    "note": "8:15 am to 12:15 pm is 4 hours, then 30 minutes more",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Pune 8:15 am",
+     "Mumbai 12:45pm"
+    ],
+    "legs": [
+     {
+      "top": "took 270 min",
+      "bottom": "planned 3 h 40 min"
+     }
+    ],
+    "note": "4 hours 30 minutes is 270 minutes",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Pune 8:15 am",
+     "Mumbai 12:45pm"
+    ],
+    "legs": [
+     {
+      "top": "took 270 min",
+      "bottom": "planned 220 min"
+     }
+    ],
+    "note": "3 hours 40 minutes is 220 minutes",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Pune 8:15 am",
+     "Mumbai 12:45pm"
+    ],
+    "legs": [
+     {
+      "top": "took 270 min",
+      "bottom": "planned 220 min"
+     }
+    ],
+    "note": "270 − 220: the train was late by 50 min"
+   }
+  ]
+ },
+ "G4A_TIME_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "8:00 am",
+    "1:30 pm"
+   ],
+   "legs": [
+    {
+     "top": "?"
+    }
+   ],
+   "note": "How long is the school day?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "8:00 am",
+     "12 noon",
+     "1:30 pm"
+    ],
+    "legs": [
+     {},
+     {}
+    ],
+    "note": "First count from 8:00 am to 12 noon",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "8:00 am",
+     "12 noon",
+     "1:30 pm"
+    ],
+    "legs": [
+     {},
+     {
+      "top": "1 h 30 min"
+     }
+    ],
+    "note": "From 12 noon to 1:30 pm is 1 hour 30 minutes",
+    "highlight": [
+     "l1"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "8:00 am",
+     "12 noon",
+     "1:30 pm"
+    ],
+    "legs": [
+     {
+      "top": "4 h"
+     },
+     {
+      "top": "1 h 30 min"
+     }
+    ],
+    "note": "4 hours and 1 hour 30 minutes make 5 hours 30 minutes"
+   }
+  ]
+ },
+ "G4A_TIME_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "9:30 pm",
+    "?"
+   ],
+   "legs": [
+    {
+     "top": "6 h 45 min"
+    }
+   ],
+   "note": "Bengaluru to Chennai by night bus"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "9:30 pm",
+     "3:30 am",
+     "?"
+    ],
+    "legs": [
+     {
+      "top": "6 h"
+     },
+     {}
+    ],
+    "note": "Add 6 hours to 9:30 pm: 3:30 am the next day",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "9:30 pm",
+     "3:30 am",
+     "4:00 am",
+     "?"
+    ],
+    "legs": [
+     {
+      "top": "6 h"
+     },
+     {
+      "top": "30 min"
+     },
+     {}
+    ],
+    "note": "30 of the 45 minutes take the time to 4:00 am",
+    "highlight": [
+     "l1"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "9:30 pm",
+     "3:30 am",
+     "4:00 am",
+     "?"
+    ],
+    "legs": [
+     {
+      "top": "6 h"
+     },
+     {
+      "top": "30 min"
+     },
+     {}
+    ],
+    "note": "Find the minutes that remain: 45 − 30",
+    "highlight": [
+     "l2"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "9:30 pm",
+     "3:30 am",
+     "4:00 am",
+     "4:15 am"
+    ],
+    "legs": [
+     {
+      "top": "6 h"
+     },
+     {
+      "top": "30 min"
+     },
+     {
+      "top": "15 min"
+     }
+    ],
+    "note": "The bus reaches Chennai at 4:15 am",
+    "highlight": [
+     "l2"
+    ]
+   }
+  ]
+ },
+ "G4A_TIME_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "Mumbai 22:40",
+    "Goa 05:10"
+   ],
+   "legs": [
+    {
+     "top": "?"
+    }
+   ],
+   "note": "How long is the journey?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "22:40",
+     "midnight",
+     "05:10"
+    ],
+    "legs": [
+     {
+      "top": "1 h 20 min"
+     },
+     {}
+    ],
+    "note": "From 22:40 to midnight is 1 hour 20 minutes",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "22:40",
+     "midnight",
+     "05:10"
+    ],
+    "legs": [
+     {
+      "top": "1 h 20 min"
+     },
+     {
+      "top": "5 h 10 min"
+     }
+    ],
+    "note": "From midnight to 05:10 is 5 hours 10 minutes",
+    "highlight": [
+     "l1"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "22:40",
+     "midnight",
+     "05:10"
+    ],
+    "legs": [
+     {
+      "top": "1 h 20 min"
+     },
+     {
+      "top": "5 h 10 min"
+     }
+    ],
+    "note": "1 h 20 min + 5 h 10 min = 6 h 30 min"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Mumbai 22:40",
+     "Goa 05:10"
+    ],
+    "legs": [
+     {
+      "top": "6 h 30 min"
+     }
+    ],
+    "note": "The journey takes 6 hours 30 minutes"
+   }
+  ]
+ },
+ "G4A_TIME_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "Leave home: ?",
+    "At station",
+    "Train 14:10"
+   ],
+   "legs": [
+    {
+     "top": "35 min"
+    },
+    {
+     "top": "25 min"
+    }
+   ],
+   "note": "What is the latest time she can leave home?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "Leave home: ?",
+     "At station",
+     "Train 14:10"
+    ],
+    "legs": [
+     {
+      "top": "35 min"
+     },
+     {
+      "top": "25 min"
+     }
+    ],
+    "note": "25 + 35 = 60 minutes are needed before 14:10",
+    "highlight": [
+     "l0",
+     "l1"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Leave home: ?",
+     "At station",
+     "Train 14:10"
+    ],
+    "legs": [
+     {
+      "top": "35 min"
+     },
+     {
+      "top": "25 min"
+     }
+    ],
+    "note": "60 minutes is 1 hour"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Leave: 13:10",
+     "At station",
+     "Train 14:10"
+    ],
+    "legs": [
+     {
+      "top": "35 min"
+     },
+     {
+      "top": "25 min"
+     }
+    ],
+    "note": "One hour before 14:10 is 13:10"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Leave: 13:10",
+     "At station",
+     "Train 14:10"
+    ],
+    "legs": [
+     {
+      "top": "35 min"
+     },
+     {
+      "top": "25 min"
+     }
+    ],
+    "note": "Change 13:10 to the 12-hour clock"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Leave: 1:10 pm",
+     "At station",
+     "Train 14:10"
+    ],
+    "legs": [
+     {
+      "top": "35 min"
+     },
+     {
+      "top": "25 min"
+     }
+    ],
+    "note": "The latest she can leave home is 1:10 pm"
+   }
+  ]
+ },
+ "Q_CH17_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "2:40 PM",
+    "5:10 PM"
+   ],
+   "legs": [
+    {
+     "top": "?"
+    }
+   ],
+   "note": "How long is the movie?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "2:40",
+     "3:00",
+     "5:10"
+    ],
+    "legs": [
+     {
+      "top": "20 min"
+     },
+     {}
+    ],
+    "note": "From 2:40 to 3:00 is 20 minutes",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "2:40",
+     "3:00",
+     "5:00",
+     "5:10"
+    ],
+    "legs": [
+     {
+      "top": "20 min"
+     },
+     {
+      "top": "2 h"
+     },
+     {}
+    ],
+    "note": "From 3:00 to 5:00 is 2 hours",
+    "highlight": [
+     "l1"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "2:40",
+     "3:00",
+     "5:00",
+     "5:10"
+    ],
+    "legs": [
+     {
+      "top": "20 min"
+     },
+     {
+      "top": "2 h"
+     },
+     {
+      "top": "10 min"
+     }
+    ],
+    "note": "From 5:00 to 5:10 is 10 minutes",
+    "highlight": [
+     "l2"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "2:40",
+     "3:00",
+     "5:00",
+     "5:10"
+    ],
+    "legs": [
+     {
+      "top": "20 min"
+     },
+     {
+      "top": "2 h"
+     },
+     {
+      "top": "10 min"
+     }
+    ],
+    "note": "2 hours, and 20 + 10 minutes: 2 hours 30 minutes"
+   }
+  ]
+ },
+ "Q_CH17_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "09:45",
+    "?"
+   ],
+   "legs": [
+    {
+     "top": "4 h 35 min"
+    }
+   ],
+   "note": "Departs at 09:45. When does it arrive?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "09:45",
+     "13:45",
+     "?"
+    ],
+    "legs": [
+     {
+      "top": "4 h"
+     },
+     {
+      "top": "35 min"
+     }
+    ],
+    "note": "Add the 4 hours first: 09:45 plus 4 hours is 13:45",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "09:45",
+     "13:45",
+     "?"
+    ],
+    "legs": [
+     {
+      "top": "4 h"
+     },
+     {
+      "top": "35 min"
+     }
+    ],
+    "note": "Now add the minutes: 45 + 35 = 80",
+    "highlight": [
+     "l1"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "09:45",
+     "13:45",
+     "?"
+    ],
+    "legs": [
+     {
+      "top": "4 h"
+     },
+     {
+      "top": "35 min"
+     }
+    ],
+    "note": "80 minutes is 1 hour and 20 minutes",
+    "highlight": [
+     "l1"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "09:45",
+     "13:45",
+     "14:20"
+    ],
+    "legs": [
+     {
+      "top": "4 h"
+     },
+     {
+      "top": "35 min"
+     }
+    ],
+    "note": "14:20 is 2:20 PM on the 12-hour clock"
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH17_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1.0,
+       "label": "35 min",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "35 min",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "35 min",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "35 min",
+       "tone": "a"
+      }
+     ]
+    }
+   ],
+   "note": "Rings: the 1st at 9:00 am, the 5th at ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "From the 1st ring to the 5th ring there are 4 gaps",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       }
+      ],
+      "brace": "4 gaps"
+     }
+    ],
+    "note": "Find the time for 4 gaps of 35 minutes"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       }
+      ],
+      "brace": "140 min = 2 h 20 min"
+     }
+    ],
+    "note": "140 minutes is 2 hours 20 minutes"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "35 min",
+        "tone": "a"
+       }
+      ],
+      "brace": "2 h 20 min"
+     }
+    ],
+    "note": "2 hours 20 minutes after 9:00 am is 11:20 am"
+   }
+  ]
+ },
+ "G4A_TIME_004": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "135 min"
+     }
+    ],
+    "note": "Two full hours fit into 135 minutes",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "135 min"
+     }
+    ],
+    "note": "Find the minutes left over",
+    "highlight": [
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "1 hour",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "1 hour",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "15 min",
+        "tone": "a"
+       }
+      ],
+      "brace": "135 min"
+     }
+    ],
+    "note": "135 minutes is 2 hours 15 minutes"
+   }
+  ]
+ },
+ "G4A_TIME_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1.0,
+       "label": "1 day",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "1 day",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "1 day",
+       "tone": "a"
+      }
+     ],
+     "brace": "? hours"
+    }
+   ],
+   "note": "The journey takes exactly 3 days"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "24 h",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "24 h",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "24 h",
+        "tone": "a"
+       }
+      ],
+      "brace": "? hours"
+     }
+    ],
+    "note": "One full day has 24 hours",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "24 h",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "24 h",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "24 h",
+        "tone": "a"
+       }
+      ],
+      "brace": "? hours"
+     }
+    ],
+    "note": "Multiply 24 hours by 3 days",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "24 h",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "24 h",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "24 h",
+        "tone": "a"
+       }
+      ],
+      "brace": "72 hours"
+     }
+    ],
+    "note": "The journey takes 72 hours"
+   }
+  ]
+ },
+ "G4A_TIME_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1.0,
+       "label": "40 min",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "40 min",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "40 min",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "40 min",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "40 min",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "40 min",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "40 min",
+       "tone": "a"
+      }
+     ],
+     "brace": "1 week = ?"
+    }
+   ],
+   "note": "40 minutes every day for one week"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       }
+      ],
+      "brace": "1 week = ?"
+     }
+    ],
+    "note": "Find the minutes in one week",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       }
+      ],
+      "brace": "1 week = ?"
+     }
+    ],
+    "note": "Four hours are 240 minutes",
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4",
+     "b0s5"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       }
+      ],
+      "brace": "1 week = ?"
+     }
+    ],
+    "note": "Find the minutes left over",
+    "highlight": [
+     "b0s6"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "40 min",
+        "tone": "a"
+       }
+      ],
+      "brace": "4 h 40 min"
+     }
+    ],
+    "note": "He practises for 4 hours 40 minutes in one week"
+   }
+  ]
+ },
+ "Q_CH17_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "1 hour",
+       "tone": "a"
+      },
+      {
+       "units": 12.0,
+       "label": "1 hour",
+       "tone": "a"
+      },
+      {
+       "units": 12.0,
+       "label": "1 hour",
+       "tone": "a"
+      },
+      {
+       "units": 9.0,
+       "label": "45 min",
+       "tone": "a"
+      }
+     ],
+     "brace": "? minutes"
+    }
+   ],
+   "note": "3 hours 45 minutes"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 9.0,
+        "label": "45 min",
+        "tone": "a"
+       }
+      ],
+      "brace": "? minutes"
+     }
+    ],
+    "note": "One hour is 60 minutes, so 3 hours is 180 minutes",
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 9.0,
+        "label": "45 min",
+        "tone": "a"
+       }
+      ],
+      "brace": "225 minutes"
+     }
+    ],
+    "note": "Add the extra 45 minutes: 225 minutes",
+    "highlight": [
+     "b0s3"
+    ]
+   }
+  ]
+ }
+}

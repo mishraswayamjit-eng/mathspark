@@ -1,0 +1,5056 @@
+{
+ "G4A_PUZZLES_001": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "9",
+     "2",
+     "7"
+    ],
+    [
+     "4",
+     "6",
+     "8"
+    ],
+    [
+     "5",
+     "?",
+     "3"
+    ]
+   ],
+   "note": "Every row, column and diagonal has the same total"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "2",
+      "7"
+     ],
+     [
+      "4",
+      "6",
+      "8"
+     ],
+     [
+      "5",
+      "?",
+      "3"
+     ]
+    ],
+    "note": "Find the magic total from Row 1: 9 + 2 + 7",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "2",
+      "7"
+     ],
+     [
+      "4",
+      "6",
+      "8"
+     ],
+     [
+      "5",
+      "?",
+      "3"
+     ]
+    ],
+    "note": "Row 3 must add up to the same total",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "2",
+      "7"
+     ],
+     [
+      "4",
+      "6",
+      "8"
+     ],
+     [
+      "5",
+      "10",
+      "3"
+     ]
+    ],
+    "note": "The missing number is 10",
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "G4A_PUZZLES_009": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "16",
+     "2",
+     "P"
+    ],
+    [
+     "6",
+     "Q",
+     "14"
+    ],
+    [
+     "8",
+     "18",
+     "4"
+    ]
+   ],
+   "note": "Every row, column and diagonal has the same total. P + Q = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "2",
+      "P"
+     ],
+     [
+      "6",
+      "Q",
+      "14"
+     ],
+     [
+      "8",
+      "18",
+      "4"
+     ]
+    ],
+    "note": "Find the magic total from Row 3: 8 + 18 + 4",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "2",
+      "P"
+     ],
+     [
+      "6",
+      "Q",
+      "14"
+     ],
+     [
+      "8",
+      "18",
+      "4"
+     ]
+    ],
+    "note": "Use Row 1 to find P",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "2",
+      "P"
+     ],
+     [
+      "6",
+      "Q",
+      "14"
+     ],
+     [
+      "8",
+      "18",
+      "4"
+     ]
+    ],
+    "note": "Use Row 2 to find Q",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "2",
+      "P"
+     ],
+     [
+      "6",
+      "Q",
+      "14"
+     ],
+     [
+      "8",
+      "18",
+      "4"
+     ]
+    ],
+    "note": "Add P and Q"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "2",
+      "P"
+     ],
+     [
+      "6",
+      "Q",
+      "14"
+     ],
+     [
+      "8",
+      "18",
+      "4"
+     ]
+    ],
+    "note": "P + Q = 22"
+   }
+  ]
+ },
+ "G4A_PUZZLES_019": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "P",
+     "16",
+     "9"
+    ],
+    [
+     "□",
+     "11",
+     "□"
+    ],
+    [
+     "13",
+     "□",
+     "Q"
+    ]
+   ],
+   "note": "Every row, column and diagonal has the same total. Q = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "P",
+      "16",
+      "9"
+     ],
+     [
+      "□",
+      "11",
+      "□"
+     ],
+     [
+      "13",
+      "□",
+      "Q"
+     ]
+    ],
+    "note": "The diagonal 9, 11, 13 is complete: it gives the magic total"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "P",
+      "16",
+      "9"
+     ],
+     [
+      "□",
+      "11",
+      "□"
+     ],
+     [
+      "13",
+      "□",
+      "Q"
+     ]
+    ],
+    "note": "Use Row 1 to find P",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "P",
+      "16",
+      "9"
+     ],
+     [
+      "□",
+      "11",
+      "□"
+     ],
+     [
+      "13",
+      "□",
+      "Q"
+     ]
+    ],
+    "note": "The other diagonal is P, 11, Q. Use it to find Q"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "P",
+      "16",
+      "9"
+     ],
+     [
+      "□",
+      "11",
+      "□"
+     ],
+     [
+      "13",
+      "□",
+      "14"
+     ]
+    ],
+    "note": "Q is 14",
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_028": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "7",
+     "13",
+     "24"
+    ],
+    [
+     "3",
+     "6",
+     "Z"
+    ],
+    [
+     "16",
+     "49",
+     "169"
+    ]
+   ],
+   "note": "Each column follows the same rule. Z = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7",
+      "13",
+      "24"
+     ],
+     [
+      "3",
+      "6",
+      "Z"
+     ],
+     [
+      "16",
+      "49",
+      "169"
+     ]
+    ],
+    "note": "First column: top minus middle, then times itself, gives 16"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7",
+      "13",
+      "24"
+     ],
+     [
+      "3",
+      "6",
+      "Z"
+     ],
+     [
+      "16",
+      "49",
+      "169"
+     ]
+    ],
+    "note": "The second column follows the same rule and gives 49"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7",
+      "13",
+      "24"
+     ],
+     [
+      "3",
+      "6",
+      "Z"
+     ],
+     [
+      "16",
+      "49",
+      "169"
+     ]
+    ],
+    "note": "13 times 13 is 169, so 24 minus Z must be 13"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7",
+      "13",
+      "24"
+     ],
+     [
+      "3",
+      "6",
+      "11"
+     ],
+     [
+      "16",
+      "49",
+      "169"
+     ]
+    ],
+    "note": "Z is 11"
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_029": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "3",
+     "7",
+     "8"
+    ],
+    [
+     "9",
+     "21",
+     "24"
+    ],
+    [
+     "81",
+     "441",
+     "Q"
+    ]
+   ],
+   "note": "Each column follows the same rule. Q = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "7",
+      "8"
+     ],
+     [
+      "9",
+      "21",
+      "24"
+     ],
+     [
+      "81",
+      "441",
+      "Q"
+     ]
+    ],
+    "note": "First column: 3 becomes 9, then 9 becomes 81"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "7",
+      "8"
+     ],
+     [
+      "9",
+      "21",
+      "24"
+     ],
+     [
+      "81",
+      "441",
+      "Q"
+     ]
+    ],
+    "note": "Second column: multiply by 3, then multiply the result by itself"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "7",
+      "8"
+     ],
+     [
+      "9",
+      "21",
+      "24"
+     ],
+     [
+      "81",
+      "441",
+      "Q"
+     ]
+    ],
+    "note": "Third column: 8 times 3 is 24, so Q is 24 times 24"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "7",
+      "8"
+     ],
+     [
+      "9",
+      "21",
+      "24"
+     ],
+     [
+      "81",
+      "441",
+      "576"
+     ]
+    ],
+    "note": "Q is 576"
+   }
+  ]
+ },
+ "Q_CH15_009": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "2",
+     "7/3",
+     "2/3"
+    ],
+    [
+     "1/3",
+     "?",
+     "3"
+    ],
+    [
+     "8/3",
+     "1",
+     "4/3"
+    ]
+   ],
+   "note": "Every row, column and diagonal has the same total"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "7/3",
+      "2/3"
+     ],
+     [
+      "1/3",
+      "?",
+      "3"
+     ],
+     [
+      "8/3",
+      "1",
+      "4/3"
+     ]
+    ],
+    "note": "Add the top row. Write 2 as 6/3 so everything is in thirds",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "7/3",
+      "2/3"
+     ],
+     [
+      "1/3",
+      "?",
+      "3"
+     ],
+     [
+      "8/3",
+      "1",
+      "4/3"
+     ]
+    ],
+    "note": "Every row, column and diagonal must add up to 5"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "7/3",
+      "2/3"
+     ],
+     [
+      "1/3",
+      "?",
+      "3"
+     ],
+     [
+      "8/3",
+      "1",
+      "4/3"
+     ]
+    ],
+    "note": "Middle row: add 1/3 and 3. Write 3 as 9/3",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "7/3",
+      "2/3"
+     ],
+     [
+      "1/3",
+      "5/3",
+      "3"
+     ],
+     [
+      "8/3",
+      "1",
+      "4/3"
+     ]
+    ],
+    "note": "5 is 15/3. Take away 10/3: the missing number is 5/3",
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_004": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "9",
+     "15",
+     "6"
+    ],
+    [
+     "A",
+     "10",
+     "13"
+    ],
+    [
+     "14",
+     "5",
+     "B"
+    ]
+   ],
+   "note": "A magic square. Find A and B"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "15",
+      "6"
+     ],
+     [
+      "A",
+      "10",
+      "13"
+     ],
+     [
+      "14",
+      "5",
+      "B"
+     ]
+    ],
+    "note": "The top row is complete: add it to find the magic total",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "15",
+      "6"
+     ],
+     [
+      "7",
+      "10",
+      "13"
+     ],
+     [
+      "14",
+      "5",
+      "B"
+     ]
+    ],
+    "note": "Middle row: A is 30 − 23 = 7",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "15",
+      "6"
+     ],
+     [
+      "7",
+      "10",
+      "13"
+     ],
+     [
+      "14",
+      "5",
+      "11"
+     ]
+    ],
+    "note": "Bottom row: B is 30 − 19 = 11",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "15",
+      "6"
+     ],
+     [
+      "7",
+      "10",
+      "13"
+     ],
+     [
+      "14",
+      "5",
+      "11"
+     ]
+    ],
+    "note": "Check the first column: 9 + 7 + 14 = 30"
+   }
+  ]
+ },
+ "Q_CH15_006": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "4",
+     "?",
+     "8"
+    ],
+    [
+     "?",
+     "5",
+     "?"
+    ],
+    [
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "note": "Complete the magic square. Which number is NOT used?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "?",
+      "8"
+     ],
+     [
+      "?",
+      "5",
+      "?"
+     ],
+     [
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "note": "The centre is 5, so every line adds to 3 times 5",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "3",
+      "8"
+     ],
+     [
+      "?",
+      "5",
+      "?"
+     ],
+     [
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "note": "4 + 8 = 12, so the box between them is 15 − 12 = 3",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "3",
+      "8"
+     ],
+     [
+      "?",
+      "5",
+      "?"
+     ],
+     [
+      "2",
+      "7",
+      "6"
+     ]
+    ],
+    "note": "Opposite boxes add to 10: 6 with 4, 2 with 8, 7 with 3",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "3",
+      "8"
+     ],
+     [
+      "9",
+      "5",
+      "1"
+     ],
+     [
+      "2",
+      "7",
+      "6"
+     ]
+    ],
+    "note": "First column gives 9. Last column gives 1",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "3",
+      "8"
+     ],
+     [
+      "9",
+      "5",
+      "1"
+     ],
+     [
+      "2",
+      "7",
+      "6"
+     ]
+    ],
+    "note": "The square uses 1 to 9. The number not used is 11"
+   }
+  ]
+ },
+ "Q_CH15_010": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Z",
+     "□",
+     "4"
+    ],
+    [
+     "□",
+     "Y",
+     "15"
+    ],
+    [
+     "X",
+     "□",
+     "8"
+    ]
+   ],
+   "note": "Rows, columns and diagonals have equal sums. X + Y + Z = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Z",
+      "□",
+      "4"
+     ],
+     [
+      "□",
+      "Y",
+      "15"
+     ],
+     [
+      "X",
+      "□",
+      "8"
+     ]
+    ],
+    "note": "The last column is complete: add 4, 15 and 8"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Z",
+      "□",
+      "4"
+     ],
+     [
+      "□",
+      "9",
+      "15"
+     ],
+     [
+      "X",
+      "□",
+      "8"
+     ]
+    ],
+    "note": "The centre is one third of the magic sum, so Y is 9",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "10",
+      "□",
+      "4"
+     ],
+     [
+      "□",
+      "9",
+      "15"
+     ],
+     [
+      "X",
+      "□",
+      "8"
+     ]
+    ],
+    "note": "Diagonal Z, Y, 8: Z is 27 − 17 = 10",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "10",
+      "□",
+      "4"
+     ],
+     [
+      "□",
+      "9",
+      "15"
+     ],
+     [
+      "14",
+      "□",
+      "8"
+     ]
+    ],
+    "note": "Diagonal 4, Y, X: X is 27 − 13 = 14",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "10",
+      "□",
+      "4"
+     ],
+     [
+      "□",
+      "9",
+      "15"
+     ],
+     [
+      "14",
+      "□",
+      "8"
+     ]
+    ],
+    "note": "Now add the three letters"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "10",
+      "□",
+      "4"
+     ],
+     [
+      "□",
+      "9",
+      "15"
+     ],
+     [
+      "14",
+      "□",
+      "8"
+     ]
+    ],
+    "note": "X + Y + Z = 33"
+   }
+  ]
+ },
+ "Q_CH15_011": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "4",
+     "6",
+     "8"
+    ],
+    [
+     "3",
+     "4",
+     "?"
+    ],
+    [
+     "49",
+     "100",
+     "169"
+    ]
+   ],
+   "note": "Each column follows the same rule. Find the missing number"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "6",
+      "8"
+     ],
+     [
+      "3",
+      "4",
+      "?"
+     ],
+     [
+      "49",
+      "100",
+      "169"
+     ]
+    ],
+    "note": "First column: 4 + 3 = 7, and 7 × 7 = 49"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "6",
+      "8"
+     ],
+     [
+      "3",
+      "4",
+      "?"
+     ],
+     [
+      "49",
+      "100",
+      "169"
+     ]
+    ],
+    "note": "Second column: 6 + 4 = 10, and 10 × 10 = 100"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "6",
+      "8"
+     ],
+     [
+      "3",
+      "4",
+      "?"
+     ],
+     [
+      "49",
+      "100",
+      "169"
+     ]
+    ],
+    "note": "13 × 13 = 169, so the top two numbers must add to 13"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "6",
+      "8"
+     ],
+     [
+      "3",
+      "4",
+      "?"
+     ],
+     [
+      "49",
+      "100",
+      "169"
+     ]
+    ],
+    "note": "The top number is 8, so take 8 from 13"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "6",
+      "8"
+     ],
+     [
+      "3",
+      "4",
+      "5"
+     ],
+     [
+      "49",
+      "100",
+      "169"
+     ]
+    ],
+    "note": "The missing number is 5"
+   }
+  ]
+ },
+ "Q_CH15_013": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "3",
+     "4",
+     "25"
+    ],
+    [
+     "5",
+     "7",
+     "71"
+    ],
+    [
+     "6",
+     "8",
+     "?"
+    ]
+   ],
+   "note": "Each row follows the same rule. Find the missing number"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "4",
+      "25"
+     ],
+     [
+      "5",
+      "7",
+      "71"
+     ],
+     [
+      "6",
+      "8",
+      "?"
+     ]
+    ],
+    "note": "3 × 4 = 12. Double it to get 24, add 1 to get 25",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "4",
+      "25"
+     ],
+     [
+      "5",
+      "7",
+      "71"
+     ],
+     [
+      "6",
+      "8",
+      "?"
+     ]
+    ],
+    "note": "5 × 7 = 35. Double it to get 70, add 1 to get 71",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "4",
+      "25"
+     ],
+     [
+      "5",
+      "7",
+      "71"
+     ],
+     [
+      "6",
+      "8",
+      "?"
+     ]
+    ],
+    "note": "A rule must fit every row, so test it on each one",
+    "highlight": [
+     "r0",
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "4",
+      "25"
+     ],
+     [
+      "5",
+      "7",
+      "71"
+     ],
+     [
+      "6",
+      "8",
+      "?"
+     ]
+    ],
+    "note": "6 × 8 = 48. Double it to get 96, and add 1",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "4",
+      "25"
+     ],
+     [
+      "5",
+      "7",
+      "71"
+     ],
+     [
+      "6",
+      "8",
+      "97"
+     ]
+    ],
+    "note": "The missing number is 97",
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_015": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "n",
+     "□",
+     "6"
+    ],
+    [
+     "4",
+     "x",
+     "m"
+    ],
+    [
+     "16",
+     "□",
+     "□"
+    ]
+   ],
+   "note": "A magic square. Find m + n"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "n",
+      "□",
+      "6"
+     ],
+     [
+      "4",
+      "x",
+      "m"
+     ],
+     [
+      "16",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "Middle row and one diagonal share x: 4 + m equals 6 + 16",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "n",
+      "□",
+      "6"
+     ],
+     [
+      "4",
+      "x",
+      "m"
+     ],
+     [
+      "16",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "Find m",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "n",
+      "□",
+      "6"
+     ],
+     [
+      "4",
+      "11",
+      "m"
+     ],
+     [
+      "16",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "Each line is 3 times the middle: x = 11, each line adds to 33"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "n",
+      "□",
+      "6"
+     ],
+     [
+      "4",
+      "11",
+      "m"
+     ],
+     [
+      "16",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "The first column is n, 4 and 16. Find n"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "n",
+      "□",
+      "6"
+     ],
+     [
+      "4",
+      "11",
+      "m"
+     ],
+     [
+      "16",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "m + n = 31"
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_034": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4"
+     ],
+     [
+      "2"
+     ],
+     [
+      "64"
+     ]
+    ],
+    "note": "First column: 4 × 2 = 8, and 8 × 8 = 64"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "5"
+     ],
+     [
+      "2",
+      "2"
+     ],
+     [
+      "64",
+      "100"
+     ]
+    ],
+    "note": "Second column: 5 × 2 = 10, and 10 × 10 = 100"
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G4_WS2_CH15_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "4",
+     "3",
+     "8"
+    ],
+    [
+     "9",
+     "5",
+     "1"
+    ],
+    [
+     "□",
+     "□",
+     "□"
+    ]
+   ],
+   "note": "Complete the magic square. Which number is not used?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "3",
+      "8"
+     ],
+     [
+      "9",
+      "5",
+      "1"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "Find the total of a full row: 4 + 3 + 8",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "3",
+      "8"
+     ],
+     [
+      "9",
+      "5",
+      "1"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "Each column must also add up to 15. The first has 4 and 9"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "3",
+      "8"
+     ],
+     [
+      "9",
+      "5",
+      "1"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "Do the same for the second and third columns"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "3",
+      "8"
+     ],
+     [
+      "9",
+      "5",
+      "1"
+     ],
+     [
+      "2",
+      "7",
+      "6"
+     ]
+    ],
+    "note": "The bottom row is 2, 7, 6",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "3",
+      "8"
+     ],
+     [
+      "9",
+      "5",
+      "1"
+     ],
+     [
+      "2",
+      "7",
+      "6"
+     ]
+    ],
+    "note": "3, 6 and 9 are all in the square. 11 is not used"
+   }
+  ]
+ },
+ "PYQ_2019_Q31": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "□",
+     "□",
+     "□"
+    ],
+    [
+     "□",
+     "?",
+     "□"
+    ],
+    [
+     "□",
+     "□",
+     "□"
+    ]
+   ],
+   "note": "Every line of 3 boxes adds up to 54"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "?",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "The central number is always one third of the magic sum",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "?",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "The magic sum is 54, so divide 54 by 3",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "18",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "The number in the central box is 18",
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "□",
+     "□",
+     "□"
+    ],
+    [
+     "□",
+     "8",
+     "□"
+    ],
+    [
+     "□",
+     "□",
+     "□"
+    ]
+   ],
+   "note": "Magic constant = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "8",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "The magic constant is 3 times the central number",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "8",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "The centre is 8, so multiply 8 by 3",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "8",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "The magic constant is 24"
+   }
+  ]
+ },
+ "Q_CH15_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "□",
+     "□",
+     "□"
+    ],
+    [
+     "□",
+     "?",
+     "□"
+    ],
+    [
+     "□",
+     "□",
+     "□"
+    ]
+   ],
+   "note": "All nine numbers add up to 72. Centre = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "?",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "Three rows with equal sums: share 72 among the 3 rows",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "?",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "Each row adds to 24. The centre is one third of a row",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "8",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "Check: 9 boxes with a centre of 8 give 9 × 8 = 72",
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "6",
+     "15",
+     "3"
+    ],
+    [
+     "□",
+     "?",
+     "□"
+    ],
+    [
+     "□",
+     "□",
+     "□"
+    ]
+   ],
+   "note": "Find the magic constant and the centre number"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6",
+      "15",
+      "3"
+     ],
+     [
+      "□",
+      "?",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "The magic constant is the sum of any row: add the first row",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6",
+      "15",
+      "3"
+     ],
+     [
+      "□",
+      "?",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "The constant is 3 times the centre, so divide it by 3",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6",
+      "15",
+      "3"
+     ],
+     [
+      "□",
+      "?",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "The centre is a new number, one third of 24",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6",
+      "15",
+      "3"
+     ],
+     [
+      "□",
+      "8",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "Constant = 24, Centre = 8",
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_002": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "7",
+      "6"
+     ],
+     [
+      "9",
+      "5",
+      "1"
+     ],
+     [
+      "4",
+      "3",
+      "8"
+     ]
+    ],
+    "note": "A magic square you know. The central box holds 5",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "7",
+      "6"
+     ],
+     [
+      "9",
+      "5",
+      "1"
+     ],
+     [
+      "4",
+      "3",
+      "8"
+     ]
+    ],
+    "note": "Add any row to find the magic constant",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "7",
+      "6"
+     ],
+     [
+      "9",
+      "5",
+      "1"
+     ],
+     [
+      "4",
+      "3",
+      "8"
+     ]
+    ],
+    "note": "Compare 15 with the central number 5: 15 is 3 times 5",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "7",
+      "6"
+     ],
+     [
+      "9",
+      "5",
+      "1"
+     ],
+     [
+      "4",
+      "3",
+      "8"
+     ]
+    ],
+    "note": "The magic constant is 3 × the central box number"
+   }
+  ]
+ },
+ "Q_CH15_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "·",
+     "1",
+     "·"
+    ],
+    [
+     "?",
+     "5",
+     "?"
+    ],
+    [
+     "·",
+     "?",
+     "·"
+    ]
+   ],
+   "note": "3, 7 and 9 go at the other ends. Both lines have the same sum"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "·",
+      "1",
+      "·"
+     ],
+     [
+      "?",
+      "5",
+      "?"
+     ],
+     [
+      "·",
+      "?",
+      "·"
+     ]
+    ],
+    "note": "Total = 1 + 3 + 5 + 7 + 9 = 25"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "·",
+      "1",
+      "·"
+     ],
+     [
+      "?",
+      "5",
+      "?"
+     ],
+     [
+      "·",
+      "?",
+      "·"
+     ]
+    ],
+    "note": "Each line = (25 + 5) ÷ 2 = 15"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "·",
+      "1",
+      "·"
+     ],
+     [
+      "?",
+      "5",
+      "?"
+     ],
+     [
+      "·",
+      "9",
+      "·"
+     ]
+    ],
+    "note": "The line with 1: 1 + 5 + ? = 15, so ? = 9"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "·",
+      "1",
+      "·"
+     ],
+     [
+      "?",
+      "5",
+      "?"
+     ],
+     [
+      "·",
+      "9",
+      "·"
+     ]
+    ],
+    "note": "Opposite to 1 is 9"
+   }
+  ]
+ },
+ "G4A_PUZZLES_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "4",
+     "11",
+     "?"
+    ]
+   ],
+   "note": "Every row adds up to 21"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "11",
+      "?"
+     ]
+    ],
+    "note": "Add the two numbers you know: 4 + 11"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "11",
+      "?"
+     ]
+    ],
+    "note": "Find what is needed to reach 21"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "11",
+      "6"
+     ]
+    ],
+    "note": "The missing number is 6"
+   }
+  ]
+ },
+ "Q_CH15_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 3,
+   "max": 11,
+   "step": 1,
+   "note": "The numbers 3 to 11 make a magic square. Which goes in the centre?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 3,
+    "max": 11,
+    "step": 1,
+    "note": "Write the nine numbers in order"
+   },
+   {
+    "kind": "numberLine",
+    "min": 3,
+    "max": 11,
+    "step": 1,
+    "points": [
+     {
+      "at": 7,
+      "label": "7"
+     }
+    ],
+    "note": "The middle number, 7, goes in the centre",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 3,
+    "max": 11,
+    "step": 1,
+    "points": [
+     {
+      "at": 7,
+      "label": "7"
+     }
+    ],
+    "note": "Check: each row adds to 21, and the centre is one third of 21"
+   },
+   {
+    "kind": "numberLine",
+    "min": 3,
+    "max": 11,
+    "step": 1,
+    "points": [
+     {
+      "at": 7,
+      "label": "7"
+     }
+    ],
+    "note": "The number in the central box is 7",
+    "highlight": [
+     "p0"
+    ]
+   }
+  ]
+ },
+ "Q_CH15_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 11,
+   "max": 19,
+   "step": 1,
+   "note": "The numbers 11 to 19 fill the square. Magic constant = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 11,
+    "max": 19,
+    "step": 1,
+    "points": [
+     {
+      "at": 15,
+      "label": "15"
+     }
+    ],
+    "note": "The middle number, 15, goes in the centre",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 11,
+    "max": 19,
+    "step": 1,
+    "points": [
+     {
+      "at": 15,
+      "label": "15"
+     }
+    ],
+    "note": "The magic constant is 3 times the centre: 3 × 15"
+   },
+   {
+    "kind": "numberLine",
+    "min": 11,
+    "max": 19,
+    "step": 1,
+    "points": [
+     {
+      "at": 15,
+      "label": "15"
+     }
+    ],
+    "note": "Check: the nine numbers add to 135, and one third of 135 is 45"
+   },
+   {
+    "kind": "numberLine",
+    "min": 11,
+    "max": 19,
+    "step": 1,
+    "points": [
+     {
+      "at": 15,
+      "label": "15"
+     }
+    ],
+    "note": "The magic constant is 45"
+   }
+  ]
+ },
+ "Q_CH15_025": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 5,
+    "max": 21,
+    "step": 2,
+    "note": "The nine odd numbers starting from 5"
+   },
+   {
+    "kind": "numberLine",
+    "min": 5,
+    "max": 21,
+    "step": 2,
+    "points": [
+     {
+      "at": 13,
+      "label": "13"
+     }
+    ],
+    "note": "The middle number is the fifth one: 13",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 5,
+    "max": 21,
+    "step": 2,
+    "points": [
+     {
+      "at": 5,
+      "label": "5"
+     },
+     {
+      "at": 13,
+      "label": "13"
+     },
+     {
+      "at": 21,
+      "label": "21"
+     }
+    ],
+    "note": "Check: 5 + 13 + 21 = 39, which is 3 times 13"
+   },
+   {
+    "kind": "numberLine",
+    "min": 5,
+    "max": 21,
+    "step": 2,
+    "points": [
+     {
+      "at": 13,
+      "label": "13"
+     }
+    ],
+    "note": "The number in the centre is 13",
+    "highlight": [
+     "p0"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Cups: 15",
+   "rightTitle": "Plates: 21",
+   "left": "cup only",
+   "both": "?",
+   "right": "plate only",
+   "note": "25 trays in all. How many have both?"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "Cups: 15",
+    "rightTitle": "Plates: 21",
+    "left": "cup only",
+    "both": "?",
+    "right": "plate only",
+    "note": "Add the trays with cups and the trays with plates"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Cups: 15",
+    "rightTitle": "Plates: 21",
+    "left": "cup only",
+    "both": "?",
+    "right": "plate only",
+    "note": "There are only 25 trays: the extra ones were counted twice",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Cups: 15",
+    "rightTitle": "Plates: 21",
+    "left": "cup only",
+    "both": "11",
+    "right": "plate only",
+    "note": "11 trays have both a cup and a plate",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_035": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4.65,
+       "tone": "a"
+      },
+      {
+       "units": 1.94,
+       "label": "You",
+       "tone": "b"
+      },
+      {
+       "units": 12.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 3.1,
+       "label": "Friend",
+       "tone": "b"
+      },
+      {
+       "units": 6.97,
+       "tone": "a"
+      }
+     ],
+     "brace": "63 students"
+    }
+   ],
+   "note": "You are 13th from the beginning. Your friend is 19th from the end"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.65,
+        "tone": "a"
+       },
+       {
+        "units": 1.94,
+        "label": "You",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 3.1,
+        "label": "Friend",
+        "tone": "b"
+       },
+       {
+        "units": 6.97,
+        "label": "18 behind",
+        "tone": "a"
+       }
+      ],
+      "brace": "63 students"
+     }
+    ],
+    "note": "19th from the end means 18 students stand behind your friend",
+    "highlight": [
+     "b0s4"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.65,
+        "tone": "a"
+       },
+       {
+        "units": 1.94,
+        "label": "You",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 3.1,
+        "label": "Friend",
+        "tone": "b"
+       },
+       {
+        "units": 6.97,
+        "label": "18 behind",
+        "tone": "a"
+       }
+      ],
+      "brace": "63 students"
+     }
+    ],
+    "note": "You are 13th and your friend is 45th: between are places 14 to 44",
+    "highlight": [
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.65,
+        "tone": "a"
+       },
+       {
+        "units": 1.94,
+        "label": "You",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "31",
+        "tone": "c"
+       },
+       {
+        "units": 3.1,
+        "label": "Friend",
+        "tone": "b"
+       },
+       {
+        "units": 6.97,
+        "label": "18 behind",
+        "tone": "a"
+       }
+      ],
+      "brace": "63 students"
+     }
+    ],
+    "note": "31 students are between you",
+    "highlight": [
+     "b0s2"
+    ]
+   }
+  ]
+ },
+ "G4A_PUZZLES_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "set",
+   "total": 10,
+   "item": "animals",
+   "note": "10 heads and 28 legs. How many are goats?"
+  },
+  "stepFigures": [
+   {
+    "kind": "set",
+    "total": 10,
+    "item": "animals",
+    "note": "Suppose all 10 animals were hens with 2 legs each"
+   },
+   {
+    "kind": "set",
+    "total": 10,
+    "item": "animals",
+    "note": "Find the extra legs"
+   },
+   {
+    "kind": "set",
+    "total": 10,
+    "item": "animals",
+    "note": "Each goat has 2 more legs than a hen"
+   },
+   {
+    "kind": "set",
+    "total": 10,
+    "groups": 10,
+    "shadedGroups": 4,
+    "item": "animals",
+    "note": "Check with 4 goats (shaded) and 6 hens",
+    "highlight": [
+     "shaded"
+    ]
+   },
+   {
+    "kind": "set",
+    "total": 10,
+    "groups": 10,
+    "shadedGroups": 4,
+    "item": "animals",
+    "note": "The farmer has 4 goats",
+    "highlight": [
+     "shaded"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "more than 8",
+     "4 more than ones",
+     "odd"
+    ]
+   ],
+   "headers": [
+    "Hundreds",
+    "Tens",
+    "Ones"
+   ],
+   "note": "A 3-digit odd number. Sum of its digits = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "4 more than ones",
+      "odd"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The only digit more than 8 is 9"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "4 more than ones",
+      "1, 3 or 5"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The tens digit must still be a single digit"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "5",
+      "1"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Try ones digit 1: the tens digit is 5 and the number is 951"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "5",
+      "1"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Add the digits of 951",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "951",
+      "15"
+     ],
+     [
+      "973",
+      "19"
+     ],
+     [
+      "995",
+      "23"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digit sum"
+    ],
+    "note": "973 and 995 give 19 and 23, which are not choices",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "213",
+     "a",
+     "b"
+    ]
+   ],
+   "headers": [
+    "First digits",
+    "Tens",
+    "Ones"
+   ],
+   "note": "Remainder under 10 when divided by 100. Digits add up to 13"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "213",
+      "a",
+      "b"
+     ]
+    ],
+    "headers": [
+     "First digits",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Dividing by 100, the remainder is the last two digits, ab"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "213",
+      "0",
+      "b"
+     ]
+    ],
+    "headers": [
+     "First digits",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The remainder is less than 10, so the tens digit a must be 0"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "213",
+      "0",
+      "b"
+     ]
+    ],
+    "headers": [
+     "First digits",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Add the digits you know"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "213",
+      "0",
+      "b"
+     ]
+    ],
+    "headers": [
+     "First digits",
+     "Tens",
+     "Ones"
+    ],
+    "note": "All five digits add up to 13, so b is what is left"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "213",
+      "0",
+      "7"
+     ]
+    ],
+    "headers": [
+     "First digits",
+     "Tens",
+     "Ones"
+    ],
+    "note": "b = 7"
+   }
+  ]
+ },
+ "G4A_PUZZLES_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "4",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Tens",
+    "Ones"
+   ],
+   "note": "The two digits add up to 11"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "The tens digit is 4",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "Find the ones digit: 11 − 4"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "The number is 47",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "G4A_PUZZLES_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "4P + 25",
+   "right": "71",
+   "note": "4P is a two-digit number. Which digit is P?"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "4P",
+    "right": "71 − 25",
+    "note": "Work backwards to find the two-digit number 4P"
+   },
+   {
+    "kind": "balance",
+    "left": "46 + 25",
+    "right": "71",
+    "note": "So 4P is 46",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "46 + 25",
+    "right": "71",
+    "note": "P is 6"
+   }
+  ]
+ },
+ "G4A_PUZZLES_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "3",
+     "P"
+    ],
+    [
+     "P",
+     "8"
+    ],
+    [
+     "8",
+     "2"
+    ]
+   ],
+   "headers": [
+    "Tens",
+    "Ones"
+   ],
+   "note": "3P + P8 = 82: the top two rows add up to the bottom row"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "P"
+     ],
+     [
+      "P",
+      "8"
+     ],
+     [
+      "8",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "Ones column: P + 8 must end in 2. Since 4 + 8 = 12, try 4"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "4"
+     ],
+     [
+      "4",
+      "8"
+     ],
+     [
+      "8",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "Check the whole sum with P as 4"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "4"
+     ],
+     [
+      "4",
+      "8"
+     ],
+     [
+      "8",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "The sum is true, so P is 4"
+   }
+  ]
+ },
+ "G4A_PUZZLES_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "P",
+     "Q"
+    ],
+    [
+     "Q",
+     "P"
+    ]
+   ],
+   "headers": [
+    "Tens",
+    "Ones"
+   ],
+   "note": "PQ + QP = 77, and P is 1 more than Q"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "P",
+      "Q"
+     ],
+     [
+      "Q",
+      "P"
+     ],
+     [
+      "7",
+      "7"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "In each column P and Q are added, so P + Q = 7"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "P",
+      "Q"
+     ],
+     [
+      "Q",
+      "P"
+     ],
+     [
+      "7",
+      "7"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "Two digits that add up to 7 and differ by 1 are 4 and 3"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "3"
+     ],
+     [
+      "3",
+      "4"
+     ],
+     [
+      "7",
+      "7"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "P is the bigger digit, so P is 4 and Q is 3"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "3"
+     ],
+     [
+      "3",
+      "4"
+     ],
+     [
+      "7",
+      "7"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "Check the sum: 43 + 34 = 77"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "3"
+     ],
+     [
+      "3",
+      "4"
+     ],
+     [
+      "7",
+      "7"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "The number PQ is 43",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "G4A_PUZZLES_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "2R5 × 3",
+   "right": "735",
+   "note": "R stands for one digit"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2R5",
+    "right": "735 ÷ 3",
+    "note": "Undo the multiplication"
+   },
+   {
+    "kind": "balance",
+    "left": "2R5",
+    "right": "245",
+    "note": "So 2R5 is 245, and R is the tens digit"
+   },
+   {
+    "kind": "balance",
+    "left": "2R5",
+    "right": "245",
+    "note": "R is 4"
+   }
+  ]
+ },
+ "G4A_PUZZLES_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "double the ones",
+     "hundreds + ones",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Hundreds",
+    "Tens",
+    "Ones"
+   ],
+   "note": "The three digits add up to 12"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "3",
+      "1"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Try ones digit 1: the digits add up to 6, which is too small"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "6",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Try ones digit 2: hundreds digit 4, tens digit 6"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "6",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "All the clues fit"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "6",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The number is 462",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "G4A_PUZZLES_014": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "14",
+      "21",
+      "28"
+     ],
+     [
+      "35",
+      "42",
+      "49"
+     ]
+    ],
+    "note": "The 2-digit multiples of 7 below 50"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "14",
+      "5"
+     ],
+     [
+      "21",
+      "3"
+     ],
+     [
+      "28",
+      "10"
+     ],
+     [
+      "35",
+      "8"
+     ],
+     [
+      "42",
+      "6"
+     ],
+     [
+      "49",
+      "13"
+     ]
+    ],
+    "headers": [
+     "Multiple of 7",
+     "Digit total"
+    ],
+    "note": "Add the digits of each one"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "14",
+      "5"
+     ],
+     [
+      "21",
+      "3"
+     ],
+     [
+      "28",
+      "10"
+     ],
+     [
+      "35",
+      "8"
+     ],
+     [
+      "42",
+      "6"
+     ],
+     [
+      "49",
+      "13"
+     ]
+    ],
+    "headers": [
+     "Multiple of 7",
+     "Digit total"
+    ],
+    "note": "Only one has digits adding up to 6. The number is 42",
+    "highlight": [
+     "r4"
+    ]
+   }
+  ]
+ },
+ "PYQ_2018_Q24": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "4",
+     "4",
+     "4"
+    ],
+    [
+     "9",
+     "9",
+     "9"
+    ]
+   ],
+   "note": "He uses 5 cards: a 3-digit number and a 2-digit number"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "4",
+      "4"
+     ],
+     [
+      "9",
+      "9",
+      "9"
+     ]
+    ],
+    "note": "3-digit: 444 to 499, or 944 to 999. 2-digit: 44 to 99"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "4",
+      "4"
+     ],
+     [
+      "9",
+      "9",
+      "9"
+     ]
+    ],
+    "note": "Differences run from 345 to 455, or from 845 to 955"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "4",
+      "4"
+     ],
+     [
+      "9",
+      "9",
+      "9"
+     ]
+    ],
+    "note": "With only 4s and 9s, the difference ends in 0 or 5"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3-digit number",
+      "499"
+     ],
+     [
+      "2-digit number",
+      "49"
+     ]
+    ],
+    "note": "499 − 49 uses two 4s and three 9s"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3-digit number",
+      "499"
+     ],
+     [
+      "2-digit number",
+      "49"
+     ]
+    ],
+    "note": "So the difference can be 450"
+   }
+  ]
+ },
+ "PYQ_2018_Q33": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "★",
+      "4"
+     ]
+    ],
+    "note": "8 + 4 = 12 ends in 2, so the palindrome looks like 4 ★ 4"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "2",
+      "4"
+     ]
+    ],
+    "note": "424 + 2018 = 2442, which is a palindrome"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "2",
+      "4"
+     ]
+    ],
+    "note": "Its digits add up to 4 + 2 + 4 = 10"
+   }
+  ]
+ },
+ "Q_CH16_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "1",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "M",
+    "A",
+    "T",
+    "H"
+   ],
+   "note": "A = 1, B = 2, C = 3 and so on. Add the four letters"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "13",
+      "1",
+      "20",
+      "8"
+     ]
+    ],
+    "headers": [
+     "M",
+     "A",
+     "T",
+     "H"
+    ],
+    "note": "Find each letter's place in the alphabet"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "13",
+      "1",
+      "20",
+      "8"
+     ]
+    ],
+    "headers": [
+     "M",
+     "A",
+     "T",
+     "H"
+    ],
+    "note": "Add the four numbers"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "13",
+      "1",
+      "20",
+      "8"
+     ]
+    ],
+    "headers": [
+     "M",
+     "A",
+     "T",
+     "H"
+    ],
+    "note": "The sum of the letters in MATH is 42"
+   }
+  ]
+ },
+ "Q_CH15_014": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "5 + 3",
+     "28"
+    ],
+    [
+     "9 + 1",
+     "810"
+    ],
+    [
+     "8 + 6",
+     "214"
+    ],
+    [
+     "5 + 4",
+     "?"
+    ]
+   ],
+   "note": "What number should replace the question mark?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 + 3",
+      "28"
+     ],
+     [
+      "9 + 1",
+      "810"
+     ],
+     [
+      "8 + 6",
+      "214"
+     ],
+     [
+      "5 + 4",
+      "?"
+     ]
+    ],
+    "note": "5 − 3 = 2 and 5 + 3 = 8. Side by side they make 28",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 + 3",
+      "28"
+     ],
+     [
+      "9 + 1",
+      "810"
+     ],
+     [
+      "8 + 6",
+      "214"
+     ],
+     [
+      "5 + 4",
+      "?"
+     ]
+    ],
+    "note": "9 and 1 give 8 and 10. 8 and 6 give 2 and 14",
+    "highlight": [
+     "r1",
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 + 3",
+      "28"
+     ],
+     [
+      "9 + 1",
+      "810"
+     ],
+     [
+      "8 + 6",
+      "214"
+     ],
+     [
+      "5 + 4",
+      "?"
+     ]
+    ],
+    "note": "The rule: write the difference first, then the sum"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 + 3",
+      "28"
+     ],
+     [
+      "9 + 1",
+      "810"
+     ],
+     [
+      "8 + 6",
+      "214"
+     ],
+     [
+      "5 + 4",
+      "?"
+     ]
+    ],
+    "note": "For 5 and 4: the difference is 1 and the sum is 9",
+    "highlight": [
+     "r3"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 + 3",
+      "28"
+     ],
+     [
+      "9 + 1",
+      "810"
+     ],
+     [
+      "8 + 6",
+      "214"
+     ],
+     [
+      "5 + 4",
+      "19"
+     ]
+    ],
+    "note": "Writing 1 and then 9 gives 19",
+    "highlight": [
+     "r3"
+    ]
+   }
+  ]
+ },
+ "G4A_PUZZLES_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1.0,
+       "label": "star",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "star",
+       "tone": "a"
+      }
+     ],
+     "brace": "14"
+    },
+    {
+     "segments": [
+      {
+       "units": 1.0,
+       "label": "star",
+       "tone": "b"
+      },
+      {
+       "units": 1.0,
+       "label": "moon",
+       "tone": "b"
+      }
+     ],
+     "brace": "10"
+    }
+   ],
+   "note": "What is the moon worth?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "brace": "14"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "moon",
+        "tone": "b"
+       }
+      ],
+      "brace": "10"
+     }
+    ],
+    "note": "Two equal stars make 14, so one star is 7",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "brace": "14"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "moon",
+        "tone": "b"
+       }
+      ],
+      "brace": "10"
+     }
+    ],
+    "note": "A star plus a moon makes 10",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 7.0,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "brace": "14"
+     },
+     {
+      "segments": [
+       {
+        "units": 7.0,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "3",
+        "tone": "b"
+       }
+      ],
+      "brace": "10"
+     }
+    ],
+    "note": "The moon is worth 3",
+    "highlight": [
+     "b1s1"
+    ]
+   }
+  ]
+ },
+ "G4A_PUZZLES_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1.0,
+       "label": "pencil",
+       "tone": "a"
+      },
+      {
+       "units": 1.0,
+       "label": "eraser",
+       "tone": "b"
+      }
+     ],
+     "brace": "₹12"
+    },
+    {
+     "segments": [
+      {
+       "units": 1.0,
+       "label": "pencil",
+       "tone": "b"
+      },
+      {
+       "units": 1.0,
+       "label": "eraser",
+       "tone": "b"
+      },
+      {
+       "units": 1.0,
+       "label": "pencil",
+       "tone": "b"
+      }
+     ],
+     "brace": "₹19"
+    }
+   ],
+   "note": "How much does the eraser cost?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "pencil",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "eraser",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹12"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "pencil",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "eraser",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "pencil",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹19"
+     }
+    ],
+    "note": "The second purchase has one extra pencil: find its cost",
+    "highlight": [
+     "b1s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "₹7",
+        "tone": "a"
+       },
+       {
+        "units": 1.0,
+        "label": "eraser",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹12"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "₹7",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "eraser",
+        "tone": "b"
+       },
+       {
+        "units": 1.0,
+        "label": "₹7",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹19"
+     }
+    ],
+    "note": "A pencil and an eraser cost ₹12 together",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.0,
+        "label": "₹7",
+        "tone": "a"
+       },
+       {
+        "units": 5.0,
+        "label": "₹5",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹12"
+     },
+     {
+      "segments": [
+       {
+        "units": 7.0,
+        "label": "₹7",
+        "tone": "b"
+       },
+       {
+        "units": 5.0,
+        "label": "₹5",
+        "tone": "b"
+       },
+       {
+        "units": 7.0,
+        "label": "₹7",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹19"
+     }
+    ],
+    "note": "The eraser costs ₹5",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "G4A_PUZZLES_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "? × 2 + 3",
+   "right": "17",
+   "note": "Double the number, then add 3. The answer is 17"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "? × 2",
+    "right": "14",
+    "note": "Undo the adding of 3"
+   },
+   {
+    "kind": "balance",
+    "left": "?",
+    "right": "7",
+    "note": "Undo the doubling"
+   },
+   {
+    "kind": "balance",
+    "left": "7 × 2 + 3",
+    "right": "17",
+    "note": "Check: double 7, then add 3"
+   },
+   {
+    "kind": "balance",
+    "left": "7 × 2 + 3",
+    "right": "17",
+    "note": "The number was 7"
+   }
+  ]
+ },
+ "Q_CH15_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "A + B",
+     "10"
+    ],
+    [
+     "B + C",
+     "15"
+    ],
+    [
+     "A + C",
+     "11"
+    ]
+   ],
+   "note": "A + B + C = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "A + B",
+      "10"
+     ],
+     [
+      "B + C",
+      "15"
+     ],
+     [
+      "A + C",
+      "11"
+     ]
+    ],
+    "note": "Add the three sums together"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "A + B",
+      "10"
+     ],
+     [
+      "B + C",
+      "15"
+     ],
+     [
+      "A + C",
+      "11"
+     ]
+    ],
+    "note": "36 is two lots of A + B + C: each letter is counted twice"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "A + B",
+      "10"
+     ],
+     [
+      "B + C",
+      "15"
+     ],
+     [
+      "A + C",
+      "11"
+     ]
+    ],
+    "note": "Halve 36 to get one lot"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "A + B",
+      "10"
+     ],
+     [
+      "B + C",
+      "15"
+     ],
+     [
+      "A + C",
+      "11"
+     ]
+    ],
+    "note": "Check: C is 8, A is 3 and B is 7. So A + B + C = 18"
+   }
+  ]
+ },
+ "Q_CH15_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2.0,
+       "tone": "b"
+      },
+      {
+       "units": 2.0,
+       "tone": "b"
+      },
+      {
+       "units": 2.0,
+       "tone": "b"
+      }
+     ],
+     "label": "blue"
+    },
+    {
+     "segments": [
+      {
+       "units": 3.0,
+       "tone": "a"
+      },
+      {
+       "units": 3.0,
+       "tone": "a"
+      }
+     ],
+     "label": "red"
+    }
+   ],
+   "note": "Three blue = two red. One red = three green"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.0,
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "tone": "b"
+       }
+      ],
+      "label": "blue"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "tone": "a"
+       }
+      ],
+      "label": "red"
+     }
+    ],
+    "note": "3B = 2R and R = 3G"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.0,
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "tone": "b"
+       }
+      ],
+      "label": "blue"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "tone": "a"
+       }
+      ],
+      "label": "red"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       }
+      ],
+      "label": "green"
+     }
+    ],
+    "note": "Replace each red by 3 greens: 3B = 2 × 3G = 6G",
+    "highlight": [
+     "b2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.0,
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "tone": "b"
+       }
+      ],
+      "label": "blue"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "tone": "a"
+       }
+      ],
+      "label": "red"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       }
+      ],
+      "label": "green"
+     }
+    ],
+    "note": "3 blues = 6 greens"
+   }
+  ]
+ },
+ "G4A_PUZZLES_005": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Amit",
+      "Bina",
+      "Chetan"
+     ]
+    ],
+    "note": "Tallest on the left: Amit, Bina, Chetan"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Amit",
+      "Bina",
+      "Chetan",
+      "Divya"
+     ]
+    ],
+    "note": "Divya is shorter than Chetan, so she comes last"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Amit",
+      "Bina",
+      "Chetan",
+      "Divya"
+     ]
+    ],
+    "note": "The tallest is Amit"
+   }
+  ]
+ },
+ "G4A_PUZZLES_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Isha",
+     "not the dog"
+    ],
+    [
+     "Jay",
+     "cat"
+    ],
+    [
+     "Kiran",
+     "rabbit"
+    ],
+    [
+     "Lata",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Child",
+    "Pet"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Isha",
+      "not the dog"
+     ],
+     [
+      "Jay",
+      "cat"
+     ],
+     [
+      "Kiran",
+      "rabbit"
+     ],
+     [
+      "Lata",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Pet"
+    ],
+    "note": "The cat and the rabbit are taken: dog and parrot are left",
+    "highlight": [
+     "r1",
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Isha",
+      "parrot"
+     ],
+     [
+      "Jay",
+      "cat"
+     ],
+     [
+      "Kiran",
+      "rabbit"
+     ],
+     [
+      "Lata",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Pet"
+    ],
+    "note": "Isha does not have the dog, so Isha has the parrot",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Isha",
+      "parrot"
+     ],
+     [
+      "Jay",
+      "cat"
+     ],
+     [
+      "Kiran",
+      "rabbit"
+     ],
+     [
+      "Lata",
+      "dog"
+     ]
+    ],
+    "headers": [
+     "Child",
+     "Pet"
+    ],
+    "note": "The only pet left for Lata is the dog",
+    "highlight": [
+     "r3"
+    ]
+   }
+  ]
+ },
+ "G4A_PUZZLES_017": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Farah",
+      "Dev",
+      "Esha"
+     ]
+    ],
+    "note": "First on the left: Farah, then Dev, then Esha"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Farah",
+      "Dev",
+      "Hari",
+      "Esha"
+     ]
+    ],
+    "note": "Hari is between Dev and Esha"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Farah",
+      "Dev",
+      "Hari",
+      "Esha",
+      "Gita"
+     ]
+    ],
+    "note": "Gita is last"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Farah",
+      "Dev",
+      "Hari",
+      "Esha",
+      "Gita"
+     ]
+    ],
+    "note": "The child who came second is Dev"
+   }
+  ]
+ },
+ "G4A_PUZZLES_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "?"
+    ],
+    [
+     "2",
+     "?"
+    ],
+    [
+     "3",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Face she sees",
+    "Opposite face"
+   ],
+   "note": "Opposite faces always add up to 7"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "?"
+     ],
+     [
+      "2",
+      "?"
+     ],
+     [
+      "3",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Face she sees",
+     "Opposite face"
+    ],
+    "note": "Find the face opposite each face she can see"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "?"
+     ],
+     [
+      "2",
+      "?"
+     ],
+     [
+      "3",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Face she sees",
+     "Opposite face"
+    ],
+    "note": "Add the three hidden faces"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "?"
+     ],
+     [
+      "2",
+      "?"
+     ],
+     [
+      "3",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Face she sees",
+     "Opposite face"
+    ],
+    "note": "The hidden faces total 15"
+   }
+  ]
+ },
+ "G4A_PUZZLES_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Box 1",
+     "in this box"
+    ],
+    [
+     "Box 2",
+     "not in this box"
+    ],
+    [
+     "Box 3",
+     "not in Box 1"
+    ]
+   ],
+   "headers": [
+    "Label on",
+    "Laddoo is"
+   ],
+   "note": "Only one of the three labels is true"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Box 1",
+      "in this box",
+      "true"
+     ],
+     [
+      "Box 2",
+      "not in this box",
+      "true"
+     ],
+     [
+      "Box 3",
+      "not in Box 1",
+      "untrue"
+     ]
+    ],
+    "headers": [
+     "Label on",
+     "Laddoo is",
+     "If in Box 1"
+    ],
+    "note": "If it is in Box 1, two labels are true. This does not fit"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Box 1",
+      "in this box",
+      "untrue"
+     ],
+     [
+      "Box 2",
+      "not in this box",
+      "true"
+     ],
+     [
+      "Box 3",
+      "not in Box 1",
+      "true"
+     ]
+    ],
+    "headers": [
+     "Label on",
+     "Laddoo is",
+     "If in Box 3"
+    ],
+    "note": "If it is in Box 3, two labels are true again"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Box 1",
+      "in this box",
+      "untrue"
+     ],
+     [
+      "Box 2",
+      "not in this box",
+      "untrue"
+     ],
+     [
+      "Box 3",
+      "not in Box 1",
+      "true"
+     ]
+    ],
+    "headers": [
+     "Label on",
+     "Laddoo is",
+     "If in Box 2"
+    ],
+    "note": "If it is in Box 2, exactly one label is true",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Box 1",
+      "in this box",
+      "untrue"
+     ],
+     [
+      "Box 2",
+      "not in this box",
+      "untrue"
+     ],
+     [
+      "Box 3",
+      "not in Box 1",
+      "true"
+     ]
+    ],
+    "headers": [
+     "Label on",
+     "Laddoo is",
+     "If in Box 2"
+    ],
+    "note": "The laddoo is in Box 2"
+   }
+  ]
+ }
+}

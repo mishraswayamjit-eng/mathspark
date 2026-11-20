@@ -1,0 +1,3868 @@
+{
+ "EXT_G4_FP_2020_026": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     6.0,
+     1.0
+    ],
+    [
+     9.54,
+     2.46
+    ],
+    [
+     11.0,
+     6.0
+    ],
+    [
+     9.54,
+     9.54
+    ],
+    [
+     6.0,
+     11.0
+    ],
+    [
+     2.46,
+     9.54
+    ],
+    [
+     1.0,
+     6.0
+    ],
+    [
+     2.46,
+     2.46
+    ]
+   ],
+   "note": "The corners are the 8 points. Join every pair, not just neighbours"
+  }
+ },
+ "EXT_G4_FP_2021_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     2,
+     2
+    ],
+    [
+     10,
+     2
+    ],
+    [
+     10,
+     10
+    ],
+    [
+     2,
+     10
+    ]
+   ],
+   "corners": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "dashed": [
+    {
+     "from": 0,
+     "to": 2
+    },
+    {
+     "from": 1,
+     "to": 3
+    }
+   ],
+   "note": "Each line joins two players. Each pair plays 2 games"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "AB",
+      "AC",
+      "AD"
+     ],
+     [
+      "BC",
+      "BD",
+      "CD"
+     ]
+    ],
+    "note": "6 pairs: one for each line in the picture"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "AB",
+      "AC",
+      "AD"
+     ],
+     [
+      "BC",
+      "BD",
+      "CD"
+     ]
+    ],
+    "note": "Each of the 6 pairs plays 2 games"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "AB",
+      "AC",
+      "AD"
+     ],
+     [
+      "BC",
+      "BD",
+      "CD"
+     ]
+    ],
+    "note": "6 pairs, 2 games each: 12 games"
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_014": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "1"
+     ],
+     [
+      "3",
+      "3"
+     ],
+     [
+      "4",
+      "6"
+     ]
+    ],
+    "headers": [
+     "Points",
+     "Segments"
+    ],
+    "note": "Each new point joins to all the points already there"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "1"
+     ],
+     [
+      "3",
+      "3"
+     ],
+     [
+      "4",
+      "6"
+     ],
+     [
+      "5",
+      "10"
+     ]
+    ],
+    "headers": [
+     "Points",
+     "Segments"
+    ],
+    "note": "5 points give 10. One more point adds 5 more",
+    "highlight": [
+     "r3"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "1"
+     ],
+     [
+      "3",
+      "3"
+     ],
+     [
+      "4",
+      "6"
+     ],
+     [
+      "5",
+      "10"
+     ],
+     [
+      "6",
+      "15"
+     ]
+    ],
+    "headers": [
+     "Points",
+     "Segments"
+    ],
+    "note": "6 points give 15 segments",
+    "highlight": [
+     "r4"
+    ]
+   },
+   null
+  ]
+ },
+ "EXT_G4_FP_2023_031": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Thousands",
+    "Hundreds",
+    "Tens",
+    "Ones"
+   ],
+   "note": "Each digit is used once. The number must be odd"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?",
+      "7 or 9"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "An odd number ends in an odd digit: 2 choices for the ones place"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "1 choice",
+      "2 choices"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The 3 digits left over fill the other places"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "1 choice",
+      "2 choices"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Multiply the choices together"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "1 choice",
+      "2 choices"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "3 × 2 × 1 × 2 = 12 odd numbers"
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_029": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Thousands",
+    "Hundreds",
+    "Tens",
+    "Ones"
+   ],
+   "note": "Each digit is used once. The number must be more than 5000"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5 or 7",
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The thousands digit must be 5 or 7: 2 choices"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 choices",
+      "3 choices",
+      "2 choices",
+      "1 choice"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The 3 digits left over fill the other places"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 choices",
+      "3 choices",
+      "2 choices",
+      "1 choice"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Multiply the choices together"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 choices",
+      "3 choices",
+      "2 choices",
+      "1 choice"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "2 × 3 × 2 × 1 = 12 numbers"
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_019": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Thousands",
+    "Hundreds",
+    "Tens",
+    "Ones"
+   ],
+   "note": "Each digit is used once. The number must be odd"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?",
+      "7 or 9"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "An odd number ends in an odd digit: 2 choices for the ones place"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "1 choice",
+      "2 choices"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The 3 digits left over fill the other places"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "1 choice",
+      "2 choices"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Multiply the choices together"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "1 choice",
+      "2 choices"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "3 × 2 × 1 × 2 = 12 odd numbers"
+   }
+  ]
+ },
+ "G4A_COUNTING_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 15,
+   "max": 42,
+   "step": 27,
+   "tickLabels": "ends",
+   "note": "How many whole numbers from 15 to 42, with both ends counted?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 15,
+    "max": 42,
+    "step": 1,
+    "tickLabels": "ends",
+    "hops": [
+     {
+      "from": 15,
+      "to": 42,
+      "label": "42 − 15 jumps"
+     }
+    ],
+    "note": "Subtract to count the jumps of 1"
+   },
+   {
+    "kind": "numberLine",
+    "min": 15,
+    "max": 42,
+    "step": 1,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 15,
+      "label": "count me too"
+     }
+    ],
+    "hops": [
+     {
+      "from": 15,
+      "to": 42,
+      "label": "42 − 15 jumps"
+     }
+    ],
+    "note": "The jumps miss the starting number 15, so add 1",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 15,
+    "max": 42,
+    "step": 1,
+    "tickLabels": "ends",
+    "note": "Every mark is one number: 28 whole numbers from 15 to 42"
+   }
+  ]
+ },
+ "G4A_COUNTING_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6,
+       "tone": "a",
+       "label": "in front"
+      },
+      {
+       "units": 1,
+       "tone": "b",
+       "label": "M"
+      },
+      {
+       "units": 4,
+       "tone": "c",
+       "label": "behind"
+      }
+     ],
+     "brace": "? children"
+    }
+   ],
+   "note": "Meera (M) is 7th from the front and 5th from the back"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6,
+        "tone": "a",
+        "label": "7 − 1"
+       },
+       {
+        "units": 1,
+        "tone": "b",
+        "label": "M"
+       },
+       {
+        "units": 4,
+        "tone": "c",
+        "label": "5 − 1"
+       }
+      ]
+     }
+    ],
+    "note": "In front of Meera: 7 − 1. Behind her: 5 − 1",
+    "highlight": [
+     "b0s0",
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6,
+        "tone": "a",
+        "label": "7 − 1"
+       },
+       {
+        "units": 1,
+        "tone": "b",
+        "label": "M"
+       },
+       {
+        "units": 4,
+        "tone": "c",
+        "label": "5 − 1"
+       }
+      ]
+     }
+    ],
+    "note": "Add the two groups, and count Meera herself once",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6,
+        "tone": "a",
+        "label": "7 − 1"
+       },
+       {
+        "units": 1,
+        "tone": "b",
+        "label": "M"
+       },
+       {
+        "units": 4,
+        "tone": "c",
+        "label": "5 − 1"
+       }
+      ],
+      "brace": "11 children"
+     }
+    ],
+    "note": "There are 11 children in the queue"
+   }
+  ]
+ },
+ "G4A_COUNTING_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 0,
+   "max": 40,
+   "step": 40,
+   "tickLabels": "ends",
+   "points": [
+    {
+     "at": 0,
+     "label": "post"
+    },
+    {
+     "at": 40,
+     "label": "post"
+    }
+   ],
+   "hops": [
+    {
+     "from": 0,
+     "to": 5,
+     "label": "5 m"
+    }
+   ],
+   "note": "A 40 m fence. A post every 5 m, with one at each end"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 40,
+    "step": 5,
+    "tickLabels": "all",
+    "note": "Mark every 5 m along the fence. Count the gaps between the marks"
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 40,
+    "step": 5,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 0,
+      "label": "post"
+     },
+     {
+      "at": 40,
+      "label": "post"
+     }
+    ],
+    "note": "Every mark is a post, so there is one more post than gaps",
+    "highlight": [
+     "p0",
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 40,
+    "step": 5,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 0,
+      "label": "post"
+     },
+     {
+      "at": 40,
+      "label": "post"
+     }
+    ],
+    "note": "8 gaps, so 9 posts"
+   }
+  ]
+ },
+ "G4A_COUNTING_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Top A",
+     "Skirt X"
+    ],
+    [
+     "Top B",
+     "Skirt Y"
+    ],
+    [
+     "Top C",
+     "–"
+    ]
+   ],
+   "headers": [
+    "Tops",
+    "Skirts"
+   ],
+   "note": "An outfit is one top with one skirt"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Top A",
+      "with X, with Y"
+     ],
+     [
+      "Top B",
+      "?"
+     ],
+     [
+      "Top C",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Top",
+     "Outfits"
+    ],
+    "note": "Each top can go with either skirt: 2 outfits",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Top A",
+      "with X, with Y"
+     ],
+     [
+      "Top B",
+      "with X, with Y"
+     ],
+     [
+      "Top C",
+      "with X, with Y"
+     ]
+    ],
+    "headers": [
+     "Top",
+     "Outfits"
+    ],
+    "note": "3 tops, with 2 outfits each"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Top A",
+      "with X, with Y"
+     ],
+     [
+      "Top B",
+      "with X, with Y"
+     ],
+     [
+      "Top C",
+      "with X, with Y"
+     ]
+    ],
+    "headers": [
+     "Top",
+     "Outfits"
+    ],
+    "note": "6 different outfits"
+   }
+  ]
+ },
+ "G4A_COUNTING_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6,
+       "tone": "a",
+       "label": "plank"
+      }
+     ]
+    }
+   ],
+   "note": "Cut into 6 pieces, one cut at a time. How many cuts?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "It starts as 1 piece. The first cut makes 1 more piece"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "6 pieces: 5 more than at the start, so 5 cuts"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "Each line inside the plank is one cut: 5 cuts"
+   }
+  ]
+ },
+ "G4A_COUNTING_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Tens",
+    "Ones"
+   ],
+   "note": "Only the digits 3 and 8. A digit may be used twice"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 or 8",
+      "3 or 8"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "Each place can hold 3 or 8"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 choices",
+      "2 choices"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "2 choices for each place"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "3"
+     ],
+     [
+      "3",
+      "8"
+     ],
+     [
+      "8",
+      "3"
+     ],
+     [
+      "8",
+      "8"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "33, 38, 83 and 88: 4 numbers"
+   }
+  ]
+ },
+ "G4A_COUNTING_009": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9,
+        "tone": "a",
+        "label": "1 to 9"
+       },
+       {
+        "units": 16,
+        "tone": "unknown",
+        "label": "?"
+       }
+      ],
+      "brace": "pages 1 to 25"
+     }
+    ],
+    "note": "Pages 1 to 9 have one digit each",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9,
+        "tone": "a",
+        "label": "1 to 9"
+       },
+       {
+        "units": 16,
+        "tone": "b",
+        "label": "10 to 25: 16 pages"
+       }
+      ],
+      "brace": "pages 1 to 25"
+     }
+    ],
+    "note": "Pages 10 to 25 have two digits each",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9,
+        "tone": "a",
+        "label": "1 digit each"
+       },
+       {
+        "units": 16,
+        "tone": "b",
+        "label": "2 digits each"
+       }
+      ],
+      "brace": "pages 1 to 25"
+     }
+    ],
+    "note": "Add the digits of the two groups"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9,
+        "tone": "a",
+        "label": "1 digit each"
+       },
+       {
+        "units": 16,
+        "tone": "b",
+        "label": "2 digits each"
+       }
+      ],
+      "brace": "41 digits"
+     }
+    ],
+    "note": "In all, 41 digits are printed"
+   }
+  ]
+ },
+ "G4A_COUNTING_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 11,
+       "tone": "a",
+       "label": "in front"
+      },
+      {
+       "units": 1,
+       "tone": "b",
+       "label": "A"
+      },
+      {
+       "units": 18,
+       "tone": "c",
+       "label": "behind"
+      }
+     ],
+     "brace": "30 children"
+    }
+   ],
+   "note": "Arjun (A) is 12th from the front. His place from the back = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12,
+        "tone": "a",
+        "label": "first 12"
+       },
+       {
+        "units": 18,
+        "tone": "c",
+        "label": "30 − 12 behind"
+       }
+      ],
+      "brace": "30 children"
+     }
+    ],
+    "note": "Arjun is the last of the first 12. The rest are behind him",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11,
+        "tone": "a",
+        "label": "in front"
+       },
+       {
+        "units": 1,
+        "tone": "b",
+        "label": "A"
+       },
+       {
+        "units": 18,
+        "tone": "c",
+        "label": "18 behind"
+       }
+      ],
+      "brace": "30 children"
+     }
+    ],
+    "note": "From the back: 18 children come first, then Arjun",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11,
+        "tone": "a",
+        "label": "in front"
+       },
+       {
+        "units": 1,
+        "tone": "b",
+        "label": "A"
+       },
+       {
+        "units": 18,
+        "tone": "c",
+        "label": "18 behind"
+       }
+      ],
+      "brace": "30 children"
+     }
+    ],
+    "note": "Arjun is 19th from the back",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "G4A_COUNTING_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "12 m",
+   "breadth": "12 m",
+   "note": "A post at every corner, and every 3 m along each side"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "12 m",
+    "breadth": "12 m",
+    "highlight": [
+     "border"
+    ],
+    "note": "Find the distance all the way around the garden"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "12 m",
+    "breadth": "12 m",
+    "highlight": [
+     "border"
+    ],
+    "note": "Split the whole distance around into gaps of 3 m"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "12 m",
+    "breadth": "12 m",
+    "highlight": [
+     "border"
+    ],
+    "note": "The path closes up, so the last gap ends at the first post"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "12 m",
+    "breadth": "12 m",
+    "note": "Around a closed loop, 16 gaps need 16 posts"
+   }
+  ]
+ },
+ "G4A_COUNTING_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "First",
+    "Second",
+    "Third"
+   ],
+   "note": "Anu, Binu and Charu each take one place"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "First",
+     "Second",
+     "Third"
+    ],
+    "note": "Any of the 3 children can stand first"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "1 choice"
+     ]
+    ],
+    "headers": [
+     "First",
+     "Second",
+     "Third"
+    ],
+    "note": "Then 2 children are left, and then 1"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "1 choice"
+     ]
+    ],
+    "headers": [
+     "First",
+     "Second",
+     "Third"
+    ],
+    "note": "Multiply the choices"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "1 choice"
+     ]
+    ],
+    "headers": [
+     "First",
+     "Second",
+     "Third"
+    ],
+    "note": "3 × 2 × 1 = 6 different orders"
+   }
+  ]
+ },
+ "G4A_COUNTING_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "grid": {
+    "cols": 2,
+    "rows": 2
+   },
+   "note": "A window of 4 small panes. Count the squares of every size"
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 2,
+    "cols": 2,
+    "shaded": [
+     [
+      0,
+      0
+     ]
+    ],
+    "note": "4 small squares, each like the shaded one"
+   },
+   {
+    "kind": "grid",
+    "rows": 2,
+    "cols": 2,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "note": "The whole window, all 4 panes together, is 1 big square"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "grid": {
+     "cols": 2,
+     "rows": 2
+    },
+    "note": "Add the small squares and the big square"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "grid": {
+     "cols": 2,
+     "rows": 2
+    },
+    "note": "4 small and 1 big: 5 squares"
+   }
+  ]
+ },
+ "G4A_COUNTING_017": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "numberLine",
+    "min": 14,
+    "max": 98,
+    "step": 7,
+    "tickLabels": "ends",
+    "note": "The 2-digit multiples of 7 run from 14 to 98, in jumps of 7"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 14,
+    "max": 98,
+    "step": 7,
+    "tickLabels": "ends",
+    "note": "Every mark is a multiple of 7: 13 of them"
+   }
+  ]
+ },
+ "G4A_COUNTING_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1,
+   "max": 7,
+   "step": 1,
+   "tickLabels": "all",
+   "points": [
+    {
+     "at": 1
+    },
+    {
+     "at": 4
+    },
+    {
+     "at": 7
+    }
+   ],
+   "hops": [
+    {
+     "from": 1,
+     "to": 4,
+     "label": "48 steps"
+    }
+   ],
+   "note": "Floors 1 to 7. From floor 1 to floor 4 is 48 steps. To floor 7 = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 7,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 1
+     },
+     {
+      "at": 4
+     },
+     {
+      "at": 7
+     }
+    ],
+    "hops": [
+     {
+      "from": 1,
+      "to": 2
+     },
+     {
+      "from": 2,
+      "to": 3
+     },
+     {
+      "from": 3,
+      "to": 4
+     }
+    ],
+    "note": "From the 1st floor to the 4th there are 3 flights of stairs, not 4",
+    "highlight": [
+     "h0",
+     "h1",
+     "h2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 7,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 1
+     },
+     {
+      "at": 4
+     },
+     {
+      "at": 7
+     }
+    ],
+    "hops": [
+     {
+      "from": 1,
+      "to": 2
+     },
+     {
+      "from": 2,
+      "to": 3
+     },
+     {
+      "from": 3,
+      "to": 4
+     }
+    ],
+    "note": "The 48 steps are shared equally over the 3 flights"
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 7,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 1
+     },
+     {
+      "at": 4
+     },
+     {
+      "at": 7
+     }
+    ],
+    "hops": [
+     {
+      "from": 1,
+      "to": 7,
+      "label": "6 flights"
+     }
+    ],
+    "note": "From the 1st floor to the 7th there are 6 flights",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 7,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 1
+     },
+     {
+      "at": 4
+     },
+     {
+      "at": 7
+     }
+    ],
+    "hops": [
+     {
+      "from": 1,
+      "to": 7,
+      "label": "96 steps"
+     }
+    ],
+    "note": "6 flights make 96 steps",
+    "highlight": [
+     "h0"
+    ]
+   }
+  ]
+ },
+ "G4A_COUNTING_019": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      2
+     ],
+     [
+      10,
+      2
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      2,
+      10
+     ]
+    ],
+    "corners": [
+     "mango",
+     "chocolate",
+     "vanilla",
+     "strawberry"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     }
+    ],
+    "note": "Mango pairs with each of the other 3 flavours",
+    "highlight": [
+     "e0",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      2
+     ],
+     [
+      10,
+      2
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      2,
+      10
+     ]
+    ],
+    "corners": [
+     "mango",
+     "chocolate",
+     "vanilla",
+     "strawberry"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "Chocolate adds 2 new pairs. Vanilla adds 1 new pair",
+    "highlight": [
+     "e1",
+     "e2"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      2
+     ],
+     [
+      10,
+      2
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      2,
+      10
+     ]
+    ],
+    "corners": [
+     "mango",
+     "chocolate",
+     "vanilla",
+     "strawberry"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "Every line is one pair: 3 + 2 + 1"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      2
+     ],
+     [
+      10,
+      2
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      2,
+      10
+     ]
+    ],
+    "corners": [
+     "mango",
+     "chocolate",
+     "vanilla",
+     "strawberry"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "6 lines, so 6 different pairs"
+   }
+  ]
+ },
+ "G4A_COUNTING_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Hundreds",
+    "Tens",
+    "Ones"
+   ],
+   "note": "Use 2, 0 and 5 once each to make 3-digit numbers"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 or 5",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The hundreds digit can be 2 or 5, but not 0"
+   },
+   null,
+   null,
+   null
+  ]
+ },
+ "G4A_COUNTING_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     6,
+     1
+    ],
+    [
+     1,
+     11
+    ],
+    [
+     4.33,
+     11
+    ],
+    [
+     7.67,
+     11
+    ],
+    [
+     11,
+     11
+    ]
+   ],
+   "dashed": [
+    {
+     "from": 0,
+     "to": 2
+    },
+    {
+     "from": 0,
+     "to": 3
+    }
+   ],
+   "note": "Two lines from the top corner to the base. Count every triangle"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      1
+     ],
+     [
+      1,
+      11
+     ],
+     [
+      4.33,
+      11
+     ],
+     [
+      7.67,
+      11
+     ],
+     [
+      11,
+      11
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 0,
+      "to": 3
+     }
+    ],
+    "note": "3 small triangles, side by side",
+    "highlight": [
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      1
+     ],
+     [
+      1,
+      11
+     ],
+     [
+      4.33,
+      11
+     ],
+     [
+      7.67,
+      11
+     ],
+     [
+      11,
+      11
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 0,
+      "to": 3
+     }
+    ],
+    "note": "2 neighbours together make a bigger triangle: 2 ways",
+    "highlight": [
+     "e1",
+     "e2"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      1
+     ],
+     [
+      1,
+      11
+     ],
+     [
+      4.33,
+      11
+     ],
+     [
+      7.67,
+      11
+     ],
+     [
+      11,
+      11
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 0,
+      "to": 3
+     }
+    ],
+    "note": "All three together make the 1 big triangle",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3",
+     "e4"
+    ]
+   },
+   null,
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      1
+     ],
+     [
+      1,
+      11
+     ],
+     [
+      4.33,
+      11
+     ],
+     [
+      7.67,
+      11
+     ],
+     [
+      11,
+      11
+     ]
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 0,
+      "to": 3
+     }
+    ],
+    "note": "3 + 2 + 1 = 6 triangles"
+   }
+  ]
+ },
+ "G4A_COUNTING_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1,
+   "max": 15,
+   "step": 14,
+   "tickLabels": "ends",
+   "points": [
+    {
+     "at": 8,
+     "label": "Ravi"
+    },
+    {
+     "at": 15,
+     "label": "Sana"
+    }
+   ],
+   "note": "Places in the queue, from the front. How many stand between them?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 8,
+    "max": 15,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 9
+     },
+     {
+      "at": 10
+     },
+     {
+      "at": 11
+     },
+     {
+      "at": 12
+     },
+     {
+      "at": 13
+     },
+     {
+      "at": 14
+     }
+    ],
+    "note": "Places 9 to 14 are between Ravi and Sana",
+    "highlight": [
+     "p0",
+     "p1",
+     "p2",
+     "p3",
+     "p4",
+     "p5"
+    ]
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 8,
+    "max": 15,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 9
+     },
+     {
+      "at": 10
+     },
+     {
+      "at": 11
+     },
+     {
+      "at": 12
+     },
+     {
+      "at": 13
+     },
+     {
+      "at": 14
+     }
+    ],
+    "note": "Count the dots: 6 people stand between them"
+   }
+  ]
+ },
+ "G4A_COUNTING_023": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 100,
+    "max": 200,
+    "step": 10,
+    "tickLabels": "all",
+    "note": "The numbers that end in 0, from 100 to 200"
+   },
+   {
+    "kind": "numberLine",
+    "min": 100,
+    "max": 200,
+    "step": 10,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 100,
+      "label": "start"
+     }
+    ],
+    "hops": [
+     {
+      "from": 100,
+      "to": 200,
+      "label": "10 jumps of ten"
+     }
+    ],
+    "note": "10 jumps, and one more for the starting number",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 100,
+    "max": 200,
+    "step": 10,
+    "tickLabels": "all",
+    "note": "Every mark is one number: 11 numbers"
+   }
+  ]
+ },
+ "G4A_COUNTING_027": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "grid": {
+    "cols": 3,
+    "rows": 3
+   },
+   "note": "A board of 9 small squares. Count the squares of every size"
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 3,
+    "cols": 3,
+    "shaded": [
+     [
+      0,
+      0
+     ]
+    ],
+    "note": "9 small squares, each like the shaded one"
+   },
+   {
+    "kind": "grid",
+    "rows": 3,
+    "cols": 3,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "note": "A square 2 wide and 2 tall fits in each corner: 4 of them"
+   },
+   {
+    "kind": "grid",
+    "rows": 3,
+    "cols": 3,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "note": "The whole board is 1 large square"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "grid": {
+     "cols": 3,
+     "rows": 3
+    },
+    "note": "Add all the sizes"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "grid": {
+     "cols": 3,
+     "rows": 3
+    },
+    "note": "9 small, 4 middle-sized and 1 large: 14 squares"
+   }
+  ]
+ },
+ "G4A_COUNTING_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      }
+     ]
+    }
+   ],
+   "note": "A strip of small squares in a row. Count rectangles of every size"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "Rectangles made of 1 square: 4",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "2 squares side by side: 3 ways. 3 squares side by side: 2 ways",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "The whole strip of 4 squares: 1 more",
+    "highlight": [
+     "b0"
+    ]
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "4 + 3 + 2 + 1 = 10 rectangles"
+   }
+  ]
+ },
+ "G4A_COUNTING_030": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Hundreds",
+    "Tens",
+    "Ones"
+   ],
+   "note": "Digits 0, 1, 2 and 3, none repeated. The number must be even"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "0"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Ending in 0: the hundreds digit can be 1, 2 or 3"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "0"
+     ],
+     [
+      "2 choices",
+      "2 choices",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Ending in 2: the hundreds digit can only be 1 or 3",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "0"
+     ],
+     [
+      "2 choices",
+      "2 choices",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Multiply along each row, then add the two rows"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "0"
+     ],
+     [
+      "2 choices",
+      "2 choices",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The two rows together give 10 numbers"
+   }
+  ]
+ },
+ "G4A_COUNTING_031": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 0,
+   "max": 6,
+   "step": 2,
+   "tickLabels": "ends",
+   "points": [
+    {
+     "at": 0,
+     "label": "ring"
+    },
+    {
+     "at": 2,
+     "label": "ring"
+    },
+    {
+     "at": 4,
+     "label": "ring"
+    },
+    {
+     "at": 6,
+     "label": "ring"
+    }
+   ],
+   "note": "4 rings take 6 seconds, from the first ring to the last. 10 rings = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 6,
+    "step": 2,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 0,
+      "label": "ring"
+     },
+     {
+      "at": 2,
+      "label": "ring"
+     },
+     {
+      "at": 4,
+      "label": "ring"
+     },
+     {
+      "at": 6,
+      "label": "ring"
+     }
+    ],
+    "hops": [
+     {
+      "from": 0,
+      "to": 2,
+      "label": "gap"
+     },
+     {
+      "from": 2,
+      "to": 4,
+      "label": "gap"
+     },
+     {
+      "from": 4,
+      "to": 6,
+      "label": "gap"
+     }
+    ],
+    "note": "4 rings have 3 gaps between them. Each gap is 6 ÷ 3 seconds",
+    "highlight": [
+     "h0",
+     "h1",
+     "h2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 6,
+    "step": 2,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 0,
+      "label": "ring"
+     },
+     {
+      "at": 2,
+      "label": "ring"
+     },
+     {
+      "at": 4,
+      "label": "ring"
+     },
+     {
+      "at": 6,
+      "label": "ring"
+     }
+    ],
+    "hops": [
+     {
+      "from": 0,
+      "to": 2,
+      "label": "gap"
+     },
+     {
+      "from": 2,
+      "to": 4,
+      "label": "gap"
+     },
+     {
+      "from": 4,
+      "to": 6,
+      "label": "gap"
+     }
+    ],
+    "note": "In the same way, 10 rings have 9 gaps between them"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 18,
+    "step": 2,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 0,
+      "label": "1st ring"
+     },
+     {
+      "at": 18,
+      "label": "10th ring"
+     }
+    ],
+    "hops": [
+     {
+      "from": 0,
+      "to": 18,
+      "label": "9 gaps"
+     }
+    ],
+    "note": "10 rings take 18 seconds",
+    "highlight": [
+     "h0"
+    ]
+   }
+  ]
+ },
+ "G4A_COUNTING_032": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 14,
+        "tone": "a",
+        "label": "15 − 1"
+       },
+       {
+        "units": 1,
+        "tone": "b",
+        "label": "T"
+       },
+       {
+        "units": 5,
+        "tone": "c",
+        "label": "6 − 1"
+       }
+      ]
+     }
+    ],
+    "note": "Tara's new spot: 15th from the left and 6th from the right",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 14,
+        "tone": "a",
+        "label": "15 − 1"
+       },
+       {
+        "units": 1,
+        "tone": "b",
+        "label": "T"
+       },
+       {
+        "units": 5,
+        "tone": "c",
+        "label": "6 − 1"
+       }
+      ]
+     }
+    ],
+    "note": "15 + 6 counts Tara's spot twice, so take away 1"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 14,
+        "tone": "a",
+        "label": "15 − 1"
+       },
+       {
+        "units": 1,
+        "tone": "b",
+        "label": "T"
+       },
+       {
+        "units": 5,
+        "tone": "c",
+        "label": "6 − 1"
+       }
+      ],
+      "brace": "20 children"
+     }
+    ],
+    "note": "There are 20 children in the row"
+   }
+  ]
+ },
+ "G4A_COUNTING_034": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Multiples of 2",
+   "rightTitle": "Multiples of 3",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "Numbers from 1 to 60. How many are inside the circles?"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "Multiples of 2",
+    "rightTitle": "Multiples of 3",
+    "left": "?",
+    "both": "?",
+    "right": "?",
+    "note": "Count each whole circle: multiples of 2, and multiples of 3"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Multiples of 2",
+    "rightTitle": "Multiples of 3",
+    "left": "?",
+    "both": "6, 12, …",
+    "right": "?",
+    "note": "The middle holds the multiples of 6, counted in both circles",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Multiples of 2",
+    "rightTitle": "Multiples of 3",
+    "left": "?",
+    "both": "6, 12, …",
+    "right": "?",
+    "note": "Add the two circles, then take the middle away once",
+    "highlight": [
+     "left",
+     "both",
+     "right"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Multiples of 2",
+    "rightTitle": "Multiples of 3",
+    "left": "?",
+    "both": "6, 12, …",
+    "right": "?",
+    "note": "40 numbers are inside the circles"
+   }
+  ]
+ },
+ "G4A_COUNTING_035": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "grid": {
+    "cols": 3,
+    "rows": 1
+   },
+   "proportion": 2,
+   "note": "3 stripes: red, green or blue. Stripes that touch must be different"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Stripe 1",
+     "Stripe 2",
+     "Stripe 3"
+    ],
+    "note": "The first stripe can be any of 3 colours"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Stripe 1",
+     "Stripe 2",
+     "Stripe 3"
+    ],
+    "note": "The second stripe must differ from the first"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "2 choices"
+     ]
+    ],
+    "headers": [
+     "Stripe 1",
+     "Stripe 2",
+     "Stripe 3"
+    ],
+    "note": "The third must differ only from the second"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "2 choices"
+     ]
+    ],
+    "headers": [
+     "Stripe 1",
+     "Stripe 2",
+     "Stripe 3"
+    ],
+    "note": "Multiply the choices"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3 choices",
+      "2 choices",
+      "2 choices"
+     ]
+    ],
+    "headers": [
+     "Stripe 1",
+     "Stripe 2",
+     "Stripe 3"
+    ],
+    "note": "3 × 2 × 2 = 12 different flags"
+   }
+  ]
+ },
+ "G4A_COUNTING_037": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 6,
+    "max": 10,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 6
+     },
+     {
+      "at": 7
+     },
+     {
+      "at": 8
+     },
+     {
+      "at": 9
+     },
+     {
+      "at": 10
+     }
+    ],
+    "note": "Count the numbers one by one: 6, 7, 8, 9, 10"
+   },
+   {
+    "kind": "numberLine",
+    "min": 6,
+    "max": 10,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 6
+     },
+     {
+      "at": 7
+     },
+     {
+      "at": 8
+     },
+     {
+      "at": 9
+     },
+     {
+      "at": 10
+     }
+    ],
+    "note": "Ria writes 5 numbers"
+   }
+  ]
+ },
+ "G4A_COUNTING_038": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 10,
+    "max": 15,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 11
+     },
+     {
+      "at": 12
+     },
+     {
+      "at": 13
+     },
+     {
+      "at": 14
+     }
+    ],
+    "note": "After 10 and before 15: 11, 12, 13, 14",
+    "highlight": [
+     "p0",
+     "p1",
+     "p2",
+     "p3"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 10,
+    "max": 15,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 11
+     },
+     {
+      "at": 12
+     },
+     {
+      "at": 13
+     },
+     {
+      "at": 14
+     }
+    ],
+    "note": "Count the dots: 4 whole numbers between 10 and 15"
+   }
+  ]
+ },
+ "G4A_COUNTING_039": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "In front",
+    "Behind"
+   ],
+   "note": "Anu and Bala: who stands in front?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Anu",
+      "Bala"
+     ],
+     [
+      "Bala",
+      "Anu"
+     ]
+    ],
+    "headers": [
+     "In front",
+     "Behind"
+    ],
+    "note": "Anu in front, or Bala in front"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Anu",
+      "Bala"
+     ],
+     [
+      "Bala",
+      "Anu"
+     ]
+    ],
+    "headers": [
+     "In front",
+     "Behind"
+    ],
+    "note": "No other ways: 2 different orders"
+   }
+  ]
+ },
+ "G4A_COUNTING_040": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Tens",
+    "Ones"
+   ],
+   "note": "Use 4 and 7 once each"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "7"
+     ],
+     [
+      "7",
+      "4"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "4 first makes 47. 7 first makes 74"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "7"
+     ],
+     [
+      "7",
+      "4"
+     ]
+    ],
+    "headers": [
+     "Tens",
+     "Ones"
+    ],
+    "note": "No other ways: 2 different numbers"
+   }
+  ]
+ },
+ "G4A_COUNTING_041": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Asha",
+     "Bina",
+     "Chetan",
+     "Dev",
+     "Esha"
+    ]
+   ],
+   "note": "The front of the queue is on the left"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Asha",
+      "Bina",
+      "Chetan",
+      "Dev",
+      "Esha"
+     ]
+    ],
+    "headers": [
+     "1st",
+     "2nd",
+     "…",
+     "…",
+     "…"
+    ],
+    "note": "Count from the front"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Asha",
+      "Bina",
+      "Chetan",
+      "Dev",
+      "Esha"
+     ]
+    ],
+    "headers": [
+     "1st",
+     "2nd",
+     "3rd",
+     "…",
+     "…"
+    ],
+    "note": "The next child, Chetan, is 3rd"
+   }
+  ]
+ },
+ "G4A_COUNTING_042": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1st",
+      "2nd",
+      "3rd",
+      "Ravi"
+     ]
+    ],
+    "note": "The places in front of the 4th place"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1st",
+      "2nd",
+      "3rd",
+      "Ravi"
+     ]
+    ],
+    "note": "3 children are standing in front of Ravi"
+   }
+  ]
+ },
+ "G4A_COUNTING_045": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "ABC",
+     "ACB"
+    ],
+    [
+     "BAC",
+     "BCA"
+    ],
+    [
+     "CAB",
+     "CBA"
+    ]
+   ],
+   "note": "All six orders. In how many is A first?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "ABC",
+      "ACB"
+     ],
+     [
+      "BAC",
+      "BCA"
+     ],
+     [
+      "CAB",
+      "CBA"
+     ]
+    ],
+    "note": "The orders that begin with A",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "ABC",
+      "ACB"
+     ],
+     [
+      "BAC",
+      "BCA"
+     ],
+     [
+      "CAB",
+      "CBA"
+     ]
+    ],
+    "note": "Anu is first in 2 of the orders",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "G4A_COUNTING_047": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1,
+   "max": 7,
+   "step": 1,
+   "tickLabels": "all",
+   "note": "The chairs are numbered 1 to 7. Which one is exactly in the middle?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 7,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 1
+     },
+     {
+      "at": 2
+     },
+     {
+      "at": 3
+     },
+     {
+      "at": 5
+     },
+     {
+      "at": 6
+     },
+     {
+      "at": 7
+     }
+    ],
+    "note": "Chairs 1, 2, 3 on one side and 5, 6, 7 on the other"
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 7,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 4,
+      "label": "middle"
+     }
+    ],
+    "note": "With three chairs on each side, the middle one is Chair 4",
+    "highlight": [
+     "p0"
+    ]
+   }
+  ]
+ },
+ "PYQ_2016_Q17": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     2,
+     2
+    ],
+    [
+     10,
+     2
+    ],
+    [
+     10,
+     10
+    ],
+    [
+     2,
+     10
+    ]
+   ],
+   "corners": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "dashed": [
+    {
+     "from": 0,
+     "to": 2
+    },
+    {
+     "from": 1,
+     "to": 3
+    }
+   ],
+   "note": "Each line joins two players who play each other"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "A and B",
+      "A and C",
+      "A and D"
+     ]
+    ],
+    "note": "The pairs with A: 3 pairs"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "A and B",
+      "A and C",
+      "A and D"
+     ],
+     [
+      "B and C",
+      "B and D"
+     ],
+     [
+      "C and D"
+     ]
+    ],
+    "note": "The new pairs with B, then the last new pair"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "A and B",
+      "A and C",
+      "A and D"
+     ],
+     [
+      "B and C",
+      "B and D"
+     ],
+     [
+      "C and D"
+     ]
+    ],
+    "note": "Count the pairs: 3, then 2, then 1"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "A and B",
+      "A and C",
+      "A and D"
+     ],
+     [
+      "B and C",
+      "B and D"
+     ],
+     [
+      "C and D"
+     ]
+    ],
+    "note": "Every pair plays 2 games: 12 games altogether"
+   }
+  ]
+ },
+ "PYQ_2018_Q12": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "1"
+     ]
+    ],
+    "headers": [
+     "Points",
+     "Segments"
+    ],
+    "note": "Start with 2 points and 1 segment"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "1"
+     ],
+     [
+      "3",
+      "3"
+     ],
+     [
+      "4",
+      "6"
+     ]
+    ],
+    "headers": [
+     "Points",
+     "Segments"
+    ],
+    "note": "The 3rd point adds 2 segments. The 4th adds 3",
+    "highlight": [
+     "r1",
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "1"
+     ],
+     [
+      "3",
+      "3"
+     ],
+     [
+      "4",
+      "6"
+     ],
+     [
+      "5",
+      "10"
+     ],
+     [
+      "6",
+      "15"
+     ]
+    ],
+    "headers": [
+     "Points",
+     "Segments"
+    ],
+    "note": "The 5th point adds 4. The 6th adds 5",
+    "highlight": [
+     "r3",
+     "r4"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "1"
+     ],
+     [
+      "3",
+      "3"
+     ],
+     [
+      "4",
+      "6"
+     ],
+     [
+      "5",
+      "10"
+     ],
+     [
+      "6",
+      "15"
+     ]
+    ],
+    "headers": [
+     "Points",
+     "Segments"
+    ],
+    "note": "15 segments are reached with 6 points",
+    "highlight": [
+     "r4"
+    ]
+   }
+  ]
+ },
+ "PYQ_2019_Q07": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     6.0,
+     1.0
+    ],
+    [
+     9.54,
+     2.46
+    ],
+    [
+     11.0,
+     6.0
+    ],
+    [
+     9.54,
+     9.54
+    ],
+    [
+     6.0,
+     11.0
+    ],
+    [
+     2.46,
+     9.54
+    ],
+    [
+     1.0,
+     6.0
+    ],
+    [
+     2.46,
+     2.46
+    ]
+   ],
+   "corners": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+   ],
+   "note": "Every pair of points can be joined, not just neighbours"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "A",
+      "7"
+     ],
+     [
+      "B",
+      "6"
+     ],
+     [
+      "C",
+      "5"
+     ],
+     [
+      "…",
+      "…"
+     ],
+     [
+      "G",
+      "1"
+     ]
+    ],
+    "headers": [
+     "From",
+     "New segments"
+    ],
+    "note": "Each point has one fewer new segment than the point before"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "A",
+      "7"
+     ],
+     [
+      "B",
+      "6"
+     ],
+     [
+      "C",
+      "5"
+     ],
+     [
+      "…",
+      "…"
+     ],
+     [
+      "G",
+      "1"
+     ]
+    ],
+    "headers": [
+     "From",
+     "New segments"
+    ],
+    "note": "Adding from 7 down to 1 gives 28"
+   }
+  ]
+ },
+ "Q_CH21_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     6.0,
+     1.0
+    ],
+    [
+     10.76,
+     4.45
+    ],
+    [
+     8.94,
+     10.05
+    ],
+    [
+     3.06,
+     10.05
+    ],
+    [
+     1.24,
+     4.45
+    ]
+   ],
+   "note": "5 points on a circle. A chord joins two of them. How many chords?"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6.0,
+      1.0
+     ],
+     [
+      10.76,
+      4.45
+     ],
+     [
+      8.94,
+      10.05
+     ],
+     [
+      3.06,
+      10.05
+     ],
+     [
+      1.24,
+      4.45
+     ]
+    ],
+    "corners": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 0,
+      "to": 3
+     }
+    ],
+    "note": "From A: chords to B, C, D and E. That is 4 chords",
+    "highlight": [
+     "e0",
+     "e4"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6.0,
+      1.0
+     ],
+     [
+      10.76,
+      4.45
+     ],
+     [
+      8.94,
+      10.05
+     ],
+     [
+      3.06,
+      10.05
+     ],
+     [
+      1.24,
+      4.45
+     ]
+    ],
+    "corners": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 0,
+      "to": 3
+     },
+     {
+      "from": 1,
+      "to": 3
+     },
+     {
+      "from": 1,
+      "to": 4
+     }
+    ],
+    "note": "From B: new chords to C, D and E. That is 3 more",
+    "highlight": [
+     "e1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "A",
+      "4"
+     ],
+     [
+      "B",
+      "3"
+     ],
+     [
+      "C",
+      "2"
+     ],
+     [
+      "D",
+      "1"
+     ]
+    ],
+    "headers": [
+     "From",
+     "New chords"
+    ],
+    "note": "From C there are 2 new chords, and from D there is 1",
+    "highlight": [
+     "r2",
+     "r3"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "A",
+      "4"
+     ],
+     [
+      "B",
+      "3"
+     ],
+     [
+      "C",
+      "2"
+     ],
+     [
+      "D",
+      "1"
+     ]
+    ],
+    "headers": [
+     "From",
+     "New chords"
+    ],
+    "note": "4 + 3 + 2 + 1 = 10 chords"
+   }
+  ]
+ }
+}

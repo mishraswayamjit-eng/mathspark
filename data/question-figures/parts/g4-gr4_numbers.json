@@ -1,0 +1,3956 @@
+{
+ "BOOST_EXT_G4_FP_2019_010_07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "85844",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d0",
+    "d2"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "85844",
+    "note": "The marked digits stand for 80000 and 800",
+    "highlight": [
+     "d0",
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "85844",
+    "note": "80000 ÷ 800 = 100",
+    "highlight": [
+     "d0",
+     "d2"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2020_019_06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "83233",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d1",
+    "d4"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "83233",
+    "note": "The marked digits stand for 3000 and 3",
+    "highlight": [
+     "d1",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "83233",
+    "note": "3000 ÷ 3 = 1000",
+    "highlight": [
+     "d1",
+     "d4"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2021_031_07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "95448",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d2",
+    "d3"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "95448",
+    "note": "The marked digits stand for 400 and 40",
+    "highlight": [
+     "d2",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "95448",
+    "note": "400 ÷ 40 = 10",
+    "highlight": [
+     "d2",
+     "d3"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2023_019_05": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "94863",
+   "note": "Place value of the marked digit = ?",
+   "highlight": [
+    "d0"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "94863",
+    "note": "The 9 is in the ten-thousands place",
+    "highlight": [
+     "d0"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "94863",
+    "note": "9 × 10000 = 90000",
+    "highlight": [
+     "d0"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2023_019_06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "16378",
+   "note": "Place value of the marked digit = ?",
+   "highlight": [
+    "d0"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "16378",
+    "note": "Count the places from the right",
+    "highlight": [
+     "d0"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "16378",
+    "note": "Here the 1 stands for 10000",
+    "highlight": [
+     "d0"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2023_019_07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "77726",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d1",
+    "d2"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "77726",
+    "note": "The marked digits stand for 7000 and 700",
+    "highlight": [
+     "d1",
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "77726",
+    "note": "7000 ÷ 700 = 10",
+    "highlight": [
+     "d1",
+     "d2"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "TTh",
+    "Th",
+    "H",
+    "T",
+    "O"
+   ],
+   "note": "Put each digit in its place"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6",
+      "?",
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "note": "The greatest place is the ten-thousands"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6",
+      "9",
+      "7",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6",
+      "9",
+      "7",
+      "1",
+      "5"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "note": "The least place is the ones"
+   },
+   {
+    "kind": "placeChart",
+    "number": "69715"
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_027": {
+  "origin": "rule",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "900"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM",
+      "XL",
+      "V"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "900",
+     "40",
+     "5"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM",
+      "XL",
+      "V"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "900",
+     "40",
+     "5"
+    ],
+    "note": "Join the parts in order: MCMXLV"
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_007": {
+  "origin": "rule",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "900"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM",
+      "XL",
+      "VI"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "900",
+     "40",
+     "6"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM",
+      "XL",
+      "VI"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "900",
+     "40",
+     "6"
+    ],
+    "note": "Join the parts in order: MCMXLVI"
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "702459",
+   "note": "Swap the marked digits, 0 and 5",
+   "highlight": [
+    "d1",
+    "d4"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "752409",
+    "note": "After the swap the number is 7,52,409",
+    "highlight": [
+     "d1",
+     "d4"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G4_FP_2022_012": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "47659",
+    "note": "7 thousands is more than 6 thousands: 47659 is the greatest",
+    "highlight": [
+     "d0",
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "47659",
+    "note": "The 6 is in the hundreds place",
+    "highlight": [
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "47659",
+    "note": "The 6 stands for 600",
+    "highlight": [
+     "d2"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_029": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1000",
+      "400",
+      "40",
+      "9"
+     ]
+    ],
+    "headers": [
+     "M",
+     "CD",
+     "XL",
+     "IX"
+    ],
+    "note": "The starting year, part by part"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1000",
+      "600",
+      "60",
+      "5"
+     ]
+    ],
+    "headers": [
+     "M",
+     "DC",
+     "LX",
+     "V"
+    ],
+    "note": "The closing year, part by part"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "CC",
+      "X",
+      "VI"
+     ]
+    ],
+    "headers": [
+     "200",
+     "10",
+     "6"
+    ],
+    "note": "216 years is CCXVI"
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_004": {
+  "origin": "rule",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "MM",
+      "CCC"
+     ]
+    ],
+    "headers": [
+     "2000",
+     "300"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "MM",
+      "CCC",
+      "XL",
+      "IX"
+     ]
+    ],
+    "headers": [
+     "2000",
+     "300",
+     "40",
+     "9"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "MM",
+      "CCC",
+      "XL",
+      "IX"
+     ]
+    ],
+    "headers": [
+     "2000",
+     "300",
+     "40",
+     "9"
+    ],
+    "note": "Join the parts in order: MMCCCXLIX"
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_019": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "34562",
+    "note": "Here the 6 is in the tens place: worth 60",
+    "highlight": [
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "3342654",
+    "note": "Here the 6 is in the hundreds place: worth 600",
+    "highlight": [
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "4256402",
+    "note": "Here the 6 is in the thousands place: worth 6000",
+    "highlight": [
+     "d3"
+    ]
+   },
+   null
+  ]
+ },
+ "EXT_G4_FP_2024_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "768459",
+   "note": "Compare the place values of the 4 and the 5",
+   "highlight": [
+    "d3",
+    "d4"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "768459",
+    "note": "The 4 is in the hundreds place: 400",
+    "highlight": [
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "768459",
+    "note": "The 5 is in the tens place: 50",
+    "highlight": [
+     "d4"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "768459",
+    "note": "400 is 8 times 50",
+    "highlight": [
+     "d3",
+     "d4"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_009": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "9999",
+    "note": "The greatest 4-digit number"
+   },
+   null,
+   null,
+   {
+    "kind": "placeChart",
+    "number": "10096",
+    "note": "In the sum, the 9 is in the tens place: 90",
+    "highlight": [
+     "d3"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_020": {
+  "origin": "rule",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "DCCC"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "800"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "DCCC",
+      "XC",
+      "VI"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "800",
+     "90",
+     "6"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "DCCC",
+      "XC",
+      "VI"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "800",
+     "90",
+     "6"
+    ],
+    "note": "Join the parts in order: MDCCCXCVI"
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "86352",
+   "note": "Swap the marked digits, 6 and 5",
+   "highlight": [
+    "d1",
+    "d3"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "85362",
+    "note": "After the swap the number is 85362",
+    "highlight": [
+     "d1",
+     "d3"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G4_FP_2025_036": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "DCCC",
+      "XC",
+      "VII"
+     ]
+    ],
+    "headers": [
+     "800",
+     "90",
+     "7"
+    ],
+    "note": "Split 897 into 800 + 90 + 7"
+   },
+   null
+  ]
+ },
+ "G4A_NUMBERS_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "TTh",
+    "Th",
+    "H",
+    "T",
+    "O"
+   ],
+   "note": "Place the digits 4, 0, 7, 2 and 9"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "9",
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "note": "9 goes in the thousands place"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "9",
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "note": "The first place cannot be 0, so it takes 2"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "9",
+      "0",
+      "4",
+      "7"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "note": "0, 4 and 7 go from smallest to greatest"
+   },
+   {
+    "kind": "placeChart",
+    "number": "29047"
+   }
+  ]
+ },
+ "G4A_NUMBERS_003": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "726935",
+    "note": "Name the place of every digit"
+   },
+   {
+    "kind": "placeChart",
+    "number": "726935",
+    "note": "Look at the digit in the ten-thousands place",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "726935",
+    "note": "The digit is 2",
+    "highlight": [
+     "d1"
+    ]
+   }
+  ]
+ },
+ "G4A_NUMBERS_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "30540000",
+   "note": "The number in the Indian place-value chart"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "30540000",
+    "note": "Without commas it has eight digits: 30540000"
+   },
+   null,
+   null,
+   null
+  ]
+ },
+ "G4A_NUMBERS_006": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1000",
+      "900",
+      "40",
+      "7"
+     ]
+    ],
+    "headers": [
+     "M",
+     "CM",
+     "XL",
+     "VII"
+    ],
+    "note": "Read MCMXLVII part by part"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "MM",
+      "XX",
+      "II"
+     ]
+    ],
+    "headers": [
+     "2000",
+     "20",
+     "2"
+    ],
+    "note": "Write 2022 part by part"
+   },
+   null
+  ]
+ },
+ "G4A_NUMBERS_007": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "XL",
+      "40"
+     ],
+     [
+      "LX",
+      "60"
+     ]
+    ],
+    "headers": [
+     "Roman",
+     "Number"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "XL",
+      "40"
+     ],
+     [
+      "LX",
+      "60"
+     ],
+     [
+      "XIV",
+      "14"
+     ],
+     [
+      "XLIV",
+      "44"
+     ]
+    ],
+    "headers": [
+     "Roman",
+     "Number"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "XIV",
+      "14"
+     ],
+     [
+      "XL",
+      "40"
+     ],
+     [
+      "XLIV",
+      "44"
+     ],
+     [
+      "LX",
+      "60"
+     ]
+    ],
+    "headers": [
+     "Roman",
+     "Number"
+    ],
+    "note": "In order, smallest first"
+   },
+   null
+  ]
+ },
+ "G4A_NUMBERS_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 4600,
+   "max": 4800,
+   "step": 10,
+   "points": [
+    {
+     "at": 4700,
+     "label": "4,700"
+    }
+   ],
+   "note": "Which numbers round to 4,700?",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "numberLine",
+    "min": 4600,
+    "max": 4800,
+    "step": 10,
+    "points": [
+     {
+      "at": 4700,
+      "label": "4,700"
+     },
+     {
+      "at": 4750,
+      "label": "4,750"
+     },
+     {
+      "at": 4800,
+      "label": "4,800"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4750,
+      "to": 4800
+     }
+    ],
+    "note": "4,750 has tens digit 5, so it rounds up to 4,800",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 4600,
+    "max": 4800,
+    "step": 10,
+    "points": [
+     {
+      "at": 4700,
+      "label": "4,700"
+     },
+     {
+      "at": 4749,
+      "label": "4,749"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4749,
+      "to": 4700
+     }
+    ],
+    "note": "4,749 is the greatest number that still rounds down",
+    "highlight": [
+     "p1"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_NUMBERS_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "38462",
+   "note": "Round to the nearest thousand, and to the nearest ten"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 38000,
+    "max": 39000,
+    "step": 100,
+    "points": [
+     {
+      "at": 38000,
+      "label": "38,000"
+     },
+     {
+      "at": 38462,
+      "label": "38,462"
+     }
+    ],
+    "hops": [
+     {
+      "from": 38462,
+      "to": 38000,
+      "label": "Anil"
+     }
+    ],
+    "note": "Hundreds digit 4 is less than 5: round down to 38,000",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 38460,
+    "max": 38470,
+    "step": 1,
+    "points": [
+     {
+      "at": 38460,
+      "label": "38,460"
+     },
+     {
+      "at": 38462
+     }
+    ],
+    "hops": [
+     {
+      "from": 38462,
+      "to": 38460,
+      "label": "Bina"
+     }
+    ],
+    "note": "Ones digit 2 is less than 5: round down to 38,460",
+    "tickLabels": "none"
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_NUMBERS_010": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 9998,
+    "max": 10001,
+    "step": 1,
+    "points": [
+     {
+      "at": 9999,
+      "label": "9,999"
+     }
+    ],
+    "hops": [
+     {
+      "from": 9999,
+      "to": 10000,
+      "label": "+1"
+     }
+    ],
+    "note": "The successor of 9,999 is 10,000",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 998,
+    "max": 1001,
+    "step": 1,
+    "points": [
+     {
+      "at": 1000,
+      "label": "1,000"
+     }
+    ],
+    "hops": [
+     {
+      "from": 1000,
+      "to": 999,
+      "label": "−1"
+     }
+    ],
+    "note": "The predecessor of 1,000 is 999",
+    "tickLabels": "none"
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_NUMBERS_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 19997,
+   "max": 20001,
+   "step": 1,
+   "points": [
+    {
+     "at": 20000,
+     "label": "20,000"
+    }
+   ],
+   "note": "20,000 is the successor: one more than the number",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "numberLine",
+    "min": 19997,
+    "max": 20001,
+    "step": 1,
+    "points": [
+     {
+      "at": 19998,
+      "label": "19,998"
+     },
+     {
+      "at": 20000,
+      "label": "20,000"
+     }
+    ],
+    "note": "The number itself sits between 19,998 and 20,000",
+    "highlight": [
+     "p0"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_NUMBERS_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "46285",
+   "note": "The marked 6 is replaced by 9",
+   "highlight": [
+    "d1"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "46285",
+    "note": "The 6 is in the thousands place: it stands for 6,000",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "46285",
+    "note": "A 9 in the same place stands for 9,000",
+    "highlight": [
+     "d1"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "46285",
+    "note": "9,000 − 6,000 = 3,000",
+    "highlight": [
+     "d1"
+    ]
+   }
+  ]
+ },
+ "G4A_NUMBERS_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "TTh",
+    "Th",
+    "H",
+    "T",
+    "O"
+   ],
+   "note": "Fill the places from the clues"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "?",
+      "0",
+      "?",
+      "9"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "note": "The greatest odd digit is 9"
+   },
+   null,
+   null,
+   {
+    "kind": "placeChart",
+    "number": "38049",
+    "note": "The thousands digit 8 is twice the tens digit 4"
+   }
+  ]
+ },
+ "G4A_NUMBERS_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "TTh",
+    "Th",
+    "H",
+    "T",
+    "O"
+   ],
+   "note": "Smallest odd number, all digits different"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "0",
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "0",
+      "2",
+      "3",
+      "?"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "0",
+      "2",
+      "3",
+      "5"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "note": "1 and 3 are used, so the smallest odd digit left is 5"
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "10235"
+   }
+  ]
+ },
+ "G4A_NUMBERS_017": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "99",
+      "XCIX",
+      "4"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Roman",
+     "Symbols"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "99",
+      "XCIX",
+      "4"
+     ],
+     [
+      "98",
+      "XCVIII",
+      "6"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Roman",
+     "Symbols"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "99",
+      "XCIX",
+      "4"
+     ],
+     [
+      "98",
+      "XCVIII",
+      "6"
+     ],
+     [
+      "78",
+      "LXXVIII",
+      "7"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Roman",
+     "Symbols"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "99",
+      "XCIX",
+      "4"
+     ],
+     [
+      "98",
+      "XCVIII",
+      "6"
+     ],
+     [
+      "78",
+      "LXXVIII",
+      "7"
+     ],
+     [
+      "88",
+      "LXXXVIII",
+      "8"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Roman",
+     "Symbols"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "99",
+      "XCIX",
+      "4"
+     ],
+     [
+      "98",
+      "XCVIII",
+      "6"
+     ],
+     [
+      "78",
+      "LXXVIII",
+      "7"
+     ],
+     [
+      "88",
+      "LXXXVIII",
+      "8"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Roman",
+     "Symbols"
+    ],
+    "note": "88 needs the most symbols",
+    "highlight": [
+     "r3"
+    ]
+   }
+  ]
+ },
+ "G4A_NUMBERS_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 500,
+   "max": 700,
+   "step": 10,
+   "points": [
+    {
+     "at": 600,
+     "label": "600"
+    }
+   ],
+   "note": "Which numbers round to 600?",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 500,
+    "max": 700,
+    "step": 10,
+    "points": [
+     {
+      "at": 550,
+      "label": "550"
+     },
+     {
+      "at": 600,
+      "label": "600"
+     }
+    ],
+    "note": "550 is the smallest that rounds up to 600",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 500,
+    "max": 700,
+    "step": 10,
+    "points": [
+     {
+      "at": 550,
+      "label": "550"
+     },
+     {
+      "at": 600,
+      "label": "600"
+     },
+     {
+      "at": 649,
+      "label": "649"
+     }
+    ],
+    "note": "649 is the greatest: 650 rounds to 700",
+    "tickLabels": "none"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 500,
+    "max": 700,
+    "step": 10,
+    "points": [
+     {
+      "at": 550,
+      "label": "550"
+     },
+     {
+      "at": 600,
+      "label": "600"
+     },
+     {
+      "at": 649,
+      "label": "649"
+     }
+    ],
+    "note": "From 550 to 649 there are 100 whole numbers",
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_NUMBERS_020": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 340,
+    "max": 360,
+    "step": 1,
+    "points": [
+     {
+      "at": 345,
+      "label": "345"
+     },
+     {
+      "at": 354,
+      "label": "354"
+     }
+    ],
+    "note": "345 to 354 round to 350 to the nearest ten",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 340,
+    "max": 360,
+    "step": 1,
+    "points": [
+     {
+      "at": 345,
+      "label": "345"
+     },
+     {
+      "at": 350,
+      "label": "350"
+     },
+     {
+      "at": 354,
+      "label": "354"
+     }
+    ],
+    "note": "350 and above round to 400, not 300",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 340,
+    "max": 360,
+    "step": 1,
+    "points": [
+     {
+      "at": 345,
+      "label": "345"
+     },
+     {
+      "at": 349,
+      "label": "349"
+     }
+    ],
+    "note": "345 to 349 fit both clues",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 340,
+    "max": 360,
+    "step": 1,
+    "points": [
+     {
+      "at": 345,
+      "label": "345"
+     },
+     {
+      "at": 349,
+      "label": "349"
+     }
+    ],
+    "note": "The greatest is 349",
+    "highlight": [
+     "p1"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_NUMBERS_022": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 4440,
+    "max": 4450,
+    "step": 1,
+    "points": [
+     {
+      "at": 4446,
+      "label": "4,446"
+     },
+     {
+      "at": 4450,
+      "label": "4,450"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4446,
+      "to": 4450
+     }
+    ],
+    "note": "Sana: to the nearest ten",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 4400,
+    "max": 4500,
+    "step": 10,
+    "points": [
+     {
+      "at": 4450,
+      "label": "4,450"
+     },
+     {
+      "at": 4500,
+      "label": "4,500"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4450,
+      "to": 4500
+     }
+    ],
+    "note": "Sana: then to the nearest hundred",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 4000,
+    "max": 5000,
+    "step": 100,
+    "points": [
+     {
+      "at": 4500,
+      "label": "4,500"
+     },
+     {
+      "at": 5000,
+      "label": "5,000"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4500,
+      "to": 5000
+     }
+    ],
+    "note": "Sana: then to the nearest thousand",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 4000,
+    "max": 5000,
+    "step": 100,
+    "points": [
+     {
+      "at": 4000,
+      "label": "4,000"
+     },
+     {
+      "at": 4446,
+      "label": "4,446"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4446,
+      "to": 4000
+     }
+    ],
+    "note": "Ravi: straight to the nearest thousand",
+    "tickLabels": "none"
+   },
+   null
+  ]
+ },
+ "G4A_NUMBERS_023": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 to 9",
+      "9",
+      "1"
+     ]
+    ],
+    "headers": [
+     "Pages",
+     "How many",
+     "Digits each"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 to 9",
+      "9",
+      "1"
+     ],
+     [
+      "10 to 99",
+      "90",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Pages",
+     "How many",
+     "Digits each"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 to 9",
+      "9",
+      "1"
+     ],
+     [
+      "10 to 99",
+      "90",
+      "2"
+     ],
+     [
+      "100 to 120",
+      "21",
+      "3"
+     ]
+    ],
+    "headers": [
+     "Pages",
+     "How many",
+     "Digits each"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 to 9",
+      "9",
+      "1"
+     ],
+     [
+      "10 to 99",
+      "90",
+      "2"
+     ],
+     [
+      "100 to 120",
+      "21",
+      "3"
+     ]
+    ],
+    "headers": [
+     "Pages",
+     "How many",
+     "Digits each"
+    ],
+    "note": "Add the digits from the three groups"
+   },
+   null
+  ]
+ },
+ "G4A_NUMBERS_026": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "835264",
+   "note": "Which digits are worth more than 100 times their face value?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "835264",
+    "note": "The 6 is worth 10 times and the 4 only 1 time its face value",
+    "highlight": [
+     "d4",
+     "d5"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "835264",
+    "note": "The 2 stands for 200: exactly 100 times, so it is not counted",
+    "highlight": [
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "835264",
+    "note": "8, 3 and 5 are worth more than 100 times their face value",
+    "highlight": [
+     "d0",
+     "d1",
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "835264",
+    "note": "So 3 digits fit",
+    "highlight": [
+     "d0",
+     "d1",
+     "d2"
+    ]
+   }
+  ]
+ },
+ "G4A_NUMBERS_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 49900,
+   "max": 50000,
+   "step": 10,
+   "points": [
+    {
+     "at": 49950,
+     "label": "49,950"
+    }
+   ],
+   "note": "When does the ten-thousands digit change?",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 49900,
+    "max": 50000,
+    "step": 10,
+    "points": [
+     {
+      "at": 49950,
+      "label": "49,950"
+     },
+     {
+      "at": 50000,
+      "label": "50,000"
+     }
+    ],
+    "note": "The digit 4 changes when the number reaches 50,000",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 49900,
+    "max": 50000,
+    "step": 10,
+    "points": [
+     {
+      "at": 49950,
+      "label": "49,950"
+     },
+     {
+      "at": 50000,
+      "label": "50,000"
+     }
+    ],
+    "hops": [
+     {
+      "from": 49950,
+      "to": 50000,
+      "label": "?"
+     }
+    ],
+    "tickLabels": "none"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 49900,
+    "max": 50000,
+    "step": 10,
+    "points": [
+     {
+      "at": 49950,
+      "label": "49,950"
+     },
+     {
+      "at": 50000,
+      "label": "50,000"
+     }
+    ],
+    "hops": [
+     {
+      "from": 49950,
+      "to": 50000,
+      "label": "+50"
+     }
+    ],
+    "highlight": [
+     "h0"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "G4A_NUMBERS_029": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   null,
+   {
+    "kind": "placeChart",
+    "number": "888830",
+    "note": "8 fills the first four places, then 3 in the tens and 0 in the ones",
+    "highlight": [
+     "d4",
+     "d5"
+    ]
+   }
+  ]
+ },
+ "PH3_EXT_G4_FP_2016_020_01_b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 20,
+   "max": 50,
+   "step": 1,
+   "note": "Count the odd numbers from 20 to 50",
+   "tickLabels": "ends"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 20,
+    "max": 50,
+    "step": 1,
+    "points": [
+     {
+      "at": 21,
+      "label": "first"
+     },
+     {
+      "at": 49,
+      "label": "last"
+     }
+    ],
+    "note": "The first odd number is 21 and the last is 49",
+    "tickLabels": "ends"
+   },
+   {
+    "kind": "numberLine",
+    "min": 20,
+    "max": 50,
+    "step": 1,
+    "points": [
+     {
+      "at": 21,
+      "label": "first"
+     },
+     {
+      "at": 49,
+      "label": "last"
+     }
+    ],
+    "note": "(49 − 21) ÷ 2 + 1 = 15",
+    "tickLabels": "ends"
+   }
+  ]
+ },
+ "PH3_EXT_G4_FP_2016_020_03_b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 50,
+   "max": 90,
+   "step": 1,
+   "note": "Count the odd numbers from 50 to 90",
+   "tickLabels": "ends"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 90,
+    "step": 1,
+    "points": [
+     {
+      "at": 51,
+      "label": "first"
+     },
+     {
+      "at": 89,
+      "label": "last"
+     }
+    ],
+    "note": "The first odd number is 51 and the last is 89",
+    "tickLabels": "ends"
+   },
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 90,
+    "step": 1,
+    "points": [
+     {
+      "at": 51,
+      "label": "first"
+     },
+     {
+      "at": 89,
+      "label": "last"
+     }
+    ],
+    "note": "(89 − 51) ÷ 2 + 1 = 20",
+    "tickLabels": "ends"
+   }
+  ]
+ },
+ "PYQ_2016_Q05": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "576006",
+    "note": "The 6s are worth 6000 and 6",
+    "highlight": [
+     "d2",
+     "d5"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "567060",
+    "note": "The 6s are worth 60000 and 60",
+    "highlight": [
+     "d1",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "657600",
+    "note": "The 6s are worth 600000 and 600",
+    "highlight": [
+     "d0",
+     "d3"
+    ]
+   },
+   null
+  ]
+ },
+ "PYQ_2016_Q33": {
+  "origin": "rule",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "900"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM",
+      "XL",
+      "VI"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "900",
+     "40",
+     "6"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM",
+      "XL",
+      "VI"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "900",
+     "40",
+     "6"
+    ],
+    "note": "Join the parts in order: MCMXLVI"
+   }
+  ]
+ },
+ "PYQ_2016_Q40": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "placeChart",
+    "number": "101110",
+    "note": "Only one thousand, so the thousands period shows 01",
+    "highlight": [
+     "d1",
+     "d2"
+    ]
+   }
+  ]
+ },
+ "PYQ_2017_Q31": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "978652",
+   "note": "Place value of the 7 − place value of the 5 = ?",
+   "highlight": [
+    "d1",
+    "d4"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "978652",
+    "note": "The 7 is in the ten-thousands place: 70000",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "978652",
+    "note": "The 5 is in the tens place: 50",
+    "highlight": [
+     "d4"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "978652",
+    "note": "70000 − 50 = 69950",
+    "highlight": [
+     "d1",
+     "d4"
+    ]
+   }
+  ]
+ },
+ "PYQ_2018_Q32": {
+  "origin": "rule",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "DCC"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "700"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "DCC",
+      "LXXX",
+      "IX"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "700",
+     "80",
+     "9"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "DCC",
+      "LXXX",
+      "IX"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "700",
+     "80",
+     "9"
+    ],
+    "note": "Join the parts in order: MDCCLXXXIX"
+   }
+  ]
+ },
+ "PYQ_2019_Q10": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "9743753",
+    "note": "The first number is 97,43,753"
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "9694071",
+    "note": "The difference: 9 is in the ten thousands place",
+    "highlight": [
+     "d2"
+    ]
+   },
+   null
+  ]
+ },
+ "PYQ_2019_Q23": {
+  "origin": "rule",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "900"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM",
+      "XC",
+      "VII"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "900",
+     "90",
+     "7"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM",
+      "XC",
+      "VII"
+     ]
+    ],
+    "headers": [
+     "1000",
+     "900",
+     "90",
+     "7"
+    ],
+    "note": "Join the parts in order: MCMXCVII"
+   }
+  ]
+ },
+ "Q_CH01_001": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "362489",
+    "note": "Count from the right: the 6 is in the ten-thousands",
+    "highlight": [
+     "d1"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "362489",
+    "note": "The 6 stands for 60,000",
+    "highlight": [
+     "d1"
+    ]
+   }
+  ]
+ },
+ "Q_CH01_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 99996,
+   "max": 100000,
+   "step": 1,
+   "points": [
+    {
+     "at": 99999,
+     "label": "99,999"
+    }
+   ],
+   "note": "Successor = the very next number",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 99996,
+    "max": 100000,
+    "step": 1,
+    "points": [
+     {
+      "at": 99999,
+      "label": "99,999"
+     }
+    ],
+    "hops": [
+     {
+      "from": 99999,
+      "to": 100000,
+      "label": "+1"
+     }
+    ],
+    "tickLabels": "none"
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "100000",
+    "note": "1,00,000 is one lakh"
+   }
+  ]
+ },
+ "Q_CH01_004": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "CD",
+      "XL",
+      "IV"
+     ]
+    ],
+    "note": "CD: C before D, so take 100 away from 500",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "CD",
+      "XL",
+      "IV"
+     ]
+    ],
+    "note": "XL: X before L, so take 10 away from 50"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "CD",
+      "XL",
+      "IV"
+     ]
+    ],
+    "note": "IV: I before V, so take 1 away from 5"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "CD",
+      "XL",
+      "IV"
+     ]
+    ],
+    "note": "Add the three parts: CDXLIV is 444"
+   }
+  ]
+ },
+ "Q_CH01_005": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "DCC"
+     ]
+    ],
+    "headers": [
+     "700"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "DCC",
+      "LXXX"
+     ]
+    ],
+    "headers": [
+     "700",
+     "80"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "DCC",
+      "LXXX",
+      "IX"
+     ]
+    ],
+    "headers": [
+     "700",
+     "80",
+     "9"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "DCC",
+      "LXXX",
+      "IX"
+     ]
+    ],
+    "headers": [
+     "700",
+     "80",
+     "9"
+    ],
+    "note": "Join the parts in order: DCCLXXXIX"
+   }
+  ]
+ },
+ "Q_CH01_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 4500,
+   "max": 4600,
+   "step": 10,
+   "points": [
+    {
+     "at": 4567,
+     "label": "4,567"
+    }
+   ],
+   "note": "Which hundred is 4,567 nearer to?",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 4500,
+    "max": 4600,
+    "step": 10,
+    "points": [
+     {
+      "at": 4500,
+      "label": "4,500"
+     },
+     {
+      "at": 4567,
+      "label": "4,567"
+     },
+     {
+      "at": 4600,
+      "label": "4,600"
+     }
+    ],
+    "note": "4,567 lies between 4,500 and 4,600",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 4500,
+    "max": 4600,
+    "step": 10,
+    "points": [
+     {
+      "at": 4500,
+      "label": "4,500"
+     },
+     {
+      "at": 4567
+     },
+     {
+      "at": 4600,
+      "label": "4,600"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4567,
+      "to": 4600
+     }
+    ],
+    "note": "The tens digit is 6, which is 5 or more: round up",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 4500,
+    "max": 4600,
+    "step": 10,
+    "points": [
+     {
+      "at": 4567
+     },
+     {
+      "at": 4600,
+      "label": "4,600"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4567,
+      "to": 4600
+     }
+    ],
+    "note": "4,567 rounds to 4,600",
+    "highlight": [
+     "p1"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "Q_CH01_007": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "placeChart",
+    "number": "54321678",
+    "note": "One digit in each place: 8 digits"
+   }
+  ]
+ },
+ "Q_CH01_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "30507",
+   "note": "What does each digit stand for?"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "30507",
+    "note": "The 3 stands for 30,000. The 0 thousands add nothing",
+    "highlight": [
+     "d0"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "30507",
+    "note": "The 5 stands for 500 and the 7 stands for 7",
+    "highlight": [
+     "d2",
+     "d4"
+    ]
+   },
+   null
+  ]
+ },
+ "Q_CH01_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Th",
+    "H",
+    "T",
+    "O"
+   ],
+   "note": "Place the digits 7, 0, 3 and 5"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7",
+      "5",
+      "3",
+      "0"
+     ]
+    ],
+    "headers": [
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "note": "Biggest digit in the biggest place, then in order"
+   },
+   {
+    "kind": "placeChart",
+    "number": "7530"
+   }
+  ]
+ },
+ "Q_CH01_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 9998,
+   "max": 10002,
+   "step": 1,
+   "points": [
+    {
+     "at": 10000,
+     "label": "10,000"
+    }
+   ],
+   "note": "Predecessor = the number just before",
+   "tickLabels": "none"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 9998,
+    "max": 10002,
+    "step": 1,
+    "points": [
+     {
+      "at": 10000,
+      "label": "10,000"
+     }
+    ],
+    "hops": [
+     {
+      "from": 10000,
+      "to": 9999,
+      "label": "−1"
+     }
+    ],
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 9998,
+    "max": 10002,
+    "step": 1,
+    "points": [
+     {
+      "at": 9999,
+      "label": "9,999"
+     },
+     {
+      "at": 10000
+     }
+    ],
+    "hops": [
+     {
+      "from": 10000,
+      "to": 9999,
+      "label": "−1"
+     }
+    ],
+    "highlight": [
+     "p0"
+    ],
+    "tickLabels": "none"
+   }
+  ]
+ },
+ "Q_CH01_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "4562",
+   "note": "Place value of the 5 − face value of the 5 = ?",
+   "highlight": [
+    "d1"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "4562",
+    "note": "The 5 is in the hundreds place: it stands for 500",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "4562",
+    "note": "The face value of 5 is just 5",
+    "highlight": [
+     "d1"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "4562",
+    "note": "500 − 5 = 495",
+    "highlight": [
+     "d1"
+    ]
+   }
+  ]
+ },
+ "Q_CH01_014": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 4000,
+    "max": 5000,
+    "step": 100,
+    "points": [
+     {
+      "at": 4891,
+      "label": "4,891"
+     },
+     {
+      "at": 5000,
+      "label": "5,000"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4891,
+      "to": 5000
+     }
+    ],
+    "note": "Hundreds digit 8 is 5 or more: 4,891 rounds up",
+    "tickLabels": "none"
+   },
+   {
+    "kind": "numberLine",
+    "min": 3000,
+    "max": 4000,
+    "step": 100,
+    "points": [
+     {
+      "at": 3000,
+      "label": "3,000"
+     },
+     {
+      "at": 3207,
+      "label": "3,207"
+     }
+    ],
+    "hops": [
+     {
+      "from": 3207,
+      "to": 3000
+     }
+    ],
+    "note": "Hundreds digit 2 is less than 5: 3,207 rounds down",
+    "tickLabels": "none"
+   },
+   null,
+   null
+  ]
+ },
+ "Q_CH01_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "2345678",
+   "note": "Read each period with its name"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "2345678",
+    "note": "23 is in the lakhs period",
+    "highlight": [
+     "d0",
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "2345678",
+    "note": "45 is in the thousands period",
+    "highlight": [
+     "d2",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "2345678",
+    "note": "678 is in the ones period",
+    "highlight": [
+     "d4",
+     "d5",
+     "d6"
+    ]
+   }
+  ]
+ },
+ "Q_CH01_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 11,
+   "max": 21,
+   "step": 1,
+   "note": "Count the even numbers between 11 and 21",
+   "tickLabels": "ends"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "numberLine",
+    "min": 11,
+    "max": 21,
+    "step": 1,
+    "points": [
+     {
+      "at": 12,
+      "label": "12"
+     },
+     {
+      "at": 14,
+      "label": "14"
+     },
+     {
+      "at": 16,
+      "label": "16"
+     },
+     {
+      "at": 18,
+      "label": "18"
+     },
+     {
+      "at": 20,
+      "label": "20"
+     }
+    ],
+    "tickLabels": "ends"
+   },
+   {
+    "kind": "numberLine",
+    "min": 11,
+    "max": 21,
+    "step": 1,
+    "points": [
+     {
+      "at": 12,
+      "label": "12"
+     },
+     {
+      "at": 14,
+      "label": "14"
+     },
+     {
+      "at": 16,
+      "label": "16"
+     },
+     {
+      "at": 18,
+      "label": "18"
+     },
+     {
+      "at": 20,
+      "label": "20"
+     }
+    ],
+    "note": "5 even numbers",
+    "tickLabels": "ends"
+   }
+  ]
+ },
+ "Q_CH01_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "TTh",
+    "Th",
+    "H",
+    "T",
+    "O"
+   ],
+   "note": "Place the digits 9, 0, 3, 1 and 7"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "?",
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "note": "A number cannot start with 0, so 1 goes first"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "0",
+      "3",
+      "7",
+      "9"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "note": "The rest go from smallest to biggest"
+   },
+   {
+    "kind": "placeChart",
+    "number": "10379"
+   }
+  ]
+ },
+ "Q_CH01_019": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   null,
+   {
+    "kind": "placeChart",
+    "number": "100000",
+    "note": "A 1 followed by five 0s: one lakh"
+   }
+  ]
+ },
+ "Q_CH01_020": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "M",
+      "CM",
+      "XC",
+      "IX"
+     ]
+    ],
+    "note": "Split MCMXCIX into its parts"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1000",
+      "900",
+      "90",
+      "9"
+     ]
+    ],
+    "headers": [
+     "M",
+     "CM",
+     "XC",
+     "IX"
+    ]
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1000",
+      "900",
+      "90",
+      "9"
+     ]
+    ],
+    "headers": [
+     "M",
+     "CM",
+     "XC",
+     "IX"
+    ],
+    "note": "Add the parts: MCMXCIX is 1,999"
+   }
+  ]
+ },
+ "Q_CH01_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "4372",
+   "note": "Place value of the 4 × face value of the 7 = ?",
+   "highlight": [
+    "d0",
+    "d2"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "4372",
+    "note": "The 4 is in the thousands place: it stands for 4,000",
+    "highlight": [
+     "d0"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "4372",
+    "note": "The face value of 7 is just 7",
+    "highlight": [
+     "d2"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "4372",
+    "note": "4,000 × 7 = 28,000",
+    "highlight": [
+     "d0",
+     "d2"
+    ]
+   }
+  ]
+ },
+ "Q_CH01_023": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "10000000",
+    "note": "1 crore: a 1 followed by 7 zeros"
+   },
+   {
+    "kind": "placeChart",
+    "number": "50000000",
+    "note": "5 crore: the 1 becomes a 5, the zeros stay"
+   },
+   {
+    "kind": "placeChart",
+    "number": "50000000",
+    "note": "5 crore has 7 zeros",
+    "highlight": [
+     "d1",
+     "d2",
+     "d3",
+     "d4",
+     "d5",
+     "d6",
+     "d7"
+    ]
+   }
+  ]
+ },
+ "Q_CH01_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "TTh",
+    "Th",
+    "H",
+    "T",
+    "O"
+   ],
+   "note": "Put each digit in its place"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "0",
+      "3",
+      "0",
+      "8"
+     ]
+    ],
+    "headers": [
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "40308",
+    "note": "The number is 40,308"
+   }
+  ]
+ },
+ "Q_CH01_027": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "5000000",
+   "note": "The number just before is 1 less"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "4999999",
+    "note": "49,99,999 is 1 less than 50,00,000"
+   }
+  ]
+ },
+ "Q_CH01_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "?",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Th",
+    "H",
+    "T",
+    "O"
+   ],
+   "note": "Place the digits 5, 3, 8 and 1"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?",
+      "8"
+     ]
+    ],
+    "headers": [
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "note": "An even number ends in an even digit: only 8 is even"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5",
+      "3",
+      "1",
+      "8"
+     ]
+    ],
+    "headers": [
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "note": "The others go in front, biggest first"
+   },
+   {
+    "kind": "placeChart",
+    "number": "5318"
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_005_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "99307",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d0",
+    "d1"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "99307",
+    "note": "The marked digits stand for 90000 and 9000",
+    "highlight": [
+     "d0",
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "99307",
+    "note": "90000 ÷ 9000 = 10",
+    "highlight": [
+     "d0",
+     "d1"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_005_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "12645",
+   "note": "Place value of the marked digit = ?",
+   "highlight": [
+    "d2"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "12645",
+    "note": "The 6 is in the hundreds place",
+    "highlight": [
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "12645",
+    "note": "6 × 100 = 600",
+    "highlight": [
+     "d2"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_005_04_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "68457",
+   "note": "Place value of the marked digit = ?",
+   "highlight": [
+    "d2"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "68457",
+    "note": "The 4 is in the hundreds place",
+    "highlight": [
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "68457",
+    "note": "4 × 100 = 400",
+    "highlight": [
+     "d2"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2017_002_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "42338",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d1",
+    "d4"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "42338",
+    "note": "The marked digits stand for 2000 and 8",
+    "highlight": [
+     "d1",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "42338",
+    "note": "2000 ÷ 8 = 250",
+    "highlight": [
+     "d1",
+     "d4"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2017_031_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "77108",
+   "note": "Place value of the marked digit = ?",
+   "highlight": [
+    "d2"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "77108",
+    "note": "Count the places from the right",
+    "highlight": [
+     "d2"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "77108",
+    "note": "Here the 1 stands for 100",
+    "highlight": [
+     "d2"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2017_031_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "33276",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d0",
+    "d2"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "33276",
+    "note": "The marked digits stand for 30000 and 200",
+    "highlight": [
+     "d0",
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "33276",
+    "note": "30000 ÷ 200 = 150",
+    "highlight": [
+     "d0",
+     "d2"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2021_031_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "89956",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d1",
+    "d3"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "89956",
+    "note": "The marked digits stand for 9000 and 50",
+    "highlight": [
+     "d1",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "89956",
+    "note": "9000 ÷ 50 = 180",
+    "highlight": [
+     "d1",
+     "d3"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2021_031_03_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "46552",
+   "note": "Place value of the marked digit = ?",
+   "highlight": [
+    "d4"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "46552",
+    "note": "The 2 is in the units place",
+    "highlight": [
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "46552",
+    "note": "2 × 1 = 2",
+    "highlight": [
+     "d4"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2021_031_04_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "88416",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d0",
+    "d2"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "88416",
+    "note": "The marked digits stand for 80000 and 400",
+    "highlight": [
+     "d0",
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "88416",
+    "note": "80000 ÷ 400 = 200",
+    "highlight": [
+     "d0",
+     "d2"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_012_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "22049",
+   "note": "Place value of the marked digit = ?",
+   "highlight": [
+    "d1"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "22049",
+    "note": "The 2 is in the thousands place",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "22049",
+    "note": "2 × 1000 = 2000",
+    "highlight": [
+     "d1"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_012_03_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "19741",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d2",
+    "d4"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "19741",
+    "note": "The marked digits stand for 700 and 1",
+    "highlight": [
+     "d2",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "19741",
+    "note": "700 ÷ 1 = 700",
+    "highlight": [
+     "d2",
+     "d4"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_019_03_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "97486",
+   "note": "Place value of the marked digit = ?",
+   "highlight": [
+    "d1"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "97486",
+    "note": "The 7 is in the thousands place",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "97486",
+    "note": "7 × 1000 = 7000",
+    "highlight": [
+     "d1"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_019_04_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "67666",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d4",
+    "d3"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "67666",
+    "note": "The marked digits stand for 6 and 60",
+    "highlight": [
+     "d4",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "67666",
+    "note": "6 ÷ 60 = 0.1",
+    "highlight": [
+     "d4",
+     "d3"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_004_04_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "90447",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d0",
+    "d3"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "90447",
+    "note": "The marked digits stand for 90000 and 40",
+    "highlight": [
+     "d0",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "90447",
+    "note": "90000 ÷ 40 = 2250",
+    "highlight": [
+     "d0",
+     "d3"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_009_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "71411",
+   "note": "Place value of the marked digit = ?",
+   "highlight": [
+    "d1"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "71411",
+    "note": "Count the places from the right",
+    "highlight": [
+     "d1"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "71411",
+    "note": "Here the 1 stands for 1000",
+    "highlight": [
+     "d1"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_001_02_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "69697",
+   "note": "Compare the place values of the two marked digits",
+   "highlight": [
+    "d1",
+    "d2"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "69697",
+    "note": "The marked digits stand for 9000 and 600",
+    "highlight": [
+     "d1",
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "69697",
+    "note": "9000 ÷ 600 = 15",
+    "highlight": [
+     "d1",
+     "d2"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_001_03_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "62121",
+   "note": "Place value of the marked digit = ?",
+   "highlight": [
+    "d2"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "62121",
+    "note": "Count the places from the right",
+    "highlight": [
+     "d2"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "62121",
+    "note": "Here the 1 stands for 100",
+    "highlight": [
+     "d2"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_018_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "66933",
+   "note": "Place value of the marked digit = ?",
+   "highlight": [
+    "d0"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "66933",
+    "note": "The 6 is in the ten-thousands place",
+    "highlight": [
+     "d0"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "66933",
+    "note": "6 × 10000 = 60000",
+    "highlight": [
+     "d0"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_WS2_CH11_008_03_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "placeChart",
+   "number": "93939",
+   "note": "Place value of the marked digit = ?",
+   "highlight": [
+    "d3"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "93939",
+    "note": "The 3 is in the tens place",
+    "highlight": [
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "93939",
+    "note": "3 × 10 = 30",
+    "highlight": [
+     "d3"
+    ]
+   }
+  ]
+ }
+}

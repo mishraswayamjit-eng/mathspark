@@ -1,0 +1,6046 @@
+{
+ "BOOST_EXT_G4_FP_2017_016_07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 35",
+   "rightTitle": "Factors of 28",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "5",
+      "7",
+      "35"
+     ]
+    ],
+    "note": "The factors of 35"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "4"
+     ],
+     [
+      "7",
+      "14",
+      "28"
+     ]
+    ],
+    "note": "The factors of 28"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 35",
+    "rightTitle": "Factors of 28",
+    "left": "5, 35",
+    "both": "1, 7",
+    "right": "2, 4, 14, 28",
+    "note": "In both lists: 1 and 7. The biggest is 7",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2022_027_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 35",
+   "rightTitle": "Factors of 14",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "7",
+      "14"
+     ]
+    ],
+    "note": "The factors of 14"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "14",
+      "no"
+     ]
+    ],
+    "headers": [
+     "Factor of 14",
+     "Divides 35?"
+    ],
+    "note": "Try the factors of 14 on 35, biggest first"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "14",
+      "no"
+     ],
+     [
+      "7",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "Factor of 14",
+     "Divides 35?"
+    ],
+    "note": "7 is the biggest factor of 14 that divides 35",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "14",
+      "no"
+     ],
+     [
+      "7",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "Factor of 14",
+     "Divides 35?"
+    ],
+    "note": "The HCF of 35 and 14 is 7",
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2023_036_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 105",
+   "rightTitle": "Factors of 120",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 105,
+    "note": "Break 105 into prime factors"
+   },
+   {
+    "kind": "factorTree",
+    "number": 120,
+    "note": "Break 120 into prime factors"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "105",
+    "rightTitle": "120",
+    "left": "…",
+    "both": "3 × 5",
+    "right": "…",
+    "note": "Shared prime factors: 3 and 5",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "105",
+    "rightTitle": "120",
+    "left": "…",
+    "both": "3 × 5",
+    "right": "…",
+    "note": "The HCF of 105 and 120 is 15",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 24",
+   "rightTitle": "Factors of 72",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "72",
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "24",
+        "tone": "a"
+       },
+       {
+        "units": 4.0,
+        "label": "24",
+        "tone": "a"
+       },
+       {
+        "units": 4.0,
+        "label": "24",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "24",
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "24",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "24 fits into 72 exactly, with nothing left over"
+   },
+   null,
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 24",
+    "rightTitle": "Factors of 72",
+    "left": "–",
+    "both": "1, …, 24",
+    "right": "…, 72",
+    "note": "24 divides both, and nothing bigger divides 24",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_036": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 120,
+    "step": 24,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 24
+     },
+     {
+      "at": 48
+     },
+     {
+      "at": 72
+     },
+     {
+      "at": 96
+     }
+    ],
+    "note": "24, 48, 72 and 96 have two digits. 120 has three",
+    "highlight": [
+     "p0",
+     "p1",
+     "p2",
+     "p3"
+    ]
+   },
+   null
+  ]
+ },
+ "EXT_G4_FP_2020_040": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "2",
+     "★",
+     "1",
+     "★"
+    ]
+   ],
+   "headers": [
+    "Thousands",
+    "Hundreds",
+    "Tens",
+    "Ones"
+   ],
+   "note": "Both stars are the same digit. 11 divides the number"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1st and 3rd",
+      "2 + 1"
+     ]
+    ],
+    "headers": [
+     "Places",
+     "Digits added"
+    ],
+    "note": "Add the 1st and 3rd digits"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1st and 3rd",
+      "2 + 1"
+     ],
+     [
+      "2nd and 4th",
+      "★ + ★"
+     ]
+    ],
+    "headers": [
+     "Places",
+     "Digits added"
+    ],
+    "note": "★ + ★ is double a digit, so it is even. It cannot be 3",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1st and 3rd",
+      "2 + 1"
+     ],
+     [
+      "2nd and 4th",
+      "★ + ★ = 3 + 11"
+     ]
+    ],
+    "headers": [
+     "Places",
+     "Digits added"
+    ],
+    "note": "So the two sums must differ by 11",
+    "highlight": [
+     "r1"
+    ]
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "7",
+      "1",
+      "7"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Check the number 2717"
+   },
+   null
+  ]
+ },
+ "EXT_G4_FP_2021_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "73251"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "73251",
+    "note": "Test for 3: add all the digits",
+    "highlight": [
+     "d0",
+     "d1",
+     "d2",
+     "d3",
+     "d4"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "73251",
+    "note": "Only the 2 is even, so the 2 must move to the end",
+    "highlight": [
+     "d2",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "73152",
+    "note": "Swap the 2 and the 1 to get 73152",
+    "highlight": [
+     "d2",
+     "d4"
+    ]
+   },
+   null
+  ]
+ },
+ "EXT_G4_FP_2021_040": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "45",
+   "rightTitle": "75",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "Sort the prime factors of 45 and 75. Shared ones go in the middle"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "45",
+    "rightTitle": "75",
+    "left": "3",
+    "both": "3 × 5",
+    "right": "5",
+    "note": "The middle is shared by both numbers: 3 × 5 = 15, the HCF",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "45",
+    "rightTitle": "75",
+    "left": "3",
+    "both": "3 × 5",
+    "right": "5",
+    "note": "LCM = everything in the picture multiplied together",
+    "highlight": [
+     "left",
+     "both",
+     "right"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G4_FP_2022_003": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "15 × 600",
+    "right": "120 × ?",
+    "note": "HCF × LCM = one number × the other number"
+   },
+   null,
+   {
+    "kind": "balance",
+    "left": "15 × 600",
+    "right": "120 × 75",
+    "note": "The other number is 75",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_034": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "16",
+   "rightTitle": "36",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "Sort the prime factors of 16 and 36. Shared ones go in the middle"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "16",
+    "rightTitle": "36",
+    "left": "2 × 2",
+    "both": "2 × 2",
+    "right": "3 × 3",
+    "note": "The middle is shared by both numbers: 2 × 2 = 4, the HCF",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "16",
+    "rightTitle": "36",
+    "left": "2 × 2",
+    "both": "2 × 2",
+    "right": "3 × 3",
+    "note": "LCM = everything in the picture multiplied together: 144",
+    "highlight": [
+     "left",
+     "both",
+     "right"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G4_FP_2022_036": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "9",
+     "★",
+     "3",
+     "★"
+    ]
+   ],
+   "headers": [
+    "Thousands",
+    "Hundreds",
+    "Tens",
+    "Ones"
+   ],
+   "note": "Both stars are the same digit. 11 divides the number"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1st and 3rd",
+      "9 + 3"
+     ],
+     [
+      "2nd and 4th",
+      "★ + ★"
+     ]
+    ],
+    "headers": [
+     "Places",
+     "Digits added"
+    ],
+    "note": "For 11, the two sums must be equal, or differ by 11",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1st and 3rd",
+      "9 + 3 = 12"
+     ],
+     [
+      "2nd and 4th",
+      "6 + 6 = 12"
+     ]
+    ],
+    "headers": [
+     "Places",
+     "Digits added"
+    ],
+    "note": "The two stars add to 12, so each star is 6",
+    "highlight": [
+     "r1"
+    ]
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "6",
+      "3",
+      "6"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The digit is 6, which is not 4, 5 or 7"
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "65",
+   "rightTitle": "91",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "Sort the prime factors of 65 and 91. Shared ones go in the middle"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "65",
+    "rightTitle": "91",
+    "left": "5",
+    "both": "13",
+    "right": "7",
+    "note": "The middle is shared by both numbers: 13, the HCF",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "65",
+    "rightTitle": "91",
+    "left": "5",
+    "both": "13",
+    "right": "7",
+    "note": "LCM = everything in the picture multiplied together",
+    "highlight": [
+     "left",
+     "both",
+     "right"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G4_FP_2023_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "A",
+     "9",
+     "A",
+     "5"
+    ]
+   ],
+   "note": "Both A's are the same digit. 7 divides the number"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "4",
+      "9",
+      "4",
+      "5"
+     ]
+    ],
+    "note": "With 4 in both blanks the number is 14945"
+   },
+   null,
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "4",
+      "9",
+      "4",
+      "5"
+     ]
+    ],
+    "note": "14945 is divisible by 7, so A is 4"
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_027": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "8 × 2040",
+    "right": "120 × ?",
+    "note": "HCF × LCM = one number × the other number"
+   },
+   null,
+   {
+    "kind": "balance",
+    "left": "8 × 2040",
+    "right": "120 × 136",
+    "note": "The other number is 136",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "36",
+   "rightTitle": "84",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "Sort the prime factors of 36 and 84. Shared ones go in the middle"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "36",
+    "rightTitle": "84",
+    "left": "3",
+    "both": "2 × 2 × 3",
+    "right": "7",
+    "note": "The prime factors of 36 and 84, with the shared ones in the middle"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "36",
+    "rightTitle": "84",
+    "left": "3",
+    "both": "2 × 2 × 3",
+    "right": "7",
+    "note": "The middle is shared by both numbers: its product is 12, the HCF",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "36",
+    "rightTitle": "84",
+    "left": "3",
+    "both": "2 × 2 × 3",
+    "right": "7",
+    "note": "LCM = everything in the picture multiplied together: 252",
+    "highlight": [
+     "left",
+     "both",
+     "right"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G4_FP_2024_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "A",
+     "5",
+     "9"
+    ],
+    [
+     "5",
+     "B",
+     "2"
+    ],
+    [
+     "6",
+     "C",
+     "9"
+    ]
+   ],
+   "note": "Each row is a number that 9 divides. Find A, B and C"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "5",
+      "9"
+     ],
+     [
+      "5",
+      "B",
+      "2"
+     ],
+     [
+      "6",
+      "C",
+      "9"
+     ]
+    ],
+    "note": "5 + 9 = 14. The next multiple of 9 is 18, so A is 4",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "5",
+      "9"
+     ],
+     [
+      "5",
+      "2",
+      "2"
+     ],
+     [
+      "6",
+      "C",
+      "9"
+     ]
+    ],
+    "note": "5 + 2 = 7. The next multiple of 9 is 9, so B is 2",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "5",
+      "9"
+     ],
+     [
+      "5",
+      "2",
+      "2"
+     ],
+     [
+      "6",
+      "3",
+      "9"
+     ]
+    ],
+    "note": "6 + 9 = 15. The next multiple of 9 is 18, so C is 3",
+    "highlight": [
+     "r2"
+    ]
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "2",
+      "3"
+     ]
+    ],
+    "note": "Odd, and as big as it can be: 423"
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_040": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "24",
+   "rightTitle": "32",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "Sort the prime factors of 24 and 32. Shared ones go in the middle"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "24",
+    "rightTitle": "32",
+    "left": "3",
+    "both": "2 × 2 × 2",
+    "right": "2 × 2",
+    "note": "The middle is shared by both numbers: 2 × 2 × 2 = 8, the HCF",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "24",
+    "rightTitle": "32",
+    "left": "3",
+    "both": "2 × 2 × 2",
+    "right": "2 × 2",
+    "note": "LCM = everything in the picture multiplied together",
+    "highlight": [
+     "left",
+     "both",
+     "right"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_FACTORS_001": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "rectangle",
+    "grid": {
+     "cols": 9,
+     "rows": 4
+    },
+    "proportion": 2.25,
+    "note": "4 rows of 9 make 36 exactly, so 9 is a factor of 36"
+   }
+  ]
+ },
+ "G4A_FACTORS_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "18"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "Find every pair of numbers that multiply to 18"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 18"
+     ]
+    ],
+    "note": "Factor pairs of 18 found so far"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 18",
+      "2 × 9"
+     ]
+    ],
+    "note": "Factor pairs of 18 found so far"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 18",
+      "2 × 9",
+      "3 × 6"
+     ]
+    ],
+    "note": "4 and 5 do not divide 18, so these are all the pairs"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 18",
+      "2 × 9",
+      "3 × 6"
+     ]
+    ],
+    "note": "Six factors: 1, 2, 3, 6, 9, 18"
+   }
+  ],
+  "usesOptions": true
+ },
+ "G4A_FACTORS_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 12",
+   "rightTitle": "Factors of 20",
+   "left": "…",
+   "both": "?",
+   "right": "…",
+   "note": "A common factor belongs in the middle"
+  },
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 12",
+    "rightTitle": "Factors of 20",
+    "left": "…",
+    "both": "4",
+    "right": "…",
+    "note": "4 divides both 12 and 20, so it goes in the middle",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "G4A_FACTORS_007": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "no",
+      "?"
+     ]
+    ],
+    "headers": [
+     "9",
+     "18",
+     "27",
+     "36"
+    ],
+    "note": "Multiples of 9. Does 4 divide it exactly?"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "9",
+     "18",
+     "27",
+     "36"
+    ],
+    "note": "4 and 6 both divide 36"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "9",
+     "18",
+     "27",
+     "36"
+    ],
+    "note": "All three lights blink together again after 36 seconds",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "G4A_FACTORS_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "60 cm",
+   "breadth": "48 cm",
+   "proportion": 1.25,
+   "note": "Equal square tiles, no cutting. Biggest tile side = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "60 cm",
+    "breadth": "48 cm",
+    "proportion": 1.25,
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "note": "The tile side must divide both 48 and 60 exactly"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3"
+     ],
+     [
+      "4",
+      "6",
+      "12"
+     ]
+    ],
+    "note": "Tile sides that fit both 48 cm and 60 cm"
+   },
+   null,
+   {
+    "kind": "rectangle",
+    "length": "60 cm",
+    "breadth": "48 cm",
+    "proportion": 1.25,
+    "inside": "12 cm tiles",
+    "highlight": [
+     "fill"
+    ],
+    "note": "12 cm is the biggest side that fits both ways exactly"
+   }
+  ]
+ },
+ "G4A_FACTORS_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "7",
+     "?",
+     "4"
+    ]
+   ],
+   "headers": [
+    "Hundreds",
+    "Tens",
+    "Ones"
+   ],
+   "note": "Smallest digit for ? so that 3 divides the number"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7",
+      "?",
+      "4"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "Add the digits you know: 7 and 4"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7",
+      "?",
+      "4"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The next multiple of 3 is 12. It needs 1 more"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7",
+      "1",
+      "4"
+     ]
+    ],
+    "headers": [
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The smallest digit is 1, giving 714"
+   }
+  ]
+ },
+ "G4A_FACTORS_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "48"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "Find every pair of numbers that multiply to 48"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 48",
+      "2 × 24",
+      "3 × 16"
+     ],
+     [
+      "4 × 12",
+      "6 × 8"
+     ]
+    ],
+    "note": "The factor pairs of 48"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 48",
+      "2 × 24",
+      "3 × 16"
+     ],
+     [
+      "4 × 12",
+      "6 × 8"
+     ]
+    ],
+    "note": "10 factors in all. Only 1 and 3 are odd"
+   },
+   null
+  ]
+ },
+ "G4A_FACTORS_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "factorTree",
+   "number": 84,
+   "depth": 0,
+   "note": "Split 84 until every part is prime. Which prime is the greatest?"
+  },
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 84,
+    "depth": 1,
+    "note": "Start by splitting 84 into two smaller factors"
+   },
+   {
+    "kind": "factorTree",
+    "number": 84,
+    "note": "Keep splitting until all the parts are prime"
+   },
+   {
+    "kind": "factorTree",
+    "number": 84,
+    "note": "The prime factors are 2, 3 and 7. The greatest is 7",
+    "highlight": [
+     "primes"
+    ]
+   }
+  ]
+ },
+ "G4A_FACTORS_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "4729"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "4729",
+    "note": "Add the four digits",
+    "highlight": [
+     "d0",
+     "d1",
+     "d2",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "4729",
+    "note": "The digits add up to 22. The multiple of 9 just below is 18"
+   },
+   {
+    "kind": "placeChart",
+    "number": "4725",
+    "note": "Take away 4 to get 4,725, which 9 divides",
+    "highlight": [
+     "d3"
+    ]
+   }
+  ]
+ },
+ "G4A_FACTORS_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Anu: every 3rd",
+   "rightTitle": "Biju: every 4th",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "50 steps in all. How many are outside both circles?"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "Anu: every 3rd",
+    "rightTitle": "Biju: every 4th",
+    "left": "?",
+    "both": "?",
+    "right": "?",
+    "note": "Anu's whole circle holds 16 steps",
+    "highlight": [
+     "left",
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Anu: every 3rd",
+    "rightTitle": "Biju: every 4th",
+    "left": "16 − 4",
+    "both": "4",
+    "right": "12 − 4",
+    "note": "Biju's circle holds 12. The 4 multiples of 12 are in both",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Anu: every 3rd",
+    "rightTitle": "Biju: every 4th",
+    "left": "16 − 4",
+    "both": "4",
+    "right": "12 − 4",
+    "note": "Inside the circles: 16 + 12 − 4 steps",
+    "highlight": [
+     "left",
+     "both",
+     "right"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Anu: every 3rd",
+    "rightTitle": "Biju: every 4th",
+    "left": "16 − 4",
+    "both": "4",
+    "right": "12 − 4",
+    "note": "Of the 50 steps, 26 are outside both circles"
+   }
+  ]
+ },
+ "G4A_FACTORS_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 6,
+   "minute": 0,
+   "note": "Both buses leave now. Pune: every 15 minutes. Nashik: every 20 minutes"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "20",
+     "40",
+     "60"
+    ],
+    "note": "Multiples of 20. Does 15 divide it exactly?"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6:00",
+      "7:00",
+      "8:00",
+      "9:00",
+      "10:00"
+     ]
+    ],
+    "note": "The times when both buses leave together"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6:00",
+      "7:00",
+      "8:00",
+      "9:00",
+      "10:00"
+     ]
+    ],
+    "note": "Count the times, with 6:00 and 10:00 included: 5"
+   }
+  ]
+ },
+ "G4A_FACTORS_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Pune",
+     "7:00",
+     "12 minutes"
+    ],
+    [
+     "Nashik",
+     "7:06",
+     "18 minutes"
+    ]
+   ],
+   "headers": [
+    "Bus to",
+    "First bus",
+    "Then every"
+   ],
+   "note": "When do two buses first leave at the same moment?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Pune",
+      "7:00",
+      "7:12",
+      "7:24",
+      "7:36"
+     ]
+    ],
+    "note": "Pune buses: add 12 minutes each time"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Pune",
+      "7:00",
+      "7:12",
+      "7:24",
+      "7:36"
+     ],
+     [
+      "Nashik",
+      "7:06",
+      "7:24",
+      "7:42",
+      "…"
+     ]
+    ],
+    "note": "Nashik buses: add 18 minutes each time",
+    "highlight": [
+     "r1"
+    ]
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Pune",
+      "7:00",
+      "7:12",
+      "7:24",
+      "7:36"
+     ],
+     [
+      "Nashik",
+      "7:06",
+      "7:24",
+      "7:42",
+      "…"
+     ]
+    ],
+    "note": "7:24 is the first time that is in both rows"
+   }
+  ]
+ },
+ "G4A_FACTORS_030": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Multiples of 4",
+   "rightTitle": "Multiples of 6",
+   "left": "?",
+   "both": "…",
+   "right": "…",
+   "note": "Numbers from 1 to 100. How many belong only in the left part?"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "Multiples of 4",
+    "rightTitle": "Multiples of 6",
+    "left": "?",
+    "both": "…",
+    "right": "…",
+    "note": "First count the whole Multiples of 4 circle",
+    "highlight": [
+     "left",
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Multiples of 4",
+    "rightTitle": "Multiples of 6",
+    "left": "?",
+    "both": "12, 24, … 96",
+    "right": "…",
+    "note": "The middle holds the multiples of 12",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Multiples of 4",
+    "rightTitle": "Multiples of 6",
+    "left": "?",
+    "both": "12, 24, … 96",
+    "right": "…",
+    "note": "Take the middle away from the Multiples of 4 circle",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Multiples of 4",
+    "rightTitle": "Multiples of 6",
+    "left": "17",
+    "both": "12, 24, … 96",
+    "right": "…",
+    "note": "17 numbers are multiples of 4 but not of 6",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "PH3_EXT_G4_FP_2016_003_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 100,
+   "max": 300,
+   "step": 200,
+   "tickLabels": "ends",
+   "note": "How many multiples of 9 are on this line, from 100 to 300?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 100,
+    "max": 300,
+    "step": 200,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 108,
+      "label": "108"
+     }
+    ],
+    "note": "The first multiple of 9 on the line",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 100,
+    "max": 300,
+    "step": 200,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 108,
+      "label": "108"
+     },
+     {
+      "at": 297,
+      "label": "297"
+     }
+    ],
+    "note": "The last multiple of 9 on the line",
+    "highlight": [
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 100,
+    "max": 300,
+    "step": 200,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 108,
+      "label": "108"
+     },
+     {
+      "at": 297,
+      "label": "297"
+     }
+    ],
+    "hops": [
+     {
+      "from": 108,
+      "to": 297,
+      "label": "jumps of 9"
+     }
+    ],
+    "note": "(297 − 108) ÷ 9 jumps, and 1 more for the first number: 22",
+    "highlight": [
+     "h0"
+    ]
+   }
+  ]
+ },
+ "PH3_EXT_G4_FP_2019_016_01_b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 1,
+   "max": 101,
+   "step": 100,
+   "tickLabels": "ends",
+   "note": "How many multiples of 5 are on this line, from 1 to 101?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 101,
+    "step": 100,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 5,
+      "label": "5"
+     }
+    ],
+    "note": "The first multiple of 5 on the line",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 101,
+    "step": 100,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 5,
+      "label": "5"
+     },
+     {
+      "at": 100,
+      "label": "100"
+     }
+    ],
+    "note": "The last multiple of 5 on the line",
+    "highlight": [
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 101,
+    "step": 100,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 5,
+      "label": "5"
+     },
+     {
+      "at": 100,
+      "label": "100"
+     }
+    ],
+    "hops": [
+     {
+      "from": 5,
+      "to": 100,
+      "label": "jumps of 5"
+     }
+    ],
+    "note": "(100 − 5) ÷ 5 jumps, and 1 more for the first number: 20",
+    "highlight": [
+     "h0"
+    ]
+   }
+  ]
+ },
+ "PH3_EXT_G4_FP_2024_021_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 50,
+   "max": 250,
+   "step": 200,
+   "tickLabels": "ends",
+   "note": "How many multiples of 7 are on this line, from 50 to 250?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 250,
+    "step": 200,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 56,
+      "label": "56"
+     }
+    ],
+    "note": "The first multiple of 7 on the line",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 250,
+    "step": 200,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 56,
+      "label": "56"
+     },
+     {
+      "at": 245,
+      "label": "245"
+     }
+    ],
+    "note": "The last multiple of 7 on the line",
+    "highlight": [
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 250,
+    "step": 200,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 56,
+      "label": "56"
+     },
+     {
+      "at": 245,
+      "label": "245"
+     }
+    ],
+    "hops": [
+     {
+      "from": 56,
+      "to": 245,
+      "label": "jumps of 7"
+     }
+    ],
+    "note": "(245 − 56) ÷ 7 jumps, and 1 more for the first number: 28",
+    "highlight": [
+     "h0"
+    ]
+   }
+  ]
+ },
+ "PH3_EXT_G4_FP_2024_029_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 50,
+   "max": 150,
+   "step": 100,
+   "tickLabels": "ends",
+   "note": "How many multiples of 9 are on this line, from 50 to 150?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 150,
+    "step": 100,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 54,
+      "label": "54"
+     }
+    ],
+    "note": "The first multiple of 9 on the line",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 150,
+    "step": 100,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 54,
+      "label": "54"
+     },
+     {
+      "at": 144,
+      "label": "144"
+     }
+    ],
+    "note": "The last multiple of 9 on the line",
+    "highlight": [
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 150,
+    "step": 100,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 54,
+      "label": "54"
+     },
+     {
+      "at": 144,
+      "label": "144"
+     }
+    ],
+    "hops": [
+     {
+      "from": 54,
+      "to": 144,
+      "label": "jumps of 9"
+     }
+    ],
+    "note": "(144 − 54) ÷ 9 jumps, and 1 more for the first number: 11",
+    "highlight": [
+     "h0"
+    ]
+   }
+  ]
+ },
+ "PH3_EXT_G4_FP_2025_004_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 50,
+   "max": 100,
+   "step": 50,
+   "tickLabels": "ends",
+   "note": "How many multiples of 8 are on this line, from 50 to 100?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 100,
+    "step": 50,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 56,
+      "label": "56"
+     }
+    ],
+    "note": "The first multiple of 8 on the line",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 100,
+    "step": 50,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 56,
+      "label": "56"
+     },
+     {
+      "at": 96,
+      "label": "96"
+     }
+    ],
+    "note": "The last multiple of 8 on the line",
+    "highlight": [
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 100,
+    "step": 50,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 56,
+      "label": "56"
+     },
+     {
+      "at": 96,
+      "label": "96"
+     }
+    ],
+    "hops": [
+     {
+      "from": 56,
+      "to": 96,
+      "label": "jumps of 8"
+     }
+    ],
+    "note": "(96 − 56) ÷ 8 jumps, and 1 more for the first number: 6",
+    "highlight": [
+     "h0"
+    ]
+   }
+  ]
+ },
+ "PH3_EXT_G4_WS2_CH17_009_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "numberLine",
+   "min": 100,
+   "max": 150,
+   "step": 50,
+   "tickLabels": "ends",
+   "note": "How many multiples of 3 are on this line, from 100 to 150?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 100,
+    "max": 150,
+    "step": 50,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 102,
+      "label": "102"
+     }
+    ],
+    "note": "The first multiple of 3 on the line",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 100,
+    "max": 150,
+    "step": 50,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 102,
+      "label": "102"
+     },
+     {
+      "at": 150,
+      "label": "150"
+     }
+    ],
+    "note": "The last multiple of 3 on the line",
+    "highlight": [
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 100,
+    "max": 150,
+    "step": 50,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 102,
+      "label": "102"
+     },
+     {
+      "at": 150,
+      "label": "150"
+     }
+    ],
+    "hops": [
+     {
+      "from": 102,
+      "to": 150,
+      "label": "jumps of 3"
+     }
+    ],
+    "note": "(150 − 102) ÷ 3 jumps, and 1 more for the first number: 17",
+    "highlight": [
+     "h0"
+    ]
+   }
+  ]
+ },
+ "PYQ_2016_Q03": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "98"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "How many pairs of numbers multiply to 98?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 98"
+     ]
+    ],
+    "note": "Factor pairs of 98 found so far"
+   },
+   null,
+   null,
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 98",
+      "2 × 49",
+      "7 × 14"
+     ]
+    ],
+    "note": "Factor pairs of 98 found so far"
+   }
+  ]
+ },
+ "PYQ_2016_Q06": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "numberLine",
+    "min": 20,
+    "max": 29,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 23
+     },
+     {
+      "at": 29
+     }
+    ],
+    "note": "From 20 to 29, only 23 and 29 are prime",
+    "highlight": [
+     "p0",
+     "p1"
+    ]
+   },
+   null
+  ]
+ },
+ "PYQ_2016_Q13": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "5",
+     "★",
+     "7"
+    ],
+    [
+     "5",
+     "7",
+     "♥"
+    ],
+    [
+     "Ψ",
+     "5",
+     "9"
+    ]
+   ],
+   "note": "11 divides all three numbers. Find ★, ♥ and Ψ"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5",
+      "★",
+      "7"
+     ],
+     [
+      "5",
+      "7",
+      "♥"
+     ],
+     [
+      "Ψ",
+      "5",
+      "9"
+     ]
+    ],
+    "note": "First digit + last digit − middle digit must come to 0 or 11"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5",
+      "1",
+      "7"
+     ],
+     [
+      "5",
+      "7",
+      "♥"
+     ],
+     [
+      "Ψ",
+      "5",
+      "9"
+     ]
+    ],
+    "note": "5 + 7 = 12, so ★ must be 1 to leave 11",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5",
+      "1",
+      "7"
+     ],
+     [
+      "5",
+      "7",
+      "2"
+     ],
+     [
+      "Ψ",
+      "5",
+      "9"
+     ]
+    ],
+    "note": "5 plus ♥ must equal 7, so ♥ is 2",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5",
+      "1",
+      "7"
+     ],
+     [
+      "5",
+      "7",
+      "2"
+     ],
+     [
+      "7",
+      "5",
+      "9"
+     ]
+    ],
+    "note": "Ψ plus 9 less 5 must come to 11, so Ψ is 7",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7",
+      "2",
+      "1"
+     ]
+    ],
+    "note": "Biggest digit first: 721"
+   }
+  ]
+ },
+ "PYQ_2016_Q15": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 65",
+   "rightTitle": "Factors of 91",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 65,
+    "note": "Break 65 into prime factors"
+   },
+   {
+    "kind": "factorTree",
+    "number": 91,
+    "note": "Break 91 into prime factors"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "65",
+    "rightTitle": "91",
+    "left": "…",
+    "both": "13",
+    "right": "…",
+    "note": "Both numbers have 13 in them, and nothing bigger. HCF = 13",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "PYQ_2016_Q36": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "84"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "Find every pair of numbers that multiply to 84"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 84",
+      "2 × 42",
+      "3 × 28",
+      "4 × 21"
+     ]
+    ],
+    "note": "Factor pairs of 84 found so far"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 84",
+      "2 × 42",
+      "3 × 28"
+     ],
+     [
+      "4 × 21",
+      "6 × 14",
+      "7 × 12"
+     ]
+    ],
+    "note": "Factor pairs of 84 found so far"
+   },
+   null,
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 84",
+      "2 × 42",
+      "3 × 28"
+     ],
+     [
+      "4 × 21",
+      "6 × 14",
+      "7 × 12"
+     ]
+    ],
+    "note": "Every factor pair of 84. Count each different number once"
+   }
+  ]
+ },
+ "PYQ_2017_Q06": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 90,
+    "note": "The prime factors of 90",
+    "highlight": [
+     "primes"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "5",
+      "6"
+     ]
+    ],
+    "note": "The three dice. 3 × 5 × 6 = 90"
+   },
+   null
+  ]
+ },
+ "PYQ_2017_Q19": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "48",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "54",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 48s and in 54s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "48 = 6 × 8",
+    "rightTitle": "54 = 6 × 9",
+    "left": "8",
+    "both": "6",
+    "right": "9",
+    "note": "6 is in both numbers. 8 and 9 are the parts left over",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "48 = 6 × 8",
+    "rightTitle": "54 = 6 × 9",
+    "left": "8",
+    "both": "6",
+    "right": "9",
+    "note": "LCM = 6 × 8 × 9, using the shared 6 only once",
+    "highlight": [
+     "left",
+     "both",
+     "right"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "48 = 6 × 8",
+    "rightTitle": "54 = 6 × 9",
+    "left": "8",
+    "both": "6",
+    "right": "9",
+    "note": "6 × 8 × 9 = 432, and both 48 and 54 divide it"
+   }
+  ]
+ },
+ "PYQ_2018_Q01": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "label": "Ribbon 1",
+     "segments": [
+      {
+       "units": 9.333,
+       "label": "84 m",
+       "tone": "a"
+      }
+     ]
+    },
+    {
+     "label": "Ribbon 2",
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "108 m",
+       "tone": "b"
+      }
+     ]
+    }
+   ],
+   "note": "Cut both into equal pieces, as long as possible, nothing left over"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "Ribbon 1",
+      "segments": [
+       {
+        "units": 9.333,
+        "label": "84 m",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "Ribbon 2",
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "108 m",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "The piece length must divide both 84 and 108 exactly"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     [
+      "6",
+      "7",
+      "12",
+      "14"
+     ],
+     [
+      "21",
+      "28",
+      "42",
+      "84"
+     ]
+    ],
+    "note": "The factors of 84"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "Ribbon 1",
+      "segments": [
+       {
+        "units": 9.333,
+        "label": "84 m",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "Ribbon 2",
+      "segments": [
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "12 is the biggest factor of 84 that divides 108: 9 pieces",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "Ribbon 1",
+      "segments": [
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "Ribbon 2",
+      "segments": [
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 1.333,
+        "label": "12",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "Both ribbons cut into pieces of 12 metres: 7 pieces and 9 pieces"
+   }
+  ]
+ },
+ "PYQ_2018_Q02": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "30"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "Find every pair of numbers that multiply to 30"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 30",
+      "2 × 15",
+      "3 × 10",
+      "5 × 6"
+     ]
+    ],
+    "note": "Factor pairs of 30 found so far"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 30",
+      "2 × 15",
+      "3 × 10",
+      "5 × 6"
+     ]
+    ],
+    "note": "Every factor pair of 30. Count each different number once"
+   }
+  ]
+ },
+ "PYQ_2018_Q16": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "8",
+     "★",
+     "2",
+     "★"
+    ]
+   ],
+   "headers": [
+    "Thousands",
+    "Hundreds",
+    "Tens",
+    "Ones"
+   ],
+   "note": "Both stars are the same digit. 9 divides the number"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "8",
+      "★",
+      "2",
+      "★"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The digits you know: 8 + 2 = 10"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "8",
+      "★",
+      "2",
+      "★"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "★ + ★ must lift 10 up to 18 or to 27"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "8",
+      "★",
+      "2",
+      "★"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "★ + ★ is even, so it is 8. Each star is 4"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "8",
+      "4",
+      "2",
+      "4"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "8 + 4 + 2 + 4 = 18, a multiple of 9"
+   }
+  ]
+ },
+ "PYQ_2018_Q30": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 24",
+   "rightTitle": "Factors of 32",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     [
+      "6",
+      "8",
+      "12",
+      "24"
+     ]
+    ],
+    "note": "Factors of 24. The biggest one that also divides 32 is 8"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "32",
+     "64",
+     "96"
+    ],
+    "note": "Multiples of 32. Does 24 divide it exactly? 96 works first"
+   },
+   {
+    "kind": "balance",
+    "left": "HCF + LCM",
+    "right": "8 + 96",
+    "note": "8 + 96 = 104",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "PYQ_2019_Q04": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "numberLine",
+    "min": 20,
+    "max": 29,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 23
+     },
+     {
+      "at": 29
+     }
+    ],
+    "note": "From 20 to 29, only 23 and 29 are prime",
+    "highlight": [
+     "p0",
+     "p1"
+    ]
+   },
+   null
+  ]
+ },
+ "PYQ_2019_Q12": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "73251"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "73251",
+    "note": "The digits add up to 18, so 3 divides it",
+    "highlight": [
+     "d0",
+     "d1",
+     "d2",
+     "d3",
+     "d4"
+    ]
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "73251",
+    "note": "Only the 2 is even, so the 2 must move to the ones place",
+    "highlight": [
+     "d2",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "73152",
+    "note": "Swap the 2 and the 1 to get 73152",
+    "highlight": [
+     "d2",
+     "d4"
+    ]
+   }
+  ]
+ },
+ "PYQ_2019_Q21": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "9",
+     "★",
+     "8",
+     "★"
+    ]
+   ],
+   "headers": [
+    "Thousands",
+    "Hundreds",
+    "Tens",
+    "Ones"
+   ],
+   "note": "Both stars are the same digit. 9 divides the number"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "★",
+      "8",
+      "★"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "The digits you know: 9 + 8 = 17"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "★",
+      "8",
+      "★"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "★ + ★ must lift 17 up to 18, 27 or 36"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "★",
+      "8",
+      "★"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "★ + ★ is even, so it is 10. Each star is 5"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "5",
+      "8",
+      "5"
+     ]
+    ],
+    "headers": [
+     "Thousands",
+     "Hundreds",
+     "Tens",
+     "Ones"
+    ],
+    "note": "9 + 5 + 8 + 5 = 27, a multiple of 9"
+   }
+  ]
+ },
+ "PYQ_2019_Q22": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "136"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "How many pairs of numbers multiply to 136?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 136",
+      "2 × 68"
+     ]
+    ],
+    "note": "Factor pairs of 136 found so far"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 136",
+      "2 × 68",
+      "4 × 34",
+      "8 × 17"
+     ]
+    ],
+    "note": "Factor pairs of 136 found so far"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 136",
+      "2 × 68",
+      "4 × 34",
+      "8 × 17"
+     ]
+    ],
+    "note": "Every factor pair of 136. Count each different number once"
+   }
+  ]
+ },
+ "PYQ_2019_Q35": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Multiples of 4",
+   "rightTitle": "Multiples of 5",
+   "left": "…",
+   "both": "?",
+   "right": "…",
+   "note": "Numbers up to 100. How many go in the middle?"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "Multiples of 4",
+    "rightTitle": "Multiples of 5",
+    "left": "…",
+    "both": "20, …",
+    "right": "…",
+    "note": "20 is the smallest number in both notebooks",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Multiples of 4",
+    "rightTitle": "Multiples of 5",
+    "left": "…",
+    "both": "20, 40, … 100",
+    "right": "…",
+    "note": "Every common number is a multiple of 20",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Multiples of 4",
+    "rightTitle": "Multiples of 5",
+    "left": "…",
+    "both": "20, 40, … 100",
+    "right": "…",
+    "note": "20, 40, 60, 80, 100: 5 numbers in the middle",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "PYQ_2019_Q39": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 39",
+   "rightTitle": "Factors of 65",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 39,
+    "note": "39 = 3 × 13"
+   },
+   {
+    "kind": "factorTree",
+    "number": 65,
+    "note": "65 = 5 × 13"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "39 = 3 × 13",
+    "rightTitle": "65 = 5 × 13",
+    "left": "3",
+    "both": "13",
+    "right": "5",
+    "note": "Both numbers have 13 in them, and nothing bigger. HCF = 13",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "Q_CH01_026": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 72,
+    "step": 9,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 72,
+      "label": "8th"
+     }
+    ],
+    "note": "8 jumps of 9 from 0 land on 72",
+    "highlight": [
+     "p0"
+    ]
+   }
+  ]
+ },
+ "Q_CH06_001": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "12"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "Find every pair of numbers that multiply to 12"
+  }
+ },
+ "Q_CH06_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 12",
+   "rightTitle": "Factors of 18",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 12",
+    "rightTitle": "Factors of 18",
+    "left": "…",
+    "both": "1, 2, 3, 6",
+    "right": "…",
+    "note": "The common factors go in the middle",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 12",
+    "rightTitle": "Factors of 18",
+    "left": "…",
+    "both": "1, 2, 3, 6",
+    "right": "…",
+    "note": "The biggest number in the middle is 6",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "Q_CH06_006": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "6",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "8",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 6s and in 8s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6",
+      "12",
+      "18",
+      "24",
+      "30"
+     ]
+    ],
+    "note": "Multiples of 6",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6",
+      "12",
+      "18",
+      "24",
+      "30"
+     ],
+     [
+      "8",
+      "16",
+      "24",
+      "32",
+      "…"
+     ]
+    ],
+    "note": "Multiples of 8",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6",
+      "12",
+      "18",
+      "24",
+      "30"
+     ],
+     [
+      "8",
+      "16",
+      "24",
+      "32",
+      "…"
+     ]
+    ],
+    "note": "24 is the first number in both rows: the LCM"
+   }
+  ]
+ },
+ "Q_CH06_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "factorTree",
+   "number": 60,
+   "depth": 0,
+   "note": "Split 60 again and again until every part is prime"
+  },
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 60,
+    "depth": 1,
+    "note": "60 = 2 × 30"
+   },
+   {
+    "kind": "factorTree",
+    "number": 60,
+    "note": "30 = 2 × 15, and then 15 = 3 × 5"
+   },
+   {
+    "kind": "factorTree",
+    "number": 60,
+    "note": "Every circled number is prime: 2 × 2 × 3 × 5",
+    "highlight": [
+     "primes"
+    ]
+   }
+  ]
+ },
+ "Q_CH06_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "4518"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "4518",
+    "note": "4 + 5 + 1 + 8 = 18, and 18 ÷ 9 = 2",
+    "highlight": [
+     "d0",
+     "d1",
+     "d2",
+     "d3"
+    ]
+   }
+  ]
+ },
+ "Q_CH06_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "8294"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "8294",
+    "note": "1st and 3rd places: 8 + 9 = 17",
+    "highlight": [
+     "d0",
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "8294",
+    "note": "2nd and 4th places: 2 + 4 = 6",
+    "highlight": [
+     "d1",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "8294",
+    "note": "17 − 6 = 11, so 11 divides 8,294"
+   },
+   null
+  ]
+ },
+ "Q_CH06_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 9,
+   "minute": 0,
+   "note": "Both bells ring now. One rings every 12 minutes, the other every 18"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Bell 1",
+      "12",
+      "24",
+      "36",
+      "48"
+     ],
+     [
+      "Bell 2",
+      "18",
+      "36",
+      "54",
+      "…"
+     ]
+    ],
+    "note": "Minutes after 9:00 when each bell rings"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Bell 1",
+      "12",
+      "24",
+      "36",
+      "48"
+     ],
+     [
+      "Bell 2",
+      "18",
+      "36",
+      "54",
+      "…"
+     ]
+    ],
+    "note": "36 is the first number in both rows"
+   },
+   {
+    "kind": "clock",
+    "hour": 9,
+    "minute": 36,
+    "note": "36 minutes after 9:00 is 9:36",
+    "highlight": [
+     "minute"
+    ]
+   }
+  ]
+ },
+ "Q_CH06_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "label": "Apples",
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "48",
+       "tone": "a"
+      }
+     ]
+    },
+    {
+     "label": "Oranges",
+     "segments": [
+      {
+       "units": 9.0,
+       "label": "36",
+       "tone": "b"
+      }
+     ]
+    }
+   ],
+   "note": "Same number of fruits in every box, as many as possible"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "Apples",
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "48",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "Oranges",
+      "segments": [
+       {
+        "units": 9.0,
+        "label": "36",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "The number in a box must divide both 48 and 36 exactly"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "4",
+      "6"
+     ],
+     [
+      "9",
+      "12",
+      "18",
+      "36"
+     ]
+    ],
+    "note": "Factors of 36. Test them on 48, biggest first: 12 works"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "Apples",
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "12",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "Oranges",
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "12",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "4 boxes of 12 apples and 3 boxes of 12 oranges"
+   }
+  ]
+ },
+ "Q_CH06_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "4",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "6",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 4s and in 6s. Which numbers land in both rows?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "8",
+      "12",
+      "16",
+      "20"
+     ],
+     [
+      "24",
+      "28",
+      "32",
+      "36"
+     ]
+    ],
+    "note": "Multiples of 4"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6",
+      "12",
+      "18"
+     ],
+     [
+      "24",
+      "30",
+      "36"
+     ]
+    ],
+    "note": "Multiples of 6"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "12",
+      "24",
+      "36"
+     ]
+    ],
+    "note": "These three numbers are in both lists"
+   }
+  ]
+ },
+ "Q_CH06_021": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "6 × 36",
+    "right": "12 × ?",
+    "note": "HCF × LCM = one number × the other number"
+   },
+   null,
+   {
+    "kind": "balance",
+    "left": "6 × 36",
+    "right": "12 × 18",
+    "note": "The other number is 18",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH06_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 10,
+   "max": 20,
+   "step": 1,
+   "tickLabels": "all",
+   "note": "Which of the numbers between 10 and 20 are prime?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 10,
+    "max": 20,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 11
+     },
+     {
+      "at": 19
+     }
+    ],
+    "note": "Look at the numbers from 11 to 19"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 10,
+    "max": 20,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 11
+     },
+     {
+      "at": 13
+     },
+     {
+      "at": 17
+     },
+     {
+      "at": 19
+     }
+    ],
+    "note": "11, 13, 17 and 19 are prime",
+    "highlight": [
+     "p0",
+     "p1",
+     "p2",
+     "p3"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 10,
+    "max": 20,
+    "step": 1,
+    "tickLabels": "all",
+    "points": [
+     {
+      "at": 11
+     },
+     {
+      "at": 13
+     },
+     {
+      "at": 17
+     },
+     {
+      "at": 19
+     }
+    ],
+    "note": "Count the dots: 4 prime numbers"
+   }
+  ]
+ },
+ "Q_CH06_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "grid",
+   "rows": 5,
+   "cols": 10,
+   "note": "The numbers 1 to 50 in rows of 10, before any are crossed out"
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 5,
+    "cols": 10,
+    "shaded": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      6
+     ]
+    ],
+    "note": "Keep 2, 3, 5 and 7. Cross out all their other multiples"
+   },
+   {
+    "kind": "grid",
+    "rows": 5,
+    "cols": 10,
+    "shaded": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      1,
+      8
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      8
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      6
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      6
+     ]
+    ],
+    "note": "Shaded squares are the numbers left. Every composite number is gone"
+   },
+   {
+    "kind": "grid",
+    "rows": 5,
+    "cols": 10,
+    "shaded": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      1,
+      8
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      8
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      6
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      6
+     ]
+    ],
+    "note": "The numbers left up to 50 are all prime numbers"
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_013_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "15",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "9",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 15s and in 9s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "HCF × LCM",
+    "right": "15 × 9",
+    "note": "HCF × LCM is the same as 15 × 9 = 135"
+   },
+   {
+    "kind": "balance",
+    "left": "3 × 45",
+    "right": "15 × 9",
+    "note": "The HCF is 3, so the LCM is 135 ÷ 3 = 45",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2017_016_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "9",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "3",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 9s and in 3s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "HCF × LCM",
+    "right": "9 × 3",
+    "note": "HCF × LCM is the same as 9 × 3 = 27"
+   },
+   {
+    "kind": "balance",
+    "left": "3 × 9",
+    "right": "9 × 3",
+    "note": "The HCF is 3, so the LCM is 27 ÷ 3 = 9",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2018_001_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "12",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "10",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 12s and in 10s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "HCF × LCM",
+    "right": "12 × 10",
+    "note": "HCF × LCM is the same as 12 × 10 = 120"
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 60",
+    "right": "12 × 10",
+    "note": "The HCF is 2, so the LCM is 120 ÷ 2 = 60",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2018_001_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "12",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "6",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 12s and in 6s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "HCF × LCM",
+    "right": "12 × 6",
+    "note": "HCF × LCM is the same as 12 × 6 = 72"
+   },
+   {
+    "kind": "balance",
+    "left": "6 × 12",
+    "right": "12 × 6",
+    "note": "The HCF is 6, so the LCM is 72 ÷ 6 = 12",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2019_021_04_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 72",
+   "rightTitle": "Factors of 60",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     [
+      "5",
+      "6",
+      "10",
+      "12"
+     ],
+     [
+      "15",
+      "20",
+      "30",
+      "60"
+     ]
+    ],
+    "note": "The factors of 60"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "60",
+      "no"
+     ],
+     [
+      "30",
+      "no"
+     ],
+     [
+      "20",
+      "no"
+     ],
+     [
+      "15",
+      "no"
+     ]
+    ],
+    "headers": [
+     "Factor of 60",
+     "Divides 72?"
+    ],
+    "note": "Try the factors of 60 on 72, biggest first"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "60",
+      "no"
+     ],
+     [
+      "30",
+      "no"
+     ],
+     [
+      "20",
+      "no"
+     ],
+     [
+      "15",
+      "no"
+     ],
+     [
+      "12",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "Factor of 60",
+     "Divides 72?"
+    ],
+    "note": "12 is the biggest factor of 60 that divides 72",
+    "highlight": [
+     "r4"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2020_011_03_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "18",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "9",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 18s and in 9s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "HCF × LCM",
+    "right": "18 × 9",
+    "note": "HCF × LCM is the same as 18 × 9 = 162"
+   },
+   {
+    "kind": "balance",
+    "left": "9 × 18",
+    "right": "18 × 9",
+    "note": "The HCF is 9, so the LCM is 162 ÷ 9 = 18",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2020_014_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 65",
+   "rightTitle": "Factors of 91",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 65,
+    "note": "65 = 5 × 13"
+   },
+   {
+    "kind": "factorTree",
+    "number": 91,
+    "note": "91 = 7 × 13"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "65 = 5 × 13",
+    "rightTitle": "91 = 7 × 13",
+    "left": "5",
+    "both": "13",
+    "right": "7",
+    "note": "Both numbers have 13 in them, and nothing bigger. HCF = 13",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2020_020_02_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 6",
+   "rightTitle": "Factors of 4",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "6"
+     ]
+    ],
+    "note": "The factors of 6"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "4"
+     ]
+    ],
+    "note": "The factors of 4"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 6",
+    "rightTitle": "Factors of 4",
+    "left": "3, 6",
+    "both": "1, 2",
+    "right": "4",
+    "note": "In both lists: 1 and 2. The biggest is 2",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2021_040_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "20",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "10",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 20s and in 10s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "HCF × LCM",
+    "right": "20 × 10",
+    "note": "HCF × LCM is the same as 20 × 10 = 200"
+   },
+   {
+    "kind": "balance",
+    "left": "10 × 20",
+    "right": "20 × 10",
+    "note": "The HCF is 10, so the LCM is 200 ÷ 10 = 20",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_003_01_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "16",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "9",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 16s and in 9s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "HCF × LCM",
+    "right": "16 × 9",
+    "note": "HCF × LCM is the same as 16 × 9 = 144"
+   },
+   {
+    "kind": "balance",
+    "left": "1 × 144",
+    "right": "16 × 9",
+    "note": "The HCF is 1, so the LCM is 144 ÷ 1 = 144",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_027_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 26",
+   "rightTitle": "Factors of 91",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 26,
+    "note": "26 = 2 × 13"
+   },
+   {
+    "kind": "factorTree",
+    "number": 91,
+    "note": "91 = 7 × 13"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "26 = 2 × 13",
+    "rightTitle": "91 = 7 × 13",
+    "left": "2",
+    "both": "13",
+    "right": "7",
+    "note": "Both numbers have 13 in them, and nothing bigger. HCF = 13",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_034_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "4",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "12",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 4s and in 12s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "HCF × LCM",
+    "right": "4 × 12",
+    "note": "HCF × LCM is the same as 4 × 12 = 48"
+   },
+   {
+    "kind": "balance",
+    "left": "4 × 12",
+    "right": "4 × 12",
+    "note": "The HCF is 4, so the LCM is 48 ÷ 4 = 12",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_005_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 16",
+   "rightTitle": "Factors of 20",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "4",
+      "8",
+      "16"
+     ]
+    ],
+    "note": "The factors of 16"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "no"
+     ],
+     [
+      "8",
+      "no"
+     ]
+    ],
+    "headers": [
+     "Factor of 16",
+     "Divides 20?"
+    ],
+    "note": "Try the factors of 16 on 20, biggest first"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "no"
+     ],
+     [
+      "8",
+      "no"
+     ],
+     [
+      "4",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "Factor of 16",
+     "Divides 20?"
+    ],
+    "note": "4 is the biggest factor of 16 that divides 20",
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_027_04_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 30",
+   "rightTitle": "Factors of 45",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "5"
+     ],
+     [
+      "6",
+      "10",
+      "15",
+      "30"
+     ]
+    ],
+    "note": "The factors of 30"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "30",
+      "no"
+     ]
+    ],
+    "headers": [
+     "Factor of 30",
+     "Divides 45?"
+    ],
+    "note": "Try the factors of 30 on 45, biggest first"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "30",
+      "no"
+     ],
+     [
+      "15",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "Factor of 30",
+     "Divides 45?"
+    ],
+    "note": "15 is the biggest factor of 30 that divides 45",
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_021_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "12",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "5",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 12s and in 5s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "HCF × LCM",
+    "right": "12 × 5",
+    "note": "HCF × LCM is the same as 12 × 5 = 60"
+   },
+   {
+    "kind": "balance",
+    "left": "1 × 60",
+    "right": "12 × 5",
+    "note": "The HCF is 1, so the LCM is 60 ÷ 1 = 60",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_027_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 24",
+   "rightTitle": "Factors of 60",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     [
+      "6",
+      "8",
+      "12",
+      "24"
+     ]
+    ],
+    "note": "The factors of 24"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "24",
+      "no"
+     ]
+    ],
+    "headers": [
+     "Factor of 24",
+     "Divides 60?"
+    ],
+    "note": "Try the factors of 24 on 60, biggest first"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "24",
+      "no"
+     ],
+     [
+      "12",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "Factor of 24",
+     "Divides 60?"
+    ],
+    "note": "12 is the biggest factor of 24 that divides 60",
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_027_03_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 55",
+   "rightTitle": "Factors of 44",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 55,
+    "note": "55 = 5 × 11"
+   },
+   null,
+   {
+    "kind": "venn",
+    "leftTitle": "55 = 5 × 11",
+    "rightTitle": "44 = 4 × 11",
+    "left": "5",
+    "both": "11",
+    "right": "4",
+    "note": "Both numbers have 11 in them, and nothing bigger. HCF = 11",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_024_03_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "14",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "6",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 14s and in 6s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "HCF × LCM",
+    "right": "14 × 6",
+    "note": "HCF × LCM is the same as 14 × 6 = 84"
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 42",
+    "right": "14 × 6",
+    "note": "The HCF is 2, so the LCM is 84 ÷ 2 = 42",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_040_04_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 12",
+   "rightTitle": "Factors of 10",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3"
+     ],
+     [
+      "4",
+      "6",
+      "12"
+     ]
+    ],
+    "note": "The factors of 12"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "5",
+      "10"
+     ]
+    ],
+    "note": "The factors of 10"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 12",
+    "rightTitle": "Factors of 10",
+    "left": "3, 4, 6, 12",
+    "both": "1, 2",
+    "right": "5, 10",
+    "note": "In both lists: 1 and 2. The biggest is 2",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_factors_V134": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "24"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "Find every pair of numbers that multiply to 24"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 24",
+      "2 × 12",
+      "3 × 8",
+      "4 × 6"
+     ]
+    ],
+    "note": "Factor pairs of 24 found so far"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 24",
+      "2 × 12",
+      "3 × 8",
+      "4 × 6"
+     ]
+    ],
+    "note": "Every factor pair of 24. Count each different number once"
+   }
+  ]
+ },
+ "VAR_G4_vary_factors_V18": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "42"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "Find every pair of numbers that multiply to 42"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 42",
+      "2 × 21",
+      "3 × 14",
+      "6 × 7"
+     ]
+    ],
+    "note": "Factor pairs of 42 found so far"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 42",
+      "2 × 21",
+      "3 × 14",
+      "6 × 7"
+     ]
+    ],
+    "note": "Every factor pair of 42. Count each different number once"
+   }
+  ]
+ },
+ "VAR_G4_vary_factors_V19": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "96"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "Find every pair of numbers that multiply to 96"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 96",
+      "2 × 48",
+      "3 × 32"
+     ],
+     [
+      "4 × 24",
+      "6 × 16",
+      "8 × 12"
+     ]
+    ],
+    "note": "Factor pairs of 96 found so far"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 96",
+      "2 × 48",
+      "3 × 32"
+     ],
+     [
+      "4 × 24",
+      "6 × 16",
+      "8 × 12"
+     ]
+    ],
+    "note": "Every factor pair of 96. Count each different number once"
+   }
+  ]
+ },
+ "VAR_G4_vary_factors_V44": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "36"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "Find every pair of numbers that multiply to 36"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 36",
+      "2 × 18",
+      "3 × 12"
+     ],
+     [
+      "4 × 9",
+      "6 × 6"
+     ]
+    ],
+    "note": "Factor pairs of 36 found so far"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 36",
+      "2 × 18",
+      "3 × 12"
+     ],
+     [
+      "4 × 9",
+      "6 × 6"
+     ]
+    ],
+    "note": "Every factor pair of 36. Count each different number once"
+   }
+  ]
+ },
+ "VAR_G4_vary_factors_V45": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "120"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "Find every pair of numbers that multiply to 120"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 120",
+      "2 × 60",
+      "3 × 40",
+      "4 × 30"
+     ],
+     [
+      "5 × 24",
+      "6 × 20",
+      "8 × 15",
+      "10 × 12"
+     ]
+    ],
+    "note": "Factor pairs of 120 found so far"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 120",
+      "2 × 60",
+      "3 × 40",
+      "4 × 30"
+     ],
+     [
+      "5 × 24",
+      "6 × 20",
+      "8 × 15",
+      "10 × 12"
+     ]
+    ],
+    "note": "Every factor pair of 120. Count each different number once"
+   }
+  ]
+ },
+ "VAR_G4_vary_factors_V92": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "×",
+     "72"
+    ],
+    [
+     "?",
+     "×",
+     "?"
+    ]
+   ],
+   "note": "Find every pair of numbers that multiply to 72"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 72",
+      "2 × 36",
+      "3 × 24"
+     ],
+     [
+      "4 × 18",
+      "6 × 12",
+      "8 × 9"
+     ]
+    ],
+    "note": "Factor pairs of 72 found so far"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 72",
+      "2 × 36",
+      "3 × 24"
+     ],
+     [
+      "4 × 18",
+      "6 × 12",
+      "8 × 9"
+     ]
+    ],
+    "note": "Every factor pair of 72. Count each different number once"
+   }
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V118": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "24",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "56",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 24s and in 56s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "56",
+     "112",
+     "168"
+    ],
+    "note": "Multiples of 56. Which is the first that 24 divides exactly?"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "56",
+     "112",
+     "168"
+    ],
+    "note": "Does 24 divide it exactly? 168 is the first that works"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "56",
+     "112",
+     "168"
+    ],
+    "note": "The LCM of 24 and 56 is 168",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V131": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "9",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "15",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 9s and in 15s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "15",
+     "30",
+     "45"
+    ],
+    "note": "Multiples of 15. Which is the first that 9 divides exactly?"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "15",
+     "30",
+     "45"
+    ],
+    "note": "Does 9 divide it exactly? 45 is the first that works"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "15",
+     "30",
+     "45"
+    ],
+    "note": "The LCM of 9 and 15 is 45",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V14": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 40",
+   "rightTitle": "Factors of 48",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "4",
+      "5"
+     ],
+     [
+      "8",
+      "10",
+      "20",
+      "40"
+     ]
+    ],
+    "note": "The factors of 40"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "4",
+      "6"
+     ],
+     [
+      "8",
+      "12",
+      "16",
+      "24",
+      "48"
+     ]
+    ],
+    "note": "The factors of 48"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "4",
+      "8"
+     ]
+    ],
+    "note": "In both lists: 1, 2, 4 and 8. The biggest is 8"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "4",
+      "8"
+     ]
+    ],
+    "note": "The HCF of 40 and 48 is 8"
+   }
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V154": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "24",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "40",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 24s and in 40s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "40",
+     "80",
+     "120"
+    ],
+    "note": "Multiples of 40. Which is the first that 24 divides exactly?"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "40",
+     "80",
+     "120"
+    ],
+    "note": "Does 24 divide it exactly? 120 is the first that works"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "40",
+     "80",
+     "120"
+    ],
+    "note": "The LCM of 24 and 40 is 120",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V162": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "20",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "35",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 20s and in 35s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "35",
+     "70",
+     "105",
+     "140"
+    ],
+    "note": "Multiples of 35. Which is the first that 20 divides exactly?"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "35",
+     "70",
+     "105",
+     "140"
+    ],
+    "note": "Does 20 divide it exactly? 140 is the first that works"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "35",
+     "70",
+     "105",
+     "140"
+    ],
+    "note": "The LCM of 20 and 35 is 140",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V166": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "36",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "84",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 36s and in 84s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "84",
+     "168",
+     "252"
+    ],
+    "note": "Multiples of 84. Which is the first that 36 divides exactly?"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "84",
+     "168",
+     "252"
+    ],
+    "note": "Does 36 divide it exactly? 252 is the first that works"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "84",
+     "168",
+     "252"
+    ],
+    "note": "The LCM of 36 and 84 is 252",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V38": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 12",
+   "rightTitle": "Factors of 15",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3"
+     ],
+     [
+      "4",
+      "6",
+      "12"
+     ]
+    ],
+    "note": "The factors of 12"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "3",
+      "5",
+      "15"
+     ]
+    ],
+    "note": "The factors of 15"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 12",
+    "rightTitle": "Factors of 15",
+    "left": "2, 4, 6, 12",
+    "both": "1, 3",
+    "right": "5, 15",
+    "note": "In both lists: 1 and 3. The biggest is 3",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 12",
+    "rightTitle": "Factors of 15",
+    "left": "2, 4, 6, 12",
+    "both": "1, 3",
+    "right": "5, 15",
+    "note": "The HCF of 12 and 15 is 3",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V41": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 14",
+   "rightTitle": "Factors of 21",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "7",
+      "14"
+     ]
+    ],
+    "note": "The factors of 14"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "3",
+      "7",
+      "21"
+     ]
+    ],
+    "note": "The factors of 21"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 14",
+    "rightTitle": "Factors of 21",
+    "left": "2, 14",
+    "both": "1, 7",
+    "right": "3, 21",
+    "note": "In both lists: 1 and 7. The biggest is 7",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 14",
+    "rightTitle": "Factors of 21",
+    "left": "2, 14",
+    "both": "1, 7",
+    "right": "3, 21",
+    "note": "The HCF of 14 and 21 is 7",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V42": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 30",
+   "rightTitle": "Factors of 36",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "5"
+     ],
+     [
+      "6",
+      "10",
+      "15",
+      "30"
+     ]
+    ],
+    "note": "The factors of 30"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "4",
+      "6"
+     ],
+     [
+      "9",
+      "12",
+      "18",
+      "36"
+     ]
+    ],
+    "note": "The factors of 36"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "6"
+     ]
+    ],
+    "note": "In both lists: 1, 2, 3 and 6. The biggest is 6"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "6"
+     ]
+    ],
+    "note": "The HCF of 30 and 36 is 6"
+   }
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V73": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "6",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "9",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 6s and in 9s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "9",
+     "18"
+    ],
+    "note": "Multiples of 9. Which is the first that 6 divides exactly?"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "9",
+     "18"
+    ],
+    "note": "Does 6 divide it exactly? 18 is the first that works"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "9",
+     "18"
+    ],
+    "note": "The LCM of 6 and 9 is 18",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V82": {
+  "origin": "rule",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Factors of 9",
+   "rightTitle": "Factors of 21",
+   "left": "?",
+   "both": "?",
+   "right": "?",
+   "note": "HCF = the biggest number that is a factor of both"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "3",
+      "9"
+     ]
+    ],
+    "note": "The factors of 9"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "3",
+      "7",
+      "21"
+     ]
+    ],
+    "note": "The factors of 21"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 9",
+    "rightTitle": "Factors of 21",
+    "left": "9",
+    "both": "1, 3",
+    "right": "7, 21",
+    "note": "In both lists: 1 and 3. The biggest is 3",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 9",
+    "rightTitle": "Factors of 21",
+    "left": "9",
+    "both": "1, 3",
+    "right": "7, 21",
+    "note": "The HCF of 9 and 21 is 3",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_hcf_lcm_V84": {
+  "origin": "rule",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "20",
+     "?",
+     "?",
+     "…"
+    ],
+    [
+     "25",
+     "?",
+     "?",
+     "…"
+    ]
+   ],
+   "note": "Count on in 20s and in 25s. LCM = the first number in both rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "25",
+     "50",
+     "75",
+     "100"
+    ],
+    "note": "Multiples of 25. Which is the first that 20 divides exactly?"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "25",
+     "50",
+     "75",
+     "100"
+    ],
+    "note": "Does 20 divide it exactly? 100 is the first that works"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "25",
+     "50",
+     "75",
+     "100"
+    ],
+    "note": "The LCM of 20 and 25 is 100",
+    "highlight": [
+     "r0"
+    ]
+   }
+  ]
+ }
+}

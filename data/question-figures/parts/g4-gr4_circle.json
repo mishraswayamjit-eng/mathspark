@@ -1,0 +1,3923 @@
+{
+ "EXT_G4_FP_2020_006": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "diameter": "diameter",
+    "note": "A diameter goes straight through the centre",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "circle",
+    "diameter": "diameter",
+    "note": "From one point, only 1 straight line passes through the centre",
+    "highlight": [
+     "diameter"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "r",
+   "note": "As numbers: area = 3 × circumference"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "Area = π × r × r. Circumference = 2 × π × r"
+   },
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "3 × circumference = 3 × 2 × π × r = 6 × π × r",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "π × r × r = 6 × π × r, so r = 6",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "6",
+    "highlight": [
+     "radius"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "r",
+   "note": "Circumference and area are the same number"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "Circumference = 2 × π × r. Area = π × r × r"
+   },
+   {
+    "kind": "circle",
+    "radius": "2 cm",
+    "note": "2 × π × r = π × r × r, so r = 2",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "2 cm",
+    "diameter": "2 × 2 cm",
+    "note": "The diameter is twice the radius",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "2 cm",
+    "diameter": "4 cm",
+    "highlight": [
+     "diameter"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_033": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "grid": {
+    "cols": 4,
+    "rows": 2
+   },
+   "note": "One circle fits in each square. Radius = 7 cm. Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "diameter": "2 × 7 cm",
+    "note": "The diameter is twice the radius",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "4 diameters",
+    "grid": {
+     "cols": 4,
+     "rows": 2
+    },
+    "note": "The length holds 4 circles side by side",
+    "highlight": [
+     "length"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "4 diameters",
+    "breadth": "2 diameters",
+    "grid": {
+     "cols": 4,
+     "rows": 2
+    },
+    "note": "The breadth holds 2 circles",
+    "highlight": [
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "4 diameters",
+    "breadth": "2 diameters",
+    "grid": {
+     "cols": 4,
+     "rows": 2
+    },
+    "note": "Area = length × breadth = 1568 sq.cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_033": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "?",
+   "note": "Circumference = 132 cm. Area = ?",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "Circumference = 2 × 22/7 × r = 44/7 × r",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "21 cm",
+    "note": "r = 132 × 7 ÷ 44 = 21 cm",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "21 cm",
+    "note": "Area = π × 21 × 21",
+    "highlight": [
+     "fill"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "21 cm",
+    "note": "22/7 × 21 × 21 = 1386 sq. cm",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "14 cm",
+   "breadth": "8 cm",
+   "proportion": 1.75,
+   "note": "A circle's circumference equals this perimeter. Radius = ?",
+   "highlight": [
+    "border"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "14 cm",
+    "breadth": "8 cm",
+    "proportion": 1.75,
+    "note": "Perimeter = 2 × (14 + 8)",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "Circumference = 44 cm = 44/7 × r",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "r = 44 × 7 ÷ 44",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "highlight": [
+     "radius"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH21_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "?",
+   "note": "From the centre to a point on the circle",
+   "highlight": [
+    "radius"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "?",
+    "note": "Join the centre to any point on the circle",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "?",
+    "note": "Every such line has the same length",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "radius",
+    "note": "This distance is the radius",
+    "highlight": [
+     "radius"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH21_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "radius",
+   "diameter": "diameter"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "diameter": "diameter",
+    "note": "A diameter goes across the circle through the centre",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "radius",
+    "diameter": "diameter",
+    "note": "The centre cuts it into two pieces, each a radius",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "radius",
+    "diameter": "diameter",
+    "note": "Diameter = 2 × radius",
+    "highlight": [
+     "diameter"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH21_003": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "circle",
+    "diameter": "longest chord",
+    "note": "The longest chord passes through the centre",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "diameter": "diameter",
+    "note": "A chord through the centre is a diameter",
+    "highlight": [
+     "diameter"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH21_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "7 cm",
+   "diameter": "?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "diameter": "?",
+    "note": "The diameter is twice the radius",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "diameter": "2 × 7 cm",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "diameter": "14 cm",
+    "highlight": [
+     "diameter"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH21_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "note": "The curved line that goes all the way round",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "note": "The boundary is the curved line all the way round",
+    "highlight": [
+     "edge"
+    ]
+   },
+   null,
+   {
+    "kind": "circle",
+    "note": "The boundary is called the circumference",
+    "highlight": [
+     "edge"
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "?",
+   "diameter": "18 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "?",
+    "diameter": "18 cm",
+    "note": "The diameter is two radii",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "18 ÷ 2 cm",
+    "diameter": "18 cm",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "9 cm",
+    "diameter": "18 cm",
+    "highlight": [
+     "radius"
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "?",
+   "diameter": "12 cm",
+   "note": "The compass opens from the centre to the circle"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "?",
+    "diameter": "12 cm",
+    "note": "Needle at the centre, pencil on the circle: the radius",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "12 ÷ 2 cm",
+    "diameter": "12 cm",
+    "note": "The radius is half the diameter",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "6 cm",
+    "diameter": "12 cm",
+    "highlight": [
+     "radius"
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "8 cm",
+   "note": "How long is the longest chord?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "8 cm",
+    "diameter": "?",
+    "note": "The longest chord is the diameter",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "8 cm",
+    "diameter": "2 × 8 cm",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "8 cm",
+    "diameter": "16 cm",
+    "highlight": [
+     "diameter"
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "6 cm",
+   "note": "P is 4 cm from the centre. Where is P?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "6 cm",
+    "note": "Points on the circle are exactly 6 cm from the centre",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 8,
+    "step": 1,
+    "points": [
+     {
+      "at": 0,
+      "label": "centre"
+     },
+     {
+      "at": 4,
+      "label": "P"
+     },
+     {
+      "at": 6,
+      "label": "circle"
+     }
+    ],
+    "note": "Distance from the centre: 4 is less than 6",
+    "highlight": [
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 8,
+    "step": 1,
+    "points": [
+     {
+      "at": 0,
+      "label": "centre"
+     },
+     {
+      "at": 4,
+      "label": "P"
+     },
+     {
+      "at": 6,
+      "label": "circle"
+     }
+    ],
+    "note": "P is closer than the circle, so P is inside",
+    "highlight": [
+     "p1"
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "7 cm",
+   "note": "O is the centre. A and B are on the circle. OA = 7 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "OA joins the centre to the circle: a radius",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "OB joins the centre to the circle too: a radius"
+   },
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "All radii are equal, so OB = 7 cm",
+    "highlight": [
+     "radius"
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2,
+       "label": "radius 3 cm",
+       "tone": "a"
+      },
+      {
+       "units": 2,
+       "label": "radius 3 cm",
+       "tone": "a"
+      },
+      {
+       "units": 2,
+       "label": "radius 3 cm",
+       "tone": "a"
+      },
+      {
+       "units": 2,
+       "label": "radius 3 cm",
+       "tone": "a"
+      }
+     ]
+    }
+   ],
+   "note": "Four touching circles. First centre to last centre = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "Neighbouring centres are two radii apart: 3 + 3 cm",
+    "highlight": [
+     "b0s1",
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "First centre to fourth centre: 3 gaps",
+    "highlight": [
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4",
+     "b0s5",
+     "b0s6"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3 cm",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "3 gaps of 3 + 3 cm make 18 cm",
+    "highlight": [
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4",
+     "b0s5",
+     "b0s6"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "bangle",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "bangle",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "bangle",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "bangle",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "bangle",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "bangle",
+       "tone": "a"
+      }
+     ],
+     "brace": "?"
+    }
+   ],
+   "note": "Each bangle has radius 4 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "4 cm",
+    "diameter": "2 × 4 cm",
+    "note": "Each bangle is one diameter wide",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "2 × 4",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2 × 4",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2 × 4",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2 × 4",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2 × 4",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2 × 4",
+        "tone": "a"
+       }
+      ],
+      "brace": "6 × 2 × 4 cm"
+     }
+    ],
+    "note": "6 bangles in the row"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "2 × 4",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2 × 4",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2 × 4",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2 × 4",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2 × 4",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2 × 4",
+        "tone": "a"
+       }
+      ],
+      "brace": "48 cm"
+     }
+    ],
+    "note": "The row is 48 cm long"
+   }
+  ]
+ },
+ "G4A_CIRCLE_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "10 cm",
+   "note": "A circle inside just touches all four sides. Radius = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "10 cm",
+    "note": "The circle reaches from one side to the opposite side",
+    "highlight": [
+     "length"
+    ]
+   },
+   {
+    "kind": "circle",
+    "diameter": "10 cm",
+    "note": "So its diameter is the side of the square",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "10 ÷ 2 cm",
+    "diameter": "10 cm",
+    "note": "The radius is half the diameter",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "5 cm",
+    "diameter": "10 cm",
+    "highlight": [
+     "radius"
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "6 cm",
+   "note": "A square fits round it, touching. Perimeter of the square = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "6 cm",
+    "diameter": "12 cm",
+    "note": "Side of the square = diameter = 2 × 6",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "edges": [
+     "12 cm",
+     "12 cm",
+     "12 cm",
+     "12 cm"
+    ],
+    "note": "4 equal sides: 4 × 12 = 48 cm",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2",
+     "e3"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5,
+       "label": "5 cm",
+       "tone": "a"
+      },
+      {
+       "units": 3,
+       "label": "3 cm",
+       "tone": "b"
+      }
+     ],
+     "brace": "?"
+    }
+   ],
+   "note": "Centre to centre, through the point where the coins touch"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "5 cm",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       }
+      ],
+      "brace": "?"
+     }
+    ],
+    "note": "The line joining the centres passes through the touching point"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "5 cm",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       }
+      ],
+      "brace": "?"
+     }
+    ],
+    "note": "One radius, then the other radius",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "5 cm",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       }
+      ],
+      "brace": "5 + 3 cm"
+     }
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "5 cm",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       }
+      ],
+      "brace": "8 cm"
+     }
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 9,
+       "label": "9 cm",
+       "tone": "a"
+      }
+     ],
+     "label": "Big radius"
+    },
+    {
+     "segments": [
+      {
+       "units": 5,
+       "label": "5 cm",
+       "tone": "b"
+      },
+      {
+       "units": 4,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Small radius"
+    }
+   ],
+   "note": "Two circles with the same centre. Width of the ring = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9,
+        "label": "9 cm",
+        "tone": "a"
+       }
+      ],
+      "label": "Big radius"
+     },
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "5 cm",
+        "tone": "b"
+       },
+       {
+        "units": 4,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Small radius"
+     }
+    ],
+    "note": "Out from the centre: 5 cm to the small circle, 9 cm to the big"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9,
+        "label": "9 cm",
+        "tone": "a"
+       }
+      ],
+      "label": "Big radius"
+     },
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "5 cm",
+        "tone": "b"
+       },
+       {
+        "units": 4,
+        "label": "9 − 5 cm",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Small radius"
+     }
+    ],
+    "note": "The ring is the gap between them",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9,
+        "label": "9 cm",
+        "tone": "a"
+       }
+      ],
+      "label": "Big radius"
+     },
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "5 cm",
+        "tone": "b"
+       },
+       {
+        "units": 4,
+        "label": "4 cm",
+        "tone": "c"
+       }
+      ],
+      "label": "Small radius"
+     }
+    ],
+    "highlight": [
+     "b1s1"
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "radius",
+       "tone": "a"
+      }
+     ],
+     "label": "Radius"
+    },
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "radius",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "12 cm more",
+       "tone": "b"
+      }
+     ],
+     "label": "Diameter"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "radius",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "radius",
+        "tone": "a"
+       }
+      ],
+      "label": "Diameter"
+     }
+    ],
+    "note": "The diameter is two radii"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "radius",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "12 cm",
+        "tone": "b"
+       }
+      ],
+      "label": "Diameter"
+     }
+    ],
+    "note": "We are told: diameter = radius + 12 cm"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "radius",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "radius",
+        "tone": "a"
+       }
+      ],
+      "label": "Diameter"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "radius",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "12 cm",
+        "tone": "b"
+       }
+      ],
+      "label": "Diameter"
+     }
+    ],
+    "note": "The second radius must be the 12 cm",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "12 cm",
+    "diameter": "24 cm",
+    "note": "Check: 24 − 12 = 12"
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "6 cm",
+   "note": "Which length cannot be a chord?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "6 cm",
+    "diameter": "2 × 6 cm",
+    "note": "The longest chord is the diameter",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "6 cm",
+    "diameter": "12 cm",
+    "note": "A chord can be up to 12 cm long, never longer",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 14,
+    "step": 1,
+    "points": [
+     {
+      "at": 4,
+      "label": "4 cm"
+     },
+     {
+      "at": 9,
+      "label": "9 cm"
+     },
+     {
+      "at": 12,
+      "label": "12 cm"
+     },
+     {
+      "at": 13,
+      "label": "13 cm"
+     }
+    ],
+    "note": "13 cm is longer than the 12 cm diameter",
+    "highlight": [
+     "p3"
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "20 cm",
+   "breadth": "8 cm",
+   "proportion": 2.5,
+   "note": "Round biscuits of radius 2 cm, in straight rows"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "2 cm",
+    "diameter": "2 × 2 cm",
+    "note": "Each biscuit is one diameter wide",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "20 cm",
+    "grid": {
+     "cols": 5,
+     "rows": 1
+    },
+    "note": "5 biscuits fit along the 20 cm length"
+   },
+   {
+    "kind": "rectangle",
+    "length": "20 cm",
+    "breadth": "8 cm",
+    "grid": {
+     "cols": 5,
+     "rows": 2
+    },
+    "note": "2 rows fit across the 8 cm width"
+   },
+   {
+    "kind": "rectangle",
+    "length": "20 cm",
+    "breadth": "8 cm",
+    "grid": {
+     "cols": 5,
+     "rows": 2
+    },
+    "note": "5 × 2 = 10 biscuits",
+    "highlight": [
+     "fill"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "7 cm",
+   "note": "The same wire is bent into a square. Side = ?",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "Wire = circumference = 2 × 22/7 × 7 = 44 cm",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "?",
+    "note": "The same 44 cm goes round the square",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "?",
+    "note": "4 equal sides: 44 ÷ 4",
+    "highlight": [
+     "length"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "11 cm",
+    "highlight": [
+     "length"
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "3 cm",
+   "note": "Its diameter is the radius of a big circle"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "3 cm",
+    "diameter": "6 cm",
+    "note": "Small circle: diameter = 2 × 3",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "6 cm",
+    "note": "Big circle: its radius is 6 cm",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "6 cm",
+    "diameter": "12 cm",
+    "note": "Big circle: diameter = 2 × 6",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "equilateral",
+   "sides": {
+    "ab": "?",
+    "bc": "?",
+    "ca": "?"
+   },
+   "note": "A, B, C: centres of touching circles of radius 4 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "4 + 4 cm",
+     "bc": "?",
+     "ca": "?"
+    },
+    "note": "Each side joins two centres: radius + radius",
+    "highlight": [
+     "ab"
+    ]
+   },
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "8 cm",
+     "bc": "8 cm",
+     "ca": "8 cm"
+    },
+    "note": "3 such sides: 3 × 8 = 24 cm",
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "grid": {
+    "cols": 5,
+    "rows": 2
+   },
+   "note": "One circle in each square. Perimeter = 84 cm. Radius = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "5 diameters",
+    "breadth": "2 diameters",
+    "grid": {
+     "cols": 5,
+     "rows": 2
+    },
+    "note": "Length = 5 diameters, width = 2 diameters"
+   },
+   {
+    "kind": "rectangle",
+    "length": "5 diameters",
+    "breadth": "2 diameters",
+    "grid": {
+     "cols": 5,
+     "rows": 2
+    },
+    "note": "Length + width = 84 ÷ 2",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       }
+      ],
+      "brace": "84 ÷ 2 cm"
+     }
+    ],
+    "note": "Length + width is 7 diameters"
+   },
+   {
+    "kind": "circle",
+    "radius": "3 cm",
+    "diameter": "6 cm",
+    "note": "The radius is half the diameter",
+    "highlight": [
+     "radius"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "10 cm",
+       "tone": "a"
+      }
+     ],
+     "label": "Big radius"
+    },
+    {
+     "segments": [
+      {
+       "units": 7,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 3,
+       "label": "3 cm",
+       "tone": "b"
+      }
+     ],
+     "label": "Small radius"
+    }
+   ],
+   "note": "Both end at the point where the circles touch"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "10 cm",
+        "tone": "a"
+       }
+      ],
+      "label": "Big radius"
+     },
+     {
+      "segments": [
+       {
+        "units": 7,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       }
+      ],
+      "label": "Small radius"
+     }
+    ],
+    "note": "Both centres and the touching point lie on one straight line"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "10 cm",
+        "tone": "a"
+       }
+      ],
+      "label": "Big radius"
+     },
+     {
+      "segments": [
+       {
+        "units": 7,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       }
+      ],
+      "label": "Small radius"
+     }
+    ],
+    "note": "Big centre: 10 cm from that point. Small centre: 3 cm",
+    "highlight": [
+     "b0s0",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "10 cm",
+        "tone": "a"
+       }
+      ],
+      "label": "Big radius"
+     },
+     {
+      "segments": [
+       {
+        "units": 7,
+        "label": "10 − 3 cm",
+        "tone": "unknown"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       }
+      ],
+      "label": "Small radius"
+     }
+    ],
+    "highlight": [
+     "b1s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "10 cm",
+        "tone": "a"
+       }
+      ],
+      "label": "Big radius"
+     },
+     {
+      "segments": [
+       {
+        "units": 7,
+        "label": "7 cm",
+        "tone": "c"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       }
+      ],
+      "label": "Small radius"
+     }
+    ],
+    "highlight": [
+     "b1s0"
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "radius 2 cm",
+       "tone": "a"
+      },
+      {
+       "units": 6,
+       "label": "radius 3 cm",
+       "tone": "b"
+      },
+      {
+       "units": 8,
+       "label": "radius 4 cm",
+       "tone": "c"
+      }
+     ]
+    }
+   ],
+   "note": "Three touching circles in a row. First centre to last = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "2 cm",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "2 cm",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       },
+       {
+        "units": 4,
+        "label": "4 cm",
+        "tone": "c"
+       },
+       {
+        "units": 4,
+        "label": "4 cm",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "First centre to the edge of its circle: one radius, 2 cm",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "2 cm",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "2 cm",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       },
+       {
+        "units": 4,
+        "label": "4 cm",
+        "tone": "c"
+       },
+       {
+        "units": 4,
+        "label": "4 cm",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "Across the whole middle circle: its diameter, 2 × 3 cm",
+    "highlight": [
+     "b0s2",
+     "b0s3"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "2 cm",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "2 cm",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       },
+       {
+        "units": 4,
+        "label": "4 cm",
+        "tone": "c"
+       },
+       {
+        "units": 4,
+        "label": "4 cm",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "Edge of the last circle to its centre: one radius, 4 cm",
+    "highlight": [
+     "b0s4"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "2 cm",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "2 cm",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       },
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       },
+       {
+        "units": 4,
+        "label": "4 cm",
+        "tone": "c"
+       },
+       {
+        "units": 4,
+        "label": "4 cm",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "2 + 3 + 3 + 4 = 12 cm",
+    "highlight": [
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "note": "Circumference = 88 cm. The circle fits exactly inside a square",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "Circumference = 2 × 22/7 × r",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "14 cm",
+    "note": "The radius is 14 cm",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "14 cm",
+    "diameter": "28 cm",
+    "note": "Side of the square = diameter = 2 × 14",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "28 cm",
+    "note": "The side of the square is 28 cm"
+   }
+  ]
+ },
+ "G4A_CIRCLE_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "14 cm",
+   "note": "A circle of radius 7 cm is cut out of this sheet"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "14 cm",
+    "breadth": "14 cm",
+    "note": "Square: 14 × 14",
+    "highlight": [
+     "fill"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "Circle: 22/7 × 7 × 7 = 154 sq cm",
+    "highlight": [
+     "fill"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_CIRCLE_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "24 cm",
+   "grid": {
+    "cols": 3,
+    "rows": 3
+   },
+   "note": "First tray: 3 rows of 3. Second tray: 4 rows of 4"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "24 cm",
+    "grid": {
+     "cols": 3,
+     "rows": 3
+    },
+    "note": "First tray: 3 plates share the 24 cm",
+    "highlight": [
+     "length"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "4 cm",
+    "diameter": "24 ÷ 3 cm",
+    "note": "A plate in the first tray",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "24 cm",
+    "grid": {
+     "cols": 4,
+     "rows": 4
+    },
+    "note": "Second tray: 4 plates share the 24 cm",
+    "highlight": [
+     "length"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "3 cm",
+    "diameter": "24 ÷ 4 cm",
+    "note": "A plate in the second tray",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "4 cm",
+        "tone": "a"
+       }
+      ],
+      "label": "First tray"
+     },
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "3 cm",
+        "tone": "b"
+       }
+      ],
+      "label": "Second tray"
+     }
+    ],
+    "note": "Compare the radii: 4 − 3"
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "a"
+      }
+     ],
+     "brace": "132 cm"
+    }
+   ],
+   "note": "Each piece is bent into a circle. Radius = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "44 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "44 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "44 cm",
+        "tone": "a"
+       }
+      ],
+      "brace": "132 cm"
+     }
+    ],
+    "note": "One piece: 132 ÷ 3"
+   },
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "Circumference of one circle = 2 × 22/7 × r = 44",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "A radius of 7 cm fits: 2 × 22/7 × 7 = 44",
+    "highlight": [
+     "radius"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_026": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "grid": {
+    "cols": 4,
+    "rows": 3
+   },
+   "note": "One circle in each square. Area = 432 sq cm. Radius = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "grid": {
+     "cols": 4,
+     "rows": 3
+    },
+    "note": "12 equal little squares share 432 sq cm"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "6 cm",
+    "breadth": "6 cm",
+    "inside": "36 sq cm",
+    "note": "One little square: 6 × 6 = 36"
+   },
+   {
+    "kind": "circle",
+    "diameter": "6 cm",
+    "note": "The side of the little square is the diameter",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "3 cm",
+    "diameter": "6 cm",
+    "note": "The radius is half the diameter",
+    "highlight": [
+     "radius"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_027": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "7 m",
+   "note": "A path 7 m wide runs all the way round this pond"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7,
+        "label": "pond 7 m",
+        "tone": "a"
+       },
+       {
+        "units": 7,
+        "label": "path 7 m",
+        "tone": "b"
+       }
+      ],
+      "brace": "7 + 7 m"
+     }
+    ],
+    "note": "Radius of the big circle: pond and path together"
+   },
+   {
+    "kind": "circle",
+    "radius": "7 + 7 m",
+    "note": "Pond and path together: 616 sq m",
+    "highlight": [
+     "fill"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "7 m",
+    "note": "Pond alone: 22/7 × 7 × 7 = 154 sq m",
+    "highlight": [
+     "fill"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "pond 154",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "path ?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Big circle",
+      "brace": "616 sq m"
+     }
+    ],
+    "note": "Take the pond out of the big circle"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "pond 154",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "path 462",
+        "tone": "b"
+       }
+      ],
+      "label": "Big circle",
+      "brace": "616 sq m"
+     }
+    ],
+    "note": "616 − 154 = 462 sq m",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "G4A_CIRCLE_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "old",
+       "tone": "a"
+      }
+     ],
+     "label": "Old circumference"
+    },
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "old",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "88 cm more",
+       "tone": "b"
+      }
+     ],
+     "label": "New circumference"
+    }
+   ],
+   "note": "The radius is made twice as long"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "old",
+        "tone": "a"
+       }
+      ],
+      "label": "Old circumference"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "old",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "old",
+        "tone": "a"
+       }
+      ],
+      "label": "New circumference"
+     }
+    ],
+    "note": "Double the radius gives double the circumference"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "88 cm",
+        "tone": "a"
+       }
+      ],
+      "label": "Old circumference"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "88 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "88 cm more",
+        "tone": "b"
+       }
+      ],
+      "label": "New circumference"
+     }
+    ],
+    "note": "The extra part is as long as the old circumference",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "14 cm",
+    "note": "Circumference 88 cm: the radius is 14 cm",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "28 cm",
+    "note": "Check: new radius 28 cm, circumference 88 cm longer",
+    "highlight": [
+     "edge"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_031": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "diameter": "24 cm",
+   "note": "A small circle inside touches it and passes through its centre"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "12 cm",
+    "diameter": "24 cm",
+    "note": "Big circle: radius = 24 ÷ 2",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       }
+      ],
+      "label": "Big radius",
+      "brace": "12 cm"
+     }
+    ],
+    "note": "Touching point to big centre: a diameter of the small circle"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "12 ÷ 2 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "12 ÷ 2 cm",
+        "tone": "a"
+       }
+      ],
+      "label": "Big radius",
+      "brace": "12 cm"
+     }
+    ],
+    "note": "The small centre is halfway along",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "6 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "6 cm",
+        "tone": "a"
+       }
+      ],
+      "label": "Big radius",
+      "brace": "12 cm"
+     }
+    ],
+    "note": "Small centre to big centre: 6 cm",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_032": {
+  "origin": "authored",
+  "figure": {
+   "kind": "polygon",
+   "points": [
+    [
+     4.48,
+     0.0
+    ],
+    [
+     0.0,
+     7.29
+    ],
+    [
+     11.0,
+     7.29
+    ]
+   ],
+   "edges": [
+    "7 cm",
+    "9 cm",
+    "8 cm"
+   ],
+   "note": "The corners are the centres of the three coins"
+  },
+  "stepFigures": [
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      4.48,
+      0.0
+     ],
+     [
+      0.0,
+      7.29
+     ],
+     [
+      11.0,
+      7.29
+     ]
+    ],
+    "edges": [
+     "7 cm",
+     "9 cm",
+     "8 cm"
+    ],
+    "note": "Each side is two radii. 7 + 8 + 9 counts each radius twice",
+    "highlight": [
+     "e0",
+     "e1",
+     "e2"
+    ]
+   },
+   null,
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      4.48,
+      0.0
+     ],
+     [
+      0.0,
+      7.29
+     ],
+     [
+      11.0,
+      7.29
+     ]
+    ],
+    "edges": [
+     "7 cm",
+     "9 cm",
+     "8 cm"
+    ],
+    "note": "The two smaller coins have the closest centres, 7 cm apart",
+    "highlight": [
+     "e0"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      4.48,
+      0.0
+     ],
+     [
+      0.0,
+      7.29
+     ],
+     [
+      11.0,
+      7.29
+     ]
+    ],
+    "edges": [
+     "7 cm",
+     "9 cm",
+     "8 cm"
+    ],
+    "corners": [
+     "r = 3 cm",
+     "r = 4 cm",
+     "r = 5 cm"
+    ],
+    "note": "Check: 3 + 4 = 7, 3 + 5 = 8 and 4 + 5 = 9"
+   },
+   null
+  ]
+ },
+ "G4A_CIRCLE_033": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7,
+        "label": "7 cm",
+        "tone": "a"
+       },
+       {
+        "units": 7,
+        "label": "7 cm",
+        "tone": "a"
+       }
+      ],
+      "brace": "one straight part"
+     }
+    ],
+    "note": "Centre to centre: two radii"
+   },
+   null,
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "Two half circles make one whole circle",
+    "highlight": [
+     "edge"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_CIRCLE_034": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "7 cm",
+   "note": "The tip of the hour hand moves round this circle",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "Once round: 2 × 22/7 × 7 = 44 cm",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 12,
+    "minute": 0,
+    "note": "Once round takes 12 hours, so 24 hours is 2 rounds",
+    "highlight": [
+     "hour"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "2 rounds: 2 × 44 = 88 cm",
+    "highlight": [
+     "edge"
+    ]
+   },
+   null
+  ]
+ },
+ "PYQ_2019_Q15": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "grid": {
+    "cols": 4,
+    "rows": 2
+   },
+   "note": "One circle fits in each square. Radius = 6 cm. Perimeter = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "6 cm",
+    "diameter": "12 cm",
+    "note": "Diameter = 2 × 6",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "4 diameters",
+    "breadth": "2 diameters",
+    "grid": {
+     "cols": 4,
+     "rows": 2
+    },
+    "note": "The length holds 4 circles, the breadth holds 2",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "4 diameters",
+    "breadth": "2 diameters",
+    "grid": {
+     "cols": 4,
+     "rows": 2
+    },
+    "note": "Round the rectangle: 2 × (4 + 2) diameters",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "4 diameters",
+    "breadth": "2 diameters",
+    "grid": {
+     "cols": 4,
+     "rows": 2
+    },
+    "note": "Perimeter = 144 cm",
+    "highlight": [
+     "border"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_011_V04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "circle",
+   "radius": "21 cm",
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "21 cm",
+    "note": "Area = π × 21 × 21",
+    "highlight": [
+     "radius"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "circle",
+    "radius": "21 cm",
+    "note": "22/7 × 21 × 21 = 1386 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH20_011_V05": {
+  "origin": "rule",
+  "figure": {
+   "kind": "circle",
+   "radius": "35 cm",
+   "note": "Circumference = ?",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "35 cm",
+    "note": "Circumference = 2 × π × 35",
+    "highlight": [
+     "edge",
+     "radius"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "circle",
+    "radius": "35 cm",
+    "note": "2 × 22/7 × 35 = 220 cm",
+    "highlight": [
+     "edge"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "same distance",
+   "note": "Every point on the circle is this far from one fixed point"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "All points at the same distance r from one point",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "The fixed point in the middle is the centre"
+   }
+  ]
+ },
+ "Q_CH21_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "9.5 cm",
+   "diameter": "?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "9.5 cm",
+    "diameter": "?",
+    "note": "The diameter is as long as two radii",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "9.5 cm",
+    "diameter": "2 × 9.5 cm",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "9.5 cm",
+    "diameter": "19 cm",
+    "highlight": [
+     "diameter"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_004": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "circle",
+    "diameter": "longest chord",
+    "note": "A chord is longest when it passes through the centre",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "diameter": "diameter",
+    "note": "A chord through the centre is the diameter",
+    "highlight": [
+     "diameter"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_005": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "circle",
+    "diameter": "diameter",
+    "note": "Every diameter cuts the circle into two matching halves",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   null
+  ]
+ },
+ "Q_CH21_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "21 cm",
+   "note": "Circumference = ?",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "21 cm",
+    "diameter": "42 cm",
+    "note": "Diameter = 2 × 21",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "circle",
+    "radius": "21 cm",
+    "diameter": "42 cm",
+    "note": "22/7 × 42 = 132 cm",
+    "highlight": [
+     "edge"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_006_V01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "circle",
+   "radius": "28 cm",
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "28 cm",
+    "note": "Area = π × 28 × 28",
+    "highlight": [
+     "radius"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "circle",
+    "radius": "28 cm",
+    "note": "22/7 × 28 × 28 = 2464 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_006_V05": {
+  "origin": "rule",
+  "figure": {
+   "kind": "circle",
+   "radius": "14 cm",
+   "note": "Circumference = ?",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "14 cm",
+    "note": "Circumference = 2 × π × 14",
+    "highlight": [
+     "edge",
+     "radius"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "circle",
+    "radius": "14 cm",
+    "note": "2 × 22/7 × 14 = 88 cm",
+    "highlight": [
+     "edge"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_006_V07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "circle",
+   "radius": "28 cm",
+   "note": "Circumference = ?",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "28 cm",
+    "note": "Circumference = 2 × π × 28",
+    "highlight": [
+     "edge",
+     "radius"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "circle",
+    "radius": "28 cm",
+    "note": "2 × 22/7 × 28 = 176 cm",
+    "highlight": [
+     "edge"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_006_V09": {
+  "origin": "rule",
+  "figure": {
+   "kind": "circle",
+   "radius": "7 cm",
+   "note": "Circumference = ?",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "Circumference = 2 × π × 7",
+    "highlight": [
+     "edge",
+     "radius"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "2 × 22/7 × 7 = 44 cm",
+    "highlight": [
+     "edge"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "diameter": "14 cm",
+   "note": "Circumference = ?",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "diameter": "14 cm",
+    "note": "Circumference = π × diameter = 22/7 × 14",
+    "highlight": [
+     "edge",
+     "diameter"
+    ]
+   },
+   null,
+   {
+    "kind": "circle",
+    "diameter": "14 cm",
+    "note": "22 × 2 = 44 cm",
+    "highlight": [
+     "edge"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_007_V01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "circle",
+   "radius": "35 cm",
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "35 cm",
+    "note": "Area = π × 35 × 35",
+    "highlight": [
+     "radius"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "circle",
+    "radius": "35 cm",
+    "note": "22/7 × 35 × 35 = 3850 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_007_V05": {
+  "origin": "rule",
+  "figure": {
+   "kind": "circle",
+   "radius": "14 cm",
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "14 cm",
+    "note": "Area = π × 14 × 14",
+    "highlight": [
+     "radius"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "circle",
+    "radius": "14 cm",
+    "note": "22/7 × 14 × 14 = 616 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "?",
+   "note": "Circumference = 440 m",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11,
+        "label": "22 parts",
+        "tone": "a"
+       }
+      ],
+      "label": "Circumference",
+      "brace": "440 m"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.5,
+        "label": "7 parts",
+        "tone": "b"
+       }
+      ],
+      "label": "Diameter"
+     }
+    ],
+    "note": "Circumference = 22/7 × diameter"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11,
+        "label": "22 parts",
+        "tone": "a"
+       }
+      ],
+      "label": "Circumference",
+      "brace": "440 m"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.5,
+        "label": "7 parts",
+        "tone": "b"
+       }
+      ],
+      "label": "Diameter"
+     }
+    ],
+    "note": "One part = 440 ÷ 22",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "circle",
+    "diameter": "140 m",
+    "note": "The diameter is 7 parts: 140 m",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "70 m",
+    "diameter": "140 m",
+    "note": "The radius is half of 140 m",
+    "highlight": [
+     "radius"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "diameter": "?",
+   "note": "Circumference = 176 m",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11,
+        "label": "22 parts",
+        "tone": "a"
+       }
+      ],
+      "label": "Circumference",
+      "brace": "176 m"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.5,
+        "label": "7 parts",
+        "tone": "b"
+       }
+      ],
+      "label": "Diameter"
+     }
+    ],
+    "note": "Circumference = 22/7 × diameter"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11,
+        "label": "22 parts",
+        "tone": "a"
+       }
+      ],
+      "label": "Circumference",
+      "brace": "176 m"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.5,
+        "label": "7 parts",
+        "tone": "b"
+       }
+      ],
+      "label": "Diameter"
+     }
+    ],
+    "note": "One part = 176 ÷ 22",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11,
+        "label": "22 parts",
+        "tone": "a"
+       }
+      ],
+      "label": "Circumference",
+      "brace": "176 m"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.5,
+        "label": "7 parts",
+        "tone": "b"
+       }
+      ],
+      "label": "Diameter"
+     }
+    ],
+    "note": "The diameter is 7 of these parts",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "circle",
+    "diameter": "56 m",
+    "highlight": [
+     "diameter"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "7 cm",
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "Area = π × radius × radius. First 7 × 7",
+    "highlight": [
+     "radius"
+    ]
+   },
+   null,
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "22/7 × 7 × 7 = 154 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "diameter": "14 cm",
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "diameter": "14 cm",
+    "note": "Radius = 14 ÷ 2",
+    "highlight": [
+     "radius"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "diameter": "14 cm",
+    "note": "22/7 × 7 × 7 = 154 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "35 m",
+   "note": "One lap is once round the track. 3 laps = ?",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "35 m",
+    "diameter": "2 × 35 m",
+    "note": "First the diameter",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "35 m",
+    "diameter": "70 m",
+    "note": "One lap = 22/7 × 70 = 220 m",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "220 m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "220 m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "220 m",
+        "tone": "a"
+       }
+      ],
+      "brace": "660 m"
+     }
+    ],
+    "note": "3 laps: 3 × 220"
+   }
+  ]
+ },
+ "Q_CH21_012_V02": {
+  "origin": "rule",
+  "figure": {
+   "kind": "circle",
+   "radius": "7 cm",
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "Area = π × 7 × 7",
+    "highlight": [
+     "radius"
+    ]
+   },
+   null,
+   null,
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "22/7 × 7 × 7 = 154 cm²",
+    "highlight": [
+     "fill"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "diameter": "diameter",
+   "note": "The diameter cuts the circle into two equal parts"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "diameter": "diameter",
+    "note": "A diameter passes through the centre",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "diameter": "diameter",
+    "note": "Each part is exactly half of the circle"
+   },
+   {
+    "kind": "circle",
+    "diameter": "diameter",
+    "note": "Half of a circle is a semicircle"
+   }
+  ]
+ },
+ "Q_CH21_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "diameter": "28 cm",
+   "note": "How many full turns to cover 440 cm?",
+   "highlight": [
+    "edge"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "diameter": "28 cm",
+    "note": "One turn = 22/7 × 28 = 88 cm",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "88 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "88 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "88 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "88 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "88 cm",
+        "tone": "a"
+       }
+      ],
+      "brace": "440 cm"
+     }
+    ],
+    "note": "440 ÷ 88 = 5 turns"
+   },
+   null
+  ]
+ },
+ "Q_CH21_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "?",
+   "note": "Area = 616 cm²",
+   "highlight": [
+    "fill"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "Area = 22/7 × r × r",
+    "highlight": [
+     "fill"
+    ]
+   },
+   null,
+   null,
+   null,
+   {
+    "kind": "circle",
+    "radius": "14 cm",
+    "note": "14 × 14 = 196, so the radius is 14 cm",
+    "highlight": [
+     "radius"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "7 cm",
+   "note": "Which number is larger: circumference or area?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "diameter": "14 cm",
+    "note": "Circumference = 22/7 × 14 = 44",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "7 cm",
+    "note": "Area = 22/7 × 7 × 7 = 154",
+    "highlight": [
+     "fill"
+    ]
+   },
+   {
+    "kind": "barChart",
+    "bars": [
+     {
+      "label": "Circumference",
+      "value": 44
+     },
+     {
+      "label": "Area",
+      "value": 154
+     }
+    ],
+    "note": "154 is greater than 44",
+    "highlight": [
+     "b1"
+    ]
+   }
+  ]
+ },
+ "Q_CH21_019": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "radius",
+    "note": "A radius can go to any point on the circle",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "diameter": "diameter",
+    "note": "A diameter can point in any direction",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   null
+  ]
+ },
+ "Q_CH21_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "diameter": "14 cm",
+   "note": "Cut along the diameter. Perimeter of one half = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "diameter": "14 cm",
+    "note": "Whole circle: 22/7 × 14 = 44 cm",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "circle",
+    "diameter": "14 cm",
+    "note": "Curved edge of the half: 44 ÷ 2 = 22 cm",
+    "highlight": [
+     "edge"
+    ]
+   },
+   {
+    "kind": "circle",
+    "diameter": "14 cm",
+    "note": "Straight edge: the diameter, 14 cm",
+    "highlight": [
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "diameter": "14 cm",
+    "note": "22 + 14 = 36 cm",
+    "highlight": [
+     "edge",
+     "diameter"
+    ]
+   }
+  ]
+ }
+}

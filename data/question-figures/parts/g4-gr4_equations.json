@@ -1,0 +1,9782 @@
+{
+ "BOOST_EXT_G4_FP_2019_027_07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "2x − 9",
+   "right": "5",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "5 + 9",
+    "note": "2x = 14",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "14 ÷ 2",
+    "note": "x = 7",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2021_008_06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "2x + 10",
+   "right": "24",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "24 − 10",
+    "note": "2x = 14",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "14 ÷ 2",
+    "note": "x = 7",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2022_021_08": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "7x + 17",
+   "right": "101",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "7x",
+    "right": "101 − 17",
+    "note": "7x = 84",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "84 ÷ 7",
+    "note": "x = 12",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2024_016_07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "7x − 9",
+   "right": "26",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "7x",
+    "right": "26 + 9",
+    "note": "7x = 35",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "35 ÷ 7",
+    "note": "x = 5",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_FP_2025_016_08": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5x + 6",
+   "right": "61",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5x",
+    "right": "61 − 6",
+    "note": "5x = 55",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "55 ÷ 5",
+    "note": "x = 11",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "BOOST_EXT_G4_WS2_CH14_007_07": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5x − 8",
+   "right": "7",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5x",
+    "right": "7 + 8",
+    "note": "5x = 15",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "15 ÷ 5",
+    "note": "x = 3",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2020_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "3x − 7",
+   "right": "8 − 2x",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5x − 7",
+    "right": "8",
+    "note": "Add 2x to both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "5x",
+    "right": "8 + 7",
+    "note": "5x = 15"
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "15 ÷ 5",
+    "note": "x = 3"
+   },
+   {
+    "kind": "balance",
+    "left": "3 × 3 − 7",
+    "right": "8 − 2 × 3",
+    "note": "Check: both pans are 2"
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "3",
+    "note": "x = 3",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2021_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 8.0,
+       "label": "8",
+       "tone": "c"
+      }
+     ],
+     "label": "Bigger"
+    },
+    {
+     "segments": [
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Smaller"
+    }
+   ],
+   "note": "The two numbers add up to 16. Their difference is 8."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 8.0,
+        "label": "8",
+        "tone": "c"
+       }
+      ],
+      "label": "Bigger"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 8.0,
+        "label": "8",
+        "tone": "c"
+       }
+      ],
+      "label": "Smaller + 8"
+     }
+    ],
+    "note": "16 + 8 is twice the bigger number",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 8.0,
+        "label": "8",
+        "tone": "c"
+       }
+      ],
+      "label": "Bigger"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 8.0,
+        "label": "8",
+        "tone": "c"
+       }
+      ],
+      "label": "Smaller + 8"
+     }
+    ],
+    "note": "Half of 16 + 8 is the bigger number",
+    "highlight": [
+     "b0"
+    ]
+   },
+   null,
+   null,
+   null
+  ]
+ },
+ "EXT_G4_FP_2022_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "6a + 8",
+   "right": "4a + 18",
+   "note": "Both pans weigh the same. Find a."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2a + 8",
+    "right": "18",
+    "note": "Take 4a from both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "2a",
+    "right": "18 − 8",
+    "note": "2a = 10"
+   },
+   {
+    "kind": "balance",
+    "left": "a",
+    "right": "10 ÷ 2",
+    "note": "Share both pans into 2 equal parts"
+   },
+   {
+    "kind": "balance",
+    "left": "6 × 5 + 8",
+    "right": "4 × 5 + 18",
+    "note": "Check: both pans are 38"
+   },
+   {
+    "kind": "balance",
+    "left": "a",
+    "right": "5",
+    "note": "a = 5, which is not in the list",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2022_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "8P + 7",
+   "right": "39",
+   "note": "Find P first. Then Q = P + 3."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "8P",
+    "right": "39 − 7",
+    "note": "Take 7 from both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "P",
+    "right": "(39 − 7) ÷ 8",
+    "note": "Share both pans into 8 equal parts"
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.86,
+        "label": "4",
+        "tone": "a"
+       }
+      ],
+      "label": "P"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.86,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 5.14,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Q",
+      "brace": "7"
+     }
+    ],
+    "note": "2P + 3Q = 2 × 4 + 3 × 7"
+   },
+   null
+  ]
+ },
+ "EXT_G4_FP_2023_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "97",
+       "tone": "a"
+      }
+     ],
+     "label": "Mishti"
+    },
+    {
+     "segments": [
+      {
+       "units": 1.36,
+       "label": "11",
+       "tone": "b"
+      }
+     ],
+     "label": "Manav"
+    }
+   ],
+   "note": "Mishti gives some pens. Then she has twice as many as Manav."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "97",
+        "tone": "a"
+       }
+      ],
+      "label": "Mishti"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.36,
+        "label": "11",
+        "tone": "b"
+       }
+      ],
+      "label": "Manav"
+     }
+    ],
+    "note": "The 97 + 11 pens in all do not change"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Mishti"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Manav"
+     }
+    ],
+    "note": "After giving: 3 equal shares of the 97 + 11 pens"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "36",
+        "tone": "a"
+       },
+       {
+        "units": 6.0,
+        "label": "36",
+        "tone": "a"
+       }
+      ],
+      "label": "Mishti"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.83,
+        "label": "11",
+        "tone": "b"
+       },
+       {
+        "units": 4.17,
+        "label": "25",
+        "tone": "c"
+       }
+      ],
+      "label": "Manav",
+      "brace": "36"
+     }
+    ],
+    "note": "36 − 11 = 25 pens given",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "36",
+        "tone": "a"
+       },
+       {
+        "units": 6.0,
+        "label": "36",
+        "tone": "a"
+       }
+      ],
+      "label": "Mishti",
+      "brace": "72"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "36",
+        "tone": "b"
+       }
+      ],
+      "label": "Manav"
+     }
+    ],
+    "note": "97 − 25 = 72, which is twice 36"
+   },
+   null
+  ]
+ },
+ "EXT_G4_FP_2023_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "3x + 7",
+   "right": "38",
+   "note": "Use this to find 6x + 7"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "3x",
+    "right": "38 − 7",
+    "note": "Take 7 from both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "6x",
+    "right": "2 × (38 − 7)",
+    "note": "6x is double 3x"
+   },
+   {
+    "kind": "balance",
+    "left": "6x + 7",
+    "right": "2 × (38 − 7) + 7",
+    "note": "Add 7 to both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "6x + 7",
+    "right": "69",
+    "note": "69 is not in the list",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_020": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "balance",
+    "left": "44 − 4 × 8",
+    "right": "3 × 8 − 12",
+    "note": "Both sides are 12, so they balance"
+   },
+   null,
+   {
+    "kind": "balance",
+    "left": "44 − 4N",
+    "right": "3N − 12",
+    "note": "True when N = 8"
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "7(3P − 4)",
+   "right": "4(5 + 3P) + 6",
+   "note": "Both pans weigh the same. Find P."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "21P − 28",
+    "right": "12P + 26",
+    "note": "Open the brackets"
+   },
+   {
+    "kind": "balance",
+    "left": "9P",
+    "right": "26 + 28",
+    "note": "Take 12P from both pans, then add 28 to both"
+   },
+   {
+    "kind": "balance",
+    "left": "P",
+    "right": "54 ÷ 9",
+    "note": "P = 6"
+   },
+   {
+    "kind": "balance",
+    "left": "7 × 14",
+    "right": "4 × 23 + 6",
+    "note": "Check: both pans are 98"
+   },
+   {
+    "kind": "balance",
+    "left": "P",
+    "right": "6",
+    "note": "P = 6",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2023_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "m + n",
+     "18"
+    ],
+    [
+     "n + p",
+     "24"
+    ],
+    [
+     "m + p",
+     "36"
+    ]
+   ],
+   "headers": [
+    "Sum",
+    "Value"
+   ],
+   "note": "Find p"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "m + n",
+      "18"
+     ],
+     [
+      "n + p",
+      "24"
+     ],
+     [
+      "m + p",
+      "36"
+     ]
+    ],
+    "headers": [
+     "Sum",
+     "Value"
+    ],
+    "note": "Add all three: each letter is counted twice",
+    "highlight": [
+     "r0",
+     "r1",
+     "r2"
+    ]
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "m + n",
+      "18"
+     ],
+     [
+      "n + p",
+      "24"
+     ],
+     [
+      "m + p",
+      "36"
+     ]
+    ],
+    "headers": [
+     "Sum",
+     "Value"
+    ],
+    "note": "Take m + n = 18 away from m + n + p to leave p",
+    "highlight": [
+     "r0"
+    ]
+   },
+   null
+  ]
+ },
+ "EXT_G4_FP_2024_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "16y − 36",
+   "right": "4y + (8 × 9)",
+   "note": "Both pans weigh the same. Find y."
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "balance",
+    "left": "12y − 36",
+    "right": "72",
+    "note": "Take 4y from both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "12y",
+    "right": "72 + 36",
+    "note": "Add 36 to both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "y",
+    "right": "(72 + 36) ÷ 12",
+    "note": "y = 9"
+   },
+   {
+    "kind": "balance",
+    "left": "y",
+    "right": "9",
+    "note": "y = 9",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2024_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 9.33,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Smaller"
+    },
+    {
+     "segments": [
+      {
+       "units": 9.33,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.67,
+       "label": "2",
+       "tone": "c"
+      }
+     ],
+     "label": "Bigger"
+    }
+   ],
+   "note": "Two odd numbers next to each other add up to 16"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 5,
+    "max": 11,
+    "step": 1,
+    "points": [
+     {
+      "at": 7,
+      "label": "7"
+     },
+     {
+      "at": 8,
+      "label": "half of 16"
+     },
+     {
+      "at": 9,
+      "label": "9"
+     }
+    ],
+    "note": "The odd numbers on each side of 8 are 7 and 9"
+   },
+   {
+    "kind": "grid",
+    "rows": 7,
+    "cols": 7,
+    "note": "The square of 7: 7 rows of 7"
+   },
+   {
+    "kind": "grid",
+    "rows": 9,
+    "cols": 9,
+    "note": "The square of 9: 9 rows of 9"
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G4_FP_2024_037": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "12x − 19",
+   "right": "53",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "12x",
+    "right": "53 + 19",
+    "note": "Add 19 to both pans",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "(53 + 19) ÷ 12",
+    "note": "Share both pans into 12 equal parts",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 6 + 29",
+    "right": "59",
+    "note": "Put 6 in place of x in 5x + 29"
+   },
+   null
+  ]
+ },
+ "EXT_G4_FP_2025_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "4m/3 + 17",
+   "right": "2m + 3",
+   "note": "Both pans weigh the same. Find m."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "4m + 51",
+    "right": "6m + 9",
+    "note": "Make every part 3 times as big"
+   },
+   {
+    "kind": "balance",
+    "left": "51",
+    "right": "2m + 9",
+    "note": "Take 4m from both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "51 − 9",
+    "right": "2m",
+    "note": "Take 9 from both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "(51 − 9) ÷ 2",
+    "right": "m",
+    "note": "m = 21"
+   },
+   {
+    "kind": "balance",
+    "left": "4 × 21 ÷ 3 + 17",
+    "right": "2 × 21 + 3",
+    "note": "Check: both pans are 45"
+   },
+   {
+    "kind": "balance",
+    "left": "m",
+    "right": "21",
+    "note": "m = 21",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_FP_2025_035": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "3m + 7",
+   "right": "28",
+   "note": "Both pans weigh the same. Find m."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "3m",
+    "right": "28 − 7",
+    "note": "Take 7 from both pans",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "m",
+    "right": "(28 − 7) ÷ 3",
+    "note": "m = 7",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 7 + 25",
+    "right": "39",
+    "note": "Put 7 in place of m in 2m + 25"
+   },
+   null
+  ]
+ },
+ "EXT_G4_WS2_CH14_001": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "x + 5",
+   "right": "12",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "12 − 5",
+    "note": "x = 7",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "7 + 5",
+    "right": "12",
+    "note": "Put 7 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "7",
+    "note": "x = 7",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH14_002": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "3x",
+   "right": "24",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "24 ÷ 3",
+    "note": "x = 8",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "3 × 8",
+    "right": "24",
+    "note": "Put 8 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "8",
+    "note": "x = 8",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH14_003": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "x − 7",
+   "right": "15",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "15 + 7",
+    "note": "x = 22",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "22 − 7",
+    "right": "15",
+    "note": "Put 22 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "22",
+    "note": "x = 22",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH14_004": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "x/4",
+   "right": "5",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "5 × 4",
+    "note": "x = 20",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "20 ÷ 4",
+    "right": "5",
+    "note": "Put 20 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "20",
+    "note": "x = 20",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH14_005": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "2x + 3",
+   "right": "11",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "11 − 3",
+    "note": "Take 3 from both pans",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "8 ÷ 2",
+    "note": "x = 4",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 4 + 3",
+    "right": "11",
+    "note": "Put 4 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "4",
+    "note": "x = 4",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH14_006": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5x − 2",
+   "right": "18",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5x",
+    "right": "18 + 2",
+    "note": "Add 2 to both pans",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "(18 + 2) ÷ 5",
+    "note": "x = 4",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 4 − 2",
+    "right": "18",
+    "note": "Put 4 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "4",
+    "note": "x = 4",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "EXT_G4_WS2_CH14_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 3.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 3.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 3.0,
+       "label": "7",
+       "tone": "b"
+      }
+     ],
+     "brace": "28"
+    }
+   ],
+   "note": "3 equal pieces and 7 more make 28"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "28 − 7"
+     }
+    ],
+    "note": "Take the 7 away: 3 equal pieces are left"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 4.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 4.0,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "brace": "28 − 7"
+     }
+    ],
+    "note": "Each equal piece is 7",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "7",
+        "tone": "b"
+       }
+      ],
+      "brace": "28"
+     }
+    ],
+    "note": "Check: 3 × 7 + 7 = 28"
+   },
+   null
+  ]
+ },
+ "EXT_G4_WS2_CH14_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 11.08,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Smaller"
+    },
+    {
+     "segments": [
+      {
+       "units": 11.08,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 0.92,
+       "label": "1",
+       "tone": "c"
+      }
+     ],
+     "label": "Bigger"
+    }
+   ],
+   "note": "Two numbers in a row. Together they make 25."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.08,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Smaller"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.08,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 0.92,
+        "label": "1",
+        "tone": "c"
+       }
+      ],
+      "label": "Bigger"
+     }
+    ],
+    "note": "Take the extra 1 away: two equal pieces are left",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.08,
+        "label": "12",
+        "tone": "a"
+       }
+      ],
+      "label": "Smaller"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.08,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 0.92,
+        "label": "1",
+        "tone": "c"
+       }
+      ],
+      "label": "Bigger"
+     }
+    ],
+    "note": "Each equal piece is 12"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.08,
+        "label": "12",
+        "tone": "a"
+       }
+      ],
+      "label": "Smaller"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.08,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 0.92,
+        "label": "1",
+        "tone": "c"
+       }
+      ],
+      "label": "Bigger",
+      "brace": "13"
+     }
+    ],
+    "note": "12 + 13 = 25"
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "?",
+     "?",
+     "60"
+    ]
+   ],
+   "headers": [
+    "Number",
+    "Add 6",
+    "Times 4"
+   ],
+   "note": "Anil's number goes through two steps"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "15",
+      "60"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Add 6",
+     "Times 4"
+    ],
+    "note": "Undo the last step: 60 ÷ 4 = 15",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9",
+      "15",
+      "60"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Add 6",
+     "Times 4"
+    ],
+    "note": "Undo the first step: 15 − 6 = 9",
+    "highlight": [
+     "r0"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Kabir"
+    },
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Diya"
+    }
+   ],
+   "note": "Together they save ₹96"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Kabir"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Diya"
+     }
+    ],
+    "note": "Kabir has 1 share and Diya has 2 shares"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "₹32",
+        "tone": "a"
+       }
+      ],
+      "label": "Kabir"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "₹32",
+        "tone": "b"
+       },
+       {
+        "units": 6.0,
+        "label": "₹32",
+        "tone": "b"
+       }
+      ],
+      "label": "Diya"
+     }
+    ],
+    "note": "96 ÷ 3 = 32 for each share"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "₹32",
+        "tone": "a"
+       }
+      ],
+      "label": "Kabir"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "₹32",
+        "tone": "b"
+       },
+       {
+        "units": 6.0,
+        "label": "₹32",
+        "tone": "b"
+       }
+      ],
+      "label": "Diya"
+     }
+    ],
+    "note": "Kabir saves ₹32",
+    "highlight": [
+     "b0"
+    ]
+   }
+  ]
+ },
+ "G4A_EQUATIONS_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1.38,
+       "label": "7",
+       "tone": "a"
+      },
+      {
+       "units": 1.38,
+       "label": "7",
+       "tone": "a"
+      },
+      {
+       "units": 1.38,
+       "label": "7",
+       "tone": "a"
+      },
+      {
+       "units": 1.38,
+       "label": "7",
+       "tone": "a"
+      },
+      {
+       "units": 1.38,
+       "label": "7",
+       "tone": "a"
+      },
+      {
+       "units": 1.38,
+       "label": "7",
+       "tone": "a"
+      },
+      {
+       "units": 1.38,
+       "label": "7",
+       "tone": "a"
+      },
+      {
+       "units": 1.38,
+       "label": "7",
+       "tone": "a"
+      },
+      {
+       "units": 0.98,
+       "label": "5",
+       "tone": "b"
+      }
+     ],
+     "brace": "?"
+    }
+   ],
+   "note": "8 children get 7 toffees each. 5 toffees are left over."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.38,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 1.38,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 1.38,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 1.38,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 1.38,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 1.38,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 1.38,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 1.38,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 0.98,
+        "label": "5",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "8 × 7 = 56 toffees given out",
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4",
+     "b0s5",
+     "b0s6",
+     "b0s7"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.02,
+        "label": "56",
+        "tone": "a"
+       },
+       {
+        "units": 0.98,
+        "label": "5",
+        "tone": "b"
+       }
+      ],
+      "brace": "61"
+     }
+    ],
+    "note": "56 + 5 = 61"
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "15 cm",
+   "breadth": "?",
+   "inside": "Perimeter 46 cm",
+   "proportion": 1.88
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "15 cm",
+    "breadth": "?",
+    "inside": "Perimeter 46 cm",
+    "proportion": 1.88,
+    "note": "One length and one breadth: 46 ÷ 2 = 23",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "15 cm",
+    "breadth": "8 cm",
+    "inside": "Perimeter 46 cm",
+    "proportion": 1.88,
+    "note": "23 − 15 = 8",
+    "highlight": [
+     "breadth"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "3 boxes + 2 kg",
+   "right": "14 kg"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "3 boxes + 2 kg",
+    "right": "14 kg",
+    "note": "Both pans weigh the same"
+   },
+   {
+    "kind": "balance",
+    "left": "3 boxes",
+    "right": "12 kg",
+    "note": "Take 2 kg off each pan: 14 − 2 = 12"
+   },
+   {
+    "kind": "balance",
+    "left": "1 box",
+    "right": "4 kg",
+    "note": "12 ÷ 3 = 4"
+   }
+  ]
+ },
+ "G4A_EQUATIONS_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Tara"
+    },
+    {
+     "segments": [
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Mother"
+    }
+   ],
+   "note": "Mother is 3 times as old as Tara, and 24 years older"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Tara"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Mother"
+     }
+    ],
+    "note": "The 2 extra shares are the 24 years",
+    "highlight": [
+     "b1s1",
+     "b1s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "a"
+       }
+      ],
+      "label": "Tara"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       }
+      ],
+      "label": "Mother"
+     }
+    ],
+    "note": "24 ÷ 2 = 12 for each share"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "a"
+       }
+      ],
+      "label": "Tara"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       }
+      ],
+      "label": "Mother"
+     }
+    ],
+    "note": "Tara is 12 years old",
+    "highlight": [
+     "b0"
+    ]
+   }
+  ]
+ },
+ "G4A_EQUATIONS_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1.56,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.56,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.56,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.56,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.56,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.2,
+       "label": "₹35",
+       "tone": "b"
+      }
+     ],
+     "brace": "₹100"
+    }
+   ],
+   "note": "5 pens and the ₹35 change make up the ₹100 note"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.56,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.56,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.56,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.56,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.56,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.2,
+        "label": "₹35",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹100"
+     }
+    ],
+    "note": "Take the ₹35 change away from ₹100",
+    "highlight": [
+     "b0s5"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.56,
+        "label": "₹13",
+        "tone": "a"
+       },
+       {
+        "units": 1.56,
+        "label": "₹13",
+        "tone": "a"
+       },
+       {
+        "units": 1.56,
+        "label": "₹13",
+        "tone": "a"
+       },
+       {
+        "units": 1.56,
+        "label": "₹13",
+        "tone": "a"
+       },
+       {
+        "units": 1.56,
+        "label": "₹13",
+        "tone": "a"
+       },
+       {
+        "units": 4.2,
+        "label": "₹35",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹100"
+     }
+    ],
+    "note": "Each pen costs ₹13"
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4.0,
+       "label": "₹30",
+       "tone": "a"
+      },
+      {
+       "units": 8.0,
+       "label": "? km at ₹12",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "₹90"
+    }
+   ],
+   "note": "₹30 for the first km, then ₹12 for each km after it"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "₹30",
+        "tone": "a"
+       },
+       {
+        "units": 8.0,
+        "label": "? km at ₹12",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "₹90"
+     }
+    ],
+    "note": "90 − 30 = 60 for the other kilometres",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "₹30",
+        "tone": "a"
+       },
+       {
+        "units": 1.6,
+        "label": "₹12",
+        "tone": "b"
+       },
+       {
+        "units": 1.6,
+        "label": "₹12",
+        "tone": "b"
+       },
+       {
+        "units": 1.6,
+        "label": "₹12",
+        "tone": "b"
+       },
+       {
+        "units": 1.6,
+        "label": "₹12",
+        "tone": "b"
+       },
+       {
+        "units": 1.6,
+        "label": "₹12",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹90"
+     }
+    ],
+    "note": "5 pieces of ₹12: 5 km after the first",
+    "highlight": [
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4",
+     "b0s5"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "₹30",
+        "tone": "a"
+       },
+       {
+        "units": 1.6,
+        "label": "₹12",
+        "tone": "b"
+       },
+       {
+        "units": 1.6,
+        "label": "₹12",
+        "tone": "b"
+       },
+       {
+        "units": 1.6,
+        "label": "₹12",
+        "tone": "b"
+       },
+       {
+        "units": 1.6,
+        "label": "₹12",
+        "tone": "b"
+       },
+       {
+        "units": 1.6,
+        "label": "₹12",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹90"
+     }
+    ],
+    "note": "1 + 5 = 6 km",
+    "highlight": [
+     "b0"
+    ]
+   }
+  ]
+ },
+ "G4A_EQUATIONS_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "★",
+       "tone": "a"
+      },
+      {
+       "units": 6.0,
+       "label": "★",
+       "tone": "a"
+      }
+     ],
+     "brace": "18"
+    },
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "★",
+       "tone": "a"
+      },
+      {
+       "units": 3.33,
+       "label": "▲",
+       "tone": "b"
+      }
+     ],
+     "brace": "14"
+    }
+   ],
+   "note": "The same shape is always the same number"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 6.0,
+        "label": "9",
+        "tone": "a"
+       }
+      ],
+      "brace": "18"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "★",
+        "tone": "a"
+       },
+       {
+        "units": 3.33,
+        "label": "▲",
+        "tone": "b"
+       }
+      ],
+      "brace": "14"
+     }
+    ],
+    "note": "18 ÷ 2 = 9, so ★ is 9",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 6.0,
+        "label": "9",
+        "tone": "a"
+       }
+      ],
+      "brace": "18"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 3.33,
+        "label": "5",
+        "tone": "b"
+       }
+      ],
+      "brace": "14"
+     }
+    ],
+    "note": "14 − 9 = 5, so ▲ is 5",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 7.2,
+       "label": "half of ?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.8,
+       "label": "8",
+       "tone": "b"
+      }
+     ],
+     "brace": "20"
+    }
+   ],
+   "note": "Half of the number and 8 more make 20"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.2,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 4.8,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "brace": "20"
+     }
+    ],
+    "note": "20 − 8 = 12 is half of the number",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "12",
+        "tone": "a"
+       },
+       {
+        "units": 6.0,
+        "label": "12",
+        "tone": "a"
+       }
+      ],
+      "label": "The number",
+      "brace": "24"
+     }
+    ],
+    "note": "12 × 2 = 24"
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6.55,
+       "label": "6 cows' legs",
+       "tone": "a"
+      },
+      {
+       "units": 5.45,
+       "label": "hens' legs",
+       "tone": "b"
+      }
+     ],
+     "brace": "44 legs"
+    }
+   ],
+   "note": "How many hens are there?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.55,
+        "label": "6 cows' legs",
+        "tone": "a"
+       },
+       {
+        "units": 5.45,
+        "label": "hens' legs",
+        "tone": "b"
+       }
+      ],
+      "brace": "44 legs"
+     }
+    ],
+    "note": "Each cow has four legs: count the cows' legs first",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.55,
+        "label": "6 cows' legs",
+        "tone": "a"
+       },
+       {
+        "units": 5.45,
+        "label": "20 legs",
+        "tone": "b"
+       }
+      ],
+      "brace": "44 legs"
+     }
+    ],
+    "note": "The hens have 20 legs",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.55,
+        "label": "6 cows' legs",
+        "tone": "a"
+       },
+       {
+        "units": 0.55,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 0.55,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 0.55,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 0.55,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 0.55,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 0.55,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 0.55,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 0.55,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 0.55,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 0.55,
+        "label": "2",
+        "tone": "b"
+       }
+      ],
+      "brace": "44 legs"
+     }
+    ],
+    "note": "20 ÷ 2 = 10 hens"
+   }
+  ]
+ },
+ "G4A_EQUATIONS_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "x",
+       "tone": "a"
+      }
+     ],
+     "label": "Gopal"
+    },
+    {
+     "segments": [
+      {
+       "units": 9.0,
+       "label": "3 less than x",
+       "tone": "b"
+      }
+     ],
+     "label": "Sister"
+    }
+   ],
+   "note": "Their ages add up to 21 years"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "x",
+        "tone": "a"
+       }
+      ],
+      "label": "Gopal"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.0,
+        "label": "x − 3",
+        "tone": "b"
+       }
+      ],
+      "label": "Sister"
+     }
+    ],
+    "note": "3 years younger than Gopal: x − 3",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "x",
+        "tone": "a"
+       }
+      ],
+      "label": "Gopal"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.0,
+        "label": "x − 3",
+        "tone": "b"
+       }
+      ],
+      "label": "Sister"
+     }
+    ],
+    "note": "x + x − 3 = 21"
+   }
+  ]
+ },
+ "G4A_EQUATIONS_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Six times"
+    },
+    {
+     "segments": [
+      {
+       "units": 2.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 10.0,
+       "label": "35",
+       "tone": "b"
+      }
+     ],
+     "label": "Number + 35"
+    }
+   ],
+   "note": "Six times a number is the same as the number and 35 more"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Six times"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 10.0,
+        "label": "35",
+        "tone": "b"
+       }
+      ],
+      "label": "Number + 35"
+     }
+    ],
+    "note": "Take one piece from each bar: 5 pieces match the 35",
+    "highlight": [
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4",
+     "b0s5",
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "label": "Six times"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.0,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 10.0,
+        "label": "35",
+        "tone": "b"
+       }
+      ],
+      "label": "Number + 35"
+     }
+    ],
+    "note": "35 ÷ 5 = 7"
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "5 tins + 3 kg",
+   "right": "2 tins + 18 kg"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "3 tins + 3 kg",
+    "right": "18 kg",
+    "note": "Take 2 tins off each pan"
+   },
+   {
+    "kind": "balance",
+    "left": "3 tins",
+    "right": "15 kg",
+    "note": "Take 3 kg off each pan: 18 − 3 = 15"
+   },
+   {
+    "kind": "balance",
+    "left": "1 tin",
+    "right": "5 kg",
+    "note": "15 ÷ 3 = 5"
+   }
+  ]
+ },
+ "G4A_EQUATIONS_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "52",
+       "tone": "a"
+      }
+     ],
+     "label": "Asha"
+    },
+    {
+     "segments": [
+      {
+       "units": 6.46,
+       "label": "28",
+       "tone": "b"
+      }
+     ],
+     "label": "Bina"
+    }
+   ],
+   "note": "Asha gives stickers to Bina until both have the same number"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "52",
+        "tone": "a"
+       }
+      ],
+      "label": "Asha"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.46,
+        "label": "28",
+        "tone": "b"
+       }
+      ],
+      "label": "Bina"
+     }
+    ],
+    "note": "52 + 28 = 80 stickers in all"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "40",
+        "tone": "a"
+       }
+      ],
+      "label": "Asha"
+     },
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "40",
+        "tone": "b"
+       }
+      ],
+      "label": "Bina"
+     }
+    ],
+    "note": "80 ÷ 2 = 40 each"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.23,
+        "label": "40",
+        "tone": "a"
+       },
+       {
+        "units": 2.77,
+        "label": "12",
+        "tone": "c"
+       }
+      ],
+      "label": "Asha",
+      "brace": "52"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.46,
+        "label": "28",
+        "tone": "b"
+       },
+       {
+        "units": 2.77,
+        "label": "12",
+        "tone": "c"
+       }
+      ],
+      "label": "Bina",
+      "brace": "40"
+     }
+    ],
+    "note": "52 − 40 = 12 stickers move across",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   }
+  ]
+ },
+ "G4A_EQUATIONS_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Wheels each",
+     "3",
+     "4",
+     "–"
+    ],
+    [
+     "Vehicles",
+     "?",
+     "?",
+     "10"
+    ],
+    [
+     "Wheels",
+     "?",
+     "?",
+     "34"
+    ]
+   ],
+   "headers": [
+    "What",
+    "Autos",
+    "Cars",
+    "In all"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Wheels each",
+      "3",
+      "4",
+      "–"
+     ],
+     [
+      "Vehicles",
+      "10",
+      "0",
+      "10"
+     ],
+     [
+      "Wheels",
+      "10 × 3",
+      "0",
+      "?"
+     ]
+    ],
+    "headers": [
+     "What",
+     "Autos",
+     "Cars",
+     "In all"
+    ],
+    "note": "Suppose all 10 are auto-rickshaws",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Wheels each",
+      "3",
+      "4",
+      "–"
+     ],
+     [
+      "Vehicles",
+      "10",
+      "0",
+      "10"
+     ],
+     [
+      "Wheels",
+      "10 × 3",
+      "0",
+      "?"
+     ]
+    ],
+    "headers": [
+     "What",
+     "Autos",
+     "Cars",
+     "In all"
+    ],
+    "note": "34 − 10 × 3 = 4 extra wheels are really there",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Wheels each",
+      "3",
+      "4",
+      "–"
+     ],
+     [
+      "Vehicles",
+      "6",
+      "4",
+      "10"
+     ],
+     [
+      "Wheels",
+      "6 × 3",
+      "4 × 4",
+      "34"
+     ]
+    ],
+    "headers": [
+     "What",
+     "Autos",
+     "Cars",
+     "In all"
+    ],
+    "note": "Each car adds 1 wheel: 4 cars and 6 autos",
+    "highlight": [
+     "r1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Bala"
+    },
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Jaya"
+    },
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 3.0,
+       "label": "5",
+       "tone": "c"
+      }
+     ],
+     "label": "Chitra"
+    }
+   ],
+   "note": "Together they have 45 shells"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Bala"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Jaya"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 3.0,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "label": "Chitra"
+     }
+    ],
+    "note": "4 equal shares and 5 more"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Bala"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Jaya"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 3.0,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "label": "Chitra"
+     }
+    ],
+    "note": "Take the extra 5 away from 45",
+    "highlight": [
+     "b2s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "10",
+        "tone": "a"
+       }
+      ],
+      "label": "Bala"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "10",
+        "tone": "b"
+       },
+       {
+        "units": 6.0,
+        "label": "10",
+        "tone": "b"
+       }
+      ],
+      "label": "Jaya"
+     },
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "10",
+        "tone": "c"
+       },
+       {
+        "units": 3.0,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "label": "Chitra"
+     }
+    ],
+    "note": "Each share is 10 shells"
+   }
+  ]
+ },
+ "G4A_EQUATIONS_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "2 breadths + 3 m",
+   "breadth": "?",
+   "inside": "Perimeter 48 m",
+   "proportion": 2.43
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "2 breadths + 3 m",
+    "breadth": "?",
+    "inside": "Perimeter 48 m",
+    "proportion": 2.43,
+    "note": "One length and one breadth make half of 48 m",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.5,
+        "label": "breadth",
+        "tone": "unknown"
+       },
+       {
+        "units": 3.5,
+        "label": "breadth",
+        "tone": "unknown"
+       },
+       {
+        "units": 3.5,
+        "label": "breadth",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.5,
+        "label": "3 m",
+        "tone": "b"
+       }
+      ],
+      "brace": "24 m"
+     }
+    ],
+    "note": "Take the 3 m away from 24 m"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.5,
+        "label": "7 m",
+        "tone": "a"
+       },
+       {
+        "units": 3.5,
+        "label": "7 m",
+        "tone": "a"
+       },
+       {
+        "units": 3.5,
+        "label": "7 m",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "3 m",
+        "tone": "b"
+       }
+      ],
+      "brace": "24 m"
+     }
+    ],
+    "note": "Each breadth is 7 m"
+   },
+   {
+    "kind": "rectangle",
+    "length": "17 m",
+    "breadth": "7 m",
+    "inside": "Perimeter 48 m",
+    "proportion": 2.43,
+    "note": "2 × 7 + 3 = 17",
+    "highlight": [
+     "length"
+    ]
+   }
+  ]
+ },
+ "G4A_EQUATIONS_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2.88,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.88,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.88,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 3.36,
+       "label": "₹14",
+       "tone": "c"
+      }
+     ],
+     "label": "Raju"
+    },
+    {
+     "segments": [
+      {
+       "units": 2.88,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.88,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.88,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.88,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 0.48,
+       "label": "₹2",
+       "tone": "c"
+      }
+     ],
+     "label": "Sonu"
+    }
+   ],
+   "note": "Both started with the same money. Each ? is one notebook."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 3.36,
+        "label": "₹14",
+        "tone": "c"
+       }
+      ],
+      "label": "Raju"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 0.48,
+        "label": "₹2",
+        "tone": "c"
+       }
+      ],
+      "label": "Sonu"
+     }
+    ],
+    "note": "3 notebooks and ₹14 equal 4 notebooks and ₹2"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 3.36,
+        "label": "₹14",
+        "tone": "c"
+       }
+      ],
+      "label": "Raju"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.88,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 0.48,
+        "label": "₹2",
+        "tone": "c"
+       }
+      ],
+      "label": "Sonu"
+     }
+    ],
+    "note": "Sonu bought 1 more notebook than Raju",
+    "highlight": [
+     "b1s3"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.88,
+        "label": "₹12",
+        "tone": "a"
+       },
+       {
+        "units": 2.88,
+        "label": "₹12",
+        "tone": "a"
+       },
+       {
+        "units": 2.88,
+        "label": "₹12",
+        "tone": "a"
+       },
+       {
+        "units": 3.36,
+        "label": "₹14",
+        "tone": "c"
+       }
+      ],
+      "label": "Raju"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.88,
+        "label": "₹12",
+        "tone": "b"
+       },
+       {
+        "units": 2.88,
+        "label": "₹12",
+        "tone": "b"
+       },
+       {
+        "units": 2.88,
+        "label": "₹12",
+        "tone": "b"
+       },
+       {
+        "units": 2.88,
+        "label": "₹12",
+        "tone": "b"
+       },
+       {
+        "units": 0.48,
+        "label": "₹2",
+        "tone": "c"
+       }
+      ],
+      "label": "Sonu"
+     }
+    ],
+    "note": "14 − 2 = 12, so one notebook costs ₹12",
+    "highlight": [
+     "b1s3"
+    ]
+   }
+  ]
+ },
+ "G4A_EQUATIONS_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "book (half)",
+       "tone": "a"
+      },
+      {
+       "units": 2.4,
+       "label": "₹30",
+       "tone": "b"
+      },
+      {
+       "units": 3.6,
+       "label": "₹45",
+       "tone": "c"
+      }
+     ],
+     "brace": "?"
+    }
+   ],
+   "note": "Half goes on a book, ₹30 on a pen, and ₹45 is left"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "book (half)",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "₹30",
+        "tone": "b"
+       },
+       {
+        "units": 3.6,
+        "label": "₹45",
+        "tone": "c"
+       }
+      ],
+      "brace": "?"
+     }
+    ],
+    "note": "45 + 30 = 75 is the other half",
+    "highlight": [
+     "b0s1",
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "₹75",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "₹30",
+        "tone": "b"
+       },
+       {
+        "units": 3.6,
+        "label": "₹45",
+        "tone": "c"
+       }
+      ],
+      "brace": "₹150"
+     }
+    ],
+    "note": "75 × 2 = 150"
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Start",
+     "same number",
+     "same number"
+    ],
+    [
+     "First",
+     "add 8",
+     "double"
+    ],
+    [
+     "Then",
+     "double",
+     "add 8"
+    ]
+   ],
+   "headers": [
+    "Step",
+    "Asha",
+    "Bina"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Start",
+      "1",
+      "1"
+     ],
+     [
+      "First",
+      "1 + 8 = 9",
+      "2"
+     ],
+     [
+      "Then",
+      "18",
+      "2 + 8 = 10"
+     ]
+    ],
+    "headers": [
+     "Step",
+     "Asha",
+     "Bina"
+    ],
+    "note": "Try the number 1"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Start",
+      "1",
+      "1"
+     ],
+     [
+      "First",
+      "1 + 8 = 9",
+      "2"
+     ],
+     [
+      "Then",
+      "18",
+      "2 + 8 = 10"
+     ]
+    ],
+    "headers": [
+     "Step",
+     "Asha",
+     "Bina"
+    ],
+    "note": "18 − 10 = 8",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Start",
+      "n",
+      "n"
+     ],
+     [
+      "First",
+      "n + 8",
+      "2n"
+     ],
+     [
+      "Then",
+      "2n + 16",
+      "2n + 8"
+     ]
+    ],
+    "headers": [
+     "Step",
+     "Asha",
+     "Bina"
+    ],
+    "note": "For any start n: Asha doubles the 8 as well"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Start",
+      "n",
+      "n"
+     ],
+     [
+      "First",
+      "n + 8",
+      "2n"
+     ],
+     [
+      "Then",
+      "2n + 16",
+      "2n + 8"
+     ]
+    ],
+    "headers": [
+     "Step",
+     "Asha",
+     "Bina"
+    ],
+    "note": "16 − 8 = 8",
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "G4A_EQUATIONS_022": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "18",
+      "81",
+      "?"
+     ],
+     [
+      "27",
+      "72",
+      "?"
+     ],
+     [
+      "36",
+      "63",
+      "?"
+     ],
+     [
+      "45",
+      "54",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Swapped",
+     "Difference"
+    ],
+    "note": "The swapped number must be the greater one"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "18",
+      "81",
+      "63"
+     ],
+     [
+      "27",
+      "72",
+      "45"
+     ],
+     [
+      "36",
+      "63",
+      "27"
+     ],
+     [
+      "45",
+      "54",
+      "9"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Swapped",
+     "Difference"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "18",
+      "81",
+      "63"
+     ],
+     [
+      "27",
+      "72",
+      "45"
+     ],
+     [
+      "36",
+      "63",
+      "27"
+     ],
+     [
+      "45",
+      "54",
+      "9"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Swapped",
+     "Difference"
+    ],
+    "note": "Only 36 gives a difference of 27",
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "G4A_EQUATIONS_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Sonu"
+    },
+    {
+     "segments": [
+      {
+       "units": 3.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 3.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 3.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 3.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Ravi"
+    }
+   ],
+   "note": "Then each wins 5 more. Now Ravi has 3 times as many as Sonu."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "10",
+        "tone": "a"
+       }
+      ],
+      "label": "Sonu"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "10",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "10",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "10",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "10",
+        "tone": "b"
+       }
+      ],
+      "label": "Ravi",
+      "brace": "40"
+     }
+    ],
+    "note": "Test Sonu = 10: Ravi has 4 × 10 = 40"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.67,
+        "label": "10",
+        "tone": "a"
+       },
+       {
+        "units": 1.33,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "label": "Sonu",
+      "brace": "15"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.67,
+        "label": "10",
+        "tone": "b"
+       },
+       {
+        "units": 2.67,
+        "label": "10",
+        "tone": "b"
+       },
+       {
+        "units": 2.67,
+        "label": "10",
+        "tone": "b"
+       },
+       {
+        "units": 2.67,
+        "label": "10",
+        "tone": "b"
+       },
+       {
+        "units": 1.33,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "label": "Ravi",
+      "brace": "45"
+     }
+    ],
+    "note": "Each wins 5 more",
+    "highlight": [
+     "b0s1",
+     "b1s4"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "15",
+        "tone": "a"
+       }
+      ],
+      "label": "Sonu"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "15",
+        "tone": "b"
+       }
+      ],
+      "label": "Ravi",
+      "brace": "45"
+     }
+    ],
+    "note": "45 is 3 times 15, so both clues fit"
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_EQUATIONS_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6.0,
+       "label": "Asha: half",
+       "tone": "a"
+      },
+      {
+       "units": 0.67,
+       "label": "1",
+       "tone": "c"
+      },
+      {
+       "units": 5.33,
+       "label": "the rest",
+       "tone": "b"
+      }
+     ],
+     "label": "Basket",
+     "brace": "?"
+    },
+    {
+     "segments": [
+      {
+       "units": 2.67,
+       "label": "Bala: half",
+       "tone": "a"
+      },
+      {
+       "units": 0.67,
+       "label": "1",
+       "tone": "c"
+      },
+      {
+       "units": 2.0,
+       "label": "3 left",
+       "tone": "b"
+      }
+     ],
+     "label": "The rest"
+    }
+   ],
+   "note": "Each takes half and 1 more. Then 3 are left."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "Asha: half",
+        "tone": "a"
+       },
+       {
+        "units": 0.67,
+        "label": "1",
+        "tone": "c"
+       },
+       {
+        "units": 5.33,
+        "label": "the rest",
+        "tone": "b"
+       }
+      ],
+      "label": "Basket",
+      "brace": "?"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.67,
+        "label": "Bala: half",
+        "tone": "a"
+       },
+       {
+        "units": 0.67,
+        "label": "1",
+        "tone": "c"
+       },
+       {
+        "units": 2.0,
+        "label": "3 left",
+        "tone": "b"
+       }
+      ],
+      "label": "The rest"
+     }
+    ],
+    "note": "The 3 left and his extra 1 are half of what Bala found",
+    "highlight": [
+     "b1s1",
+     "b1s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "Asha: half",
+        "tone": "a"
+       },
+       {
+        "units": 0.67,
+        "label": "1",
+        "tone": "c"
+       },
+       {
+        "units": 5.33,
+        "label": "the rest",
+        "tone": "b"
+       }
+      ],
+      "label": "Basket",
+      "brace": "?"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.67,
+        "label": "4",
+        "tone": "a"
+       },
+       {
+        "units": 0.67,
+        "label": "1",
+        "tone": "c"
+       },
+       {
+        "units": 2.0,
+        "label": "3 left",
+        "tone": "b"
+       }
+      ],
+      "label": "The rest",
+      "brace": "8"
+     }
+    ],
+    "note": "4 × 2 = 8 mangoes before Bala",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "Asha: half",
+        "tone": "a"
+       },
+       {
+        "units": 0.67,
+        "label": "1",
+        "tone": "c"
+       },
+       {
+        "units": 5.33,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "label": "Basket",
+      "brace": "?"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.67,
+        "label": "4",
+        "tone": "a"
+       },
+       {
+        "units": 0.67,
+        "label": "1",
+        "tone": "c"
+       },
+       {
+        "units": 2.0,
+        "label": "3 left",
+        "tone": "b"
+       }
+      ],
+      "label": "The rest",
+      "brace": "8"
+     }
+    ],
+    "note": "8 + 1 = 9 is half of the basket",
+    "highlight": [
+     "b0s1",
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 0.67,
+        "label": "1",
+        "tone": "c"
+       },
+       {
+        "units": 5.33,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "label": "Basket",
+      "brace": "18"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.67,
+        "label": "4",
+        "tone": "a"
+       },
+       {
+        "units": 0.67,
+        "label": "1",
+        "tone": "c"
+       },
+       {
+        "units": 2.0,
+        "label": "3 left",
+        "tone": "b"
+       }
+      ],
+      "label": "The rest",
+      "brace": "8"
+     }
+    ],
+    "note": "9 × 2 = 18",
+    "highlight": [
+     "b0"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Points each",
+     "+5",
+     "−2",
+     "–"
+    ],
+    [
+     "Rounds",
+     "?",
+     "?",
+     "20"
+    ],
+    [
+     "Points",
+     "?",
+     "?",
+     "65"
+    ]
+   ],
+   "headers": [
+    "What",
+    "Won",
+    "Lost",
+    "In all"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Points each",
+      "+5",
+      "−2",
+      "–"
+     ],
+     [
+      "Rounds",
+      "20",
+      "0",
+      "20"
+     ],
+     [
+      "Points",
+      "100",
+      "0",
+      "100"
+     ]
+    ],
+    "headers": [
+     "What",
+     "Won",
+     "Lost",
+     "In all"
+    ],
+    "note": "Suppose she won all 20 rounds: 20 × 5 = 100"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Points each",
+      "+5",
+      "−2",
+      "–"
+     ],
+     [
+      "Rounds",
+      "?",
+      "5",
+      "20"
+     ],
+     [
+      "Points",
+      "?",
+      "?",
+      "65"
+     ]
+    ],
+    "headers": [
+     "What",
+     "Won",
+     "Lost",
+     "In all"
+    ],
+    "note": "100 − 65 = 35, and 35 ÷ 7 = 5 lost rounds",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Points each",
+      "+5",
+      "−2",
+      "–"
+     ],
+     [
+      "Rounds",
+      "15",
+      "5",
+      "20"
+     ],
+     [
+      "Points",
+      "75",
+      "−10",
+      "65"
+     ]
+    ],
+    "headers": [
+     "What",
+     "Won",
+     "Lost",
+     "In all"
+    ],
+    "note": "Check: 75 − 10 = 65",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Points each",
+      "+5",
+      "−2",
+      "–"
+     ],
+     [
+      "Rounds",
+      "15",
+      "5",
+      "20"
+     ],
+     [
+      "Points",
+      "75",
+      "−10",
+      "65"
+     ]
+    ],
+    "headers": [
+     "What",
+     "Won",
+     "Lost",
+     "In all"
+    ],
+    "note": "20 − 5 = 15 rounds won",
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "G4A_EQUATIONS_026": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2.25,
+       "label": "pen",
+       "tone": "a"
+      },
+      {
+       "units": 2.25,
+       "label": "pen",
+       "tone": "a"
+      },
+      {
+       "units": 1.5,
+       "label": "pencil",
+       "tone": "b"
+      },
+      {
+       "units": 1.5,
+       "label": "pencil",
+       "tone": "b"
+      },
+      {
+       "units": 1.5,
+       "label": "pencil",
+       "tone": "b"
+      }
+     ],
+     "brace": "₹36"
+    },
+    {
+     "segments": [
+      {
+       "units": 2.25,
+       "label": "pen",
+       "tone": "a"
+      },
+      {
+       "units": 2.25,
+       "label": "pen",
+       "tone": "a"
+      },
+      {
+       "units": 1.5,
+       "label": "pencil",
+       "tone": "b"
+      },
+      {
+       "units": 1.5,
+       "label": "pencil",
+       "tone": "b"
+      },
+      {
+       "units": 1.5,
+       "label": "pencil",
+       "tone": "b"
+      },
+      {
+       "units": 1.5,
+       "label": "pencil",
+       "tone": "b"
+      },
+      {
+       "units": 1.5,
+       "label": "pencil",
+       "tone": "b"
+      }
+     ],
+     "brace": "₹48"
+    }
+   ],
+   "note": "Same shop, same prices"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.25,
+        "label": "pen",
+        "tone": "a"
+       },
+       {
+        "units": 2.25,
+        "label": "pen",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "pencil",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "pencil",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "pencil",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹36"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.25,
+        "label": "pen",
+        "tone": "a"
+       },
+       {
+        "units": 2.25,
+        "label": "pen",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "pencil",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "pencil",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "pencil",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "pencil",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "pencil",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹48"
+     }
+    ],
+    "note": "2 extra pencils cost 48 − 36 = 12 rupees",
+    "highlight": [
+     "b1s5",
+     "b1s6"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.25,
+        "label": "pen",
+        "tone": "a"
+       },
+       {
+        "units": 2.25,
+        "label": "pen",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹36"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.25,
+        "label": "pen",
+        "tone": "a"
+       },
+       {
+        "units": 2.25,
+        "label": "pen",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹48"
+     }
+    ],
+    "note": "12 ÷ 2 = 6 rupees for one pencil"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.25,
+        "label": "pen",
+        "tone": "a"
+       },
+       {
+        "units": 2.25,
+        "label": "pen",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹36"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.25,
+        "label": "pen",
+        "tone": "a"
+       },
+       {
+        "units": 2.25,
+        "label": "pen",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹48"
+     }
+    ],
+    "note": "36 − 18 = 18 rupees for the 2 pens",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.25,
+        "label": "₹9",
+        "tone": "a"
+       },
+       {
+        "units": 2.25,
+        "label": "₹9",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹36"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.25,
+        "label": "₹9",
+        "tone": "a"
+       },
+       {
+        "units": 2.25,
+        "label": "₹9",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       },
+       {
+        "units": 1.5,
+        "label": "₹6",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹48"
+     }
+    ],
+    "note": "18 ÷ 2 = 9 rupees for one pen",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "G4A_EQUATIONS_027": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 20,
+    "max": 40,
+    "step": 1,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 23,
+      "label": "23"
+     },
+     {
+      "at": 27,
+      "label": "27"
+     },
+     {
+      "at": 31,
+      "label": "31"
+     },
+     {
+      "at": 35,
+      "label": "35"
+     },
+     {
+      "at": 39,
+      "label": "39"
+     }
+    ],
+    "note": "Between 20 and 40, and 3 more than a multiple of 4"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 20,
+    "max": 40,
+    "step": 1,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 23,
+      "label": "23"
+     },
+     {
+      "at": 27,
+      "label": "27"
+     },
+     {
+      "at": 31,
+      "label": "31"
+     },
+     {
+      "at": 35,
+      "label": "35"
+     },
+     {
+      "at": 39,
+      "label": "39"
+     }
+    ],
+    "note": "Only 27 ends in 2 or 7",
+    "highlight": [
+     "p1"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "G4A_EQUATIONS_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "1 melon",
+   "right": "2 mangoes + 1 guava",
+   "note": "Also: 1 mango weighs the same as 3 guavas"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2 mangoes",
+    "right": "6 guavas",
+    "note": "2 × 3 = 6"
+   },
+   {
+    "kind": "balance",
+    "left": "1 melon",
+    "right": "7 guavas",
+    "note": "6 + 1 = 7"
+   },
+   {
+    "kind": "balance",
+    "left": "2 melons",
+    "right": "14 guavas",
+    "note": "2 × 7 = 14"
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_029": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 36,
+   "max": 86,
+   "step": 5,
+   "tickLabels": "none",
+   "points": [
+    {
+     "at": 36,
+     "label": "36"
+    },
+    {
+     "at": 86,
+     "label": "86"
+    }
+   ],
+   "note": "The number is as far above 36 as it is below 86"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 36,
+    "max": 86,
+    "step": 5,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 36,
+      "label": "36"
+     },
+     {
+      "at": 86,
+      "label": "86"
+     }
+    ],
+    "note": "It is exactly halfway between 36 and 86"
+   },
+   {
+    "kind": "numberLine",
+    "min": 36,
+    "max": 86,
+    "step": 5,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 36,
+      "label": "36"
+     },
+     {
+      "at": 86,
+      "label": "86"
+     }
+    ],
+    "hops": [
+     {
+      "from": 36,
+      "to": 86,
+      "label": "50"
+     }
+    ],
+    "note": "86 − 36 = 50"
+   },
+   {
+    "kind": "numberLine",
+    "min": 36,
+    "max": 86,
+    "step": 5,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 36,
+      "label": "36"
+     },
+     {
+      "at": 86,
+      "label": "86"
+     }
+    ],
+    "hops": [
+     {
+      "from": 36,
+      "to": 61,
+      "label": "25"
+     },
+     {
+      "from": 61,
+      "to": 86,
+      "label": "25"
+     }
+    ],
+    "note": "50 ÷ 2 = 25"
+   },
+   {
+    "kind": "numberLine",
+    "min": 36,
+    "max": 86,
+    "step": 5,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 36,
+      "label": "36"
+     },
+     {
+      "at": 61,
+      "label": "61"
+     },
+     {
+      "at": 86,
+      "label": "86"
+     }
+    ],
+    "hops": [
+     {
+      "from": 36,
+      "to": 61,
+      "label": "25"
+     },
+     {
+      "from": 61,
+      "to": 86,
+      "label": "25"
+     }
+    ],
+    "note": "36 + 25 = 61",
+    "highlight": [
+     "p1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_030": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 and 35",
+      "?"
+     ],
+     [
+      "5 and 7",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Multiply to 35",
+     "Add up to"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 and 35",
+      "36"
+     ],
+     [
+      "5 and 7",
+      "12"
+     ]
+    ],
+    "headers": [
+     "Multiply to 35",
+     "Add up to"
+    ],
+    "note": "5 + 7 = 12, so the numbers are 5 and 7",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 and 35",
+      "36"
+     ],
+     [
+      "5 and 7",
+      "12"
+     ]
+    ],
+    "headers": [
+     "Multiply to 35",
+     "Add up to"
+    ],
+    "note": "7 − 5 = 2",
+    "highlight": [
+     "r1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_031": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0",
+      "30",
+      "not exact"
+     ]
+    ],
+    "headers": [
+     "Packs of 7",
+     "Pencils left",
+     "Packs of 4"
+    ],
+    "note": "30 is not a multiple of 4"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0",
+      "30",
+      "not exact"
+     ],
+     [
+      "1",
+      "23",
+      "not exact"
+     ],
+     [
+      "2",
+      "?",
+      "?"
+     ],
+     [
+      "3",
+      "9",
+      "not exact"
+     ],
+     [
+      "4",
+      "2",
+      "not exact"
+     ]
+    ],
+    "headers": [
+     "Packs of 7",
+     "Pencils left",
+     "Packs of 4"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0",
+      "30",
+      "not exact"
+     ],
+     [
+      "1",
+      "23",
+      "not exact"
+     ],
+     [
+      "2",
+      "16",
+      "4"
+     ],
+     [
+      "3",
+      "9",
+      "not exact"
+     ],
+     [
+      "4",
+      "2",
+      "not exact"
+     ]
+    ],
+    "headers": [
+     "Packs of 7",
+     "Pencils left",
+     "Packs of 4"
+    ],
+    "note": "16 is exactly 4 packs of 4",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0",
+      "30",
+      "not exact"
+     ],
+     [
+      "1",
+      "23",
+      "not exact"
+     ],
+     [
+      "2",
+      "16",
+      "4"
+     ],
+     [
+      "3",
+      "9",
+      "not exact"
+     ],
+     [
+      "4",
+      "2",
+      "not exact"
+     ]
+    ],
+    "headers": [
+     "Packs of 7",
+     "Pencils left",
+     "Packs of 4"
+    ],
+    "note": "2 + 4 = 6 packs",
+    "highlight": [
+     "r2"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_033": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2.4,
+       "label": "6",
+       "tone": "a"
+      }
+     ],
+     "label": "Pari"
+    },
+    {
+     "segments": [
+      {
+       "units": 12.0,
+       "label": "30",
+       "tone": "b"
+      }
+     ],
+     "label": "Sunita"
+    }
+   ],
+   "note": "In how many years will Sunita be 3 times as old as Pari?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "6",
+        "tone": "a"
+       }
+      ],
+      "label": "Pari"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 9.6,
+        "label": "24",
+        "tone": "c"
+       }
+      ],
+      "label": "Sunita",
+      "brace": "30"
+     }
+    ],
+    "note": "The gap of 24 years stays the same every year",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Pari then"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "c"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "c"
+       }
+      ],
+      "label": "Sunita then"
+     }
+    ],
+    "note": "3 times as old: the gap is 2 times Pari's age",
+    "highlight": [
+     "b1s1",
+     "b1s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "a"
+       }
+      ],
+      "label": "Pari then"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "12",
+        "tone": "b"
+       }
+      ],
+      "label": "Sunita then",
+      "brace": "36"
+     }
+    ],
+    "note": "24 ÷ 2 = 12"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 2.0,
+        "label": "6",
+        "tone": "c"
+       }
+      ],
+      "label": "Pari",
+      "brace": "12"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.0,
+        "label": "30",
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "label": "6",
+        "tone": "c"
+       }
+      ],
+      "label": "Sunita",
+      "brace": "36"
+     }
+    ],
+    "note": "12 − 6 = 6 years from now",
+    "highlight": [
+     "b0s1",
+     "b1s1"
+    ]
+   },
+   null
+  ]
+ },
+ "G4A_EQUATIONS_034": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 0,
+   "max": 10,
+   "step": 1,
+   "hops": [
+    {
+     "from": 0,
+     "to": 3,
+     "label": "day"
+    },
+    {
+     "from": 3,
+     "to": 1,
+     "label": "night"
+    }
+   ],
+   "note": "The well is 10 m deep. Up 3 m by day, back 2 m by night."
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 10,
+    "step": 1,
+    "hops": [
+     {
+      "from": 0,
+      "to": 3,
+      "label": "day"
+     },
+     {
+      "from": 3,
+      "to": 1,
+      "label": "night"
+     }
+    ],
+    "note": "Each day and night together: 3 − 2 = 1 m up",
+    "highlight": [
+     "h0",
+     "h1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 10,
+    "step": 1,
+    "points": [
+     {
+      "at": 7,
+      "label": "start here"
+     }
+    ],
+    "hops": [
+     {
+      "from": 7,
+      "to": 10,
+      "label": "last day"
+     }
+    ],
+    "note": "10 − 3 = 7: from 7 m one climb reaches the top"
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 10,
+    "step": 1,
+    "points": [
+     {
+      "at": 7,
+      "label": "after 7 days"
+     }
+    ],
+    "note": "Gaining 1 m a day, it is at 7 m after 7 days and nights"
+   },
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 10,
+    "step": 1,
+    "points": [
+     {
+      "at": 7,
+      "label": "7 m"
+     },
+     {
+      "at": 10,
+      "label": "top"
+     }
+    ],
+    "hops": [
+     {
+      "from": 7,
+      "to": 10,
+      "label": "day 8"
+     }
+    ],
+    "note": "7 + 3 = 10",
+    "highlight": [
+     "h0"
+    ]
+   },
+   null
+  ]
+ },
+ "PYQ_2016_Q07": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "21",
+   "right": "3 × p",
+   "note": "m = 21 and n = 3, so 21 = 3 × p"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "21 ÷ 3",
+    "right": "p",
+    "note": "p = 7"
+   },
+   {
+    "kind": "balance",
+    "left": "21 ÷ 7",
+    "right": "3",
+    "note": "m ÷ p = 21 ÷ 7 = 3"
+   },
+   null
+  ]
+ },
+ "PYQ_2016_Q16": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3.0,
+       "label": "oranges",
+       "tone": "a"
+      },
+      {
+       "units": 3.0,
+       "label": "oranges",
+       "tone": "a"
+      },
+      {
+       "units": 3.0,
+       "label": "oranges",
+       "tone": "a"
+      },
+      {
+       "units": 3.0,
+       "label": "bananas",
+       "tone": "b"
+      }
+     ],
+     "label": "Bought",
+     "brace": "24 fruits"
+    },
+    {
+     "segments": [
+      {
+       "units": 1.5,
+       "label": "oranges",
+       "tone": "a"
+      },
+      {
+       "units": 1.5,
+       "label": "oranges",
+       "tone": "a"
+      },
+      {
+       "units": 1.5,
+       "label": "bananas",
+       "tone": "b"
+      }
+     ],
+     "label": "Dropped",
+     "brace": "24 − 15"
+    }
+   ],
+   "note": "She took home 15 of the 24 fruits"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "b"
+       }
+      ],
+      "label": "Bought",
+      "brace": "24 fruits"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.5,
+        "label": "oranges",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "oranges",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "bananas",
+        "tone": "b"
+       }
+      ],
+      "label": "Dropped",
+      "brace": "24 − 15"
+     }
+    ],
+    "note": "24 ÷ 4 = 6 a piece: 18 oranges and 6 bananas",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "b"
+       }
+      ],
+      "label": "Bought",
+      "brace": "24 fruits"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.5,
+        "label": "oranges",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "oranges",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "bananas",
+        "tone": "b"
+       }
+      ],
+      "label": "Dropped",
+      "brace": "9"
+     }
+    ],
+    "note": "24 − 15 = 9 fruits dropped",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "b"
+       }
+      ],
+      "label": "Bought",
+      "brace": "24 fruits"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.5,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "3",
+        "tone": "b"
+       }
+      ],
+      "label": "Dropped",
+      "brace": "9"
+     }
+    ],
+    "note": "9 ÷ 3 = 3 a piece: 6 oranges and 3 bananas",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "6",
+        "tone": "b"
+       }
+      ],
+      "label": "Bought",
+      "brace": "24 fruits"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.5,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "3",
+        "tone": "b"
+       }
+      ],
+      "label": "Dropped",
+      "brace": "9"
+     }
+    ],
+    "note": "18 − 6 = 12 oranges reach home",
+    "highlight": [
+     "b1s0",
+     "b1s1"
+    ]
+   },
+   null
+  ]
+ },
+ "PYQ_2017_Q11": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 0.57,
+       "label": "5 p",
+       "tone": "a"
+      },
+      {
+       "units": 5.71,
+       "label": "10 p stamps",
+       "tone": "b"
+      }
+     ],
+     "label": "First",
+     "brace": "55 paise"
+    },
+    {
+     "segments": [
+      {
+       "units": 0.57,
+       "label": "5 p",
+       "tone": "a"
+      },
+      {
+       "units": 5.71,
+       "label": "10 p stamps",
+       "tone": "b"
+      },
+      {
+       "units": 5.71,
+       "label": "10 p stamps",
+       "tone": "b"
+      }
+     ],
+     "label": "Second",
+     "brace": "Rs. 1 and 5 paise"
+    }
+   ],
+   "note": "Same 5 paise stamps, twice as many 10 paise stamps"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 0.57,
+        "label": "5 p",
+        "tone": "a"
+       },
+       {
+        "units": 5.71,
+        "label": "10 p stamps",
+        "tone": "b"
+       }
+      ],
+      "label": "First",
+      "brace": "55 paise"
+     },
+     {
+      "segments": [
+       {
+        "units": 0.57,
+        "label": "5 p",
+        "tone": "a"
+       },
+       {
+        "units": 5.71,
+        "label": "10 p stamps",
+        "tone": "b"
+       },
+       {
+        "units": 5.71,
+        "label": "10 p stamps",
+        "tone": "b"
+       }
+      ],
+      "label": "Second",
+      "brace": "105 paise"
+     }
+    ],
+    "note": "105 − 55 = 50 paise for the extra stamps",
+    "highlight": [
+     "b1s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 0.57,
+        "label": "5 p",
+        "tone": "a"
+       },
+       {
+        "units": 5.71,
+        "label": "50 p",
+        "tone": "b"
+       }
+      ],
+      "label": "First",
+      "brace": "55 paise"
+     },
+     {
+      "segments": [
+       {
+        "units": 0.57,
+        "label": "5 p",
+        "tone": "a"
+       },
+       {
+        "units": 5.71,
+        "label": "50 p",
+        "tone": "b"
+       },
+       {
+        "units": 5.71,
+        "label": "50 p",
+        "tone": "b"
+       }
+      ],
+      "label": "Second",
+      "brace": "105 paise"
+     }
+    ],
+    "note": "50 ÷ 10 = 5 stamps of 10 paise",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 0.57,
+        "label": "5 p",
+        "tone": "a"
+       },
+       {
+        "units": 5.71,
+        "label": "50 p",
+        "tone": "b"
+       }
+      ],
+      "label": "First",
+      "brace": "55 paise"
+     },
+     {
+      "segments": [
+       {
+        "units": 0.57,
+        "label": "5 p",
+        "tone": "a"
+       },
+       {
+        "units": 5.71,
+        "label": "50 p",
+        "tone": "b"
+       },
+       {
+        "units": 5.71,
+        "label": "50 p",
+        "tone": "b"
+       }
+      ],
+      "label": "Second",
+      "brace": "105 paise"
+     }
+    ],
+    "note": "55 − 50 = 5 paise spent on 5 paise stamps",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 0.57,
+        "label": "5 p",
+        "tone": "a"
+       },
+       {
+        "units": 5.71,
+        "label": "50 p",
+        "tone": "b"
+       }
+      ],
+      "label": "First",
+      "brace": "55 paise"
+     },
+     {
+      "segments": [
+       {
+        "units": 0.57,
+        "label": "5 p",
+        "tone": "a"
+       },
+       {
+        "units": 5.71,
+        "label": "50 p",
+        "tone": "b"
+       },
+       {
+        "units": 5.71,
+        "label": "50 p",
+        "tone": "b"
+       }
+      ],
+      "label": "Second",
+      "brace": "105 paise"
+     }
+    ],
+    "note": "5 ÷ 5 = 1 stamp of 5 paise",
+    "highlight": [
+     "b0s0"
+    ]
+   }
+  ]
+ },
+ "PYQ_2017_Q14": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "12x − 40",
+   "right": "2x",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "12x",
+    "right": "2x + 40",
+    "note": "Add 40 to both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "10x",
+    "right": "40",
+    "note": "Take 2x from both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "40 ÷ 10",
+    "note": "x = 4"
+   },
+   {
+    "kind": "balance",
+    "left": "12 × 4 − 40",
+    "right": "2 × 4",
+    "note": "Check: both pans are 8"
+   }
+  ]
+ },
+ "PYQ_2018_Q10": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 8.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Men"
+    },
+    {
+     "segments": [
+      {
+       "units": 8.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.0,
+       "label": "21",
+       "tone": "c"
+      }
+     ],
+     "label": "Women"
+    }
+   ],
+   "note": "Together 105 people. There are 21 more women than men."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Men"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "21",
+        "tone": "c"
+       }
+      ],
+      "label": "Women"
+     }
+    ],
+    "note": "105 − 21 = 84: two equal pieces are left",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.0,
+        "label": "42",
+        "tone": "a"
+       }
+      ],
+      "label": "Men"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.0,
+        "label": "42",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "21",
+        "tone": "c"
+       }
+      ],
+      "label": "Women"
+     }
+    ],
+    "note": "84 ÷ 2 = 42 men"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.0,
+        "label": "42",
+        "tone": "a"
+       }
+      ],
+      "label": "Men"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.0,
+        "label": "42",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "21",
+        "tone": "c"
+       }
+      ],
+      "label": "Women",
+      "brace": "63"
+     }
+    ],
+    "note": "42 + 21 = 63 women",
+    "highlight": [
+     "b1"
+    ]
+   },
+   null
+  ]
+ },
+ "PYQ_2018_Q25": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "19/★ + 17/★",
+   "right": "2",
+   "note": "Both ★ are the same number"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "36/★",
+    "right": "2",
+    "note": "19 + 17 = 36 on top"
+   },
+   {
+    "kind": "balance",
+    "left": "★",
+    "right": "36 ÷ 2",
+    "note": "★ = 18"
+   },
+   {
+    "kind": "balance",
+    "left": "19/18 + 17/18",
+    "right": "2",
+    "note": "Check: 36/18 = 2"
+   },
+   {
+    "kind": "balance",
+    "left": "★",
+    "right": "18",
+    "note": "★ = 18",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "PYQ_2018_Q27": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "97 − 17x",
+   "right": "5x + 31",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "97",
+    "right": "22x + 31",
+    "note": "Add 17x to both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "97 − 31",
+    "right": "22x",
+    "note": "22x = 66"
+   },
+   {
+    "kind": "balance",
+    "left": "66 ÷ 22",
+    "right": "x",
+    "note": "x = 3"
+   },
+   {
+    "kind": "balance",
+    "left": "97 − 17 × 3",
+    "right": "5 × 3 + 31",
+    "note": "Check: both pans are 46"
+   }
+  ]
+ },
+ "PYQ_2018_Q31": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2.64,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.64,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 0.4,
+       "label": "2",
+       "tone": "c"
+      },
+      {
+       "units": 2.64,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 0.4,
+       "label": "2",
+       "tone": "c"
+      },
+      {
+       "units": 0.4,
+       "label": "2",
+       "tone": "c"
+      },
+      {
+       "units": 2.64,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 0.4,
+       "label": "2",
+       "tone": "c"
+      },
+      {
+       "units": 0.4,
+       "label": "2",
+       "tone": "c"
+      },
+      {
+       "units": 0.4,
+       "label": "2",
+       "tone": "c"
+      }
+     ],
+     "brace": "100 marbles"
+    }
+   ],
+   "note": "Four boxes in a row. Each has 2 more than the one before."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.64,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.64,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 0.4,
+        "label": "2",
+        "tone": "c"
+       },
+       {
+        "units": 2.64,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 0.4,
+        "label": "2",
+        "tone": "c"
+       },
+       {
+        "units": 0.4,
+        "label": "2",
+        "tone": "c"
+       },
+       {
+        "units": 2.64,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 0.4,
+        "label": "2",
+        "tone": "c"
+       },
+       {
+        "units": 0.4,
+        "label": "2",
+        "tone": "c"
+       },
+       {
+        "units": 0.4,
+        "label": "2",
+        "tone": "c"
+       }
+      ],
+      "brace": "100 marbles"
+     }
+    ],
+    "note": "2 + 4 + 6 = 12 extra marbles",
+    "highlight": [
+     "b0s2",
+     "b0s4",
+     "b0s5",
+     "b0s7",
+     "b0s8",
+     "b0s9"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.64,
+        "label": "22",
+        "tone": "a"
+       },
+       {
+        "units": 2.64,
+        "label": "22",
+        "tone": "a"
+       },
+       {
+        "units": 0.4,
+        "label": "2",
+        "tone": "c"
+       },
+       {
+        "units": 2.64,
+        "label": "22",
+        "tone": "a"
+       },
+       {
+        "units": 0.4,
+        "label": "2",
+        "tone": "c"
+       },
+       {
+        "units": 0.4,
+        "label": "2",
+        "tone": "c"
+       },
+       {
+        "units": 2.64,
+        "label": "22",
+        "tone": "a"
+       },
+       {
+        "units": 0.4,
+        "label": "2",
+        "tone": "c"
+       },
+       {
+        "units": 0.4,
+        "label": "2",
+        "tone": "c"
+       },
+       {
+        "units": 0.4,
+        "label": "2",
+        "tone": "c"
+       }
+      ],
+      "brace": "100 marbles"
+     }
+    ],
+    "note": "(100 − 12) ÷ 4 = 22 in the first box"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.64,
+        "label": "22",
+        "tone": "a"
+       },
+       {
+        "units": 2.88,
+        "label": "24",
+        "tone": "a"
+       },
+       {
+        "units": 3.12,
+        "label": "26",
+        "tone": "a"
+       },
+       {
+        "units": 3.36,
+        "label": "28",
+        "tone": "a"
+       }
+      ],
+      "brace": "100 marbles"
+     }
+    ],
+    "note": "22 + 24 + 26 + 28 = 100"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.64,
+        "label": "22",
+        "tone": "a"
+       },
+       {
+        "units": 2.88,
+        "label": "24",
+        "tone": "a"
+       },
+       {
+        "units": 3.12,
+        "label": "26",
+        "tone": "a"
+       },
+       {
+        "units": 3.36,
+        "label": "28",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "22 + 24 + 26 = 72",
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2"
+    ]
+   },
+   null
+  ]
+ },
+ "PYQ_2019_Q13": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "15 − 3x",
+   "right": "x − 9",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "15",
+    "right": "4x − 9",
+    "note": "Add 3x to both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "15 + 9",
+    "right": "4x",
+    "note": "4x = 24"
+   },
+   {
+    "kind": "balance",
+    "left": "24 ÷ 4",
+    "right": "x",
+    "note": "x = 6"
+   },
+   {
+    "kind": "balance",
+    "left": "6",
+    "right": "x",
+    "note": "x = 6",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "PYQ_2019_Q29": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "31 − T",
+   "right": "2T + 7",
+   "note": "Both pans weigh the same. Find T."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "31",
+    "right": "3T + 7",
+    "note": "Add T to both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "31 − 7",
+    "right": "3T",
+    "note": "3T = 24"
+   },
+   {
+    "kind": "balance",
+    "left": "24 ÷ 3",
+    "right": "T",
+    "note": "T = 8"
+   },
+   {
+    "kind": "balance",
+    "left": "31 − 8",
+    "right": "2 × 8 + 7",
+    "note": "Check: both pans are 23"
+   }
+  ]
+ },
+ "Q_CH14_001": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "a + 5",
+   "right": "12",
+   "note": "Both pans weigh the same. Find a."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "a",
+    "right": "12 − 5",
+    "note": "a = 7",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "7 + 5",
+    "right": "12",
+    "note": "Put 7 in place of a: both pans match",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_001_V09": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5x + 10",
+   "right": "85",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5x",
+    "right": "85 − 10",
+    "note": "5x = 75",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "75 ÷ 5",
+    "note": "x = 15",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 15 + 10",
+    "right": "85",
+    "note": "Put 15 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "15",
+    "note": "x = 15",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_002": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "b − 5",
+   "right": "12",
+   "note": "Both pans weigh the same. Find b."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "b",
+    "right": "12 + 5",
+    "note": "b = 17",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "17 − 5",
+    "right": "12",
+    "note": "Put 17 in place of b: both pans match",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_002_V01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "2x + 1",
+   "right": "11",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "11 − 1",
+    "note": "2x = 10",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "10 ÷ 2",
+    "note": "x = 5",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 5 + 1",
+    "right": "11",
+    "note": "Put 5 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "5",
+    "note": "x = 5",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_002_V06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "6x + 19",
+   "right": "61",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "6x",
+    "right": "61 − 19",
+    "note": "6x = 42",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "42 ÷ 6",
+    "note": "x = 7",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "6 × 7 + 19",
+    "right": "61",
+    "note": "Put 7 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "7",
+    "note": "x = 7",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_003": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "3c",
+   "right": "12",
+   "note": "Both pans weigh the same. Find c."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "c",
+    "right": "12 ÷ 3",
+    "note": "c = 4",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "3 × 4",
+    "right": "12",
+    "note": "Put 4 in place of c: both pans match",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_003_V02": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "6x + 19",
+   "right": "37",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "6x",
+    "right": "37 − 19",
+    "note": "6x = 18",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "18 ÷ 6",
+    "note": "x = 3",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "6 × 3 + 19",
+    "right": "37",
+    "note": "Put 3 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "3",
+    "note": "x = 3",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_004": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "d/3",
+   "right": "12",
+   "note": "Both pans weigh the same. Find d."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "d",
+    "right": "12 × 3",
+    "note": "d = 36",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "36 ÷ 3",
+    "right": "12",
+    "note": "Put 36 in place of d: both pans match",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_005": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5 + e",
+   "right": "12",
+   "note": "Both pans weigh the same. Find e."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "e",
+    "right": "12 − 5",
+    "note": "e = 7",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 + 7",
+    "right": "12",
+    "note": "Put 7 in place of e: both pans match",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_006": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "15 − f",
+   "right": "6",
+   "note": "Both pans weigh the same. Find f."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "f",
+    "right": "15 − 6",
+    "note": "f = 9",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "15 − 9",
+    "right": "6",
+    "note": "Put 9 in place of f: both pans match",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_007": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "32/g",
+   "right": "4",
+   "note": "Both pans weigh the same. Find g."
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "balance",
+    "left": "g",
+    "right": "32 ÷ 4",
+    "note": "g = 8",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "32 ÷ 8",
+    "right": "4",
+    "note": "Put 8 in place of g: both pans match",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_007_V06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "2x + 13",
+   "right": "33",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "33 − 13",
+    "note": "2x = 20",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "20 ÷ 2",
+    "note": "x = 10",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 10 + 13",
+    "right": "33",
+    "note": "Put 10 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "10",
+    "note": "x = 10",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "7 + h + 2",
+   "right": "15",
+   "note": "Both pans weigh the same. Find h."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "9 + h",
+    "right": "15",
+    "note": "7 + 2 = 9"
+   },
+   {
+    "kind": "balance",
+    "left": "h",
+    "right": "15 − 9",
+    "note": "h = 6"
+   },
+   {
+    "kind": "balance",
+    "left": "7 + 6 + 2",
+    "right": "15",
+    "note": "Check: both pans are 15"
+   }
+  ]
+ },
+ "Q_CH14_008_V01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "3x + 10",
+   "right": "25",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "3x",
+    "right": "25 − 10",
+    "note": "3x = 15",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "15 ÷ 3",
+    "note": "x = 5",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "3 × 5 + 10",
+    "right": "25",
+    "note": "Put 5 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "5",
+    "note": "x = 5",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_009": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "2x + 3",
+   "right": "11",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "11 − 3",
+    "note": "2x = 8",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "8 ÷ 2",
+    "note": "x = 4",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 4 + 3",
+    "right": "11",
+    "note": "Put 4 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_010": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5m − 7",
+   "right": "18",
+   "note": "Both pans weigh the same. Find m."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5m",
+    "right": "18 + 7",
+    "note": "5m = 25",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "m",
+    "right": "25 ÷ 5",
+    "note": "m = 5",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 5 − 7",
+    "right": "18",
+    "note": "Put 5 in place of m: both pans match",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_010_V02": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "8x + 10",
+   "right": "50",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "8x",
+    "right": "50 − 10",
+    "note": "8x = 40",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "40 ÷ 8",
+    "note": "x = 5",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "8 × 5 + 10",
+    "right": "50",
+    "note": "Put 5 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "5",
+    "note": "x = 5",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_010_V04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "4x + 9",
+   "right": "17",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "4x",
+    "right": "17 − 9",
+    "note": "4x = 8",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "8 ÷ 4",
+    "note": "x = 2",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "4 × 2 + 9",
+    "right": "17",
+    "note": "Put 2 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "2",
+    "note": "x = 2",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_011": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "x/3 + 5",
+   "right": "10",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "x/3",
+    "right": "10 − 5",
+    "note": "x/3 = 5",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "5 × 3",
+    "note": "x = 15",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "15 ÷ 3 + 5",
+    "right": "10",
+    "note": "Put 15 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_012": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "y/4 − 8",
+   "right": "0",
+   "note": "Both pans weigh the same. Find y."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "y/4",
+    "right": "0 + 8",
+    "note": "y/4 = 8",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "y",
+    "right": "8 × 4",
+    "note": "y = 32",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "32 ÷ 4 − 8",
+    "right": "0",
+    "note": "Put 32 in place of y: both pans match",
+    "highlight": [
+     "left"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_012_V08": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "7x + 5",
+   "right": "110",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "7x",
+    "right": "110 − 5",
+    "note": "7x = 105",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "105 ÷ 7",
+    "note": "x = 15",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "7 × 15 + 5",
+    "right": "110",
+    "note": "Put 15 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "15",
+    "note": "x = 15",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "z",
+   "right": "12 − 2z",
+   "note": "Both pans weigh the same. Find z."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "3z",
+    "right": "12",
+    "note": "Add 2z to both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "z",
+    "right": "12 ÷ 3",
+    "note": "z = 4"
+   },
+   {
+    "kind": "balance",
+    "left": "4",
+    "right": "12 − 2 × 4",
+    "note": "Check: both pans are 4"
+   }
+  ]
+ },
+ "Q_CH14_013_V09": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5x + 8",
+   "right": "63",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5x",
+    "right": "63 − 8",
+    "note": "5x = 55",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "55 ÷ 5",
+    "note": "x = 11",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 11 + 8",
+    "right": "63",
+    "note": "Put 11 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "11",
+    "note": "x = 11",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "6a − 32",
+   "right": "2a",
+   "note": "Both pans weigh the same. Find a."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "6a",
+    "right": "2a + 32",
+    "note": "Add 32 to both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "4a",
+    "right": "32",
+    "note": "Take 2a from both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "a",
+    "right": "32 ÷ 4",
+    "note": "a = 8"
+   },
+   {
+    "kind": "balance",
+    "left": "6 × 8 − 32",
+    "right": "2 × 8",
+    "note": "Check: both pans are 16"
+   }
+  ]
+ },
+ "Q_CH14_014_V09": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "4x + 9",
+   "right": "41",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "4x",
+    "right": "41 − 9",
+    "note": "4x = 32",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "32 ÷ 4",
+    "note": "x = 8",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "4 × 8 + 9",
+    "right": "41",
+    "note": "Put 8 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "8",
+    "note": "x = 8",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "4b + 5",
+   "right": "2b + 19",
+   "note": "Both pans weigh the same. Find b."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2b + 5",
+    "right": "19",
+    "note": "Take 2b from both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "2b",
+    "right": "19 − 5",
+    "note": "2b = 14"
+   },
+   {
+    "kind": "balance",
+    "left": "b",
+    "right": "14 ÷ 2",
+    "note": "b = 7"
+   },
+   {
+    "kind": "balance",
+    "left": "4 × 7 + 5",
+    "right": "2 × 7 + 19",
+    "note": "Check: both pans are 33"
+   }
+  ]
+ },
+ "Q_CH14_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "7 + 5c",
+   "right": "3c + 25",
+   "note": "Both pans weigh the same. Find c."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "7 + 2c",
+    "right": "25",
+    "note": "Take 3c from both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "2c",
+    "right": "25 − 7",
+    "note": "2c = 18"
+   },
+   {
+    "kind": "balance",
+    "left": "c",
+    "right": "18 ÷ 2",
+    "note": "c = 9"
+   },
+   {
+    "kind": "balance",
+    "left": "7 + 5 × 9",
+    "right": "3 × 9 + 25",
+    "note": "Check: both pans are 52"
+   }
+  ]
+ },
+ "Q_CH14_017": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   null,
+   {
+    "kind": "balance",
+    "left": "2 × 5 − 3",
+    "right": "7",
+    "note": "Both sides are 7, so they balance"
+   },
+   {
+    "kind": "balance",
+    "left": "2x − 3",
+    "right": "7",
+    "note": "True when x = 5"
+   }
+  ]
+ },
+ "Q_CH14_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 7.83,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.17,
+       "label": "8",
+       "tone": "b"
+      }
+     ],
+     "brace": "23"
+    }
+   ],
+   "note": "A number and 8 together make 23"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.83,
+        "label": "15",
+        "tone": "a"
+       },
+       {
+        "units": 4.17,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "brace": "23"
+     }
+    ],
+    "note": "23 − 8 = 15",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 7.83,
+        "label": "15",
+        "tone": "a"
+       },
+       {
+        "units": 4.17,
+        "label": "8",
+        "tone": "b"
+       }
+      ],
+      "brace": "23"
+     }
+    ],
+    "note": "Check: 15 + 8 = 23"
+   }
+  ]
+ },
+ "Q_CH14_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1.71,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "63"
+    }
+   ],
+   "note": "Seven equal pieces make 63"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.71,
+        "label": "n",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.71,
+        "label": "n",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.71,
+        "label": "n",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.71,
+        "label": "n",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.71,
+        "label": "n",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.71,
+        "label": "n",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.71,
+        "label": "n",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "63"
+     }
+    ],
+    "note": "7n = 63"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       }
+      ],
+      "brace": "63"
+     }
+    ],
+    "note": "63 ÷ 7 = 9"
+   },
+   null
+  ]
+ },
+ "Q_CH14_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.0,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Three times"
+    },
+    {
+     "segments": [
+      {
+       "units": 9.14,
+       "label": "16",
+       "tone": "b"
+      },
+      {
+       "units": 2.86,
+       "label": "5",
+       "tone": "c"
+      }
+     ]
+    }
+   ],
+   "note": "Three times a number, decreased by 5, is 16"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.0,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Three times"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.14,
+        "label": "16",
+        "tone": "b"
+       },
+       {
+        "units": 2.86,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "brace": "21"
+     }
+    ],
+    "note": "16 + 5 = 21 is three times the number",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 4.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 4.0,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "label": "Three times"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.14,
+        "label": "16",
+        "tone": "b"
+       },
+       {
+        "units": 2.86,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "brace": "21"
+     }
+    ],
+    "note": "21 ÷ 3 = 7"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 4.0,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 4.0,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "label": "Three times"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.14,
+        "label": "16",
+        "tone": "b"
+       },
+       {
+        "units": 2.86,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "brace": "21"
+     }
+    ],
+    "note": "Check: 3 × 7 − 5 = 16"
+   }
+  ]
+ },
+ "Q_CH14_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4.94,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Brother"
+    },
+    {
+     "segments": [
+      {
+       "units": 4.94,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 4.94,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2.12,
+       "label": "3",
+       "tone": "c"
+      }
+     ],
+     "label": "Riya",
+     "brace": "17 years"
+    }
+   ],
+   "note": "Riya's age is twice her brother's age and 3 more"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.94,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Brother"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.94,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 4.94,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.12,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Riya",
+      "brace": "17 years"
+     }
+    ],
+    "note": "17 − 3 = 14 is twice his age",
+    "highlight": [
+     "b1s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.94,
+        "label": "7",
+        "tone": "a"
+       }
+      ],
+      "label": "Brother"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.94,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 4.94,
+        "label": "7",
+        "tone": "b"
+       },
+       {
+        "units": 2.12,
+        "label": "3",
+        "tone": "c"
+       }
+      ],
+      "label": "Riya",
+      "brace": "17 years"
+     }
+    ],
+    "note": "14 ÷ 2 = 7"
+   },
+   null
+  ]
+ },
+ "Q_CH14_022_V06": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "8x + 16",
+   "right": "136",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "8x",
+    "right": "136 − 16",
+    "note": "8x = 120",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "120 ÷ 8",
+    "note": "x = 15",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "8 × 15 + 16",
+    "right": "136",
+    "note": "Put 15 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "15",
+    "note": "x = 15",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "Q_CH14_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4.39,
+       "label": "₹45 spent",
+       "tone": "a"
+      },
+      {
+       "units": 7.61,
+       "label": "₹78 left",
+       "tone": "b"
+      }
+     ],
+     "brace": "?"
+    }
+   ],
+   "note": "What he spent and what he has left"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.39,
+        "label": "₹45 spent",
+        "tone": "a"
+       },
+       {
+        "units": 7.61,
+        "label": "₹78 left",
+        "tone": "b"
+       }
+      ],
+      "brace": "₹123"
+     }
+    ],
+    "note": "78 + 45 = 123"
+   },
+   null
+  ]
+ },
+ "Q_CH14_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10.15,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Smallest"
+    },
+    {
+     "segments": [
+      {
+       "units": 10.15,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 0.92,
+       "label": "1",
+       "tone": "c"
+      }
+     ],
+     "label": "Middle"
+    },
+    {
+     "segments": [
+      {
+       "units": 10.15,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 0.92,
+       "label": "1",
+       "tone": "c"
+      },
+      {
+       "units": 0.92,
+       "label": "1",
+       "tone": "c"
+      }
+     ],
+     "label": "Largest"
+    }
+   ],
+   "note": "Three numbers in a row. Together they make 36."
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "1",
+        "tone": "c"
+       }
+      ],
+      "label": "Smallest"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "1",
+        "tone": "c"
+       }
+      ],
+      "label": "Middle"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "1",
+        "tone": "c"
+       }
+      ],
+      "label": "Largest"
+     }
+    ],
+    "note": "Move 1 from the largest to the smallest: three equal bars",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "1",
+        "tone": "c"
+       }
+      ],
+      "label": "Smallest",
+      "brace": "12"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "1",
+        "tone": "c"
+       }
+      ],
+      "label": "Middle",
+      "brace": "12"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.0,
+        "label": "?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1.0,
+        "label": "1",
+        "tone": "c"
+       }
+      ],
+      "label": "Largest",
+      "brace": "12"
+     }
+    ],
+    "note": "36 ÷ 3 = 12 is the middle number"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.15,
+        "label": "11",
+        "tone": "a"
+       }
+      ],
+      "label": "Smallest"
+     },
+     {
+      "segments": [
+       {
+        "units": 11.08,
+        "label": "12",
+        "tone": "b"
+       }
+      ],
+      "label": "Middle"
+     },
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "13",
+        "tone": "c"
+       }
+      ],
+      "label": "Largest"
+     }
+    ],
+    "note": "11 + 12 + 13 = 36"
+   },
+   null
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_008_02_p2b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "√x + 1",
+   "right": "6",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "√x",
+    "right": "5",
+    "note": "Take 1 from both pans",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "5 × 5",
+    "note": "x = 25",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_008_03_p2b": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "√x + 20",
+   "right": "35",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "√x",
+    "right": "15",
+    "note": "Take 20 from both pans",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "15 × 15",
+    "note": "x = 225",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_035_04_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "7x − 8",
+   "right": "34",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "7x",
+    "right": "34 + 8",
+    "note": "7x = 42",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "42 ÷ 7",
+    "note": "x = 6",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2016_039_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5x + 1",
+   "right": "41",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5x",
+    "right": "41 − 1",
+    "note": "5x = 40",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "40 ÷ 5",
+    "note": "x = 8",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2017_014_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "3x − 10",
+   "right": "14",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "3x",
+    "right": "14 + 10",
+    "note": "3x = 24",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "24 ÷ 3",
+    "note": "x = 8",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2017_015_04_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "6x + 18",
+   "right": "42",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "6x",
+    "right": "42 − 18",
+    "note": "6x = 24",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "24 ÷ 6",
+    "note": "x = 4",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2018_025_02_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5x − 11",
+   "right": "44",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5x",
+    "right": "44 + 11",
+    "note": "5x = 55",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "55 ÷ 5",
+    "note": "x = 11",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_016_01": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "2x − 10",
+   "right": "12",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "12 + 10",
+    "note": "2x = 22",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "22 ÷ 2",
+    "note": "x = 11",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_020_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "2x + 19",
+   "right": "31",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "31 − 19",
+    "note": "2x = 12",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "12 ÷ 2",
+    "note": "x = 6",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_021_03": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "7x + 13",
+   "right": "83",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "7x",
+    "right": "83 − 13",
+    "note": "7x = 70",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "70 ÷ 7",
+    "note": "x = 10",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_021_03_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "7x + 8",
+   "right": "43",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "7x",
+    "right": "43 − 8",
+    "note": "7x = 35",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "35 ÷ 7",
+    "note": "x = 5",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2023_021_05_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5x + 19",
+   "right": "59",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5x",
+    "right": "59 − 19",
+    "note": "5x = 40",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "40 ÷ 5",
+    "note": "x = 8",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_016_05_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "6x + 5",
+   "right": "17",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "6x",
+    "right": "17 − 5",
+    "note": "6x = 12",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "12 ÷ 6",
+    "note": "x = 2",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_022_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "7x − 2",
+   "right": "82",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "7x",
+    "right": "82 + 2",
+    "note": "7x = 84",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "84 ÷ 7",
+    "note": "x = 12",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2024_037_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "4x − 8",
+   "right": "20",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "4x",
+    "right": "20 + 8",
+    "note": "4x = 28",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "28 ÷ 4",
+    "note": "x = 7",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_016_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "2x − 4",
+   "right": "2",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "2 + 4",
+    "note": "2x = 6",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "6 ÷ 2",
+    "note": "x = 3",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_016_04_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "2x + 1",
+   "right": "9",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "9 − 1",
+    "note": "2x = 8",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "8 ÷ 2",
+    "note": "x = 4",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2025_035_03_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5x − 4",
+   "right": "56",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5x",
+    "right": "56 + 4",
+    "note": "5x = 60",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "60 ÷ 5",
+    "note": "x = 12",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_WS2_CH14_002_03_b2": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "8x + 5",
+   "right": "29",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "8x",
+    "right": "29 − 5",
+    "note": "8x = 24",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "24 ÷ 8",
+    "note": "x = 3",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_WS2_CH14_002_04": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "6x − 9",
+   "right": "21",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "6x",
+    "right": "21 + 9",
+    "note": "6x = 30",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "30 ÷ 6",
+    "note": "x = 5",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_equation_V106": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "3x + 13",
+   "right": "73",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "3x",
+    "right": "73 − 13",
+    "note": "3x = 60",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "60 ÷ 3",
+    "note": "x = 20",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "3 × 20 + 13",
+    "right": "73",
+    "note": "Put 20 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "20",
+    "note": "x = 20",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_equation_V110": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "4x + 30",
+   "right": "110",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "4x",
+    "right": "110 − 30",
+    "note": "Take 30 from both pans",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "80 ÷ 4",
+    "note": "x = 20",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "4 × 20 + 30",
+    "right": "110",
+    "note": "Put 20 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "20",
+    "note": "x = 20",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_equation_V130": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "2x + 6",
+   "right": "14",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "14 − 6",
+    "note": "2x = 8",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "8 ÷ 2",
+    "note": "x = 4",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 4 + 6",
+    "right": "14",
+    "note": "Put 4 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "4",
+    "note": "x = 4",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_equation_V167": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5x + 15",
+   "right": "85",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5x",
+    "right": "85 − 15",
+    "note": "Take 15 from both pans",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "70 ÷ 5",
+    "note": "x = 14",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 14 + 15",
+    "right": "85",
+    "note": "Put 14 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "14",
+    "note": "x = 14",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_equation_V181": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "2x + 13",
+   "right": "45",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "45 − 13",
+    "note": "2x = 32",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "32 ÷ 2",
+    "note": "x = 16",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 16 + 13",
+    "right": "45",
+    "note": "Put 16 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "16",
+    "note": "x = 16",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_equation_V24": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "5x + 12",
+   "right": "22",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "5x",
+    "right": "22 − 12",
+    "note": "5x = 10",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "10 ÷ 5",
+    "note": "x = 2",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 2 + 12",
+    "right": "22",
+    "note": "Put 2 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "2",
+    "note": "x = 2",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_equation_V31": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "4x + 14",
+   "right": "30",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "4x",
+    "right": "30 − 14",
+    "note": "Take 14 from both pans",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "16 ÷ 4",
+    "note": "x = 4",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "4 × 4 + 14",
+    "right": "30",
+    "note": "Put 4 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "4",
+    "note": "x = 4",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ },
+ "VAR_G4_vary_equation_V35": {
+  "origin": "rule",
+  "figure": {
+   "kind": "balance",
+   "left": "3x + 5",
+   "right": "65",
+   "note": "Both pans weigh the same. Find x."
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "3x",
+    "right": "65 − 5",
+    "note": "3x = 60",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "60 ÷ 3",
+    "note": "x = 20",
+    "highlight": [
+     "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "3 × 20 + 5",
+    "right": "65",
+    "note": "Put 20 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "20",
+    "note": "x = 20",
+    "highlight": [
+     "right"
+    ]
+   }
+  ]
+ }
+}
