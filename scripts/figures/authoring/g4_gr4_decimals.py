@@ -102,11 +102,13 @@ A = P.add
 # Multiplying and dividing by 10, 100, 1000: the digits move across the chart
 A("Q_CH11_001",
   chart("12.5", None, "Divide by 10: where does each digit move?"),
-  {1: chart("12.5", None, "The decimal point moves 1 place to the left"),
+  {0: chart("12.5", None, "Dividing by 10 makes the number ten times smaller"),
+   1: chart("1.25", None, "The point moves one place left: between the 1 and the 2"),
    2: chart("1.25", None, "12.5 ÷ 10 = 1.25")})
 A("Q_CH11_002",
   chart("12.5", None, "Divide by 100: where does each digit move?"),
-  {1: chart("12.5", None, "100 has 2 zeros, so the point moves 2 places left"),
+  {0: chart("12.5", None, "100 has two zeros: the point moves two places to the left"),
+   1: chart("0.125", [0], "The point moves past the 2 and the 1. A 0 goes in front"),
    2: chart("0.125", None, "12.5 ÷ 100 = 0.125")})
 A("Q_CH11_003",
   chart("12.5", None, "Divide by 10000: where does each digit move?"),
@@ -176,9 +178,9 @@ A("G4A_DECIMALS_029", None, {
     0: chart("8.530", None, "Greatest: the digits from biggest to smallest"),
     1: chart("0.358", None, "Smallest: the digits from smallest to biggest")})
 A("Q_CH11_020", None, {
-    0: chart("45.783", None, "Name the place of each digit"),
-    1: chart("45.783", [3], "8 is the second digit after the decimal point"),
-    2: chart("45.783", [3], "8 is in the hundredths place")})
+    0: chart("45.783", [2, 3, 4], "After the point: tenths, hundredths, thousandths"),
+    1: chart("45.783", [2, 3], "7 is in the tenths place. 8 is the second digit after the point"),
+    2: chart("45.783", [3], "The digit 8 is in the hundredths place")})
 A("PYQ_2018_Q08", None, {
     0: chart("7.256", [1, 2, 3], "The digits after the decimal point are 2, 5 and 6"),
     1: chart("7.256", [2], "The 5 is in the hundredths place"),
@@ -253,12 +255,26 @@ A("EXT_G4_WS2_CH11_003",
 
 # Comparing and ordering: give every number the same count of decimal places
 H2 = ["Number", "Same places"]
+_g13 = [["0.5", "0.500"], ["0.05", "0.050"], ["0.55", "0.550"], ["0.505", "0.505"]]
 A("Q_CH11_013", None, {
-    0: padded([["0.5", "0.500"], ["0.05", "0.050"], ["0.55", "0.550"], ["0.505", "0.505"]], H2),
-    2: padded([["0.5", "0.500"], ["0.05", "0.050"], ["0.55", "0.550"], ["0.505", "0.505"]], H2, "0.55 is the greatest", ["r2"])})
+    0: padded(_g13, H2, "Write every number with three decimal places"),
+    1: padded(_g13, H2, "0.050 has 0 tenths. The other three have 5 tenths", ["r1"]),
+    2: padded(_g13, H2, "0.550 has 5 hundredths. 0.500 and 0.505 have 0 hundredths", ["r2"]),
+    3: padded(_g13, H2, "The greatest is 0.55", ["r2"])})
+_a24 = [["3.3", "3.300"], ["3.03", "3.030"], ["3.303", "3.303"], ["3.33", "3.330"]]
 A("Q_CH11_024", None, {
-    0: padded([["3.3", "3.300"], ["3.03", "3.030"], ["3.303", "3.303"], ["3.33", "3.330"]], H2),
-    2: padded([["3.03", "3.030"], ["3.3", "3.300"], ["3.303", "3.303"], ["3.33", "3.330"]], H2, "In order, smallest first")})
+    0: padded(_a24, H2, "Write every number with three decimal places"),
+    1: padded(_a24, H2, "3.030 has 0 tenths, so it is the smallest", ["r1"]),
+    2: padded(_a24, H2, "3.330 has 3 hundredths, so it is the greatest", ["r3"]),
+    3: padded(_a24, H2, "3.300 has 0 thousandths, so it comes before 3.303", ["r0", "r2"]),
+    4: padded([["3.03", "3.030"], ["3.3", "3.300"], ["3.303", "3.303"], ["3.33", "3.330"]], H2, "In ascending order, smallest first")})
+# Sums of several decimals: only the lining-up and sorting steps have something to show.
+A("EXT_G4_FP_2022_021", None, {
+    0: padded([["12.1212"], ["17.0050"], ["9.1102"]], None, "Four decimal places each, with the points lined up")})
+_signs = [["Added", "1.8", "2.3", "2.7"], ["Taken away", "1.9", "3.2", "-"]]
+A("EXT_G4_FP_2024_016", None, {
+    0: padded(_signs, None, "Add up the numbers that are being added", ["r0"]),
+    1: padded(_signs, None, "Add up the numbers that are being taken away", ["r1"])})
 A("PYQ_2018_Q06", None, {
     0: padded([["0.007", "0.007"], ["0.07", "0.070"], ["7.07", "7.070"], ["0.70", "0.700"]], H2),
     2: padded([["0.007", "0.007"], ["0.07", "0.070"], ["7.07", "7.070"], ["0.70", "0.700"]], H2,
@@ -488,3 +504,6 @@ A("EXT_G4_WS2_CH11_001",
 P.write()
 if "--review" in sys.argv:
     P.review()
+if "--redo" in sys.argv:
+    P.review(["EXT_G4_FP_2022_021", "EXT_G4_FP_2023_016", "EXT_G4_FP_2024_016", "G4A_DECIMALS_016", "Q_CH11_001",
+              "Q_CH11_002", "Q_CH11_013", "Q_CH11_020", "Q_CH11_024"])

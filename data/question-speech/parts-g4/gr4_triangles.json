@@ -833,15 +833,15 @@
    "50 degrees"
   ],
   "hints": [
-   "This is about an isosceles triangle, which has two equal angles. Use what the question says about angle B to work out which two angles are the equal pair.",
-   "Angle B is bigger than each of the other two angles, so it cannot be equal to either of them. Ask yourself which two angles are left to be the equal pair.",
-   "Here is a similar problem. Triangle P Q R is isosceles, angle P is 40 degrees, and angle Q is bigger than both other angles. Angle Q cannot be in the equal pair, so angle R equals angle P, which is 40 degrees. Then angle Q is 180 minus 40 minus 40, which is 100 degrees."
+   "An isosceles triangle has two equal angles. The clues about angle B tell you which two angles make the equal pair.",
+   "Angle B is bigger than each of the other two angles, so it cannot be equal to either of them. Which two angles are left to be the equal pair?",
+   "Here is a similar one: triangle P Q R is isosceles, angle P is 35 degrees, and angle Q is bigger than both other angles. Angle Q cannot be in the equal pair, so angle R equals angle P, which is 35 degrees. Then angle Q is 180 degrees minus 35 degrees minus 35 degrees, which is 110 degrees."
   ],
   "steps": [
    "An isosceles triangle has two equal angles.",
-   "Angle B is bigger than angle A and bigger than angle C, so angle B is not equal to either of them. The equal pair must be angle A and angle C.",
-   "Check that this fits: angle B would be 180 minus 50 minus 50, which is 80 degrees, which is bigger than 50 degrees.",
-   "So angle C is equal to angle A, which is 50 degrees."
+   "Angle B is bigger than angle A and bigger than angle C, so it is not equal to either of them. The equal pair must be angle A and angle C.",
+   "Check that this fits: angle B would be 180 degrees minus 50 degrees minus 50 degrees, which is 80 degrees, which is bigger than 50 degrees.",
+   "So angle C is equal to angle A, and angle C is 50 degrees."
   ]
  },
  "G4A_TRIANGLES_030": {
@@ -1616,7 +1616,7 @@
   "hints": [
    "An isosceles triangle has two equal sides, and so it also has two equal angles. Look for a set of angles with a matching pair.",
    "Go through each set and see whether any angle appears twice. Start with 30 degrees, 60 degrees and 90 degrees.",
-   "Here is a similar problem. Which is isosceles: a triangle with angles 50 degrees, 60 degrees, 70 degrees or one with angles 40 degrees, 40 degrees, 100 degrees? The first has three different angles. The second has two angles of 40 degrees, and 40 plus 40 plus 100, which is 180, so the second one is isosceles."
+   "Here is a similar problem. Which is isosceles: a triangle with angles 50 degrees, 60 degrees, 70 degrees or one with angles 40 degrees, 40 degrees, 100 degrees? The first has three different angles. The second has two angles of 40 degrees, and 40 plus 40 plus 100 equals 180, so the second one is isosceles."
   ],
   "steps": [
    "An isosceles triangle has two equal angles.",
@@ -1710,14 +1710,15 @@
    "acute-angled scalene triangle"
   ],
   "hints": [
-   "Can you have a right angle and all sides equal?",
-   "Equilateral means all angles are 60 degrees. But right-angled means one angle is 90 degrees. Can one angle be both 60 degrees and 90 degrees?",
-   "No! A right-angled equilateral triangle is impossible."
+   "Each name joins two ideas: one about the angles and one about the sides. Look for the name where the two ideas cannot both be true in the same triangle.",
+   "Think about an equilateral triangle. All three of its angles are equal, so work out what each one must be. Could one of them be a right angle?",
+   "Here is a similar one: can there be an obtuse-angled equilateral triangle? The three equal angles of an equilateral triangle are each 180 degrees divided by 3, which is 60 degrees. An obtuse angle is more than 90 degrees, so an angle of 60 degrees cannot be obtuse. Such a triangle cannot exist."
   ],
   "steps": [
-   "Equilateral: all angles are 60 degrees. Right-angled: one angle is 90 degrees. 60 degrees is not equal to 90 degrees.",
-   "These two properties contradict each other. It is impossible!",
-   "B is not a valid triangle type."
+   "The three angles of a triangle add up to 180 degrees. In an equilateral triangle all three are equal, so each is 180 degrees divided by 3, which is 60 degrees.",
+   "A right-angled triangle must have one angle of 90 degrees. An angle cannot be 60 degrees and 90 degrees at once.",
+   "The other three names are possible. For example, 70 degrees, 70 degrees, 40 degrees is acute-angled isosceles, 100 degrees, 40 degrees, 40 degrees is obtuse-angled isosceles, and 50 degrees, 60 degrees, 70 degrees is acute-angled scalene.",
+   "So the one that is not a type of triangle is the right-angled equilateral triangle."
   ]
  },
  "Q_CH19_010": {
@@ -1775,7 +1776,7 @@
   "steps": [
    "An exterior angle of a triangle equals the sum of the two opposite interior angles. So those two angles add up to 130 degrees.",
    "One of them is 50 degrees, so the other is 130 minus 50, which is 80.",
-   "Check: the interior angle beside the exterior angle is 180 minus 130, which is 50 degrees, and 50 plus 50 plus 80, which is 180. So the other angle is 80 degrees."
+   "Check: the interior angle beside the exterior angle is 180 minus 130, which is 50 degrees, and 50 plus 50 plus 80 equals 180. So the other angle is 80 degrees."
   ]
  },
  "Q_CH19_013": {
@@ -1844,12 +1845,13 @@
    "height"
   ],
   "hints": [
-   "The side opposite the biggest angle is always the longest side.",
-   "90 degrees is the biggest angle in a right triangle, so the side opposite it is the longest.",
-   "This longest side is called the hypotenuse."
+   "The sides of a right-angled triangle have special names. One of them does not touch the right angle at all, and it has a name of its own.",
+   "Picture a right-angled triangle. Two sides meet to make the right angle. Look at the third side, the one facing the right angle, which is also the longest side.",
+   "Here is a similar one: in a right-angled triangle, what do we call the two sides that meet at the right angle? When the triangle stands on one of them, that side is the base and the other one is the height."
   ],
   "steps": [
-   "In a right triangle, the side opposite 90 degrees is the longest.",
+   "In a right-angled triangle, two sides meet to make the right angle.",
+   "The third side lies opposite the right angle, and it is the longest side of the triangle.",
    "This side is called the hypotenuse."
   ]
  },
@@ -1976,13 +1978,14 @@
    "the side opposite 60 degrees"
   ],
   "hints": [
-   "In any triangle, the longest side is always opposite the largest angle.",
-   "The largest angle here is 80 degrees.",
-   "So the longest side is opposite 80 degrees."
+   "In a triangle, the sizes of the angles and the lengths of the sides go together. A wider angle opens out to a longer side across from it.",
+   "Find the biggest of the three angles, 40 degrees, 60 degrees and 80 degrees. Then think about the side that lies across the triangle from that angle.",
+   "Here is a similar one: a triangle has angles 30 degrees, 50 degrees and 100 degrees. The biggest angle is 100 degrees, so the longest side is the one opposite 100 degrees."
   ],
   "steps": [
-   "The rule: the longest side is opposite the largest angle.",
-   "The largest angle is 80 degrees. The longest side is opposite 80 degrees."
+   "In any triangle, the longest side is opposite the biggest angle.",
+   "The angles are 40 degrees, 60 degrees and 80 degrees, and the biggest is 80 degrees.",
+   "So the longest side is the side opposite 80 degrees."
   ]
  },
  "Q_CH19_023": {
@@ -1994,14 +1997,15 @@
    "Yes, if the sides are very long"
   ],
   "hints": [
-   "If two angles were 90 degrees each, their sum is 180 degrees. But the total for all three angles must be 180 degrees!",
-   "That leaves 180 degrees minus 180 degrees, which is 0 degrees, for the third angle. An angle of 0 degrees doesn't exist!",
-   "So no, a triangle cannot have two right angles."
+   "The three angles of every triangle add up to the same total, whatever its size. Use that total to test whether two right angles can fit.",
+   "A right angle is 90 degrees. Add two right angles together, then see how much of the triangle's angle total is left for the third angle.",
+   "Here is a similar one: can a triangle have two angles of 100 degrees? Together they make 100 degrees plus 100 degrees, which is 200 degrees, which is already more than the 180 degrees that all three angles share. So it cannot."
   ],
   "steps": [
-   "If two angles are 90 degrees each: 90 degrees plus 90 degrees equals 180 degrees.",
-   "The third angle is 180 degrees minus 180 degrees, which is 0 degrees. This is impossible!",
-   "A triangle cannot have two right angles."
+   "The three angles of any triangle add up to 180 degrees, however big or small the triangle is.",
+   "Two right angles make 90 degrees plus 90 degrees, which is 180 degrees.",
+   "That uses up the whole 180 degrees, so the third angle would be 180 degrees minus 180 degrees, which is 0 degrees. A triangle cannot have an angle of 0 degrees.",
+   "So the answer is no, because 90 degrees plus 90 degrees equals 180 degrees leaving 0 degrees for the third angle."
   ]
  },
  "Q_CH19_024": {
@@ -2032,14 +2036,15 @@
    "7 centimetres"
   ],
   "hints": [
-   "The area is half of base times height. We know the area and the base, so find the height.",
-   "42 equals half of 12 times h. So 42 equals 6 h.",
-   "h equals 42 divided by 6, which is 7 centimetres."
+   "A right-angled triangle is exactly half of a rectangle with the same base and height. So its area is half of base times height.",
+   "Start by doubling the triangle's area. That gives the area of the whole rectangle with the same base and height.",
+   "Here is a similar one: a right-angled triangle has base 10 centimetres and area 40 square centimetres. The rectangle is twice as big, 2 times 40 equals 80 square centimetres. Its height is 80 divided by 10, which is 8 centimetres, and the triangle has the same height, 8 centimetres."
   ],
   "steps": [
-   "The area is half of base times height. 42 equals half of 12 times h.",
-   "42 equals 6 h.",
-   "h equals 42 divided by 6, which is 7 centimetres."
+   "The area of a triangle is half of base times height, because the triangle is half of a rectangle.",
+   "So the rectangle with the same base and height has area 2 times 42, which is 84 square centimetres.",
+   "The rectangle's area is base times height, so 12 times height equals 84. The height is 84 divided by 12, which is 7.",
+   "The height of the triangle is 7 centimetres."
   ]
  },
  "Q_CH20_001_V09": {

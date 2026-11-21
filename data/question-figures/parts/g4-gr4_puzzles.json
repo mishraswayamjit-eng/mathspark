@@ -2261,7 +2261,10 @@
       "·"
      ]
     ],
-    "note": "Total = 1 + 3 + 5 + 7 + 9 = 25"
+    "note": "Both lines share the 5, so their two ends must add up the same",
+    "highlight": [
+     "r1"
+    ]
    },
    {
     "kind": "table",
@@ -2282,7 +2285,28 @@
       "·"
      ]
     ],
-    "note": "Each line = (25 + 5) ÷ 2 = 15"
+    "note": "The four end numbers add up to 1 + 3 + 7 + 9 = 20"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "·",
+      "1",
+      "·"
+     ],
+     [
+      "?",
+      "5",
+      "?"
+     ],
+     [
+      "·",
+      "?",
+      "·"
+     ]
+    ],
+    "note": "Each pair of ends adds up to 20 ÷ 2 = 10"
    },
    {
     "kind": "table",
@@ -2303,28 +2327,128 @@
       "·"
      ]
     ],
-    "note": "The line with 1: 1 + 5 + ? = 15, so ? = 9"
+    "note": "The partner of 1 is 10 − 1 = 9, so 9 is opposite to 1"
+   }
+  ]
+ },
+ "Q_CH15_003": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "centre",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "Three rows hold all nine numbers: 3 × the magic sum",
+    "highlight": [
+     "r0",
+     "r1",
+     "r2"
+    ]
    },
    {
     "kind": "table",
     "rows": [
      [
-      "·",
-      "1",
-      "·"
+      "□",
+      "□",
+      "□"
      ],
      [
-      "?",
+      "□",
       "5",
-      "?"
+      "□"
      ],
      [
-      "·",
-      "9",
-      "·"
+      "□",
+      "□",
+      "□"
      ]
     ],
-    "note": "Opposite to 1 is 9"
+    "note": "With 1 to 9 the centre is 5 and each row adds up to 15",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "centre",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "3 × 3 × the central box number, and 3 × 3 = 9"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "5",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "Check with 1 to 9: they add up to 45, and 9 × 5 = 45"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "□",
+      "□",
+      "□"
+     ],
+     [
+      "□",
+      "centre",
+      "□"
+     ],
+     [
+      "□",
+      "□",
+      "□"
+     ]
+    ],
+    "note": "The sum of all nine numbers is 9 × the central box number",
+    "highlight": [
+     "r1"
+    ]
    }
   ]
  },
@@ -4477,7 +4601,11 @@
       "label": "red"
      }
     ],
-    "note": "3B = 2R and R = 3G"
+    "note": "Three blue circles are worth two red circles",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
    },
    {
     "kind": "barModel",
@@ -4542,7 +4670,7 @@
       "label": "green"
      }
     ],
-    "note": "Replace each red by 3 greens: 3B = 2 × 3G = 6G",
+    "note": "Swap each of the two red circles for three green circles",
     "highlight": [
      "b2"
     ]
@@ -4610,7 +4738,75 @@
       "label": "green"
      }
     ],
-    "note": "3 blues = 6 greens"
+    "note": "That gives 2 × 3 = 6 green circles",
+    "highlight": [
+     "b2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.0,
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "tone": "b"
+       },
+       {
+        "units": 2.0,
+        "tone": "b"
+       }
+      ],
+      "label": "blue"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.0,
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "tone": "a"
+       }
+      ],
+      "label": "red"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       },
+       {
+        "units": 1.0,
+        "tone": "c"
+       }
+      ],
+      "label": "green"
+     }
+    ],
+    "note": "So three blue circles are worth 6 green circles"
    }
   ]
  },

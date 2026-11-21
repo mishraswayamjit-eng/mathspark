@@ -105,23 +105,6 @@ HAND = {
         "q": "Find the number in place of the asterisk: 0.25, 0.50, 1, 1.75, asterisk, 4.",
     },
 
-    # ── Not rewritten in the bank: notes-style hints and steps ────────────────────────
-    "Q_CH16_021": {
-        "steps": {0: "Differences: 3, 5, 7, 11, 9. The pattern breaks!"},
-    },
-    "Q_CH16_024": {
-        "hints": {
-            0: "Find the ratio: 243 divided by 729 equals one third. 81 divided by 243 equals one third. Each term is divided by 3!",
-            1: "These are powers of 3: 3 to the power six equals 729, 3 to the power five equals 243, "
-               "3 to the power four equals 81, 3 cubed equals 27, 3 squared equals 9.",
-            2: "Next: 3 to the power one equals 3.",
-        },
-        "steps": {
-            0: "Pattern: each term, divided by 3, equals the next term. 729 divided by 3 equals 243, 243 divided by 3 equals 81, and so on.",
-            1: "Or: 3 to the power six, 3 to the power five, 3 to the power four, 3 cubed, 3 squared, 3 to the power one.",
-            2: "The next one is 3 to the power one, which is 3.",
-        },
-    },
 }
 
 TEXT = {

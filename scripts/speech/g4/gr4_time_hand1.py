@@ -26,13 +26,6 @@ HAND = {
             2: "From six, the hand moves 6 steps up to twelve and then 4 more steps on to four. That is 10 steps.",
         },
     },
-    "Q_CH17_005": {"steps": {0: "Count from 26 January 1993 to 26 January 1997: 4 years."}},
-    "Q_CH17_007": {"hints": {0: "1992 is a leap year! From 14 February 1992 to 14 February 1993 is 366 days, because it crosses 29 February 1992."}},
-    "Q_CH17_015": {
-        "hints": {2: "If 1 May is Saturday, then 2 May is Sunday, the 1st Sunday. 9 May is Sunday, the 2nd Sunday."},
-        "steps": {2: "Sundays in May: 2nd, 9th, 16th, and so on. The 2nd Sunday is 9th May."},
-    },
-    "Q_CH17_017": {"hints": {0: "Count days from 1 January to 25 December. That's 358 days. 365 minus 7 equals 358. Let's count properly."}},
 }
 
 LINES = {}

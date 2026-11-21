@@ -5017,11 +5017,99 @@
    null
   ]
  },
+ "Q_CH12_004": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "kilogram & tonne",
+      "1000 times"
+     ],
+     [
+      "metre & kilometre",
+      "1000 times"
+     ]
+    ],
+    "headers": [
+     "Pair",
+     "How far apart"
+    ],
+    "note": "1 tonne is 1000 kg and 1 km is 1000 m"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "kilogram & tonne",
+      "1000 times"
+     ],
+     [
+      "metre & kilometre",
+      "1000 times"
+     ],
+     [
+      "gram & decagram",
+      "10 times"
+     ]
+    ],
+    "headers": [
+     "Pair",
+     "How far apart"
+    ],
+    "note": "1 decagram is 10 grams",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "kilogram & tonne",
+      "1000 times"
+     ],
+     [
+      "metre & kilometre",
+      "1000 times"
+     ],
+     [
+      "gram & decagram",
+      "10 times"
+     ],
+     [
+      "centilitre & litre",
+      "100 times"
+     ]
+    ],
+    "headers": [
+     "Pair",
+     "How far apart"
+    ],
+    "note": "1 litre is 100 centilitres",
+    "highlight": [
+     "r3"
+    ]
+   }
+  ]
+ },
  "Q_CH12_005": {
   "origin": "authored",
   "stepFigures": [
    null,
-   null,
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 8,
+      "shaded": 1,
+      "label": "1 litre = 1000 ml"
+     }
+    ],
+    "note": "125 ml goes into 1000 ml exactly 8 times"
+   },
    {
     "kind": "fractionBars",
     "bars": [
@@ -5031,7 +5119,10 @@
       "label": "1 litre"
      }
     ],
-    "note": "125 ml is 1 of the 8 equal parts of a litre"
+    "note": "125 ml is 1 of the 8 equal parts, so it is 1/8 l",
+    "highlight": [
+     "b0"
+    ]
    }
   ]
  },
@@ -5060,26 +5151,59 @@
   "origin": "authored",
   "stepFigures": [
    {
+    "kind": "set",
+    "total": 20,
+    "item": "articles",
+    "note": "1 score is 20 articles"
+   },
+   {
+    "kind": "set",
+    "total": 20,
+    "groups": 10,
+    "shadedGroups": 1,
+    "item": "articles",
+    "note": "Ten equal groups: one tenth of 20 is 2",
+    "highlight": [
+     "shaded"
+    ]
+   },
+   {
+    "kind": "set",
+    "total": 20,
+    "groups": 10,
+    "shadedGroups": 3,
+    "item": "articles",
+    "note": "Three tenths are 3 × 2 = 6 articles",
+    "highlight": [
+     "shaded"
+    ]
+   }
+  ]
+ },
+ "Q_CH12_008": {
+  "origin": "authored",
+  "stepFigures": [
+   {
     "kind": "fractionBars",
     "bars": [
      {
-      "parts": 10,
-      "shaded": 10,
-      "label": "1 score = 20"
+      "parts": 12,
+      "shaded": 12,
+      "label": "1 gross"
      }
     ],
-    "note": "Each tenth of a score is 2 articles"
+    "note": "1 gross is 12 dozens: each piece is one dozen"
    },
    {
     "kind": "fractionBars",
     "bars": [
      {
-      "parts": 10,
-      "shaded": 3,
-      "label": "1 score = 20"
+      "parts": 12,
+      "shaded": 1,
+      "label": "1 gross"
      }
     ],
-    "note": "0.3 score is 3 tenths of a score",
+    "note": "One dozen is 1 of the 12 equal parts of a gross",
     "highlight": [
      "b0"
     ]
@@ -5088,12 +5212,12 @@
     "kind": "fractionBars",
     "bars": [
      {
-      "parts": 10,
-      "shaded": 3,
-      "label": "1 score = 20"
+      "parts": 12,
+      "shaded": 1,
+      "label": "1 gross"
      }
     ],
-    "note": "0.3 score = 6 articles",
+    "note": "So 1/12 of a gross makes a dozen",
     "highlight": [
      "b0"
     ]
@@ -5348,7 +5472,7 @@
   "figure": {
    "kind": "placeChart",
    "number": "2.5",
-   "note": "2.5 kg"
+   "note": "2.5 kilograms"
   },
   "stepFigures": [
    {
@@ -5359,8 +5483,48 @@
      "d1"
     ]
    },
-   null,
-   null
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 kg",
+      "2 kg"
+     ],
+     [
+      "0.5 kg",
+      "? g"
+     ]
+    ],
+    "headers": [
+     "Part",
+     "In kg and g"
+    ],
+    "note": "1 kg is 1000 g, so multiply 0.5 by 1000",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 kg",
+      "2 kg"
+     ],
+     [
+      "0.5 kg",
+      "500 g"
+     ]
+    ],
+    "headers": [
+     "Part",
+     "In kg and g"
+    ],
+    "note": "2.5 kg = 2 kg 500 g",
+    "highlight": [
+     "r1"
+    ]
+   }
   ]
  },
  "Q_CH12_019": {
@@ -5380,8 +5544,48 @@
      "d2"
     ]
    },
-   null,
-   null
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 l",
+      "2 l"
+     ],
+     [
+      "0.05 l",
+      "? ml"
+     ]
+    ],
+    "headers": [
+     "Part",
+     "In l and ml"
+    ],
+    "note": "1 l is 1000 ml, so multiply 0.05 by 1000",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 l",
+      "2 l"
+     ],
+     [
+      "0.05 l",
+      "50 ml"
+     ]
+    ],
+    "headers": [
+     "Part",
+     "In l and ml"
+    ],
+    "note": "2.05 l = 2 l 50 ml",
+    "highlight": [
+     "r1"
+    ]
+   }
   ]
  },
  "Q_CH12_020": {
@@ -5401,8 +5605,48 @@
      "d2"
     ]
    },
-   null,
-   null
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 m",
+      "2 m"
+     ],
+     [
+      "0.05 m",
+      "? cm"
+     ]
+    ],
+    "headers": [
+     "Part",
+     "In m and cm"
+    ],
+    "note": "1 m is 100 cm, so multiply 0.05 by 100",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2 m",
+      "2 m"
+     ],
+     [
+      "0.05 m",
+      "5 cm"
+     ]
+    ],
+    "headers": [
+     "Part",
+     "In m and cm"
+    ],
+    "note": "2.05 m = 2 m 5 cm",
+    "highlight": [
+     "r1"
+    ]
+   }
   ]
  },
  "Q_CH12_021": {

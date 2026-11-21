@@ -9,6 +9,7 @@ A question is picked when a hint or step:
   - thinks aloud ("Wait", "Hmm", "Let me recount");
   - is written as notes, not sentences (arrows, ticks and crosses, a line starting with "=");
   - names an option by letter or number (the options may not be in that order any more);
+  - has a step in the old notation (a boxed answer, arrows): these were never rewritten;
   - is a filler step ("Identify the ratio parts and total.", "Compute the answer: 40",
     "Follow BODMAS", "Find factors of ...") with no working in it;
 or when the third hint states the question's own answer.
@@ -33,6 +34,7 @@ RULES = [
     ("filler step", re.compile(r"^(?:Identify the |Compute the answer|Follow BODMAS|Find factors of|The answer is \S+\.?$|Answer: )", re.I)),
 ]
 NUM = re.compile(r"\d+(?:\.\d+)?")
+OLD_LATEX = re.compile(r"\\boxed|\\xrightarrow|\\Rightarrow")
 
 
 def texts(q):
@@ -47,6 +49,8 @@ def reasons(q):
     for label, rx in RULES:
         if any(rx.search(t) for t in hints + steps):
             out.append(label)
+    if any(OLD_LATEX.search((st.get("latex") or "") + (st.get("text") or "")) for st in (q.get("stepByStep") or []) if isinstance(st, dict)):
+        out.append("old notation in steps")
     right = next((o["text"] for o in q["options"] if o["id"] == q.get("correctAnswer")), "")
     mine = [n for n in NUM.findall(right.replace(",", "")) if n not in NUM.findall((q.get("questionText") or "").replace(",", ""))]
     if len(hints) >= 3 and mine and len(mine[0]) > 1 and all(n in NUM.findall(hints[2].replace(",", "")) for n in mine):

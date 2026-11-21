@@ -1682,14 +1682,15 @@
    "17"
   ],
   "hints": [
-   "Find the differences: 3, 5, 7, 11, 9. Most differences are odd numbers increasing by 2.",
-   "Expected differences: 3, 5, 7, 9, 11. The actual sequence should be: 2, 5, 10, 17, 26, 37.",
-   "28 should be 26. So 28 is the number that doesn't belong!"
+   "When one number does not fit a pattern, look at the gaps between neighbours. In a good pattern the gaps follow a rule, and the odd one out breaks it.",
+   "Find the gap between each pair of neighbours, starting with 2 and 5, then 5 and 10. Write the gaps in a row and look for the place where their rule breaks.",
+   "Here is a similar one: 3, 5, 9, 15, 25, 33. The gaps are 2, 4, 6, 10, 8. They should grow by 2 each time: 2, 4, 6, 8, 10. So after 15 the number should be 15 plus 8, which is 23, and 23 plus 10 equals 33 fits. The number that does not belong is 25."
   ],
   "steps": [
-   "Differences: 3, 5, 7, 11, 9. The pattern breaks!",
-   "Expected: plus 3, plus 5, plus 7, plus 9, plus 11. Correct sequence: 2, 5, 10, 17, 26, 37.",
-   "28 doesn't belong. It should be 26."
+   "Find the gaps between neighbours: 5 minus 2 equals 3, 10 minus 5 equals 5, 17 minus 10 equals 7, 28 minus 17 equals 11 and 37 minus 28 equals 9.",
+   "The gaps 3, 5, 7 go up by 2 each time, so the next gaps should be 9 and then 11. Instead they are 11 and then 9.",
+   "With a gap of 9, the number after 17 should be 17 plus 9, which is 26. Then 26 plus 11 equals 37, which fits.",
+   "So the number that does not belong is 28."
   ]
  },
  "Q_CH16_022": {
@@ -1738,14 +1739,14 @@
    "3"
   ],
   "hints": [
-   "Find the ratio: 243 divided by 729 equals one third. 81 divided by 243 equals one third. Each term is divided by 3!",
-   "These are powers of 3: 3 to the power six equals 729, 3 to the power five equals 243, 3 to the power four equals 81, 3 cubed equals 27, 3 squared equals 9.",
-   "Next: 3 to the power one equals 3."
+   "The numbers get smaller quickly, so they are probably being divided rather than having something taken away. Look for the number that each one is divided by.",
+   "Divide a number by the one after it, for example 27 divided by 9 or 81 divided by 27. If you get the same result each time, that is the rule.",
+   "Here is a similar one: 400, 200, 100, 50, and then a blank. Each number is the one before it divided by 2, since 400 divided by 2 equals 200 and 200 divided by 2 equals 100. So the next number is 50 divided by 2, which is 25."
   ],
   "steps": [
-   "Pattern: each term, divided by 3, equals the next term. 729 divided by 3 equals 243, 243 divided by 3 equals 81, and so on.",
-   "Or: 3 to the power six, 3 to the power five, 3 to the power four, 3 cubed, 3 squared, 3 to the power one.",
-   "The next one is 3 to the power one, which is 3."
+   "Compare neighbours: 729 divided by 243 equals 3, 243 divided by 81 equals 3, 81 divided by 27 equals 3 and 27 divided by 9 equals 3.",
+   "So each number is the one before it divided by 3.",
+   "Divide the last number by 3: 9 divided by 3 equals 3. The next number is 3."
   ]
  },
  "Q_CH16_025": {

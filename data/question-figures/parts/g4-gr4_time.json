@@ -1228,7 +1228,27 @@
       "label": "?"
      }
     ],
-    "note": "2024 is a leap year: 366 days",
+    "note": "2024 is a leap year, so it has 366 days",
+    "highlight": [
+     "p0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 2024,
+    "max": 2025,
+    "step": 1,
+    "points": [
+     {
+      "at": 2024,
+      "label": "Mon"
+     },
+     {
+      "at": 2025,
+      "label": "?"
+     }
+    ],
+    "note": "366 days are 52 weeks and 2 days left over",
     "highlight": [
      "p0"
     ]
@@ -1255,7 +1275,7 @@
       "label": "+2"
      }
     ],
-    "note": "2 extra days: Monday + 2 = Wednesday",
+    "note": "The 2 extra days move Monday on to Tuesday, then Wednesday",
     "highlight": [
      "p1",
      "h0"
@@ -1283,7 +1303,7 @@
       "label": "+2"
      }
     ],
-    "note": "1st January 2025 is a Wednesday",
+    "note": "1st January 2025 was a Wednesday",
     "highlight": [
      "p1",
      "h0"
@@ -1326,7 +1346,7 @@
       "label": "?"
      }
     ],
-    "note": "From 1993 to 1997 is 4 years",
+    "note": "From 1993 to 1997 there are 4 jumps of one year",
     "highlight": [
      "p0"
     ]
@@ -1342,6 +1362,18 @@
       "label": "Tue"
      },
      {
+      "at": 1994,
+      "label": "Wed"
+     },
+     {
+      "at": 1995,
+      "label": "Thu"
+     },
+     {
+      "at": 1996,
+      "label": "Fri"
+     },
+     {
       "at": 1997,
       "label": "?"
      }
@@ -1349,14 +1381,24 @@
     "hops": [
      {
       "from": 1993,
-      "to": 1997,
-      "label": "+5"
+      "to": 1994,
+      "label": "+1"
+     },
+     {
+      "from": 1994,
+      "to": 1995,
+      "label": "+1"
+     },
+     {
+      "from": 1995,
+      "to": 1996,
+      "label": "+1"
      }
     ],
-    "note": "Odd days: 1 + 1 + 1 + 2 = 5",
+    "note": "The jumps to 1994, 1995 and 1996 each move the day on by 1",
     "highlight": [
-     "p1",
-     "h0"
+     "p3",
+     "h2"
     ]
    },
    {
@@ -1370,21 +1412,48 @@
       "label": "Tue"
      },
      {
+      "at": 1994,
+      "label": "Wed"
+     },
+     {
+      "at": 1995,
+      "label": "Thu"
+     },
+     {
+      "at": 1996,
+      "label": "Fri"
+     },
+     {
       "at": 1997,
-      "label": "Sun"
+      "label": "?"
      }
     ],
     "hops": [
      {
       "from": 1993,
+      "to": 1994,
+      "label": "+1"
+     },
+     {
+      "from": 1994,
+      "to": 1995,
+      "label": "+1"
+     },
+     {
+      "from": 1995,
+      "to": 1996,
+      "label": "+1"
+     },
+     {
+      "from": 1996,
       "to": 1997,
-      "label": "+5"
+      "label": "+2"
      }
     ],
-    "note": "Tuesday + 5 days = Sunday",
+    "note": "The jump past 29th February 1996 moves the day on by 2",
     "highlight": [
-     "p1",
-     "h0"
+     "p4",
+     "h3"
     ]
    },
    {
@@ -1398,6 +1467,73 @@
       "label": "Tue"
      },
      {
+      "at": 1994,
+      "label": "Wed"
+     },
+     {
+      "at": 1995,
+      "label": "Thu"
+     },
+     {
+      "at": 1996,
+      "label": "Fri"
+     },
+     {
+      "at": 1997,
+      "label": "?"
+     }
+    ],
+    "hops": [
+     {
+      "from": 1993,
+      "to": 1994,
+      "label": "+1"
+     },
+     {
+      "from": 1994,
+      "to": 1995,
+      "label": "+1"
+     },
+     {
+      "from": 1995,
+      "to": 1996,
+      "label": "+1"
+     },
+     {
+      "from": 1996,
+      "to": 1997,
+      "label": "+2"
+     }
+    ],
+    "note": "Altogether the day moves on by 5 days",
+    "highlight": [
+     "p4",
+     "h3"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1993,
+    "max": 1997,
+    "step": 1,
+    "points": [
+     {
+      "at": 1993,
+      "label": "Tue"
+     },
+     {
+      "at": 1994,
+      "label": "Wed"
+     },
+     {
+      "at": 1995,
+      "label": "Thu"
+     },
+     {
+      "at": 1996,
+      "label": "Fri"
+     },
+     {
       "at": 1997,
       "label": "Sun"
      }
@@ -1405,14 +1541,29 @@
     "hops": [
      {
       "from": 1993,
+      "to": 1994,
+      "label": "+1"
+     },
+     {
+      "from": 1994,
+      "to": 1995,
+      "label": "+1"
+     },
+     {
+      "from": 1995,
+      "to": 1996,
+      "label": "+1"
+     },
+     {
+      "from": 1996,
       "to": 1997,
-      "label": "+5"
+      "label": "+2"
      }
     ],
-    "note": "Republic Day 1997 was a Sunday",
+    "note": "Five days after Tuesday is Sunday",
     "highlight": [
-     "p1",
-     "h0"
+     "p4",
+     "h3"
     ]
    }
   ]
@@ -2786,7 +2937,10 @@
       "brace": "2 Oct (Wed) → 14 Nov (?)"
      }
     ],
-    "note": "29 days left in October + 14 in November = 43 days"
+    "note": "October has 31 days: 29 days are left after 2nd October",
+    "highlight": [
+     "b0s0"
+    ]
    },
    {
     "kind": "barModel",
@@ -2807,7 +2961,31 @@
       "brace": "2 Oct (Wed) → 14 Nov (?)"
      }
     ],
-    "note": "43 days = 6 weeks + 1 day"
+    "note": "Add the 14 days of November",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "October",
+        "tone": "a"
+       },
+       {
+        "units": 5.79,
+        "label": "November",
+        "tone": "b"
+       }
+      ],
+      "brace": "2 Oct (Wed) → 14 Nov (?)"
+     }
+    ],
+    "note": "43 days are 6 weeks and 1 day left over"
    },
    {
     "kind": "barModel",
@@ -2828,7 +3006,7 @@
       "brace": "2 Oct Wed → 14 Nov Thu"
      }
     ],
-    "note": "Wednesday + 1 = Thursday"
+    "note": "One day after Wednesday is Thursday"
    }
   ]
  },
@@ -2935,7 +3113,11 @@
       "brace": "26 Jan (Sun)→15 Aug (?)"
      }
     ],
-    "note": "Days: 5 + 29 + 31 + 30 + 31 + 30 + 31 + 15"
+    "note": "5 days left in January. 2020 is a leap year: February has 29",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
    },
    {
     "kind": "barModel",
@@ -2986,7 +3168,61 @@
       "brace": "26 Jan (Sun)→15 Aug (?)"
      }
     ],
-    "note": "Total = 202 days"
+    "note": "Add the days month by month up to 15th August",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.86,
+        "label": "Jan",
+        "tone": "a"
+       },
+       {
+        "units": 11.23,
+        "label": "Feb",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Mar",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Apr",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Jun",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Jul",
+        "tone": "a"
+       },
+       {
+        "units": 5.86,
+        "label": "Aug",
+        "tone": "b"
+       }
+      ],
+      "brace": "26 Jan (Sun)→15 Aug (?)"
+     }
+    ],
+    "note": "202 days are 28 weeks and 6 days left over"
    },
    {
     "kind": "barModel",
@@ -3037,7 +3273,7 @@
       "brace": "26 Jan Sun → 15 Aug Sat"
      }
     ],
-    "note": "Sunday + 6 = Saturday"
+    "note": "Six days after Sunday is Saturday"
    }
   ]
  },
@@ -3094,7 +3330,11 @@
       "brace": "17 March (Wed) → May"
      }
     ],
-    "note": "Mar(14) + Apr(30) + May(1) = 45 days to 1 May"
+    "note": "14 days left in March, 30 in April: 1st May is 45 days on",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
    },
    {
     "kind": "barModel",
@@ -3120,7 +3360,24 @@
       "brace": "17 March (Wed) → May"
      }
     ],
-    "note": "45 ÷ 7 = 6 R 3. Wednesday + 3 = Saturday, so 1 May is a Saturday"
+    "note": "45 days are 6 weeks and 3 days: 1st May is a Saturday",
+    "highlight": [
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Sat",
+      "Sun"
+     ]
+    ],
+    "headers": [
+     "1 May",
+     "2 May"
+    ],
+    "note": "The first Sunday of May is the next day, 2nd May"
    },
    {
     "kind": "table",
@@ -3136,7 +3393,10 @@
      "2 May",
      "9 May"
     ],
-    "note": "The second Sunday is the 9th of May"
+    "note": "The second Sunday is 7 days later: 9th May",
+    "highlight": [
+     "r0"
+    ]
    }
   ]
  },
@@ -3283,7 +3543,11 @@
       "brace": "1 Jan (Tue) → 25 Dec (?)"
      }
     ],
-    "note": "2019 is not a leap year. Count the days month by month"
+    "note": "2019 is an ordinary year: February has 28 days. January has 30 left",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
    },
    {
     "kind": "barModel",
@@ -3354,7 +3618,81 @@
       "brace": "1 Jan (Tue) → 25 Dec (?)"
      }
     ],
-    "note": "358 days = 51 weeks and 1 day"
+    "note": "Add February to November and the 25 days of December",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.61,
+        "label": "Jan",
+        "tone": "a"
+       },
+       {
+        "units": 10.84,
+        "label": "Feb",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Mar",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Apr",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "May",
+        "tone": "a"
+       },
+       {
+        "units": 11.61,
+        "label": "Jun",
+        "tone": "b"
+       },
+       {
+        "units": 12.0,
+        "label": "Jul",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Aug",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Sep",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Oct",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Nov",
+        "tone": "a"
+       },
+       {
+        "units": 9.68,
+        "label": "Dec",
+        "tone": "b"
+       }
+      ],
+      "brace": "1 Jan (Tue) → 25 Dec (?)"
+     }
+    ],
+    "note": "358 days are 51 weeks and 1 day left over"
    },
    {
     "kind": "barModel",
@@ -3425,7 +3763,7 @@
       "brace": "1 Jan Tue → 25 Dec Wed"
      }
     ],
-    "note": "Tuesday + 1 = Wednesday"
+    "note": "One day after Tuesday is Wednesday"
    }
   ]
  },
@@ -3492,7 +3830,10 @@
       "brace": "5 Sep (Mon) → Christmas"
      }
     ],
-    "note": "Sep(25) + Oct(31) + Nov(30) + Dec(25) = 111 days"
+    "note": "Christmas is 25th December. 25 days are left in September",
+    "highlight": [
+     "b0s0"
+    ]
    },
    {
     "kind": "barModel",
@@ -3523,7 +3864,43 @@
       "brace": "5 Sep (Mon) → Christmas"
      }
     ],
-    "note": "111 ÷ 7 = 15 R 6"
+    "note": "Add October, November and the 25 days of December",
+    "highlight": [
+     "b0s1",
+     "b0s2",
+     "b0s3"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.68,
+        "label": "Sep",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "Oct",
+        "tone": "b"
+       },
+       {
+        "units": 11.61,
+        "label": "Nov",
+        "tone": "a"
+       },
+       {
+        "units": 9.68,
+        "label": "Dec",
+        "tone": "b"
+       }
+      ],
+      "brace": "5 Sep (Mon) → Christmas"
+     }
+    ],
+    "note": "111 days are 15 weeks and 6 days left over"
    },
    {
     "kind": "barModel",
@@ -3554,7 +3931,7 @@
       "brace": "5 Sep Mon → 25 Dec Sun"
      }
     ],
-    "note": "Monday + 6 = Sunday"
+    "note": "Six days after Monday is Sunday"
    }
   ]
  },
@@ -4762,7 +5139,7 @@
      "Date",
      "Day"
     ],
-    "note": "1992 is a leap year: 366 days from 14 Feb 1992 to 14 Feb 1993",
+    "note": "One full year on crosses 29th February 1992, so it is 366 days",
     "highlight": [
      "r0",
      "r1"
@@ -4788,7 +5165,7 @@
      "Date",
      "Day"
     ],
-    "note": "Friday + 2 = Sunday",
+    "note": "366 days are 52 weeks and 2 days. Two days after Friday is Sunday",
     "highlight": [
      "r1"
     ]
@@ -4838,9 +5215,77 @@
      "Date",
      "Day"
     ],
-    "note": "13 Feb 1993 was a Saturday",
+    "note": "13th February 1993 fell on a Saturday",
     "highlight": [
      "r2"
+    ]
+   }
+  ]
+ },
+ "Q_CH17_024": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.0,
+        "label": "1 week = 7 days",
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "A normal year has 365 days, and a week has 7 days"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "52 full weeks",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "365 days"
+     }
+    ],
+    "note": "52 full weeks make 364 days",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "52 full weeks",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "1 day",
+        "tone": "b"
+       }
+      ],
+      "brace": "365 days"
+     }
+    ],
+    "note": "That leaves 1 day over: 1 odd day",
+    "highlight": [
+     "b0s1"
     ]
    }
   ]

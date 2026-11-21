@@ -31,14 +31,6 @@ HAND = {
 }
 
 LINES = {
-    # Q_CH20_010
-    "P = 2(L+B). 40 = 2[(3a−5) + (a+5)].":
-        "P equals 2 times, L plus B. So 40 equals 2 times, open bracket, 3 a minus 5, plus a plus 5, close bracket.",
-    "40 = 2[4a]. So 40 = 8a.":
-        "40 equals 2 times 4 a. So 40 equals 8 a.",
-    # Q_CH20_014
-    "Square perimeter = 4 × 6 = 24 cm. Triangle perimeter = same = 24 cm.":
-        "Square perimeter equals 4 times 6, which is 24 centimetres. The triangle perimeter is the same, 24 centimetres.",
     # G4A_QUADS_025
     "Similar problem: the length is 2 times the breadth. Then the area is 2 x breadth x breadth. An area of 50 sq cm works, because 50 ÷ 2 = 25 = 5 x 5, giving a rectangle 10 cm by 5 cm. An area of 40 sq cm does not, because 40 ÷ 2 = 20 is not a number times itself.":
         "Similar problem: the length is 2 times the breadth. Then the area is 2 times breadth times breadth. An area of 50 square centimetres works, because 50 divided by 2 is 25, which is 5 times 5, giving a rectangle 10 centimetres by 5 centimetres. An area of 40 square centimetres does not, because 40 divided by 2 is 20, which is not a number times itself.",

@@ -896,7 +896,7 @@
   "hints": [
    "Write down every order you can think of, then count them.",
    "Start with Anu in front and Bala behind. Is there another way?",
-   "A similar problem: a red cup and a blue cup on a shelf can be placed as red then blue, or blue then red. That is 2 orders."
+   "A similar problem: a red cup, a blue cup and a green cup stand in a row. Any of the 3 cups can go first, then either of the 2 left, then the last one. That is 3 times 2, which is 6 orders."
   ],
   "steps": [
    "List the orders: Anu in front with Bala behind, or Bala in front with Anu behind.",
@@ -1057,15 +1057,15 @@
    "14"
   ],
   "hints": [
-   "This is a counting question about pairs. A game of chess needs two players, so think about how many different pairs of players there are.",
-   "List every pair of players carefully, starting with A and B, then A and C, and so on. Make sure no pair is listed twice. After that, remember each pair plays two games.",
-   "A similar example: P, Q and R play a game, and each player plays three games with every other player. The pairs are P and Q, P and R, and Q and R, which is 3 pairs. Each pair plays 3 games, so there are 3 times 3, which is 9 games altogether."
+   "This is a counting question. A game of chess needs two players, so think about how many different pairs of players can be made.",
+   "List every pair of players in order, starting with A and B, then A and C, and so on, taking care not to list any pair twice. Then remember how many games each pair plays.",
+   "Here is a similar one: P, Q and R play, and each player plays three games with every other player. The pairs are P and Q, P and R, and Q and R, which is 3 pairs. Each pair plays 3 games, so 3 times 3, which is 9, games are played."
   ],
   "steps": [
-   "Each game is played by a pair of players. List the pairs with A first: A and B, A and C, A and D. That is 3 pairs.",
-   "Now list the new pairs with B: B and C, B and D. Then the last new pair is C and D. The pair B and A is not new, because it is the same as A and B.",
-   "Count the pairs. 3 plus 2 plus 1 equals 6.",
-   "Each pair played two games. So 12 games were played altogether. 6 times 2 equals 12."
+   "Each game is played by a pair of players, so first count the different pairs. Pairs with A: A and B, A and C, A and D. That is 3 pairs.",
+   "New pairs with B: B and C, B and D. That is 2 more. B and A is not new, because it is the same pair as A and B.",
+   "The last new pair is C and D. Altogether there are 3 plus 2 plus 1, which is 6 pairs.",
+   "Each pair played two games, and 6 times 2 equals 12. So 12 games were played altogether."
   ]
  },
  "PYQ_2018_Q12": {

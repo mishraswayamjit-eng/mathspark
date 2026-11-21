@@ -505,7 +505,7 @@
   "hints": [
    "The complement of an angle is what must be added to make 90 degrees. The supplement is what must be added to make 180 degrees. You can test each choice.",
    "The supplement is always 90 degrees more than the complement. If the supplement is 3 times the complement, then that extra 90 degrees is 2 times the complement.",
-   "A similar one: the supplement of an angle is 7 times its complement. Try 75 degrees: its supplement is 105 degrees and its complement is 15 degrees, and 105, which is 7 times 15. So that angle is 75 degrees."
+   "A similar one: the supplement of an angle is 7 times its complement. Try 75 degrees: its supplement is 105 degrees and its complement is 15 degrees, and 105 equals 7 times 15. So that angle is 75 degrees."
   ],
   "steps": [
    "The supplement is 90 degrees more than the complement, because 180 degrees is 90 degrees more than 90 degrees.",
@@ -1358,13 +1358,14 @@
    "complete angle"
   ],
   "hints": [
-   "250 degrees is more than 180 degrees but less than 360 degrees.",
-   "Reflex angles are between 180 degrees and 360 degrees.",
-   "So 250 degrees is a reflex angle."
+   "This question is about the names of angles. Each name goes with a range of sizes, so think about which range this angle falls in.",
+   "Compare 250 degrees with a straight angle, which is 180 degrees, and with a full turn, which is 360 degrees. Is 250 degrees smaller than both, between them, or bigger than both?",
+   "Here is a similar one: what kind of angle is 120 degrees? It is more than 90 degrees and less than 180 degrees, so 120 degrees is an obtuse angle."
   ],
   "steps": [
-   "180 degrees is less than 250 degrees, which is less than 360 degrees.",
-   "This falls in the reflex angle range."
+   "A straight angle is exactly 180 degrees and a complete angle is exactly 360 degrees.",
+   "250 degrees is more than 180 degrees but less than 360 degrees.",
+   "An angle between 180 degrees and 360 degrees is called a reflex angle. So 250 degrees is a reflex angle."
   ]
  },
  "Q_CH18_003": {
@@ -1417,7 +1418,7 @@
   "hints": [
    "This question is about supplementary angles. Remember what two supplementary angles add up to, and then find the missing part.",
    "Two supplementary angles add up to 180 degrees, a straight line. So take 55 degrees away from 180 degrees.",
-   "A similar example: find the supplementary angle of 70 degrees. Supplementary angles add up to 180 degrees, and 180 degrees minus 70 degrees, which is 110 degrees. So the supplementary angle of 70 degrees is 110 degrees."
+   "A similar example: find the supplementary angle of 70 degrees. Supplementary angles add up to 180 degrees, and 180 degrees minus 70 degrees equals 110 degrees. So the supplementary angle of 70 degrees is 110 degrees."
   ],
   "steps": [
    "Two supplementary angles add up to 180 degrees, like the two angles on a straight line.",
@@ -1455,7 +1456,7 @@
   "hints": [
    "This question has two parts. First find the angle x, and then find its supplement. Supplementary angles add up to 180 degrees.",
    "Start with x plus 35 degrees equals 90 degrees. Ask yourself what must be added to 35 degrees to make 90 degrees. That number is x, and you still need its supplement after that.",
-   "A similar example: if y plus 20 degrees equals 90 degrees, then y equals 90 degrees minus 20 degrees, which is 70 degrees. The supplement of y is what you add to 70 degrees to make 180 degrees, and 180 degrees minus 70 degrees, which is 110 degrees. So the supplement of y is 110 degrees."
+   "A similar example: if y plus 20 degrees equals 90 degrees, then y equals 90 degrees minus 20 degrees, which is 70 degrees. The supplement of y is what you add to 70 degrees to make 180 degrees, and 180 degrees minus 70 degrees equals 110 degrees. So the supplement of y is 110 degrees."
   ],
   "steps": [
    "First find x. It is the angle that adds to 35 degrees to make 90 degrees, so take 35 degrees away from 90 degrees. That gives x equals 55 degrees.",
@@ -1510,13 +1511,14 @@
    "70 degrees"
   ],
   "hints": [
-   "Vertically opposite angles are always...",
-   "Equal! The angle opposite to 70 degrees is also 70 degrees.",
-   "That's the key property: vertically opposite angles are equal."
+   "When two straight lines cross, they make four angles. The angles that face each other across the crossing point have a special link.",
+   "Picture the letter X. Look at the angle of 70 degrees and the angle directly across from it, and remember what is true about vertically opposite angles.",
+   "Here is a similar one: two lines cross and one angle is 40 degrees. Vertically opposite angles are equal, so the angle facing it is also 40 degrees."
   ],
   "steps": [
-   "Vertically opposite angles are equal.",
-   "The angle opposite to 70 degrees is 70 degrees."
+   "Two crossing lines make two pairs of angles that face each other. These are called vertically opposite angles.",
+   "Vertically opposite angles are always equal.",
+   "So the angle opposite to 70 degrees is also 70 degrees."
   ]
  },
  "Q_CH18_009_V04": {
@@ -1687,14 +1689,15 @@
    "2 o'clock"
   ],
   "hints": [
-   "Complementary to 30 degrees means the angle should be 90 degrees minus 30 degrees, which is 60 degrees.",
-   "60 degrees is 2 spaces on the clock. Which time gives exactly 2 spaces?",
-   "At 2 o'clock, the hands are 2 spaces apart, which is 60 degrees."
+   "Two angles are complementary when they add up to a right angle. First find the angle you need, then find a time when the clock hands make it.",
+   "Work out what must be added to 30 degrees to make 90 degrees. That is the angle the clock hands have to make.",
+   "Here is a similar one: at which o'clock time do the hands make an angle supplementary to 60 degrees? Supplementary angles add up to 180 degrees, so the angle needed is 180 degrees minus 60 degrees, which is 120 degrees. Each gap between numbers is 30 degrees, and 120 divided by 30 equals 4 gaps, so the time is 4 o'clock."
   ],
   "steps": [
-   "The complement of 30 degrees is 90 degrees minus 30 degrees, which is 60 degrees.",
-   "60 degrees is 2 spaces on the clock, which is 2 o'clock.",
-   "At 2 o'clock, the angle is 60 degrees."
+   "Complementary angles add up to 90 degrees. So the angle we need is 90 degrees minus 30 degrees, which is 60 degrees.",
+   "At 1 o'clock the hands are one number apart and the angle is 30 degrees. So each gap between numbers on the clock is 30 degrees.",
+   "60 degrees is two gaps, because 60 divided by 30 equals 2.",
+   "The hands are two gaps apart at 2 o'clock. So the time is 2 o'clock."
   ]
  },
  "Q_CH18_016_V01": {
@@ -1829,7 +1832,7 @@
    "Complementary angles add up to 90 degrees. The ratio 2 is to 3 means there are 5 equal parts altogether. 2 plus 3 equals 5.",
    "Find one part by sharing 90 degrees into 5 equal parts. 90 degrees divided by 5 equals 18 degrees.",
    "The smaller angle has 2 of these parts. 2 times 18 degrees equals 36 degrees.",
-   "The larger angle is 3 times 18 degrees, which is 54 degrees, and 36 degrees plus 54 degrees, which is 90 degrees. So the smaller angle is 36 degrees."
+   "The larger angle is 3 times 18 degrees, which is 54 degrees, and 36 degrees plus 54 degrees equals 90 degrees. So the smaller angle is 36 degrees."
   ]
  },
  "Q_CH18_020_V07": {
@@ -1959,14 +1962,15 @@
    "North-West"
   ],
   "hints": [
-   "Start at North, 0 degrees, and turn 225 degrees clockwise. North is 0 degrees, East is 90 degrees, South is 180 degrees, West is 270 degrees.",
-   "225 degrees is between South, at 180 degrees, and West, at 270 degrees. It's 45 degrees past South.",
-   "45 degrees past South, towards West, is South-West."
+   "This is about turning on a compass. A quarter turn clockwise takes you from one main direction to the next, so break the big turn into quarter turns.",
+   "Each quarter turn is 90 degrees. Starting from North, count how many whole quarter turns fit into 225 degrees, and how many degrees are left over.",
+   "Here is a similar one: a girl facing West turns clockwise through 135 degrees. A turn of 90 degrees takes her from West to North, and 135 degrees minus 90 degrees equals 45 degrees is left. 45 degrees is half of a quarter turn, so she ends halfway between North and East, facing North-East."
   ],
   "steps": [
-   "On the compass, North is 0 degrees, East is 90 degrees, South is 180 degrees, West is 270 degrees. 225 degrees is between South and West.",
-   "225 degrees is 180 degrees plus 45 degrees. That is South, plus 45 degrees towards West.",
-   "The direction is South-West."
+   "Turning clockwise from North, each quarter turn is 90 degrees: first to East, then to South, then to West.",
+   "Two quarter turns are 90 degrees plus 90 degrees, which is 180 degrees, and that brings him round to South.",
+   "He still has 225 degrees minus 180 degrees, which is 45 degrees, to turn.",
+   "45 degrees is half of a quarter turn, so he stops halfway between South and West. He is now facing South-West."
   ]
  },
  "Q_CH19_003_V08": {

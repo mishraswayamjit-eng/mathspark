@@ -376,13 +376,16 @@ A("Q_CH16_021",
               "One number breaks the pattern. Look at the jumps"), {
       0: number_line(2, 37, 1, "none", [{"at": v, "label": str(v)} for v in (2, 5, 10, 17, 28, 37)],
                      [{"from": a, "to": b, "label": "+%d" % (b - a)} for a, b in zip((2, 5, 10, 17, 28), (5, 10, 17, 28, 37))],
-                     "The jumps are 3, 5, 7, 11, 9. The last two are out of order", ["h3", "h4"]),
-      1: number_line(2, 37, 1, "none", [{"at": v, "label": str(v)} for v in (2, 5, 10, 17, 26, 37)],
-                     [{"from": a, "to": b, "label": "+%d" % (b - a)} for a, b in zip((2, 5, 10, 17, 26), (5, 10, 17, 26, 37))],
-                     "With jumps of 3, 5, 7, 9, 11 the pattern would be 2, 5, 10, 17, 26, 37", ["p4"]),
-      2: number_line(2, 37, 1, "none", [{"at": v, "label": str(v)} for v in (2, 5, 10, 17, 28, 37)],
+                     "The gaps between neighbours are 3, 5, 7, 11 and 9"),
+      1: number_line(2, 37, 1, "none", [{"at": v, "label": str(v)} for v in (2, 5, 10, 17, 28, 37)],
                      [{"from": a, "to": b, "label": "+%d" % (b - a)} for a, b in zip((2, 5, 10, 17, 28), (5, 10, 17, 28, 37))],
-                     "28 is the one that does not belong. 26 would fit", ["p4"]),
+                     "After 3, 5, 7 the gaps should be 9 and then 11, not 11 and then 9", ["h3", "h4"]),
+      2: number_line(2, 37, 1, "none", [{"at": v, "label": str(v)} for v in (2, 5, 10, 17, 26, 37)],
+                     [{"from": a, "to": b, "label": "+%d" % (b - a)} for a, b in zip((2, 5, 10, 17, 26), (5, 10, 17, 26, 37))],
+                     "With 26 in that place: 17 + 9 = 26, and 26 + 11 = 37", ["p4"]),
+      3: number_line(2, 37, 1, "none", [{"at": v, "label": str(v)} for v in (2, 5, 10, 17, 28, 37)],
+                     [{"from": a, "to": b, "label": "+%d" % (b - a)} for a, b in zip((2, 5, 10, 17, 28), (5, 10, 17, 28, 37))],
+                     "28 is the number that does not belong", ["p4"]),
   })
 
 

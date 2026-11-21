@@ -3029,7 +3029,7 @@
    {
     "kind": "circle",
     "radius": "r",
-    "note": "All points at the same distance r from one point",
+    "note": "Every point on the circle is the same distance from the middle",
     "highlight": [
      "edge"
     ]
@@ -3037,7 +3037,15 @@
    {
     "kind": "circle",
     "radius": "r",
-    "note": "The fixed point in the middle is the centre"
+    "note": "The compass point stays here while the pencil goes round",
+    "highlight": [
+     "radius"
+    ]
+   },
+   {
+    "kind": "circle",
+    "radius": "r",
+    "note": "The fixed point in the middle is called the centre"
    }
   ]
  },
@@ -3735,7 +3743,16 @@
    {
     "kind": "circle",
     "diameter": "28 cm",
-    "note": "One turn = 22/7 × 28 = 88 cm",
+    "note": "One rotation = circumference = π × diameter",
+    "highlight": [
+     "edge",
+     "diameter"
+    ]
+   },
+   {
+    "kind": "circle",
+    "diameter": "28 cm",
+    "note": "22/7 × 28 = 22 × 4 = 88 cm",
     "highlight": [
      "edge"
     ]
@@ -3774,9 +3791,47 @@
       "brace": "440 cm"
      }
     ],
-    "note": "440 ÷ 88 = 5 turns"
+    "note": "Lots of 88 cm in 440 cm: 440 ÷ 88 = 5"
    },
-   null
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "88 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "88 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "88 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "88 cm",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "88 cm",
+        "tone": "a"
+       }
+      ],
+      "brace": "440 cm"
+     }
+    ],
+    "note": "5 complete rotations",
+    "highlight": [
+     "b0"
+    ]
+   }
   ]
  },
  "Q_CH21_017": {

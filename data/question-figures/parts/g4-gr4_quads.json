@@ -8769,6 +8769,15 @@
     "kind": "rectangle",
     "length": "2m + 5n",
     "breadth": "m − 3n",
+    "note": "Perimeter = 2 × (length + breadth)",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "2m + 5n",
+    "breadth": "m − 3n",
     "note": "(2m + 5n) + (m − 3n) = 3m + 2n",
     "highlight": [
      "length",
@@ -8779,7 +8788,16 @@
     "kind": "rectangle",
     "length": "2m + 5n",
     "breadth": "m − 3n",
-    "note": "2 × (3m + 2n) = 6m + 4n",
+    "note": "Double both parts: 2 × 3m = 6m and 2 × 2n = 4n",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "2m + 5n",
+    "breadth": "m − 3n",
+    "note": "Perimeter = 6m + 4n",
     "highlight": [
      "border"
     ]
@@ -8812,7 +8830,17 @@
     "length": "(3a − 5) cm",
     "breadth": "(a + 5) cm",
     "proportion": 1.0,
-    "note": "2 × 4a = 8a = 40",
+    "note": "Two lengths and two breadths: twice 4a is 8a",
+    "highlight": [
+     "border"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "(3a − 5) cm",
+    "breadth": "(a + 5) cm",
+    "proportion": 1.0,
+    "note": "8 × a = 40, so a = 40 ÷ 8 = 5",
     "highlight": [
      "border"
     ]
@@ -8822,7 +8850,7 @@
     "length": "10 cm",
     "breadth": "10 cm",
     "proportion": 1.0,
-    "note": "a = 5 makes both sides 10 cm"
+    "note": "Check: 2 × (10 + 10) = 40 cm"
    }
   ]
  },
@@ -9317,11 +9345,11 @@
     "kind": "triangle",
     "shape": "equilateral",
     "sides": {
-     "ab": "s",
-     "bc": "s",
-     "ca": "s"
+     "ab": "?",
+     "bc": "?",
+     "ca": "?"
     },
-    "note": "Triangle: 3 × s = 24",
+    "note": "The triangle has the same perimeter, 24 cm",
     "highlight": [
      "ab",
      "bc",
@@ -9332,11 +9360,24 @@
     "kind": "triangle",
     "shape": "equilateral",
     "sides": {
+     "ab": "24 ÷ 3 cm",
+     "bc": "?",
+     "ca": "?"
+    },
+    "note": "Three equal sides share the 24 cm",
+    "highlight": [
+     "ab"
+    ]
+   },
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
      "ab": "8 cm",
      "bc": "8 cm",
      "ca": "8 cm"
     },
-    "note": "s = 24 ÷ 3 = 8 cm"
+    "note": "The side of the triangle is 8 cm"
    }
   ]
  },
@@ -10020,6 +10061,68 @@
       6
      ]
     ],
+    "note": "An axis of symmetry is a fold line where the two halves match"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      0
+     ],
+     [
+      10,
+      6
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      2,
+      6
+     ]
+    ],
+    "edges": [
+     "s",
+     "s",
+     "s",
+     "s"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     }
+    ],
+    "note": "Fold along the line joining two opposite corners: halves match"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      6,
+      0
+     ],
+     [
+      10,
+      6
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      2,
+      6
+     ]
+    ],
+    "edges": [
+     "s",
+     "s",
+     "s",
+     "s"
+    ],
     "dashed": [
      {
       "from": 0,
@@ -10030,7 +10133,7 @@
       "to": 3
      }
     ],
-    "note": "A rhombus folds onto itself in 2 ways"
+    "note": "It works for both pairs of opposite corners"
    },
    {
     "kind": "polygon",
@@ -10062,7 +10165,7 @@
       "to": 3
      }
     ],
-    "note": "The fold lines are its two diagonals"
+    "note": "The axes of symmetry are the two diagonals"
    }
   ]
  },
@@ -11063,7 +11166,7 @@
       "to": 3
      }
     ],
-    "note": "Like a rectangle: AC and BD are equal"
+    "note": "The two diagonals, AC and BD, are the same length"
    },
    {
     "kind": "polygon",
@@ -11101,9 +11204,84 @@
       "to": 3
      }
     ],
-    "note": "Like a rhombus: they cut each other in half at 90°"
+    "note": "They cross at the centre and cut each other in half"
    },
-   null
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "corners": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "Four equal angles where they cross: 360° ÷ 4 = 90°"
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      0,
+      8
+     ]
+    ],
+    "corners": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "Equal, and they bisect each other at right angles"
+   }
   ]
  },
  "Q_CH20_025_V03": {

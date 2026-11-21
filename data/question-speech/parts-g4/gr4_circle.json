@@ -967,13 +967,14 @@
    "Chord"
   ],
   "hints": [
-   "All points on a circle are the same distance from one special point.",
-   "This fixed point in the middle is called the centre.",
-   "The centre is not on the circle, it's inside it!"
+   "This is about the parts of a circle. Equidistant means the same distance away, so think about which part of a circle is a single point.",
+   "Imagine drawing a circle with a compass. The pencil goes round, but the sharp point stays fixed in one place. What is that place called?",
+   "Here is a similar one: what do we call the distance from that fixed point to any point on the circle? It is the same all the way round, and it is called the radius."
   ],
   "steps": [
-   "A circle is defined by its centre and radius.",
-   "The fixed point is the centre."
+   "Every point on a circle is the same distance from one fixed point in the middle.",
+   "That fixed point is where the compass point stays while the pencil draws the circle.",
+   "The fixed point is called the centre."
   ]
  },
  "Q_CH21_003": {
@@ -1338,14 +1339,15 @@
    "5"
   ],
   "hints": [
-   "1 rotation equals 1 circumference, which is pi d, which is 22 over 7 times 28.",
-   "28 divided by 7 equals 4. C equals 22 times 4, which is 88 centimetres per rotation.",
-   "Rotations equals 440 divided by 88, which is 5."
+   "In one full rotation a wheel rolls forward by the distance around its rim, which is its circumference. So find that distance first, then see how many of them fit into the whole journey.",
+   "The circumference of a circle is pi times the diameter. Work out 22 over 7 times 28 to find how far the wheel rolls in one rotation.",
+   "Here is a similar one: a wheel has diameter 14 centimetres and rolls 308 centimetres. One rotation covers 22 over 7 times 14, which is 44 centimetres. Then 308 divided by 44 equals 7, so the wheel makes 7 complete rotations."
   ],
   "steps": [
-   "C equals pi d, which is 22 over 7 times 28, which is 88 centimetres",
-   "Rotations equals 440 divided by 88, which is 5",
-   "5 complete rotations"
+   "In one rotation the wheel rolls a distance equal to its circumference, which is pi times the diameter.",
+   "The circumference is 22 over 7 times 28. Since 28 divided by 7 equals 4, this is 22 times 4, which is 88 centimetres.",
+   "Now find how many lots of 88 centimetres fit into 440 centimetres: 440 divided by 88 equals 5.",
+   "The wheel makes 5 complete rotations."
   ]
  },
  "Q_CH21_016": {

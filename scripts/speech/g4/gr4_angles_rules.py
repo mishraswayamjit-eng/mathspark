@@ -11,7 +11,7 @@ import common
 _TERM = r"(?:\d[\d.]*½?x?°?|x°?)"
 _EXPR = _TERM + r"(?:\s*[+−×÷]\s*" + _TERM + r")*"
 # After these words a sum is being described, so its result reads ", which is".
-_WHICH = {"is", "are", "be", "turns", "turned", "leave", "make", "makes", "share", "has", "give", "gives", "it's", "of", "than", "to", "area"}
+_WHICH = {"is", "are", "be", "turns", "turned", "leave", "make", "makes", "share", "has", "give", "gives", "it's", "of", "than", "to", "area", "each"}
 # After the result of such a sum, these words carry the sentence on, so a comma closes the aside.
 _JOIN = "and|so|to|from|with|in|each|more|past|for|before|after|plus|too|on|at|or|but|equally"
 
@@ -46,7 +46,7 @@ def _equals(s):
         inside = m and m.group(1).lower() in _WHICH and re.search(r"\d", m.group(0).split(None, 1)[1])
         if inside and re.search(r"\bwhich is\s+" + "(?:" + _EXPR + ")$", before):
             inside = False      # "which is 4 × 30° = 120°": one "which is" is enough
-        if re.search(r"°,?\s+and\s+(?:" + _EXPR + ")$", before):
+        if re.search(r"\d°,\s+\d[\d.]*°\s+and\s+(?:" + _EXPR + ")$", before):
             inside = True       # the last of a list of angles: "40°, 40° and 180 − 40 − 40 = 100°"
         if chain or inside:
             # Close the aside with a comma: after the unit if there is one, or before a joining word.

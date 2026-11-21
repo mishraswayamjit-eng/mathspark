@@ -579,8 +579,9 @@ put("Q_CH14_018",
 
 put("Q_CH14_019",
     bm(B("", [Uq(9)] * 7, brace="63"), note="Seven equal pieces make 63"),
-    {0: bm(B("", [S("n", 9, "unknown")] * 7, brace="63"), note="7n = 63"),
-     1: bm(B("", [V(9)] * 7, brace="63"), note="63 ÷ 7 = 9")})
+    {0: bm(B("", [Uq(9)] * 7, brace="63"), hl=["b0"], note="7 × the number = 63"),
+     1: bm(B("", [V(9)] * 7, brace="63"), note="Dividing undoes multiplying: 63 ÷ 7 = 9"),
+     2: bm(B("", [V(9)] * 7, brace="63"), hl=["b0"], note="Check: 7 × 9 = 63, so the number is 9")})
 
 put("Q_CH14_020",
     bm(B("Three times", [Uq(7)] * 3), B("", V(16, tone="b"), V(5, tone="c")), note="Three times a number, decreased by 5, is 16"),

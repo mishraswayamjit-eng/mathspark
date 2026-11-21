@@ -77,31 +77,13 @@ HAND = {
     "PYQ_2019_Q19": {
         "q": "If the decimal fraction 0.0357 is multiplied by 100, what will the answer be?",
     },
-    # Hand-crafted chapter questions whose help was NOT rewritten
-    "Q_CH11_001": {
-        "h2": "Example: 45.3 divided by 10 equals 4.53. The decimal moved 1 place left. Now try 12.5 divided by 10.",
-    },
-    "Q_CH11_002": {
-        "h2": "Example: 34.5 divided by 100 equals 0.345. That is 2 places left. Now try with 12.5.",
-    },
+    # Questions only (hints and steps rewritten, in the first round or the redo round)
     "Q_CH11_013": {
         "q": "Which is the greatest: 0.5, 0.05, 0.55 or 0.505?",
-        "h2": "Comparing: 0.550 is greater than 0.505, which is greater than 0.500, which is greater than 0.050. The greatest is 0.550, which is 0.55.",
-        "s1": "Compare the tenths place first: all have 0 or 5.",
-    },
-    "Q_CH11_020": {
-        "s0": "Identify each digit's place value.",
-        "s1": "The digit 8 is the second digit after the decimal point. The 2nd place after the decimal is the hundredths.",
     },
     "Q_CH11_024": {
         "q": "Arrange in ascending order: 3.3, 3.03, 3.303 and 3.33.",
-        "h0": "Make all the decimals the same length: 3.300, 3.030, 3.303 and 3.330.",
-        "h2": "So the ascending order is: 3.03, 3.3, 3.303, 3.33.",
-        "s0": "Equalize the decimal places. 3.300, 3.030, 3.303, 3.330.",
-        "s1": "Compare digit by digit from the left. 3.030 is less than 3.300, which is less than 3.303, which is less than 3.330.",
-        "s2": "The ascending order is: 3.03, 3.3, 3.303, 3.33.",
     },
-    # Questions only (hints and steps rewritten)
     "Q_CH11_025": {
         "q": "What is the product 0.25 times 0.4, times 0.8?",
     },

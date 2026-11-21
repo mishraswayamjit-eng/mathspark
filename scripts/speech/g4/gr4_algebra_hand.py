@@ -61,16 +61,6 @@ HAND = {
     },
 
     # ── Hand-written chapter questions with notes-style hints and steps ───────────────
-    "Q_CH13_001": {
-        "hints": {0: "Replace A with its value. A equals 3, so A plus 4 becomes what?"},
-    },
-    "Q_CH13_004": {
-        "hints": {0: "The whole expression, A plus 12, is divided by 3. First calculate A plus 12."},
-    },
-    "Q_CH13_018": {
-        "hints": {0: "The pencil is x rupees. The pen costs thrice that, so 3 times x, which is 3 x."},
-        "steps": {0: "The pencil is x rupees. The pen is 3 times x, which is 3 x rupees."},
-    },
     "Q_CH13_019": {
         "options": {3: "x y metres"},
     },

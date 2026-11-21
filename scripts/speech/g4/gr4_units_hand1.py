@@ -51,30 +51,10 @@ HAND = {
     "G4A_UNITS_045": {
         "h2": "A similar problem: a crayon 8 centimetres long and a chalk 6 centimetres long, end to end, make a line 8 plus 6, which is 14 centimetres long.",
     },
-    # Hand-crafted chapter questions, whose hints and steps are written as terse notes
-    # (no hint or step line is kept here for the questions in data/bank-import/g4/renarrate.json:
-    #  their help was rewritten, and the rules read the new sentences)
-    "Q_CH12_001": {
-        "s0": "Perimeter is the total length around a shape.",
-        "s1": "Litre is for capacity or volume, kilogram is for mass or weight, and metre is for length.",
-    },
+    # Hand-crafted chapter questions: question lines only. Their hints and steps were rewritten
+    # in the bank (first round or redo round), and no old hand line for them is kept.
     "Q_CH12_003": {
         "q": "How do we convert decametre to decimetre?",
-    },
-    "Q_CH12_004": {
-        "h1": "Centi means 1 over 100. So a centilitre is 1 over 100 of a litre!",
-        "h2": "1 centilitre equals 1 over 100 of a litre. That's the 1 over 100 relationship.",
-        "s1": "Check each: a metre is 1 over 1000 of a kilometre, not 1 over 100. A gram is 1 over 10 of a decagram, not 1 over 100. A kilogram is 1 over 1000 of a tonne, not 1 over 100.",
-        "s2": "A centilitre is 1 over 100 of a litre. Centi literally means hundredth!",
-    },
-    "Q_CH12_007": {
-        "s1": "0.3 score is 0.3 times 20. And 0.3 times 20 is 6.",
-    },
-    "Q_CH12_008": {
-        "h1": "We need to know how many gross equal 1 dozen. We know that 1 gross equals 12 dozens.",
-        "h2": "1 dozen equals 1 over 12 of a gross.",
-        "s1": "So 1 dozen equals 1 over 12 of a gross.",
-        "s2": "1 over 12 of a gross makes a dozen.",
     },
     "Q_CH12_009": {
         "q": "4 kilometres, plus 40 metres, plus 400 centimetres, equals how many metres?",

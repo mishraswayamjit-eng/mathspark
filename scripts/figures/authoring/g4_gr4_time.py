@@ -117,16 +117,18 @@ yearline("Q_CH17_003", 1, 1, 2024, {
 }, ask=True, target=2024, note="1st January, one year on")
 
 yearline("Q_CH17_004", 1, 1, 2025, {
-    0: (2024, "2024 is a leap year: 366 days"),
-    1: (2025, "2 extra days: Monday + 2 = Wednesday"),
-    2: (2025, "1st January 2025 is a Wednesday"),
+    0: (2024, "2024 is a leap year, so it has 366 days"),
+    1: (2024, "366 days are 52 weeks and 2 days left over"),
+    2: (2025, "The 2 extra days move Monday on to Tuesday, then Wednesday"),
+    3: (2025, "1st January 2025 was a Wednesday"),
 }, ask=True, target=2025, note="1st January, one year on")
 
 yearline("Q_CH17_005", 1, 26, 1997, {
-    0: (1993, "From 1993 to 1997 is 4 years"),
-    1: (1997, "Odd days: 1 + 1 + 1 + 2 = 5", True),
-    2: (1997, "Tuesday + 5 days = Sunday"),
-    3: (1997, "Republic Day 1997 was a Sunday"),
+    0: (1993, "From 1993 to 1997 there are 4 jumps of one year"),
+    1: (1996, "The jumps to 1994, 1995 and 1996 each move the day on by 1"),
+    2: (1997, "The jump past 29th February 1996 moves the day on by 2", True),
+    3: (1997, "Altogether the day moves on by 5 days", True),
+    4: (1997, "Five days after Tuesday is Sunday"),
 }, ask=True, target=1997, note="Republic Day, four years on")
 
 yearline("Q_CH17_006", 1, 26, 2008, {
@@ -291,9 +293,10 @@ if total_is("Q_CH17_009", parts):
     S = named(parts)
     P.put("Q_CH17_009",
           strip(S, brace="2 Oct (Wed) → 14 Nov (?)", note="Count the days from Gandhi Jayanti to Children's Day"),
-          {0: strip(S, note="29 days left in October + 14 in November = 43 days"),
-           1: strip(S, note="43 days = 6 weeks + 1 day"),
-           2: strip(S, brace="2 Oct Wed → 14 Nov Thu", note="Wednesday + 1 = Thursday")},
+          {0: strip(S, hl=["b0s0"], note="October has 31 days: 29 days are left after 2nd October"),
+           1: strip(S, hl=["b0s1"], note="Add the 14 days of November"),
+           2: strip(S, note="43 days are 6 weeks and 1 day left over"),
+           3: strip(S, brace="2 Oct Wed → 14 Nov Thu", note="One day after Wednesday is Thursday")},
           origin="rule")
 
 # 26 Jan 2020 (Sunday) to 15 Aug
@@ -302,18 +305,20 @@ if total_is("Q_CH17_010", parts):
     S = named(parts, full=False)
     P.put("Q_CH17_010",
           strip(S, brace="26 Jan (Sun)→15 Aug (?)", note="The year is 2020"),
-          {0: strip(S, note="Days: 5 + 29 + 31 + 30 + 31 + 30 + 31 + 15"),
-           1: strip(S, note="Total = 202 days"),
-           2: strip(S, brace="26 Jan Sun → 15 Aug Sat", note="Sunday + 6 = Saturday")},
+          {0: strip(S, hl=["b0s0", "b0s1"], note="5 days left in January. 2020 is a leap year: February has 29"),
+           1: strip(S, hl=["b0"], note="Add the days month by month up to 15th August"),
+           2: strip(S, note="202 days are 28 weeks and 6 days left over"),
+           3: strip(S, brace="26 Jan Sun → 15 Aug Sat", note="Six days after Sunday is Saturday")},
           origin="rule")
 
 # World Cup: 17th March (Wednesday), final on the second Sunday in May
 S = [("March", days_in(3) - 17), ("April", days_in(4)), ("May", 14)]
 P.put("Q_CH17_015",
       strip(S, brace="17 March (Wed) → May", note="The final is on the second Sunday in May"),
-      {0: strip(S, note="Mar(14) + Apr(30) + May(1) = 45 days to 1 May"),
-       1: strip(S, note="45 ÷ 7 = 6 R 3. Wednesday + 3 = Saturday, so 1 May is a Saturday"),
-       2: T([["Sat", "Sun", "Sun"]], headers=["1 May", "2 May", "9 May"], note="The second Sunday is the 9th of May")})
+      {0: strip(S, hl=["b0s0", "b0s1"], note="14 days left in March, 30 in April: 1st May is 45 days on"),
+       1: strip(S, hl=["b0s2"], note="45 days are 6 weeks and 3 days: 1st May is a Saturday"),
+       2: T([["Sat", "Sun"]], headers=["1 May", "2 May"], note="The first Sunday of May is the next day, 2nd May"),
+       3: T([["Sat", "Sun", "Sun"]], headers=["1 May", "2 May", "9 May"], hl=["r0"], note="The second Sunday is 7 days later: 9th May")})
 
 # 1 Jan 2019 (Tuesday) to 25 Dec
 parts = span("Q_CH17_017", year=2019, count_first=False)
@@ -321,18 +326,20 @@ if total_is("Q_CH17_017", parts):
     S = named(parts, full=False)
     P.put("Q_CH17_017",
           strip(S, brace="1 Jan (Tue) → 25 Dec (?)", note="The year is 2019"),
-          {0: strip(S, note="2019 is not a leap year. Count the days month by month"),
-           1: strip(S, note="358 days = 51 weeks and 1 day"),
-           2: strip(S, brace="1 Jan Tue → 25 Dec Wed", note="Tuesday + 1 = Wednesday")},
+          {0: strip(S, hl=["b0s0", "b0s1"], note="2019 is an ordinary year: February has 28 days. January has 30 left"),
+           1: strip(S, hl=["b0"], note="Add February to November and the 25 days of December"),
+           2: strip(S, note="358 days are 51 weeks and 1 day left over"),
+           3: strip(S, brace="1 Jan Tue → 25 Dec Wed", note="One day after Tuesday is Wednesday")},
           origin="rule")
 
 # Teachers' Day (5 Sep 2016, Monday) to Christmas
 S = [("Sep", days_in(9) - 5), ("Oct", days_in(10)), ("Nov", days_in(11)), ("Dec", 25)]
 P.put("Q_CH17_021",
       strip(S, brace="5 Sep (Mon) → Christmas", note="Count the days from Teachers' Day to Christmas"),
-      {0: strip(S, note="Sep(25) + Oct(31) + Nov(30) + Dec(25) = 111 days"),
-       1: strip(S, note="111 ÷ 7 = 15 R 6"),
-       2: strip(S, brace="5 Sep Mon → 25 Dec Sun", note="Monday + 6 = Sunday")})
+      {0: strip(S, hl=["b0s0"], note="Christmas is 25th December. 25 days are left in September"),
+       1: strip(S, hl=["b0s1", "b0s2", "b0s3"], note="Add October, November and the 25 days of December"),
+       2: strip(S, note="111 days are 15 weeks and 6 days left over"),
+       3: strip(S, brace="5 Sep Mon → 25 Dec Sun", note="Six days after Monday is Sunday")})
 
 # All Fool's Day 2017 (Saturday) to Teachers' Day. The dates are part of what is asked, so no figure before.
 S = [("Apr", 29), ("May", 31), ("Jun", 30), ("Jul", 31), ("Aug", 31), ("Sep", 5)]
@@ -412,13 +419,19 @@ P.put("G4A_TIME_014",
 P.put("Q_CH17_007",
       T([["14 Feb 1992", "Friday"], ["13 Feb 1993", "?"]], headers=["Date", "Day"]),
       {0: T([["14 Feb 1992", "Friday"], ["14 Feb 1993", "?"], ["13 Feb 1993", "?"]], headers=["Date", "Day"], hl=["r0", "r1"],
-            note="1992 is a leap year: 366 days from 14 Feb 1992 to 14 Feb 1993"),
+            note="One full year on crosses 29th February 1992, so it is 366 days"),
        1: T([["14 Feb 1992", "Friday"], ["14 Feb 1993", "Sunday"], ["13 Feb 1993", "?"]], headers=["Date", "Day"], hl=["r1"],
-            note="Friday + 2 = Sunday"),
+            note="366 days are 52 weeks and 2 days. Two days after Friday is Sunday"),
        2: T([["14 Feb 1992", "Friday"], ["14 Feb 1993", "Sunday"], ["13 Feb 1993", "Saturday"]], headers=["Date", "Day"], hl=["r2"],
             note="One day before Sunday is Saturday"),
        3: T([["14 Feb 1992", "Friday"], ["14 Feb 1993", "Sunday"], ["13 Feb 1993", "Saturday"]], headers=["Date", "Day"], hl=["r2"],
-            note="13 Feb 1993 was a Saturday")})
+            note="13th February 1993 fell on a Saturday")})
+
+# A normal year: 52 full weeks and what is left over (no figure before: the bar would give the answer away)
+P.put("Q_CH17_024", None,
+      {0: BM([(None, [(1, "1 week = 7 days")], None)], note="A normal year has 365 days, and a week has 7 days"),
+       1: BM([(None, [(12, "52 full weeks"), (1.5, "?")], "365 days")], hl=["b0s0"], note="52 full weeks make 364 days"),
+       2: BM([(None, [(12, "52 full weeks"), (1.5, "1 day", "b")], "365 days")], hl=["b0s1"], note="That leaves 1 day over: 1 odd day")})
 
 P.put("EXT_G4_WS2_CH17_008",
       NL(1990, 2004, 1, ticks="ends", note="Leap years between 1990 and 2004 = ?"),

@@ -98,12 +98,19 @@ def authored(Q):
         {0: pc("11.11", note="11 whole kilograms and 0.11 kg more", hl=["d2", "d3"])})
     add("Q_CH12_006", pc("37.02", note="37.02 kg"),
         {0: pc("37.02", note="37 whole kilograms and 0.02 kg more", hl=["d2", "d3"])})
-    add("Q_CH12_018", pc("2.5", note="2.5 kg"),
-        {0: pc("2.5", note="2 whole kilograms and 0.5 kg more", hl=["d1"])})
-    add("Q_CH12_019", pc("2.05", note="2.05 litres"),
-        {0: pc("2.05", note="2 whole litres and 0.05 l more", hl=["d1", "d2"])})
-    add("Q_CH12_020", pc("2.05", note="2.05 metres"),
-        {0: pc("2.05", note="2 whole metres and 0.05 m more", hl=["d1", "d2"])})
+    # Split a decimal measure into the whole unit and the small unit (steps rewritten Nov 2026:
+    # split, then multiply the part after the point, then state the answer).
+    def split_measure(qid, number, whole, part, big, small, times, small_amount, digits, name):
+        head = ["Part", "In %s and %s" % (big, small)]
+        add(qid, pc(number, note="%s %s" % (number, name)),
+            {0: pc(number, note="%s whole %s and %s %s more" % (whole, name, part, big), hl=digits),
+             1: table([["%s %s" % (whole, big), "%s %s" % (whole, big)], ["%s %s" % (part, big), "? %s" % small]], headers=head,
+                      note="1 %s is %d %s, so multiply %s by %d" % (big, times, small, part, times), hl=["r1"]),
+             2: table([["%s %s" % (whole, big), "%s %s" % (whole, big)], ["%s %s" % (part, big), "%s %s" % (small_amount, small)]],
+                      headers=head, note="%s %s = %s %s %s %s" % (number, big, whole, big, small_amount, small), hl=["r1"])})
+    split_measure("Q_CH12_018", "2.5", "2", "0.5", "kg", "g", 1000, "500", ["d1"], "kilograms")
+    split_measure("Q_CH12_019", "2.05", "2", "0.05", "l", "ml", 1000, "50", ["d1", "d2"], "litres")
+    split_measure("Q_CH12_020", "2.05", "2", "0.05", "m", "cm", 100, "5", ["d1", "d2"], "metres")
 
     # ── Lengths joined together ─────────────────────────────────────────────
     def three_lengths(first, second, brace, note=None, hl=None):
@@ -388,11 +395,25 @@ def authored(Q):
     add("G4A_UNITS_046", setf(36, item="bananas", note="How many dozen is this?"),
         {0: setf(36, item="bananas", note="One dozen is 12 bananas"),
          1: setf(36, groups=3, item="bananas", note="36 ÷ 12 = 3 groups of a dozen")})
+    # The next four follow the steps as rewritten in Nov 2026.
     add("Q_CH12_007", None,
-        {0: fb([(10, 10, "1 score = 20")], note="Each tenth of a score is 2 articles"),
-         1: fb([(10, 3, "1 score = 20")], note="0.3 score is 3 tenths of a score", hl=["b0"]),
-         2: fb([(10, 3, "1 score = 20")], note="0.3 score = 6 articles", hl=["b0"])})
-    add("Q_CH12_005", None, {2: fb([(8, 1, "1 litre")], note="125 ml is 1 of the 8 equal parts of a litre")})
+        {0: setf(20, item="articles", note="1 score is 20 articles"),
+         1: setf(20, groups=10, shaded=1, item="articles", note="Ten equal groups: one tenth of 20 is 2", hl=["shaded"]),
+         2: setf(20, groups=10, shaded=3, item="articles", note="Three tenths are 3 × 2 = 6 articles", hl=["shaded"])})
+    add("Q_CH12_005", None,
+        {1: fb([(8, 1, "1 litre = 1000 ml")], note="125 ml goes into 1000 ml exactly 8 times"),
+         2: fb([(8, 1, "1 litre")], note="125 ml is 1 of the 8 equal parts, so it is 1/8 l", hl=["b0"])})
+    add("Q_CH12_008", None,
+        {0: fb([(12, 12, "1 gross")], note="1 gross is 12 dozens: each piece is one dozen"),
+         1: fb([(12, 1, "1 gross")], note="One dozen is 1 of the 12 equal parts of a gross", hl=["b0"]),
+         2: fb([(12, 1, "1 gross")], note="So 1/12 of a gross makes a dozen", hl=["b0"])})
+    head = ["Pair", "How far apart"]
+    pairs = [["kilogram & tonne", "1000 times"], ["metre & kilometre", "1000 times"], ["gram & decagram", "10 times"],
+             ["centilitre & litre", "100 times"]]
+    add("Q_CH12_004", None,
+        {1: table(pairs[:2], headers=head, note="1 tonne is 1000 kg and 1 km is 1000 m"),
+         2: table(pairs[:3], headers=head, note="1 decagram is 10 grams", hl=["r2"]),
+         3: table(pairs, headers=head, note="1 litre is 100 centilitres", hl=["r3"])})
     return out
 
 

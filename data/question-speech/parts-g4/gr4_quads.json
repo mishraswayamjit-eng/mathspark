@@ -1738,13 +1738,15 @@
    "6 m plus 2 n"
   ],
   "hints": [
-   "P equals 2 times, L plus B. First find L plus B.",
-   "L plus B equals, 2 m plus 5 n, plus, m minus 3 n, which is 3 m plus 2 n",
-   "P equals 2 times, 3 m plus 2 n, which is 6 m plus 4 n"
+   "The perimeter of a rectangle is the distance all the way round it: two lengths and two breadths. Here the sides are written with letters, so add like terms together, m with m and n with n.",
+   "First add the length and the breadth: 2 m plus 5 n, plus, m minus 3 n. Collect the m terms, then the n terms, taking care with the minus sign.",
+   "Here is a similar one: a rectangle has length, 3 p plus 4 q, and breadth, p minus q. For length plus breadth, 3 p plus p equals 4 p and 4 q minus q equals 3 q, which gives 4 p plus 3 q. The perimeter is twice this, 8 p plus 6 q."
   ],
   "steps": [
-   "L plus B equals, 2 m plus 5 n, plus, m minus 3 n, which is 3 m plus 2 n. 2 m plus m equals 3 m. 5 n minus 3 n equals 2 n.",
-   "P equals 2 times, 3 m plus 2 n, which is 6 m plus 4 n"
+   "The perimeter is twice the sum of the length and the breadth.",
+   "Add the m terms: 2 m plus m equals 3 m. Add the n terms: 5 n minus 3 n equals 2 n. So length plus breadth is 3 m plus 2 n.",
+   "Double both parts: 2 times 3 m equals 6 m and 2 times 2 n equals 4 n. 2 times, 3 m plus 2 n, equals 6 m plus 4 n.",
+   "The perimeter is 6 m plus 4 n."
   ]
  },
  "Q_CH20_010": {
@@ -1756,14 +1758,15 @@
    "10"
   ],
   "hints": [
-   "P equals 2 times, L plus B. So 40 equals 2 times, open bracket, 3 a minus 5, plus a plus 5, close bracket.",
-   "40 equals 2 times 4 a. So 40 equals 8 a.",
-   "A equals 40 divided by 8, which is 5."
+   "The perimeter is twice the sum of the length and the breadth. Write that sum using a, and then see what a must be to make the perimeter 40 centimetres.",
+   "Add the length and the breadth: 3 a minus 5, plus, a plus 5. Notice what happens to the minus 5 and the plus 5.",
+   "Here is a similar one: the sides are, 2 b minus 3, centimetres and, b plus 3, centimetres and the perimeter is 36 centimetres. Length plus breadth is 3 b, because minus 3 and plus 3 cancel. The perimeter is twice that, 6 b, so 6 times b equals 36 and b equals 36 divided by 6, which is 6."
   ],
   "steps": [
-   "L plus B equals, 3 a minus 5, plus, a plus 5, which is 4 a. 3 a plus a equals 4 a. Minus 5 plus 5 equals 0.",
-   "P equals 2 times, 4 a, which is 8 a, which is 40",
-   "A equals 5. L equals 3 times 5 minus 5, which is 10 centimetres. B equals 5 plus 5, which is 10 centimetres."
+   "Add the length and the breadth. 3 a plus a equals 4 a, and the minus 5 and plus 5 cancel each other, so the sum is 4 a.",
+   "The perimeter is two lengths and two breadths, so it is twice 4 a, which is 8 a. Take care not to stop at 4 a. 2 times 4 a equals 8 a.",
+   "The perimeter is 40 centimetres, so 8 times a equals 40. That gives a equals 40 divided by 8, which is 5.",
+   "Check: the length is 3 times 5 minus 5, which is 10 centimetres and the breadth is 5 plus 5, which is 10 centimetres, and 2 times, 10 plus 10, equals 40 centimetres. So a is 5."
   ]
  },
  "Q_CH20_011": {
@@ -1857,14 +1860,15 @@
    "2 centimetres"
   ],
   "hints": [
-   "Square perimeter equals 4 times 6, which is 24 centimetres. The triangle perimeter is the same, 24 centimetres.",
-   "Equilateral triangle: P equals 3 times side. So 3 times side equals 24.",
-   "Side equals 24 divided by 3, which is 8 centimetres."
+   "Two shapes have the same perimeter here. Find the perimeter of the shape you know everything about, then use it for the other shape.",
+   "A square has four equal sides. Work out the perimeter of the square with side 6 centimetres first.",
+   "Here is a similar one: an equilateral triangle has the same perimeter as a square of side 9 centimetres. The square's perimeter is 4 times 9, which is 36 centimetres. The triangle has three equal sides, so each side is 36 divided by 3, which is 12 centimetres."
   ],
   "steps": [
-   "Square P equals 4 times 6, which is 24 centimetres",
-   "Triangle P equals 3 s, which is 24",
-   "S equals 24 divided by 3, which is 8 centimetres"
+   "The square has four equal sides of 6 centimetres, so its perimeter is 4 times 6, which is 24 centimetres.",
+   "The triangle has the same perimeter, 24 centimetres.",
+   "An equilateral triangle has three equal sides, so each side is 24 divided by 3, which is 8.",
+   "The side of the triangle is 8 centimetres."
   ]
  },
  "Q_CH20_014_V05": {
@@ -1993,13 +1997,15 @@
    "The sides"
   ],
   "hints": [
-   "A rhombus has 2 axes of symmetry. What are they?",
-   "If you fold a rhombus along either diagonal, both halves match perfectly.",
-   "The diagonals are the axes of symmetry."
+   "An axis of symmetry is a fold line. When you fold the shape along it, the two halves lie exactly on top of each other.",
+   "Picture a rhombus, a shape like a diamond with four equal sides. Imagine folding it from one corner to the opposite corner. Do the two halves match?",
+   "Here is a similar one: what are the axes of symmetry of a rectangle? Folding it along a diagonal does not make the halves match. Folding it along the line joining the middles of two opposite sides does. So a rectangle's axes of symmetry are the two lines through the middles of opposite sides."
   ],
   "steps": [
-   "A rhombus has 2 axes of symmetry.",
-   "These axes are its two diagonals."
+   "An axis of symmetry is a line along which a shape can be folded so that the two halves match exactly.",
+   "A rhombus has four equal sides. If you fold it along the line joining two opposite corners, the two halves match.",
+   "This works for both pairs of opposite corners, and those two lines are the diagonals.",
+   "So the axes of symmetry of a rhombus are the diagonals."
   ]
  },
  "Q_CH20_019": {
@@ -2097,8 +2103,8 @@
   ],
   "steps": [
    "The four angles of a quadrilateral add up to 360 degrees.",
-   "Add the three angles you know. 90 degrees plus 85 degrees plus 110 degrees, which is 285 degrees.",
-   "Take that from 360 degrees to find the fourth angle. 360 degrees minus 285 degrees, which is 75 degrees.",
+   "Add the three angles you know. 90 degrees plus 85 degrees plus 110 degrees equals 285 degrees.",
+   "Take that from 360 degrees to find the fourth angle. 360 degrees minus 285 degrees equals 75 degrees.",
    "The fourth angle is 75 degrees."
   ]
  },
@@ -2170,14 +2176,15 @@
    "Are equal but do not bisect at right angles"
   ],
   "hints": [
-   "A square is both a rectangle and a rhombus. Rectangle diagonals are equal. Rhombus diagonals bisect at 90 degrees.",
-   "So square diagonals are both equal and bisect at right angles.",
-   "This is the strongest diagonal property, only a square has both!"
+   "A diagonal joins opposite corners. Think about two things: whether the two diagonals of a square are the same length, and how they cross each other.",
+   "Picture a square with both diagonals drawn. To bisect means to cut into two equal halves. Compare the lengths of the diagonals, and then look at the angle where they cross.",
+   "Here is a similar one about a rectangle that is not a square. Its diagonals are the same length and they cut each other in half, but they do not cross at right angles. So a rectangle's diagonals are equal and bisect each other, though not at right angles."
   ],
   "steps": [
-   "From rectangle: diagonals are equal.",
-   "From rhombus: diagonals bisect at 90 degrees.",
-   "Square has both properties."
+   "A square has four equal sides and four right angles, so it looks the same from every corner. Its two diagonals are the same length.",
+   "The diagonals cross at the centre of the square, and each one cuts the other into two equal halves. That is what bisect means.",
+   "Where they cross they make four equal angles, and 360 degrees divided by 4 equals 90 degrees, so they cross at right angles.",
+   "So the diagonals of a square are equal and bisect each other at right angles."
   ]
  },
  "Q_CH20_025_V03": {

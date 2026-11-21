@@ -41,6 +41,11 @@ HAND = {
         "s": {0: "Ending in 0: the hundreds digit has 3 choices, 1, 2 or 3, and the tens digit then has 2 choices. "
                  "3 times 2 equals 6."},
     },
+    "PYQ_2016_Q17": {
+        "h": {2: "Here is a similar one: P, Q and R play, and each player plays three games with every other player. "
+                 "The pairs are P and Q, P and R, and Q and R, which is 3 pairs. "
+                 "Each pair plays 3 games, so 3 times 3, which is 9, games are played."},
+    },
     "G4A_COUNTING_002": {
         "s": {0: "Count the children in front of Meera and behind her. 7 minus 1 equals 6 in front, and 5 minus 1 equals 4 behind."},
     },

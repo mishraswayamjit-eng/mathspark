@@ -3247,7 +3247,32 @@
     ]
    ],
    "note": "Find every pair of numbers that multiply to 12"
-  }
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 12",
+      "2 × 6",
+      "3 × 4"
+     ]
+    ],
+    "note": "Factor pairs of 12 found so far"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1 × 12",
+      "2 × 6",
+      "3 × 4"
+     ]
+    ],
+    "note": "Every factor pair of 12. Count each different number once"
+   }
+  ]
  },
  "Q_CH06_005": {
   "origin": "authored",
@@ -3262,13 +3287,45 @@
   },
   "stepFigures": [
    {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3"
+     ],
+     [
+      "4",
+      "6",
+      "12"
+     ]
+    ],
+    "note": "The factors of 12"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "2",
+      "3"
+     ],
+     [
+      "6",
+      "9",
+      "18"
+     ]
+    ],
+    "note": "The factors of 18"
+   },
+   {
     "kind": "venn",
     "leftTitle": "Factors of 12",
     "rightTitle": "Factors of 18",
-    "left": "…",
+    "left": "4, 12",
     "both": "1, 2, 3, 6",
-    "right": "…",
-    "note": "The common factors go in the middle",
+    "right": "9, 18",
+    "note": "In both lists: 1, 2, 3 and 6. The biggest is 6",
     "highlight": [
      "both"
     ]
@@ -3277,10 +3334,10 @@
     "kind": "venn",
     "leftTitle": "Factors of 12",
     "rightTitle": "Factors of 18",
-    "left": "…",
+    "left": "4, 12",
     "both": "1, 2, 3, 6",
-    "right": "…",
-    "note": "The biggest number in the middle is 6",
+    "right": "9, 18",
+    "note": "The HCF of 12 and 18 is 6",
     "highlight": [
      "both"
     ]
@@ -3399,6 +3456,37 @@
    }
   ]
  },
+ "Q_CH06_009": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 9",
+    "rightTitle": "Factors of 16",
+    "left": "3, 9",
+    "both": "1",
+    "right": "2, 4, 8, 16",
+    "note": "Only 1 is in both lists",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Factors of 9",
+    "rightTitle": "Factors of 16",
+    "left": "3, 9",
+    "both": "1",
+    "right": "2, 4, 8, 16",
+    "note": "9 and 16 share no factor except 1: co-prime",
+    "highlight": [
+     "both"
+    ]
+   }
+  ]
+ },
  "Q_CH06_010": {
   "origin": "authored",
   "figure": {
@@ -3409,14 +3497,46 @@
    {
     "kind": "placeChart",
     "number": "4518",
-    "note": "4 + 5 + 1 + 8 = 18, and 18 ÷ 9 = 2",
+    "note": "For 9, add up all the digits of the number"
+   },
+   {
+    "kind": "placeChart",
+    "number": "4518",
+    "note": "4 + 5 + 1 + 8 = 18",
     "highlight": [
      "d0",
      "d1",
      "d2",
      "d3"
     ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "4518",
+    "note": "The digit sum is 18, and 18 ÷ 9 = 2 exactly"
+   },
+   {
+    "kind": "placeChart",
+    "number": "4518",
+    "note": "Yes: 9 divides 4,518, and its digit sum is 18"
    }
+  ]
+ },
+ "Q_CH06_011": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "rectangle",
+    "square": true,
+    "grid": {
+     "cols": 2,
+     "rows": 2
+    },
+    "note": "2 × 2 = 4, so 4 has three factors: 1, 2 and 4"
+   },
+   null
   ]
  },
  "Q_CH06_012": {

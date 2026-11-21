@@ -106,8 +106,9 @@ add("EXT_G4_WS2_CH21_005",
 add("Q_CH21_001",
     figure=C(radius="same distance", note="Every point on the circle is this far from one fixed point"),
     steps={
-        0: C(radius="r", note="All points at the same distance r from one point", hl=["edge"]),
-        1: C(radius="r", note="The fixed point in the middle is the centre"),
+        0: C(radius="r", note="Every point on the circle is the same distance from the middle", hl=["edge"]),
+        1: C(radius="r", note="The compass point stays here while the pencil goes round", hl=["radius"]),
+        2: C(radius="r", note="The fixed point in the middle is called the centre"),
     })
 
 add("Q_CH21_005",
@@ -564,8 +565,10 @@ add("Q_CH21_012",
 add("Q_CH21_015",
     figure=C(diameter="28 cm", note="How many full turns to cover 440 cm?", hl=["edge"]),
     steps={
-        0: C(diameter="28 cm", note="One turn = 22/7 × 28 = 88 cm", hl=["edge"]),
-        1: BM([{"segs": [(1, "88 cm", "a")] * 5, "brace": "440 cm"}], note="440 ÷ 88 = 5 turns"),
+        0: C(diameter="28 cm", note="One rotation = circumference = π × diameter", hl=["edge", "diameter"]),
+        1: C(diameter="28 cm", note="22/7 × 28 = 22 × 4 = 88 cm", hl=["edge"]),
+        2: BM([{"segs": [(1, "88 cm", "a")] * 5, "brace": "440 cm"}], note="Lots of 88 cm in 440 cm: 440 ÷ 88 = 5"),
+        3: BM([{"segs": [(1, "88 cm", "a")] * 5, "brace": "440 cm"}], note="5 complete rotations", hl=["b0"]),
     })
 
 add("Q_CH21_017",

@@ -26,21 +26,5 @@ HAND = {
 
 # ── The hand-written chapter questions whose hints and steps are still in note form.
 HAND.update({
-    "Q_CH19_009:h1": "Equilateral means all angles are 60 degrees. But right-angled means one angle is 90 degrees. "
-                     "Can one angle be both 60 degrees and 90 degrees?",
-    "Q_CH19_009:s0": "Equilateral: all angles are 60 degrees. Right-angled: one angle is 90 degrees. "
-                     "60 degrees is not equal to 90 degrees.",
-    "Q_CH19_009:s1": "These two properties contradict each other. It is impossible!",
-    "Q_CH19_022:s0": "The rule: the longest side is opposite the largest angle.",
-    "Q_CH19_022:s1": "The largest angle is 80 degrees. The longest side is opposite 80 degrees.",
     "Q_CH19_023:o2": "No, because 90 degrees plus 90 degrees equals 180 degrees, leaving 0 degrees for the third angle",
-    "Q_CH19_023:h0": "If two angles were 90 degrees each, their sum is 180 degrees. "
-                     "But the total for all three angles must be 180 degrees!",
-    "Q_CH19_023:h1": "That leaves 180 degrees minus 180 degrees, which is 0 degrees, for the third angle. "
-                     "An angle of 0 degrees doesn't exist!",
-    "Q_CH19_023:s0": "If two angles are 90 degrees each: 90 degrees plus 90 degrees equals 180 degrees.",
-    "Q_CH19_025:h0": "The area is half of base times height. We know the area and the base, so find the height.",
-    "Q_CH19_025:h1": "42 equals half of 12 times h. So 42 equals 6 h.",
-    "Q_CH19_025:s0": "The area is half of base times height. 42 equals half of 12 times h.",
-    "Q_CH19_025:s1": "42 equals 6 h.",
 })

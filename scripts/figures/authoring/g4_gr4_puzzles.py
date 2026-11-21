@@ -207,10 +207,20 @@ P.put("Q_CH15_002", None,
 
 CROSS = [["·", "1", "·"], ["?", "5", "?"], ["·", "?", "·"]]
 P.put("Q_CH15_022", T(CROSS, note="3, 7 and 9 go at the other ends. Both lines have the same sum"),
-      {0: T(CROSS, note="Total = 1 + 3 + 5 + 7 + 9 = 25"),
-       1: T(CROSS, note="Each line = (25 + 5) ÷ 2 = 15"),
-       2: T(put_in(CROSS, {(2, 1): 9}), note="The line with 1: 1 + 5 + ? = 15, so ? = 9"),
-       3: T(put_in(CROSS, {(2, 1): 9}), note="Opposite to 1 is 9")})
+      {0: T(CROSS, hl=["r1"], note="Both lines share the 5, so their two ends must add up the same"),
+       1: T(CROSS, note="The four end numbers add up to 1 + 3 + 7 + 9 = 20"),
+       2: T(CROSS, note="Each pair of ends adds up to 20 ÷ 2 = 10"),
+       3: T(put_in(CROSS, {(2, 1): 9}), note="The partner of 1 is 10 − 1 = 9, so 9 is opposite to 1")})
+
+# The sum of all nine numbers (no figure before: the question is about a rule, not one square)
+CENTRE = put_in(EMPTY, {"?": "centre"})
+FIVE = put_in(EMPTY, {"?": 5})
+P.put("Q_CH15_003", None,
+      {0: T(CENTRE, hl=["r0", "r1", "r2"], note="Three rows hold all nine numbers: 3 × the magic sum"),
+       1: T(FIVE, hl=["r1"], note="With 1 to 9 the centre is 5 and each row adds up to 15"),
+       2: T(CENTRE, note="3 × 3 × the central box number, and 3 × 3 = 9"),
+       3: T(FIVE, note="Check with 1 to 9: they add up to 45, and 9 × 5 = 45"),
+       4: T(CENTRE, hl=["r1"], note="The sum of all nine numbers is 9 × the central box number")})
 
 P.put("G4A_PUZZLES_006", T([["4", "11", "?"]], note="Every row adds up to 21"),
       {0: T([["4", "11", "?"]], note="Add the two numbers you know: 4 + 11"),
@@ -389,9 +399,10 @@ blue = ("blue", [(2, None, "b")] * 3, None)
 red = ("red", [(3, None, "a")] * 2, None)
 green = ("green", [(1, None, "c")] * 6, None)
 P.put("Q_CH15_020", BM([blue, red], note="Three blue = two red. One red = three green"),
-      {0: BM([blue, red], note="3B = 2R and R = 3G"),
-       1: BM([blue, red, green], hl=["b2"], note="Replace each red by 3 greens: 3B = 2 × 3G = 6G"),
-       2: BM([blue, red, green], note="3 blues = 6 greens")})
+      {0: BM([blue, red], hl=["b0", "b1"], note="Three blue circles are worth two red circles"),
+       1: BM([blue, red, green], hl=["b2"], note="Swap each of the two red circles for three green circles"),
+       2: BM([blue, red, green], hl=["b2"], note="That gives 2 × 3 = 6 green circles"),
+       3: BM([blue, red, green], note="So three blue circles are worth 6 green circles")})
 
 
 # ── Logic and ordering ───────────────────────────────────────────────────────

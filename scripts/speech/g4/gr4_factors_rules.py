@@ -91,7 +91,7 @@ def say(text):
     s = re.sub(r"\s+([.,?!:;])", r"\1", s)
     s = re.sub(r",([.:;?!])", r"\1", s)
     s = re.sub(r",,+", ",", s)
-    s = re.sub(r"(, which is \d[\d,]*) and\b", r"\1, and", s)
+    s = re.sub(r"(, which is \d+(?:,\d+)*) and\b", r"\1, and", s)
     if s.endswith("and so on"):
         s += "."
     return s

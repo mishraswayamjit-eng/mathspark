@@ -29,22 +29,7 @@ HAND = {
 
 # ── The hand-written chapter questions whose hints and steps are still in note form.
 HAND.update({
-    "Q_CH18_002:s0": "180 degrees is less than 250 degrees, which is less than 360 degrees.",
     # The checker reads the maths line "140° ÷ 2" as "140 squared", so the 2 has to be said as a word.
     "Q_CH18_021:s2": "Halve 140 degrees to find the smaller angle. 140 degrees divided by two equals 70 degrees.",
-    "Q_CH18_009:h1": "Equal! The angle opposite to 70 degrees is also 70 degrees.",
-    "Q_CH18_009:s1": "The angle opposite to 70 degrees is 70 degrees.",
     "Q_CH18_014:q": "When will the hour hand and the minute hand form a straight angle, 180 degrees?",
-    "Q_CH18_016:h1": "60 degrees is 2 spaces on the clock. Which time gives exactly 2 spaces?",
-    "Q_CH18_016:h2": "At 2 o'clock, the hands are 2 spaces apart, which is 60 degrees.",
-    "Q_CH18_016:s0": "The complement of 30 degrees is 90 degrees minus 30 degrees, which is 60 degrees.",
-    "Q_CH18_016:s1": "60 degrees is 2 spaces on the clock, which is 2 o'clock.",
-    "Q_CH18_025:h0": "Start at North, 0 degrees, and turn 225 degrees clockwise. "
-                     "North is 0 degrees, East is 90 degrees, South is 180 degrees, West is 270 degrees.",
-    "Q_CH18_025:h1": "225 degrees is between South, at 180 degrees, and West, at 270 degrees. It's 45 degrees past South.",
-    "Q_CH18_025:h2": "45 degrees past South, towards West, is South-West.",
-    "Q_CH18_025:s0": "On the compass, North is 0 degrees, East is 90 degrees, South is 180 degrees, West is 270 degrees. "
-                     "225 degrees is between South and West.",
-    "Q_CH18_025:s1": "225 degrees is 180 degrees plus 45 degrees. That is South, plus 45 degrees towards West.",
-    "Q_CH18_025:s2": "The direction is South-West.",
 })

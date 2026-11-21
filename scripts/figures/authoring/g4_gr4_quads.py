@@ -411,8 +411,10 @@ add("Q_CH20_017",
 add("Q_CH20_018",
     figure=P(DIAMOND_PTS, note="A rhombus"),
     steps={
-        0: P(DIAMOND_PTS, dashed=[(0, 2), (1, 3)], note="A rhombus folds onto itself in 2 ways"),
-        1: P(DIAMOND_PTS, dashed=[(0, 2), (1, 3)], note="The fold lines are its two diagonals"),
+        0: P(DIAMOND_PTS, note="An axis of symmetry is a fold line where the two halves match"),
+        1: P(DIAMOND_PTS, edges=["s"] * 4, dashed=[(0, 2)], note="Fold along the line joining two opposite corners: halves match"),
+        2: P(DIAMOND_PTS, edges=["s"] * 4, dashed=[(0, 2), (1, 3)], note="It works for both pairs of opposite corners"),
+        3: P(DIAMOND_PTS, dashed=[(0, 2), (1, 3)], note="The axes of symmetry are the two diagonals"),
     })
 
 add("Q_CH20_019",
@@ -451,8 +453,10 @@ add("Q_CH20_022",
 add("Q_CH20_025",
     figure=P(SQUARE_PTS, corners=["A", "B", "C", "D"], dashed=[(0, 2), (1, 3)], note="The diagonals AC and BD"),
     steps={
-        0: P(SQUARE_PTS, corners=["A", "B", "C", "D"], dashed=[(0, 2), (1, 3)], note="Like a rectangle: AC and BD are equal"),
-        1: P(SQUARE_PTS, corners=["A", "B", "C", "D"], dashed=[(0, 2), (1, 3)], note="Like a rhombus: they cut each other in half at 90°"),
+        0: P(SQUARE_PTS, corners=["A", "B", "C", "D"], dashed=[(0, 2), (1, 3)], note="The two diagonals, AC and BD, are the same length"),
+        1: P(SQUARE_PTS, corners=["A", "B", "C", "D"], dashed=[(0, 2), (1, 3)], note="They cross at the centre and cut each other in half"),
+        2: P(SQUARE_PTS, corners=["A", "B", "C", "D"], dashed=[(0, 2), (1, 3)], note="Four equal angles where they cross: 360° ÷ 4 = 90°"),
+        3: P(SQUARE_PTS, corners=["A", "B", "C", "D"], dashed=[(0, 2), (1, 3)], note="Equal, and they bisect each other at right angles"),
     })
 
 # ── Hand-written: perimeter and area ─────────────────────────────────────────
@@ -710,16 +714,19 @@ add("Q_CH20_008",
 add("Q_CH20_009",
     figure=R(length="2m + 5n", breadth="m − 3n", note="Perimeter = ?", hl=["border"]),
     steps={
-        0: R(length="2m + 5n", breadth="m − 3n", note="(2m + 5n) + (m − 3n) = 3m + 2n", hl=["length", "breadth"]),
-        1: R(length="2m + 5n", breadth="m − 3n", note="2 × (3m + 2n) = 6m + 4n", hl=["border"]),
+        0: R(length="2m + 5n", breadth="m − 3n", note="Perimeter = 2 × (length + breadth)", hl=["border"]),
+        1: R(length="2m + 5n", breadth="m − 3n", note="(2m + 5n) + (m − 3n) = 3m + 2n", hl=["length", "breadth"]),
+        2: R(length="2m + 5n", breadth="m − 3n", note="Double both parts: 2 × 3m = 6m and 2 × 2n = 4n", hl=["border"]),
+        3: R(length="2m + 5n", breadth="m − 3n", note="Perimeter = 6m + 4n", hl=["border"]),
     })
 
 add("Q_CH20_010",
     figure=R(length="(3a − 5) cm", breadth="(a + 5) cm", prop=1, note="Perimeter = 40 cm"),
     steps={
         0: R(length="(3a − 5) cm", breadth="(a + 5) cm", prop=1, note="(3a − 5) + (a + 5) = 4a", hl=["length", "breadth"]),
-        1: R(length="(3a − 5) cm", breadth="(a + 5) cm", prop=1, note="2 × 4a = 8a = 40", hl=["border"]),
-        2: R(length="10 cm", breadth="10 cm", prop=1, note="a = 5 makes both sides 10 cm"),
+        1: R(length="(3a − 5) cm", breadth="(a + 5) cm", prop=1, note="Two lengths and two breadths: twice 4a is 8a", hl=["border"]),
+        2: R(length="(3a − 5) cm", breadth="(a + 5) cm", prop=1, note="8 × a = 40, so a = 40 ÷ 8 = 5", hl=["border"]),
+        3: R(length="10 cm", breadth="10 cm", prop=1, note="Check: 2 × (10 + 10) = 40 cm"),
     })
 
 add("Q_CH20_011",
@@ -757,8 +764,9 @@ add("Q_CH20_014",
     figure=R(square=True, length="6 cm", note="An equilateral triangle has the same perimeter. Its side = ?"),
     steps={
         0: square4("6 cm", note="Square: 4 × 6 = 24 cm"),
-        1: T("equilateral", sides={"ab": "s", "bc": "s", "ca": "s"}, note="Triangle: 3 × s = 24", hl=["ab", "bc", "ca"]),
-        2: T("equilateral", sides={"ab": "8 cm", "bc": "8 cm", "ca": "8 cm"}, note="s = 24 ÷ 3 = 8 cm"),
+        1: T("equilateral", sides={"ab": "?", "bc": "?", "ca": "?"}, note="The triangle has the same perimeter, 24 cm", hl=["ab", "bc", "ca"]),
+        2: T("equilateral", sides={"ab": "24 ÷ 3 cm", "bc": "?", "ca": "?"}, note="Three equal sides share the 24 cm", hl=["ab"]),
+        3: T("equilateral", sides={"ab": "8 cm", "bc": "8 cm", "ca": "8 cm"}, note="The side of the triangle is 8 cm"),
     })
 
 add("Q_CH20_015",

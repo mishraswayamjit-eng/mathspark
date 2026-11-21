@@ -227,8 +227,9 @@ add("Q_CH18_021",
 
 add("Q_CH18_009",
     figure=cross([("70°", 70), ("p",), ("?",), ("q",)]),
-    steps={0: cross([("70°", 70), ("p",), ("?",), ("q",)], hl=["p0", "p2"], note=FACING),
-           1: cross([("70°", 70), ("p",), ("70°",), ("q",)], hl=["p2"], note="The opposite angle is also 70°")})
+    steps={0: cross([("70°", 70), ("p",), ("?",), ("q",)], note="Two crossing lines make two pairs of angles that face each other"),
+           1: cross([("70°", 70), ("p",), ("?",), ("q",)], hl=["p0", "p2"], note="Vertically opposite angles are always equal"),
+           2: cross([("70°", 70), ("p",), ("70°",), ("q",)], hl=["p2"], note="The opposite angle is also 70°")})
 
 add("Q_CH18_008",
     figure=cross([("a",), ("b",), ("c",), ("d",)], note="Two lines cross. How many pairs face each other?"),
@@ -300,8 +301,9 @@ add("Q_CH18_001",
 
 add("Q_CH18_002",
     figure=single("250°", 250, note="What kind of angle is this?"),
-    steps={0: single("250°", 250, note="250° is more than 180° and less than 360°"),
-           1: single("reflex angle", 250, note="Between 180° and 360°: a reflex angle")})
+    steps={0: single("180°", 180, note="A straight angle is exactly 180°. A complete angle is 360°."),
+           1: single("250°", 250, note="250° is more than 180° but less than 360°"),
+           2: single("reflex angle", 250, note="Between 180° and 360°: a reflex angle")})
 
 add("G4A_ANGLES_021",
     figure=corner([("P",), ("Q",)], note="P + Q = 90°, and Q + R = 180°"),
@@ -463,9 +465,10 @@ add("Q_CH18_015",
 
 add("Q_CH18_016",
     figure=CLOCK(1, 0, True, note="At 1 o'clock the angle between the hands is 30°"),
-    steps={0: corner([("30°", 30), ("60°", 60)], hl=["p1"], note="Complement of 30°: 90° − 30° = 60°"),
-           1: CLOCK(2, 0, True, note="60° is 2 spaces on the clock"),
-           2: CLOCK(2, 0, True, hl=["angle"], note="At 2 o'clock the angle is 60°")})
+    steps={0: corner([("30°", 30), ("60°", 60)], hl=["p1"], note="Complementary angles make 90°: 90° − 30° = 60°"),
+           1: CLOCK(1, 0, True, hl=["angle"], note="At 1 o'clock the hands are one gap apart: each gap is 30°"),
+           2: CLOCK(2, 0, True, note="60° is two gaps, because 60 ÷ 30 = 2"),
+           3: CLOCK(2, 0, True, hl=["angle"], note="The hands are two gaps apart at 2 o'clock")})
 
 add("Q_CH18_018",
     figure=CLOCK(1, 0, True, note="From 12 to 1 is one hour for the hour hand"),
@@ -512,9 +515,10 @@ add("Q_CH18_017",
 
 add("Q_CH18_025",
     figure=COMPASS("N", [(225, CW)], note="He turns clockwise through 225°"),
-    steps={0: COMPASS("N", note="N = 0°, E = 90°, S = 180°, W = 270°"),
-           1: COMPASS("N", [(180, CW), (45, CW)], hl=["t1"], note="225° = 180° + 45°: South, then 45° more towards West"),
-           2: COMPASS("N", [(225, CW)], end=True, hl=["end"], note="He is facing South-West")})
+    steps={0: COMPASS("N", [(90, CW), (90, CW), (90, CW)], note="Each quarter turn clockwise is 90°: East, South, then West"),
+           1: COMPASS("N", [(90, CW), (90, CW)], end=True, note="Two quarter turns: 90° + 90° = 180°, round to South"),
+           2: COMPASS("N", [(180, CW), (45, CW)], hl=["t1"], note="He still has 225° − 180° = 45° to turn"),
+           3: COMPASS("N", [(225, CW)], end=True, hl=["end"], note="Halfway between South and West: South-West")})
 
 add("G4A_ANGLES_004",
     figure=COMPASS("E", note="A three-quarter turn anticlockwise"),

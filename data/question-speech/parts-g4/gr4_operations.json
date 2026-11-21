@@ -613,15 +613,15 @@
    "37"
   ],
   "hints": [
-   "Brackets come first, then multiplication, then addition and subtraction from left to right.",
-   "Start inside the round bracket, 8 plus 5 minus 6. Then multiply that result by 2 to finish the curly bracket. Also work out 7 times 7.",
-   "Here is a similar one: 6 times 6, minus 20, plus 1, plus open curly bracket, open bracket, 7 plus 4 minus 5, close bracket, times 3, close curly bracket. The round bracket is 6, and 6 times 3 equals 18. Also 6 times 6 equals 36. Then 36 minus 20 equals 16, 16 plus 1 equals 17 and 17 plus 18 equals 35."
+   "This sum has brackets inside brackets. Brackets come first, starting with the innermost one, then multiplication, then adding and subtracting from left to right.",
+   "Start inside the round bracket, 8 plus 5 minus 6. Multiply that result by 2 to finish the curly bracket, and also work out 7 times 7.",
+   "A similar example: 6 times 6, minus 20, plus 4, plus open curly bracket, open bracket, 9 plus 4 minus 7, close bracket, times 3, close curly bracket. The round bracket is 6, and 6 times 3 equals 18. Also 6 times 6 equals 36. Then 36 minus 20 equals 16, 16 plus 4 equals 20 and 20 plus 18 equals 38."
   ],
   "steps": [
-   "Round bracket first. 8 plus 5 minus 6 equals 7.",
-   "Finish the curly bracket. 7 times 2 equals 14.",
+   "Work out the round bracket first. 8 plus 5 minus 6 equals 7.",
+   "Finish the curly bracket by multiplying by 2. 7 times 2 equals 14.",
    "Do the multiplication at the start. 7 times 7 equals 49.",
-   "The sum is now 49 minus 36 plus 2 plus 14. Go from left to right: 49 minus 36 equals 13, then 13 plus 2 equals 15, then 15 plus 14 equals 29. 49 minus 36 plus 2 plus 14 equals 29.",
+   "The sum is now 49 minus 36 plus 2 plus 14. Go from left to right: 49 minus 36 equals 13, then 13 plus 2 equals 15, then 15 plus 14 equals 29.",
    "The answer is 29."
   ]
  },

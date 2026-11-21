@@ -3405,12 +3405,12 @@
      [
       "B and C",
       "B and D"
-     ],
-     [
-      "C and D"
      ]
     ],
-    "note": "The new pairs with B, then the last new pair"
+    "note": "The new pairs with B: 2 more",
+    "highlight": [
+     "r1"
+    ]
    },
    {
     "kind": "table",
@@ -3428,7 +3428,10 @@
       "C and D"
      ]
     ],
-    "note": "Count the pairs: 3, then 2, then 1"
+    "note": "The last new pair. 3 + 2 + 1 = 6 pairs",
+    "highlight": [
+     "r2"
+    ]
    },
    {
     "kind": "table",
@@ -3446,7 +3449,7 @@
       "C and D"
      ]
     ],
-    "note": "Every pair plays 2 games: 12 games altogether"
+    "note": "6 pairs, 2 games each: 6 × 2 = 12 games"
    }
   ]
  },

@@ -192,6 +192,9 @@ def say(text, pre_hook=None):
     s = re.sub(r"(\d)\s*%", r"\1 percent", s)
     s = re.sub(r"(\d)\s*°\s*C\b", r"\1 degrees Celsius", s)
     s = re.sub(r"(\d)\s*°", r"\1 degrees", s)
+    # a plain fraction of a unit: '1/8 l' is '1/8 of a litre' (not a mixed number such as '2 1/2 m')
+    s = re.sub(r"(?<![\d.] )(?<![\d./])\b(\d+)\s*/\s*(\d+)\s*(%s)\b(?!\.\d)" % _UNIT_ALT,
+               lambda m: "%s/%s of a%s %s" % (m.group(1), m.group(2), "n" if UNITS[m.group(3)][0] == "hour" else "", UNITS[m.group(3)][0]), s)
     # terse labels
     s = re.sub(r"(^|[.:!?] )Total\s*[=:]\s*", r"\1The total is ", s)
     s = re.sub(r"(^|[.:!?] )Answer\s*[=:]\s*", r"\1The answer is ", s)

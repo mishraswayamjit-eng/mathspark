@@ -8147,44 +8147,47 @@
       "segments": [
        {
         "units": 1.71,
-        "label": "n",
+        "label": "?",
         "tone": "unknown"
        },
        {
         "units": 1.71,
-        "label": "n",
+        "label": "?",
         "tone": "unknown"
        },
        {
         "units": 1.71,
-        "label": "n",
+        "label": "?",
         "tone": "unknown"
        },
        {
         "units": 1.71,
-        "label": "n",
+        "label": "?",
         "tone": "unknown"
        },
        {
         "units": 1.71,
-        "label": "n",
+        "label": "?",
         "tone": "unknown"
        },
        {
         "units": 1.71,
-        "label": "n",
+        "label": "?",
         "tone": "unknown"
        },
        {
         "units": 1.71,
-        "label": "n",
+        "label": "?",
         "tone": "unknown"
        }
       ],
       "brace": "63"
      }
     ],
-    "note": "7n = 63"
+    "note": "7 × the number = 63",
+    "highlight": [
+     "b0"
+    ]
    },
    {
     "kind": "barModel",
@@ -8230,9 +8233,57 @@
       "brace": "63"
      }
     ],
-    "note": "63 ÷ 7 = 9"
+    "note": "Dividing undoes multiplying: 63 ÷ 7 = 9"
    },
-   null
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       },
+       {
+        "units": 1.71,
+        "label": "9",
+        "tone": "a"
+       }
+      ],
+      "brace": "63"
+     }
+    ],
+    "note": "Check: 7 × 9 = 63, so the number is 9",
+    "highlight": [
+     "b0"
+    ]
+   }
   ]
  },
  "Q_CH14_020": {

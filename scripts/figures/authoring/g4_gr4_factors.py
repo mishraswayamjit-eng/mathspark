@@ -352,9 +352,14 @@ A("EXT_G4_FP_2020_020", hcf_before(24, 72), {
     0: bars(("72", [(24, "24", "a")] * 3), ("24", [(24, "24", "b")]), note="24 fits into 72 exactly, with nothing left over"),
     2: venn("Factors of 24", "Factors of 72", "–", "1, …, 24", "…, 72", "24 divides both, and nothing bigger divides 24", ["both"]),
 })
-A("Q_CH06_005", hcf_before(12, 18), {
-    0: venn("Factors of 12", "Factors of 18", "…", "1, 2, 3, 6", "…", "The common factors go in the middle", ["both"]),
-    1: venn("Factors of 12", "Factors of 18", "…", "1, 2, 3, 6", "…", "The biggest number in the middle is 6", ["both"]),
+A("Q_CH06_005", hcf_before(12, 18), hcf_step_figures(Q["Q_CH06_005"], 12, 18))
+A("Q_CH06_009", None, {
+    2: venn("Factors of 9", "Factors of 16", "3, 9", "1", "2, 4, 8, 16", "Only 1 is in both lists", ["both"]),
+    3: venn("Factors of 9", "Factors of 16", "3, 9", "1", "2, 4, 8, 16", "9 and 16 share no factor except 1: co-prime", ["both"]),
+})
+A("Q_CH06_011", None, {
+    2: {"kind": "rectangle", "square": True, "grid": {"cols": 2, "rows": 2},
+        "note": "2 × 2 = 4, so 4 has three factors: 1, 2 and 4"},
 })
 A("PYQ_2017_Q19", lcm_before(48, 54), {
     0: venn("48 = 6 × 8", "54 = 6 × 9", "8", "6", "9", "6 is in both numbers. 8 and 9 are the parts left over", ["both"]),
@@ -532,7 +537,10 @@ A("PYQ_2019_Q04", None, {
 
 # Divisibility tests on the digits
 A("Q_CH06_010", place("4518"), {
-    0: place("4518", "4 + 5 + 1 + 8 = 18, and 18 ÷ 9 = 2", ["d0", "d1", "d2", "d3"]),
+    0: place("4518", "For 9, add up all the digits of the number"),
+    1: place("4518", "4 + 5 + 1 + 8 = 18", ["d0", "d1", "d2", "d3"]),
+    2: place("4518", "The digit sum is 18, and 18 ÷ 9 = 2 exactly"),
+    3: place("4518", "Yes: 9 divides 4,518, and its digit sum is 18"),
 })
 A("Q_CH06_012", place("8294"), {
     0: place("8294", "1st and 3rd places: 8 + 9 = 17", ["d0", "d2"]),

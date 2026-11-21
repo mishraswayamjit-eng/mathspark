@@ -29,25 +29,12 @@ HAND = {
     },
     "Q_CH01_003": {
         "q": "Which is the largest: 45,032, 45,302, 45,320, or 45,203?",
-        "hints": ["All start with 45. Compare the hundreds digit: 0, 3, 3, 2.",
-                  "Two have 3 in the hundreds: 45,302 and 45,320. Compare the tens: 0 versus 2."],
-        "steps": ["Compare digit by digit, from the left."],
-    },
-    "Q_CH01_005": {
-        "hints": [N, "700 equals D C C, which is 500 plus 100 plus 100. 80 equals L X X X, which is 50 plus 10 plus 10 plus 10. 9 equals I X, which is 10 minus 1."],
     },
     "Q_CH01_009": {
         "options": ["5,342, then 5,234, then 5,423, then 5,432",
                     "5,234, then 5,342, then 5,432, then 5,423",
                     "5,234, then 5,342, then 5,423, then 5,432",
                     "5,432, then 5,423, then 5,342, then 5,234"],
-        "hints": ["Ascending means smallest to largest. All start with 5, so compare the hundreds digit.",
-                  "Hundreds: 2, 3, 4, 4. Then the tens, for the two with 4: 2 versus 3."],
-    },
-    "Q_CH01_013": {
-        "hints": ["V, which is 5, cannot come before X, which is 10, to subtract. Only I, X and C can be subtracted.",
-                  "V, L and D are never subtracted. They can't appear before a larger numeral."],
-        "steps": ["Rule: V, L and D cannot be used for subtraction."],
     },
     "Q_CH01_025": {
         "q": "Fill in the blank: 65,432, blank, 65,342.",

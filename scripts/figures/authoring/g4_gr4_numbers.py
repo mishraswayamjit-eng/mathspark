@@ -150,10 +150,17 @@ def rule_roman(qid):
                 break
         last = i == len(texts) - 1
         if k and (k != prev or last):
-            fig = table([[numeral for _, numeral in parts[:k]]], headers=[str(value) for value, _ in parts[:k]])
+            # Once a step has split the whole number, keep every part on show, with "?" for numerals not found yet.
+            shown = len(parts) if all(float(value) in nums for value, _ in parts) else k
+            fig = table([[numeral if j < k else "?" for j, (_, numeral) in enumerate(parts[:shown])]],
+                        headers=[str(value) for value, _ in parts[:shown]])
             if last and k == len(parts):
                 fig["note"] = "Join the parts in order: %s" % to_roman(n)
             steps.append(fig)
+        elif k == 0 and prev == 0 and all(float(value) in nums for value, _ in parts):
+            # The step splits the number but names no numeral yet: show the parts, numerals still to find.
+            steps.append(table([["?"] * len(parts)], headers=[str(value) for value, _ in parts],
+                               note="Split the number into its parts"))
         else:
             steps.append(None)
         prev = k
@@ -180,6 +187,25 @@ A("Q_CH01_002",
   line(99996, 100000, 1, points=[(99999, "99,999")], ticks="none", note="Successor = the very next number"),
   {0: line(99996, 100000, 1, points=[(99999, "99,999")], hops=[(99999, 100000, "+1")], ticks="none"),
    2: chart(100000, None, "1,00,000 is one lakh")})
+_big = [["45,032"], ["45,302"], ["45,320"], ["45,203"]]
+A("Q_CH01_003",
+  table(_big, note="Line the numbers up and compare from the left"),
+  {0: table(_big, note="All have 45 thousands, so compare the hundreds digits"),
+   1: table(_big, hl=["r1", "r2"], note="The biggest hundreds digit is 3: 45,302 or 45,320"),
+   2: chart(45302, [3], "45,302 has 0 tens"),
+   3: chart(45320, [3], "45,320 has 2 tens, so it is the largest")})
+_asc = [["5,432"], ["5,342"], ["5,423"], ["5,234"]]
+A("Q_CH01_009",
+  table(_asc, note="Line the numbers up and compare from the left"),
+  {0: table(_asc, note="All have 5 thousands, so look at the hundreds"),
+   1: table(_asc, hl=["r1", "r3"], note="5,234 has 2 hundreds: smallest. 5,342 has 3 hundreds: next"),
+   2: table(_asc, hl=["r0", "r2"], note="Both have 4 hundreds. 2 tens is less than 3 tens"),
+   3: table([["5,234"], ["5,342"], ["5,423"], ["5,432"]], note="In ascending order, smallest first")})
+_valid = [["XL", "50 − 10 = 40"], ["IX", "10 − 1 = 9"], ["XIV", "10 + 4 = 14"]]
+A("Q_CH01_013", None, {
+    0: table(_valid, headers=["Roman", "Number"], note="Only I and X are placed before a bigger letter"),
+    1: table(_valid + [["VX", "?"]], headers=["Roman", "Number"], hl=["r3"], note="V is never used to take away"),
+    2: table(_valid + [["VX", "not valid"]], headers=["Roman", "Number"], hl=["r3"], note="5 is written simply as V")})
 A("Q_CH01_004", None, {
     0: table([["CD", "XL", "IV"]], note="CD: C before D, so take 100 away from 500", hl=["r0"]),
     1: table([["CD", "XL", "IV"]], note="XL: X before L, so take 10 away from 50"),
@@ -425,3 +451,5 @@ A("EXT_G4_FP_2025_036", None, {
 P.write()
 if "--review" in sys.argv:
     P.review()
+if "--redo" in sys.argv:
+    P.review(["Q_CH01_003", "Q_CH01_005", "Q_CH01_009", "Q_CH01_013"])

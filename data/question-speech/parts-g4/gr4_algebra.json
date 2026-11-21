@@ -1260,13 +1260,14 @@
    "12"
   ],
   "hints": [
-   "Replace A with its value. A equals 3, so A plus 4 becomes what?",
-   "3 plus 4 equals what?",
-   "3 plus 4 equals 7."
+   "A letter in maths stands for a number. When you are told the value of the letter, put that number in its place and then do the sum.",
+   "Here A stands for 3. Write the 3 where the A is, and read the sum again.",
+   "A similar example: if b equals 6, find b plus 3. Put 6 in place of b to get 6 plus 3, which is 9."
   ],
   "steps": [
-   "Substitute A equals 3 into the expression. A plus 4 equals 3 plus 4.",
-   "Add: 3 plus 4 equals 7."
+   "The letter A stands for 3, so write 3 in place of A. The sum A plus 4 becomes 3 plus 4.",
+   "Now add the two numbers. 3 plus 4 equals 7.",
+   "The value of A plus 4 is 7."
   ]
  },
  "Q_CH13_001_V01": {
@@ -1428,14 +1429,14 @@
    "2"
   ],
   "hints": [
-   "First, find 2 A. Then divide by 3.",
-   "2 A equals 2 times 3, which is 6. Now divide 6 by 3.",
-   "6 divided by 3 equals 2."
+   "Put the number in place of the letter. Remember that a number written next to a letter, like 2 A, means the number times the letter.",
+   "2 A means 2 times A. Work out 2 times 3 first, and then divide what you get by 3.",
+   "A similar example: if b equals 4, find 5 b over 2. First 5 b is 5 times 4, which is 20. Then 20 divided by 2 equals 10."
   ],
   "steps": [
-   "Calculate 2 A: 2 times 3 equals 6.",
-   "Divide by 3: 6 divided by 3 equals 2.",
-   "So 2 A over 3 equals 2."
+   "2 A means 2 times A. With A equals 3, that is 2 times 3, which is 6.",
+   "The line in 2 A over 3 means divide by 3. So divide 6 by 3. 6 divided by 3 equals 2.",
+   "The value of 2 A over 3 is 2."
   ]
  },
  "Q_CH13_003_V03": {
@@ -1523,14 +1524,14 @@
    "5"
   ],
   "hints": [
-   "The whole expression, A plus 12, is divided by 3. First calculate A plus 12.",
-   "A plus 12 equals 3 plus 12, which is 15. Now divide 15 by 3.",
-   "15 divided by 3 equals 5."
+   "Put the number in place of the letter. The bracket tells you which part to work out first.",
+   "Work out the bracket first: A plus 12 with A equals 3. Then divide that whole total by 3.",
+   "A similar example: if b equals 4, find b plus 10, all over 2. The bracket is 4 plus 10, which is 14. Then 14 divided by 2 equals 7."
   ],
   "steps": [
-   "Substitute A equals 3 in the numerator. A plus 12 equals 3 plus 12, which is 15.",
-   "Divide by 3. 15 over 3 equals 5.",
-   "So A plus 12, all over 3, equals 5."
+   "Work out the bracket first. With A equals 3, A plus 12 is 3 plus 12, which is 15.",
+   "The whole bracket is divided by 3, so divide 15 by 3. 15 divided by 3 equals 5.",
+   "The value of A plus 12, all over 3, is 5."
   ]
  },
  "Q_CH13_004_V03": {
@@ -1597,14 +1598,14 @@
    "9"
   ],
   "hints": [
-   "A squared means A times A. It does not mean A times 2!",
-   "A squared equals 3 times 3.",
-   "3 times 3 equals 9."
+   "The small 2 written above a letter has a special meaning. It tells you to multiply the letter by itself.",
+   "A squared means A times A. Put 3 in place of each A and multiply.",
+   "A similar example: if b equals 5, then b squared means 5 times 5, which is 25."
   ],
   "steps": [
-   "A squared means A multiplied by itself.",
-   "Substitute A equals 3. 3 times 3 equals 9.",
-   "So A squared equals 9."
+   "A squared means A multiplied by itself, A times A. It does not mean A times 2.",
+   "Put 3 in place of A and multiply. 3 times 3 equals 9.",
+   "The value of A squared is 9."
   ]
  },
  "Q_CH13_005_V03": {
@@ -1858,14 +1859,15 @@
    "minus 18"
   ],
   "hints": [
-   "Substitute both values: 12 minus 5 times 3, plus 3 times 5. Be careful with the order of operations!",
-   "12 minus 15 plus 15 equals what?",
-   "12 minus 15 equals minus 3, then minus 3 plus 15 equals 12."
+   "Put the numbers in place of the letters. A number next to a letter means multiply, and the multiplications are done before the adding and taking away.",
+   "5 A means 5 times A and 3 b means 3 times b. Work out these two multiplications first, then put them back into 12 minus 5 A plus 3 b.",
+   "A similar example: if p equals 5 and q equals 2, find 20 minus 2 p plus 3 q. 2 p is 2 times 5, which is 10, and 3 q is 3 times 2, which is 6. Then 20 minus 10 equals 10, and 10 plus 6 equals 16."
   ],
   "steps": [
-   "Substitute: 12 minus 5 times 3, plus 3 times 5.",
-   "Calculate multiplications: 12 minus 15 plus 15.",
-   "Work left to right: minus 3 plus 15 equals 12."
+   "5 A means 5 times A. With A equals 3, that is 5 times 3, which is 15.",
+   "3 b means 3 times b. With b equals 5, that is 3 times 5, which is 15.",
+   "The expression is now 12 minus 15 plus 15. Taking away 15 and then adding 15 undo each other.",
+   "So 12 is left. The value is 12. 12 minus 15 plus 15 equals 12."
   ]
  },
  "Q_CH13_011": {
@@ -2030,14 +2032,14 @@
    "4 x rupees"
   ],
   "hints": [
-   "The pencil is x rupees. The pen costs thrice that, so 3 times x, which is 3 x.",
-   "Total equals pen plus pencil, which is 3 x plus x.",
-   "3 x plus x equals 4 x."
+   "This problem uses a letter for a price. Write each price using the letter, then add the prices to find the cost of both things together.",
+   "The pencil costs x rupees. Thrice means 3 times, so first write the price of the pen using x.",
+   "A similar example: a notebook costs 5 times as much as an eraser, and the eraser costs y rupees. The notebook costs 5 y rupees. Together they cost 5 y plus y, which is 6 y rupees."
   ],
   "steps": [
-   "The pencil is x rupees. The pen is 3 times x, which is 3 x rupees.",
-   "Total equals 3 x plus x, which is 4 x.",
-   "Total cost equals 4 x rupees."
+   "The pencil costs x rupees. Thrice means 3 times, so the pen costs 3 times x, which is 3 x rupees.",
+   "Add the two prices. 3 lots of x and 1 more lot of x make 4 lots of x. 3 x plus x equals 4 x.",
+   "You would pay 4 x rupees for a pen and a pencil together."
   ]
  },
  "Q_CH13_019": {

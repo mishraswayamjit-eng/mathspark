@@ -409,6 +409,29 @@
    }
   ]
  },
+ "EXT_G4_FP_2022_021": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "12.1212"
+     ],
+     [
+      "17.0050"
+     ],
+     [
+      "9.1102"
+     ]
+    ],
+    "note": "Four decimal places each, with the points lined up"
+   },
+   null,
+   null,
+   null
+  ]
+ },
  "EXT_G4_FP_2022_024": {
   "origin": "authored",
   "stepFigures": [
@@ -505,6 +528,55 @@
      "r3"
     ]
    },
+   null
+  ]
+ },
+ "EXT_G4_FP_2024_016": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Added",
+      "1.8",
+      "2.3",
+      "2.7"
+     ],
+     [
+      "Taken away",
+      "1.9",
+      "3.2",
+      "-"
+     ]
+    ],
+    "note": "Add up the numbers that are being added",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Added",
+      "1.8",
+      "2.3",
+      "2.7"
+     ],
+     [
+      "Taken away",
+      "1.9",
+      "3.2",
+      "-"
+     ]
+    ],
+    "note": "Add up the numbers that are being taken away",
+    "highlight": [
+     "r1"
+    ]
+   },
+   null,
    null
   ]
  },
@@ -4856,11 +4928,15 @@
    "note": "Divide by 10: where does each digit move?"
   },
   "stepFigures": [
-   null,
    {
     "kind": "placeChart",
     "number": "12.5",
-    "note": "The decimal point moves 1 place to the left"
+    "note": "Dividing by 10 makes the number ten times smaller"
+   },
+   {
+    "kind": "placeChart",
+    "number": "1.25",
+    "note": "The point moves one place left: between the 1 and the 2"
    },
    {
     "kind": "placeChart",
@@ -4877,11 +4953,18 @@
    "note": "Divide by 100: where does each digit move?"
   },
   "stepFigures": [
-   null,
    {
     "kind": "placeChart",
     "number": "12.5",
-    "note": "100 has 2 zeros, so the point moves 2 places left"
+    "note": "100 has two zeros: the point moves two places to the left"
+   },
+   {
+    "kind": "placeChart",
+    "number": "0.125",
+    "note": "The point moves past the 2 and the 1. A 0 goes in front",
+    "highlight": [
+     "d0"
+    ]
    },
    {
     "kind": "placeChart",
@@ -5062,9 +5145,9 @@
     "headers": [
      "Number",
      "Same places"
-    ]
+    ],
+    "note": "Write every number with three decimal places"
    },
-   null,
    {
     "kind": "table",
     "rows": [
@@ -5089,7 +5172,65 @@
      "Number",
      "Same places"
     ],
-    "note": "0.55 is the greatest",
+    "note": "0.050 has 0 tenths. The other three have 5 tenths",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.5",
+      "0.500"
+     ],
+     [
+      "0.05",
+      "0.050"
+     ],
+     [
+      "0.55",
+      "0.550"
+     ],
+     [
+      "0.505",
+      "0.505"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "0.550 has 5 hundredths. 0.500 and 0.505 have 0 hundredths",
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.5",
+      "0.500"
+     ],
+     [
+      "0.05",
+      "0.050"
+     ],
+     [
+      "0.55",
+      "0.550"
+     ],
+     [
+      "0.505",
+      "0.505"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "The greatest is 0.55",
     "highlight": [
      "r2"
     ]
@@ -5102,20 +5243,26 @@
    {
     "kind": "placeChart",
     "number": "45.783",
-    "note": "Name the place of each digit"
+    "note": "After the point: tenths, hundredths, thousandths",
+    "highlight": [
+     "d2",
+     "d3",
+     "d4"
+    ]
    },
    {
     "kind": "placeChart",
     "number": "45.783",
-    "note": "8 is the second digit after the decimal point",
+    "note": "7 is in the tenths place. 8 is the second digit after the point",
     "highlight": [
+     "d2",
      "d3"
     ]
    },
    {
     "kind": "placeChart",
     "number": "45.783",
-    "note": "8 is in the hundredths place",
+    "note": "The digit 8 is in the hundredths place",
     "highlight": [
      "d3"
     ]
@@ -5267,9 +5414,97 @@
     "headers": [
      "Number",
      "Same places"
+    ],
+    "note": "Write every number with three decimal places"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3.3",
+      "3.300"
+     ],
+     [
+      "3.03",
+      "3.030"
+     ],
+     [
+      "3.303",
+      "3.303"
+     ],
+     [
+      "3.33",
+      "3.330"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "3.030 has 0 tenths, so it is the smallest",
+    "highlight": [
+     "r1"
     ]
    },
-   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3.3",
+      "3.300"
+     ],
+     [
+      "3.03",
+      "3.030"
+     ],
+     [
+      "3.303",
+      "3.303"
+     ],
+     [
+      "3.33",
+      "3.330"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "3.330 has 3 hundredths, so it is the greatest",
+    "highlight": [
+     "r3"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3.3",
+      "3.300"
+     ],
+     [
+      "3.03",
+      "3.030"
+     ],
+     [
+      "3.303",
+      "3.303"
+     ],
+     [
+      "3.33",
+      "3.330"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Same places"
+    ],
+    "note": "3.300 has 0 thousandths, so it comes before 3.303",
+    "highlight": [
+     "r0",
+     "r2"
+    ]
+   },
    {
     "kind": "table",
     "rows": [
@@ -5294,7 +5529,7 @@
      "Number",
      "Same places"
     ],
-    "note": "In order, smallest first"
+    "note": "In ascending order, smallest first"
    }
   ]
  },

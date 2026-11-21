@@ -36,9 +36,6 @@ HAND = {
     "EXT_G4_FP_2025_021": {
         "q": "The product of star star 4, and star star 8, where the stars are not the same?",
     },
-    "Q_CH15_003": {
-        "hints": {1: "Magic constant equals 3 times centre. So total equals 3 times, 3 times centre, which is 9 times centre."},
-    },
     "PYQ_2018_Q33": {
         "hints": {2: "Here is a similar one: a three-digit palindrome is added to 1009 to make a four-digit palindrome. Try a total that begins and ends with 1. Since 9 plus 2 equals 11, which ends in 1, the palindrome looks like 2, star, 2. Trying the middle digit, 212 plus 1009 equals 1221, which reads the same backwards. The digits of 212 add up to 2 plus 1 plus 2, which is 5."},
         "steps": {
@@ -50,11 +47,6 @@ HAND = {
     },
     "Q_CH15_020": {
         "q": "If blue, blue, blue equals red, red, and red equals green, green, green, then blue, blue, blue equals how many greens?",
-        "steps": {0: "3 B equals 2 R, and R equals 3 G."},
-    },
-    "Q_CH15_022": {
-        "hints": {2: "Sum of each line equals 25 plus 5, divided by 2, which is 15. Line with 1: 1 plus 5 plus what number equals 15. So the missing number equals 9."},
-        "steps": {1: "Each line equals total plus centre, divided by 2. That is 25 plus 5, over 2, which is 15."},
     },
 }
 

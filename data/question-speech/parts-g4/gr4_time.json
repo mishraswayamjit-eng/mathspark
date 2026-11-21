@@ -1006,14 +1006,15 @@
    "Monday"
   ],
   "hints": [
-   "2024 is a leap year, 366 days. How many extra days beyond complete weeks?",
-   "366 divided by 7 equals 52 weeks and 2 extra days.",
-   "2 extra days: Monday plus 2 is Wednesday."
+   "This is a calendar problem. The same date moves forward in the week each year by the days left over after full weeks, so first decide whether the year in between is a leap year.",
+   "2024 is a leap year, so there are 366 days from 1st January 2024 to 1st January 2025. Divide 366 by 7 to find how many days are left over after full weeks.",
+   "A similar example: 1st January 2023 was a Sunday. 2023 is an ordinary year with 365 days, and 365 divided by 7 is 52 weeks with 1 day left over. So 1st January 2024 was 1 day after Sunday, which is Monday."
   ],
   "steps": [
-   "2024 is a leap year: 366 days. 366 divided by 7 equals 52 weeks plus 2 days.",
-   "2 extra days: Monday plus 2 is Wednesday",
-   "1st January 2025 is Wednesday."
+   "2024 is a leap year, so it has 366 days.",
+   "Divide by 7 to find the full weeks. 366 days are 52 weeks and 2 days left over. 366 equals 52 times 7 plus 2.",
+   "The full weeks bring us back to Monday. The 2 extra days move it on to Tuesday and then Wednesday.",
+   "1st January 2025 was a Wednesday."
   ]
  },
  "Q_CH17_005": {
@@ -1025,15 +1026,16 @@
    "Saturday"
   ],
   "hints": [
-   "Count odd days from 1993 to 1997. Normal year equals 1 odd day. Leap year equals 2 odd days.",
-   "1993: 1 day, 1994: 1 day, 1995: 1 day, 1996: 2 days, leap! Total equals 5 odd days.",
-   "Tuesday plus 5 is Sunday."
+   "This is a calendar problem across several years. Each year moves the same date forward in the week, and a year that crosses 29th February moves it one day more.",
+   "From 26th January 1993 to 26th January 1997 there are four jumps of one year. An ordinary year moves the day on by 1. Find which jump crosses 29th February 1996, because that one moves the day on by 2.",
+   "A similar example: Children's Day, 14th November, was a Tuesday in 2006. On which day was it in 2009? From 2006 to 2007 the day moves on by 1. From 2007 to 2008 it crosses 29th February 2008 and moves on by 2. From 2008 to 2009 it moves on by 1. That is 1 plus 2 plus 1 equals 4 days, and 4 days after Tuesday is Saturday."
   ],
   "steps": [
-   "Count from 26 January 1993 to 26 January 1997: 4 years.",
-   "Odd days: 1 plus 1 plus 1 plus 2 equals 5",
-   "Tuesday plus 5 days is Sunday",
-   "Republic Day 1997 was Sunday."
+   "From 26th January 1993 to 26th January 1997 there are 4 jumps of one year.",
+   "An ordinary year is 52 weeks and 1 day. So the jumps to 1994, 1995 and 1996 each move the day on by 1.",
+   "The jump from 1996 to 1997 crosses 29th February 1996. It has 366 days, so it moves the day on by 2.",
+   "Altogether the day moves on by 5 days. 1 plus 1 plus 1 plus 2 equals 5.",
+   "Five days after Tuesday is Sunday. Republic Day 1997 fell on a Sunday."
   ]
  },
  "Q_CH17_006": {
@@ -1064,15 +1066,15 @@
    "Friday"
   ],
   "hints": [
-   "1992 is a leap year! From 14 February 1992 to 14 February 1993 is 366 days, because it crosses 29 February 1992.",
-   "366 divided by 7 equals 52 weeks plus 2 days. So 14 February 1993 is Friday plus 2, which is Sunday.",
-   "But we want 13 February, one day before 14 February. Sunday minus 1 is Saturday."
+   "This is a calendar problem with a trap. The second date is not exactly one year after the first, so look closely at both dates, and check whether a 29th February lies in between.",
+   "First find the day of 14th February 1993, exactly one year later. 1992 is a leap year, so that year includes 29th February 1992 and has 366 days.",
+   "A similar example: 10th March 2015 was a Tuesday. What day was 9th March 2016? One full year on is 10th March 2016. That year crosses 29th February 2016, so it has 366 days, which is 52 weeks and 2 days. Two days after Tuesday is Thursday. 9th March is one day earlier, so it was a Wednesday."
   ],
   "steps": [
-   "1992 is a leap year. 14 February 1992 to 14 February 1993 equals 366 days.",
-   "14 February 1993 is Friday plus 2, which is Sunday",
-   "13 February 1993 is Sunday minus 1, which is Saturday",
-   "13 February 1993 was Saturday."
+   "First go one full year on, from 14th February 1992 to 14th February 1993. This crosses 29th February 1992, so it is 366 days.",
+   "366 days are 52 weeks and 2 days. Two days after Friday is Sunday, so 14th February 1993 was a Sunday. 366 equals 52 times 7 plus 2.",
+   "13th February is one day before 14th February. One day before Sunday is Saturday.",
+   "13th February 1993 fell on a Saturday."
   ]
  },
  "Q_CH17_008": {
@@ -1104,14 +1106,15 @@
    "Wednesday"
   ],
   "hints": [
-   "Count the days from 2nd October to 14th November.",
-   "October remaining: 31 minus 2 equals 29 days. November: 14 days. Total equals 29 plus 14, which is 43 days.",
-   "43 divided by 7 equals 6 weeks plus 1 day. Wednesday plus 1 is Thursday."
+   "This is a calendar problem inside one year. Count how many days lie between the two dates, then see how many are left over after full weeks.",
+   "October has 31 days. Count the days left in October after the 2nd, then add the 14 days of November.",
+   "A similar example: 5th March is a Monday. What day is 20th April in the same year? March has 31 minus 5 equals 26 days left, and 26 plus 20 equals 46 days. 46 days are 6 weeks and 4 days, and 4 days after Monday is Friday."
   ],
   "steps": [
-   "Days from 2 October to 14 November: 29 in October, plus 14 in November equals 43",
-   "43 divided by 7 equals 6 weeks plus 1 day",
-   "Wednesday plus 1 is Thursday"
+   "October has 31 days, so after 2nd October there are 29 days left in October.",
+   "Add the 14 days of November. 29 plus 14 equals 43.",
+   "43 days are 6 weeks and 1 day left over. 43 equals 6 times 7 plus 1.",
+   "One day after Wednesday is Thursday. Children's Day fell on a Thursday."
   ]
  },
  "Q_CH17_010": {
@@ -1123,14 +1126,15 @@
    "Sunday"
   ],
   "hints": [
-   "Count days from 26 January to 15 August. 2020 is a leap year, February equals 29 days.",
-   "January: 5, February: 29, March: 31, April: 30, May: 31, June: 30, July: 31, August: 15. Total equals 5 plus 29 plus 31 plus 30 plus 31 plus 30 plus 31 plus 15, which is 202.",
-   "202 divided by 7 equals 28 weeks plus 6 days. Sunday plus 6 is Saturday."
+   "This is a calendar problem inside one year. Count the days from the first date to the second, month by month, then see how many are left over after full weeks.",
+   "2020 is a leap year, so February has 29 days. Start with the 5 days left in January after the 26th, then add each full month and the 15 days of August.",
+   "A similar example: 10th March is a Monday. What day is 5th June in the same year? March has 31 minus 10 equals 21 days left. Then 21 plus 30 plus 31 plus 5 equals 87 days. 87 days are 12 weeks and 3 days, and 3 days after Monday is Thursday."
   ],
   "steps": [
-   "Days: 5 in January, plus 29 in February, plus 31 in March, plus 30 in April, plus 31 in May, plus 30 in June, plus 31 in July, plus 15 in August",
-   "Total equals 202 days",
-   "Sunday plus 6 is Saturday"
+   "After 26th January there are 5 days left in January. 2020 is a leap year, so February has 29 days. 31 minus 26 equals 5.",
+   "Add the days month by month up to 15th August. 5 plus 29 plus 31 plus 30 plus 31 plus 30 plus 31 plus 15 equals 202.",
+   "202 days are 28 weeks and 6 days left over. 202 equals 28 times 7 plus 6.",
+   "Six days after Sunday is Saturday. Independence Day was celebrated on a Saturday."
   ]
  },
  "Q_CH17_011": {
@@ -1219,14 +1223,15 @@
    "12th May"
   ],
   "hints": [
-   "First find what day May 1st falls on. From 17 March, Wednesday, to 1 May: 14 in March, plus 30 in April, plus 1 equals 45 days.",
-   "45 divided by 7 equals 6 weeks plus 3 days. Wednesday plus 3 is Saturday. So 1 May is Saturday.",
-   "If 1 May is Saturday, then 2 May is Sunday, the 1st Sunday. 9 May is Sunday, the 2nd Sunday."
+   "This is a calendar problem in two parts. First find the day of the week on which May begins, then count the Sundays in May.",
+   "Count the days from 17th March to 1st May: the days left in March, all of April and 1 day of May. Divide by 7 and use the days left over to find the day on 1st May.",
+   "A similar example: a fair opens on Tuesday, 10th June and ends on the second Saturday of July. June has 30 minus 10 equals 20 days left, so 1st July is 21 days later. That is exactly 3 weeks, so 1st July is a Tuesday. The first Saturday is 5th July, and the second Saturday is 12th July."
   ],
   "steps": [
-   "Days from 17 March to 1 May: 14 in March, plus 30 in April, plus 1 in May equals 45",
-   "45 divided by 7 equals 6 remainder 3. Wednesday plus 3 is Saturday. 1 May is Saturday.",
-   "Sundays in May: 2nd, 9th, 16th, and so on. The 2nd Sunday is 9th May."
+   "After 17th March there are 31 minus 17 equals 14 days left in March. April has 30 days, so 1st May is 45 days after 17th March.",
+   "45 days are 6 weeks and 3 days. Three days after Wednesday is Saturday, so 1st May is a Saturday. 45 equals 6 times 7 plus 3.",
+   "The first Sunday of May is the next day, 2nd May.",
+   "The second Sunday is 7 days later. The final was on 9th May. 2 plus 7 equals 9."
   ]
  },
  "Q_CH17_016": {
@@ -1258,14 +1263,15 @@
    "Thursday"
   ],
   "hints": [
-   "Count days from 1 January to 25 December. That's 358 days. 365 minus 7 equals 358. Let's count properly.",
-   "30 in January, plus 28 in February, plus 31 in March, plus 30 in April, plus 31 in May, plus 30 in June, plus 31 in July, plus 31 in August, plus 30 in September, plus 31 in October, plus 30 in November, plus 25 in December equals 358",
-   "358 divided by 7 equals 51 weeks plus 1 day. Tuesday plus 1 is Wednesday."
+   "This is a calendar problem inside one year. Count the days from the first date to the second, month by month, then see how many are left over after full weeks.",
+   "2019 is an ordinary year, so February has 28 days. Start with the 30 days left in January after the 1st, add each full month up to November, and then the 25 days of December.",
+   "A similar example: 1st January 2021 was a Friday. What day was 14th November 2021? The days are 30 plus 28 plus 31 plus 30 plus 31 plus 30 plus 31 plus 31 plus 30 plus 31 plus 14 equals 317. 317 days are 45 weeks and 2 days, and 2 days after Friday is Sunday."
   ],
   "steps": [
-   "Days from 1 January to 25 December, 2019, not a leap year. 30 plus 28 plus 31 plus 30 plus 31 plus 30 plus 31 plus 31 plus 30 plus 31 plus 30 plus 25 equals 358.",
-   "358 divided by 7 equals 51 remainder 1",
-   "Tuesday plus 1 is Wednesday"
+   "2019 is an ordinary year, so February has 28 days. After 1st January there are 30 days left in January.",
+   "Add the months from February to November and the 25 days of December. 30 plus 28 plus 31 plus 30 plus 31 plus 30 plus 31 plus 31 plus 30 plus 31 plus 30 plus 25 equals 358.",
+   "358 days are 51 weeks and 1 day left over. 358 equals 51 times 7 plus 1.",
+   "One day after Tuesday is Wednesday. Christmas was celebrated on a Wednesday."
   ]
  },
  "Q_CH17_018": {
@@ -1337,14 +1343,15 @@
    "Wednesday"
   ],
   "hints": [
-   "Count days from 5 September to 25 December: 25 in September, plus 31 in October, plus 30 in November, plus 25 in December equals 111.",
-   "111 divided by 7 equals 15 weeks plus 6 days.",
-   "Monday plus 6 is Sunday."
+   "This is a calendar problem inside one year. Count the days from the first date to the second, month by month, then see how many are left over after full weeks.",
+   "Christmas is on 25th December. September has 30 days, so start with the days left in September after the 5th. Then add October, November and 25 days of December.",
+   "A similar example: 15th August is a Friday. What day is 2nd October in the same year? August has 31 minus 15 equals 16 days left. Then 16 plus 30 plus 2 equals 48 days. 48 days are 6 weeks and 6 days, and 6 days after Friday is Thursday."
   ],
   "steps": [
-   "25 in September, plus 31 in October, plus 30 in November, plus 25 in December equals 111",
-   "111 divided by 7 equals 15 remainder 6",
-   "Monday plus 6 is Sunday"
+   "Christmas is on 25th December. September has 30 days, so after 5th September there are 25 days left.",
+   "Add October, November and the 25 days of December. 25 plus 31 plus 30 plus 25 equals 111.",
+   "111 days are 15 weeks and 6 days left over. 111 equals 15 times 7 plus 6.",
+   "Six days after Monday is Sunday. Christmas was celebrated on a Sunday."
   ]
  },
  "Q_CH17_022": {
@@ -1395,13 +1402,14 @@
    "7"
   ],
   "hints": [
-   "A normal year has 365 days. Divide by 7 to find complete weeks and extra days.",
-   "365 divided by 7 equals 52 weeks plus 1 day.",
-   "That 1 extra day is called 1 'odd day.' It's why the same date shifts by 1 day each normal year."
+   "Odd days are the days left over when a number of days is split into full weeks. Think about how many days a normal year has.",
+   "A normal year has 365 days and a week has 7 days. Divide 365 by 7 and look at what is left over.",
+   "A similar example: a month with 31 days. 31 days are 4 weeks and 3 days left over, so that month has 3 odd days."
   ],
   "steps": [
-   "365 divided by 7 equals 52 weeks plus 1 day",
-   "Odd days equals 1"
+   "A normal year has 365 days, and a week has 7 days.",
+   "52 full weeks make 364 days. 52 times 7 equals 364.",
+   "That leaves 1 day over. A normal year has 1 odd day. 365 minus 364 equals 1."
   ]
  },
  "Q_CH17_025": {

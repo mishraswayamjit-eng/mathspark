@@ -251,7 +251,7 @@ add("G4A_TRIANGLES_029",
     figure=tri_angles(50, 80, 50, "50°", "biggest", "?", note=_ABC),
     steps={0: tri_angles(50, 80, 50, "50°", "biggest", "?", note="Isosceles: two of the angles are equal"),
            1: tri_angles(50, 80, 50, "50°", "biggest", "?", hl=["a", "c"], note="B is bigger than both, so the equal pair is A and C"),
-           2: tri_angles(50, 80, 50, "50°", "80°", "50°", note="B would be 180 − 50 − 50 = 80°, bigger than 50°"),
+           2: tri_angles(50, 80, 50, "50°", "80°", "50°", note="B would be 180° − 50° − 50° = 80°, bigger than 50°"),
            3: tri_angles(50, 80, 50, "50°", "80°", "50°", hl=["c"], note="Angle C = angle A = 50°")})
 
 add("G4A_TRIANGLES_030",
@@ -305,7 +305,9 @@ add("Q_CH19_008",
            2: T("right", angles={"a": "45°", "b": "90°", "c": "45°"}, hl=["a", "c"], note="Each equal angle is 45°")})
 
 add("Q_CH19_009",
-    steps={0: T("equilateral", angles={"a": "60°", "b": "60°", "c": "60°"}, note="Equilateral: every angle is 60°, so none can be 90°")})
+    steps={0: T("equilateral", angles={"a": "60°", "b": "60°", "c": "60°"}, note="Equilateral: each angle is 180° ÷ 3 = 60°"),
+           1: T("right", angles={"b": "90°"}, hl=["b"], note="Right-angled needs a 90° angle. It cannot also be 60°."),
+           2: tri_angles(40, 70, 70, "40°", "70°", "70°", note="For example, 70°, 70°, 40° is acute-angled isosceles")})
 
 add("Q_CH19_010",
     steps={2: tri_angles(150, 15, 15, "150°", "15°", "15°", note="150° is obtuse, but two angles are equal: isosceles"),
@@ -337,8 +339,14 @@ add("Q_CH19_014",
 
 add("Q_CH19_022",
     figure=tri_angles(60, 40, 80, "60°", "40°", "80°", note="Which side is the longest?"),
-    steps={0: tri_angles(60, 40, 80, "60°", "40°", "80°", note="The longest side is opposite the largest angle"),
-           1: tri_angles(60, 40, 80, "60°", "40°", "80°", hl=["ab"], note="Largest angle 80°: the side opposite it is longest")})
+    steps={0: tri_angles(60, 40, 80, "60°", "40°", "80°", note="The longest side is opposite the biggest angle"),
+           1: tri_angles(60, 40, 80, "60°", "40°", "80°", note="Of 40°, 60° and 80°, the biggest is 80° (bottom right)"),
+           2: tri_angles(60, 40, 80, "60°", "40°", "80°", hl=["ab"], note="The side opposite 80° is the longest")})
+
+add("Q_CH19_023",
+    steps={0: T("scalene", angles={"a": "a", "b": "b", "c": "c"}, note="In every triangle, a + b + c = 180°"),
+           1: line([("90°", 90), ("90°", 90)], note="Two right angles: 90° + 90° = 180°"),
+           2: line([("90°", 90), ("90°", 90)], hl=["p0", "p1"], note="Nothing is left for the third angle: 180° − 180° = 0°")})
 
 
 # ══ Naming triangles ═════════════════════════════════════════════════════════
@@ -369,8 +377,9 @@ add("G4A_TRIANGLES_003",
 
 add("Q_CH19_015",
     figure=T("right", angles={"b": "90°"}, hl=["ca"], note="What is the highlighted side called?"),
-    steps={0: T("right", angles={"b": "90°"}, hl=["ca"], note="The side opposite the 90° angle is the longest side"),
-           1: T("right", angles={"b": "90°"}, sides={"ca": "hypotenuse"}, hl=["ca"])})
+    steps={0: T("right", angles={"b": "90°"}, hl=["ab", "bc"], note="Two sides meet to make the right angle"),
+           1: T("right", angles={"b": "90°"}, hl=["ca"], note="The third side is opposite the right angle: the longest side"),
+           2: T("right", angles={"b": "90°"}, sides={"ca": "hypotenuse"}, hl=["ca"], note="This side is called the hypotenuse")})
 
 add("Q_CH19_016",
     figure=T("scalene", note="A scalene triangle: all three sides are different"),
@@ -571,9 +580,10 @@ add("Q_CH19_019",
 
 add("Q_CH19_025",
     figure=right_tri(12, 7, "12 cm", "?", note="Area = 42 cm²"),
-    steps={0: right_tri(12, 7, "12 cm", "?", hl=["ab", "bc"], note="Area = ½ × base × height"),
-           1: right_tri(12, 7, "12 cm", "h", note="Half of 12 is 6, so 42 = 6 × h"),
-           2: right_tri(12, 7, "12 cm", "7 cm", hl=["ab"], note="h = 42 ÷ 6 = 7 cm")})
+    steps={0: rect_diag(12, 7, "12 cm", "?", note="The triangle is half of the rectangle around it"),
+           1: rect_diag(12, 7, "12 cm", "?", hl=["e0", "e1", "e2", "e3"], note="The whole rectangle: 2 × 42 = 84 cm²"),
+           2: rect_diag(12, 7, "12 cm", "?", hl=["e3"], note="12 × height = 84, so height = 84 ÷ 12 = 7"),
+           3: right_tri(12, 7, "12 cm", "7 cm", hl=["ab"], note="The height of the triangle is 7 cm")})
 
 
 # ══ Left without a picture ═══════════════════════════════════════════════════
@@ -581,6 +591,5 @@ add("Q_CH19_025",
 skip("EXT_G4_FP_2021_035", "adding up the sets in the answer choices: arithmetic, and a drawn set would point at the answer")
 skip("Q_CH19_020", "a median: no figure kind draws a line from a corner to the middle of the opposite side")
 skip("Q_CH19_021", "counting medians: no figure kind draws a median")
-skip("Q_CH19_023", "a triangle with two right angles cannot be drawn; the reasoning is the sum 90° + 90°")
 
 book.finish(sys.argv)

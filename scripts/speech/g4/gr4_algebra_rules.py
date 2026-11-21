@@ -122,7 +122,7 @@ def _letters(s):
 
 
 # Words that can follow the letter a when it is a variable, and never follow the word "a".
-_AFTER_A = r"(?:terms|times|multiplied|on its own|means|and|is|centimetres|from|first|when|before|by|with|squared|cubed|b)\b"
+_AFTER_A = r"(?:terms|times|multiplied|on its own|stands|means|and|is|centimetres|from|first|when|before|by|with|squared|cubed|b)\b"
 
 
 def _variable_a(s):
@@ -133,6 +133,7 @@ def _variable_a(s):
     s = re.sub(r"([=+−×÷/%s]\s*)a\b" % marks, r"\1A", s)                # + a
     s = re.sub(r"\ba(?= %s)" % _AFTER_A, "A", s)                         # a terms, a times a
     s = re.sub(r"\ba's\b", "A's", s)
+    s = re.sub(r"\b(letter|the|each) a\b(?! [a-z]{2,})", r"\1 A", s)     # "the letter a", "where the a is"
     return s
 
 
@@ -150,8 +151,8 @@ def _equals(s):
             if j:
                 if seen == 0 and not "".join(buf).strip():
                     buf.append("That equals " if i == 0 else " equals ")
-                elif seen == 0 and re.search(r"\b(?:is|gives|becomes)\s+[\dA-Za-z\s+−×÷().]{1,24}$", "".join(buf)) \
-                        and re.search(r"\b(?:is|gives|becomes)\s+[^=]*[+−×÷]", "".join(buf)):
+                elif seen == 0 and re.search(r"\b(?:is|be|gives|becomes)\s+[\dA-Za-z\s+−×÷().]{1,24}$", "".join(buf)) \
+                        and re.search(r"\b(?:is|be|gives|becomes)\s+[^=]*[+−×÷]", "".join(buf)):
                     buf.append(", which is ")      # "6a is 6 × 4 = 24"
                 elif seen == 0:
                     buf.append(" equals ")
@@ -191,7 +192,8 @@ def _tidy(s, sentence):
         s = re.sub(r"\.\s*\.", ".", s)
         s = re.sub(r"([!?])\s*\.", r"\1", s)
         s = re.sub(r":\s*\.", ".", s)
-    s = re.sub(r"\b(equals|is|times|plus|minus|by),\s+(?!open bracket)", r"\1 ", s)
+    # A comma left behind by a bracket ("equals, 5"), never one the sentence itself has ("3 times, so ...").
+    s = re.sub(r"\b(equals|is|times|plus|minus|by),\s+(?=\d|[A-Za-z]\b)", r"\1 ", s)
     s = re.sub(r"(?<!left )\bover,\s+(?=[\dA-Za-z]\b)", "over ", s)
     s = s.strip(" ,")
     s = re.sub(r"\s*:$", "", s)                     # "its perimeter will be:"
@@ -201,7 +203,7 @@ def _tidy(s, sentence):
     s = re.sub(r"\b(\d+ times \d+) (and|separately)\b", r"\1, \2", s)
     s = re.sub(r"\b(\d+ times \d+, (?:plus|minus) \d+ times \d+(?:, (?:plus|minus) \d+ times \d+)?) equals\b", r"\1, equals", s)
     s = re.sub(r"\b(close bracket, (?:times|divided by) \w+) (equals|has)\b", r"\1, \2", s)
-    s = re.sub(r"\b(all over \S+) (equals|and)\b", r"\1, \2", s)
+    s = re.sub(r"\b(all over \w+) (equals|and|is)\b", r"\1, \2", s)
     s = re.sub(r"\b(which is [\d.]*\d) (and|but)\b(?! \d+ over\b)", r"\1, \2", s)
     if sentence and s:
         if s[-1] not in ".?!":

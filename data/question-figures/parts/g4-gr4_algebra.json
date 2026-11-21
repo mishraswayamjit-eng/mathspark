@@ -5621,7 +5621,7 @@
       "label": "a + 4"
      }
     ],
-    "note": "Put 3 in place of a",
+    "note": "Write 3 in place of a: a + 4 becomes 3 + 4",
     "highlight": [
      "b0s0"
     ]
@@ -5647,6 +5647,31 @@
      }
     ],
     "note": "3 + 4 = 7"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.14,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 6.86,
+        "label": "4",
+        "tone": "b"
+       }
+      ],
+      "label": "a + 4",
+      "brace": "7"
+     }
+    ],
+    "note": "The value of a + 4 is 7",
+    "highlight": [
+     "b0"
+    ]
    }
   ]
  },
@@ -6331,6 +6356,90 @@
    }
   ]
  },
+ "Q_CH13_003": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 6.0,
+        "label": "3",
+        "tone": "a"
+       }
+      ],
+      "label": "2a",
+      "brace": "6"
+     }
+    ],
+    "note": "2a means 2 times a: 2 × 3 = 6"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "2",
+        "tone": "b"
+       }
+      ],
+      "label": "2a/3",
+      "brace": "6"
+     }
+    ],
+    "note": "The line means divide by 3: 6 ÷ 3 = 2"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "2",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "2",
+        "tone": "b"
+       }
+      ],
+      "label": "2a/3",
+      "brace": "6"
+     }
+    ],
+    "note": "The value of 2a/3 is 2",
+    "highlight": [
+     "b0s0"
+    ]
+   }
+  ]
+ },
  "Q_CH13_003_V03": {
   "origin": "rule",
   "stepFigures": [
@@ -6743,10 +6852,11 @@
         "tone": "b"
        }
       ],
-      "label": "a + 12"
+      "label": "a + 12",
+      "brace": "15"
      }
     ],
-    "note": "Put 3 in place of a on top"
+    "note": "Work out the bracket first: 3 + 12 = 15"
    },
    {
     "kind": "barModel",
@@ -6756,25 +6866,55 @@
        {
         "units": 4.0,
         "label": "5",
-        "tone": "a"
+        "tone": "c"
        },
        {
         "units": 4.0,
         "label": "5",
-        "tone": "a"
+        "tone": "c"
        },
        {
         "units": 4.0,
         "label": "5",
-        "tone": "a"
+        "tone": "c"
        }
       ],
-      "brace": "3 + 12"
+      "label": "(a + 12)/3",
+      "brace": "15"
      }
     ],
-    "note": "Share into 3 equal parts: each part is 5"
+    "note": "The whole bracket is divided by 3: 15 ÷ 3 = 5"
    },
-   null
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "5",
+        "tone": "c"
+       },
+       {
+        "units": 4.0,
+        "label": "5",
+        "tone": "c"
+       },
+       {
+        "units": 4.0,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "label": "(a + 12)/3",
+      "brace": "15"
+     }
+    ],
+    "note": "The value of (a + 12)/3 is 5",
+    "highlight": [
+     "b0s0"
+    ]
+   }
   ]
  },
  "Q_CH13_004_V03": {
@@ -6902,7 +7042,12 @@
  "Q_CH13_005": {
   "origin": "rule",
   "stepFigures": [
-   null,
+   {
+    "kind": "grid",
+    "rows": 3,
+    "cols": 3,
+    "note": "a² means a × a: 3 rows of 3"
+   },
    {
     "kind": "grid",
     "rows": 3,
@@ -7900,6 +8045,186 @@
    }
   ]
  },
+ "Q_CH13_010": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       }
+      ],
+      "label": "5a",
+      "brace": "15"
+     }
+    ],
+    "note": "5a means 5 times a: 5 × 3 = 15"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       }
+      ],
+      "label": "5a",
+      "brace": "15"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "5",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "5",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "5",
+        "tone": "b"
+       }
+      ],
+      "label": "3b",
+      "brace": "15"
+     }
+    ],
+    "note": "3b means 3 times b: 3 × 5 = 15",
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "3",
+        "tone": "a"
+       }
+      ],
+      "label": "take away",
+      "brace": "15"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "5",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "5",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "5",
+        "tone": "b"
+       }
+      ],
+      "label": "add",
+      "brace": "15"
+     }
+    ],
+    "note": "12 − 15 + 15: taking 15 away and adding 15 undo each other",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 12.0,
+        "label": "12",
+        "tone": "c"
+       }
+      ]
+     }
+    ],
+    "note": "12 − 15 + 15 = 12"
+   }
+  ]
+ },
  "Q_CH13_011": {
   "origin": "authored",
   "stepFigures": [
@@ -8865,6 +9190,7 @@
       "brace": "₹3x"
      }
     ],
+    "note": "Thrice means 3 times: the pen costs 3 × x",
     "highlight": [
      "b1"
     ]
@@ -8904,7 +9230,7 @@
       "brace": "₹3x"
      }
     ],
-    "note": "3x + x = 4x",
+    "note": "3 lots of x and 1 more lot of x make 4 lots of x",
     "highlight": [
      "b0",
      "b1"
@@ -8916,36 +9242,31 @@
      {
       "segments": [
        {
-        "units": 4.0,
+        "units": 3.0,
+        "label": "₹x",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "₹x",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
+        "label": "₹x",
+        "tone": "a"
+       },
+       {
+        "units": 3.0,
         "label": "₹x",
         "tone": "a"
        }
       ],
-      "label": "Pencil"
-     },
-     {
-      "segments": [
-       {
-        "units": 4.0,
-        "label": "₹x",
-        "tone": "b"
-       },
-       {
-        "units": 4.0,
-        "label": "₹x",
-        "tone": "b"
-       },
-       {
-        "units": 4.0,
-        "label": "₹x",
-        "tone": "b"
-       }
-      ],
-      "label": "Pen",
-      "brace": "₹3x"
+      "label": "Together",
+      "brace": "₹4x"
      }
     ],
-    "note": "Together they cost ₹4x"
+    "note": "A pen and a pencil together cost ₹4x"
    }
   ]
  },

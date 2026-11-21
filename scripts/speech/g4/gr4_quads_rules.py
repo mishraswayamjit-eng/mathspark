@@ -64,7 +64,8 @@ def _mode(left, previous, joiner):
     if _VERB.search(left):
         return "which"
     m = _EXPR_TAIL.match(left.strip())
-    if m and re.search(r"[×÷+−]", m.group(2)) and not _NOT_INSIDE.search(m.group(1).strip()):
+    if (m and re.search(r"[×÷+−]", m.group(2)) and m.group(2).strip()[0] in "0123456789("
+            and not _NOT_INSIDE.search(m.group(1).strip())):
         return "which"
     if previous == "which" and joiner.strip() == "and" and not re.search(r"[A-Za-z]{2}", left):
         return "which"

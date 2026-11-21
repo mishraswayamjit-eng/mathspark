@@ -2478,6 +2478,85 @@
    }
   ]
  },
+ "Q_CH01_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "45,032"
+    ],
+    [
+     "45,302"
+    ],
+    [
+     "45,320"
+    ],
+    [
+     "45,203"
+    ]
+   ],
+   "note": "Line the numbers up and compare from the left"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "45,032"
+     ],
+     [
+      "45,302"
+     ],
+     [
+      "45,320"
+     ],
+     [
+      "45,203"
+     ]
+    ],
+    "note": "All have 45 thousands, so compare the hundreds digits"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "45,032"
+     ],
+     [
+      "45,302"
+     ],
+     [
+      "45,320"
+     ],
+     [
+      "45,203"
+     ]
+    ],
+    "note": "The biggest hundreds digit is 3: 45,302 or 45,320",
+    "highlight": [
+     "r1",
+     "r2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "45302",
+    "note": "45,302 has 0 tens",
+    "highlight": [
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "45320",
+    "note": "45,320 has 2 tens, so it is the largest",
+    "highlight": [
+     "d3"
+    ]
+   }
+  ]
+ },
  "Q_CH01_004": {
   "origin": "authored",
   "stepFigures": [
@@ -2537,11 +2616,31 @@
     "kind": "table",
     "rows": [
      [
-      "DCC"
+      "?",
+      "?",
+      "?"
      ]
     ],
     "headers": [
-     "700"
+     "700",
+     "80",
+     "9"
+    ],
+    "note": "Split the number into its parts"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "DCC",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "700",
+     "80",
+     "9"
     ]
    },
    {
@@ -2549,12 +2648,14 @@
     "rows": [
      [
       "DCC",
-      "LXXX"
+      "LXXX",
+      "?"
      ]
     ],
     "headers": [
      "700",
-     "80"
+     "80",
+     "9"
     ]
    },
    {
@@ -2724,6 +2825,109 @@
    null
   ]
  },
+ "Q_CH01_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "5,432"
+    ],
+    [
+     "5,342"
+    ],
+    [
+     "5,423"
+    ],
+    [
+     "5,234"
+    ]
+   ],
+   "note": "Line the numbers up and compare from the left"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5,432"
+     ],
+     [
+      "5,342"
+     ],
+     [
+      "5,423"
+     ],
+     [
+      "5,234"
+     ]
+    ],
+    "note": "All have 5 thousands, so look at the hundreds"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5,432"
+     ],
+     [
+      "5,342"
+     ],
+     [
+      "5,423"
+     ],
+     [
+      "5,234"
+     ]
+    ],
+    "note": "5,234 has 2 hundreds: smallest. 5,342 has 3 hundreds: next",
+    "highlight": [
+     "r1",
+     "r3"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5,432"
+     ],
+     [
+      "5,342"
+     ],
+     [
+      "5,423"
+     ],
+     [
+      "5,234"
+     ]
+    ],
+    "note": "Both have 4 hundreds. 2 tens is less than 3 tens",
+    "highlight": [
+     "r0",
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5,234"
+     ],
+     [
+      "5,342"
+     ],
+     [
+      "5,423"
+     ],
+     [
+      "5,432"
+     ]
+    ],
+    "note": "In ascending order, smallest first"
+   }
+  ]
+ },
  "Q_CH01_010": {
   "origin": "authored",
   "figure": {
@@ -2869,6 +3073,91 @@
     "note": "500 − 5 = 495",
     "highlight": [
      "d1"
+    ]
+   }
+  ]
+ },
+ "Q_CH01_013": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "XL",
+      "50 − 10 = 40"
+     ],
+     [
+      "IX",
+      "10 − 1 = 9"
+     ],
+     [
+      "XIV",
+      "10 + 4 = 14"
+     ]
+    ],
+    "headers": [
+     "Roman",
+     "Number"
+    ],
+    "note": "Only I and X are placed before a bigger letter"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "XL",
+      "50 − 10 = 40"
+     ],
+     [
+      "IX",
+      "10 − 1 = 9"
+     ],
+     [
+      "XIV",
+      "10 + 4 = 14"
+     ],
+     [
+      "VX",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Roman",
+     "Number"
+    ],
+    "note": "V is never used to take away",
+    "highlight": [
+     "r3"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "XL",
+      "50 − 10 = 40"
+     ],
+     [
+      "IX",
+      "10 − 1 = 9"
+     ],
+     [
+      "XIV",
+      "10 + 4 = 14"
+     ],
+     [
+      "VX",
+      "not valid"
+     ]
+    ],
+    "headers": [
+     "Roman",
+     "Number"
+    ],
+    "note": "5 is written simply as V",
+    "highlight": [
+     "r3"
     ]
    }
   ]

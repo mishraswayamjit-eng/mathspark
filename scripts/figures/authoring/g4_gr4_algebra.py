@@ -95,7 +95,8 @@ def square_or_product(qid, q, vals, a, b):
     count = len(steps_of(q))
     first = grid(vb, va, note="%s = %s × %s = %d × %d: %d rows of %d" % (name, a, b, va, vb, vb, va))
     last = [grid(vb, va, note="%d rows of %d make %d, so %s = %d" % (vb, va, va * vb, name, va * vb))]
-    put(qid, None, [None] * (count - 2) + [first, last], origin="rule")
+    meaning = grid(vb, va, note="%s means %s × %s: %d rows of %d" % (name, a, b, vb, va))   # a step that only says what it means
+    put(qid, None, [meaning] * (count - 2) + [first, last], origin="rule")
 
 
 def then_add_take(qid, q, vals, m):
@@ -146,17 +147,30 @@ for _qid, _q in sorted(P.qs.items()):
 # ── Drawn one by one: putting numbers in (step figures only) ─────────────────
 
 put("Q_CH13_001", None,
-    {0: bm(B("a + 4", V(3), V(4, tone="b")), hl=["b0s0"], note="Put 3 in place of a"),
-     1: bm(B("a + 4", V(3), V(4, tone="b"), brace="7"), note="3 + 4 = 7")})
+    {0: bm(B("a + 4", V(3), V(4, tone="b")), hl=["b0s0"], note="Write 3 in place of a: a + 4 becomes 3 + 4"),
+     1: bm(B("a + 4", V(3), V(4, tone="b"), brace="7"), note="3 + 4 = 7"),
+     2: bm(B("a + 4", V(3), V(4, tone="b"), brace="7"), hl=["b0"], note="The value of a + 4 is 7")})
+
+put("Q_CH13_003", None,
+    {0: bm(B("2a", V(3), V(3), brace="6"), note="2a means 2 times a: 2 × 3 = 6"),
+     1: bm(B("2a/3", [V(2, tone="b")] * 3, brace="6"), note="The line means divide by 3: 6 ÷ 3 = 2"),
+     2: bm(B("2a/3", [V(2, tone="b")] * 3, brace="6"), hl=["b0s0"], note="The value of 2a/3 is 2")})
+
+_fa, _fb = [V(3)] * 5, [V(5, tone="b")] * 3
+put("Q_CH13_010", None,
+    {0: bm(B("5a", _fa, brace="15"), note="5a means 5 times a: 5 × 3 = 15"),
+     1: bm(B("5a", _fa, brace="15"), B("3b", _fb, brace="15"), hl=["b1"], note="3b means 3 times b: 3 × 5 = 15"),
+     2: bm(B("take away", _fa, brace="15"), B("add", _fb, brace="15"), hl=["b0", "b1"], note="12 − 15 + 15: taking 15 away and adding 15 undo each other"),
+     3: bm(B("", V(12, tone="c")), note="12 − 15 + 15 = 12")})
 
 put("Q_CH13_002", None,
     {0: bm(B("4a", [S("a", 3)] * 4), note="4a means 4 lots of a"),
      1: bm(B("4a", [V(3)] * 4, brace="12"), note="4 × 3 = 12")})
 
 put("Q_CH13_004", None,
-    {0: [bm(B("a + 12", V(3), V(12, tone="b"), brace="15"), note="3 + 12 = 15"),
-         bm(B("a + 12", V(3), V(12, tone="b")), note="Put 3 in place of a on top")],
-     1: bm(B("", [V(5)] * 3, brace="3 + 12"), note="Share into 3 equal parts: each part is 5")})
+    {0: bm(B("a + 12", V(3), V(12, tone="b"), brace="15"), note="Work out the bracket first: 3 + 12 = 15"),
+     1: bm(B("(a + 12)/3", [V(5, tone="c")] * 3, brace="15"), note="The whole bracket is divided by 3: 15 ÷ 3 = 5"),
+     2: bm(B("(a + 12)/3", [V(5, tone="c")] * 3, brace="15"), hl=["b0s0"], note="The value of (a + 12)/3 is 5")})
 
 put("Q_CH13_006", None,
     {0: grid(3, 3, note="a² = 3 × 3 = 9: 3 rows of 3"),
@@ -459,9 +473,9 @@ put("Q_CH13_017", bm(B("Soham", _so, brace="?"), note="From x years ago, to now,
 
 _px = S("₹x", 3)
 put("Q_CH13_018", bm(B("Pencil", _px), B("Pen", [_px] * 3), note="A pen costs thrice as much as a pencil"),
-    {0: bm(B("Pencil", _px), B("Pen", [_px] * 3, brace="₹3x"), hl=["b1"]),
-     1: bm(B("Pencil", _px), B("Pen", [_px] * 3, brace="₹3x"), hl=["b0", "b1"], note="3x + x = 4x"),
-     2: bm(B("Pencil", _px), B("Pen", [_px] * 3, brace="₹3x"), note="Together they cost ₹4x")})
+    {0: bm(B("Pencil", _px), B("Pen", [_px] * 3, brace="₹3x"), hl=["b1"], note="Thrice means 3 times: the pen costs 3 × x"),
+     1: bm(B("Pencil", _px), B("Pen", [_px] * 3, brace="₹3x"), hl=["b0", "b1"], note="3 lots of x and 1 more lot of x make 4 lots of x"),
+     2: bm(B("Together", [_px] * 4, brace="₹4x"), note="A pen and a pencil together cost ₹4x")})
 
 put("Q_CH13_019", bm(B("", S("y m cut", 4, "c"), Uq(8, "left ?"), brace="x m")),
     {0: bm(B("", S("y m cut", 4, "c"), Uq(8, "left ?"), brace="x m"), hl=["b0"], note="The whole rope is x metres long"),

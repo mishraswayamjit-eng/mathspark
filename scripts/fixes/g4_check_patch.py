@@ -81,6 +81,101 @@ def check_teaching(where, question, options, right, hints, steps, notes, problem
         check_text("%s note %d" % (where, i + 1), n, problems)
 
 
+GENERIC_NOTE = re.compile(
+    r"^(Check your unit conversion and formula|Read the question again|Recheck: did you use the right operation|"
+    r"Substitute carefully|Remember: (Average|place value)|Check the angle sum property|Count carefully|"
+    r"Check your prime factori[sz]ation|Not quite\. Work through the steps once more|Look at the pattern carefully|"
+    r"When denominators match, add numerators only|Check your fraction calculation|"
+    r"You may have forgotten to divide by the coefficient|Check if you moved the constant term|Recheck your steps)", re.I)
+BARE_RIGHT = re.compile(r"^(Correct|Yes|Right|Great job|Well done)[!.]?\s*((The|That|This) (answer )?is\s*[^.!?=×÷+−-]{0,30})?[.!]?$", re.I)
+
+
+def claim_value(expr):
+    """The value of a slip written as a plain sum: digits, + - * /, brackets. None if it is anything else."""
+    import ast
+    import fractions
+
+    def walk(node):
+        if isinstance(node, ast.Expression):
+            return walk(node.body)
+        if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)) and not isinstance(node.value, bool):
+            return fractions.Fraction(str(node.value))
+        if isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.USub):
+            return -walk(node.operand)
+        if isinstance(node, ast.BinOp) and isinstance(node.op, (ast.Add, ast.Sub, ast.Mult, ast.Div)):
+            a, b = walk(node.left), walk(node.right)
+            if isinstance(node.op, ast.Add):
+                return a + b
+            if isinstance(node.op, ast.Sub):
+                return a - b
+            if isinstance(node.op, ast.Mult):
+                return a * b
+            return a / b
+        raise ValueError("not a plain sum")
+
+    try:
+        return float(walk(ast.parse(str(expr).replace("×", "*").replace("÷", "/").replace("−", "-"), mode="eval")))
+    except (ValueError, SyntaxError, ZeroDivisionError):
+        return None
+
+
+def option_number(text):
+    """The number an option stands for: its value if it is a number or fraction, else its only number."""
+    v = value(text)
+    if isinstance(v, float):
+        return v
+    found = NUM.findall((text or "").replace(",", ""))
+    if len(found) == 1:
+        sign = -1.0 if re.search(r"[-−]\s*%s" % re.escape(found[0]), text or "") else 1.0
+        return sign * float(found[0])
+    return None
+
+
+def check_notes(qid, q, notes, claims, problems):
+    """Notes-only output. Returns (wrong options with a checked slip, wrong options without)."""
+    if set(notes) != {"A", "B", "C", "D"}:
+        problems.append("%s: notes must have A, B, C, D" % qid)
+        return 0, 0
+    key = q["correctAnswer"]
+    options = {o["id"]: o["text"] for o in q["options"]}
+    for k in "ABCD":
+        check_text("%s note %s" % (qid, k), notes[k], problems)
+    wrong = [re.sub(r"\s+", " ", (notes[k] or "").strip().lower()) for k in "ABCD" if k != key]
+    if len(set(wrong)) < 3:
+        problems.append("%s: two wrong options have the same note" % qid)
+    for k in "ABCD":
+        if isinstance(notes[k], str) and GENERIC_NOTE.search(notes[k].strip()):
+            problems.append("%s note %s: generic filler" % (qid, k))
+    right_note = notes[key] if isinstance(notes[key], str) else ""
+    if BARE_RIGHT.match(right_note.strip()) or len(right_note.split()) < 5:
+        problems.append("%s note %s: the note on the right option must say why it is right" % (qid, key))
+    mine = [n for n in nums(options[key]) if n not in nums(q.get("questionText"))]
+    for k in "ABCD":
+        if k == key or not isinstance(notes[k], str):
+            continue
+        if len(notes[k].split()) < 6:
+            problems.append("%s note %s: too short to help" % (qid, k))
+        own = nums(options[k])
+        if mine and len(mine[0]) > 1 and all(n in nums(notes[k]) for n in mine) and not all(n in own for n in mine):
+            problems.append("%s note %s: gives away the right answer (%s)" % (qid, k, options[key]))
+    claimed = 0
+    for k, expr in claims.items():
+        if k not in "ABCD" or k == key:
+            problems.append("%s: a claim must be for a wrong option" % qid)
+            continue
+        want = option_number(options[k])
+        got = claim_value(expr)
+        if got is None:
+            problems.append("%s claim %s: %r is not a plain sum" % (qid, k, expr))
+        elif want is None:
+            problems.append("%s claim %s: the option %r is not a single number, so leave the claim out" % (qid, k, options[k]))
+        elif abs(got - want) > 1e-6:
+            problems.append("%s claim %s: %s gives %g, but the option is %s" % (qid, k, expr, got, options[k]))
+        else:
+            claimed += 1
+    return claimed, 3 - len(claims)
+
+
 def main():
     files = [a for a in sys.argv[1:] if not a.startswith("--")]
     if not files:
@@ -147,6 +242,19 @@ def main():
                 check_teaching(where, p.get("question"), opts, str(opts[p["answer"]]), p.get("hints"), p.get("steps"),
                                p.get("notes") or [], problems)
                 ok += 1 if len(problems) == before else 0
+        elif name.startswith("notes-out"):
+            claimed = unclaimed = 0
+            for qid, p in data.items():
+                q = by_id.get(qid)
+                if q is None:
+                    problems.append("%s: %s is not a Grade 4 bank question" % (name, qid))
+                    continue
+                before = len(problems)
+                c, u = check_notes(qid, q, p.get("notes") or {}, p.get("claims") or {}, problems)
+                claimed += c
+                unclaimed += u
+                ok += 1 if len(problems) == before else 0
+            print("%s: %d wrong options with a checked slip, %d with a what-to-check note" % (name, claimed, unclaimed))
         else:
             problems.append("%s: not a file this checker knows" % name)
     print("%d entries pass, %d problems" % (ok, len(problems)))

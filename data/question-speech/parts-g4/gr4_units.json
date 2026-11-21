@@ -1402,14 +1402,14 @@
    "Kilogram"
   ],
   "hints": [
-   "Perimeter means the distance around something. Which unit measures distance?",
-   "Litre measures liquids, kilogram measures weight. What measures length?",
-   "Metre is the unit for measuring length and distance."
+   "Each unit measures one kind of thing. Think about what a perimeter is: a length, a weight or an amount of liquid?",
+   "The perimeter is the distance all the way around the classroom. Look for the unit that measures length.",
+   "A similar example: to measure how much water a bucket holds, we need a unit of capacity, so we use litres. Kilograms would not do, because they measure how heavy something is."
   ],
   "steps": [
-   "Perimeter is the total length around a shape.",
-   "Litre is for capacity or volume, kilogram is for mass or weight, and metre is for length.",
-   "So metre is the suitable unit."
+   "The perimeter of a classroom is the total length around its walls.",
+   "A litre measures how much liquid there is, and a kilogram measures how heavy something is.",
+   "Length is measured in metres, so the suitable unit is the metre."
   ]
  },
  "Q_CH12_003": {
@@ -1441,14 +1441,15 @@
    "Gram and decagram"
   ],
   "hints": [
-   "1 over 100 means one unit is 100 times smaller than the other. Which prefix means 1 over 100?",
-   "Centi means 1 over 100. So a centilitre is 1 over 100 of a litre!",
-   "1 centilitre equals 1 over 100 of a litre. That's the 1 over 100 relationship."
+   "One unit being 1 over 100 times the other means that 100 of the small unit make 1 of the big unit. Recall how the units in each pair are related.",
+   "Start with kilogram and tonne: how many kilograms make 1 tonne? Ask the same about each pair, and look for the pair where the number is 100.",
+   "A similar example: to find a pair where one unit is 1 over 10 of the other, think of millimetre and centimetre. 10 millimetres make 1 centimetre, so a millimetre is 1 over 10 of a centimetre."
   ],
   "steps": [
-   "We need a pair where one is exactly 1 over 100 of the other.",
-   "Check each: a metre is 1 over 1000 of a kilometre, not 1 over 100. A gram is 1 over 10 of a decagram, not 1 over 100. A kilogram is 1 over 1000 of a tonne, not 1 over 100.",
-   "A centilitre is 1 over 100 of a litre. Centi literally means hundredth!"
+   "We want a pair where 100 of the smaller unit make 1 of the bigger unit.",
+   "1 tonne is 1000 kilograms and 1 kilometre is 1000 metres, so those two pairs are 1000 times apart.",
+   "1 decagram is 10 grams, so that pair is only 10 times apart.",
+   "1 litre is 100 centilitres, so a centilitre is 1 over 100 of a litre. The pair is centilitre and litre."
   ]
  },
  "Q_CH12_005": {
@@ -1460,14 +1461,14 @@
    "1 over 8"
   ],
   "hints": [
-   "1 litre equals 1000 millilitres. To convert millilitres to litres, divide by 1000.",
-   "125 divided by 1000 equals 0.125. Now simplify 0.125 as a fraction.",
-   "0.125 equals 125 over 1000, which is 1 over 8."
+   "This changes a small unit into a bigger one. Recall how many millilitres make 1 litre, then write the amount as a fraction of a litre.",
+   "1000 millilitres make 1 litre, so 125 millilitres is 125 out of 1000 parts of a litre. Write that as a fraction and then simplify it.",
+   "A similar example: 250 millilitres is 250 over 1000 of a litre. Since 250 times 4 equals 1000, dividing the top and the bottom by 250 gives one quarter. So 250 millilitres equals one quarter of a litre."
   ],
   "steps": [
-   "Convert millilitres to litres: divide by 1000. 125 divided by 1000 equals 0.125 litres.",
-   "Express as a fraction: 125 over 1000.",
-   "Simplify: divide both by 125. 125 divided by 125, over 1000 divided by 125, equals 1 over 8."
+   "1 litre is 1000 millilitres, so 125 millilitres is 125 parts out of 1000.",
+   "125 goes into 1000 exactly 8 times, so the top and the bottom can both be divided by 125. 125 times 8 equals 1000.",
+   "125 divided by 125 equals 1 and 1000 divided by 125 equals 8. So 125 millilitres equals 1 over 8 of a litre."
   ]
  },
  "Q_CH12_006": {
@@ -1498,14 +1499,14 @@
    "3"
   ],
   "hints": [
-   "First, how many articles are in 1 score?",
-   "1 score equals 20 articles. So 0.3 score equals 0.3 times 20.",
-   "0.3 times 20 equals 6 articles."
+   "A score is a counting unit, like a dozen. Recall how many articles make one score, then find the part of it that is asked for.",
+   "1 score is 20 articles. 0.3 means 3 tenths, so first find one tenth of 20.",
+   "A similar example: how many articles make 0.7 score? One tenth of 20 is 2, and 0.7 is 7 tenths, so 7 times 2 equals 14 articles."
   ],
   "steps": [
-   "1 score equals 20 articles.",
-   "0.3 score is 0.3 times 20. And 0.3 times 20 is 6.",
-   "So 0.3 score equals 6 articles."
+   "1 score is 20 articles.",
+   "0.3 means 3 tenths. One tenth of 20 is 2. 20 divided by 10 equals 2.",
+   "Three tenths are 3 times 2, which is 6. So 6 articles make 0.3 score. 0.3 times 20 equals 6."
   ]
  },
  "Q_CH12_008": {
@@ -1517,14 +1518,14 @@
    "12"
   ],
   "hints": [
-   "1 gross equals 12 dozens, which is 144 articles. 1 dozen equals 12 articles.",
-   "We need to know how many gross equal 1 dozen. We know that 1 gross equals 12 dozens.",
-   "1 dozen equals 1 over 12 of a gross."
+   "Gross and dozen are counting units. Decide which one is bigger, because when a smaller unit is measured in a bigger one the answer is a fraction.",
+   "Recall that 1 gross is 12 dozens. A dozen is smaller than a gross, so think about what part of a gross one dozen is.",
+   "A similar example: how many weeks make a day? 1 week is 7 days, so a day is one of 7 equal parts of a week. A day is 1 over 7 of a week."
   ],
   "steps": [
-   "1 gross equals 12 dozens, which is 144 articles.",
-   "So 1 dozen equals 1 over 12 of a gross.",
-   "1 over 12 of a gross makes a dozen."
+   "1 gross is 12 dozens, which is 144 articles. 12 times 12 equals 144.",
+   "So one dozen is 1 of the 12 equal parts of a gross.",
+   "So 1 over 12 of a gross makes a dozen."
   ]
  },
  "Q_CH12_009": {
@@ -1669,14 +1670,14 @@
    "2 kilograms 50 grams"
   ],
   "hints": [
-   "The whole number part stays as kilograms. The decimal part needs to be converted to grams.",
-   "0.5 kilograms equals 0.5 times 1000 grams, which is what?",
-   "0.5 times 1000 equals 500 grams. So 2.5 kilograms equals 2 kilograms 500 grams."
+   "A decimal number of kilograms has whole kilograms before the point and a part of a kilogram after it. The part after the point is changed into grams.",
+   "Split 2.5 kilograms into the whole kilograms and the part after the point. How many grams make 1 kilogram?",
+   "A similar example: 3.2 kilograms is 3 kilograms and 0.2 kilograms. 0.2 times 1000 equals 200, so 3.2 kilograms equals 3 kilograms 200 grams."
   ],
   "steps": [
-   "Split: 2.5 kilograms equals 2 kilograms plus 0.5 kilograms.",
-   "Convert 0.5 kilograms to grams: 0.5 times 1000 equals 500 grams.",
-   "2.5 kilograms equals 2 kilograms 500 grams."
+   "Split the amount into whole kilograms and the part after the point. 2.5 kilograms is 2 kilograms and 0.5 kilograms.",
+   "1 kilogram is 1000 grams, so multiply 0.5 by 1000 to change it into grams. 0.5 times 1000 equals 500.",
+   "So 2.5 kilograms equals 2 kilograms 500 grams."
   ]
  },
  "Q_CH12_019": {
@@ -1688,14 +1689,14 @@
    "2 litres 500 millilitres"
   ],
   "hints": [
-   "2 litres stays as litres. Convert 0.05 litres to millilitres.",
-   "1 litre equals 1000 millilitres. So 0.05 times 1000 equals what?",
-   "0.05 times 1000 equals 50 millilitres."
+   "A decimal number of litres has whole litres before the point and a part of a litre after it. The part after the point is changed into millilitres.",
+   "Split 2.05 litres into the whole litres and the part after the point. How many millilitres make 1 litre?",
+   "A similar example: 4.07 litres is 4 litres and 0.07 litres. 0.07 times 1000 equals 70, so 4.07 litres equals 4 litres 70 millilitres."
   ],
   "steps": [
-   "Split: 2.05 litres equals 2 litres plus 0.05 litres.",
-   "Convert 0.05 litres to millilitres: 0.05 times 1000 equals 50 millilitres.",
-   "2.05 litres equals 2 litres 50 millilitres."
+   "Split the amount into whole litres and the part after the point. 2.05 litres is 2 litres and 0.05 litres.",
+   "1 litre is 1000 millilitres, so multiply 0.05 by 1000 to change it into millilitres. 0.05 times 1000 equals 50.",
+   "So 2.05 litres equals 2 litres 50 millilitres."
   ]
  },
  "Q_CH12_020": {
@@ -1707,14 +1708,14 @@
    "2 metres 50 centimetres"
   ],
   "hints": [
-   "2 metres stays. Convert 0.05 metres to centimetres. Remember: 1 metre equals 100 centimetres.",
-   "What is 0.05 times 100?",
-   "0.05 times 100 equals 5 centimetres. So 2.05 metres equals 2 metres 5 centimetres."
+   "A decimal number of metres has whole metres before the point and a part of a metre after it. The part after the point is changed into centimetres.",
+   "Split 2.05 metres into the whole metres and the part after the point. How many centimetres make 1 metre?",
+   "A similar example: 6.08 metres is 6 metres and 0.08 metres. 0.08 times 100 equals 8, so 6.08 metres equals 6 metres 8 centimetres."
   ],
   "steps": [
-   "Split: 2.05 metres equals 2 metres plus 0.05 metres.",
-   "Convert 0.05 metres to centimetres: 0.05 times 100 equals 5 centimetres.",
-   "2.05 metres equals 2 metres 5 centimetres."
+   "Split the amount into whole metres and the part after the point. 2.05 metres is 2 metres and 0.05 metres.",
+   "1 metre is 100 centimetres, so multiply 0.05 by 100 to change it into centimetres. 0.05 times 100 equals 5.",
+   "So 2.05 metres equals 2 metres 5 centimetres."
   ]
  },
  "Q_CH12_021": {

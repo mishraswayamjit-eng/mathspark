@@ -137,9 +137,10 @@ A("EXT_G4_FP_2021_004", polygon(SQUARE, "Each line joins two players. Each pair 
 })
 A("PYQ_2016_Q17", polygon(SQUARE, "Each line joins two players who play each other", corners=list("ABCD"), dashed=[(0, 2), (1, 3)]), {
     0: table([["A and B", "A and C", "A and D"]], "The pairs with A: 3 pairs"),
-    1: table([["A and B", "A and C", "A and D"], ["B and C", "B and D"], ["C and D"]], "The new pairs with B, then the last new pair"),
-    2: table([["A and B", "A and C", "A and D"], ["B and C", "B and D"], ["C and D"]], "Count the pairs: 3, then 2, then 1"),
-    3: table([["A and B", "A and C", "A and D"], ["B and C", "B and D"], ["C and D"]], "Every pair plays 2 games: 12 games altogether"),
+    1: table([["A and B", "A and C", "A and D"], ["B and C", "B and D"]], "The new pairs with B: 2 more", hl=["r1"]),
+    2: table([["A and B", "A and C", "A and D"], ["B and C", "B and D"], ["C and D"]], "The last new pair. 3 + 2 + 1 = 6 pairs",
+             hl=["r2"]),
+    3: table([["A and B", "A and C", "A and D"], ["B and C", "B and D"], ["C and D"]], "6 pairs, 2 games each: 6 × 2 = 12 games"),
 })
 A("EXT_G4_FP_2020_026", polygon(ring(8), "The corners are the 8 points. Join every pair, not just neighbours"))
 A("PYQ_2019_Q07", polygon(ring(8), "Every pair of points can be joined, not just neighbours", corners=list("ABCDEFGH")), {
