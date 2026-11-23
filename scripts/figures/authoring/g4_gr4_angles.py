@@ -14,7 +14,7 @@ says nothing about still needs a label in the contract, so it is called p or q
 import re
 import sys
 
-from g4_gr4_angles_kit import (Book, deg, line, corner, cross, around, single, unknown, CLOCK, COMPASS, BM,
+from g4_gr4_angles_kit import (Book, deg, n, line, corner, cross, around, single, unknown, CLOCK, COMPASS, BM,
                                tri_angles, CW, ACW)
 
 book = Book("gr4_angles")
@@ -27,8 +27,16 @@ FACING = "Angles facing each other across a crossing are equal"
 
 # ══ Rules: families that differ only in their numbers ════════════════════════
 
-def pair_rule(qid, a, total, short):
-    """One angle given; find the angle that makes 180° (on a line) or 90° (in a right angle) with it."""
+def step_states(qid, i, value):
+    """True when step i of the question states `value` in its own text."""
+    import validate
+    return float(value) in validate.numbers_in(book.q(qid)["stepByStep"][i].get("text", ""))
+
+
+def pair_rule(qid, a, total):
+    """One angle given; find the angle that makes 180° (on a line) or 90° (in a right angle) with it.
+    Three steps: the rule; take away; check by adding. The take-away step shows the result
+    only where the step's own text states it (older family members leave it to the check)."""
     b = total - a
     if book.answer_number(qid) != b:
         raise SystemExit("%s: the key is not %s" % (qid, b))
@@ -37,43 +45,48 @@ def pair_rule(qid, a, total, short):
     given = (deg(a), a)
     before = make([given, unknown(b)])
     rule = make([given, unknown(b)], note="%s angles add up to %s" % (word, deg(total)))
-    calc = make([given, unknown(b)], hl=["p1"], note="? = %s − %s" % (deg(total), deg(a)))
-    if short:
-        steps = {0: rule, 1: make([given, (deg(b), b)], hl=["p1"], note="%s − %s = %s" % (deg(total), deg(a), deg(b)))}
+    if step_states(qid, 1, b):
+        calc = make([given, (deg(b), b)], hl=["p1"], note="%s − %s = %s" % (deg(total), deg(a), deg(b)))
     else:
-        steps = {0: rule, 1: calc, 2: make([given, (deg(b), b)], hl=["p1"], note="%s + %s = %s" % (deg(a), deg(b), deg(total)))}
+        calc = make([given, unknown(b)], hl=["p1"], note="? = %s − %s" % (deg(total), deg(a)))
+    steps = {0: rule, 1: calc, 2: make([given, (deg(b), b)], hl=["p0", "p1"], note="Check: %s + %s = %s" % (deg(a), deg(b), deg(total)))}
     add(qid, figure=before, steps=steps, origin="rule")
 
 
 def x_on_line_rule(qid, a):
-    """Two angles on a straight line are x° and a°."""
+    """Two angles on a straight line are x° and a°. Steps: the rule; take away; check."""
     b = 180 - a
-    if book.answer_number(qid) != b:
-        raise SystemExit("%s: the key is not %s" % (qid, b))
+    if book.answer_number(qid) != b or not step_states(qid, 1, b):
+        raise SystemExit("%s: the key or step 1 is not %s" % (qid, b))
     add(qid, origin="rule",
         figure=line([unknown(b, "x°"), (deg(a), a)]),
-        steps={0: line([unknown(b, "x°"), (deg(a), a)], note=STRAIGHT),
-               1: line([(deg(b), b), (deg(a), a)], hl=["p0"], note="x = 180° − %s = %s" % (deg(a), deg(b)))})
+        steps={0: line([unknown(b, "x°"), (deg(a), a)], note="x° and %s share a straight line: 180° together" % deg(a)),
+               1: line([(deg(b), b), (deg(a), a)], hl=["p0"], note="180° − %s = %s" % (deg(a), deg(b))),
+               2: line([(deg(b), b), (deg(a), a)], hl=["p0", "p1"], note="Check: %s + %s = 180°, so x = %s" % (deg(b), deg(a), n(b)))})
 
 
 def opposite_rule(qid, a):
-    """Two straight lines cross; one angle is a°; find the one facing it."""
-    if book.answer_number(qid) != a:
-        raise SystemExit("%s: the key is not %s" % (qid, a))
+    """Two straight lines cross; one angle is a°; find the one facing it.
+    Steps: what facing angles are; go round by way of the angle beside; the answer."""
+    c = 180 - a
+    if book.answer_number(qid) != a or not step_states(qid, 1, c):
+        raise SystemExit("%s: the key is not %s or step 1 does not state %s" % (qid, a, c))
     parts = [(deg(a), a), ("p",), ("?",), ("q",)]
     add(qid, origin="rule",
         figure=cross(parts),
-        steps={0: cross(parts, hl=["p0", "p2"], note=FACING),
-               1: cross([(deg(a), a), ("p",), (deg(a),), ("q",)], hl=["p2"], note="The opposite angle is also %s" % deg(a))})
+        steps={0: cross(parts, hl=["p0", "p2"], note="Angles that face each other are vertically opposite"),
+               1: cross([(deg(a), a), (deg(c),), ("?",), ("q",)], hl=["p1"],
+                        note="Beside %s on a line: 180 − %s = %s. Then 180 − %s = %s." % (deg(a), n(a), deg(c), n(c), deg(a))),
+               2: cross([(deg(a), a), (deg(c),), (deg(a),), (deg(c),)], hl=["p0", "p2"], note="Vertically opposite angles are equal: %s" % deg(a))})
 
 
 RULES = [
     (re.compile(r"^What is the (supplement|complement) of an angle of (\d+)°\?$"),
-     lambda qid, m: pair_rule(qid, int(m.group(2)), 180 if m.group(1) == "supplement" else 90, False)),
+     lambda qid, m: pair_rule(qid, int(m.group(2)), 180 if m.group(1) == "supplement" else 90)),
     (re.compile(r"^Find the (supplementary|complementary) angle of (\d+)°\.$"),
-     lambda qid, m: pair_rule(qid, int(m.group(2)), 180 if m.group(1) == "supplementary" else 90, False)),
+     lambda qid, m: pair_rule(qid, int(m.group(2)), 180 if m.group(1) == "supplementary" else 90)),
     (re.compile(r"^Two angles are supplementary\. If one angle is (\d+)°, find the other\.$"),
-     lambda qid, m: pair_rule(qid, int(m.group(1)), 180, True)),
+     lambda qid, m: pair_rule(qid, int(m.group(1)), 180)),
     (re.compile(r"^Two angles on a straight line are x° and (\d+)°\. Find x\.$"),
      lambda qid, m: x_on_line_rule(qid, int(m.group(1)))),
     (re.compile(r"^Two straight lines cross\. One angle formed is (\d+)°\. Find the vertically opposite angle\.$"),
@@ -89,7 +102,7 @@ for _qid in sorted(book.questions):
     for _pattern, _build in RULES:
         _m = _pattern.match(_q["questionText"].strip())
         if _m:
-            _expected = 2 if _qid.startswith("PH3_") else 3
+            _expected = 3
             if _steps != _expected:
                 raise SystemExit("%s: expected %d steps, has %d" % (_qid, _expected, _steps))
             _build(_qid, _m)

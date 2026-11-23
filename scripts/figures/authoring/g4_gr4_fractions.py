@@ -72,47 +72,68 @@ def quantity_bar(a, b, brace, label=None, note=None, hl=None):
 @rule("a/b of N")
 def r_of(Qq):
     m = re.match(r"What is (\d+)/(\d+) of (\d+)\?$", Qq.text)
-    if not m or Qq.n != 2:
+    if not m or Qq.n not in (2, 3):
         return None
     a, b, total = [int(g) for g in m.groups()]
     if not (0 < a < b <= 12) or total % b:
         return None
     one = total // b
+    ans = one * a
+    if Qq.answer.strip() != str(ans):
+        raise ValueError("%s: answer key disagrees" % Qq.id)
     hi = ["b0s%d" % i for i in range(a)] if a <= 8 else None
+    # The bank's steps: split into b equal parts, take a of them, (state the answer).
+    take = ("One part is %d" % one) if a == 1 else "%d parts of %d: %d × %d = %d" % (a, one, one, a, ans)
+    last = "%s of %d is %d" % (ft(a, b), total, ans)
     if total <= 60:
         figs = [
-            setf(total, b, note="%d shared into %d equal groups: %d in each" % (total, b, one)),
-            setf(total, b, a, note="%d group%s of %d: %d × %d = %d" % (a, "" if a == 1 else "s", one, one, a, one * a), hl=["shaded"]),
+            setf(total, b, note="%d split into %d equal parts: %d in each" % (total, b, one)),
+            setf(total, b, a, note=take, hl=["shaded"]),
+            setf(total, b, a, note=last, hl=["shaded"]),
         ]
     else:
         figs = [
-            quantity_bar(a, b, str(total), str(one), "%d ÷ %d = %d in each piece" % (total, b, one)),
-            quantity_bar(a, b, str(total), str(one), "%d pieces: %d × %d = %d" % (a, one, a, one * a), hi),
+            quantity_bar(a, b, str(total), str(one), "%d ÷ %d = %d in each part" % (total, b, one)),
+            quantity_bar(a, b, str(total), str(one), take, hi),
+            quantity_bar(a, b, str(total), str(one), last, hi),
         ]
+    if Qq.n == 2:
+        # Two steps: the second both takes the parts and states the answer.
+        figs = [figs[0], [w(figs[1], last, ["shaded"] if total <= 60 else hi)]]
     return entry(Qq, quantity_bar(a, b, str(total), note="%s of %d = ?" % (ft(a, b), total)), figs, origin="rule")
 
 
 @rule("gives away a/b, how many left")
 def r_left(Qq):
     m = re.match(r"([A-Z][a-z]+) has (\d+) marbles\. \1 gives (\d+)/(\d+) of them to a friend\. How many marbles does \1 have left\?$", Qq.text)
-    if not m or Qq.n != 2:
+    if not m or Qq.n != 3:
         return None
     total, a, b = int(m.group(2)), int(m.group(3)), int(m.group(4))
     if not (0 < a < b <= 12) or total % b:
         return None
-    given = total // b * a
+    one = total // b
+    given = one * a
     left = total - given
+    if Qq.answer.strip() != str(left):
+        raise ValueError("%s: answer key disagrees" % Qq.id)
     brace = "%d marbles" % total
     pieces = [seg(None, 1, "a" if i < a else "unknown") for i in range(b)]
-
-    def two(left_label, note, hl):
-        return bm([bar([seg("%d given" % given, a, "a"),
-                        seg(left_label, b - a, "unknown" if left_label == "?" else "b")], brace=brace)], note, hl)
-
-    return entry(Qq, bm([bar(pieces, brace=brace)], "%s given away. How many are left?" % ft(a, b)), [
-        two("?", "%s of %d = %d" % (ft(a, b), total, given), ["b0s0"]),
-        two("%d left" % left, "%d − %d = %d" % (total, given, left), ["b0s1"]),
-    ], origin="rule")
+    split = "%d ÷ %d = %d marbles in each group" % (total, b, one)
+    gives = ("1 group is given away: %d marbles" % given) if a == 1 else \
+        "%d groups are given away: %d × %d = %d marbles" % (a, one, a, given)
+    hi = ["b0s%d" % i for i in range(a)] if a <= 8 else None
+    # The bank's steps: split into b equal groups, give away a of them, subtract.
+    if total <= 60:
+        first = setf(total, b, item="marbles", note=split)
+        second = setf(total, b, a, item="marbles", note=gives, hl=["shaded"])
+    else:
+        each = [seg(str(one), 1, "a" if i < a else "b") for i in range(b)]
+        first = bm([bar(each, brace=brace)], split)
+        second = bm([bar(each, brace=brace)], gives, hi)
+    third = bm([bar([seg("%d given" % given, a, "a"), seg("%d left" % left, b - a, "b")], brace=brace)],
+               "%d − %d = %d marbles left" % (total, given, left), ["b0s1"])
+    return entry(Qq, bm([bar(pieces, brace=brace)], "%s given away. How many are left?" % ft(a, b)),
+                 [first, second, third], origin="rule")
 
 
 @rule("gives away a/b of the sweets")
@@ -181,22 +202,30 @@ def r_add_like(Qq):
 @rule("equivalent fraction, missing top")
 def r_missing(Qq):
     m = re.match(r"Find the missing number: (\d+)/(\d+) = \?/(\d+)$", Qq.text)
-    if not m or Qq.n != 2:
+    if not m or Qq.n != 3:
         return None
     a, b, d = [int(g) for g in m.groups()]
     if d % b or not (0 < a <= b) or d == b or b > 24:
         return None
     k = d // b
+    if Qq.answer.strip() != str(a * k):
+        raise ValueError("%s: answer key disagrees" % Qq.id)
+    # The bank's steps: the bottom was multiplied by k, do the same to the top, state the answer.
     cut = "Each piece is cut into %d: %d × %d = %d pieces" % (k, b, k, d)
+    equal = "%s = %s" % (ft(a, b), ft(a * k, d))
     if d <= 24:
         before = fb([(b, a, ft(a, b)), (d, 0, "?/%d" % d)])
+        done = fb([(b, a, ft(a, b)), (d, a * k, ft(a * k, d))])
         figs = [w(before, cut, ["b1"]),
-                fb([(b, a, ft(a, b)), (d, a * k, ft(a * k, d))], "Same amount shaded: %d × %d = %d" % (a, k, a * k), ["b1"])]
+                w(done, "Same amount shaded: %d × %d = %d" % (a, k, a * k), ["b1"]),
+                w(done, "%s, so the missing number is %d" % (equal, a * k), ["b1"])]
     else:
         # Too many pieces to draw: keep the one strip and say what happens to it.
         before = fb([(b, a, ft(a, b))], "%s = ?/%d" % (ft(a, b), d))
+        done = fb([(b, a, equal)])
         figs = [w(before, cut),
-                fb([(b, a, "%s = %s" % (ft(a, b), ft(a * k, d)))], "%d × %d = %d of the small pieces are shaded" % (a, k, a * k), ["b0"])]
+                w(done, "%d × %d = %d of the small pieces are shaded" % (a, k, a * k), ["b0"]),
+                w(done, "The missing number is %d" % (a * k), ["b0"])]
     return entry(Qq, before, figs, origin="rule")
 
 

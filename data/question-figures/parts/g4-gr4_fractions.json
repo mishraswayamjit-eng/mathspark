@@ -94,28 +94,22 @@
   "origin": "rule",
   "stepFigures": [
    {
-    "bars": [
-     {
-      "brace": "36 marbles",
-      "segments": [
-       {
-        "label": "24 given",
-        "tone": "a",
-        "units": 4
-       },
-       {
-        "label": "?",
-        "tone": "unknown",
-        "units": 2
-       }
-      ]
-     }
-    ],
+    "groups": 6,
+    "item": "marbles",
+    "kind": "set",
+    "note": "36 ÷ 6 = 6 marbles in each group",
+    "total": 36
+   },
+   {
+    "groups": 6,
     "highlight": [
-     "b0s0"
+     "shaded"
     ],
-    "kind": "barModel",
-    "note": "4/6 of 36 = 24"
+    "item": "marbles",
+    "kind": "set",
+    "note": "4 groups are given away: 6 × 4 = 24 marbles",
+    "shadedGroups": 4,
+    "total": 36
    },
    {
     "bars": [
@@ -139,7 +133,7 @@
      "b0s1"
     ],
     "kind": "barModel",
-    "note": "36 − 24 = 12"
+    "note": "36 − 24 = 12 marbles left"
    }
   ]
  },
@@ -172,7 +166,7 @@
    {
     "groups": 3,
     "kind": "set",
-    "note": "24 shared into 3 equal groups: 8 in each",
+    "note": "24 split into 3 equal parts: 8 in each",
     "total": 24
    },
    {
@@ -181,7 +175,7 @@
      "shaded"
     ],
     "kind": "set",
-    "note": "1 group of 8: 8 × 1 = 8",
+    "note": "1/3 of 24 is 8",
     "shadedGroups": 1,
     "total": 24
    }
@@ -338,7 +332,7 @@
      }
     ],
     "kind": "barModel",
-    "note": "72 ÷ 8 = 9 in each piece"
+    "note": "72 ÷ 8 = 9 in each part"
    },
    {
     "bars": [
@@ -396,7 +390,65 @@
      "b0s4"
     ],
     "kind": "barModel",
-    "note": "5 pieces: 9 × 5 = 45"
+    "note": "5 parts of 9: 9 × 5 = 45"
+   },
+   {
+    "bars": [
+     {
+      "brace": "72",
+      "segments": [
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4"
+    ],
+    "kind": "barModel",
+    "note": "5/8 of 72 is 45"
    }
   ]
  },
@@ -431,28 +483,22 @@
   "origin": "rule",
   "stepFigures": [
    {
-    "bars": [
-     {
-      "brace": "36 marbles",
-      "segments": [
-       {
-        "label": "27 given",
-        "tone": "a",
-        "units": 3
-       },
-       {
-        "label": "?",
-        "tone": "unknown",
-        "units": 1
-       }
-      ]
-     }
-    ],
+    "groups": 4,
+    "item": "marbles",
+    "kind": "set",
+    "note": "36 ÷ 4 = 9 marbles in each group",
+    "total": 36
+   },
+   {
+    "groups": 4,
     "highlight": [
-     "b0s0"
+     "shaded"
     ],
-    "kind": "barModel",
-    "note": "3/4 of 36 = 27"
+    "item": "marbles",
+    "kind": "set",
+    "note": "3 groups are given away: 9 × 3 = 27 marbles",
+    "shadedGroups": 3,
+    "total": 36
    },
    {
     "bars": [
@@ -476,7 +522,7 @@
      "b0s1"
     ],
     "kind": "barModel",
-    "note": "36 − 27 = 9"
+    "note": "36 − 27 = 9 marbles left"
    }
   ]
  },
@@ -507,28 +553,22 @@
   "origin": "rule",
   "stepFigures": [
    {
-    "bars": [
-     {
-      "brace": "48 marbles",
-      "segments": [
-       {
-        "label": "32 given",
-        "tone": "a",
-        "units": 2
-       },
-       {
-        "label": "?",
-        "tone": "unknown",
-        "units": 1
-       }
-      ]
-     }
-    ],
+    "groups": 3,
+    "item": "marbles",
+    "kind": "set",
+    "note": "48 ÷ 3 = 16 marbles in each group",
+    "total": 48
+   },
+   {
+    "groups": 3,
     "highlight": [
-     "b0s0"
+     "shaded"
     ],
-    "kind": "barModel",
-    "note": "2/3 of 48 = 32"
+    "item": "marbles",
+    "kind": "set",
+    "note": "2 groups are given away: 16 × 2 = 32 marbles",
+    "shadedGroups": 2,
+    "total": 48
    },
    {
     "bars": [
@@ -552,7 +592,7 @@
      "b0s1"
     ],
     "kind": "barModel",
-    "note": "48 − 32 = 16"
+    "note": "48 − 32 = 16 marbles left"
    }
   ]
  },
@@ -821,14 +861,95 @@
       "brace": "72 marbles",
       "segments": [
        {
-        "label": "9 given",
+        "label": "9",
         "tone": "a",
         "units": 1
        },
        {
-        "label": "?",
-        "tone": "unknown",
-        "units": 7
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "72 ÷ 8 = 9 marbles in each group"
+   },
+   {
+    "bars": [
+     {
+      "brace": "72 marbles",
+      "segments": [
+       {
+        "label": "9",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "9",
+        "tone": "b",
+        "units": 1
        }
       ]
      }
@@ -837,7 +958,7 @@
      "b0s0"
     ],
     "kind": "barModel",
-    "note": "1/8 of 72 = 9"
+    "note": "1 group is given away: 9 marbles"
    },
    {
     "bars": [
@@ -861,7 +982,7 @@
      "b0s1"
     ],
     "kind": "barModel",
-    "note": "72 − 9 = 63"
+    "note": "72 − 9 = 63 marbles left"
    }
   ]
  },
@@ -960,7 +1081,7 @@
      }
     ],
     "kind": "barModel",
-    "note": "96 ÷ 8 = 12 in each piece"
+    "note": "96 ÷ 8 = 12 in each part"
    },
    {
     "bars": [
@@ -1015,7 +1136,62 @@
      "b0s1"
     ],
     "kind": "barModel",
-    "note": "2 pieces: 12 × 2 = 24"
+    "note": "2 parts of 12: 12 × 2 = 24"
+   },
+   {
+    "bars": [
+     {
+      "brace": "96",
+      "segments": [
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "12",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "2/8 of 96 is 24"
    }
   ]
  },
@@ -1051,23 +1227,55 @@
       "brace": "90 marbles",
       "segments": [
        {
-        "label": "60 given",
+        "label": "30",
         "tone": "a",
-        "units": 2
+        "units": 1
        },
        {
-        "label": "?",
-        "tone": "unknown",
+        "label": "30",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "90 ÷ 3 = 30 marbles in each group"
+   },
+   {
+    "bars": [
+     {
+      "brace": "90 marbles",
+      "segments": [
+       {
+        "label": "30",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "30",
+        "tone": "b",
         "units": 1
        }
       ]
      }
     ],
     "highlight": [
-     "b0s0"
+     "b0s0",
+     "b0s1"
     ],
     "kind": "barModel",
-    "note": "2/3 of 90 = 60"
+    "note": "2 groups are given away: 30 × 2 = 60 marbles"
    },
    {
     "bars": [
@@ -1091,7 +1299,7 @@
      "b0s1"
     ],
     "kind": "barModel",
-    "note": "90 − 60 = 30"
+    "note": "90 − 60 = 30 marbles left"
    }
   ]
  },
@@ -7280,6 +7488,25 @@
     ],
     "kind": "fractionBars",
     "note": "Same amount shaded: 3 × 3 = 9"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/8",
+      "parts": 8,
+      "shaded": 3
+     },
+     {
+      "label": "9/24",
+      "parts": 24,
+      "shaded": 9
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "3/8 = 9/24, so the missing number is 9"
    }
   ]
  },
@@ -7391,6 +7618,25 @@
     ],
     "kind": "fractionBars",
     "note": "Same amount shaded: 1 × 4 = 4"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/5",
+      "parts": 5,
+      "shaded": 1
+     },
+     {
+      "label": "4/20",
+      "parts": 20,
+      "shaded": 4
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "1/5 = 4/20, so the missing number is 4"
    }
   ]
  },
@@ -7425,28 +7671,22 @@
   "origin": "rule",
   "stepFigures": [
    {
-    "bars": [
-     {
-      "brace": "36 marbles",
-      "segments": [
-       {
-        "label": "9 given",
-        "tone": "a",
-        "units": 1
-       },
-       {
-        "label": "?",
-        "tone": "unknown",
-        "units": 3
-       }
-      ]
-     }
-    ],
+    "groups": 4,
+    "item": "marbles",
+    "kind": "set",
+    "note": "36 ÷ 4 = 9 marbles in each group",
+    "total": 36
+   },
+   {
+    "groups": 4,
     "highlight": [
-     "b0s0"
+     "shaded"
     ],
-    "kind": "barModel",
-    "note": "1/4 of 36 = 9"
+    "item": "marbles",
+    "kind": "set",
+    "note": "1 group is given away: 9 marbles",
+    "shadedGroups": 1,
+    "total": 36
    },
    {
     "bars": [
@@ -7470,7 +7710,7 @@
      "b0s1"
     ],
     "kind": "barModel",
-    "note": "36 − 9 = 27"
+    "note": "36 − 9 = 27 marbles left"
    }
   ]
  },
@@ -7521,28 +7761,22 @@
   "origin": "rule",
   "stepFigures": [
    {
-    "bars": [
-     {
-      "brace": "40 marbles",
-      "segments": [
-       {
-        "label": "15 given",
-        "tone": "a",
-        "units": 3
-       },
-       {
-        "label": "?",
-        "tone": "unknown",
-        "units": 5
-       }
-      ]
-     }
-    ],
+    "groups": 8,
+    "item": "marbles",
+    "kind": "set",
+    "note": "40 ÷ 8 = 5 marbles in each group",
+    "total": 40
+   },
+   {
+    "groups": 8,
     "highlight": [
-     "b0s0"
+     "shaded"
     ],
-    "kind": "barModel",
-    "note": "3/8 of 40 = 15"
+    "item": "marbles",
+    "kind": "set",
+    "note": "3 groups are given away: 5 × 3 = 15 marbles",
+    "shadedGroups": 3,
+    "total": 40
    },
    {
     "bars": [
@@ -7566,7 +7800,7 @@
      "b0s1"
     ],
     "kind": "barModel",
-    "note": "40 − 15 = 25"
+    "note": "40 − 15 = 25 marbles left"
    }
   ]
  },
@@ -7673,6 +7907,25 @@
     ],
     "kind": "fractionBars",
     "note": "Same amount shaded: 2 × 2 = 4"
+   },
+   {
+    "bars": [
+     {
+      "label": "2/5",
+      "parts": 5,
+      "shaded": 2
+     },
+     {
+      "label": "4/10",
+      "parts": 10,
+      "shaded": 4
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "2/5 = 4/10, so the missing number is 4"
    }
   ]
  },
@@ -7777,7 +8030,7 @@
    {
     "groups": 7,
     "kind": "set",
-    "note": "42 shared into 7 equal groups: 6 in each",
+    "note": "42 split into 7 equal parts: 6 in each",
     "total": 42
    },
    {
@@ -7786,7 +8039,17 @@
      "shaded"
     ],
     "kind": "set",
-    "note": "6 groups of 6: 6 × 6 = 36",
+    "note": "6 parts of 6: 6 × 6 = 36",
+    "shadedGroups": 6,
+    "total": 42
+   },
+   {
+    "groups": 7,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "6/7 of 42 is 36",
     "shadedGroups": 6,
     "total": 42
    }
@@ -7830,6 +8093,20 @@
     ],
     "kind": "fractionBars",
     "note": "1 × 5 = 5 of the small pieces are shaded"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/8 = 5/40",
+      "parts": 8,
+      "shaded": 1
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "kind": "fractionBars",
+    "note": "The missing number is 5"
    }
   ]
  },
@@ -7981,23 +8258,65 @@
       "brace": "72 marbles",
       "segments": [
        {
-        "label": "36 given",
+        "label": "18",
         "tone": "a",
-        "units": 2
+        "units": 1
        },
        {
-        "label": "?",
-        "tone": "unknown",
-        "units": 2
+        "label": "18",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "18",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "18",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "kind": "barModel",
+    "note": "72 ÷ 4 = 18 marbles in each group"
+   },
+   {
+    "bars": [
+     {
+      "brace": "72 marbles",
+      "segments": [
+       {
+        "label": "18",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "18",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "18",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "18",
+        "tone": "b",
+        "units": 1
        }
       ]
      }
     ],
     "highlight": [
-     "b0s0"
+     "b0s0",
+     "b0s1"
     ],
     "kind": "barModel",
-    "note": "2/4 of 72 = 36"
+    "note": "2 groups are given away: 18 × 2 = 36 marbles"
    },
    {
     "bars": [
@@ -8021,7 +8340,7 @@
      "b0s1"
     ],
     "kind": "barModel",
-    "note": "72 − 36 = 36"
+    "note": "72 − 36 = 36 marbles left"
    }
   ]
  },
@@ -8078,7 +8397,7 @@
    {
     "groups": 9,
     "kind": "set",
-    "note": "36 shared into 9 equal groups: 4 in each",
+    "note": "36 split into 9 equal parts: 4 in each",
     "total": 36
    },
    {
@@ -8087,7 +8406,17 @@
      "shaded"
     ],
     "kind": "set",
-    "note": "2 groups of 4: 4 × 2 = 8",
+    "note": "2 parts of 4: 4 × 2 = 8",
+    "shadedGroups": 2,
+    "total": 36
+   },
+   {
+    "groups": 9,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "2/9 of 36 is 8",
     "shadedGroups": 2,
     "total": 36
    }
@@ -8284,28 +8613,22 @@
   "origin": "rule",
   "stepFigures": [
    {
-    "bars": [
-     {
-      "brace": "36 marbles",
-      "segments": [
-       {
-        "label": "9 given",
-        "tone": "a",
-        "units": 1
-       },
-       {
-        "label": "?",
-        "tone": "unknown",
-        "units": 3
-       }
-      ]
-     }
-    ],
+    "groups": 4,
+    "item": "marbles",
+    "kind": "set",
+    "note": "36 ÷ 4 = 9 marbles in each group",
+    "total": 36
+   },
+   {
+    "groups": 4,
     "highlight": [
-     "b0s0"
+     "shaded"
     ],
-    "kind": "barModel",
-    "note": "1/4 of 36 = 9"
+    "item": "marbles",
+    "kind": "set",
+    "note": "1 group is given away: 9 marbles",
+    "shadedGroups": 1,
+    "total": 36
    },
    {
     "bars": [
@@ -8329,7 +8652,7 @@
      "b0s1"
     ],
     "kind": "barModel",
-    "note": "36 − 9 = 27"
+    "note": "36 − 9 = 27 marbles left"
    }
   ]
  },
@@ -8440,6 +8763,25 @@
     ],
     "kind": "fractionBars",
     "note": "Same amount shaded: 3 × 2 = 6"
+   },
+   {
+    "bars": [
+     {
+      "label": "3/8",
+      "parts": 8,
+      "shaded": 3
+     },
+     {
+      "label": "6/16",
+      "parts": 16,
+      "shaded": 6
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "3/8 = 6/16, so the missing number is 6"
    }
   ]
  },
@@ -8488,7 +8830,7 @@
    {
     "groups": 7,
     "kind": "set",
-    "note": "56 shared into 7 equal groups: 8 in each",
+    "note": "56 split into 7 equal parts: 8 in each",
     "total": 56
    },
    {
@@ -8497,7 +8839,17 @@
      "shaded"
     ],
     "kind": "set",
-    "note": "3 groups of 8: 8 × 3 = 24",
+    "note": "3 parts of 8: 8 × 3 = 24",
+    "shadedGroups": 3,
+    "total": 56
+   },
+   {
+    "groups": 7,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "3/7 of 56 is 24",
     "shadedGroups": 3,
     "total": 56
    }
@@ -8614,6 +8966,25 @@
     ],
     "kind": "fractionBars",
     "note": "Same amount shaded: 1 × 5 = 5"
+   },
+   {
+    "bars": [
+     {
+      "label": "1/3",
+      "parts": 3,
+      "shaded": 1
+     },
+     {
+      "label": "5/15",
+      "parts": 15,
+      "shaded": 5
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "kind": "fractionBars",
+    "note": "1/3 = 5/15, so the missing number is 5"
    }
   ]
  },
@@ -8666,7 +9037,7 @@
    {
     "groups": 8,
     "kind": "set",
-    "note": "24 shared into 8 equal groups: 3 in each",
+    "note": "24 split into 8 equal parts: 3 in each",
     "total": 24
    },
    {
@@ -8675,7 +9046,17 @@
      "shaded"
     ],
     "kind": "set",
-    "note": "5 groups of 3: 3 × 5 = 15",
+    "note": "5 parts of 3: 3 × 5 = 15",
+    "shadedGroups": 5,
+    "total": 24
+   },
+   {
+    "groups": 8,
+    "highlight": [
+     "shaded"
+    ],
+    "kind": "set",
+    "note": "5/8 of 24 is 15",
     "shadedGroups": 5,
     "total": 24
    }
@@ -8712,28 +9093,22 @@
   "origin": "rule",
   "stepFigures": [
    {
-    "bars": [
-     {
-      "brace": "60 marbles",
-      "segments": [
-       {
-        "label": "15 given",
-        "tone": "a",
-        "units": 1
-       },
-       {
-        "label": "?",
-        "tone": "unknown",
-        "units": 3
-       }
-      ]
-     }
-    ],
+    "groups": 4,
+    "item": "marbles",
+    "kind": "set",
+    "note": "60 ÷ 4 = 15 marbles in each group",
+    "total": 60
+   },
+   {
+    "groups": 4,
     "highlight": [
-     "b0s0"
+     "shaded"
     ],
-    "kind": "barModel",
-    "note": "1/4 of 60 = 15"
+    "item": "marbles",
+    "kind": "set",
+    "note": "1 group is given away: 15 marbles",
+    "shadedGroups": 1,
+    "total": 60
    },
    {
     "bars": [
@@ -8757,7 +9132,7 @@
      "b0s1"
     ],
     "kind": "barModel",
-    "note": "60 − 15 = 45"
+    "note": "60 − 15 = 45 marbles left"
    }
   ]
  },
@@ -8838,7 +9213,7 @@
      }
     ],
     "kind": "barModel",
-    "note": "90 ÷ 6 = 15 in each piece"
+    "note": "90 ÷ 6 = 15 in each part"
    },
    {
     "bars": [
@@ -8883,7 +9258,52 @@
      "b0s1"
     ],
     "kind": "barModel",
-    "note": "2 pieces: 15 × 2 = 30"
+    "note": "2 parts of 15: 15 × 2 = 30"
+   },
+   {
+    "bars": [
+     {
+      "brace": "90",
+      "segments": [
+       {
+        "label": "15",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "a",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "b",
+        "units": 1
+       },
+       {
+        "label": "15",
+        "tone": "b",
+        "units": 1
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ],
+    "kind": "barModel",
+    "note": "2/6 of 90 is 30"
    }
   ]
  },

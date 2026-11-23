@@ -70,6 +70,9 @@ def avg_list(qid):
             steps[i] = [BC(level, note="Shared out equally, every bar is %s" % nstr(avg)), BC(chart, note="Share the total equally")]
         elif i == 0:
             steps[i] = [BC(chart, note="Add them all: the total is %d" % sum(vals)), BC(chart, note="Add all the numbers")]
+        elif "count" in P.steps(qid)[i].get("text", "").lower():
+            steps[i] = [BC(chart, hl=["b%d" % k for k in range(len(vals))], note="Count the bars: there are %d numbers" % len(vals)),
+                        BC(chart, note="Count the numbers in the list")]
         else:
             steps[i] = [BC(chart, note="Share the total equally among the %d numbers" % len(vals)), BC(chart, note="Share the total equally")]
     P.put(qid, BC(chart, note="Average = ?"), steps, origin="rule")
@@ -105,13 +108,22 @@ def missing_number(qid):
         if i >= 1 and float(miss) in nums:
             shown = True
         last = "b0s%d" % (n - 1)
+        firsts = ["b0s%d" % k for k in range(len(known))]
+        words = s.get("text", "").lower()
+        # The brace shows the total once the checker allows it; several wordings are offered and the
+        # first the checker allows at this step is used.
+        braces = ["Total %d" % total, given]
         if shown:
-            steps[i] = fig(True, "Total %d" % total, "The missing number is %d" % miss, [last])
-        elif float(total) in P.allowed(qid, i) - P.allowed(qid):
-            steps[i] = [fig(False, "Total %d" % total, "All %d numbers add up to %d" % (n, total), ["b0"]),
-                        fig(False, given, "Take the numbers you know away from the total", [last])]
+            notes = ["%d − %d = %d: the missing number is %d" % (total, sum(known), miss, miss), "The missing number is %d" % miss]
+            steps[i] = [fig(True, b, nt, [last]) for b in braces for nt in notes]
+        elif "know" in words:
+            notes = ["The %d numbers you know add up to %d" % (len(known), sum(known)), "Add the numbers you know"]
+            steps[i] = [fig(False, b, nt, firsts) for b in braces for nt in notes]
+        elif "left" in words or "away" in words:
+            steps[i] = [fig(False, b, "Take the numbers you know away from the total", [last]) for b in braces]
         else:
-            steps[i] = fig(False, given, "The total is the average times %d" % n, ["b0"])
+            notes = ["All %d numbers add up to %d" % (n, total), "The total is the average times %d" % n]
+            steps[i] = [fig(False, b, nt, ["b0"]) for b in braces for nt in notes]
     P.put(qid, fig(False, given, "Find the missing number"), steps, origin="rule")
 
 

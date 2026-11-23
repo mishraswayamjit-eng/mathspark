@@ -15,7 +15,15 @@ def difference(q, m):
     big, small = max(p, r), min(p, r)
     big2, small2 = big - k, small - k
     d = big - small
-    third = str(d - k) if d - k > 0 and d - k != d + k else str(big2)
+    # The other choices in the ask are the wrong options the question offers TODAY (read from the
+    # bank each build), so the lesson never shows a value that is no longer offered. The slips that
+    # change the gap (adding or taking away the years) come first, then one person's age back then.
+    offered = [(o.get("text", "") if isinstance(o, dict) else str(o)).strip() for o in q.get("options", [])]
+    wrong = [t for t in offered if re.fullmatch(r"\d+", t) and int(t) != d]
+    assert str(d) in offered and len(wrong) >= 2, (qid, offered)
+    order = [str(d + k), str(d - k), str(big2), str(small2)]
+    wrong.sort(key=lambda t: order.index(t) if t in order else len(order))
+    others = wrong[:2]
     l3 = "%d − %d = %d" % (big2, small2, d)
     l4 = "%d − %d = %d" % (big, small, d)
     beats = [
@@ -28,7 +36,7 @@ def difference(q, m):
         beat("%s was %d years younger too. %d minus %d is %d." % (y, k, r, k, r2),
              W("w2", "%d − %d = %d" % (r, k, r2))),
         beat("So back then they were %d and %d. What is the gap between those two ages?" % (p2, r2),
-             ask=choose(qid, "gap", str(d), [str(d + k), third],
+             ask=choose(qid, "gap", str(d), others,
                         "For a gap, take the smaller age away from the bigger one: %d minus %d." % (big2, small2))),
         beat("%d minus %d is %d. The difference %d years ago was %d years." % (big2, small2, d, k, d),
              W("w3", l3), C("w3", str(d), l3.count(str(d)))),

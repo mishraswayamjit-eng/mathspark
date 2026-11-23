@@ -67,13 +67,13 @@
    "66"
   ],
   "hints": [
-   "Find 10 percent of the cost price first.",
-   "Selling price equals cost price plus profit.",
-   "Profit equals 10 over 100, times 60."
+   "A profit makes the selling price more than the cost price, and a loss makes it less. First you need the profit in rupees.",
+   "Find 10 percent of 60 rupees. 10 percent means 10 out of every 100.",
+   "Here is a similar one. A lamp is bought for 200 rupees and sold at a profit of 30 percent. 30 percent of 200 is 200 times 30 divided by 100, which is 60 rupees. The selling price is 200 plus 60, which is 260 rupees."
   ],
   "steps": [
-   "The profit is 10 percent of 60 rupees, which is 6 rupees.",
-   "Selling price equals cost price plus profit. That is 60 plus 6, which equals 66 rupees."
+   "10 percent means 10 out of every 100. So 10 percent of 60 is 60 times 10 divided by 100, which is 6 rupees.",
+   "That is the profit, so add it to the cost price: 60 plus 6 equals 66. The selling price is 66 rupees."
   ]
  },
  "BOOST_EXT_G4_FP_2017_029_07": {
@@ -139,17 +139,17 @@
   "options": [
    "44",
    "39",
-   "Minus 351",
+   "69",
    "375"
   ],
   "hints": [
-   "This sum has a multiplication and a subtraction. Multiplication is done before subtraction.",
-   "Work out 27 times 2 first. Then take 15 away from that result.",
-   "Here is a similar one: 34 times 2 minus 18. First 34 times 2 equals 68. Then 68 minus 18 equals 50."
+   "This sum has a multiplication and a subtraction. Think about which of the two is done first.",
+   "Start with the multiplication, 27 times 2. Keep that result ready for the next step.",
+   "Here is a similar one: 34 times 2 minus 18. Multiply first: 34 times 2 equals 68. Then subtract: 68 minus 18 equals 50."
   ],
   "steps": [
-   "Multiply first. 27 times 2 equals 54.",
-   "Now subtract: 54 minus 15 equals 39.",
+   "Multiplication is done before subtraction, so multiply first: 27 times 2 equals 54.",
+   "Now take away the 15: 54 minus 15 equals 39.",
    "So 27 times 2 minus 15 equals 39."
   ]
  },
@@ -278,13 +278,13 @@
    "125"
   ],
   "hints": [
-   "Find 25 percent of the cost price.",
-   "Selling price equals cost price minus loss.",
-   "Loss means sold for less than bought."
+   "A profit makes the selling price more than the cost price, and a loss makes it less. First you need the loss in rupees.",
+   "Find 25 percent of 500 rupees. 25 percent means 25 out of every 100.",
+   "Here is a similar one. A bag is bought for 300 rupees and sold at a loss of 20 percent. 20 percent of 300 is 300 times 20 divided by 100, which is 60 rupees. The selling price is 300 minus 60, which is 240 rupees."
   ],
   "steps": [
-   "The loss is 25 percent of 500 rupees, which is 125 rupees.",
-   "Selling price equals cost price minus loss. That is 500 minus 125, which equals 375 rupees."
+   "25 percent means 25 out of every 100. So 25 percent of 500 is 500 times 25 divided by 100, which is 125 rupees.",
+   "That is the loss, so take it away from the cost price: 500 minus 125 equals 375. The selling price is 375 rupees."
   ]
  },
  "EXT_G4_FP_2020_004": {
@@ -1748,16 +1748,17 @@
    "2",
    "5",
    "12",
-   "Minus 3"
+   "3"
   ],
   "hints": [
-   "This is a subtraction. You are finding what is left when one amount is taken away.",
-   "Start at 7 and count back 5 steps on your fingers.",
-   "Here is a similar one: 9 minus 6. Start at 9 and count back 6 steps: 8, 7, 6, 5, 4, 3. So 9 minus 6 equals 3."
+   "This is a take-away sum. You are finding how many are left when some are taken from a group.",
+   "Picture 7 counters in a row. Take 5 of them away, one at a time, and see what is left.",
+   "Here is a similar one: 9 minus 6. Start at 9 and count back 6 steps: 8, 7, 6, 5, 4, 3. You land on 3, so 9 minus 6 equals 3."
   ],
   "steps": [
-   "Start at 7 and count back 5 steps: 6, 5, 4, 3, 2. 7 minus 5 equals 2.",
-   "7 minus 5 equals 2."
+   "Start at 7 and count back 5 steps, saying one number for each step: 6, 5, 4, 3, 2.",
+   "The fifth step lands on 2, so taking 5 away from 7 leaves 2. 7 minus 5 equals 2.",
+   "Check by adding back: 2 plus 5 equals 7. So 7 minus 5 equals 2."
   ]
  },
  "Q_CH06_024_V07": {
@@ -2794,17 +2795,18 @@
   "options": [
    "66",
    "5",
-   "Minus 3",
+   "4",
    "2"
   ],
   "hints": [
-   "This is a take away sum. You are finding what is left.",
-   "Split the number you are taking away into tens and ones. Take away the tens first.",
-   "Here is a similar one: 67 minus 24. Tens first: 67 minus 20 equals 47. Then the ones: 47 minus 4 equals 43."
+   "This is a take-away sum with two two-digit numbers. Notice how close together the two numbers are.",
+   "Split 32 into its tens and its ones. Take the tens away from 34 first.",
+   "Here is a similar one: 58 minus 53. Split 53 into 50 and 3. Tens first: 58 minus 50 equals 8. Then the ones: 8 minus 3 equals 5. So 58 minus 53 equals 5."
   ],
   "steps": [
-   "Split 32 into 30 and 2. Take away the 30 first. 34 minus 30 equals 4.",
-   "Now take away the 2. So 34 minus 32 equals 2, because 4 minus 2 equals 2."
+   "Split 32 into 30 and 2. Take away the 30 first: 34 minus 30 equals 4.",
+   "Now take away the 2: 4 minus 2 equals 2.",
+   "So 34 minus 32 equals 2. You can check by adding back: 2 plus 32 equals 34."
   ]
  },
  "Q_CH11_022_V09": {
@@ -3303,13 +3305,13 @@
    "16"
   ],
   "hints": [
-   "Follow the instructions step by step.",
-   "First multiply 12 by 2.",
-   "Then add 8 to the result."
+   "This is a two-step sum. Do exactly what the first instruction says before you look at the second.",
+   "Do the first instruction: multiply 12 by 2. Keep that result for the next step.",
+   "Here is a similar one. Think of the number 7, multiply it by 3 and add 4. First 7 times 3 equals 21. Then 21 plus 4 equals 25."
   ],
   "steps": [
-   "Multiply: 12 times 2 equals 24.",
-   "Add 8: 24 plus 8 equals 32."
+   "Start with 12 and multiply it by 2: 12 times 2 equals 24.",
+   "Then do the second instruction and add 8: 24 plus 8 equals 32. So you get 32."
   ]
  },
  "VAR2_EXT_G4_FP_2018_001_02": {
@@ -3321,13 +3323,13 @@
    "40"
   ],
   "hints": [
-   "Find 40 percent of the cost price first.",
-   "Selling price equals cost price plus profit.",
-   "Profit equals 40 over 100, times 100."
+   "A profit makes the selling price more than the cost price, and a loss makes it less. First you need the profit in rupees.",
+   "Find 40 percent of 100 rupees. 40 percent means 40 out of every 100.",
+   "Here is a similar one. A cap is bought for 80 rupees and sold at a profit of 50 percent. 50 percent of 80 is 80 times 50 divided by 100, which is 40 rupees. The selling price is 80 plus 40, which is 120 rupees."
   ],
   "steps": [
-   "The profit is 40 percent of 100 rupees, which is 40 rupees.",
-   "Selling price equals cost price plus profit. That is 100 plus 40, which equals 140 rupees."
+   "40 percent means 40 out of every 100. The book cost exactly 100 rupees, so the profit is 40 rupees.",
+   "That is the profit, so add it to the cost price: 100 plus 40 equals 140. The selling price is 140 rupees."
   ]
  },
  "VAR2_EXT_G4_FP_2018_001_04": {
@@ -3415,13 +3417,13 @@
    "40"
   ],
   "hints": [
-   "Follow the instructions step by step.",
-   "First multiply 5 by 2.",
-   "Then add 6 to the result."
+   "Follow the instructions one at a time, in the order they are given, starting from the number you thought of.",
+   "Do the first instruction: multiply 5 by 2. Keep that result for the next step.",
+   "Here is a similar one. Think of the number 7, multiply it by 3 and add 4. First 7 times 3 equals 21. Then 21 plus 4 equals 25."
   ],
   "steps": [
-   "Multiply: 5 times 2 equals 10.",
-   "Add 6: 10 plus 6 equals 16."
+   "Start with 5 and multiply it by 2: 5 times 2 equals 10.",
+   "Then do the second instruction and add 6: 10 plus 6 equals 16. So you get 16."
   ]
  },
  "VAR2_EXT_G4_FP_2024_001_03": {
@@ -3433,13 +3435,13 @@
    "26"
   ],
   "hints": [
-   "Follow the instructions step by step.",
-   "First multiply 16 by 4.",
-   "Then add 6 to the result."
+   "This is a two-step sum. Do exactly what the first instruction says before you look at the second.",
+   "Do the first instruction: multiply 16 by 4. Keep that result for the next step.",
+   "Here is a similar one. Think of the number 9, multiply it by 2 and add 5. First 9 times 2 equals 18. Then 18 plus 5 equals 23."
   ],
   "steps": [
-   "Multiply: 16 times 4 equals 64.",
-   "Add 6: 64 plus 6 equals 70."
+   "Start with 16 and multiply it by 4. Split 16 into 10 and 6: 10 times 4 equals 40 and 6 times 4 equals 24, and 40 plus 24 equals 64. 16 times 4 equals 64.",
+   "Now add 6: 64 plus 6 equals 70. You get 70."
   ]
  },
  "VAR2_EXT_G4_FP_2024_014_04_p2b": {
@@ -3470,13 +3472,13 @@
    "39"
   ],
   "hints": [
-   "Follow the instructions step by step.",
-   "First multiply 19 by 5.",
-   "Then add 15 to the result."
+   "Follow the instructions one at a time, in the order they are given, starting from the number you thought of.",
+   "Do the first instruction: multiply 19 by 5. Keep that result for the next step.",
+   "Here is a similar one. Think of the number 11, multiply it by 4 and add 3. First 11 times 4 equals 44. Then 44 plus 3 equals 47."
   ],
   "steps": [
-   "Multiply: 19 times 5 equals 95.",
-   "Add 15: 95 plus 15 equals 110."
+   "Start with 19 and multiply it by 5. Split 19 into 10 and 9: 10 times 5 equals 50 and 9 times 5 equals 45, and 50 plus 45 equals 95. 19 times 5 equals 95.",
+   "Now add 15: 95 plus 15 equals 110. You get 110."
   ]
  },
  "VAR_EXT_G4_FP_2016_008_03": {
@@ -3558,7 +3560,7 @@
   "q": "Simplify: 7 times 4 minus 5.",
   "options": [
    "15",
-   "Minus 7",
+   "33",
    "16",
    "23"
   ],
@@ -3615,7 +3617,7 @@
    "0",
    "54",
    "26",
-   "Minus 16"
+   "74"
   ],
   "hints": [
    "This sum has a multiplication and a subtraction. Think about which of the two is done first.",
@@ -3817,7 +3819,7 @@
    "70",
    "134",
    "35",
-   "Minus 16"
+   "154"
   ],
   "hints": [
    "This sum has a multiplication and a subtraction. Think about which of the two is done first.",
@@ -3833,9 +3835,9 @@
   "q": "Simplify: 27 minus 3 times 9 plus 1.",
   "options": [
    "1",
-   "Minus 3",
+   "240",
    "217",
-   "Minus 1"
+   "0"
   ],
   "hints": [
    "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",

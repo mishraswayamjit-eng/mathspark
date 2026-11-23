@@ -255,12 +255,13 @@ def nth_term(qid, given, nth, origin="rule"):
                 h["label"] = "%s%d" % (sign, abs(d))
         return number_line(lo, hi, abs(d), "none", [{"at": v, "label": str(v)} for v in given], hops, note)
 
-    def whole(label, note):
+    def whole(label, note, ticks="ends"):
+        """ticks='none' while the answer is not worked out yet, so the end of the line carries no number."""
         lo, hi = min(first, answer), max(first, answer)
         hop = {"from": first, "to": answer}
         if label:
             hop["label"] = label
-        return number_line(lo, hi, tick_step(lo, hi, abs(d)), "ends",
+        return number_line(lo, hi, tick_step(lo, hi, abs(d)), ticks,
                            [{"at": first, "label": "1st"}, {"at": answer, "label": ordinal(nth)}], [hop], note, ["h0"])
 
     total = abs(answer - first)
@@ -269,14 +270,27 @@ def nth_term(qid, given, nth, origin="rule"):
         for note in ("%d %s %d = %d" % (first, sign, total, answer), "The %s term is %d" % (ordinal(nth), answer)):
             finals.append(whole(label, note))
     before = near(False, "The pattern goes on. Which number is the %s term?" % ordinal(nth))
-    figs, labelled, done = {}, False, False
+    figs, labelled, jumped, summed, done = {}, False, False, False, False
     count = len(steps_of(q))
     for i in range(count):
         st = stated(q, i)
-        if not done and (answer in st or i == count - 1):
+        t = steps_of(q)[i].get("text", "")
+        here = nums(t)
+        if done:
+            continue
+        if re.search(r"term is %d(?!\d)" % answer, t) or i == count - 1:
             figs[i] = finals
             done = True
-        elif not labelled and not done and abs(d) in st:
+        elif jumped and not summed and total in here:
+            # the size of the whole trip, before it is added to the first term
+            figs[i] = [whole("%d jumps of %d" % (nth - 1, abs(d)), "%d jumps of %d make %d" % (nth - 1, abs(d), total), "none"),
+                       whole("%s%d" % (sign, total), "All the jumps together make %d" % total, "none")]
+            summed = True
+        elif not jumped and (nth - 1) in here and "jump" in t:
+            figs[i] = whole("%d jumps" % (nth - 1),
+                            "From the 1st term to the %s term is %d jumps, not %d" % (ordinal(nth), nth - 1, nth), "none")
+            jumped = True
+        elif not labelled and abs(d) in st:
             figs[i] = near(True, "Every jump is %s%d" % (sign, abs(d)))
             labelled = True
     P.add(qid, before, figs, origin=origin)
@@ -320,7 +334,12 @@ for qid in P.ids("PH3_"):
     text = Q[qid]["questionText"]
     m_nth = re.match(r"^In an arithmetic sequence starting ([\d, ]+), \.\.\., find the (\d+)(?:st|nd|rd|th) term\.$", text)
     if text.startswith("Find the next number"):
-        series(qid, origin="rule")
+        first_step = steps_of(Q[qid])[0].get("text", "") if steps_of(Q[qid]) else ""
+        if "not equal" in first_step:
+            # a multiplying pattern: the first step only rules out adding, so show the links with the rule still open
+            series(qid, origin="rule", intro=(0, "The gaps are not equal, so look for a multiplying rule"))
+        else:
+            series(qid, origin="rule")
     elif m_nth:
         nth_term(qid, [int(x) for x in re.findall(r"\d+", m_nth.group(1))], int(m_nth.group(2)))
     elif text.startswith("Find the sum"):

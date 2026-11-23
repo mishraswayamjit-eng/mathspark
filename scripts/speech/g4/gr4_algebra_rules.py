@@ -151,8 +151,8 @@ def _equals(s):
             if j:
                 if seen == 0 and not "".join(buf).strip():
                     buf.append("That equals " if i == 0 else " equals ")
-                elif seen == 0 and re.search(r"\b(?:is|be|gives|becomes)\s+[\dA-Za-z\s+−×÷().]{1,24}$", "".join(buf)) \
-                        and re.search(r"\b(?:is|be|gives|becomes)\s+[^=]*[+−×÷]", "".join(buf)):
+                elif seen == 0 and re.search(r"\b(?:is|be|gives|becomes|make|makes)\s+[\dA-Za-z\s+−×÷().]{1,24}$", "".join(buf)) \
+                        and re.search(r"\b(?:is|be|gives|becomes|make|makes)\s+[^=]*[+−×÷]", "".join(buf)):
                     buf.append(", which is ")      # "6a is 6 × 4 = 24"
                 elif seen == 0:
                     buf.append(" equals ")

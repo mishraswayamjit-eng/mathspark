@@ -153,14 +153,19 @@ for _qid in sorted(P.qs):
 # Square-root variants: "If √x + 1 = 6, find x."
 for _qid, _q in sorted(P.qs.items()):
     _m = re.fullmatch(r"If √x \+ (\d+) = (\d+), find x\.", _q["questionText"])
-    if _m and len(steps_of(_q)) == 2:
+    if _m:
         _b, _c = int(_m.group(1)), int(_m.group(2))
         _r = _c - _b
-        _env = {"x": _r * _r}
-        if float(_r * _r) in key_numbers(_q):
-            P.put(_qid, bal("√x + %d" % _b, n(_c), _env, note="Both pans weigh the same. Find x."),
-                  [bal("√x", n(_r), _env, note="Take %d from both pans" % _b, hl=["right"]),
-                   bal("x", "%d × %d" % (_r, _r), _env, note="x = %d" % (_r * _r), hl=["right"])], origin="rule")
+        _x = _r * _r
+        _env = {"x": _x}
+        if float(_x) not in key_numbers(_q) or len(steps_of(_q)) != 3 or not step_text(_q, 2).startswith("Check"):
+            P.note(_qid, "square-root rule does not fit the steps")
+            continue
+        P.put(_qid, bal("√x + %d" % _b, n(_c), _env, note="Both pans weigh the same. Find x."),
+              [bal("√x", "%d − %d" % (_c, _b), _env, note="Take %d from both pans: √x = %d" % (_b, _r), hl=["right"]),
+               bal("x", "%d × %d" % (_r, _r), _env, note="x is %d multiplied by itself: x = %d" % (_r, _x), hl=["right"]),
+               bal("√%d + %d" % (_x, _b), n(_c), {}, note="Check: the square root of %d is %d, and %d + %d = %d" % (_x, _r, _r, _b, _c), hl=["left"])],
+              origin="rule")
 
 
 # ── Drawn one by one: equations with the letter on both sides ────────────────

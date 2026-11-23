@@ -1,4 +1,69 @@
 {
+ "BOOST_EXT_G4_FP_2016_019_07": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "11x + 8x",
+      "10 − 3"
+     ],
+     [
+      "19x",
+      "?"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Join the x terms: 11x + 8x = 19x",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "11x + 8x",
+      "10 − 3"
+     ],
+     [
+      "19x",
+      "7"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Now the plain numbers: 10 − 3 = 7",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "11x + 8x",
+      "10 − 3"
+     ],
+     [
+      "19x",
+      "7"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "The two kinds cannot be joined: 19x + 7"
+   }
+  ]
+ },
  "BOOST_EXT_G4_FP_2020_039_05": {
   "origin": "rule",
   "stepFigures": [
@@ -7307,23 +7372,6 @@
    }
   ]
  },
- "Q_CH13_006_V02": {
-  "origin": "rule",
-  "stepFigures": [
-   {
-    "kind": "grid",
-    "rows": 2,
-    "cols": 2,
-    "note": "ab = a × b = 2 × 2: 2 rows of 2"
-   },
-   {
-    "kind": "grid",
-    "rows": 2,
-    "cols": 2,
-    "note": "2 rows of 2 make 4, so ab = 4"
-   }
-  ]
- },
  "Q_CH13_006_V03": {
   "origin": "rule",
   "stepFigures": [
@@ -7643,23 +7691,6 @@
      }
     ],
     "note": "12 + 5 = 17"
-   }
-  ]
- },
- "Q_CH13_008_V02": {
-  "origin": "rule",
-  "stepFigures": [
-   {
-    "kind": "grid",
-    "rows": 2,
-    "cols": 2,
-    "note": "a² = a × a = 2 × 2: 2 rows of 2"
-   },
-   {
-    "kind": "grid",
-    "rows": 2,
-    "cols": 2,
-    "note": "2 rows of 2 make 4, so a² = 4"
    }
   ]
  },
@@ -9804,6 +9835,71 @@
    }
   ]
  },
+ "VAR2_EXT_G4_FP_2016_007_01": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3x + 2x",
+      "1 + 2"
+     ],
+     [
+      "5x",
+      "?"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Join the x terms: 3x + 2x = 5x",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3x + 2x",
+      "1 + 2"
+     ],
+     [
+      "5x",
+      "3"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Now the plain numbers: 1 + 2 = 3",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3x + 2x",
+      "1 + 2"
+     ],
+     [
+      "5x",
+      "3"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "The two kinds cannot be joined: 5x + 3"
+   }
+  ]
+ },
  "VAR2_EXT_G4_FP_2016_007_04": {
   "origin": "rule",
   "stepFigures": [
@@ -9880,6 +9976,201 @@
     "highlight": [
      "b0s0"
     ]
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_019_01": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9x + 5x",
+      "1 + 2"
+     ],
+     [
+      "14x",
+      "?"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Join the x terms: 9x + 5x = 14x",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9x + 5x",
+      "1 + 2"
+     ],
+     [
+      "14x",
+      "3"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Now the plain numbers: 1 + 2 = 3",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "9x + 5x",
+      "1 + 2"
+     ],
+     [
+      "14x",
+      "3"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "The two kinds cannot be joined: 14x + 3"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2016_019_04_p2b": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5x + 6x",
+      "8 − 5"
+     ],
+     [
+      "11x",
+      "?"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Join the x terms: 5x + 6x = 11x",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5x + 6x",
+      "8 − 5"
+     ],
+     [
+      "11x",
+      "3"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Now the plain numbers: 8 − 5 = 3",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "5x + 6x",
+      "8 − 5"
+     ],
+     [
+      "11x",
+      "3"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "The two kinds cannot be joined: 11x + 3"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2017_002_01": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4x + 3x",
+      "7 + 8"
+     ],
+     [
+      "7x",
+      "?"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Join the x terms: 4x + 3x = 7x",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4x + 3x",
+      "7 + 8"
+     ],
+     [
+      "7x",
+      "15"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Now the plain numbers: 7 + 8 = 15",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4x + 3x",
+      "7 + 8"
+     ],
+     [
+      "7x",
+      "15"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "The two kinds cannot be joined: 7x + 15"
    }
   ]
  },
@@ -10342,6 +10633,201 @@
    }
   ]
  },
+ "VAR2_EXT_G4_FP_2022_012_01": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2x + 4x",
+      "6 − 3"
+     ],
+     [
+      "6x",
+      "?"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Join the x terms: 2x + 4x = 6x",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2x + 4x",
+      "6 − 3"
+     ],
+     [
+      "6x",
+      "3"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Now the plain numbers: 6 − 3 = 3",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2x + 4x",
+      "6 − 3"
+     ],
+     [
+      "6x",
+      "3"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "The two kinds cannot be joined: 6x + 3"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2023_006_01": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3x + 5x",
+      "3 − 1"
+     ],
+     [
+      "8x",
+      "?"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Join the x terms: 3x + 5x = 8x",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3x + 5x",
+      "3 − 1"
+     ],
+     [
+      "8x",
+      "2"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Now the plain numbers: 3 − 1 = 2",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3x + 5x",
+      "3 − 1"
+     ],
+     [
+      "8x",
+      "2"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "The two kinds cannot be joined: 8x + 2"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_004_01": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "10x + 8x",
+      "5 + 6"
+     ],
+     [
+      "18x",
+      "?"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Join the x terms: 10x + 8x = 18x",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "10x + 8x",
+      "5 + 6"
+     ],
+     [
+      "18x",
+      "11"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Now the plain numbers: 5 + 6 = 11",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "10x + 8x",
+      "5 + 6"
+     ],
+     [
+      "18x",
+      "11"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "The two kinds cannot be joined: 18x + 11"
+   }
+  ]
+ },
  "VAR2_EXT_G4_FP_2024_004_02": {
   "origin": "rule",
   "stepFigures": [
@@ -10462,6 +10948,136 @@
    }
   ]
  },
+ "VAR2_EXT_G4_FP_2024_009_01": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2x + 6x",
+      "2 + 8"
+     ],
+     [
+      "8x",
+      "?"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Join the x terms: 2x + 6x = 8x",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2x + 6x",
+      "2 + 8"
+     ],
+     [
+      "8x",
+      "10"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Now the plain numbers: 2 + 8 = 10",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2x + 6x",
+      "2 + 8"
+     ],
+     [
+      "8x",
+      "10"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "The two kinds cannot be joined: 8x + 10"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2024_037_01": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4x + 3x",
+      "9 − 4"
+     ],
+     [
+      "7x",
+      "?"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Join the x terms: 4x + 3x = 7x",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4x + 3x",
+      "9 − 4"
+     ],
+     [
+      "7x",
+      "5"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Now the plain numbers: 9 − 4 = 5",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4x + 3x",
+      "9 − 4"
+     ],
+     [
+      "7x",
+      "5"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "The two kinds cannot be joined: 7x + 5"
+   }
+  ]
+ },
  "VAR2_EXT_G4_FP_2025_012_02": {
   "origin": "rule",
   "stepFigures": [
@@ -10563,6 +11179,71 @@
      }
     ],
     "note": "3x + 1y = 24"
+   }
+  ]
+ },
+ "VAR2_EXT_G4_FP_2025_035_01": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "10x + 3x",
+      "8 − 3"
+     ],
+     [
+      "13x",
+      "?"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Join the x terms: 10x + 3x = 13x",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "10x + 3x",
+      "8 − 3"
+     ],
+     [
+      "13x",
+      "5"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "Now the plain numbers: 8 − 3 = 5",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "10x + 3x",
+      "8 − 3"
+     ],
+     [
+      "13x",
+      "5"
+     ]
+    ],
+    "headers": [
+     "x terms",
+     "Plain numbers"
+    ],
+    "note": "The two kinds cannot be joined: 13x + 5"
    }
   ]
  },

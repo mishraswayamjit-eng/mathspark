@@ -154,7 +154,7 @@ def say(text, stop=True):
     s = re.sub(r"(equals \d+(?: [a-z]+)?) (is|are) (the|half|hens)", r"\1, which \2 \3", s)
     s = re.sub(r"(equals \d+) and (?=\d)", r"\1, and ", s)
     # The letter a, used as a number's name, is said as a letter.
-    s = re.sub(r"(which is \d+) and ", r"\1, and ", s)
+    s = re.sub(r"(which is \d+(?: years old)?) and ", r"\1, and ", s)
     s = re.sub(r"(?<=\d )a\b(?! (?:year|day|week|month|time)s?\b)", "A", s)
     s = re.sub(r"\ba(?= (?:plus|minus|equals|over)\b| times (?!table))", "A", s)
 

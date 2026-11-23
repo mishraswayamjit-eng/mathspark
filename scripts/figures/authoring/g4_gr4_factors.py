@@ -146,16 +146,33 @@ def lcm_before(a, b):
 def lcm_step_figures(q, a, b):
     out = []
     mults, rows = None, []
+    own, pieces, wide, small = None, None, False, None
     for i, s in enumerate(steps_of(q)):
         t = s.get("text", "")
         fig = None
         m_prod = re.search(r"LCM × HCF = (\d+) × (\d+) = (\d+)", t)
         m_div = re.search(r"= (\d+), so LCM = (\d+) ÷ (\d+) = (\d+)", t)
-        m_big = re.search(r"multiples of the bigger number, (\d+): ([\d, ]+)\.", t)
+        m_big = re.search(r"multiples of the bigger number, (\d+): ([\d, and]+?)\.", t)
+        m_own = re.search(r"multiples of the bigger number, (\d+)\. The first one is \1 itself", t)
         m_row = re.search(r"multiples of (\d+): ([\d, ]+)\.", t)
         m_first = re.search(r"first number that is in both lists is (\d+)", t)
-        m_lcm = re.search(r"The LCM is (\d+)", t)
-        if m_prod:
+        m_lcm = re.search(r"(?:The LCM is|the LCM of \d+ and \d+ is) (\d+)", t)
+        if m_own:
+            # the bigger number is itself a multiple of the smaller one: show it built from the smaller number
+            big = int(m_own.group(1))
+            small = a if big == b else b
+            own = big
+            fig = with_note({"kind": "barModel", "bars": [{"label": str(big), "segments": [{"units": 12, "label": str(big), "tone": "a"}]}]},
+                            "The first multiple of %d is %d itself. Does %d go into it?" % (big, big, small))
+        elif own and re.search(r"%d × (\d+) = %d" % (small, own), t):
+            times_ = int(re.search(r"%d × (\d+) = %d" % (small, own), t).group(1))
+            pieces = {"kind": "barModel", "bars": [
+                {"label": str(own), "segments": [{"units": 12, "label": str(own), "tone": "a"}]},
+                {"label": "%ds" % small, "segments": [{"units": 12.0 / times_, "label": str(small), "tone": "b"}] * times_}]}
+            fig = with_note(pieces, "%d goes into %d exactly: %d × %d = %d" % (small, own, small, times_, own), ["b1"])
+        elif own and pieces and m_lcm:
+            fig = with_note(pieces, "%d is a multiple of both, and nothing smaller is: the LCM" % own, ["b0"])
+        elif m_prod:
             fig = balance("HCF × LCM", "%d × %d" % (a, b),
                           "HCF × LCM is the same as %d × %d = %s" % (a, b, m_prod.group(3)))
         elif m_div:
@@ -166,14 +183,25 @@ def lcm_step_figures(q, a, b):
             big = int(m_big.group(1))
             small = a if big == b else b
             mults = [str(x) for x in ints(m_big.group(2))]
-            fig = table([["?"] * len(mults)], headers=mults,
-                        note="Multiples of %d. Which is the first that %d divides exactly?" % (big, small))
-        elif mults and re.search(r"÷ %d = \d+" % small, t):
-            marks = [["no"] * (len(mults) - 1) + ["yes"]]
-            fig = table(marks, headers=mults, note="Does %d divide it exactly? %s is the first that works" % (small, mults[-1]))
+            wide = len(mults) > 5   # too many for one row of headings: set the multiples out in rows instead
+            if wide:
+                fig = table(wrap(mults), note="Multiples of %d. Which is the first that %d goes into exactly?" % (big, small))
+            else:
+                fig = table([["?"] * len(mults)], headers=mults,
+                            note="Multiples of %d. Which is the first that %d goes into exactly?" % (big, small))
+        elif mults and re.search(r"÷ %d = \d+|%d × \d+ = %s(?!\d)" % (small, small, mults[-1]), t):
+            said = "Does %d go into it exactly? %s is the first that works" % (small, mults[-1])
+            if wide:
+                rows_ = wrap(mults)
+                fig = table(rows_, note="%d goes into %s exactly, and into none before it" % (small, mults[-1]), hl=["r%d" % (len(rows_) - 1)])
+            else:
+                fig = table([["no"] * (len(mults) - 1) + ["yes"]], headers=mults, note=said)
         elif mults and m_lcm:
-            fig = table([["no"] * (len(mults) - 1) + ["yes"]], headers=mults, hl=["r0"],
-                        note="The LCM of %d and %d is %s" % (a, b, m_lcm.group(1)))
+            if wide:
+                fig = table(wrap(mults), note="The LCM of %d and %d is %s" % (a, b, m_lcm.group(1)))
+            else:
+                fig = table([["no"] * (len(mults) - 1) + ["yes"]], headers=mults, hl=["r0"],
+                            note="The LCM of %d and %d is %s" % (a, b, m_lcm.group(1)))
         elif m_row:
             rows.append([str(x) for x in ints(m_row.group(2))])
             width = max(len(r) for r in rows)
@@ -250,16 +278,29 @@ def range_count(qid):
 
     before = line([], note="How many multiples of %d are on this line, from %d to %d?" % (k, lo, hi))
     figs = {}
+    m1, m2 = first // k, last // k
+    jumps = m2 - m1
+    answer = jumps + 1
+    seen_first = seen_last = counted = False
     for i, s in enumerate(steps_of(q)):
         t = s.get("text", "")
-        if t.startswith("First multiple"):
-            figs[i] = line([first], note="The first multiple of %d on the line" % k, hl=["p0"])
-        elif t.startswith("Last multiple"):
-            figs[i] = line([first, last], note="The last multiple of %d on the line" % k, hl=["p1"])
-        elif t.startswith("Count"):
-            answer = (last - first) // k + 1
+        if not seen_first and re.search(r"first multiple of %d" % k, t, re.I) and first in stated(q, i):
+            figs[i] = line([first], note="The first multiple of %d on the line is %d × %d = %d" % (k, k, m1, first), hl=["p0"])
+            seen_first = True
+        elif seen_first and not seen_last and last in stated(q, i):
+            figs[i] = line([first, last], note="The last multiple of %d on the line is %d × %d = %d" % (k, k, m2, last), hl=["p1"])
+            seen_last = True
+        elif seen_last and not counted and answer in stated(q, i):
+            if jumps in stated(q, i):   # the step itself counts the jumps (an answer choice with that number does not count)
+                figs[i] = line([first, last], [{"from": first, "to": last, "label": "%d jumps of %d" % (jumps, k)}],
+                               "%d × %d up to %d × %d: %d jumps, and the first one too: %d" % (k, m1, k, m2, jumps, answer), ["h0"])
+            else:
+                figs[i] = line([first, last], [{"from": first, "to": last, "label": "jumps of %d" % k}],
+                               "%d × %d, and so on up to %d × %d: %d multiples" % (k, m1, k, m2, answer), ["h0"])
+            counted = True
+        elif counted and answer in stated(q, i):
             figs[i] = line([first, last], [{"from": first, "to": last, "label": "jumps of %d" % k}],
-                           "(%d − %d) ÷ %d jumps, and 1 more for the first number: %d" % (last, first, k, answer), ["h0"])
+                           "%d multiples of %d from %d to %d" % (answer, k, lo, hi))
     P.add(qid, before, figs)
 
 

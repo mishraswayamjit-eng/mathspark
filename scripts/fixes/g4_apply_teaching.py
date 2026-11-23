@@ -35,6 +35,8 @@ REMOVE = {
     "Q_CH09_020_V03": "working goes below zero part-way (16 - 3 x 8 + 11)",
     "VAR_EXT_G4_FP_2021_039_02": "working goes below zero part-way (45 - 5 x 10 + 5)",
     "Q_CH12_010": "same ribbon question as Q_CH11_018, in the same topic",
+    "Q_CH13_006_V02": "a = 2 and b = 2: adding gives the same value as multiplying, so the question cannot tell them apart",
+    "Q_CH13_008_V02": "a = 2: 2 + 2 and 2 x 2 are both 4, so the question cannot tell them apart",
 }
 # Repairs that need more than one option changed, or that the checker's first version refused.
 EXTRA_OPTIONS = {
@@ -75,8 +77,7 @@ def build_record():
             fresh += list(load(path))
     record["freshNotes"] = sorted(set(fresh))
     # Later repairs of questions raters flagged: rewordings, option replacements, removals.
-    repairs = os.path.join(G4, "repairs-out.json")
-    if os.path.exists(repairs):
+    for repairs in sorted(glob.glob(os.path.join(G4, "repairs-out*.json"))):
         for qid, p in load(repairs).items():
             if p.get("remove"):
                 record["remove"][qid] = "repair: " + (p.get("why") or "")[:160]

@@ -1,5 +1,5 @@
 """Rule lessons for the plain sums 'a + b = ?' and 'a - b = ?' (Grade 4 operations)."""
-from g4_gr4_operations_common import (B, W, GIVEN, ANSR, M, pick, ask_of, has, hop_figure, lesson, tw, ow)
+from g4_gr4_operations_common import (B, W, GIVEN, ANSR, M, pick, ask_of, has, hop_figure, lesson, tw, ow, rivals)
 
 
 def _tens(n):
@@ -36,7 +36,7 @@ def add_rule(q, a, b):
             beats.append(B("%d is a round number. It has full tens and no ones at all." % big,
                            M("q", str(big), "underline")))
             beats.append(B("So the %d ones have the ones place all to themselves. What is %d and %d more?" % (small, big, small),
-                           ask=ask_of(qid, "a1", str(s), [str(big * small), "%d%d" % (big, small)],
+                           ask=ask_of(qid, "a1", str(s), rivals(q, [str(big * small), "%d%d" % (big, small)]),
                                       "Keep the %d as it is and put the %d in the empty ones place. That makes %d." % (big, small, s))))
             beats.append(answer)
             beats.append(check)
@@ -138,7 +138,7 @@ def sub_rule(q, a, b):
         beats.append(B("Picture a number line. We start at %d and hop back %d times, one hop for each one we take away." % (a, b),
                        hop_figure(qid)))
         beats.append(B("Where do we land?",
-                       ask=ask_of(qid, "a1", str(d), [str(a + b), str(d + 1)],
+                       ask=ask_of(qid, "a1", str(d), rivals(q, [str(a + b), str(d + 1)]),
                                   "Start at %d and hop back one at a time, %d hops in all. You land on %d." % (a, b, d))))
         beats.append(answer)
         beats.append(check)
@@ -198,7 +198,7 @@ def sub_rule(q, a, b):
         beats.append(B("Look how close these two numbers are. So here is a neat way: ask how far it is from %d up to %d." % (b, a),
                        M("q", str(b), "underline"), M("q", str(a), "underline"), hop_figure(qid)))
         beats.append(B("Count the hops from %d up to %d. How many are there?" % (b, a),
-                       ask=ask_of(qid, "a1", str(d), [str(d + 1), str(a + b)],
+                       ask=ask_of(qid, "a1", str(d), rivals(q, [str(d + 1), str(a + b)]),
                                   "Start at %d and hop up one at a time until you reach %d. That takes %d hops." % (b, a, d))))
         beats.append(B("%d hops. So %d and %d more make %d." % (d, b, d, a), W("u", "%d + %d = %d" % (b, d, a))))
         beats.append(answer)

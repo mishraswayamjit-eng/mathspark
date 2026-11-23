@@ -59,6 +59,39 @@
     "bars": [
      {
       "label": "A",
+      "value": 44
+     },
+     {
+      "label": "B",
+      "value": 26
+     },
+     {
+      "label": "C",
+      "value": 51
+     },
+     {
+      "label": "D",
+      "value": 56
+     },
+     {
+      "label": "E",
+      "value": 48
+     }
+    ],
+    "note": "Count the bars: there are 5 numbers",
+    "highlight": [
+     "b0",
+     "b1",
+     "b2",
+     "b3",
+     "b4"
+    ]
+   },
+   {
+    "kind": "barChart",
+    "bars": [
+     {
+      "label": "A",
       "value": 45.0
      },
      {
@@ -142,6 +175,39 @@
     "bars": [
      {
       "label": "A",
+      "value": 55
+     },
+     {
+      "label": "B",
+      "value": 79
+     },
+     {
+      "label": "C",
+      "value": 65
+     },
+     {
+      "label": "D",
+      "value": 57
+     },
+     {
+      "label": "E",
+      "value": 84
+     }
+    ],
+    "note": "Count the bars: there are 5 numbers",
+    "highlight": [
+     "b0",
+     "b1",
+     "b2",
+     "b3",
+     "b4"
+    ]
+   },
+   {
+    "kind": "barChart",
+    "bars": [
+     {
+      "label": "A",
       "value": 68.0
      },
      {
@@ -211,6 +277,34 @@
      }
     ],
     "note": "Add them all: the total is 244"
+   },
+   {
+    "kind": "barChart",
+    "bars": [
+     {
+      "label": "A",
+      "value": 61
+     },
+     {
+      "label": "B",
+      "value": 48
+     },
+     {
+      "label": "C",
+      "value": 73
+     },
+     {
+      "label": "D",
+      "value": 62
+     }
+    ],
+    "note": "Count the bars: there are 4 numbers",
+    "highlight": [
+     "b0",
+     "b1",
+     "b2",
+     "b3"
+    ]
    },
    {
     "kind": "barChart",
@@ -298,6 +392,44 @@
      }
     ],
     "note": "Add them all: the total is 270"
+   },
+   {
+    "kind": "barChart",
+    "bars": [
+     {
+      "label": "A",
+      "value": 19
+     },
+     {
+      "label": "B",
+      "value": 60
+     },
+     {
+      "label": "C",
+      "value": 55
+     },
+     {
+      "label": "D",
+      "value": 42
+     },
+     {
+      "label": "E",
+      "value": 53
+     },
+     {
+      "label": "F",
+      "value": 41
+     }
+    ],
+    "note": "Count the bars: there are 6 numbers",
+    "highlight": [
+     "b0",
+     "b1",
+     "b2",
+     "b3",
+     "b4",
+     "b5"
+    ]
    },
    {
     "kind": "barChart",
@@ -529,6 +661,42 @@
         "tone": "a"
        },
        {
+        "units": 11.06,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Total 232"
+     }
+    ],
+    "note": "The 3 numbers you know add up to 199",
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.83,
+        "label": "71",
+        "tone": "a"
+       },
+       {
+        "units": 9.33,
+        "label": "56",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "72",
+        "tone": "a"
+       },
+       {
         "units": 5.5,
         "label": "33",
         "tone": "c"
@@ -537,7 +705,7 @@
       "brace": "Total 232"
      }
     ],
-    "note": "The missing number is 33",
+    "note": "232 − 199 = 33: the missing number is 33",
     "highlight": [
      "b0s3"
     ]
@@ -628,6 +796,48 @@
      {
       "segments": [
        {
+        "units": 10.98,
+        "label": "54",
+        "tone": "a"
+       },
+       {
+        "units": 12.0,
+        "label": "59",
+        "tone": "a"
+       },
+       {
+        "units": 9.97,
+        "label": "49",
+        "tone": "a"
+       },
+       {
+        "units": 10.98,
+        "label": "54",
+        "tone": "a"
+       },
+       {
+        "units": 10.98,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Total 300"
+     }
+    ],
+    "note": "The 4 numbers you know add up to 216",
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
         "units": 7.71,
         "label": "54",
         "tone": "a"
@@ -656,7 +866,7 @@
       "brace": "Total 300"
      }
     ],
-    "note": "The missing number is 84",
+    "note": "300 − 216 = 84: the missing number is 84",
     "highlight": [
      "b0s4"
     ]
@@ -775,9 +985,12 @@
       "brace": "Total 100"
      }
     ],
-    "note": "All 5 numbers add up to 100",
+    "note": "Add the numbers you know",
     "highlight": [
-     "b0"
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3"
     ]
    },
    {
@@ -814,9 +1027,9 @@
       "brace": "Total 100"
      }
     ],
-    "note": "All 5 numbers add up to 100",
+    "note": "Take the numbers you know away from the total",
     "highlight": [
-     "b0"
+     "b0s4"
     ]
    },
    {
@@ -853,7 +1066,7 @@
       "brace": "Total 100"
      }
     ],
-    "note": "The missing number is 20",
+    "note": "100 − 80 = 20: the missing number is 20",
     "highlight": [
      "b0s4"
     ]
@@ -920,10 +1133,10 @@
         "tone": "unknown"
        }
       ],
-      "brace": "4 numbers, average 25"
+      "brace": "Total 100"
      }
     ],
-    "note": "The total is the average times 4",
+    "note": "All 4 numbers add up to 100",
     "highlight": [
      "b0"
     ]
@@ -954,12 +1167,14 @@
         "tone": "unknown"
        }
       ],
-      "brace": "4 numbers, average 25"
+      "brace": "Total 100"
      }
     ],
-    "note": "The total is the average times 4",
+    "note": "Add the numbers you know",
     "highlight": [
-     "b0"
+     "b0s0",
+     "b0s1",
+     "b0s2"
     ]
    },
    {
@@ -988,12 +1203,12 @@
         "tone": "unknown"
        }
       ],
-      "brace": "4 numbers, average 25"
+      "brace": "Total 100"
      }
     ],
-    "note": "The total is the average times 4",
+    "note": "Take the numbers you know away from the total",
     "highlight": [
-     "b0"
+     "b0s3"
     ]
    },
    {

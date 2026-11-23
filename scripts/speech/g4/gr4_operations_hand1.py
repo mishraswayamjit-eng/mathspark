@@ -5,8 +5,6 @@ LINES: a printed line (exactly as in the bank) -> its spoken form, wherever it a
 """
 
 LINES = {
-    "Selling price = Cost price + Profit.": "Selling price equals cost price plus profit.",
-    "Selling price = Cost price − Loss.": "Selling price equals cost price minus loss.",
     "The signs + × − make the sum equal 20.": "The signs plus, times and minus make the sum equal 20.",
 }
 

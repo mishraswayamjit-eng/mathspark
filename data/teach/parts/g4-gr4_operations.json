@@ -10430,9 +10430,9 @@
     "ask": {
      "kind": "choose",
      "choices": [
-      "12",
+      "5",
       "2",
-      "3"
+      "12"
      ],
      "answer": 1,
      "ifNot": "Start at 7 and hop back one at a time, 5 hops in all. You land on 2."
@@ -10555,8 +10555,8 @@
     "ask": {
      "kind": "choose",
      "choices": [
-      "6",
       "87",
+      "0",
       "5"
      ],
      "answer": 2,
@@ -16627,9 +16627,9 @@
     "ask": {
      "kind": "choose",
      "choices": [
-      "3",
+      "66",
       "2",
-      "66"
+      "5"
      ],
      "answer": 1,
      "ifNot": "Start at 32 and hop up one at a time until you reach 34. That takes 2 hops."
@@ -17952,7 +17952,7 @@
      "choices": [
       "30",
       "13",
-      "103"
+      "16"
      ],
      "answer": 1,
      "ifNot": "Keep the 10 as it is and put the 3 in the empty ones place. That makes 13."

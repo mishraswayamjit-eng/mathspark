@@ -69,7 +69,14 @@ def rule_root(q):
         final = grid(root, root, note="%d × %d = %d, so the square root is %d" % (root, root, n, root))
     else:
         final = box("%d squares" % n, str(root), "%d × %d = %d, so the square root is %d" % (root, root, n, root))
-    P.add(q, before, {last: final}, origin="rule")
+    steps = {last: final}
+    # A step that tries a smaller number ("3 × 3 = 9 is too small") shows that smaller square.
+    for i, t in enumerate(texts[:last]):
+        trial = re.search(r"(\d+) × (\d+) = (\d+) is too small", t)
+        if trial and trial.group(1) == trial.group(2) and int(trial.group(1)) <= 12:
+            side = int(trial.group(1))
+            steps[i] = grid(side, side, note="%s is too small for %d" % (trial.group(0)[:-len(" is too small")], n))
+    P.add(q, before, steps, origin="rule")
     return True
 
 
@@ -259,3 +266,5 @@ A("PYQ_2017_Q38", None, {
 P.write()
 if "--review" in sys.argv:
     P.review()
+if "--redo" in sys.argv:
+    P.review(["VAR2_EXT_G4_FP_2020_003_01"])

@@ -1,4 +1,145 @@
 {
+ "BOOST_EXT_G4_FP_2017_031_06": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3420",
+      "3 + 4 + 2 + 0",
+      "9"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3420",
+      "3 + 4 + 2 + 0",
+      "9"
+     ],
+     [
+      "6036",
+      "6 + 0 + 3 + 6",
+      "15"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3420",
+      "3 + 4 + 2 + 0",
+      "9"
+     ],
+     [
+      "6036",
+      "6 + 0 + 3 + 6",
+      "15"
+     ],
+     [
+      "1046",
+      "1 + 0 + 4 + 6",
+      "11"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3420",
+      "3 + 4 + 2 + 0",
+      "9"
+     ],
+     [
+      "6036",
+      "6 + 0 + 3 + 6",
+      "15"
+     ],
+     [
+      "1046",
+      "1 + 0 + 4 + 6",
+      "11"
+     ],
+     [
+      "2181",
+      "2 + 1 + 8 + 1",
+      "12"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r3"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3420",
+      "3 + 4 + 2 + 0",
+      "9"
+     ],
+     [
+      "6036",
+      "6 + 0 + 3 + 6",
+      "15"
+     ],
+     [
+      "1046",
+      "1 + 0 + 4 + 6",
+      "11"
+     ],
+     [
+      "2181",
+      "2 + 1 + 8 + 1",
+      "12"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "note": "Only 1046 has a digit sum of 11",
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
  "BOOST_EXT_G4_FP_2019_010_07": {
   "origin": "rule",
   "figure": {
@@ -14,7 +155,23 @@
    {
     "kind": "placeChart",
     "number": "85844",
-    "note": "The marked digits stand for 80000 and 800",
+    "note": "The 8 in the ten-thousands place is worth 8 × 10000 = 80000",
+    "highlight": [
+     "d0"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "85844",
+    "note": "The 8 in the hundreds place is worth 8 × 100 = 800",
+    "highlight": [
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "85844",
+    "note": "80000 ÷ 800 = 100",
     "highlight": [
      "d0",
      "d2"
@@ -23,7 +180,7 @@
    {
     "kind": "placeChart",
     "number": "85844",
-    "note": "80000 ÷ 800 = 100",
+    "note": "80000 is 100 times 800",
     "highlight": [
      "d0",
      "d2"
@@ -46,7 +203,23 @@
    {
     "kind": "placeChart",
     "number": "83233",
-    "note": "The marked digits stand for 3000 and 3",
+    "note": "The 3 in the thousands place is worth 3 × 1000 = 3000",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "83233",
+    "note": "The 3 in the units place is worth 3 × 1 = 3",
+    "highlight": [
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "83233",
+    "note": "3000 ÷ 3 = 1000",
     "highlight": [
      "d1",
      "d4"
@@ -55,7 +228,7 @@
    {
     "kind": "placeChart",
     "number": "83233",
-    "note": "3000 ÷ 3 = 1000",
+    "note": "3000 is 1000 times 3",
     "highlight": [
      "d1",
      "d4"
@@ -78,7 +251,23 @@
    {
     "kind": "placeChart",
     "number": "95448",
-    "note": "The marked digits stand for 400 and 40",
+    "note": "The 4 in the hundreds place is worth 4 × 100 = 400",
+    "highlight": [
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "95448",
+    "note": "The 4 in the tens place is worth 4 × 10 = 40",
+    "highlight": [
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "95448",
+    "note": "400 ÷ 40 = 10",
     "highlight": [
      "d2",
      "d3"
@@ -87,7 +276,7 @@
    {
     "kind": "placeChart",
     "number": "95448",
-    "note": "400 ÷ 40 = 10",
+    "note": "400 is 10 times 40",
     "highlight": [
      "d2",
      "d3"
@@ -109,7 +298,19 @@
    {
     "kind": "placeChart",
     "number": "94863",
-    "note": "The 9 is in the ten-thousands place",
+    "note": "Read the places from the right, up to the ten-thousands",
+    "highlight": [
+     "d0",
+     "d1",
+     "d2",
+     "d3",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "94863",
+    "note": "One ten-thousand is worth 10000, and the digit there is 9",
     "highlight": [
      "d0"
     ]
@@ -117,7 +318,7 @@
    {
     "kind": "placeChart",
     "number": "94863",
-    "note": "9 × 10000 = 90000",
+    "note": "9 × 10000 = 90000, so this 9 stands for 90000",
     "highlight": [
      "d0"
     ]
@@ -169,7 +370,23 @@
    {
     "kind": "placeChart",
     "number": "77726",
-    "note": "The marked digits stand for 7000 and 700",
+    "note": "The 7 in the thousands place is worth 7 × 1000 = 7000",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "77726",
+    "note": "The 7 in the hundreds place is worth 7 × 100 = 700",
+    "highlight": [
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "77726",
+    "note": "7000 ÷ 700 = 10",
     "highlight": [
      "d1",
      "d2"
@@ -178,7 +395,7 @@
    {
     "kind": "placeChart",
     "number": "77726",
-    "note": "7000 ÷ 700 = 10",
+    "note": "7000 is 10 times 700",
     "highlight": [
      "d1",
      "d2"
@@ -2067,7 +2284,7 @@
       "label": "last"
      }
     ],
-    "note": "The first odd number is 21 and the last is 49",
+    "note": "The odd numbers run from 21 to 49",
     "tickLabels": "ends"
    },
    {
@@ -2085,7 +2302,32 @@
       "label": "last"
      }
     ],
-    "note": "(49 − 21) ÷ 2 + 1 = 15",
+    "hops": [
+     {
+      "from": 21,
+      "to": 50,
+      "label": "30 numbers"
+     }
+    ],
+    "note": "Pair them up, 21 and 22 first: 30 ÷ 2 = 15 pairs",
+    "tickLabels": "ends"
+   },
+   {
+    "kind": "numberLine",
+    "min": 20,
+    "max": 50,
+    "step": 1,
+    "points": [
+     {
+      "at": 21,
+      "label": "first"
+     },
+     {
+      "at": 49,
+      "label": "last"
+     }
+    ],
+    "note": "One odd number in each pair: 15 odd numbers",
     "tickLabels": "ends"
    }
   ]
@@ -2116,7 +2358,7 @@
       "label": "last"
      }
     ],
-    "note": "The first odd number is 51 and the last is 89",
+    "note": "The odd numbers run from 51 to 89",
     "tickLabels": "ends"
    },
    {
@@ -2134,7 +2376,32 @@
       "label": "last"
      }
     ],
-    "note": "(89 − 51) ÷ 2 + 1 = 20",
+    "hops": [
+     {
+      "from": 51,
+      "to": 90,
+      "label": "40 numbers"
+     }
+    ],
+    "note": "Pair them up, 51 and 52 first: 40 ÷ 2 = 20 pairs",
+    "tickLabels": "ends"
+   },
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 90,
+    "step": 1,
+    "points": [
+     {
+      "at": 51,
+      "label": "first"
+     },
+     {
+      "at": 89,
+      "label": "last"
+     }
+    ],
+    "note": "One odd number in each pair: 20 odd numbers",
     "tickLabels": "ends"
    }
   ]
@@ -3676,7 +3943,23 @@
    {
     "kind": "placeChart",
     "number": "99307",
-    "note": "The marked digits stand for 90000 and 9000",
+    "note": "The 9 in the ten-thousands place is worth 9 × 10000 = 90000",
+    "highlight": [
+     "d0"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "99307",
+    "note": "The 9 in the thousands place is worth 9 × 1000 = 9000",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "99307",
+    "note": "90000 ÷ 9000 = 10",
     "highlight": [
      "d0",
      "d1"
@@ -3685,7 +3968,7 @@
    {
     "kind": "placeChart",
     "number": "99307",
-    "note": "90000 ÷ 9000 = 10",
+    "note": "90000 is 10 times 9000",
     "highlight": [
      "d0",
      "d1"
@@ -3707,7 +3990,17 @@
    {
     "kind": "placeChart",
     "number": "12645",
-    "note": "The 6 is in the hundreds place",
+    "note": "Read the places from the right, up to the hundreds",
+    "highlight": [
+     "d2",
+     "d3",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "12645",
+    "note": "One hundred is worth 100, and the digit there is 6",
     "highlight": [
      "d2"
     ]
@@ -3715,7 +4008,7 @@
    {
     "kind": "placeChart",
     "number": "12645",
-    "note": "6 × 100 = 600",
+    "note": "6 × 100 = 600, so this 6 stands for 600",
     "highlight": [
      "d2"
     ]
@@ -3736,7 +4029,17 @@
    {
     "kind": "placeChart",
     "number": "68457",
-    "note": "The 4 is in the hundreds place",
+    "note": "Read the places from the right, up to the hundreds",
+    "highlight": [
+     "d2",
+     "d3",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "68457",
+    "note": "One hundred is worth 100, and the digit there is 4",
     "highlight": [
      "d2"
     ]
@@ -3744,9 +4047,150 @@
    {
     "kind": "placeChart",
     "number": "68457",
-    "note": "4 × 100 = 400",
+    "note": "4 × 100 = 400, so this 4 stands for 400",
     "highlight": [
      "d2"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2017_002_03_b2": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "54913",
+      "5 + 4 + 9 + 1 + 3",
+      "22"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "54913",
+      "5 + 4 + 9 + 1 + 3",
+      "22"
+     ],
+     [
+      "43148",
+      "4 + 3 + 1 + 4 + 8",
+      "20"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "54913",
+      "5 + 4 + 9 + 1 + 3",
+      "22"
+     ],
+     [
+      "43148",
+      "4 + 3 + 1 + 4 + 8",
+      "20"
+     ],
+     [
+      "41608",
+      "4 + 1 + 6 + 0 + 8",
+      "19"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "54913",
+      "5 + 4 + 9 + 1 + 3",
+      "22"
+     ],
+     [
+      "43148",
+      "4 + 3 + 1 + 4 + 8",
+      "20"
+     ],
+     [
+      "41608",
+      "4 + 1 + 6 + 0 + 8",
+      "19"
+     ],
+     [
+      "19149",
+      "1 + 9 + 1 + 4 + 9",
+      "24"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r3"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "54913",
+      "5 + 4 + 9 + 1 + 3",
+      "22"
+     ],
+     [
+      "43148",
+      "4 + 3 + 1 + 4 + 8",
+      "20"
+     ],
+     [
+      "41608",
+      "4 + 1 + 6 + 0 + 8",
+      "19"
+     ],
+     [
+      "19149",
+      "1 + 9 + 1 + 4 + 9",
+      "24"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "note": "Only 54913 has a digit sum of 22",
+    "highlight": [
+     "r0"
     ]
    }
   ]
@@ -3766,7 +4210,23 @@
    {
     "kind": "placeChart",
     "number": "42338",
-    "note": "The marked digits stand for 2000 and 8",
+    "note": "The 2 in the thousands place is worth 2 × 1000 = 2000",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "42338",
+    "note": "The 8 in the units place is worth 8 × 1 = 8",
+    "highlight": [
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "42338",
+    "note": "2000 ÷ 8 = 250",
     "highlight": [
      "d1",
      "d4"
@@ -3775,7 +4235,7 @@
    {
     "kind": "placeChart",
     "number": "42338",
-    "note": "2000 ÷ 8 = 250",
+    "note": "2000 is 250 times 8",
     "highlight": [
      "d1",
      "d4"
@@ -3828,9 +4288,16 @@
    {
     "kind": "placeChart",
     "number": "33276",
-    "note": "The marked digits stand for 30000 and 200",
+    "note": "The 3 in the ten-thousands place is worth 3 × 10000 = 30000",
     "highlight": [
-     "d0",
+     "d0"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "33276",
+    "note": "The 2 in the hundreds place is worth 2 × 100 = 200",
+    "highlight": [
      "d2"
     ]
    },
@@ -3841,6 +4308,297 @@
     "highlight": [
      "d0",
      "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "33276",
+    "note": "30000 is 150 times 200",
+    "highlight": [
+     "d0",
+     "d2"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2018_008_02": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "35481",
+      "3 + 5 + 4 + 8 + 1",
+      "21"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "35481",
+      "3 + 5 + 4 + 8 + 1",
+      "21"
+     ],
+     [
+      "99544",
+      "9 + 9 + 5 + 4 + 4",
+      "31"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "35481",
+      "3 + 5 + 4 + 8 + 1",
+      "21"
+     ],
+     [
+      "99544",
+      "9 + 9 + 5 + 4 + 4",
+      "31"
+     ],
+     [
+      "90342",
+      "9 + 0 + 3 + 4 + 2",
+      "18"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "35481",
+      "3 + 5 + 4 + 8 + 1",
+      "21"
+     ],
+     [
+      "99544",
+      "9 + 9 + 5 + 4 + 4",
+      "31"
+     ],
+     [
+      "90342",
+      "9 + 0 + 3 + 4 + 2",
+      "18"
+     ],
+     [
+      "54617",
+      "5 + 4 + 6 + 1 + 7",
+      "23"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r3"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "35481",
+      "3 + 5 + 4 + 8 + 1",
+      "21"
+     ],
+     [
+      "99544",
+      "9 + 9 + 5 + 4 + 4",
+      "31"
+     ],
+     [
+      "90342",
+      "9 + 0 + 3 + 4 + 2",
+      "18"
+     ],
+     [
+      "54617",
+      "5 + 4 + 6 + 1 + 7",
+      "23"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "note": "Only 90342 has a digit sum of 18",
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2019_010_02": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6855",
+      "6 + 8 + 5 + 5",
+      "24"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6855",
+      "6 + 8 + 5 + 5",
+      "24"
+     ],
+     [
+      "4139",
+      "4 + 1 + 3 + 9",
+      "17"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6855",
+      "6 + 8 + 5 + 5",
+      "24"
+     ],
+     [
+      "4139",
+      "4 + 1 + 3 + 9",
+      "17"
+     ],
+     [
+      "6557",
+      "6 + 5 + 5 + 7",
+      "23"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6855",
+      "6 + 8 + 5 + 5",
+      "24"
+     ],
+     [
+      "4139",
+      "4 + 1 + 3 + 9",
+      "17"
+     ],
+     [
+      "6557",
+      "6 + 5 + 5 + 7",
+      "23"
+     ],
+     [
+      "7155",
+      "7 + 1 + 5 + 5",
+      "18"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r3"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6855",
+      "6 + 8 + 5 + 5",
+      "24"
+     ],
+     [
+      "4139",
+      "4 + 1 + 3 + 9",
+      "17"
+     ],
+     [
+      "6557",
+      "6 + 5 + 5 + 7",
+      "23"
+     ],
+     [
+      "7155",
+      "7 + 1 + 5 + 5",
+      "18"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "note": "Only 6557 has a digit sum of 23",
+    "highlight": [
+     "r2"
     ]
    }
   ]
@@ -3860,7 +4618,23 @@
    {
     "kind": "placeChart",
     "number": "89956",
-    "note": "The marked digits stand for 9000 and 50",
+    "note": "The 9 in the thousands place is worth 9 × 1000 = 9000",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "89956",
+    "note": "The 5 in the tens place is worth 5 × 10 = 50",
+    "highlight": [
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "89956",
+    "note": "9000 ÷ 50 = 180",
     "highlight": [
      "d1",
      "d3"
@@ -3869,7 +4643,7 @@
    {
     "kind": "placeChart",
     "number": "89956",
-    "note": "9000 ÷ 50 = 180",
+    "note": "9000 is 180 times 50",
     "highlight": [
      "d1",
      "d3"
@@ -3891,7 +4665,7 @@
    {
     "kind": "placeChart",
     "number": "46552",
-    "note": "The 2 is in the units place",
+    "note": "Read the places from the right, up to the units",
     "highlight": [
      "d4"
     ]
@@ -3899,7 +4673,15 @@
    {
     "kind": "placeChart",
     "number": "46552",
-    "note": "2 × 1 = 2",
+    "note": "One unit is worth 1, and the digit there is 2",
+    "highlight": [
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "46552",
+    "note": "2 × 1 = 2, so this 2 stands for 2",
     "highlight": [
      "d4"
     ]
@@ -3921,9 +4703,16 @@
    {
     "kind": "placeChart",
     "number": "88416",
-    "note": "The marked digits stand for 80000 and 400",
+    "note": "The 8 in the ten-thousands place is worth 8 × 10000 = 80000",
     "highlight": [
-     "d0",
+     "d0"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "88416",
+    "note": "The 4 in the hundreds place is worth 4 × 100 = 400",
+    "highlight": [
      "d2"
     ]
    },
@@ -3934,6 +4723,156 @@
     "highlight": [
      "d0",
      "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "88416",
+    "note": "80000 is 200 times 400",
+    "highlight": [
+     "d0",
+     "d2"
+    ]
+   }
+  ]
+ },
+ "VAR_EXT_G4_FP_2022_011_02": {
+  "origin": "rule",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "968",
+      "9 + 6 + 8",
+      "23"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "968",
+      "9 + 6 + 8",
+      "23"
+     ],
+     [
+      "898",
+      "8 + 9 + 8",
+      "25"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "968",
+      "9 + 6 + 8",
+      "23"
+     ],
+     [
+      "898",
+      "8 + 9 + 8",
+      "25"
+     ],
+     [
+      "634",
+      "6 + 3 + 4",
+      "13"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r2"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "968",
+      "9 + 6 + 8",
+      "23"
+     ],
+     [
+      "898",
+      "8 + 9 + 8",
+      "25"
+     ],
+     [
+      "634",
+      "6 + 3 + 4",
+      "13"
+     ],
+     [
+      "720",
+      "7 + 2 + 0",
+      "9"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "highlight": [
+     "r3"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "968",
+      "9 + 6 + 8",
+      "23"
+     ],
+     [
+      "898",
+      "8 + 9 + 8",
+      "25"
+     ],
+     [
+      "634",
+      "6 + 3 + 4",
+      "13"
+     ],
+     [
+      "720",
+      "7 + 2 + 0",
+      "9"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Digits added",
+     "Sum"
+    ],
+    "note": "Only 898 has a digit sum of 25",
+    "highlight": [
+     "r1"
     ]
    }
   ]
@@ -3952,7 +4891,18 @@
    {
     "kind": "placeChart",
     "number": "22049",
-    "note": "The 2 is in the thousands place",
+    "note": "Read the places from the right, up to the thousands",
+    "highlight": [
+     "d1",
+     "d2",
+     "d3",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "22049",
+    "note": "One thousand is worth 1000, and the digit there is 2",
     "highlight": [
      "d1"
     ]
@@ -3960,7 +4910,7 @@
    {
     "kind": "placeChart",
     "number": "22049",
-    "note": "2 × 1000 = 2000",
+    "note": "2 × 1000 = 2000, so this 2 stands for 2000",
     "highlight": [
      "d1"
     ]
@@ -3982,7 +4932,23 @@
    {
     "kind": "placeChart",
     "number": "19741",
-    "note": "The marked digits stand for 700 and 1",
+    "note": "The 7 in the hundreds place is worth 7 × 100 = 700",
+    "highlight": [
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "19741",
+    "note": "The 1 in the units place is worth 1",
+    "highlight": [
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "19741",
+    "note": "700 ÷ 1 = 700",
     "highlight": [
      "d2",
      "d4"
@@ -3991,7 +4957,7 @@
    {
     "kind": "placeChart",
     "number": "19741",
-    "note": "700 ÷ 1 = 700",
+    "note": "700 is 700 times 1",
     "highlight": [
      "d2",
      "d4"
@@ -4013,7 +4979,18 @@
    {
     "kind": "placeChart",
     "number": "97486",
-    "note": "The 7 is in the thousands place",
+    "note": "Read the places from the right, up to the thousands",
+    "highlight": [
+     "d1",
+     "d2",
+     "d3",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "97486",
+    "note": "One thousand is worth 1000, and the digit there is 7",
     "highlight": [
      "d1"
     ]
@@ -4021,7 +4998,7 @@
    {
     "kind": "placeChart",
     "number": "97486",
-    "note": "7 × 1000 = 7000",
+    "note": "7 × 1000 = 7000, so this 7 stands for 7000",
     "highlight": [
      "d1"
     ]
@@ -4043,7 +5020,23 @@
    {
     "kind": "placeChart",
     "number": "67666",
-    "note": "The marked digits stand for 6 and 60",
+    "note": "The 6 in the units place is worth 6 × 1 = 6",
+    "highlight": [
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "67666",
+    "note": "The 6 in the tens place is worth 6 × 10 = 60",
+    "highlight": [
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "67666",
+    "note": "6 ÷ 60 = 0.1",
     "highlight": [
      "d4",
      "d3"
@@ -4052,7 +5045,7 @@
    {
     "kind": "placeChart",
     "number": "67666",
-    "note": "6 ÷ 60 = 0.1",
+    "note": "6 is 0.1 times 60",
     "highlight": [
      "d4",
      "d3"
@@ -4075,7 +5068,23 @@
    {
     "kind": "placeChart",
     "number": "90447",
-    "note": "The marked digits stand for 90000 and 40",
+    "note": "The 9 in the ten-thousands place is worth 9 × 10000 = 90000",
+    "highlight": [
+     "d0"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "90447",
+    "note": "The 4 in the tens place is worth 4 × 10 = 40",
+    "highlight": [
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "90447",
+    "note": "90000 ÷ 40 = 2250",
     "highlight": [
      "d0",
      "d3"
@@ -4084,7 +5093,7 @@
    {
     "kind": "placeChart",
     "number": "90447",
-    "note": "90000 ÷ 40 = 2250",
+    "note": "90000 is 2250 times 40",
     "highlight": [
      "d0",
      "d3"
@@ -4137,7 +5146,23 @@
    {
     "kind": "placeChart",
     "number": "69697",
-    "note": "The marked digits stand for 9000 and 600",
+    "note": "The 9 in the thousands place is worth 9 × 1000 = 9000",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "69697",
+    "note": "The 6 in the hundreds place is worth 6 × 100 = 600",
+    "highlight": [
+     "d2"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "69697",
+    "note": "9000 ÷ 600 = 15",
     "highlight": [
      "d1",
      "d2"
@@ -4146,7 +5171,7 @@
    {
     "kind": "placeChart",
     "number": "69697",
-    "note": "9000 ÷ 600 = 15",
+    "note": "9000 is 15 times 600",
     "highlight": [
      "d1",
      "d2"
@@ -4198,7 +5223,19 @@
    {
     "kind": "placeChart",
     "number": "66933",
-    "note": "The 6 is in the ten-thousands place",
+    "note": "Read the places from the right, up to the ten-thousands",
+    "highlight": [
+     "d0",
+     "d1",
+     "d2",
+     "d3",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "66933",
+    "note": "One ten-thousand is worth 10000, and the digit there is 6",
     "highlight": [
      "d0"
     ]
@@ -4206,7 +5243,7 @@
    {
     "kind": "placeChart",
     "number": "66933",
-    "note": "6 × 10000 = 60000",
+    "note": "6 × 10000 = 60000, so this 6 stands for 60000",
     "highlight": [
      "d0"
     ]
@@ -4227,7 +5264,16 @@
    {
     "kind": "placeChart",
     "number": "93939",
-    "note": "The 3 is in the tens place",
+    "note": "Read the places from the right, up to the tens",
+    "highlight": [
+     "d3",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "93939",
+    "note": "One ten is worth 10, and the digit there is 3",
     "highlight": [
      "d3"
     ]
@@ -4235,7 +5281,7 @@
    {
     "kind": "placeChart",
     "number": "93939",
-    "note": "3 × 10 = 30",
+    "note": "3 × 10 = 30, so this 3 stands for 30",
     "highlight": [
      "d3"
     ]

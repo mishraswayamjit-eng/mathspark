@@ -8,13 +8,14 @@
    "26"
   ],
   "hints": [
-   "Average equals Sum of all numbers divided by Count of numbers.",
-   "Add up all 5 numbers first.",
-   "Then divide the total by 5."
+   "To find an average you need two things: the total of all the numbers, and how many numbers there are.",
+   "Add all 5 numbers together first. Keep the total ready for the next step.",
+   "Here is a similar one. Find the average of 15, 9, 12, 17 and 7. The total is 15 plus 9 plus 12 plus 17 plus 7 equals 60. There are 5 numbers, so the average is 60 divided by 5 equals 12."
   ],
   "steps": [
-   "Sum equals 44 plus 26 plus 51 plus 56 plus 48, which is 225",
-   "Average equals 225 divided by 5, which is 45"
+   "Add all the numbers: 44 plus 26 plus 51 plus 56 plus 48 equals 225.",
+   "Count the numbers in the list. There are 5 of them.",
+   "Share the total equally among the 5 numbers: 225 divided by 5 equals 45. The average is 45."
   ]
  },
  "BOOST_EXT_G4_FP_2016_032_07": {
@@ -26,13 +27,14 @@
    "58"
   ],
   "hints": [
-   "First find the total: Average times Number of items.",
-   "Then subtract the known numbers from the total.",
-   "Total should be 58 times 4 equals 232."
+   "When you know the average, you can work backwards to the total of all the numbers. The missing number is whatever the total still needs.",
+   "Find the total of all 4 numbers first. Their average is 58, so think what 4 numbers of 58 each would add up to.",
+   "Here is a similar one. The average of 3 numbers is 10, and 2 of them are 8 and 13. The total of all 3 numbers is 10 times 3 equals 30. The known numbers add up to 8 plus 13 equals 21, so the missing number is 30 minus 21 equals 9."
   ],
   "steps": [
-   "Total equals Average times Count, which is 58 times 4, which is 232",
-   "The missing number equals 232 minus the total of 71 plus 56 plus 72. That is 232 minus 199, which is 33"
+   "The average of the 4 numbers is 58, so together they add up to 58 times 4 equals 232.",
+   "The 3 numbers you know add up to 71 plus 56 plus 72 equals 199.",
+   "Take that away from the total: 232 minus 199 equals 33. The missing number is 33."
   ]
  },
  "BOOST_EXT_G4_FP_2016_032_08": {
@@ -44,14 +46,14 @@
    "49"
   ],
   "hints": [
-   "Find the old total first: 49 times 4.",
-   "Add 59 to get the new total.",
-   "Divide new total by 5, the new count."
+   "An average hides a total. When a new number joins, the total changes and so does the count of numbers.",
+   "Find the total of the first 4 numbers. Their average is 49, so think what 4 numbers of 49 each add up to.",
+   "Here is a similar one. The average of 3 numbers is 8, and a new number 16 joins them. The old total is 8 times 3 equals 24. The new total is 24 plus 16 equals 40, and there are now 4 numbers, so the new average is 40 divided by 4 equals 10."
   ],
   "steps": [
-   "Old total equals 49 times 4, which is 196",
-   "New total equals 196 plus 59, which is 255",
-   "New average equals 255 divided by 5, which is 51"
+   "The first 4 numbers have an average of 49, so their total is 49 times 4 equals 196.",
+   "Add the new number: 196 plus 59 equals 255. Now there are 5 numbers.",
+   "Share the new total equally: 255 divided by 5 equals 51. The new average is 51."
   ]
  },
  "G4A_DATA_001": {
@@ -1423,13 +1425,14 @@
    "84"
   ],
   "hints": [
-   "First find the total: Average times Number of items.",
-   "Then subtract the known numbers from the total.",
-   "Total should be 60 times 5 equals 300."
+   "When you know the average, you can work backwards to the total of all the numbers. The missing number is whatever the total still needs.",
+   "Find the total of all 5 numbers first. Their average is 60, so think what 5 numbers of 60 each would add up to.",
+   "Here is a similar one. The average of 3 numbers is 10, and 2 of them are 8 and 13. The total of all 3 numbers is 10 times 3 equals 30. The known numbers add up to 8 plus 13 equals 21, so the missing number is 30 minus 21 equals 9."
   ],
   "steps": [
-   "Total equals Average times Count, which is 60 times 5, which is 300",
-   "The missing number equals 300 minus the total of 54 plus 59 plus 49 plus 54. That is 300 minus 216, which is 84"
+   "The average of the 5 numbers is 60, so together they add up to 60 times 5 equals 300.",
+   "The 4 numbers you know add up to 54 plus 59 plus 49 plus 54 equals 216.",
+   "Take that away from the total: 300 minus 216 equals 84. The missing number is 84."
   ]
  },
  "VAR_EXT_G4_FP_2016_032_02": {
@@ -1441,14 +1444,14 @@
    "64"
   ],
   "hints": [
-   "Find the old total first: 50 times 6.",
-   "Add 64 to get the new total.",
-   "Divide new total by 7, the new count."
+   "An average hides a total. When a new number joins, the total changes and so does the count of numbers.",
+   "Find the total of the first 6 numbers. Their average is 50, so think what 6 numbers of 50 each add up to.",
+   "Here is a similar one. The average of 3 numbers is 10, and a new number 18 joins them. The old total is 10 times 3 equals 30. The new total is 30 plus 18 equals 48, and there are now 4 numbers, so the new average is 48 divided by 4 equals 12."
   ],
   "steps": [
-   "Old total equals 50 times 6, which is 300",
-   "New total equals 300 plus 64, which is 364",
-   "New average equals 364 divided by 7, which is 52"
+   "The first 6 numbers have an average of 50, so their total is 50 times 6 equals 300.",
+   "Add the new number: 300 plus 64 equals 364. Now there are 7 numbers.",
+   "Share the new total equally: 364 divided by 7 equals 52. The new average is 52."
   ]
  },
  "VAR_EXT_G4_FP_2016_032_04": {
@@ -1460,13 +1463,14 @@
    "68"
   ],
   "hints": [
-   "Average equals Sum of all numbers divided by Count of numbers.",
-   "Add up all 5 numbers first.",
-   "Then divide the total by 5."
+   "To find an average you need two things: the total of all the numbers, and how many numbers there are.",
+   "Add all 5 numbers together first. Keep the total ready for the next step.",
+   "Here is a similar one. Find the average of 31, 27, 35 and 23. The total is 31 plus 27 plus 35 plus 23 equals 116. There are 4 numbers, so the average is 116 divided by 4 equals 29."
   ],
   "steps": [
-   "Sum equals 55 plus 79 plus 65 plus 57 plus 84, which is 340",
-   "Average equals 340 divided by 5, which is 68"
+   "Add all the numbers: 55 plus 79 plus 65 plus 57 plus 84 equals 340.",
+   "Count the numbers in the list. There are 5 of them.",
+   "Divide the total by how many numbers there are: 340 divided by 5 equals 68. So the average is 68."
   ]
  },
  "VAR_EXT_G4_FP_2016_032_05": {
@@ -1478,13 +1482,14 @@
    "48"
   ],
   "hints": [
-   "Average equals Sum of all numbers divided by Count of numbers.",
-   "Add up all 4 numbers first.",
-   "Then divide the total by 4."
+   "The average is the fair share: what each number would be if the total were shared out equally among them.",
+   "Add all 4 numbers together first. Keep the total ready for the next step.",
+   "Here is a similar one. Find the average of 20, 25, 30, 21 and 24. The total is 20 plus 25 plus 30 plus 21 plus 24 equals 120. There are 5 numbers, so the average is 120 divided by 5 equals 24."
   ],
   "steps": [
-   "Sum equals 61 plus 48 plus 73 plus 62, which is 244",
-   "Average equals 244 divided by 4, which is 61"
+   "Add all the numbers: 61 plus 48 plus 73 plus 62 equals 244.",
+   "Count the numbers in the list. There are 4 of them.",
+   "Share the total equally among the 4 numbers: 244 divided by 4 equals 61. The average is 61."
   ]
  },
  "VAR_EXT_G4_FP_2016_032_05_b2": {
@@ -1496,13 +1501,14 @@
    "54"
   ],
   "hints": [
-   "Average equals Sum of all numbers divided by Count of numbers.",
-   "Add up all 6 numbers first.",
-   "Then divide the total by 6."
+   "To find an average you need two things: the total of all the numbers, and how many numbers there are.",
+   "Add all 6 numbers together first. Keep the total ready for the next step.",
+   "Here is a similar one. Find the average of 31, 27, 35 and 23. The total is 31 plus 27 plus 35 plus 23 equals 116. There are 4 numbers, so the average is 116 divided by 4 equals 29."
   ],
   "steps": [
-   "Sum equals 19 plus 60 plus 55 plus 42 plus 53 plus 41, which is 270",
-   "Average equals 270 divided by 6, which is 45"
+   "Add all the numbers: 19 plus 60 plus 55 plus 42 plus 53 plus 41 equals 270.",
+   "Count the numbers in the list. There are 6 of them.",
+   "Share the total equally among the 6 numbers: 270 divided by 6 equals 45. The average is 45."
   ]
  }
 }

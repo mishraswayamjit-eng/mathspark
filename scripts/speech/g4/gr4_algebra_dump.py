@@ -64,6 +64,11 @@ def main(node=NODE):
                 print("%s> %s" % (" " * (len(tag) - 1), spoken))
         if "--help-only" in flags:
             print("Q: %s" % src["q"].replace("\n", " // "))
+            if e:
+                # The question and options of a listed id may have changed too: show them on one line each.
+                print("Q> %s" % e["q"])
+                print("O: %s" % " | ".join(src["options"]))
+                print("O> %s" % " | ".join(e["options"]))
         else:
             show("Q", src["q"], e["q"] if e else None)
             for i, t in enumerate(src["options"]):

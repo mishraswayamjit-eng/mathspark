@@ -138,6 +138,25 @@ def rule_number_line(q):
     if num(answer_text(q)) != res or res < 0 or len(st) < 2:
         return None
     count_up = (not plus) and st[0].startswith("Count up from")
+    # '34 - 32': the steps take away the tens, then the ones, and state each result.
+    tens_first = None
+    if not plus and b > 10:
+        m2 = re.match(r"Split %d into (\d+) and (\d+)\. Take away the \d+ first: %d − \d+ = (\d+)\." % (b, a), st[0])
+        if m2 and int(m2.group(1)) + int(m2.group(2)) == b and a - int(m2.group(1)) == int(m2.group(3)):
+            tens_first = (int(m2.group(1)), int(m2.group(2)), int(m2.group(3)))
+    if tens_first:
+        t, u, mid = tens_first
+        lo, hi = max(0, 5 * ((res - 2) // 5)), 5 * (-(-(a + 2) // 5))
+        if hi - lo > 40 or len(st) != 3:
+            return None
+
+        def span(points, hops=None, note=None):
+            return nl(lo, hi, 1, points=points, hops=hops, note=note)
+        first, second = (a, mid, "−%d" % t), (mid, res, "−%d" % u)
+        return entry("rule", span([(a, str(a))], note="Start at %d and hop back %d" % (a, b)), step_figs(q, {
+            0: span([(a, str(a)), (mid, str(mid))], hops=[first], note="Take away the %d first: %d − %d = %d" % (t, a, t, mid)),
+            1: span([(a, str(a)), (res, str(res))], hops=[first, second], note="Then take away the %d: %d − %d = %d" % (u, mid, u, res)),
+            2: span([(a, str(a)), (res, str(res))], hops=[(a, res, "−%d" % b)], note="%d − %d = %d" % (a, b, res))}))
     if b > 10 and not (count_up and res <= 8):
         return None
     lo = max(0, 5 * (((b if count_up else min(a, res)) - 2) // 5))
@@ -173,6 +192,8 @@ def rule_number_line(q):
         # '7 - 5': the steps count back one at a time.
         unit = [(n, n - 1) for n in range(a, res, -1)]
         figs = {0: line(points=[(a, str(a))], hops=unit, note="Count back %d hops" % b), -1: done}
+        if len(st) == 3 and "lands on %d" % res in st[1]:
+            figs[1] = line(points=[(a, str(a)), (res, str(res))], hops=unit, note="The last hop lands on %d" % res)
     else:
         figs = {0: line(points=[(a, str(a))], hops=whole, note="Hop %s %d from %d" % ("on" if plus else "back", b, a)),
                 -1: done}
@@ -236,7 +257,37 @@ def rule_product(q):
     return None
 
 
-RULES = [rule_total_cost, rule_cost_of_one, rule_profit_loss, rule_number_line, rule_product]
+def rule_think_of_a_number(q):
+    """'Think of a number 12. Multiply it by 2 and add 8. What do you get?': equal lots, then a bit more."""
+    m = re.search(r"Think of a number (\d+)\. Multiply it by (\d+) and add (\d+)\. What do you get", q["questionText"])
+    st = step_texts(q)
+    if not m or len(st) != 2:
+        return None
+    n, times, extra = int(m.group(1)), int(m.group(2)), int(m.group(3))
+    prod = n * times
+    total = prod + extra
+    if num(answer_text(q)) != total or times > 8 or "%d + %d = %d" % (prod, extra, total) not in st[1]:
+        return None
+    figure = bm([bar([seg(str(n), n, "a") for _ in range(times)] + [seg(str(extra), extra, "b")], brace="?")],
+                note="%d lots of %d, and then %d more" % (times, n, extra))
+    sp = split_step(st)
+    products = re.findall(r"(\d+) × (\d+) = (\d+)", st[0])
+    if sp and sp[1] == n and len(products) == 2 and int(products[0][2]) + int(products[1][2]) == prod:
+        # The step splits the number to multiply it: 16 × 4 as 10 × 4 and 6 × 4.
+        first = bm([bar([seg("%s × %s" % products[0][:2], int(products[0][2]), "a"),
+                         seg("%s × %s" % products[1][:2], int(products[1][2]), "c")], brace="%d × %d = %d" % (n, times, prod))],
+                   note="%s + %s = %d" % (products[0][2], products[1][2], prod))
+    elif "%d × %d = %d" % (n, times, prod) in st[0]:
+        first = bm([bar(equal_segs(times, str(n)), brace="%d × %d = %d" % (n, times, prod))],
+                   note="%d lots of %d" % (times, n), hl=["b0"])
+    else:
+        return None
+    second = bm([bar([seg(str(prod), prod, "a"), seg(str(extra), extra, "b")], brace=str(total))],
+                note="%d + %d = %d" % (prod, extra, total), hl=["b0s1"])
+    return entry("rule", figure, step_figs(q, {0: first, 1: second}))
+
+
+RULES = [rule_total_cost, rule_cost_of_one, rule_profit_loss, rule_number_line, rule_product, rule_think_of_a_number]
 
 
 # ── Individually drawn questions ─────────────────────────────────────────────

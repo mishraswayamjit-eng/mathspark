@@ -107,8 +107,4 @@ HAND = {
 
 }
 
-TEXT = {
-    # The nth-term family (PH3_..., not rewritten in the bank).
-    "nth term of an AP = a + (n−1)d.":
-        "The nth term of an A P equals A plus, open bracket, n minus 1, close bracket, times d.",
-}
+TEXT = {}

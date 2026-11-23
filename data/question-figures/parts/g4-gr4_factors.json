@@ -1617,7 +1617,7 @@
       "label": "108"
      }
     ],
-    "note": "The first multiple of 9 on the line",
+    "note": "The first multiple of 9 on the line is 9 × 12 = 108",
     "highlight": [
      "p0"
     ]
@@ -1638,9 +1638,37 @@
       "label": "297"
      }
     ],
-    "note": "The last multiple of 9 on the line",
+    "note": "The last multiple of 9 on the line is 9 × 33 = 297",
     "highlight": [
      "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 100,
+    "max": 300,
+    "step": 200,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 108,
+      "label": "108"
+     },
+     {
+      "at": 297,
+      "label": "297"
+     }
+    ],
+    "hops": [
+     {
+      "from": 108,
+      "to": 297,
+      "label": "21 jumps of 9"
+     }
+    ],
+    "note": "9 × 12 up to 9 × 33: 21 jumps, and the first one too: 22",
+    "highlight": [
+     "h0"
     ]
    },
    {
@@ -1666,10 +1694,7 @@
       "label": "jumps of 9"
      }
     ],
-    "note": "(297 − 108) ÷ 9 jumps, and 1 more for the first number: 22",
-    "highlight": [
-     "h0"
-    ]
+    "note": "22 multiples of 9 from 100 to 300"
    }
   ]
  },
@@ -1696,7 +1721,7 @@
       "label": "5"
      }
     ],
-    "note": "The first multiple of 5 on the line",
+    "note": "The first multiple of 5 on the line is 5 × 1 = 5",
     "highlight": [
      "p0"
     ]
@@ -1717,7 +1742,7 @@
       "label": "100"
      }
     ],
-    "note": "The last multiple of 5 on the line",
+    "note": "The last multiple of 5 on the line is 5 × 20 = 100",
     "highlight": [
      "p1"
     ]
@@ -1745,10 +1770,35 @@
       "label": "jumps of 5"
      }
     ],
-    "note": "(100 − 5) ÷ 5 jumps, and 1 more for the first number: 20",
+    "note": "5 × 1, and so on up to 5 × 20: 20 multiples",
     "highlight": [
      "h0"
     ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1,
+    "max": 101,
+    "step": 100,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 5,
+      "label": "5"
+     },
+     {
+      "at": 100,
+      "label": "100"
+     }
+    ],
+    "hops": [
+     {
+      "from": 5,
+      "to": 100,
+      "label": "jumps of 5"
+     }
+    ],
+    "note": "20 multiples of 5 from 1 to 101"
    }
   ]
  },
@@ -1775,7 +1825,7 @@
       "label": "56"
      }
     ],
-    "note": "The first multiple of 7 on the line",
+    "note": "The first multiple of 7 on the line is 7 × 8 = 56",
     "highlight": [
      "p0"
     ]
@@ -1796,9 +1846,37 @@
       "label": "245"
      }
     ],
-    "note": "The last multiple of 7 on the line",
+    "note": "The last multiple of 7 on the line is 7 × 35 = 245",
     "highlight": [
      "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 250,
+    "step": 200,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 56,
+      "label": "56"
+     },
+     {
+      "at": 245,
+      "label": "245"
+     }
+    ],
+    "hops": [
+     {
+      "from": 56,
+      "to": 245,
+      "label": "27 jumps of 7"
+     }
+    ],
+    "note": "7 × 8 up to 7 × 35: 27 jumps, and the first one too: 28",
+    "highlight": [
+     "h0"
     ]
    },
    {
@@ -1824,10 +1902,7 @@
       "label": "jumps of 7"
      }
     ],
-    "note": "(245 − 56) ÷ 7 jumps, and 1 more for the first number: 28",
-    "highlight": [
-     "h0"
-    ]
+    "note": "28 multiples of 7 from 50 to 250"
    }
   ]
  },
@@ -1854,7 +1929,7 @@
       "label": "54"
      }
     ],
-    "note": "The first multiple of 9 on the line",
+    "note": "The first multiple of 9 on the line is 9 × 6 = 54",
     "highlight": [
      "p0"
     ]
@@ -1875,9 +1950,37 @@
       "label": "144"
      }
     ],
-    "note": "The last multiple of 9 on the line",
+    "note": "The last multiple of 9 on the line is 9 × 16 = 144",
     "highlight": [
      "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 150,
+    "step": 100,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 54,
+      "label": "54"
+     },
+     {
+      "at": 144,
+      "label": "144"
+     }
+    ],
+    "hops": [
+     {
+      "from": 54,
+      "to": 144,
+      "label": "10 jumps of 9"
+     }
+    ],
+    "note": "9 × 6 up to 9 × 16: 10 jumps, and the first one too: 11",
+    "highlight": [
+     "h0"
     ]
    },
    {
@@ -1903,10 +2006,7 @@
       "label": "jumps of 9"
      }
     ],
-    "note": "(144 − 54) ÷ 9 jumps, and 1 more for the first number: 11",
-    "highlight": [
-     "h0"
-    ]
+    "note": "11 multiples of 9 from 50 to 150"
    }
   ]
  },
@@ -1933,7 +2033,7 @@
       "label": "56"
      }
     ],
-    "note": "The first multiple of 8 on the line",
+    "note": "The first multiple of 8 on the line is 8 × 7 = 56",
     "highlight": [
      "p0"
     ]
@@ -1954,9 +2054,37 @@
       "label": "96"
      }
     ],
-    "note": "The last multiple of 8 on the line",
+    "note": "The last multiple of 8 on the line is 8 × 12 = 96",
     "highlight": [
      "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 50,
+    "max": 100,
+    "step": 50,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 56,
+      "label": "56"
+     },
+     {
+      "at": 96,
+      "label": "96"
+     }
+    ],
+    "hops": [
+     {
+      "from": 56,
+      "to": 96,
+      "label": "5 jumps of 8"
+     }
+    ],
+    "note": "8 × 7 up to 8 × 12: 5 jumps, and the first one too: 6",
+    "highlight": [
+     "h0"
     ]
    },
    {
@@ -1982,10 +2110,7 @@
       "label": "jumps of 8"
      }
     ],
-    "note": "(96 − 56) ÷ 8 jumps, and 1 more for the first number: 6",
-    "highlight": [
-     "h0"
-    ]
+    "note": "6 multiples of 8 from 50 to 100"
    }
   ]
  },
@@ -2012,7 +2137,7 @@
       "label": "102"
      }
     ],
-    "note": "The first multiple of 3 on the line",
+    "note": "The first multiple of 3 on the line is 3 × 34 = 102",
     "highlight": [
      "p0"
     ]
@@ -2033,9 +2158,37 @@
       "label": "150"
      }
     ],
-    "note": "The last multiple of 3 on the line",
+    "note": "The last multiple of 3 on the line is 3 × 50 = 150",
     "highlight": [
      "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 100,
+    "max": 150,
+    "step": 50,
+    "tickLabels": "ends",
+    "points": [
+     {
+      "at": 102,
+      "label": "102"
+     },
+     {
+      "at": 150,
+      "label": "150"
+     }
+    ],
+    "hops": [
+     {
+      "from": 102,
+      "to": 150,
+      "label": "16 jumps of 3"
+     }
+    ],
+    "note": "3 × 34 up to 3 × 50: 16 jumps, and the first one too: 17",
+    "highlight": [
+     "h0"
     ]
    },
    {
@@ -2061,10 +2214,7 @@
       "label": "jumps of 3"
      }
     ],
-    "note": "(150 − 102) ÷ 3 jumps, and 1 more for the first number: 17",
-    "highlight": [
-     "h0"
-    ]
+    "note": "17 multiples of 3 from 100 to 150"
    }
   ]
  },
@@ -4123,18 +4273,54 @@
   },
   "stepFigures": [
    {
-    "kind": "balance",
-    "left": "HCF × LCM",
-    "right": "15 × 9",
-    "note": "HCF × LCM is the same as 15 × 9 = 135"
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "15",
+     "30",
+     "45"
+    ],
+    "note": "Multiples of 15. Which is the first that 9 goes into exactly?"
    },
    {
-    "kind": "balance",
-    "left": "3 × 45",
-    "right": "15 × 9",
-    "note": "The HCF is 3, so the LCM is 135 ÷ 3 = 45",
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "15",
+     "30",
+     "45"
+    ],
+    "note": "Does 9 go into it exactly? 45 is the first that works"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "15",
+     "30",
+     "45"
+    ],
+    "note": "The LCM of 15 and 9 is 45",
     "highlight": [
-     "left"
+     "r0"
     ]
    }
   ]
@@ -4161,18 +4347,97 @@
   },
   "stepFigures": [
    {
-    "kind": "balance",
-    "left": "HCF × LCM",
-    "right": "9 × 3",
-    "note": "HCF × LCM is the same as 9 × 3 = 27"
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "9",
+      "segments": [
+       {
+        "units": 12,
+        "label": "9",
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "The first multiple of 9 is 9 itself. Does 3 go into it?"
    },
    {
-    "kind": "balance",
-    "left": "3 × 9",
-    "right": "9 × 3",
-    "note": "The HCF is 3, so the LCM is 27 ÷ 3 = 9",
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "9",
+      "segments": [
+       {
+        "units": 12,
+        "label": "9",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "3s",
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "3",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "3",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "3",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "3 goes into 9 exactly: 3 × 3 = 9",
     "highlight": [
-     "left"
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "9",
+      "segments": [
+       {
+        "units": 12,
+        "label": "9",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "3s",
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "3",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "3",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "3",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "9 is a multiple of both, and nothing smaller is: the LCM",
+    "highlight": [
+     "b0"
     ]
    }
   ]
@@ -4199,18 +4464,66 @@
   },
   "stepFigures": [
    {
-    "kind": "balance",
-    "left": "HCF × LCM",
-    "right": "12 × 10",
-    "note": "HCF × LCM is the same as 12 × 10 = 120"
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "12",
+     "24",
+     "36",
+     "48",
+     "60"
+    ],
+    "note": "Multiples of 12. Which is the first that 10 goes into exactly?"
    },
    {
-    "kind": "balance",
-    "left": "2 × 60",
-    "right": "12 × 10",
-    "note": "The HCF is 2, so the LCM is 120 ÷ 2 = 60",
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "12",
+     "24",
+     "36",
+     "48",
+     "60"
+    ],
+    "note": "Does 10 go into it exactly? 60 is the first that works"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "12",
+     "24",
+     "36",
+     "48",
+     "60"
+    ],
+    "note": "The LCM of 12 and 10 is 60",
     "highlight": [
-     "left"
+     "r0"
     ]
    }
   ]
@@ -4237,18 +4550,87 @@
   },
   "stepFigures": [
    {
-    "kind": "balance",
-    "left": "HCF × LCM",
-    "right": "12 × 6",
-    "note": "HCF × LCM is the same as 12 × 6 = 72"
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "12",
+      "segments": [
+       {
+        "units": 12,
+        "label": "12",
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "The first multiple of 12 is 12 itself. Does 6 go into it?"
    },
    {
-    "kind": "balance",
-    "left": "6 × 12",
-    "right": "12 × 6",
-    "note": "The HCF is 6, so the LCM is 72 ÷ 6 = 12",
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "12",
+      "segments": [
+       {
+        "units": 12,
+        "label": "12",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "6s",
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 6.0,
+        "label": "6",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "6 goes into 12 exactly: 6 × 2 = 12",
     "highlight": [
-     "left"
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "12",
+      "segments": [
+       {
+        "units": 12,
+        "label": "12",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "6s",
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 6.0,
+        "label": "6",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "12 is a multiple of both, and nothing smaller is: the LCM",
+    "highlight": [
+     "b0"
     ]
    }
   ]
@@ -4372,18 +4754,87 @@
   },
   "stepFigures": [
    {
-    "kind": "balance",
-    "left": "HCF × LCM",
-    "right": "18 × 9",
-    "note": "HCF × LCM is the same as 18 × 9 = 162"
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "18",
+      "segments": [
+       {
+        "units": 12,
+        "label": "18",
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "The first multiple of 18 is 18 itself. Does 9 go into it?"
    },
    {
-    "kind": "balance",
-    "left": "9 × 18",
-    "right": "18 × 9",
-    "note": "The HCF is 9, so the LCM is 162 ÷ 9 = 18",
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "18",
+      "segments": [
+       {
+        "units": 12,
+        "label": "18",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "9s",
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "9",
+        "tone": "b"
+       },
+       {
+        "units": 6.0,
+        "label": "9",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "9 goes into 18 exactly: 9 × 2 = 18",
     "highlight": [
-     "left"
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "18",
+      "segments": [
+       {
+        "units": 12,
+        "label": "18",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "9s",
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "9",
+        "tone": "b"
+       },
+       {
+        "units": 6.0,
+        "label": "9",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "18 is a multiple of both, and nothing smaller is: the LCM",
+    "highlight": [
+     "b0"
     ]
    }
   ]
@@ -4495,18 +4946,87 @@
   },
   "stepFigures": [
    {
-    "kind": "balance",
-    "left": "HCF × LCM",
-    "right": "20 × 10",
-    "note": "HCF × LCM is the same as 20 × 10 = 200"
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "20",
+      "segments": [
+       {
+        "units": 12,
+        "label": "20",
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "The first multiple of 20 is 20 itself. Does 10 go into it?"
    },
    {
-    "kind": "balance",
-    "left": "10 × 20",
-    "right": "20 × 10",
-    "note": "The HCF is 10, so the LCM is 200 ÷ 10 = 20",
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "20",
+      "segments": [
+       {
+        "units": 12,
+        "label": "20",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "10s",
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "10",
+        "tone": "b"
+       },
+       {
+        "units": 6.0,
+        "label": "10",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "10 goes into 20 exactly: 10 × 2 = 20",
     "highlight": [
-     "left"
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "20",
+      "segments": [
+       {
+        "units": 12,
+        "label": "20",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "10s",
+      "segments": [
+       {
+        "units": 6.0,
+        "label": "10",
+        "tone": "b"
+       },
+       {
+        "units": 6.0,
+        "label": "10",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "20 is a multiple of both, and nothing smaller is: the LCM",
+    "highlight": [
+     "b0"
     ]
    }
   ]
@@ -4533,19 +5053,64 @@
   },
   "stepFigures": [
    {
-    "kind": "balance",
-    "left": "HCF × LCM",
-    "right": "16 × 9",
-    "note": "HCF × LCM is the same as 16 × 9 = 144"
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "32",
+      "48",
+      "64",
+      "80"
+     ],
+     [
+      "96",
+      "112",
+      "128",
+      "144"
+     ]
+    ],
+    "note": "Multiples of 16. Which is the first that 9 goes into exactly?"
    },
    {
-    "kind": "balance",
-    "left": "1 × 144",
-    "right": "16 × 9",
-    "note": "The HCF is 1, so the LCM is 144 ÷ 1 = 144",
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "32",
+      "48",
+      "64",
+      "80"
+     ],
+     [
+      "96",
+      "112",
+      "128",
+      "144"
+     ]
+    ],
+    "note": "9 goes into 144 exactly, and into none before it",
     "highlight": [
-     "left"
+     "r1"
     ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "32",
+      "48",
+      "64",
+      "80"
+     ],
+     [
+      "96",
+      "112",
+      "128",
+      "144"
+     ]
+    ],
+    "note": "The LCM of 16 and 9 is 144"
    }
   ]
  },
@@ -4607,18 +5172,97 @@
   },
   "stepFigures": [
    {
-    "kind": "balance",
-    "left": "HCF × LCM",
-    "right": "4 × 12",
-    "note": "HCF × LCM is the same as 4 × 12 = 48"
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "12",
+      "segments": [
+       {
+        "units": 12,
+        "label": "12",
+        "tone": "a"
+       }
+      ]
+     }
+    ],
+    "note": "The first multiple of 12 is 12 itself. Does 4 go into it?"
    },
    {
-    "kind": "balance",
-    "left": "4 × 12",
-    "right": "4 × 12",
-    "note": "The HCF is 4, so the LCM is 48 ÷ 4 = 12",
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "12",
+      "segments": [
+       {
+        "units": 12,
+        "label": "12",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "4s",
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "4 goes into 12 exactly: 4 × 3 = 12",
     "highlight": [
-     "left"
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "label": "12",
+      "segments": [
+       {
+        "units": 12,
+        "label": "12",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "label": "4s",
+      "segments": [
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "b"
+       },
+       {
+        "units": 4.0,
+        "label": "4",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "note": "12 is a multiple of both, and nothing smaller is: the LCM",
+    "highlight": [
+     "b0"
     ]
    }
   ]
@@ -4782,18 +5426,66 @@
   },
   "stepFigures": [
    {
-    "kind": "balance",
-    "left": "HCF × LCM",
-    "right": "12 × 5",
-    "note": "HCF × LCM is the same as 12 × 5 = 60"
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "12",
+     "24",
+     "36",
+     "48",
+     "60"
+    ],
+    "note": "Multiples of 12. Which is the first that 5 goes into exactly?"
    },
    {
-    "kind": "balance",
-    "left": "1 × 60",
-    "right": "12 × 5",
-    "note": "The HCF is 1, so the LCM is 60 ÷ 1 = 60",
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "12",
+     "24",
+     "36",
+     "48",
+     "60"
+    ],
+    "note": "Does 5 go into it exactly? 60 is the first that works"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "12",
+     "24",
+     "36",
+     "48",
+     "60"
+    ],
+    "note": "The LCM of 12 and 5 is 60",
     "highlight": [
-     "left"
+     "r0"
     ]
    }
   ]
@@ -4919,18 +5611,54 @@
   },
   "stepFigures": [
    {
-    "kind": "balance",
-    "left": "HCF × LCM",
-    "right": "14 × 6",
-    "note": "HCF × LCM is the same as 14 × 6 = 84"
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "14",
+     "28",
+     "42"
+    ],
+    "note": "Multiples of 14. Which is the first that 6 goes into exactly?"
    },
    {
-    "kind": "balance",
-    "left": "2 × 42",
-    "right": "14 × 6",
-    "note": "The HCF is 2, so the LCM is 84 ÷ 2 = 42",
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "14",
+     "28",
+     "42"
+    ],
+    "note": "Does 6 go into it exactly? 42 is the first that works"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "no",
+      "no",
+      "yes"
+     ]
+    ],
+    "headers": [
+     "14",
+     "28",
+     "42"
+    ],
+    "note": "The LCM of 14 and 6 is 42",
     "highlight": [
-     "left"
+     "r0"
     ]
    }
   ]
@@ -5334,7 +6062,7 @@
      "112",
      "168"
     ],
-    "note": "Multiples of 56. Which is the first that 24 divides exactly?"
+    "note": "Multiples of 56. Which is the first that 24 goes into exactly?"
    },
    {
     "kind": "table",
@@ -5350,7 +6078,7 @@
      "112",
      "168"
     ],
-    "note": "Does 24 divide it exactly? 168 is the first that works"
+    "note": "Does 24 go into it exactly? 168 is the first that works"
    },
    {
     "kind": "table",
@@ -5408,7 +6136,7 @@
      "30",
      "45"
     ],
-    "note": "Multiples of 15. Which is the first that 9 divides exactly?"
+    "note": "Multiples of 15. Which is the first that 9 goes into exactly?"
    },
    {
     "kind": "table",
@@ -5424,7 +6152,7 @@
      "30",
      "45"
     ],
-    "note": "Does 9 divide it exactly? 45 is the first that works"
+    "note": "Does 9 go into it exactly? 45 is the first that works"
    },
    {
     "kind": "table",
@@ -5558,7 +6286,7 @@
      "80",
      "120"
     ],
-    "note": "Multiples of 40. Which is the first that 24 divides exactly?"
+    "note": "Multiples of 40. Which is the first that 24 goes into exactly?"
    },
    {
     "kind": "table",
@@ -5574,7 +6302,7 @@
      "80",
      "120"
     ],
-    "note": "Does 24 divide it exactly? 120 is the first that works"
+    "note": "Does 24 go into it exactly? 120 is the first that works"
    },
    {
     "kind": "table",
@@ -5634,7 +6362,7 @@
      "105",
      "140"
     ],
-    "note": "Multiples of 35. Which is the first that 20 divides exactly?"
+    "note": "Multiples of 35. Which is the first that 20 goes into exactly?"
    },
    {
     "kind": "table",
@@ -5652,7 +6380,7 @@
      "105",
      "140"
     ],
-    "note": "Does 20 divide it exactly? 140 is the first that works"
+    "note": "Does 20 go into it exactly? 140 is the first that works"
    },
    {
     "kind": "table",
@@ -5712,7 +6440,7 @@
      "168",
      "252"
     ],
-    "note": "Multiples of 84. Which is the first that 36 divides exactly?"
+    "note": "Multiples of 84. Which is the first that 36 goes into exactly?"
    },
    {
     "kind": "table",
@@ -5728,7 +6456,7 @@
      "168",
      "252"
     ],
-    "note": "Does 36 divide it exactly? 252 is the first that works"
+    "note": "Does 36 go into it exactly? 252 is the first that works"
    },
    {
     "kind": "table",
@@ -5987,7 +6715,7 @@
      "9",
      "18"
     ],
-    "note": "Multiples of 9. Which is the first that 6 divides exactly?"
+    "note": "Multiples of 9. Which is the first that 6 goes into exactly?"
    },
    {
     "kind": "table",
@@ -6001,7 +6729,7 @@
      "9",
      "18"
     ],
-    "note": "Does 6 divide it exactly? 18 is the first that works"
+    "note": "Does 6 go into it exactly? 18 is the first that works"
    },
    {
     "kind": "table",
@@ -6120,7 +6848,7 @@
      "75",
      "100"
     ],
-    "note": "Multiples of 25. Which is the first that 20 divides exactly?"
+    "note": "Multiples of 25. Which is the first that 20 goes into exactly?"
    },
    {
     "kind": "table",
@@ -6138,7 +6866,7 @@
      "75",
      "100"
     ],
-    "note": "Does 20 divide it exactly? 100 is the first that works"
+    "note": "Does 20 go into it exactly? 100 is the first that works"
    },
    {
     "kind": "table",

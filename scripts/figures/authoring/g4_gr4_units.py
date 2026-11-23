@@ -27,29 +27,47 @@ def rule_bags(q):
     """'Isha has 5 bags of rice, each weighing 8 kg 500 g. What is the total weight in grams?'"""
     m = re.search(r"has (\d+) bags of (\w+), each weighing (\d+) kg (\d+) g\. What is the total weight in grams",
                   q["questionText"])
-    if not m or len(step_texts(q)) != 2:
+    st = step_texts(q)
+    if not m or len(st) != 4:
         return None
     n, what, kg, g = int(m.group(1)), m.group(2), int(m.group(3)), int(m.group(4))
-    one = kg * 1000 + g
+    whole_g = kg * 1000
+    one = whole_g + g
     total = n * one
-    if num(answer_text(q)) != total:
+    # The four steps: kg into g, add the extra grams, multiply in two parts, add the parts.
+    if (num(answer_text(q)) != total or "%d kg is %d g" % (kg, whole_g) not in st[0]
+            or "%d + %d = %d" % (whole_g, g, one) not in st[1]
+            or "%d × %d = %d and %d × %d = %d" % (n, whole_g, n * whole_g, n, g, n * g) not in st[2]
+            or "%d + %d = %d" % (n * whole_g, n * g, total) not in st[3]):
         return None
 
     def bags(label, brace, note=None, hl=None):
         return bm([bar(equal_segs(n, label), brace=brace)], note=note, hl=hl)
 
+    def one_bag(brace, note, hl):
+        return bm([bar([seg("%d g" % whole_g, whole_g, "a"), seg("%d g" % g, g, "b")], brace=brace)], note=note, hl=hl)
+
+    def two_parts(first, second, brace, note, hl=None):
+        return bm([bar([seg(first, n * whole_g, "a"), seg(second, n * g, "b")], brace=brace)], note=note, hl=hl)
+
     figure = bags("%d kg %d g" % (kg, g), "Total = ? g", note="%d bags of %s, all the same weight" % (n, what))
-    figs = {0: bags("%d g" % one, "Total = ? g", note="1 kg = 1000 g, so one bag is %d g" % one, hl=["b0s0"]),
-            1: bags("%d g" % one, "%d g" % total, note="%d × %d = %d" % (one, n, total), hl=["b0"])}
+    figs = {0: one_bag("One bag: %d kg %d g" % (kg, g), "1 kg is 1000 g, so %d kg is %d g" % (kg, whole_g), ["b0s0"]),
+            1: one_bag("One bag: %d g" % one, "%d + %d = %d" % (whole_g, g, one), ["b0"]),
+            2: two_parts("%d × %d" % (n, whole_g), "%d × %d" % (n, g), "%d bags of %d g" % (n, one),
+                         "%d × %d = %d and %d × %d = %d" % (n, whole_g, n * whole_g, n, g, n * g)),
+            3: two_parts(str(n * whole_g), str(n * g), "%d g" % total,
+                         "%d + %d = %d" % (n * whole_g, n * g, total), hl=["b0"])}
     return entry("rule", figure, step_figs(q, figs))
 
 
 def rule_glasses(q):
     """'A bottle holds 20 litres of water. How many glasses of 300 ml each can be filled?'"""
-    m = re.search(r"A (\w+) holds (\d+) litres of water\. How many glasses of (\d+) ml each can be filled", q["questionText"])
-    if not m or len(step_texts(q)) != 2:
+    m = re.search(r"A (\w+) holds (\d+) litres of water\. How many (full )?glasses of (\d+) ml each can be filled",
+                  q["questionText"])
+    st = step_texts(q)
+    if not m or len(st) != 4:
         return None
-    holder, litres, glass = m.group(1), int(m.group(2)), int(m.group(3))
+    holder, litres, full, glass = m.group(1), int(m.group(2)), bool(m.group(3)), int(m.group(4))
     ml = litres * 1000
     count = num(answer_text(q))
     if count != ml // glass:
@@ -58,13 +76,41 @@ def rule_glasses(q):
     # One glass is only a sliver of the whole (1.5% to 4%), too thin to label on a bar,
     # so the givens are lined up in a table instead.
     def jug(whole, glasses, note=None, hl=None):
-        return table([["The %s" % holder, whole], ["One glass", "%d ml" % glass], ["Glasses filled", glasses]], note=note, hl=hl)
+        return table([["The %s" % holder, whole], ["One glass", "%d ml" % glass],
+                      ["Full glasses" if full else "Glasses filled", glasses]], note=note, hl=hl)
 
-    exact = ml % glass == 0
     figure = jug("%d litres" % litres, "?")
-    figs = {0: jug("%d ml" % ml, "?", note="1 litre = 1000 ml, so %d litres = %d ml" % (litres, ml), hl=["r0"]),
-            1: jug("%d ml" % ml, str(count),
-                   note=("%d ÷ %d = %d glasses" if exact else "%d ÷ %d gives %d full glasses") % (ml, glass, count), hl=["r2"])}
+    if 1000 % glass == 0 and ml % glass == 0:
+        # Steps: 1 litre = 1000 ml; glasses in one litre; glasses in all the litres; check.
+        per = 1000 // glass
+        if ("%d × %d = 1000" % (per, glass) not in st[1] or "%d × %d = %d" % (litres, per, count) not in st[2]
+                or "%d × %d = %d" % (count, glass, ml) not in st[3]):
+            return None
+        figs = {0: jug("%d litres" % litres, "?", note="Litres and millilitres: use 1 litre = 1000 ml", hl=["r0", "r1"]),
+                1: bm([bar(equal_segs(per, "%d ml" % glass), brace="1 litre = 1000 ml")],
+                      note="One litre fills %d glasses of %d ml" % (per, glass)),
+                2: table([["1 litre", "%d glasses" % per], ["%d litres" % litres, "%d glasses" % count]],
+                         note="%d × %d = %d" % (litres, per, count), hl=["r1"]),
+                3: jug("%d ml" % ml, str(count), note="Check: %d × %d = %d ml" % (count, glass, ml), hl=["r2"])}
+    else:
+        # Steps: litres into ml; a round number of glasses; the glasses that still fit; what is left over.
+        tens = (ml // (glass * 10)) * 10
+        more = count - tens
+        used, rest = tens * glass, ml - tens * glass
+        over = rest - more * glass
+        if ("%d glasses take %d ml" % (tens, used) not in st[1] or "%d × %d = %d" % (more, glass, more * glass) not in st[2]
+                or "%d − %d = %d ml" % (rest, more * glass, over) not in st[3] or over <= 0):
+            return None
+
+        def pour(pieces, note, hl=None):
+            return bm([bar(pieces, brace="%d ml" % ml)], note=note, hl=hl)
+        figs = {0: jug("%d ml" % ml, "?", note="%d × 1000 = %d ml" % (litres, ml), hl=["r0"]),
+                1: pour([seg("%d glasses" % tens, used, "a"), seg("?", rest, "unknown")],
+                        "%d glasses take %d ml" % (tens, used), hl=["b0s0"]),
+                2: pour([seg("%d glasses" % tens, used, "a"), seg("%d more" % more, more * glass, "b"), seg(None, over, "unknown")],
+                        "%d ml are left, and %d more glasses take %d ml" % (rest, more, more * glass), hl=["b0s1"]),
+                3: jug("%d ml" % ml, str(count), note="%d + %d = %d full glasses, with %d ml left over" % (tens, more, count, over),
+                       hl=["r2"])}
     return entry("rule", figure, step_figs(q, figs))
 
 

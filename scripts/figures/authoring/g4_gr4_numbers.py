@@ -61,10 +61,13 @@ def rule_single(q):
     i = place_index(number, digit, place)
     texts = step_texts(q)
     before = chart(number, [i], "Place value of the marked digit = ?")
-    if len(texts) == 2:
-        working = re.search(r"Place value = (.+)$", texts[1]).group(1)
-        steps = [chart(number, [i], "The %s is in the %s place" % (digit, place)),
-                 chart(number, [i], working)]
+    if texts[0].startswith("Read ") and len(texts) == 3:
+        # "Read N from the right: ..." / "One hundred is worth 100, and the digit there is 6." / "6 × 100 = 600, so ..."
+        worth = texts[1].rstrip(".")
+        working = re.search(r"\d+ × \d+ = \d+", texts[2]).group(0)
+        steps = [chart(number, list(range(i, len(number))), "Read the places from the right, up to the %s" % place),
+                 chart(number, [i], worth if len(worth) <= 70 else "The digit in the %s place is %s" % (place, digit)),
+                 chart(number, [i], "%s, so this %s stands for %s" % (working, digit, answer(q)))]
     else:
         steps = [chart(number, [i], "Count the places from the right"), None,
                  chart(number, [i], "Here the %s stands for %s" % (digit, answer(q)))]
@@ -79,11 +82,51 @@ def rule_ratio(q):
     number, d1, p1, d2, p2 = m.groups()
     hl = [place_index(number, d1, p1), place_index(number, d2, p2)]
     texts = step_texts(q)
-    values = re.match(r"PV of \d = (\d+), PV of \d = (\d+)", texts[0])
+    assert len(texts) == 4, q["id"]
+    v1 = int(d1) * 10 ** POWER[p1]
+    v2 = int(d2) * 10 ** POWER[p2]
     before = chart(number, hl, "Compare the place values of the two marked digits")
-    steps = [chart(number, hl, "The marked digits stand for %s and %s" % values.groups()),
-             chart(number, hl, texts[1].replace("Ratio = ", ""))]
+
+    def worth(text, digit, place, value):
+        m = re.search(r"\d+ × \d+ = \d+", text)
+        return "The %s in the %s place is worth %s" % (digit, place, m.group(0) if m else value)
+
+    # One step for each digit's value, one for the division, one for the conclusion.
+    steps = [chart(number, hl[:1], worth(texts[0], d1, p1, v1)),
+             chart(number, hl[1:], worth(texts[1], d2, p2, v2)),
+             chart(number, hl, "%d ÷ %d = %s" % (v1, v2, answer(q))),
+             chart(number, hl, "%d is %s times %d" % (v1, answer(q), v2))]
     P.add(q, before, steps, origin="rule")
+    return True
+
+
+# ── Rule: which number has a given digit sum ─────────────────────────────────
+DIGIT_SUM = re.compile(r"^Which of the following \d-digit numbers has a digit sum of (\d+)\?$")
+SUM_STEP = re.compile(r"For (\d+): ([\d +]+?) = (\d+)\.")
+
+
+def rule_digit_sum(q):
+    """A table that gains one row per step: the number, its digits added, and the total."""
+    m = DIGIT_SUM.match(q["questionText"])
+    if not m:
+        return False
+    target = m.group(1)
+    headers = ["Number", "Digits added", "Sum"]
+    rows, steps, hit = [], [], None
+    for t in step_texts(q):
+        s = SUM_STEP.search(t)
+        if s:
+            rows.append([s.group(1), s.group(2), s.group(3)])
+            if s.group(3) == target:
+                hit = len(rows) - 1
+            steps.append(table([list(r) for r in rows], headers=headers, hl=["r%d" % (len(rows) - 1)]))
+        elif rows and hit is not None:
+            steps.append(table([list(r) for r in rows], headers=headers, hl=["r%d" % hit],
+                               note="Only %s has a digit sum of %s" % (rows[hit][0], target)))
+        else:
+            steps.append(None)
+    assert hit is not None and rows[hit][0] == answer(q), q["id"]
+    P.add(q, None, steps, origin="rule")
     return True
 
 
@@ -99,11 +142,16 @@ def rule_count(q):
     if hi - lo > 40:
         return False
     texts = step_texts(q)
-    first, last = [int(x) for x in re.match(r"First \w+: (\d+), Last \w+: (\d+)", texts[0]).groups()]
+    assert len(texts) == 3, q["id"]
+    first, last = [int(x) for x in re.search(r"run from (\d+) to (\d+)", texts[0]).groups()]
+    pairs = re.search(r"(\d+) − (\d+) = (\d+) numbers, so (\d+ ÷ 2 = \d+) pairs", texts[1])
     before = line(lo, hi, 1, ticks="ends", note="Count the %s numbers from %d to %d" % (kind, lo, hi))
     pts = [(first, "first"), (last, "last")]
-    steps = [line(lo, hi, 1, points=pts, ticks="ends", note="The first %s number is %d and the last is %d" % (kind, first, last)),
-             line(lo, hi, 1, points=pts, ticks="ends", note=texts[1].replace("Count = ", ""))]
+    steps = [line(lo, hi, 1, points=pts, ticks="ends", note="The %s numbers run from %d to %d" % (kind, first, last)),
+             line(lo, hi, 1, points=pts, hops=[(first, hi, "%s numbers" % pairs.group(3))], ticks="ends",
+                  note="Pair them up, %d and %d first: %s pairs" % (first, first + 1, pairs.group(4))),
+             line(lo, hi, 1, points=pts, ticks="ends",
+                  note="One %s number in each pair: %s %s numbers" % (kind, answer(q), kind))]
     P.add(q, before, steps, origin="rule")
     return True
 
@@ -168,7 +216,7 @@ def rule_roman(qid):
 
 
 for _q in P.qs:
-    rule_single(_q) or rule_ratio(_q) or rule_count(_q)
+    rule_single(_q) or rule_ratio(_q) or rule_count(_q) or rule_digit_sum(_q)
 
 for _qid in ["EXT_G4_FP_2020_027", "EXT_G4_FP_2021_007", "EXT_G4_FP_2023_004", "EXT_G4_FP_2024_020",
              "PYQ_2016_Q33", "PYQ_2018_Q32", "PYQ_2019_Q23", "Q_CH01_005"]:
@@ -452,4 +500,5 @@ P.write()
 if "--review" in sys.argv:
     P.review()
 if "--redo" in sys.argv:
-    P.review(["Q_CH01_003", "Q_CH01_005", "Q_CH01_009", "Q_CH01_013"])
+    # Round 3: the generated families (ids starting BOOST, PH3 or VAR).
+    P.review([q["id"] for q in P.qs if q["id"].startswith(("BOOST", "PH3", "VAR"))])

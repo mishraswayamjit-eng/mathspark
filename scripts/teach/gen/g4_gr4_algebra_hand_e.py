@@ -175,7 +175,7 @@ LESSONS["Q_CH13_010"] = lesson([
       W("l1", "5 × 3 = 15"), W("l2", "3 × 5 = 15")),
     B("Put them back, each with the sign in front of it. 12, minus 15, plus 15.", W("l3", "12 − 15 + 15")),
     B("Look at the signs. Which part is taken away, and which is added?",
-      ask=choose(["5a is taken away, 3b is added", "both are taken away", "both are added"], 0,
+      ask=choose(["5a is taken away, 3b is added", "both are added", "5a is added, 3b is taken away"], 0,
                  "Each part keeps the sign in front of it. There is a minus in front of 5 a, "
                  "and a plus in front of 3 b.")),
     B("12 minus 15 looks hard, because 15 is bigger than 12. But look closer. "

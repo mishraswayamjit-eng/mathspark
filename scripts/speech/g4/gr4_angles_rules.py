@@ -107,6 +107,7 @@ def say(text, sentence=True):
     # Degrees. "a 90° clockwise turn" and "the 45° steps" describe, so the word stays singular.
     s = re.sub(r"\b([Aa]n?) (\d+)° (?=[a-z])", r"\1 \2 degree ", s)
     s = re.sub(r"(\d)° (?=steps?\b|turns?\b|angles?\b)", r"\1 degree ", s)
+    s = re.sub(r"(\d)°(?= and \d[\d.]* degree (?:steps?|turns?|angles?)\b)", r"\1 degree", s)   # "the 31° and 63° angles"
     s = re.sub(r"(?<![\d.])1°", "1 degree", s)
     s = re.sub(r"([\dxyz])\s*°", r"\1 degrees", s)
     s = re.sub(r"(half|quarter|quarters)°", r"\1 degrees", s)

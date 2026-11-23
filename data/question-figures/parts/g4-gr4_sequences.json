@@ -306,7 +306,34 @@
   "origin": "authored",
   "stepFigures": [
    null,
-   null,
+   {
+    "kind": "numberLine",
+    "min": 12,
+    "max": 271,
+    "step": 7,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 12,
+      "label": "1st"
+     },
+     {
+      "at": 271,
+      "label": "38th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 12,
+      "to": 271,
+      "label": "37 jumps"
+     }
+    ],
+    "note": "From the 1st term to the 38th term is 37 jumps, not 38",
+    "highlight": [
+     "h0"
+    ]
+   },
    null,
    {
     "kind": "numberLine",
@@ -1058,7 +1085,34 @@
    "note": "The pattern goes on. Which number is the 18th term?"
   },
   "stepFigures": [
-   null,
+   {
+    "kind": "numberLine",
+    "min": 24,
+    "max": 92,
+    "step": 4,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 92,
+      "label": "1st"
+     },
+     {
+      "at": 24,
+      "label": "18th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 92,
+      "to": 24,
+      "label": "17 jumps"
+     }
+    ],
+    "note": "From the 1st term to the 18th term is 17 jumps, not 18",
+    "highlight": [
+     "h0"
+    ]
+   },
    {
     "kind": "numberLine",
     "min": 76,
@@ -2343,6 +2397,7 @@
     ],
     "note": "Every jump is +15"
    },
+   null,
    {
     "kind": "numberLine",
     "min": 20,
@@ -2475,6 +2530,62 @@
     "min": 6,
     "max": 60,
     "step": 6,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 6,
+      "label": "1st"
+     },
+     {
+      "at": 60,
+      "label": "10th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 6,
+      "to": 60,
+      "label": "9 jumps"
+     }
+    ],
+    "note": "From the 1st term to the 10th term is 9 jumps, not 10",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 6,
+    "max": 60,
+    "step": 6,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 6,
+      "label": "1st"
+     },
+     {
+      "at": 60,
+      "label": "10th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 6,
+      "to": 60,
+      "label": "9 jumps of 6"
+     }
+    ],
+    "note": "9 jumps of 6 make 54",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 6,
+    "max": 60,
+    "step": 6,
     "tickLabels": "ends",
     "points": [
      {
@@ -2490,7 +2601,7 @@
      {
       "from": 6,
       "to": 60,
-      "label": "+54"
+      "label": "9 jumps of 6"
      }
     ],
     "note": "6 + 54 = 60",
@@ -2519,6 +2630,42 @@
    "note": "What is the rule? What comes next?"
   },
   "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "?",
+      "6"
+     ],
+     [
+      "6",
+      "?",
+      "12"
+     ],
+     [
+      "12",
+      "?",
+      "24"
+     ],
+     [
+      "24",
+      "?",
+      "48"
+     ],
+     [
+      "48",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "From",
+     "Rule",
+     "To"
+    ],
+    "note": "The gaps are not equal, so look for a multiplying rule"
+   },
    {
     "kind": "table",
     "rows": [
@@ -2682,6 +2829,7 @@
     ],
     "note": "Every jump is +4"
    },
+   null,
    {
     "kind": "numberLine",
     "min": 3,
@@ -2801,6 +2949,7 @@
     ],
     "note": "Every jump is +10"
    },
+   null,
    {
     "kind": "table",
     "rows": [
@@ -2921,6 +3070,62 @@
     "min": 6,
     "max": 54,
     "step": 2,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 6,
+      "label": "1st"
+     },
+     {
+      "at": 54,
+      "label": "25th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 6,
+      "to": 54,
+      "label": "24 jumps"
+     }
+    ],
+    "note": "From the 1st term to the 25th term is 24 jumps, not 25",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 6,
+    "max": 54,
+    "step": 2,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 6,
+      "label": "1st"
+     },
+     {
+      "at": 54,
+      "label": "25th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 6,
+      "to": 54,
+      "label": "24 jumps of 2"
+     }
+    ],
+    "note": "24 jumps of 2 make 48",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 6,
+    "max": 54,
+    "step": 2,
     "tickLabels": "ends",
     "points": [
      {
@@ -2936,7 +3141,7 @@
      {
       "from": 6,
       "to": 54,
-      "label": "+48"
+      "label": "24 jumps of 2"
      }
     ],
     "note": "6 + 48 = 54",
@@ -3020,6 +3225,62 @@
     "min": 7,
     "max": 181,
     "step": 6,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 7,
+      "label": "1st"
+     },
+     {
+      "at": 181,
+      "label": "30th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 7,
+      "to": 181,
+      "label": "29 jumps"
+     }
+    ],
+    "note": "From the 1st term to the 30th term is 29 jumps, not 30",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 7,
+    "max": 181,
+    "step": 6,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 7,
+      "label": "1st"
+     },
+     {
+      "at": 181,
+      "label": "30th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 7,
+      "to": 181,
+      "label": "29 jumps of 6"
+     }
+    ],
+    "note": "29 jumps of 6 make 174",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 7,
+    "max": 181,
+    "step": 6,
     "tickLabels": "ends",
     "points": [
      {
@@ -3035,7 +3296,7 @@
      {
       "from": 7,
       "to": 181,
-      "label": "+174"
+      "label": "29 jumps of 6"
      }
     ],
     "note": "7 + 174 = 181",
@@ -3148,6 +3409,7 @@
     ],
     "note": "Every jump is +5"
    },
+   null,
    {
     "kind": "numberLine",
     "min": 11,
@@ -3289,6 +3551,62 @@
     "min": 4,
     "max": 31,
     "step": 3,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 4,
+      "label": "1st"
+     },
+     {
+      "at": 31,
+      "label": "10th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4,
+      "to": 31,
+      "label": "9 jumps"
+     }
+    ],
+    "note": "From the 1st term to the 10th term is 9 jumps, not 10",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 4,
+    "max": 31,
+    "step": 3,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 4,
+      "label": "1st"
+     },
+     {
+      "at": 31,
+      "label": "10th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 4,
+      "to": 31,
+      "label": "9 jumps of 3"
+     }
+    ],
+    "note": "9 jumps of 3 make 27",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 4,
+    "max": 31,
+    "step": 3,
     "tickLabels": "ends",
     "points": [
      {
@@ -3304,7 +3622,7 @@
      {
       "from": 4,
       "to": 31,
-      "label": "+27"
+      "label": "9 jumps of 3"
      }
     ],
     "note": "4 + 27 = 31",
@@ -3525,6 +3843,7 @@
     ],
     "note": "Every jump is +15"
    },
+   null,
    {
     "kind": "numberLine",
     "min": 15,
@@ -3666,6 +3985,62 @@
     "min": 7,
     "max": 79,
     "step": 3,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 7,
+      "label": "1st"
+     },
+     {
+      "at": 79,
+      "label": "25th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 7,
+      "to": 79,
+      "label": "24 jumps"
+     }
+    ],
+    "note": "From the 1st term to the 25th term is 24 jumps, not 25",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 7,
+    "max": 79,
+    "step": 3,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 7,
+      "label": "1st"
+     },
+     {
+      "at": 79,
+      "label": "25th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 7,
+      "to": 79,
+      "label": "24 jumps of 3"
+     }
+    ],
+    "note": "24 jumps of 3 make 72",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 7,
+    "max": 79,
+    "step": 3,
     "tickLabels": "ends",
     "points": [
      {
@@ -3681,7 +4056,7 @@
      {
       "from": 7,
       "to": 79,
-      "label": "+72"
+      "label": "24 jumps of 3"
      }
     ],
     "note": "7 + 72 = 79",
@@ -3752,6 +4127,7 @@
     ],
     "note": "Every jump is +4"
    },
+   null,
    {
     "kind": "table",
     "rows": [
@@ -3859,6 +4235,7 @@
     ],
     "note": "Every jump is +12"
    },
+   null,
    {
     "kind": "table",
     "rows": [
@@ -3979,6 +4356,62 @@
     "min": 7,
     "max": 210,
     "step": 7,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 7,
+      "label": "1st"
+     },
+     {
+      "at": 210,
+      "label": "30th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 7,
+      "to": 210,
+      "label": "29 jumps"
+     }
+    ],
+    "note": "From the 1st term to the 30th term is 29 jumps, not 30",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 7,
+    "max": 210,
+    "step": 7,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 7,
+      "label": "1st"
+     },
+     {
+      "at": 210,
+      "label": "30th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 7,
+      "to": 210,
+      "label": "29 jumps of 7"
+     }
+    ],
+    "note": "29 jumps of 7 make 203",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 7,
+    "max": 210,
+    "step": 7,
     "tickLabels": "ends",
     "points": [
      {
@@ -3994,7 +4427,7 @@
      {
       "from": 7,
       "to": 210,
-      "label": "+203"
+      "label": "29 jumps of 7"
      }
     ],
     "note": "7 + 203 = 210",
@@ -4065,6 +4498,7 @@
     ],
     "note": "Every jump is +9"
    },
+   null,
    {
     "kind": "table",
     "rows": [
@@ -4185,6 +4619,62 @@
     "min": 15,
     "max": 189,
     "step": 6,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 15,
+      "label": "1st"
+     },
+     {
+      "at": 189,
+      "label": "30th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 15,
+      "to": 189,
+      "label": "29 jumps"
+     }
+    ],
+    "note": "From the 1st term to the 30th term is 29 jumps, not 30",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 15,
+    "max": 189,
+    "step": 6,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 15,
+      "label": "1st"
+     },
+     {
+      "at": 189,
+      "label": "30th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 15,
+      "to": 189,
+      "label": "29 jumps of 6"
+     }
+    ],
+    "note": "29 jumps of 6 make 174",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 15,
+    "max": 189,
+    "step": 6,
     "tickLabels": "ends",
     "points": [
      {
@@ -4200,7 +4690,7 @@
      {
       "from": 15,
       "to": 189,
-      "label": "+174"
+      "label": "29 jumps of 6"
      }
     ],
     "note": "15 + 174 = 189",
@@ -4388,6 +4878,7 @@
     ],
     "note": "Every jump is +6"
    },
+   null,
    {
     "kind": "numberLine",
     "min": 1,
@@ -4602,6 +5093,7 @@
     ],
     "note": "Every jump is +2"
    },
+   null,
    {
     "kind": "numberLine",
     "min": 18,
@@ -4734,6 +5226,62 @@
     "min": 9,
     "max": 105,
     "step": 4,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 9,
+      "label": "1st"
+     },
+     {
+      "at": 105,
+      "label": "25th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 9,
+      "to": 105,
+      "label": "24 jumps"
+     }
+    ],
+    "note": "From the 1st term to the 25th term is 24 jumps, not 25",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 9,
+    "max": 105,
+    "step": 4,
+    "tickLabels": "none",
+    "points": [
+     {
+      "at": 9,
+      "label": "1st"
+     },
+     {
+      "at": 105,
+      "label": "25th"
+     }
+    ],
+    "hops": [
+     {
+      "from": 9,
+      "to": 105,
+      "label": "24 jumps of 4"
+     }
+    ],
+    "note": "24 jumps of 4 make 96",
+    "highlight": [
+     "h0"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 9,
+    "max": 105,
+    "step": 4,
     "tickLabels": "ends",
     "points": [
      {
@@ -4749,7 +5297,7 @@
      {
       "from": 9,
       "to": 105,
-      "label": "+96"
+      "label": "24 jumps of 4"
      }
     ],
     "note": "9 + 96 = 105",
@@ -4778,6 +5326,42 @@
    "note": "What is the rule? What comes next?"
   },
   "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "?",
+      "2"
+     ],
+     [
+      "2",
+      "?",
+      "4"
+     ],
+     [
+      "4",
+      "?",
+      "8"
+     ],
+     [
+      "8",
+      "?",
+      "16"
+     ],
+     [
+      "16",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "From",
+     "Rule",
+     "To"
+    ],
+    "note": "The gaps are not equal, so look for a multiplying rule"
+   },
    {
     "kind": "table",
     "rows": [
@@ -4916,6 +5500,7 @@
     ],
     "note": "Every jump is +2"
    },
+   null,
    {
     "kind": "table",
     "rows": [
@@ -4977,6 +5562,32 @@
    "note": "What is the rule? What comes next?"
   },
   "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "2",
+      "?",
+      "6"
+     ],
+     [
+      "6",
+      "?",
+      "18"
+     ],
+     [
+      "18",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "From",
+     "Rule",
+     "To"
+    ],
+    "note": "The gaps are not equal, so look for a multiplying rule"
+   },
    {
     "kind": "table",
     "rows": [
@@ -5053,6 +5664,42 @@
    "note": "What is the rule? What comes next?"
   },
   "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "4",
+      "?",
+      "8"
+     ],
+     [
+      "8",
+      "?",
+      "16"
+     ],
+     [
+      "16",
+      "?",
+      "32"
+     ],
+     [
+      "32",
+      "?",
+      "64"
+     ],
+     [
+      "64",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "From",
+     "Rule",
+     "To"
+    ],
+    "note": "The gaps are not equal, so look for a multiplying rule"
+   },
    {
     "kind": "table",
     "rows": [
@@ -5149,6 +5796,42 @@
    "note": "What is the rule? What comes next?"
   },
   "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "?",
+      "9"
+     ],
+     [
+      "9",
+      "?",
+      "27"
+     ],
+     [
+      "27",
+      "?",
+      "81"
+     ],
+     [
+      "81",
+      "?",
+      "243"
+     ],
+     [
+      "243",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "From",
+     "Rule",
+     "To"
+    ],
+    "note": "The gaps are not equal, so look for a multiplying rule"
+   },
    {
     "kind": "table",
     "rows": [
@@ -5356,6 +6039,37 @@
    "note": "What is the rule? What comes next?"
   },
   "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "1",
+      "?",
+      "3"
+     ],
+     [
+      "3",
+      "?",
+      "9"
+     ],
+     [
+      "9",
+      "?",
+      "27"
+     ],
+     [
+      "27",
+      "?",
+      "?"
+     ]
+    ],
+    "headers": [
+     "From",
+     "Rule",
+     "To"
+    ],
+    "note": "The gaps are not equal, so look for a multiplying rule"
+   },
    {
     "kind": "table",
     "rows": [

@@ -21,12 +21,56 @@
     ]
    },
    {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      8.0
+     ],
+     [
+      12.0,
+      8.8
+     ],
+     [
+      0,
+      8.8
+     ],
+     [
+      0,
+      8.0
+     ]
+    ],
+    "edges": [
+     "15 cm",
+     "10 cm",
+     "1 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "15 × 10 = 150 and 15 × 1 = 15"
+   },
+   {
     "kind": "rectangle",
     "length": "15 cm",
     "breadth": "11 cm",
-    "inside": "165 sq.cm",
+    "inside": "165 sq. cm",
     "proportion": 1.36,
-    "note": "15 × 11 = 165 sq.cm",
+    "note": "15 × 11 = 165 sq. cm",
     "highlight": [
      "fill"
     ]
@@ -55,12 +99,56 @@
     ]
    },
    {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      5.0
+     ],
+     [
+      12.0,
+      5.5
+     ],
+     [
+      0,
+      5.5
+     ],
+     [
+      0,
+      5.0
+     ]
+    ],
+    "edges": [
+     "24 cm",
+     "10 cm",
+     "1 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "24 × 10 = 240 and 24 × 1 = 24"
+   },
+   {
     "kind": "rectangle",
     "length": "24 cm",
     "breadth": "11 cm",
-    "inside": "264 sq.cm",
+    "inside": "264 sq. cm",
     "proportion": 2.18,
-    "note": "24 × 11 = 264 sq.cm",
+    "note": "24 × 11 = 264 sq. cm",
     "highlight": [
      "fill"
     ]
@@ -130,7 +218,7 @@
      null,
      "3 cm"
     ],
-    "note": "Perimeter = 2 × (length + width)",
+    "note": "All the way round: two lengths and two widths",
     "highlight": [
      "e0",
      "e1",
@@ -164,7 +252,39 @@
      null,
      "3 cm"
     ],
-    "note": "2 × (25 + 3) = 56 cm",
+    "note": "25 + 3 = 28 cm",
+    "highlight": [
+     "e0",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      1.44
+     ],
+     [
+      0,
+      1.44
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     null,
+     null,
+     "3 cm"
+    ],
+    "note": "2 × 28 = 56 cm",
     "highlight": [
      "e0",
      "e1",
@@ -192,7 +312,7 @@
     "length": "15 cm",
     "breadth": "9 cm",
     "proportion": 1.67,
-    "note": "Perimeter = 2 × (length + width)",
+    "note": "All the way round: two lengths and two widths",
     "highlight": [
      "border"
     ]
@@ -202,7 +322,18 @@
     "length": "15 cm",
     "breadth": "9 cm",
     "proportion": 1.67,
-    "note": "2 × (15 + 9) = 48 cm",
+    "note": "15 + 9 = 24 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "15 cm",
+    "breadth": "9 cm",
+    "proportion": 1.67,
+    "note": "2 × 24 = 48 cm",
     "highlight": [
      "border"
     ]
@@ -298,7 +429,39 @@
      null,
      "4 cm"
     ],
-    "note": "16 × 4 = 64 sq.cm",
+    "note": "16 × 4 = 64",
+    "highlight": [
+     "e0",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      3.0
+     ],
+     [
+      0,
+      3.0
+     ]
+    ],
+    "edges": [
+     "16 cm",
+     null,
+     null,
+     "4 cm"
+    ],
+    "note": "16 × 4 = 64 sq. cm",
     "highlight": [
      "fill"
     ]
@@ -11720,9 +11883,19 @@
     "kind": "rectangle",
     "length": "9 cm",
     "breadth": "5 cm",
-    "inside": "45 sq.cm",
+    "grid": {
+     "cols": 9,
+     "rows": 5
+    },
+    "note": "9 columns of 5 unit squares: 9 × 5 = 45"
+   },
+   {
+    "kind": "rectangle",
+    "length": "9 cm",
+    "breadth": "5 cm",
+    "inside": "45 sq. cm",
     "proportion": 1.8,
-    "note": "9 × 5 = 45 sq.cm",
+    "note": "9 × 5 = 45 sq. cm",
     "highlight": [
      "fill"
     ]
@@ -11754,9 +11927,19 @@
     "kind": "rectangle",
     "length": "12 cm",
     "breadth": "10 cm",
-    "inside": "120 sq.cm",
+    "grid": {
+     "cols": 12,
+     "rows": 10
+    },
+    "note": "12 columns of 10 unit squares: 12 × 10 = 120"
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "10 cm",
+    "inside": "120 sq. cm",
     "proportion": 1.2,
-    "note": "12 × 10 = 120 sq.cm",
+    "note": "12 × 10 = 120 sq. cm",
     "highlight": [
      "fill"
     ]
@@ -11826,7 +12009,7 @@
      null,
      "5 cm"
     ],
-    "note": "Perimeter = 2 × (length + width)",
+    "note": "All the way round: two lengths and two widths",
     "highlight": [
      "e0",
      "e1",
@@ -11860,7 +12043,39 @@
      null,
      "5 cm"
     ],
-    "note": "2 × (25 + 5) = 60 cm",
+    "note": "25 + 5 = 30 cm",
+    "highlight": [
+     "e0",
+     "e3"
+    ]
+   },
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0
+     ],
+     [
+      12,
+      2.4
+     ],
+     [
+      0,
+      2.4
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     null,
+     null,
+     "5 cm"
+    ],
+    "note": "2 × 30 = 60 cm",
     "highlight": [
      "e0",
      "e1",
@@ -11888,7 +12103,7 @@
     "length": "5 cm",
     "breadth": "3 cm",
     "proportion": 1.67,
-    "note": "Perimeter = 2 × (length + width)",
+    "note": "All the way round: two lengths and two widths",
     "highlight": [
      "border"
     ]
@@ -11898,7 +12113,18 @@
     "length": "5 cm",
     "breadth": "3 cm",
     "proportion": 1.67,
-    "note": "2 × (5 + 3) = 16 cm",
+    "note": "5 + 3 = 8 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "5 cm",
+    "breadth": "3 cm",
+    "proportion": 1.67,
+    "note": "2 × 8 = 16 cm",
     "highlight": [
      "border"
     ]
@@ -11927,12 +12153,56 @@
     ]
    },
    {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      6.32
+     ],
+     [
+      12.0,
+      7.58
+     ],
+     [
+      0,
+      7.58
+     ],
+     [
+      0,
+      6.32
+     ]
+    ],
+    "edges": [
+     "19 cm",
+     "10 cm",
+     "2 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "19 × 10 = 190 and 19 × 2 = 38"
+   },
+   {
     "kind": "rectangle",
     "length": "19 cm",
     "breadth": "12 cm",
-    "inside": "228 sq.cm",
+    "inside": "228 sq. cm",
     "proportion": 1.58,
-    "note": "19 × 12 = 228 sq.cm",
+    "note": "19 × 12 = 228 sq. cm",
     "highlight": [
      "fill"
     ]
@@ -11957,7 +12227,7 @@
     "length": "25 cm",
     "breadth": "20 cm",
     "proportion": 1.25,
-    "note": "Perimeter = 2 × (length + width)",
+    "note": "All the way round: two lengths and two widths",
     "highlight": [
      "border"
     ]
@@ -11967,7 +12237,18 @@
     "length": "25 cm",
     "breadth": "20 cm",
     "proportion": 1.25,
-    "note": "2 × (25 + 20) = 90 cm",
+    "note": "25 + 20 = 45 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "25 cm",
+    "breadth": "20 cm",
+    "proportion": 1.25,
+    "note": "2 × 45 = 90 cm",
     "highlight": [
      "border"
     ]
@@ -11995,12 +12276,56 @@
     ]
    },
    {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      7.06
+     ],
+     [
+      12.0,
+      12.0
+     ],
+     [
+      0,
+      12.0
+     ],
+     [
+      0,
+      7.06
+     ]
+    ],
+    "edges": [
+     "17 cm",
+     "10 cm",
+     "7 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "17 × 10 = 170 and 17 × 7 = 119"
+   },
+   {
     "kind": "rectangle",
     "square": true,
     "length": "17 cm",
     "breadth": "17 cm",
-    "inside": "289 sq.cm",
-    "note": "17 × 17 = 289 sq.cm",
+    "inside": "289 sq. cm",
+    "note": "17 × 17 = 289 sq. cm",
     "highlight": [
      "fill"
     ]
@@ -12029,12 +12354,56 @@
     ]
    },
    {
+    "kind": "polygon",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      12.0,
+      0
+     ],
+     [
+      12.0,
+      9.6
+     ],
+     [
+      12.0,
+      11.52
+     ],
+     [
+      0,
+      11.52
+     ],
+     [
+      0,
+      9.6
+     ]
+    ],
+    "edges": [
+     "25 cm",
+     "20 cm",
+     "4 cm",
+     null,
+     null,
+     null
+    ],
+    "dashed": [
+     {
+      "from": 2,
+      "to": 5
+     }
+    ],
+    "note": "25 × 20 = 500 and 25 × 4 = 100"
+   },
+   {
     "kind": "rectangle",
     "length": "25 cm",
     "breadth": "24 cm",
-    "inside": "600 sq.cm",
+    "inside": "600 sq. cm",
     "proportion": 1.04,
-    "note": "25 × 24 = 600 sq.cm",
+    "note": "25 × 24 = 600 sq. cm",
     "highlight": [
      "fill"
     ]
@@ -12059,7 +12428,7 @@
     "length": "23 cm",
     "breadth": "15 cm",
     "proportion": 1.53,
-    "note": "Perimeter = 2 × (length + width)",
+    "note": "All the way round: two lengths and two widths",
     "highlight": [
      "border"
     ]
@@ -12069,7 +12438,18 @@
     "length": "23 cm",
     "breadth": "15 cm",
     "proportion": 1.53,
-    "note": "2 × (23 + 15) = 76 cm",
+    "note": "23 + 15 = 38 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "23 cm",
+    "breadth": "15 cm",
+    "proportion": 1.53,
+    "note": "2 × 38 = 76 cm",
     "highlight": [
      "border"
     ]
@@ -12094,7 +12474,7 @@
     "length": "12 cm",
     "breadth": "5 cm",
     "proportion": 2.4,
-    "note": "Perimeter = 2 × (length + width)",
+    "note": "All the way round: two lengths and two widths",
     "highlight": [
      "border"
     ]
@@ -12104,7 +12484,18 @@
     "length": "12 cm",
     "breadth": "5 cm",
     "proportion": 2.4,
-    "note": "2 × (12 + 5) = 34 cm",
+    "note": "12 + 5 = 17 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "5 cm",
+    "proportion": 2.4,
+    "note": "2 × 17 = 34 cm",
     "highlight": [
      "border"
     ]

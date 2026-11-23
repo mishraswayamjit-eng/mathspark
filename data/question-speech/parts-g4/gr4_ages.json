@@ -28,13 +28,14 @@
    "85"
   ],
   "hints": [
-   "Add 10 years to each person's age.",
-   "Then add their future ages together.",
-   "Both age by 10 years, so total increases by 20."
+   "This is an age problem. Everybody grows older by the same number of years, so think about each person's age in the future before you add.",
+   "Find how old Arjun will be after 10 years. Then do the same for Riya.",
+   "Here is a similar one. Meena is 12 years old and Kabir is 15 years old. What will be the sum of their ages after 5 years? Meena will be 12 plus 5, which is 17, and Kabir will be 15 plus 5, which is 20, so the sum will be 17 plus 20, which is 37."
   ],
   "steps": [
-   "After 10 years: Arjun is 37, and Riya is 38.",
-   "The sum is 37 plus 38, which is 75."
+   "After 10 years Arjun will be 27 plus 10, which is 37 years old.",
+   "Riya will be 28 plus 10, which is 38 years old.",
+   "Now add the two new ages: 37 plus 38 equals 75. So the sum of their ages after 10 years will be 75."
   ]
  },
  "BOOST_EXT_G4_FP_2017_018_07": {
@@ -42,17 +43,18 @@
   "options": [
    "16",
    "30",
-   "minus 4",
+   "24",
    "6"
   ],
   "hints": [
-   "Here's a key insight: the age difference between two people never changes.",
-   "It doesn't matter if we go forward or backward in time.",
-   "The difference was, is, and always will be 6 years."
+   "This question is about the gap between two ages. Think about what happens to that gap when both people are younger by the same number of years.",
+   "Find how old Siya and Aditya each were 10 years ago. Then see how far apart those two ages are.",
+   "Here is a similar one. Asha is 25 years old and Ravi is 16 years old. What was the difference in their ages 4 years ago? 4 years ago Asha was 25 minus 4, which is 21, and Ravi was 16 minus 4, which is 12. The difference was 21 minus 12, which is 9."
   ],
   "steps": [
-   "The age difference never changes!",
-   "The difference is 40 minus 34, which is 6."
+   "10 years ago Siya was 40 minus 10, which is 30 years old, and Aditya was 34 minus 10, which is 24 years old.",
+   "The difference then was 30 minus 24, which is 6.",
+   "That is the same as today, 40 minus 34 equals 6, because both of them were 10 years younger. The difference in their ages was 6."
   ]
  },
  "BOOST_EXT_G4_FP_2019_005_07": {
@@ -84,13 +86,14 @@
    "78"
   ],
   "hints": [
-   "Add 4 years to each person's age.",
-   "Then add their future ages together.",
-   "Both age by 4 years, so total increases by 8."
+   "This is an age problem. Everybody grows older by the same number of years, so think about each person's age in the future before you add.",
+   "Find how old Tara will be after 4 years. Then do the same for Dev.",
+   "Here is a similar one. Asha is 12 years old and Ravi is 15 years old. What will be the sum of their ages after 5 years? Asha will be 12 plus 5, which is 17, and Ravi will be 15 plus 5, which is 20, so the sum will be 17 plus 20, which is 37."
   ],
   "steps": [
-   "After 4 years: Tara is 39, and Dev is 35.",
-   "The sum is 39 plus 35, which is 74."
+   "After 4 years Tara will be 35 plus 4, which is 39 years old.",
+   "Dev will be 31 plus 4, which is 35 years old.",
+   "Add the two new ages: 39 plus 35 equals 74. The sum of their ages will be 74."
   ]
  },
  "EXT_G4_FP_2021_010": {
@@ -975,13 +978,14 @@
    "83"
   ],
   "hints": [
-   "Add 6 years to each person's age.",
-   "Then add their future ages together.",
-   "Both age by 6 years, so total increases by 12."
+   "This is an age problem. Everybody grows older by the same number of years, so think about each person's age in the future before you add.",
+   "Find how old Nikhil will be after 6 years. Then do the same for Diya.",
+   "Here is a similar one. Gita is 12 years old and Farhan is 15 years old. What will be the sum of their ages after 5 years? Gita will be 12 plus 5, which is 17, and Farhan will be 15 plus 5, which is 20, so the sum will be 17 plus 20, which is 37."
   ],
   "steps": [
-   "After 6 years: Nikhil is 45, and Diya is 38.",
-   "The sum is 45 plus 38, which is 83."
+   "After 6 years Nikhil will be 39 plus 6, which is 45 years old.",
+   "Diya will be 32 plus 6, which is 38 years old.",
+   "Now add the two new ages: 45 plus 38 equals 83. So the sum of their ages after 6 years will be 83."
   ]
  },
  "VAR2_EXT_G4_FP_2017_018_04_p2b": {
@@ -993,13 +997,14 @@
    "66"
   ],
   "hints": [
-   "Add 4 years to each person's age.",
-   "Then add their future ages together.",
-   "Both age by 4 years, so total increases by 8."
+   "Both people grow older together. Find each person's new age first, and only then find the sum.",
+   "Find how old Vivek will be after 4 years. Then do the same for Meera.",
+   "Here is a similar one. Kabir is 21 years old and Lata is 14 years old. What will be the sum of their ages after 3 years? Kabir will be 21 plus 3, which is 24, and Lata will be 14 plus 3, which is 17, so the sum will be 24 plus 17, which is 41."
   ],
   "steps": [
-   "After 4 years: Vivek is 34, and Meera is 28.",
-   "The sum is 34 plus 28, which is 62."
+   "After 4 years Vivek will be 30 plus 4, which is 34 years old.",
+   "Meera will be 24 plus 4, which is 28 years old.",
+   "Now add the two new ages: 34 plus 28 equals 62. So the sum of their ages after 4 years will be 62."
   ]
  },
  "VAR2_EXT_G4_FP_2019_005_01": {
@@ -1031,13 +1036,14 @@
    "55"
   ],
   "hints": [
-   "Add 10 years to each person's age.",
-   "Then add their future ages together.",
-   "Both age by 10 years, so total increases by 20."
+   "Both people grow older together. Find each person's new age first, and only then find the sum.",
+   "Find how old Isha will be after 10 years. Then do the same for Siddharth.",
+   "Here is a similar one. Gita is 9 years old and Farhan is 17 years old. What will be the sum of their ages after 7 years? Gita will be 9 plus 7, which is 16, and Farhan will be 17 plus 7, which is 24, so the sum will be 16 plus 24, which is 40."
   ],
   "steps": [
-   "After 10 years: Isha is 20, and Siddharth is 35.",
-   "The sum is 20 plus 35, which is 55."
+   "After 10 years Isha will be 10 plus 10, which is 20 years old.",
+   "Siddharth will be 25 plus 10, which is 35 years old.",
+   "Now add the two new ages: 20 plus 35 equals 55. So the sum of their ages after 10 years will be 55."
   ]
  },
  "VAR2_EXT_G4_FP_2020_038_04_p2b": {
@@ -1049,13 +1055,14 @@
    "50"
   ],
   "hints": [
-   "Add 3 years to each person's age.",
-   "Then add their future ages together.",
-   "Both age by 3 years, so total increases by 6."
+   "This is an age problem. Everybody grows older by the same number of years, so think about each person's age in the future before you add.",
+   "Find how old Sahil will be after 3 years. Then do the same for Ananya.",
+   "Here is a similar one. Meena is 18 years old and Kabir is 22 years old. What will be the sum of their ages after 4 years? Meena will be 18 plus 4, which is 22, and Kabir will be 22 plus 4, which is 26, so the sum will be 22 plus 26, which is 48."
   ],
   "steps": [
-   "After 3 years: Sahil is 38, and Ananya is 15.",
-   "The sum is 38 plus 15, which is 53."
+   "After 3 years Sahil will be 35 plus 3, which is 38 years old.",
+   "Ananya will be 12 plus 3, which is 15 years old.",
+   "Add the two new ages: 38 plus 15 equals 53. The sum of their ages will be 53."
   ]
  },
  "VAR2_EXT_G4_FP_2021_010_04": {
@@ -1067,13 +1074,14 @@
    "86"
   ],
   "hints": [
-   "Add 8 years to each person's age.",
-   "Then add their future ages together.",
-   "Both age by 8 years, so total increases by 16."
+   "Both people grow older together. Find each person's new age first, and only then find the sum.",
+   "Find how old Karan will be after 8 years. Then do the same for Ananya.",
+   "Here is a similar one. Farhan is 21 years old and Asha is 14 years old. What will be the sum of their ages after 3 years? Farhan will be 21 plus 3, which is 24, and Asha will be 14 plus 3, which is 17, so the sum will be 24 plus 17, which is 41."
   ],
   "steps": [
-   "After 8 years: Karan is 38, and Ananya is 40.",
-   "The sum is 38 plus 40, which is 78."
+   "After 8 years Karan will be 30 plus 8, which is 38 years old.",
+   "Ananya will be 32 plus 8, which is 40 years old.",
+   "Now add the two new ages: 38 plus 40 equals 78. So the sum of their ages after 8 years will be 78."
   ]
  },
  "VAR2_EXT_G4_FP_2022_035_01": {
@@ -1099,19 +1107,20 @@
  "VAR2_EXT_G4_WS2_CH13_002_01": {
   "q": "Aarav is 31 years old and Neha is 26 years old. What was the difference in their ages 7 years ago?",
   "options": [
-   "minus 2",
+   "19",
    "12",
    "5",
    "24"
   ],
   "hints": [
-   "Here's a key insight: the age difference between two people never changes.",
-   "It doesn't matter if we go forward or backward in time.",
-   "The difference was, is, and always will be 5 years."
+   "This question is about the gap between two ages. Think about what happens to that gap when both people are younger by the same number of years.",
+   "Find how old Aarav and Neha each were 7 years ago. Then see how far apart those two ages are.",
+   "Here is a similar one. Lata is 20 years old and Imran is 12 years old. What was the difference in their ages 5 years ago? 5 years ago Lata was 20 minus 5, which is 15, and Imran was 12 minus 5, which is 7. The difference was 15 minus 7, which is 8."
   ],
   "steps": [
-   "The age difference never changes!",
-   "The difference is 31 minus 26, which is 5."
+   "7 years ago Aarav was 31 minus 7, which is 24 years old, and Neha was 26 minus 7, which is 19 years old.",
+   "The difference then was 24 minus 19, which is 5.",
+   "That is the same as today, 31 minus 26 equals 5, because both of them were 7 years younger. The difference in their ages was 5."
   ]
  },
  "VAR2_EXT_G4_WS2_CH13_002_04": {
@@ -1123,13 +1132,14 @@
    "61"
   ],
   "hints": [
-   "Add 5 years to each person's age.",
-   "Then add their future ages together.",
-   "Both age by 5 years, so total increases by 10."
+   "Both people grow older together. Find each person's new age first, and only then find the sum.",
+   "Find how old Tara will be after 5 years. Then do the same for Vivek.",
+   "Here is a similar one. Ravi is 25 years old and Meena is 11 years old. What will be the sum of their ages after 2 years? Ravi will be 25 plus 2, which is 27, and Meena will be 11 plus 2, which is 13, so the sum will be 27 plus 13, which is 40."
   ],
   "steps": [
-   "After 5 years: Tara is 20, and Vivek is 36.",
-   "The sum is 20 plus 36, which is 56."
+   "After 5 years Tara will be 15 plus 5, which is 20 years old.",
+   "Vivek will be 31 plus 5, which is 36 years old.",
+   "Now add the two new ages: 20 plus 36 equals 56. So the sum of their ages after 5 years will be 56."
   ]
  }
 }

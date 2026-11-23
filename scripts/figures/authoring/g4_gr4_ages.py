@@ -9,7 +9,7 @@ in the question; the rest are drawn one by one.
 """
 import re
 
-from g4_gr4_equations_lib import Part, S, V, Uq, B, bm, nl, tb, n, steps_of, key_numbers
+from g4_gr4_equations_lib import Part, S, V, Uq, B, bm, nl, tb, n, steps_of, step_text, says, key_numbers
 
 P = Part("gr4_ages")
 put = P.put
@@ -21,12 +21,16 @@ PAIR = re.compile(r"^(\w+) is (\d+) years old and (\w+) is (\d+) years old\. Wha
 
 
 def sum_after(qid, q, n1, a, n2, b, y):
-    if float(a + b + 2 * y) not in key_numbers(q) or len(steps_of(q)) != 2:
-        return P.note(qid, "sum rule does not fit")
+    texts = [s.get("text", "") for s in steps_of(q)]
+    # The steps: the first person's new age, the second person's new age, then the two added.
+    if (float(a + b + 2 * y) not in key_numbers(q) or len(texts) != 3 or not says(texts[0], a + y)
+            or not says(texts[1], b + y) or not says(texts[2], a + b + 2 * y)):
+        return P.note(qid, "sum rule does not fit the steps")
     more = lambda: S("%d more" % y, y, "c")
     base = lambda **kw: bm(B(n1, V(a), more(), brace=kw.pop("b1", None)), B(n2, V(b), more(), brace=kw.pop("b2", None)), **kw)
     put(qid, base(note="After %d years, what do their ages add up to?" % y),
-        [base(b1=n(a + y), b2=n(b + y), hl=["b0s1", "b1s1"], note="Each of them is %d years older" % y),
+        [base(b1=n(a + y), hl=["b0s1"], note="%s: %d + %d = %d" % (n1, a, y, a + y)),
+         base(b1=n(a + y), b2=n(b + y), hl=["b1s1"], note="%s: %d + %d = %d" % (n2, b, y, b + y)),
          base(b1=n(a + y), b2=n(b + y), hl=["b0", "b1"], note="%d + %d = %d" % (a + y, b + y, a + b + 2 * y))], origin="rule")
 
 
@@ -72,9 +76,16 @@ def diff_before(qid, q, n1, a, n2, b, y):
               for w0, w1 in ways]
         s3 = gap(n(d), note="The gap is the same today: %d − %d = %d" % (max(a, b), min(a, b), d))
         figs = [s0, s1, s2, s3]
-    elif count == 2:
-        figs = [gap("?", note="Both grow older together, so the gap never changes"),
-                gap(n(d), note="%d − %d = %d" % (max(a, b), min(a, b), d))]
+    elif count == 3 and says(step_text(q, 0), a - y) and says(step_text(q, 0), b - y) and says(step_text(q, 1), d):
+        # Both ages then; their difference then; the same difference today.
+        since = lambda: S("%d years" % y, y, "c")
+        bars = [None, None]
+        bars[old] = B(names[old] + " then", V(ages[young] - y, tone="abc"[young]), V(d, tone="c"), brace=n(ages[old] - y))
+        bars[young] = B(names[young] + " then", V(ages[young] - y))
+        figs = [bm(B(n1, V(a - y), since(), brace=n(a)), B(n2, V(b - y), since(), brace=n(b)), hl=["b0s0", "b1s0"],
+                   note="%d years ago: %d − %d = %d and %d − %d = %d" % (y, a, y, a - y, b, y, b - y)),
+                bm(*bars, hl=["b%ds1" % old], note="The difference then: %d − %d = %d" % (max(a, b) - y, min(a, b) - y, d)),
+                gap(n(d), note="The same as today: %d − %d = %d" % (max(a, b), min(a, b), d))]
     else:
         return P.note(qid, "difference rule: unexpected number of steps")
     put(qid, before, figs, origin="rule")

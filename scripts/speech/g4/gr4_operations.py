@@ -202,6 +202,10 @@ def main():
                 e = part[q["id"]]
                 print("== %d %s" % (n, q["id"]))
                 print(" Q: " + src["q"].replace("\n", " // "))
+                print("  [%s] S: %s" % (kinds.get(q["id"] + ".q", "")[:1], e["q"]))
+                print(" O: " + "  ¦  ".join(src["options"]))
+                print("  [%s] S: %s" % ("".join(kinds.get("%s.options[%d]" % (q["id"], j), "?")[:1] for j in range(len(src["options"]))),
+                                        "  ¦  ".join(e["options"])))
                 for key in ("hints", "steps"):
                     for j, t in enumerate(src[key]):
                         latex = own[j].get("latex", "") if key == "steps" and j < len(own) else ""

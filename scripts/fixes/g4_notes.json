@@ -32,13 +32,13 @@
 "A": "The 19x is right, but the plain numbers are not finished. There is still a − 3 to use with the 10.",
 "B": "Yes! The x terms give 11x + 8x = 19x, and the plain numbers give 10 − 3 = 7.",
 "C": "29x comes from joining 19x and 10 together. A plain number has no x, so it stays apart from the x terms.",
-"D": "This is not fully simplified yet. 11x and 8x both have x, so join them into a single x term."
+"D": "Here the plain numbers were added, 10 + 3 = 13. Look again at the sign in front of the 3."
 },
 "options": {
 "A": "19x + 10",
 "B": "19x + 7",
 "C": "29x",
-"D": "11x + 8x + 7"
+"D": "19x + 13"
 }
 },
 "BOOST_EXT_G4_FP_2016_023_05": {
@@ -157,13 +157,13 @@
 "notes": {
 "A": "16 comes from 40 − 34 + 10. Both of them were 10 years younger, so does the gap between them change at all?",
 "B": "30 is how old Siya was 10 years ago, 40 − 10. The question asks how far apart the two ages were.",
-"C": "-4 comes from 40 − 34 − 10. The 10 years come off both ages, so there is no need to take them off the gap as well.",
+"C": "24 is Aditya's age 10 years ago, 34 − 10. That is one person's age, but the question is about the gap between the two.",
 "D": "Yes! Both were 10 years younger then, so the gap between them stays the same: 40 − 34 = 6."
 },
 "options": {
 "A": "16",
 "B": "30",
-"C": "-4",
+"C": "24",
 "D": "6"
 }
 },
@@ -223,6 +223,20 @@
 "D": "800"
 }
 },
+"BOOST_EXT_G4_FP_2019_020_07": {
+"notes": {
+"A": "44 is 27 + 2 + 15, so all three numbers were added. Look at the two signs in the sum: neither of them is a plus.",
+"B": "You got it! 27 × 2 is 54, and 54 − 15 = 39.",
+"C": "69 is 54 + 15. After 27 × 2, the sign tells you to take 15 away, not to add it.",
+"D": "375 comes from taking 2 away from 27 and then multiplying by 15, so the two signs were swapped over. Look at which sign sits between 27 and 2."
+},
+"options": {
+"A": "44",
+"B": "39",
+"C": "69",
+"D": "375"
+}
+},
 "BOOST_EXT_G4_FP_2019_024_07": {
 "notes": {
 "A": "Equal fractions turn into the very same fraction when their bottom numbers match. Give both the bottom number 24 and see if the tops come out the same.",
@@ -241,13 +255,13 @@
 "notes": {
 "A": "14 is 5 + 9, which is what 2x equals, not x. One more step is needed to find a single x.",
 "B": "Put 2 back in to check: 2 × 2 = 4, but 2x has to be 9 more than 5. So x must be bigger.",
-"C": "Here 9 was taken away from 5 before dividing by 2. To undo \"− 9\" you do the opposite.",
+"C": "12 is 14 − 2. Finding 2x = 14 was right, but 2x means 2 times x, and multiplying is not undone by taking away.",
 "D": "Yes! Add 9 to both sides to get 2x = 14, then 14 ÷ 2 = 7."
 },
 "options": {
 "A": "14",
 "B": "2",
-"C": "-2",
+"C": "12",
 "D": "7"
 }
 },
@@ -689,13 +703,13 @@
 "notes": {
 "A": "Put 1 back in to check: 5 × 1 = 5, but 5x has to be 8 more than 7. So x must be bigger.",
 "B": "Yes! Add 8 to both sides to get 5x = 15, then 15 ÷ 5 = 3.",
-"C": "x cannot be less than zero here, because 5x has to be more than 7. Undo the − 8 first.",
+"C": "10 is 15 − 5. Finding 5x = 15 was right, but 5x means 5 times x, and multiplying is not undone by taking away.",
 "D": "15 is 7 + 8, which is what 5x equals, not x. One more step is needed to find a single x."
 },
 "options": {
 "A": "1",
 "B": "3",
-"C": "-1",
+"C": "10",
 "D": "15"
 }
 },
@@ -855,13 +869,13 @@
 },
 "PH3_EXT_G4_FP_2016_022_02": {
 "notes": {
-"A": "An angle can never be less than zero. Think about what the three angles of a triangle add up to.",
+"A": "139 is 180 − 41, which is what the other two angles make together. The 40° angle has not been used yet.",
 "B": "279 is 360 − 81, which uses a full turn. The three angles of a triangle make only 180° together.",
 "C": "That's it! 41 + 40 = 81, and the third angle is what is left of 180°: 180 − 81 = 99.",
 "D": "81 is 41 + 40, the two angles you know added together. Now find what is left of 180°."
 },
 "options": {
-"A": "-9",
+"A": "139",
 "B": "279",
 "C": "99",
 "D": "81"
@@ -1037,13 +1051,13 @@
 },
 "PH3_EXT_G4_FP_2018_039_02": {
 "notes": {
-"A": "This number is below zero, and no angle can be smaller than zero. The third angle is the rest of the triangle's angle total.",
+"A": "150 is 180 − 30. Only one of the two angles you know has been taken away, and the 37° angle is still inside that.",
 "B": "67 is 30 + 37, the two angles you know added together. Now find what is left of 180°.",
 "C": "That's it! 30 + 37 = 67, and the third angle is what is left of 180°: 180 − 67 = 113.",
 "D": "293 is 360 − 67. The angles of a triangle add up to 180°, not 360°."
 },
 "options": {
-"A": "-23",
+"A": "150",
 "B": "67",
 "C": "113",
 "D": "293"
@@ -1707,6 +1721,20 @@
 "D": "40"
 }
 },
+"Q_CH06_024_V03": {
+"notes": {
+"A": "Yes! Counting back 5 steps from 7 lands on 2, and 2 + 5 = 7.",
+"B": "5 is the number being taken away, not what is left. Start at 7 and count back 5 steps.",
+"C": "12 is 7 + 5. The sign here is a minus, so the answer must be smaller than 7.",
+"D": "3 comes from counting 7 itself as the first step back: 7, 6, 5, 4, 3. The first step back from 7 lands on 6."
+},
+"options": {
+"A": "2",
+"B": "5",
+"C": "12",
+"D": "3"
+}
+},
 "Q_CH07_012": {
 "notes": {
 "A": "Yes! 18 ÷ 6 = 3 and 24 ÷ 6 = 4, and nothing bigger than 1 divides both 3 and 4.",
@@ -1721,6 +1749,20 @@
 "D": "2/3"
 }
 },
+"Q_CH07_017": {
+"notes": {
+"A": "Yes! Swapping the top and bottom of 5/7 gives 7/5.",
+"B": "This is the same fraction again. For the reciprocal, swap the top and the bottom.",
+"C": "2/7 is what is left when 5/7 is taken away from 1 whole. A reciprocal is something else: look at what happens to the top and the bottom.",
+"D": "1 is what you get when you multiply a fraction by its reciprocal. The reciprocal itself is the flipped fraction."
+},
+"options": {
+"A": "7/5",
+"B": "5/7",
+"C": "2/7",
+"D": "1"
+}
+},
 "Q_CH07_023": {
 "notes": {
 "A": "Yes! 8 hours out of 24 is 8/24, and dividing the top and bottom by 8 gives 1/3.",
@@ -1733,6 +1775,62 @@
 "B": "1/4",
 "C": "1/8",
 "D": "8/12"
+}
+},
+"Q_CH11_018_V10": {
+"notes": {
+"A": "66 is 34 + 32. The sign here is a minus, so the answer must be smaller than 34.",
+"B": "5 is a little too big. Check by adding it back to 32 and see whether you reach 34.",
+"C": "4 is 34 − 30, so only the tens of 32 were taken away. The ones of 32 have to be taken away too.",
+"D": "Yes! 34 − 32 = 2. You can check it: 2 + 32 = 34."
+},
+"options": {
+"A": "66",
+"B": "5",
+"C": "4",
+"D": "2"
+}
+},
+"Q_CH13_010": {
+"notes": {
+"A": "0 comes from 12 − 15 + 3, where 3b was left as 3. 3b means 3 × b, so multiply by 5 first.",
+"B": "Yes! 5a is 15 and 3b is 15, so 12 − 15 + 15 leaves 12.",
+"C": "30 is 15 + 15, the two multiplied parts added together. The 12 has been left out, and 5a is taken away, not added.",
+"D": "42 comes from adding all three parts, 12 + 15 + 15. Look at the sign in front of 5a: that part is taken away."
+},
+"options": {
+"A": "0",
+"B": "12",
+"C": "30",
+"D": "42"
+}
+},
+"Q_CH14_002": {
+"notes": {
+"A": "12 is the number on the other side of the equals sign. That is what is left after 5 is taken away, so b itself must be bigger.",
+"B": "60 comes from multiplying 12 by 5. The equation takes 5 away from b, so think about which operation puts it back.",
+"C": "You got it! 17 − 5 = 12, so b is 17.",
+"D": "7 comes from subtracting 5 from 12. The 5 was already taken away from b, so it needs putting back, not taking away a second time."
+},
+"options": {
+"A": "12",
+"B": "60",
+"C": "17",
+"D": "7"
+}
+},
+"Q_CH14_006": {
+"notes": {
+"A": "11 comes from a slip in the subtraction, taking the 5 away from the 6 in the units place. The 6 has to come off the whole of 15.",
+"B": "21 comes from adding 15 and 6. Here f is taken away from 15, so it must be smaller than 15.",
+"C": "You got it! 15 − 9 = 6, so f is 9.",
+"D": "6 is what is left after f is taken away, not f itself. Think about how much must come off 15 to leave 6."
+},
+"options": {
+"A": "11",
+"B": "21",
+"C": "9",
+"D": "6"
 }
 },
 "Q_CH18_016_V07": {
@@ -1805,15 +1903,29 @@
 "D": "150°, 15°, 15°"
 }
 },
+"Q_CH19_011_V03": {
+"notes": {
+"A": "This is too big. The two angles together make only 90°, so the complement must be smaller than 90°.",
+"B": "16° is 100 − 84. Complementary angles add up to 90°, not 100°.",
+"C": "96° is 180 − 84. That is the supplement. A complement makes 90° with the angle, not 180°.",
+"D": "Yes! 84° + 6° = 90°, so the complement is 6°."
+},
+"options": {
+"A": "354°",
+"B": "16°",
+"C": "96°",
+"D": "6°"
+}
+},
 "VAR2_EXT_G4_FP_2016_007_01": {
 "notes": {
-"A": "This is not fully simplified yet. 3x and 2x both have x, so join them into a single x term.",
+"A": "Here everything was added into one term: 3 + 1 + 2 + 2 = 8. The plain numbers 1 and 2 have no x, so they cannot join the x terms.",
 "B": "The 5x is right, but the plain numbers are not finished. There is still a + 2 to use with the 1.",
 "C": "6x comes from joining 5x and 1 together. A plain number has no x, so it stays apart from the x terms.",
 "D": "Yes! The x terms give 3x + 2x = 5x, and the plain numbers give 1 + 2 = 3."
 },
 "options": {
-"A": "3x + 2x + 3",
+"A": "8x",
 "B": "5x + 1",
 "C": "6x",
 "D": "5x + 3"
@@ -1877,13 +1989,13 @@
 },
 "VAR2_EXT_G4_FP_2016_019_01": {
 "notes": {
-"A": "The plain numbers are done, but 9x and 5x are still apart. They are like terms, so they can be added into one term.",
+"A": "17x comes from adding all four numbers, 9 + 1 + 5 + 2. Only 9x and 5x have an x; the 1 and the 2 are plain numbers and stay apart.",
 "B": "15x comes from joining 14x and 1 together. A plain number has no x, so it stays apart from the x terms.",
 "C": "The 14x is right, but the plain numbers are not finished. There is still a + 2 to use with the 1.",
 "D": "Yes! Put like terms together: 9x + 5x = 14x and 1 + 2 = 3."
 },
 "options": {
-"A": "9x + 5x + 3",
+"A": "17x",
 "B": "15x",
 "C": "14x + 1",
 "D": "14x + 3"
@@ -1894,13 +2006,13 @@
 "A": "You joined the x terms well to get 11x. Now look at the plain numbers: the − 5 has not been used with the 8 yet.",
 "B": "Yes! Put like terms together: 5x + 6x = 11x and 8 − 5 = 3.",
 "C": "Here 8 was added to the x terms to make 19x. Only terms with x can be added to 11x; plain numbers go with plain numbers.",
-"D": "The plain numbers are done, but 5x and 6x are still apart. They are like terms, so they can be added into one term."
+"D": "Here the plain numbers were added, 8 + 5 = 13. Look again at the sign in front of the 5."
 },
 "options": {
 "A": "11x + 8",
 "B": "11x + 3",
 "C": "19x",
-"D": "5x + 6x + 3"
+"D": "11x + 13"
 }
 },
 "VAR2_EXT_G4_FP_2016_021_02": {
@@ -1976,13 +2088,13 @@
 "VAR2_EXT_G4_FP_2017_002_01": {
 "notes": {
 "A": "You joined the x terms well to get 7x. Now look at the plain numbers: the + 8 has not been used with the 7 yet.",
-"B": "The plain numbers are done, but 4x and 3x are still apart. They are like terms, so they can be added into one term.",
+"B": "22x comes from adding all four numbers, 4 + 7 + 3 + 8. Only 4x and 3x have an x; the 7 and the 8 are plain numbers and stay apart.",
 "C": "Here 7 was added to the x terms to make 14x. Only terms with x can be added to 7x; plain numbers go with plain numbers.",
 "D": "Yes! Put like terms together: 4x + 3x = 7x and 7 + 8 = 15."
 },
 "options": {
 "A": "7x + 7",
-"B": "4x + 3x + 15",
+"B": "22x",
 "C": "14x",
 "D": "7x + 15"
 }
@@ -2440,13 +2552,13 @@
 "A": "The 6x is right, but the plain numbers are not finished. There is still a − 3 to use with the 6.",
 "B": "Yes! Put like terms together: 2x + 4x = 6x and 6 − 3 = 3.",
 "C": "Here 6 was added to the x terms to make 12x. Only terms with x can be added to 6x; plain numbers go with plain numbers.",
-"D": "The plain numbers are done, but 2x and 4x are still apart. They are like terms, so they can be added into one term."
+"D": "The 6x is right, but the 3 was added to the 6 instead of being taken away. Look at the sign in front of the 3."
 },
 "options": {
 "A": "6x + 6",
 "B": "6x + 3",
 "C": "12x",
-"D": "2x + 4x + 3"
+"D": "6x + 9"
 }
 },
 "VAR2_EXT_G4_FP_2022_013_03_p2b": {
@@ -2508,13 +2620,13 @@
 "VAR2_EXT_G4_FP_2023_006_01": {
 "notes": {
 "A": "Here 3 was added to the x terms to make 11x. Only terms with x can be added to 8x; plain numbers go with plain numbers.",
-"B": "This is not fully simplified yet. 3x and 5x both have x, so join them into a single x term.",
+"B": "The 8x is right, but the 1 was added to the 3 instead of being taken away. Look at the sign in front of the 1.",
 "C": "You joined the x terms well to get 8x. Now look at the plain numbers: the − 1 has not been used with the 3 yet.",
 "D": "Yes! Put like terms together: 3x + 5x = 8x and 3 − 1 = 2."
 },
 "options": {
 "A": "11x",
-"B": "3x + 5x + 2",
+"B": "8x + 4",
 "C": "8x + 3",
 "D": "8x + 2"
 }
@@ -2608,13 +2720,13 @@
 "A": "You joined the x terms well to get 18x. Now look at the plain numbers: the + 6 has not been used with the 5 yet.",
 "B": "Yes! The x terms give 10x + 8x = 18x, and the plain numbers give 5 + 6 = 11.",
 "C": "23x comes from joining 18x and 5 together. A plain number has no x, so it stays apart from the x terms.",
-"D": "This is not fully simplified yet. 10x and 8x both have x, so join them into a single x term."
+"D": "Here everything was added into one term: 10 + 5 + 8 + 6 = 29. The plain numbers 5 and 6 have no x, so they cannot join the x terms."
 },
 "options": {
 "A": "18x + 5",
 "B": "18x + 11",
 "C": "23x",
-"D": "10x + 8x + 11"
+"D": "29x"
 }
 },
 "VAR2_EXT_G4_FP_2024_008_02_p2b": {
@@ -2649,13 +2761,13 @@
 "notes": {
 "A": "Here 2 was added to the x terms to make 10x. Only terms with x can be added to 8x; plain numbers go with plain numbers.",
 "B": "You joined the x terms well to get 8x. Now look at the plain numbers: the + 8 has not been used with the 2 yet.",
-"C": "This is not fully simplified yet. 2x and 6x both have x, so join them into a single x term.",
+"C": "18x comes from adding all four numbers, 2 + 2 + 6 + 8. Only 2x and 6x have an x; the 2 and the 8 are plain numbers and stay apart.",
 "D": "Yes! Put like terms together: 2x + 6x = 8x and 2 + 8 = 10."
 },
 "options": {
 "A": "10x",
 "B": "8x + 2",
-"C": "2x + 6x + 10",
+"C": "18x",
 "D": "8x + 10"
 }
 },
@@ -2706,13 +2818,13 @@
 "A": "Yes! The x terms give 4x + 3x = 7x, and the plain numbers give 9 − 4 = 5.",
 "B": "Here 9 was added to the x terms to make 16x. Only terms with x can be added to 7x; plain numbers go with plain numbers.",
 "C": "You joined the x terms well to get 7x. Now look at the plain numbers: the − 4 has not been used with the 9 yet.",
-"D": "This is not fully simplified yet. 4x and 3x both have x, so join them into a single x term."
+"D": "Here the plain numbers were added, 9 + 4 = 13. Look again at the sign in front of the 4."
 },
 "options": {
 "A": "7x + 5",
 "B": "16x",
 "C": "7x + 9",
-"D": "4x + 3x + 5"
+"D": "7x + 13"
 }
 },
 "VAR2_EXT_G4_FP_2025_003_03_p2b": {
@@ -2815,13 +2927,13 @@
 },
 "VAR2_EXT_G4_FP_2025_035_01": {
 "notes": {
-"A": "This is not fully simplified yet. 10x and 3x both have x, so join them into a single x term.",
+"A": "Here the plain numbers were added, 8 + 3 = 11. Look again at the sign in front of the 3.",
 "B": "21x comes from joining 13x and 8 together. A plain number has no x, so it stays apart from the x terms.",
 "C": "The 13x is right, but the plain numbers are not finished. There is still a − 3 to use with the 8.",
 "D": "Yes! Put like terms together: 10x + 3x = 13x and 8 − 3 = 5."
 },
 "options": {
-"A": "10x + 3x + 5",
+"A": "13x + 11",
 "B": "21x",
 "C": "13x + 8",
 "D": "13x + 5"
@@ -2857,13 +2969,13 @@
 },
 "VAR2_EXT_G4_WS2_CH13_002_01": {
 "notes": {
-"A": "-2 comes from 31 − 26 − 7. The 7 years come off both ages, so there is no need to take them off the gap as well.",
+"A": "19 is Neha's age 7 years ago, 26 − 7. That is one person's age, but the question is about the gap between the two.",
 "B": "12 comes from 31 − 26 + 7. Both of them were 7 years younger, so does the gap between them change at all?",
 "C": "Yes! Both were 7 years younger then, so the gap between them stays the same: 31 − 26 = 5.",
 "D": "24 is how old Aarav was 7 years ago, 31 − 7. The question asks how far apart the two ages were."
 },
 "options": {
-"A": "-2",
+"A": "19",
 "B": "12",
 "C": "5",
 "D": "24"
@@ -3177,6 +3289,20 @@
 "D": "200"
 }
 },
+"VAR_EXT_G4_FP_2017_039_04": {
+"notes": {
+"A": "15 comes from taking 4 away from 7 and then multiplying by 5, so the two signs were swapped over. Look at which sign sits between 7 and 4.",
+"B": "33 is 28 + 5. After 7 × 4 the sign is a minus, so the 5 is taken away, not added.",
+"C": "16 is 7 + 4 + 5, so all three numbers were added. Look at the two signs in the sum: neither of them is a plus.",
+"D": "Yes! 7 × 4 = 28 comes first, and then 28 − 5 = 23."
+},
+"options": {
+"A": "15",
+"B": "33",
+"C": "16",
+"D": "23"
+}
+},
 "VAR_EXT_G4_FP_2018_001_01": {
 "notes": {
 "A": "12 is the bigger of the two numbers, but 10 does not go into 12 exactly. Keep going along the 12 times table until 10 fits too.",
@@ -3203,6 +3329,20 @@
 "B": "13",
 "C": "12",
 "D": "18"
+}
+},
+"VAR_EXT_G4_FP_2018_017_04": {
+"notes": {
+"A": "0 comes from taking 8 away from 8 and then multiplying by 10, so the two signs were swapped over. Look at which sign sits between 8 and 8.",
+"B": "Yes! 8 × 8 = 64 comes first, and then 64 − 10 = 54.",
+"C": "26 is 8 + 8 + 10, so all three numbers were added. Look at the two signs in the sum: neither of them is a plus.",
+"D": "74 is 64 + 10. Look at the sign after 8 × 8: it is a minus, so the 10 comes off."
+},
+"options": {
+"A": "0",
+"B": "54",
+"C": "26",
+"D": "74"
 }
 },
 "VAR_EXT_G4_FP_2018_025_02_b2": {
@@ -3530,13 +3670,13 @@
 "VAR_EXT_G4_FP_2025_016_04": {
 "notes": {
 "A": "6 is 2 + 4, which is what 2x equals, not x. One more step is needed to find a single x.",
-"B": "Here 4 was taken away from 2 before dividing by 2. To undo \"− 4\" you do the opposite.",
+"B": "4 is 6 − 2. Finding 2x = 6 was right, but 2x means 2 times x, and multiplying is not undone by taking away.",
 "C": "1 is 2 ÷ 2, but the − 4 was left out. Undo the − 4 before you divide.",
 "D": "Yes! Add 4 to both sides to get 2x = 6, then 6 ÷ 2 = 3."
 },
 "options": {
 "A": "6",
-"B": "-1",
+"B": "4",
 "C": "1",
 "D": "3"
 }
@@ -3583,6 +3723,20 @@
 "D": "42"
 }
 },
+"VAR_EXT_G4_FP_2025_032_04": {
+"notes": {
+"A": "70 comes from taking 9 away from 16 and then multiplying by 10, so the two signs were swapped over. Look at which sign sits between 16 and 9.",
+"B": "Yes! 16 × 9 = 144 comes first, and then 144 − 10 = 134.",
+"C": "35 is 16 + 9 + 10, so all three numbers were added. Look at the two signs in the sum: neither of them is a plus.",
+"D": "154 is 144 + 10. The sign in front of the 10 is a minus, so it is taken away from 16 × 9, not added on."
+},
+"options": {
+"A": "70",
+"B": "134",
+"C": "35",
+"D": "154"
+}
+},
 "VAR_EXT_G4_FP_2025_035_03_b2": {
 "notes": {
 "A": "Yes! Add 4 to both sides to get 5x = 60, then 60 ÷ 5 = 12.",
@@ -3609,6 +3763,20 @@
 "B": "30",
 "C": "300",
 "D": "10"
+}
+},
+"VAR_EXT_G4_WS2_CH13_008_02": {
+"notes": {
+"A": "Yes! 3 × 9 = 27 comes first, then 27 − 27 = 0 and 0 + 1 = 1.",
+"B": "240 comes from doing 27 − 3 and 9 + 1 first, and then multiplying 24 by 10. Multiplication goes before both the subtraction and the addition.",
+"C": "This comes from doing 27 − 3 first and then multiplying by 9. Multiplication goes before subtraction, so start with 3 × 9.",
+"D": "0 is 27 − 27, where the subtraction ends. Look at the sum again: there is one more number still to be used."
+},
+"options": {
+"A": "1",
+"B": "240",
+"C": "217",
+"D": "0"
 }
 },
 "VAR_EXT_G4_WS2_CH14_002_03_b2": {

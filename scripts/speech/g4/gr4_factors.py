@@ -52,8 +52,8 @@ def with_maths(source, latex):
         return None
     maths = rules.from_latex(latex)
     mt, st = common.number_tokens(maths), common.number_tokens(source)
-    if not mt or contains(st, mt):
-        return None
+    if not mt or contains(st, mt) or set(mt) <= set(st):
+        return None        # the text already says every number of the maths line
     text = rules.family(source) or rules.say(source)
     if not text or not maths:
         return None

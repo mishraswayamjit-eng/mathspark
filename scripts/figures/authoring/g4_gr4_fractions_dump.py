@@ -11,11 +11,20 @@ sys.path.append(os.path.join(ROOT, "scripts", "bank"))
 import bank  # noqa: E402
 
 node = sys.argv[1]
-start = int(sys.argv[2]) if len(sys.argv) > 2 else -1
+start = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2] != "redo" else -1
 count = int(sys.argv[3]) if len(sys.argv) > 3 else 50
 full = len(sys.argv) > 4
 qs = [q for q in bank.load_bank(4) if q.get("node") == node]
 qs.sort(key=lambda q: q["id"])
+if len(sys.argv) > 2 and sys.argv[2] == "redo":
+    # Only the questions the round-3 brief lists as changed for this topic.
+    import json
+    with open(os.path.join(ROOT, "data", "bank-import", "g4", "renarrate.json"), encoding="utf-8") as f:
+        listed = set(json.load(f).get(node, []))
+    qs = [q for q in qs if q["id"] in listed]
+    print(len(qs), "listed questions")
+    sys.argv[2:] = ["0", "999", "full"]
+    start, count, full = 0, 999, True
 if start < 0:
     print(len(qs), "questions")
     fam = collections.Counter(re.sub(r"\d+", "#", q["id"]) for q in qs)

@@ -30,26 +30,8 @@ _FAMILY = [
      lambda m: "%s equals how many %s, and how many %s?" % (_qty(m.group(1)), _plural(m.group(2)), _plural(m.group(3)))),
     (r"(.+?)\s*=\s*_{2,}\s*(%s)" % _U,
      lambda m: "%s equals how many %s?" % (_qty(m.group(1)), _plural(m.group(2)))),
-    # generated: bags of a given weight
-    (r"Convert (\d+) kg (\d+) g to grams: (\d+) × (\d+) \+ (\d+) = (\d+) g",
-     lambda m: "Convert %s kilograms %s grams to grams: %s times %s, plus %s, equals %s grams." % m.groups()),
-    (r"(\d+) kg = (\d+) g, plus (\d+) g = (\d+) g\.",
-     lambda m: "%s kilograms is %s grams, and %s grams more makes %s grams." % m.groups()),
-    (r"One bag = (\d+) kg (\d+) g = (\d+) g",
-     lambda m: "One bag is %s kilograms %s grams, which is %s grams." % m.groups()),
-    (r"Total = (\d+) × (\d+) = (\d+) g",
-     lambda m: "The total is %s times %s, which is %s grams." % m.groups()),
-    # generated: glasses from a container
-    (r"First convert litres to ml: 1 litre = 1000 ml\.",
-     lambda m: "First convert litres to millilitres: 1 litre is 1000 millilitres."),
-    (r"Then divide total ml by the glass size\.",
-     lambda m: "Then divide the total millilitres by the glass size."),
-    (r"(\d+) litres = (\d+) ml\.",
-     lambda m: "%s litres is %s millilitres." % m.groups()),
-    (r"Convert: (\d+) litres = (\d+) ml",
-     lambda m: "Convert: %s litres is %s millilitres." % m.groups()),
-    (r"Number of glasses = (\d+) ÷ (\d+) = (\d+)",
-     lambda m: "The number of glasses is %s divided by %s, which is %s." % m.groups()),
+    # (the whole-line patterns for the old 'bags of a given weight' and 'glasses from a container'
+    #  families were removed in round 3: their hints and steps are now plain sentences that say() reads)
 ]
 
 

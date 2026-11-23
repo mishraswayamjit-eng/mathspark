@@ -82,11 +82,15 @@ def rule_change(q):
     before = bm([bar([seg("Rs.%d" % price if roomy else None, 1, "a") for i in range(n)]
                      + [seg("?", 1, "unknown")], brace=brace)],
                 note="%d %s at Rs.%d each, then the change" % (n, item, price))
+    # Step 1 finds the cost ("... so they cost 5 × 5 = 25 rupees"); step 2 takes it from the money paid.
+    cost_sum = re.search(r"\d+ × \d+ = \d+", texts[0]).group(0)
+    change_sum = re.search(r"\d+ − \d+ = \d+", texts[1]).group(0)
+    assert cost_sum.endswith("= %d" % cost) and change_sum.endswith("= %d" % change), q["id"]
     steps = [
         bm([bar([seg("Rs.%d" % cost, n, "a"), seg("?", 1, "unknown")], brace=brace)],
-           note=texts[0], hl=["b0s0"]),
+           note="The %d %s cost %s rupees" % (n, item, cost_sum), hl=["b0s0"]),
         bm([bar([seg("Rs.%d" % cost, w[0], "a"), seg("Rs.%d" % change, w[1], "b")], brace=brace)],
-           note=texts[1], hl=["b0s1"]),
+           note="Take the cost away: %s rupees of change" % change_sum, hl=["b0s1"]),
     ]
     P.add(q, before, steps, origin="rule")
     return True
@@ -505,5 +509,8 @@ P.write()
 if "--review" in sys.argv:
     P.review()
 if "--redo" in sys.argv:
+    # Round 3: the change-from-a-payment family.
+    P.review([q["id"] for q in P.qs if CHANGE.match(q["questionText"])])
+if "--redo2" in sys.argv:
     P.review(["EXT_G4_FP_2022_021", "EXT_G4_FP_2023_016", "EXT_G4_FP_2024_016", "G4A_DECIMALS_016", "Q_CH11_001",
               "Q_CH11_002", "Q_CH11_013", "Q_CH11_020", "Q_CH11_024"])

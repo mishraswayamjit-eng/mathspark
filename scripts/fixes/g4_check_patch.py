@@ -183,6 +183,21 @@ def main():
     # Grade 4 and Grade 5 files are both checked with this script.
     by_id = {q["id"]: q for q in bank.load_bank(4) + bank.load_bank(5)}
     nodes = {n["id"] for n in bank.tree_nodes(4) + bank.tree_nodes(5)}
+    # Option and wording repairs proposed alongside (repairs-out*.json next to the files being
+    # checked) are laid over the bank first, so help is checked against the options it was written for.
+    import glob
+    for folder in sorted({os.path.dirname(os.path.abspath(f)) for f in files}):
+        for rp in sorted(glob.glob(os.path.join(folder, "repairs-out*.json"))):
+            with io.open(rp, encoding="utf-8") as f:
+                for qid, p in json.load(f).items():
+                    q = by_id.get(qid)
+                    if q is None or p.get("remove"):
+                        continue
+                    if p.get("question"):
+                        q["questionText"] = p["question"]
+                    for o in q["options"]:
+                        if o["id"] in (p.get("options") or {}):
+                            o["text"] = p["options"][o["id"]]
     problems = []
     ok = 0
     for path in files:
@@ -241,6 +256,24 @@ def main():
                     check_text("%s option" % where, str(t), problems)
                 check_teaching(where, p.get("question"), opts, str(opts[p["answer"]]), p.get("hints"), p.get("steps"),
                                p.get("notes") or [], problems)
+                ok += 1 if len(problems) == before else 0
+        elif name.startswith("repairs-out"):
+            for qid, p in data.items():
+                q = by_id.get(qid)
+                if q is None:
+                    problems.append("%s: %s is not a Grade 4 bank question" % (name, qid))
+                    continue
+                before = len(problems)
+                if q["correctAnswer"] in (p.get("options") or {}):
+                    problems.append("%s: the keyed option must not be replaced" % qid)
+                for letter, text in (p.get("options") or {}).items():
+                    check_text("%s option %s" % (qid, letter), text, problems)
+                    if re.match(r"^\s*[-−]\s*\d", text or ""):
+                        problems.append("%s option %s: still a negative number" % (qid, letter))
+                if p.get("question"):
+                    check_text("%s question" % qid, p["question"], problems)
+                if len({value(o["text"]) for o in q["options"]}) < 4:
+                    problems.append("%s: two options have the same value" % qid)
                 ok += 1 if len(problems) == before else 0
         elif name.startswith("notes-out"):
             claimed = unclaimed = 0

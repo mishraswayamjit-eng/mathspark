@@ -68,7 +68,8 @@ def _equals(sentence):
     if not out.strip():
         out = "That equals " + parts[1].strip()
     elif re.search(r"\b(?:is|are|was|were|has|have|had|gives?|makes?|gets?|be|costs?|means|becomes|weighs?|gains?|takes?"
-                   r"|rises?|needs?|loses?|away|holds?|pays?|spends?|walks?|runs?|got)\s+(?:about\s+)?[\d(]", out):
+                   r"|rises?|needs?|loses?|away|holds?|pays?|spends?|walks?|runs?|got|fills?|leaves?)\s+(?:about\s+)?[\d(]", out) \
+            or re.search(r"\buses?\s+[\d.]+\s*[×÷+−]", out):       # 'use 2 × 700 = 1400', but not 'use 1 litre = 1000 ml'
         out = out.rstrip() + ", which is " + parts[1].strip()
     else:
         out = out.rstrip() + " equals " + parts[1].strip()
@@ -199,9 +200,9 @@ def say(text, pre_hook=None):
     s = re.sub(r"(^|[.:!?] )Total\s*[=:]\s*", r"\1The total is ", s)
     s = re.sub(r"(^|[.:!?] )Answer\s*[=:]\s*", r"\1The answer is ", s)
     # 'the 3 m piece' is 'the 3 metre piece'
-    s = re.sub(r"\b([Tt]he|one|each|every) (%s)\s*(%s) (?=(?:piece|rope|basket|climb|box|ribbon|rod|fence|jump|strip|bottle"
+    s = re.sub(r"(?<![\d.])(%s)\s*(%s) (?=(?:piece|rope|basket|climb|box|ribbon|rod|fence|jump|strip|bottle|glass|glasse|cup|tin"
                r"|packet|bag|jug|plank|pipe|tub|tank|overlap|ruler|stick|wire|track|path|gap|step)s?\b)" % (_NUM, _UNIT_ALT),
-               lambda m: "%s %s %s " % (m.group(1), m.group(2), UNITS[m.group(3)][0]), s)
+               lambda m: "%s %s " % (m.group(1), UNITS[m.group(2)][0]), s)
     # 'a 2 m ribbon' is 'a 2 metre ribbon'
     s = re.sub(r"\b([Aa]n?) (%s)\s*(%s)\s+(?=[a-z])" % (_NUM, _UNIT_ALT),
                lambda m: "%s %s %s " % (m.group(1), m.group(2), UNITS[m.group(3)][0]), s)
@@ -256,14 +257,8 @@ _FAMILY = [
      lambda m: "What is %s?" % _lower_first(say(m.group(1))).rstrip(".")),
     (r"Solve:\s*(%s?)\s*(?:=\s*\?)?" % _MATHS,
      lambda m: "Solve: %s." % _lower_first(say(m.group(1))).rstrip(".")),
-    (r"First find the total cost: price × quantity\.",
-     lambda m: "First find the total cost: the price times the quantity."),
-    (r"Change = Amount paid − Total cost\.",
-     lambda m: "The change is the amount paid, minus the total cost."),
-    (r"Total cost = (\d+) × (\d+) = Rs\.(\d+)",
-     lambda m: "The total cost is %s times %s, which is %s rupees." % m.groups()),
-    (r"Change = Rs\.(\d+) − Rs\.(\d+) = Rs\.(\d+)",
-     lambda m: "The change is %s rupees minus %s rupees, which is %s %s." % (m.group(1), m.group(2), m.group(3), "rupee" if m.group(3) == "1" else "rupees")),
+    # (the whole-line patterns for the old 'change from a purchase' family were removed in round 3:
+    #  its hints and steps are now plain sentences that say() reads)
 ]
 
 

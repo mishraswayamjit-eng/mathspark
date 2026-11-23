@@ -31,6 +31,15 @@ if __name__ == "__main__":
         for k, v in sorted(c.items()):
             print("%4d  %s" % (v, " | ".join(k)))
         sys.exit(0)
+    if len(sys.argv) > 2 and sys.argv[2] == "listed":
+        import io
+        import json
+        with io.open(os.path.join(ROOT, "data", "bank-import", "g4", "renarrate.json"), encoding="utf-8") as f:
+            listed = set(json.load(f).get(node, []))
+        missing = sorted(listed - set(q["id"] for q in qs))
+        qs = [q for q in qs if q["id"] in listed]
+        print("%d listed (%d not in the bank: %s)" % (len(qs), len(missing), ", ".join(missing)))
+        sys.argv = sys.argv[:2] + sys.argv[3:]
     a = int(sys.argv[2]) if len(sys.argv) > 2 else 0
     b = int(sys.argv[3]) if len(sys.argv) > 3 else len(qs)
     nosteps = len(sys.argv) > 4

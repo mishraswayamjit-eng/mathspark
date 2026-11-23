@@ -14,7 +14,7 @@
   ],
   "steps": [
    "The factors of 35 are 1, 5, 7 and 35.",
-   "The factors of 28 are 1, 2, 4, 7, 14 and 28. 4 times 7 equals 28.",
+   "The factors of 28 are 1, 2, 4, 7, 14 and 28.",
    "The numbers in both lists are 1 and 7. The bigger one is 7, so the H C F of 35 and 28 is 7."
   ]
  },
@@ -136,8 +136,8 @@
    "4 can be made in only one way. 2 plus 2 equals 4.",
    "9 is odd, so one of the primes must be 2. That gives only one way. 2 plus 7 equals 9.",
    "25 is odd too, so again there is only one way. 2 plus 23 equals 25.",
-   "16 can be made with 3 and 13. 3 plus 13 equals 16.",
-   "16 can also be made with 5 and 11. That is two different ways. 5 plus 11 equals 16.",
+   "16 can be made with 3 and 13.",
+   "16 can also be made with 5 and 11. That is two different ways.",
    "So the number is 16."
   ]
  },
@@ -317,7 +317,7 @@
    "Example: for 10 and 15, the H C F is 5. The L C M is 30, the first number in both times tables. The difference is 30 minus 5, which is 25."
   ],
   "steps": [
-   "16 equals 2 times 2 times 2 times 2 and 36 equals 2 times 2 times 3 times 3. They share two 2s, so the H C F is 4. 2 times 2 equals 4.",
+   "16 equals 2 times 2 times 2 times 2 and 36 equals 2 times 2 times 3 times 3. They share two 2s, so the H C F is 4.",
    "For the L C M take four 2s and two 3s. 2 times 2 times 2 times 2 times 3 times 3 equals 144.",
    "Subtract the H C F from the L C M. 144 minus 4 equals 140.",
    "The difference is 140."
@@ -479,7 +479,7 @@
    "Example: is 3729 divisible by 11? Add the 1st and 3rd digits: 3 plus 2 equals 5. Add the 2nd and 4th digits: 7 plus 9 equals 16. The sums differ by 11, so 3729 is divisible by 11."
   ],
   "steps": [
-   "Divide before adding: 18 divided by 2 equals 9, then 18 plus 9 equals 27. So the first sum is not 18. 18 plus 18 divided by 2 equals 27.",
+   "Divide before adding: 18 divided by 2 equals 9, then 18 plus 9 equals 27. So the first sum is not 18.",
    "A leap year has 366 days. That is 8784 hours, not 8760. 366 times 24 equals 8784.",
    "24 times 24 equals 576 and 25 times 25 equals 625. 586 lies between them, so it is not a square number.",
    "For 2816, 2 plus 1 equals 3 and 8 plus 6 equals 14. The sums differ by 11, so 11 divides it. 2816 divided by 11 equals 256.",
@@ -520,9 +520,9 @@
    "Here is a similar one: for 12 and 30, write 12 equals 2 times 2 times 3 and 30 equals 2 times 3 times 5. The H C F is 2 times 3, which is 6, and the L C M is 2 times 2 times 3 times 5, which is 60. Then 60 divided by 6 equals 10."
   ],
   "steps": [
-   "Break both numbers into prime factors: 36 equals 2 times 2 times 3 times 3 and 84 equals 2 times 2 times 3 times 7. 2 times 2 times 3 times 7 equals 84.",
-   "They share two 2s and one 3, so the H C F is 12. 2 times 2 times 3 equals 12.",
-   "The L C M needs two 2s, two 3s and one 7, so the L C M is 252. 2 times 2 times 3 times 3 times 7 equals 252.",
+   "Break both numbers into prime factors: 36 equals 2 times 2 times 3 times 3 and 84 equals 2 times 2 times 3 times 7.",
+   "They share two 2s and one 3, so the H C F is 12.",
+   "The L C M needs two 2s, two 3s and one 7, so the L C M is 252.",
    "Divide the L C M by the H C F. 252 divided by 12 equals 21.",
    "The answer is 21. The key idea is that 36 is 12 times 3 and 84 is 12 times 7, and the parts left over after the H C F multiply to 3 times 7, which is 21."
   ]
@@ -541,9 +541,9 @@
    "Example: 4 P 1 is divisible by 9. 4 plus 1 equals 5, and the next multiple of 9 is 9, so P equals 4. If three digits found this way are 4, 6 and 1, the greatest odd number must end in 1, so it is 641."
   ],
   "steps": [
-   "In the first number 5 plus 9 equals 14. The next multiple of 9 is 18, so the missing digit is 4. 18 minus 14 equals 4.",
-   "In the second number 5 plus 2 equals 7. The next multiple of 9 is 9, so the missing digit is 2. 9 minus 7 equals 2.",
-   "In the third number 6 plus 9 equals 15. The next multiple of 9 is 18, so the missing digit is 3. 18 minus 15 equals 3.",
+   "In the first number 5 plus 9 equals 14. The next multiple of 9 is 18, so the missing digit is 4.",
+   "In the second number 5 plus 2 equals 7. The next multiple of 9 is 9, so the missing digit is 2.",
+   "In the third number 6 plus 9 equals 15. The next multiple of 9 is 18, so the missing digit is 3.",
    "The digits are 4, 2 and 3. An odd number must end in an odd digit, and 3 is the only odd one.",
    "Put the bigger of the other two digits first. The greatest odd number is 423."
   ]
@@ -564,7 +564,7 @@
   "steps": [
    "Add the 2nd and 4th digits. 0 plus 8 equals 8.",
    "The 1st, 3rd and 5th digits are the blank, 4 and the blank. They must also add to 8.",
-   "So the two blanks add to 8 minus 4, which is 4, and each blank is 2. 4 divided by 2 equals 2.",
+   "So the two blanks add to 8 minus 4, which is 4, and each blank is 2.",
    "Check by dividing. 20482 divided by 11 equals 1862.",
    "The digit is 2, which is not 6, 3 or 1. So the answer is None of these."
   ]
@@ -604,7 +604,7 @@
   ],
   "steps": [
    "The one-digit primes are 2, 3, 5 and 7. 2 plus 3 plus 5 plus 7 equals 17.",
-   "The greatest 2-digit number is 99. 17 times 100 equals 1700, and 1700 minus 17 equals 1683. 17 times 99 equals 1683.",
+   "The greatest 2-digit number is 99. 17 times 100 equals 1700, and 1700 minus 17 equals 1683.",
    "Add the digits of the product. 1 plus 6 plus 8 plus 3 equals 18.",
    "The sum of the face values is 18."
   ]
@@ -787,7 +787,7 @@
   "steps": [
    "A factor divides the number exactly.",
    "36 divided by 8, 36 divided by 10 and 36 divided by 14 all leave remainders.",
-   "9 times 4 equals 36, so 9 is a factor of 36. 36 divided by 9 equals 4."
+   "9 times 4 equals 36, so 9 is a factor of 36."
   ]
  },
  "G4A_FACTORS_002": {
@@ -844,7 +844,7 @@
   "steps": [
    "Find pairs of numbers that multiply to give 18. 1 times 18 equals 18.",
    "A second pair. 2 times 9 equals 18.",
-   "The last pair is 3 times 6. 4 and 5 do not divide 18 exactly. 3 times 6 equals 18.",
+   "The last pair is 3 times 6. 4 and 5 do not divide 18 exactly.",
    "All the factors of 18 are 1, 2, 3, 6, 9, 18."
   ]
  },
@@ -1378,7 +1378,7 @@
   "steps": [
    "Take the remainder away from each number. 50 minus 2 equals 48, and 74 minus 2 equals 72.",
    "The number wanted must divide 48 and 72 exactly, and be as large as possible. That is their H C F.",
-   "The common factors of 48 and 72 are 1, 2, 3, 4, 6, 8, 12 and 24. 48 equals 24 times 2, and 72 equals 24 times 3.",
+   "The common factors of 48 and 72 are 1, 2, 3, 4, 6, 8, 12 and 24.",
    "Check: 50 equals 24 times 2 plus 2 and 74 equals 24 times 3 plus 2. The greatest such number is 24."
   ]
  },
@@ -1391,14 +1391,15 @@
    "33"
   ],
   "hints": [
-   "Find the first and last multiples of 9 in the range.",
-   "The first is 108, and the last is 297.",
-   "Count equals last minus first, divided by 9, plus 1."
+   "Numbers divisible by 9 are the multiples of 9. You do not have to test every number: find where the multiples start and stop inside the range, then count them.",
+   "Find the first multiple of 9 that is 100 or more, and the last multiple of 9 that is 300 or less.",
+   "A similar one: the numbers from 15 to 45 that are divisible by 6. The first is 18, which is 6 times 3, and the last is 42, which is 6 times 7. Counting from the 3rd multiple to the 7th gives 7 minus 3 plus 1, which is 5 numbers."
   ],
   "steps": [
-   "The first multiple of 9 that is 100 or more is 108.",
-   "The last multiple of 9 that is 300 or less is 297.",
-   "Count equals 297 minus 108, divided by 9, plus 1. That equals 22."
+   "The first multiple of 9 from 100 onwards is 108, because 9 times 12 equals 108, while 9 times 11 equals 99, which is too small.",
+   "The last multiple of 9 up to 300 is 297, because 9 times 33 equals 297, while 9 times 34 equals 306, which is too big.",
+   "So the multiples are 9 times 12, 9 times 13, and so on up to 9 times 33. From 12 to 33 is 33 minus 12, which is 21 steps, and the first one has to be counted too, so there are 21 plus 1, which is 22.",
+   "There are 22 numbers from 100 to 300 that are divisible by 9."
   ]
  },
  "PH3_EXT_G4_FP_2019_016_01_b": {
@@ -1410,14 +1411,15 @@
    "25"
   ],
   "hints": [
-   "Find the first and last multiples of 5 in the range.",
-   "The first is 5, and the last is 100.",
-   "Count equals last minus first, divided by 5, plus 1."
+   "This is a counting question about the 5 times table. Only the part of the table that lies inside the range matters.",
+   "Find the first multiple of 5 that is 1 or more, and the last multiple of 5 that is 101 or less.",
+   "A similar one: the numbers from 25 to 65 that are divisible by 4. The first is 28, which is 4 times 7, and the last is 64, which is 4 times 16. Counting from the 7th multiple to the 16th gives 16 minus 7 plus 1, which is 10 numbers."
   ],
   "steps": [
-   "The first multiple of 5 that is 1 or more is 5.",
-   "The last multiple of 5 that is 101 or less is 100.",
-   "Count equals 100 minus 5, divided by 5, plus 1. That equals 20."
+   "The first multiple of 5 in the range is 5 itself, which is 5 times 1.",
+   "The last multiple of 5 up to 101 is 100, because 5 times 20 equals 100, while 5 times 21 equals 105, which is too big.",
+   "So the multiples are 5 times 1, 5 times 2, and so on up to 5 times 20. That is 20 multiples.",
+   "There are 20 numbers from 1 to 101 that are divisible by 5."
   ]
  },
  "PH3_EXT_G4_FP_2024_021_01": {
@@ -1429,14 +1431,15 @@
    "29"
   ],
   "hints": [
-   "Find the first and last multiples of 7 in the range.",
-   "The first is 56, and the last is 245.",
-   "Count equals last minus first, divided by 7, plus 1."
+   "This is a counting question about the 7 times table. Only the part of the table that lies inside the range matters.",
+   "Find the first multiple of 7 that is 50 or more, and the last multiple of 7 that is 250 or less.",
+   "A similar one: the numbers from 40 to 90 that are divisible by 9. The first is 45, which is 9 times 5, and the last is 90, which is 9 times 10. Counting from the 5th multiple to the 10th gives 10 minus 5 plus 1, which is 6 numbers."
   ],
   "steps": [
-   "The first multiple of 7 that is 50 or more is 56.",
-   "The last multiple of 7 that is 250 or less is 245.",
-   "Count equals 245 minus 56, divided by 7, plus 1. That equals 28."
+   "The first multiple of 7 from 50 onwards is 56, because 7 times 8 equals 56, while 7 times 7 equals 49, which is too small.",
+   "The last multiple of 7 up to 250 is 245, because 7 times 35 equals 245, while 7 times 36 equals 252, which is too big.",
+   "So the multiples are 7 times 8, 7 times 9, and so on up to 7 times 35. From 8 to 35 is 35 minus 8, which is 27 steps, and the first one has to be counted too, so there are 27 plus 1, which is 28.",
+   "There are 28 numbers from 50 to 250 that are divisible by 7."
   ]
  },
  "PH3_EXT_G4_FP_2024_029_01": {
@@ -1448,14 +1451,15 @@
    "20"
   ],
   "hints": [
-   "Find the first and last multiples of 9 in the range.",
-   "The first is 54, and the last is 144.",
-   "Count equals last minus first, divided by 9, plus 1."
+   "This is a counting question about the 9 times table. Only the part of the table that lies inside the range matters.",
+   "Find the first multiple of 9 that is 50 or more, and the last multiple of 9 that is 150 or less.",
+   "A similar one: the numbers from 30 to 70 that are divisible by 8. The first is 32, which is 8 times 4, and the last is 64, which is 8 times 8. Counting from the 4th multiple to the 8th gives 8 minus 4 plus 1, which is 5 numbers."
   ],
   "steps": [
-   "The first multiple of 9 that is 50 or more is 54.",
-   "The last multiple of 9 that is 150 or less is 144.",
-   "Count equals 144 minus 54, divided by 9, plus 1. That equals 11."
+   "The first multiple of 9 from 50 onwards is 54, because 9 times 6 equals 54, while 9 times 5 equals 45, which is too small.",
+   "The last multiple of 9 up to 150 is 144, because 9 times 16 equals 144, while 9 times 17 equals 153, which is too big.",
+   "So the multiples are 9 times 6, 9 times 7, and so on up to 9 times 16. From 6 to 16 is 16 minus 6, which is 10 steps, and the first one has to be counted too, so there are 10 plus 1, which is 11.",
+   "There are 11 numbers from 50 to 150 that are divisible by 9."
   ]
  },
  "PH3_EXT_G4_FP_2025_004_01": {
@@ -1467,14 +1471,15 @@
    "14"
   ],
   "hints": [
-   "Find the first and last multiples of 8 in the range.",
-   "The first is 56, and the last is 96.",
-   "Count equals last minus first, divided by 8, plus 1."
+   "Numbers divisible by 8 are the multiples of 8. You do not have to test every number: find where the multiples start and stop inside the range, then count them.",
+   "Find the first multiple of 8 that is 50 or more, and the last multiple of 8 that is 100 or less.",
+   "A similar one: the numbers from 25 to 65 that are divisible by 4. The first is 28, which is 4 times 7, and the last is 64, which is 4 times 16. Counting from the 7th multiple to the 16th gives 16 minus 7 plus 1, which is 10 numbers."
   ],
   "steps": [
-   "The first multiple of 8 that is 50 or more is 56.",
-   "The last multiple of 8 that is 100 or less is 96.",
-   "Count equals 96 minus 56, divided by 8, plus 1. That equals 6."
+   "The first multiple of 8 from 50 onwards is 56, because 8 times 7 equals 56, while 8 times 6 equals 48, which is too small.",
+   "The last multiple of 8 up to 100 is 96, because 8 times 12 equals 96, while 8 times 13 equals 104, which is too big.",
+   "So the multiples are 8 times 7, 8 times 8, and so on up to 8 times 12. From 7 to 12 is 12 minus 7, which is 5 steps, and the first one has to be counted too, so there are 5 plus 1, which is 6.",
+   "There are 6 numbers from 50 to 100 that are divisible by 8."
   ]
  },
  "PH3_EXT_G4_WS2_CH17_009_01": {
@@ -1486,14 +1491,15 @@
    "20"
   ],
   "hints": [
-   "Find the first and last multiples of 3 in the range.",
-   "The first is 102, and the last is 150.",
-   "Count equals last minus first, divided by 3, plus 1."
+   "Numbers divisible by 3 are the multiples of 3. You do not have to test every number: find where the multiples start and stop inside the range, then count them.",
+   "Find the first multiple of 3 that is 100 or more, and the last multiple of 3 that is 150 or less.",
+   "A similar one: the numbers from 10 to 60 that are divisible by 7. The first is 14, which is 7 times 2, and the last is 56, which is 7 times 8. Counting from the 2nd multiple to the 8th gives 8 minus 2 plus 1, which is 7 numbers."
   ],
   "steps": [
-   "The first multiple of 3 that is 100 or more is 102.",
-   "The last multiple of 3 that is 150 or less is 150.",
-   "Count equals 150 minus 102, divided by 3, plus 1. That equals 17."
+   "The first multiple of 3 from 100 onwards is 102, because 3 times 34 equals 102, while 3 times 33 equals 99, which is too small.",
+   "The range ends at 150, which is a multiple of 3: 3 times 50 equals 150.",
+   "So the multiples are 3 times 34, 3 times 35, and so on up to 3 times 50. From 34 to 50 is 50 minus 34, which is 16 steps, and the first one has to be counted too, so there are 16 plus 1, which is 17.",
+   "There are 17 numbers from 100 to 150 that are divisible by 3."
   ]
  },
  "PYQ_2016_Q03": {
@@ -1532,7 +1538,7 @@
   ],
   "steps": [
    "A number ending in 2 is even, so the only prime ending in 2 is 2 itself. That is one press.",
-   "Now look at 20 to 29, where 2 is in the tens place. The even numbers there are not prime, and neither are 21, 25 and 27, because 21 equals 3 times 7, 25 equals 5 times 5 and 27 equals 3 times 9. 3 times 7 equals 21.",
+   "Now look at 20 to 29, where 2 is in the tens place. The even numbers there are not prime, and neither are 21, 25 and 27, because 21 equals 3 times 7, 25 equals 5 times 5 and 27 equals 3 times 9.",
    "That leaves 23 and 29, which are both prime. Each one needs one press of the 2 key.",
    "The primes with a 2 in them are 2, 23 and 29, so she pressed the 2 key 3 times. The trap is counting numbers such as 12, 22 or 32, which have a 2 but are not prime. 1 plus 2 equals 3."
   ]
@@ -1552,9 +1558,9 @@
   ],
   "steps": [
    "The test for 11: in a three-digit number, the first digit plus the last digit, less the middle digit, must come to 0 or 11.",
-   "In 5 star 7 the first and last digits add up to 12, so star must be 1 to leave 11. The number is 517. 5 plus 7 minus 1 equals 11.",
-   "In 5 7 heart the middle digit is 7, so 5 plus heart must equal 7 to leave 0. That makes heart equal to 2, and the number is 572. 5 plus 2 minus 7 equals 0.",
-   "In psi 5 9, psi plus 9 less 5 must come to 11. That makes psi equal to 7, and the number is 759. 7 plus 9 minus 5 equals 11.",
+   "In 5 star 7 the first and last digits add up to 12, so star must be 1 to leave 11. The number is 517.",
+   "In 5 7 heart the middle digit is 7, so 5 plus heart must equal 7 to leave 0. That makes heart equal to 2, and the number is 572.",
+   "In psi 5 9, psi plus 9 less 5 must come to 11. That makes psi equal to 7, and the number is 759.",
    "The hidden digits are 1, 2 and 7. Putting the biggest digit first gives the greatest number, 721."
   ]
  },
@@ -1572,7 +1578,7 @@
    "Here is a similar one: for the H C F of 38 and 57, write 38 equals 2 times 19 and 57 equals 3 times 19. Both share 19, so the H C F is 19."
   ],
   "steps": [
-   "65 ends in 5, so divide it by 5. Its prime factors are 5 and 13. 5 times 13 equals 65.",
+   "65 ends in 5, so divide it by 5. Its prime factors are 5 and 13.",
    "91 does not end in 0 or 5, so 5 does not divide it. Try 13, and it divides 91 exactly. 7 times 13 equals 91.",
    "Both numbers share the factor 13 and nothing bigger, so the H C F of 65 and 91 is 13."
   ]
@@ -1613,7 +1619,7 @@
   ],
   "steps": [
    "List the factor pairs in order. The first four are 1 times 84, 2 times 42, 3 times 28 and 4 times 21.",
-   "5 does not divide 84 exactly. The next pairs are 6 times 14 and 7 times 12. 7 times 12 equals 84.",
+   "5 does not divide 84 exactly. The next pairs are 6 times 14 and 7 times 12.",
    "8 and 9 do not divide 84 exactly, and the next factor is 12, which is already in the list. So every pair has been found.",
    "There are 6 pairs, and each pair gives 2 factors. 6 times 2 equals 12.",
    "84 has 12 factors: 1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42 and 84."
@@ -1633,9 +1639,9 @@
    "Here is a similar one. Is 9 the sum of two primes? 9 minus 2 equals 7, and 7 is prime, so 9 equals 2 plus 7. Is 17? 17 minus 2 equals 15, and 15, which is 3 times 5, is not prime, so 17 is not the sum of two primes."
   ],
   "steps": [
-   "5 is the sum of the primes 2 and 3. 2 plus 3 equals 5.",
-   "7 is the sum of the primes 2 and 5. 2 plus 5 equals 7.",
-   "12 is the sum of the primes 5 and 7. 5 plus 7 equals 12.",
+   "5 is the sum of the primes 2 and 3.",
+   "7 is the sum of the primes 2 and 5.",
+   "12 is the sum of the primes 5 and 7.",
    "11 is odd, so one of its two primes would have to be 2, the only even prime. That leaves 9, and 9 is 3 times 3, so it is not prime.",
    "So 11 is not the sum of two prime numbers. The trap is that 11 is a prime itself, but that does not make it a sum of two primes."
   ]
@@ -1656,7 +1662,7 @@
   "steps": [
    "Break 90 into prime factors. 2 times 3 times 3 times 5 equals 90.",
    "A die has no 10 or 15, so the 5 must be on a die by itself. The other two dice then multiply to 18. 90 divided by 5 equals 18.",
-   "Using numbers from 1 to 6, 18 can only be made as 3 times 6, because 2 times 9 would need a 9. 3 times 6 equals 18.",
+   "Using numbers from 1 to 6, 18 can only be made as 3 times 6, because 2 times 9 would need a 9.",
    "So the dice show 3, 5 and 6. There is only one possible set, so the sum can be found. 3 plus 5 plus 6 equals 14.",
    "The sum of the three numbers is 14."
   ]
@@ -1736,7 +1742,7 @@
   "steps": [
    "Write 30 as a product of two numbers in every possible way: 1 times 30, 2 times 15, 3 times 10 and 5 times 6.",
    "4 does not divide 30, and after 5 times 6 the pairs would only repeat. So the list is complete.",
-   "Each pair gives 2 factors: 1, 2, 3, 5, 6, 10, 15 and 30. There are 4 pairs, so 30 has 8 factors. 4 times 2 equals 8."
+   "Each pair gives 2 factors: 1, 2, 3, 5, 6, 10, 15 and 30. There are 4 pairs, so 30 has 8 factors."
   ]
  },
  "PYQ_2018_Q16": {
@@ -1754,7 +1760,7 @@
   ],
   "steps": [
    "A number is divisible by 9 when its digits add up to a multiple of 9. The known digits add up to 8 plus 2, which is 10.",
-   "The next multiples of 9 after 10 are 18 and 27. So the two stars together must add 8 or 17. 18 minus 10 equals 8.",
+   "The next multiples of 9 after 10 are 18 and 27. So the two stars together must add 8 or 17.",
    "The two stars are the same digit, so their total is an even number. That rules out 17, and 8 divided by 2 equals 4.",
    "Check: 8 plus 4 plus 2 plus 4 equals 18, and 8,424 divided by 9 equals 936. The digit represented by star is 4."
   ]
@@ -1872,7 +1878,7 @@
   ],
   "steps": [
    "Find every pair of numbers that multiply to 136. Start small: 1 times 136 and 2 times 68.",
-   "3 does not divide 136. 4 does, giving 4 times 34. Then 5, 6 and 7 do not, and 8 gives 8 times 17. 8 times 17 equals 136.",
+   "3 does not divide 136. 4 does, giving 4 times 34. Then 5, 6 and 7 do not, and 8 gives 8 times 17.",
    "Going further only repeats the same pairs the other way round, such as 17 times 8. The trap is to count those again, or to leave out 1 times 136.",
    "The pairs are 1 times 136, 2 times 68, 4 times 34 and 8 times 17. So 136 can be written as a product of two numbers in 4 ways."
   ]
@@ -2065,7 +2071,7 @@
   "steps": [
    "Split 60 using the smallest prime: 60 equals 2 times 30.",
    "30 is not prime, so split again: 30 equals 2 times 15. Then 15 equals 3 times 5.",
-   "Now every part is prime. The prime factorization of 60 is 2 times 2 times 3 times 5. 2 times 2 times 3 times 5 equals 60."
+   "Now every part is prime. The prime factorization of 60 is 2 times 2 times 3 times 5."
   ]
  },
  "Q_CH06_008": {
@@ -2446,13 +2452,14 @@
    "45"
   ],
   "hints": [
-   "The L C M is the smallest number divisible by both 15 and 9.",
-   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
-   "First find the H C F of 15 and 9."
+   "The L C M is the smallest number that is in both times tables. Multiples of the bigger number are quicker to list, so start there.",
+   "Say the 15 times table from the start. After each number, check whether 9 goes into it exactly.",
+   "A similar one: the L C M of 8 and 20. The multiples of 20 are 20 and 40. 8 does not go into 20 exactly, but 8 times 5 equals 40, so the L C M is 40."
   ],
   "steps": [
-   "L C M times H C F equals 15 times 9, which is 135.",
-   "The H C F of 15 and 9 is 3, so the L C M is 135 divided by 3, which is 45."
+   "Write the multiples of the bigger number, 15: 15, 30 and 45.",
+   "Check each one for 9. 9 does not go into 15 or 30 exactly, but 9 times 5 equals 45.",
+   "45 is the first number in both tables, so the L C M of 15 and 9 is 45."
   ]
  },
  "VAR_EXT_G4_FP_2017_016_01": {
@@ -2464,13 +2471,14 @@
    "12"
   ],
   "hints": [
-   "The L C M is the smallest number divisible by both 9 and 3.",
-   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
-   "First find the H C F of 9 and 3."
+   "The L C M is the smallest number that is in both times tables. Multiples of the bigger number are quicker to list, so start there.",
+   "Say the 9 times table from the start. After each number, check whether 3 goes into it exactly.",
+   "A similar one: the L C M of 6 and 15. The multiples of 15 are 15 and 30. 6 does not go into 15 exactly, but 6 times 5 equals 30, so the L C M is 30."
   ],
   "steps": [
-   "L C M times H C F equals 9 times 3, which is 27.",
-   "The H C F of 9 and 3 is 3, so the L C M is 27 divided by 3, which is 9."
+   "Start with the multiples of the bigger number, 9. The first one is 9 itself.",
+   "3 goes into 9 exactly, because 3 times 3 equals 9. So the very first multiple of 9 is already in the 3 times table.",
+   "No number smaller than 9 is a multiple of 9, so the L C M of 9 and 3 is 9."
   ]
  },
  "VAR_EXT_G4_FP_2018_001_01": {
@@ -2482,13 +2490,14 @@
    "60"
   ],
   "hints": [
-   "The L C M is the smallest number divisible by both 12 and 10.",
-   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
-   "First find the H C F of 12 and 10."
+   "The L C M is the smallest number that is in both times tables. Multiples of the bigger number are quicker to list, so start there.",
+   "Say the 12 times table from the start. After each number, check whether 10 goes into it exactly.",
+   "A similar one: the L C M of 4 and 6. The multiples of 6 are 6 and 12. 4 does not go into 6 exactly, but 4 times 3 equals 12, so the L C M is 12."
   ],
   "steps": [
-   "L C M times H C F equals 12 times 10, which is 120.",
-   "The H C F of 12 and 10 is 2, so the L C M is 120 divided by 2, which is 60."
+   "Write the multiples of the bigger number, 12: 12, 24, 36, 48 and 60.",
+   "Check each one for 10. 10 does not go into 12, 24, 36 or 48 exactly, but 10 times 6 equals 60.",
+   "60 is the first number in both tables, so the L C M of 12 and 10 is 60."
   ]
  },
  "VAR_EXT_G4_FP_2018_001_04": {
@@ -2500,13 +2509,14 @@
    "18"
   ],
   "hints": [
-   "The L C M is the smallest number divisible by both 12 and 6.",
-   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
-   "First find the H C F of 12 and 6."
+   "L C M means the lowest common multiple: the first number that both numbers divide exactly.",
+   "Say the 12 times table from the start. After each number, check whether 6 goes into it exactly.",
+   "A similar one: the L C M of 3 and 7. The multiples of 7 are 7, 14 and 21. 3 does not go into 7 or 14 exactly, but 3 times 7 equals 21, so the L C M is 21."
   ],
   "steps": [
-   "L C M times H C F equals 12 times 6, which is 72.",
-   "The H C F of 12 and 6 is 6, so the L C M is 72 divided by 6, which is 12."
+   "Start with the multiples of the bigger number, 12. The first one is 12 itself.",
+   "6 goes into 12 exactly, because 6 times 2 equals 12. So the very first multiple of 12 is already in the 6 times table.",
+   "No number smaller than 12 is a multiple of 12, so the L C M of 12 and 6 is 12."
   ]
  },
  "VAR_EXT_G4_FP_2019_021_04_b2": {
@@ -2537,13 +2547,14 @@
    "27"
   ],
   "hints": [
-   "The L C M is the smallest number divisible by both 18 and 9.",
-   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
-   "First find the H C F of 18 and 9."
+   "L C M means the lowest common multiple: the first number that both numbers divide exactly.",
+   "Say the 18 times table from the start. After each number, check whether 9 goes into it exactly.",
+   "A similar one: the L C M of 8 and 20. The multiples of 20 are 20 and 40. 8 does not go into 20 exactly, but 8 times 5 equals 40, so the L C M is 40."
   ],
   "steps": [
-   "L C M times H C F equals 18 times 9, which is 162.",
-   "The H C F of 18 and 9 is 9, so the L C M is 162 divided by 9, which is 18."
+   "Start with the multiples of the bigger number, 18. The first one is 18 itself.",
+   "9 goes into 18 exactly, because 9 times 2 equals 18. So the very first multiple of 18 is already in the 9 times table.",
+   "No number smaller than 18 is a multiple of 18, so the L C M of 18 and 9 is 18."
   ]
  },
  "VAR_EXT_G4_FP_2020_014_03": {
@@ -2593,13 +2604,14 @@
    "20"
   ],
   "hints": [
-   "The L C M is the smallest number divisible by both 20 and 10.",
-   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
-   "First find the H C F of 20 and 10."
+   "The L C M is the smallest number that is in both times tables. Multiples of the bigger number are quicker to list, so start there.",
+   "Say the 20 times table from the start. After each number, check whether 10 goes into it exactly.",
+   "A similar one: the L C M of 4 and 6. The multiples of 6 are 6 and 12. 4 does not go into 6 exactly, but 4 times 3 equals 12, so the L C M is 12."
   ],
   "steps": [
-   "L C M times H C F equals 20 times 10, which is 200.",
-   "The H C F of 20 and 10 is 10, so the L C M is 200 divided by 10, which is 20."
+   "Start with the multiples of the bigger number, 20. The first one is 20 itself.",
+   "10 goes into 20 exactly, because 10 times 2 equals 20. So the very first multiple of 20 is already in the 10 times table.",
+   "No number smaller than 20 is a multiple of 20, so the L C M of 20 and 10 is 20."
   ]
  },
  "VAR_EXT_G4_FP_2022_003_01_b2": {
@@ -2611,13 +2623,14 @@
    "25"
   ],
   "hints": [
-   "The L C M is the smallest number divisible by both 16 and 9.",
-   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
-   "First find the H C F of 16 and 9."
+   "The L C M is the smallest number that is in both times tables. Multiples of the bigger number are quicker to list, so start there.",
+   "Say the 16 times table from the start. After each number, check whether 9 goes into it exactly.",
+   "A similar one: the L C M of 6 and 15. The multiples of 15 are 15 and 30. 6 does not go into 15 exactly, but 6 times 5 equals 30, so the L C M is 30."
   ],
   "steps": [
-   "L C M times H C F equals 16 times 9, which is 144.",
-   "The H C F of 16 and 9 is 1, so the L C M is 144 divided by 1, which is 144."
+   "Write the multiples of the bigger number, 16: 16, 32, 48, 64, 80, 96, 112, 128 and 144.",
+   "Check each one for 9. 9 does not go into 16, 32, 48, 64, 80, 96, 112 or 128 exactly, but 9 times 16 equals 144.",
+   "144 is the first number in both tables, so the L C M of 16 and 9 is 144."
   ]
  },
  "VAR_EXT_G4_FP_2022_027_03": {
@@ -2648,13 +2661,14 @@
    "12"
   ],
   "hints": [
-   "The L C M is the smallest number divisible by both 4 and 12.",
-   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
-   "First find the H C F of 4 and 12."
+   "L C M means the lowest common multiple: the first number that both numbers divide exactly.",
+   "Say the 12 times table from the start. After each number, check whether 4 goes into it exactly.",
+   "A similar one: the L C M of 3 and 7. The multiples of 7 are 7, 14 and 21. 3 does not go into 7 or 14 exactly, but 3 times 7 equals 21, so the L C M is 21."
   ],
   "steps": [
-   "L C M times H C F equals 4 times 12, which is 48.",
-   "The H C F of 4 and 12 is 4, so the L C M is 48 divided by 4, which is 12."
+   "Start with the multiples of the bigger number, 12. The first one is 12 itself.",
+   "4 goes into 12 exactly, because 4 times 3 equals 12. So the very first multiple of 12 is already in the 4 times table.",
+   "No number smaller than 12 is a multiple of 12, so the L C M of 4 and 12 is 12."
   ]
  },
  "VAR_EXT_G4_FP_2023_005_03": {
@@ -2704,13 +2718,14 @@
    "12"
   ],
   "hints": [
-   "The L C M is the smallest number divisible by both 12 and 5.",
-   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
-   "First find the H C F of 12 and 5."
+   "The L C M is the smallest number that is in both times tables. Multiples of the bigger number are quicker to list, so start there.",
+   "Say the 12 times table from the start. After each number, check whether 5 goes into it exactly.",
+   "A similar one: the L C M of 4 and 6. The multiples of 6 are 6 and 12. 4 does not go into 6 exactly, but 4 times 3 equals 12, so the L C M is 12."
   ],
   "steps": [
-   "L C M times H C F equals 12 times 5, which is 60.",
-   "The H C F of 12 and 5 is 1, so the L C M is 60 divided by 1, which is 60."
+   "Write the multiples of the bigger number, 12: 12, 24, 36, 48 and 60.",
+   "Check each one for 5. 5 does not go into 12, 24, 36 or 48 exactly, but 5 times 12 equals 60.",
+   "60 is the first number in both tables, so the L C M of 12 and 5 is 60."
   ]
  },
  "VAR_EXT_G4_FP_2024_027_03": {
@@ -2760,13 +2775,14 @@
    "42"
   ],
   "hints": [
-   "The L C M is the smallest number divisible by both 14 and 6.",
-   "Use this rule: the L C M equals a times b, divided by the H C F of a and b.",
-   "First find the H C F of 14 and 6."
+   "L C M means the lowest common multiple: the first number that both numbers divide exactly.",
+   "Say the 14 times table from the start. After each number, check whether 6 goes into it exactly.",
+   "A similar one: the L C M of 3 and 7. The multiples of 7 are 7, 14 and 21. 3 does not go into 7 or 14 exactly, but 3 times 7 equals 21, so the L C M is 21."
   ],
   "steps": [
-   "L C M times H C F equals 14 times 6, which is 84.",
-   "The H C F of 14 and 6 is 2, so the L C M is 84 divided by 2, which is 42."
+   "Write the multiples of the bigger number, 14: 14, 28 and 42.",
+   "Check each one for 6. 6 does not go into 14 or 28 exactly, but 6 times 7 equals 42.",
+   "42 is the first number in both tables, so the L C M of 14 and 6 is 42."
   ]
  },
  "VAR_EXT_G4_FP_2025_040_04_b2": {

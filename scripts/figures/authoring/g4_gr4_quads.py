@@ -27,6 +27,8 @@ SQ_A = re.compile(r"^Each side of a square is (\d+) cm long\. What is the (area|
 SQ_B = re.compile(r"^Find the (area) of a square with side (\d+) cm\.$")
 SPLIT = re.compile(r"Split (\d+) into (\d+) and (\d+)")
 GROUPS = re.compile(r"(\d+) × (\d+) means (\d+) groups of (\d+)")
+TWO_PARTS = re.compile(r"in two parts: (\d+) × (\d+) = \d+ and (\d+) × (\d+) = \d+")
+MULTIPLY = re.compile(r"^Multiply: \d+ × \d+ = \d+\.$")
 
 
 def answer_number(q):
@@ -40,6 +42,8 @@ def area_unit(q):
         return "cm²"
     if "sq.cm" in last:
         return "sq.cm"
+    if "sq. cm" in last:
+        return "sq. cm"
     return "sq cm"
 
 
@@ -82,6 +86,22 @@ def area_rule(q, L, W, square):
                 if len(note) > 70 or not note:
                     note = "%d × %d and %d × %d" % (a, other, b, other)
                 steps[i] = split_rect(L, W, which, a, b, note=note, **kw)
+        elif TWO_PARTS.search(t):
+            # "Multiply 15 by 11 in two parts: 15 × 10 = 150 and 15 × 1 = 15. Add them: ..."
+            f1, a, f2, b = (int(v) for v in TWO_PARTS.search(t).groups())
+            if f1 != L or f2 != L or a + b != W:
+                continue
+            steps[i] = split_rect(L, W, "breadth", a, b, ll=ll, la="%d cm" % a, lpb="%d cm" % b,
+                                  note=["%d × %d = %d and %d × %d = %d" % (L, a, L * a, L, b, L * b),
+                                        "%d × %d and %d × %d" % (L, a, L, b)])
+        elif MULTIPLY.match(t):
+            # "Multiply: 9 × 5 = 45."
+            note = "%d × %d = %d" % (L, W, ans)
+            if L <= 12 and W <= 12:
+                steps[i] = R(length=ll, breadth=lb, square=square, grid=(L, W),
+                             note="%d columns of %d unit squares: %s" % (L, W, note))
+            else:
+                steps[i] = whole(note=note, hl=["length", "breadth"])
         elif split and t.startswith("Now multiply"):
             which, a, b, other, kw = split
             steps[i] = split_rect(L, W, which, a, b, note="Second part: %d × %d" % (other, b), hl=["b"], **kw)
@@ -109,7 +129,10 @@ def rect_perimeter_rule(q, L, W):
             steps[i] = rect(L, W, ll, lb, note="2 × (%d + %d) = %d cm" % (L, W, P_), hl=["border"])
         elif last:
             steps[i] = rect(L, W, ll, lb, note="Perimeter = %d cm" % P_, hl=["border"])
-        elif "add" in t:
+        elif "two lengths" in t and "two widths" in t:
+            # "...all four sides are added: two lengths of 25 cm and two widths of 3 cm."
+            steps[i] = rect(L, W, ll, lb, note="All the way round: two lengths and two widths", hl=["border"])
+        elif "add" in t or "together make" in t:
             steps[i] = rect(L, W, ll, lb, note=["%d + %d = %d cm" % (L, W, half), "%d + %d is halfway round" % (L, W)],
                             hl=["length", "breadth"])
         elif "double" in t:

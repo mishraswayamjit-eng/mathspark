@@ -25,6 +25,15 @@
     "highlight": [
      "right"
     ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 7 − 9",
+    "right": "5",
+    "note": "Put 7 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
    }
   ]
  },
@@ -53,6 +62,15 @@
     "note": "x = 7",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 7 + 10",
+    "right": "24",
+    "note": "Put 7 in place of x: both pans match",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -83,6 +101,15 @@
     "highlight": [
      "right"
     ]
+   },
+   {
+    "kind": "balance",
+    "left": "7 × 12 + 17",
+    "right": "101",
+    "note": "Put 12 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
    }
   ]
  },
@@ -111,6 +138,15 @@
     "note": "x = 5",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "7 × 5 − 9",
+    "right": "26",
+    "note": "Put 5 in place of x: both pans match",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -141,6 +177,15 @@
     "highlight": [
      "right"
     ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 11 + 6",
+    "right": "61",
+    "note": "Put 11 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
    }
   ]
  },
@@ -169,6 +214,15 @@
     "note": "x = 3",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 3 − 8",
+    "right": "7",
+    "note": "Put 3 in place of x: both pans match",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -8886,8 +8940,8 @@
    {
     "kind": "balance",
     "left": "√x",
-    "right": "5",
-    "note": "Take 1 from both pans",
+    "right": "6 − 1",
+    "note": "Take 1 from both pans: √x = 5",
     "highlight": [
      "right"
     ]
@@ -8896,9 +8950,18 @@
     "kind": "balance",
     "left": "x",
     "right": "5 × 5",
-    "note": "x = 25",
+    "note": "x is 5 multiplied by itself: x = 25",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "√25 + 1",
+    "right": "6",
+    "note": "Check: the square root of 25 is 5, and 5 + 1 = 6",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -8915,8 +8978,8 @@
    {
     "kind": "balance",
     "left": "√x",
-    "right": "15",
-    "note": "Take 20 from both pans",
+    "right": "35 − 20",
+    "note": "Take 20 from both pans: √x = 15",
     "highlight": [
      "right"
     ]
@@ -8925,9 +8988,18 @@
     "kind": "balance",
     "left": "x",
     "right": "15 × 15",
-    "note": "x = 225",
+    "note": "x is 15 multiplied by itself: x = 225",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "√225 + 20",
+    "right": "35",
+    "note": "Check: the square root of 225 is 15, and 15 + 20 = 35",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -8958,6 +9030,15 @@
     "highlight": [
      "right"
     ]
+   },
+   {
+    "kind": "balance",
+    "left": "7 × 6 − 8",
+    "right": "34",
+    "note": "Put 6 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
    }
   ]
  },
@@ -8986,6 +9067,15 @@
     "note": "x = 8",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 8 + 1",
+    "right": "41",
+    "note": "Put 8 in place of x: both pans match",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -9016,6 +9106,15 @@
     "highlight": [
      "right"
     ]
+   },
+   {
+    "kind": "balance",
+    "left": "3 × 8 − 10",
+    "right": "14",
+    "note": "Put 8 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
    }
   ]
  },
@@ -9044,6 +9143,15 @@
     "note": "x = 4",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "6 × 4 + 18",
+    "right": "42",
+    "note": "Put 4 in place of x: both pans match",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -9074,6 +9182,15 @@
     "highlight": [
      "right"
     ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 11 − 11",
+    "right": "44",
+    "note": "Put 11 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
    }
   ]
  },
@@ -9102,6 +9219,15 @@
     "note": "x = 11",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 11 − 10",
+    "right": "12",
+    "note": "Put 11 in place of x: both pans match",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -9132,6 +9258,15 @@
     "highlight": [
      "right"
     ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 6 + 19",
+    "right": "31",
+    "note": "Put 6 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
    }
   ]
  },
@@ -9160,6 +9295,15 @@
     "note": "x = 10",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "7 × 10 + 13",
+    "right": "83",
+    "note": "Put 10 in place of x: both pans match",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -9190,6 +9334,15 @@
     "highlight": [
      "right"
     ]
+   },
+   {
+    "kind": "balance",
+    "left": "7 × 5 + 8",
+    "right": "43",
+    "note": "Put 5 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
    }
   ]
  },
@@ -9218,6 +9371,15 @@
     "note": "x = 8",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 8 + 19",
+    "right": "59",
+    "note": "Put 8 in place of x: both pans match",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -9248,6 +9410,15 @@
     "highlight": [
      "right"
     ]
+   },
+   {
+    "kind": "balance",
+    "left": "6 × 2 + 5",
+    "right": "17",
+    "note": "Put 2 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
    }
   ]
  },
@@ -9276,6 +9447,15 @@
     "note": "x = 12",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "7 × 12 − 2",
+    "right": "82",
+    "note": "Put 12 in place of x: both pans match",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -9306,6 +9486,15 @@
     "highlight": [
      "right"
     ]
+   },
+   {
+    "kind": "balance",
+    "left": "4 × 7 − 8",
+    "right": "20",
+    "note": "Put 7 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
    }
   ]
  },
@@ -9334,6 +9523,15 @@
     "note": "x = 3",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 3 − 4",
+    "right": "2",
+    "note": "Put 3 in place of x: both pans match",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -9364,6 +9562,15 @@
     "highlight": [
      "right"
     ]
+   },
+   {
+    "kind": "balance",
+    "left": "2 × 4 + 1",
+    "right": "9",
+    "note": "Put 4 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
    }
   ]
  },
@@ -9392,6 +9599,15 @@
     "note": "x = 12",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "5 × 12 − 4",
+    "right": "56",
+    "note": "Put 12 in place of x: both pans match",
+    "highlight": [
+     "left"
     ]
    }
   ]
@@ -9422,6 +9638,15 @@
     "highlight": [
      "right"
     ]
+   },
+   {
+    "kind": "balance",
+    "left": "8 × 3 + 5",
+    "right": "29",
+    "note": "Put 3 in place of x: both pans match",
+    "highlight": [
+     "left"
+    ]
    }
   ]
  },
@@ -9450,6 +9675,15 @@
     "note": "x = 5",
     "highlight": [
      "right"
+    ]
+   },
+   {
+    "kind": "balance",
+    "left": "6 × 5 − 9",
+    "right": "21",
+    "note": "Put 5 in place of x: both pans match",
+    "highlight": [
+     "left"
     ]
    }
   ]

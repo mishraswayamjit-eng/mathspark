@@ -238,13 +238,52 @@
         "tone": "c"
        }
       ],
+      "label": "Riya"
+     }
+    ],
+    "note": "Arjun: 27 + 10 = 37",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.53,
+        "label": "27",
+        "tone": "a"
+       },
+       {
+        "units": 3.16,
+        "label": "10 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Arjun",
+      "brace": "37"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.84,
+        "label": "28",
+        "tone": "b"
+       },
+       {
+        "units": 3.16,
+        "label": "10 more",
+        "tone": "c"
+       }
+      ],
       "label": "Riya",
       "brace": "38"
      }
     ],
-    "note": "Each of them is 10 years older",
+    "note": "Riya: 28 + 10 = 38",
     "highlight": [
-     "b0s1",
      "b1s1"
     ]
    },
@@ -327,14 +366,14 @@
      {
       "segments": [
        {
-        "units": 10.2,
-        "label": "34",
-        "tone": "b"
+        "units": 9.0,
+        "label": "30",
+        "tone": "a"
        },
        {
-        "units": 1.8,
-        "label": "?",
-        "tone": "unknown"
+        "units": 3.0,
+        "label": "10 years",
+        "tone": "c"
        }
       ],
       "label": "Siya",
@@ -343,15 +382,57 @@
      {
       "segments": [
        {
-        "units": 10.2,
-        "label": "34",
+        "units": 7.2,
+        "label": "24",
+        "tone": "b"
+       },
+       {
+        "units": 3.0,
+        "label": "10 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Aditya",
+      "brace": "34"
+     }
+    ],
+    "note": "10 years ago: 40 − 10 = 30 and 34 − 10 = 24",
+    "highlight": [
+     "b0s0",
+     "b1s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.6,
+        "label": "24",
+        "tone": "b"
+       },
+       {
+        "units": 2.4,
+        "label": "6",
+        "tone": "c"
+       }
+      ],
+      "label": "Siya then",
+      "brace": "30"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.6,
+        "label": "24",
         "tone": "b"
        }
       ],
-      "label": "Aditya"
+      "label": "Aditya then"
      }
     ],
-    "note": "Both grow older together, so the gap never changes",
+    "note": "The difference then: 30 − 24 = 6",
     "highlight": [
      "b0s1"
     ]
@@ -386,7 +467,7 @@
       "label": "Aditya"
      }
     ],
-    "note": "40 − 34 = 6",
+    "note": "The same as today: 40 − 34 = 6",
     "highlight": [
      "b0s1"
     ]
@@ -632,13 +713,52 @@
         "tone": "c"
        }
       ],
+      "label": "Dev"
+     }
+    ],
+    "note": "Tara: 35 + 4 = 39",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.77,
+        "label": "35",
+        "tone": "a"
+       },
+       {
+        "units": 1.23,
+        "label": "4 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Tara",
+      "brace": "39"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.54,
+        "label": "31",
+        "tone": "b"
+       },
+       {
+        "units": 1.23,
+        "label": "4 more",
+        "tone": "c"
+       }
+      ],
       "label": "Dev",
       "brace": "35"
      }
     ],
-    "note": "Each of them is 4 years older",
+    "note": "Dev: 31 + 4 = 35",
     "highlight": [
-     "b0s1",
      "b1s1"
     ]
    },
@@ -6899,13 +7019,52 @@
         "tone": "c"
        }
       ],
+      "label": "Diya"
+     }
+    ],
+    "note": "Nikhil: 39 + 6 = 45",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.4,
+        "label": "39",
+        "tone": "a"
+       },
+       {
+        "units": 1.6,
+        "label": "6 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Nikhil",
+      "brace": "45"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.53,
+        "label": "32",
+        "tone": "b"
+       },
+       {
+        "units": 1.6,
+        "label": "6 more",
+        "tone": "c"
+       }
+      ],
       "label": "Diya",
       "brace": "38"
      }
     ],
-    "note": "Each of them is 6 years older",
+    "note": "Diya: 32 + 6 = 38",
     "highlight": [
-     "b0s1",
      "b1s1"
     ]
    },
@@ -7024,13 +7183,52 @@
         "tone": "c"
        }
       ],
+      "label": "Meera"
+     }
+    ],
+    "note": "Vivek: 30 + 4 = 34",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10.59,
+        "label": "30",
+        "tone": "a"
+       },
+       {
+        "units": 1.41,
+        "label": "4 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Vivek",
+      "brace": "34"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.47,
+        "label": "24",
+        "tone": "b"
+       },
+       {
+        "units": 1.41,
+        "label": "4 more",
+        "tone": "c"
+       }
+      ],
       "label": "Meera",
       "brace": "28"
      }
     ],
-    "note": "Each of them is 4 years older",
+    "note": "Meera: 24 + 4 = 28",
     "highlight": [
-     "b0s1",
      "b1s1"
     ]
    },
@@ -7317,13 +7515,52 @@
         "tone": "c"
        }
       ],
+      "label": "Siddharth"
+     }
+    ],
+    "note": "Isha: 10 + 10 = 20",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.43,
+        "label": "10",
+        "tone": "a"
+       },
+       {
+        "units": 3.43,
+        "label": "10 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Isha",
+      "brace": "20"
+     },
+     {
+      "segments": [
+       {
+        "units": 8.57,
+        "label": "25",
+        "tone": "b"
+       },
+       {
+        "units": 3.43,
+        "label": "10 more",
+        "tone": "c"
+       }
+      ],
       "label": "Siddharth",
       "brace": "35"
      }
     ],
-    "note": "Each of them is 10 years older",
+    "note": "Siddharth: 25 + 10 = 35",
     "highlight": [
-     "b0s1",
      "b1s1"
     ]
    },
@@ -7442,13 +7679,52 @@
         "tone": "c"
        }
       ],
+      "label": "Ananya"
+     }
+    ],
+    "note": "Sahil: 35 + 3 = 38",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 11.05,
+        "label": "35",
+        "tone": "a"
+       },
+       {
+        "units": 0.95,
+        "label": "3 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Sahil",
+      "brace": "38"
+     },
+     {
+      "segments": [
+       {
+        "units": 3.79,
+        "label": "12",
+        "tone": "b"
+       },
+       {
+        "units": 0.95,
+        "label": "3 more",
+        "tone": "c"
+       }
+      ],
       "label": "Ananya",
       "brace": "15"
      }
     ],
-    "note": "Each of them is 3 years older",
+    "note": "Ananya: 12 + 3 = 15",
     "highlight": [
-     "b0s1",
      "b1s1"
     ]
    },
@@ -7567,13 +7843,52 @@
         "tone": "c"
        }
       ],
+      "label": "Ananya"
+     }
+    ],
+    "note": "Karan: 30 + 8 = 38",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.0,
+        "label": "30",
+        "tone": "a"
+       },
+       {
+        "units": 2.4,
+        "label": "8 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Karan",
+      "brace": "38"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.6,
+        "label": "32",
+        "tone": "b"
+       },
+       {
+        "units": 2.4,
+        "label": "8 more",
+        "tone": "c"
+       }
+      ],
       "label": "Ananya",
       "brace": "40"
      }
     ],
-    "note": "Each of them is 8 years older",
+    "note": "Ananya: 32 + 8 = 40",
     "highlight": [
-     "b0s1",
      "b1s1"
     ]
    },
@@ -7824,14 +8139,14 @@
      {
       "segments": [
        {
-        "units": 10.06,
-        "label": "26",
-        "tone": "b"
+        "units": 9.29,
+        "label": "24",
+        "tone": "a"
        },
        {
-        "units": 1.94,
-        "label": "?",
-        "tone": "unknown"
+        "units": 2.71,
+        "label": "7 years",
+        "tone": "c"
        }
       ],
       "label": "Aarav",
@@ -7840,15 +8155,57 @@
      {
       "segments": [
        {
-        "units": 10.06,
-        "label": "26",
+        "units": 7.35,
+        "label": "19",
+        "tone": "b"
+       },
+       {
+        "units": 2.71,
+        "label": "7 years",
+        "tone": "c"
+       }
+      ],
+      "label": "Neha",
+      "brace": "26"
+     }
+    ],
+    "note": "7 years ago: 31 − 7 = 24 and 26 − 7 = 19",
+    "highlight": [
+     "b0s0",
+     "b1s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 9.5,
+        "label": "19",
+        "tone": "b"
+       },
+       {
+        "units": 2.5,
+        "label": "5",
+        "tone": "c"
+       }
+      ],
+      "label": "Aarav then",
+      "brace": "24"
+     },
+     {
+      "segments": [
+       {
+        "units": 9.5,
+        "label": "19",
         "tone": "b"
        }
       ],
-      "label": "Neha"
+      "label": "Neha then"
      }
     ],
-    "note": "Both grow older together, so the gap never changes",
+    "note": "The difference then: 24 − 19 = 5",
     "highlight": [
      "b0s1"
     ]
@@ -7883,7 +8240,7 @@
       "label": "Neha"
      }
     ],
-    "note": "31 − 26 = 5",
+    "note": "The same as today: 31 − 26 = 5",
     "highlight": [
      "b0s1"
     ]
@@ -7961,13 +8318,52 @@
         "tone": "c"
        }
       ],
+      "label": "Vivek"
+     }
+    ],
+    "note": "Tara: 15 + 5 = 20",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5.0,
+        "label": "15",
+        "tone": "a"
+       },
+       {
+        "units": 1.67,
+        "label": "5 more",
+        "tone": "c"
+       }
+      ],
+      "label": "Tara",
+      "brace": "20"
+     },
+     {
+      "segments": [
+       {
+        "units": 10.33,
+        "label": "31",
+        "tone": "b"
+       },
+       {
+        "units": 1.67,
+        "label": "5 more",
+        "tone": "c"
+       }
+      ],
       "label": "Vivek",
       "brace": "36"
      }
     ],
-    "note": "Each of them is 5 years older",
+    "note": "Vivek: 31 + 5 = 36",
     "highlight": [
-     "b0s1",
      "b1s1"
     ]
    },

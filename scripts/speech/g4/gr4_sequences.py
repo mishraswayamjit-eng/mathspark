@@ -39,24 +39,9 @@ def working(text, latex):
 
 
 # Generated families, whose steps are printed as notes. Each is said as a teacher would read it.
-FAMILIES = [
-    (r"^First term \(a\) = (\d+), Common diff \(d\) = (\d+)$",
-     "The first term, A, equals {0}. The common difference, d, equals {1}."),
-    (r"^nth term = a \+ \(n−1\)d = (\d+) \+ \((\d+)−1\)×(\d+) = (\d+) \+ (\d+) = (\d+)$",
-     "The nth term equals A plus, open bracket, n minus 1, close bracket, times d. "
-     "That is {0} plus, open bracket, {1} minus 1, close bracket, times {2}, which is {3} plus {4}, which is {5}."),
-    (r"^Calculate: (\d+) \+ \((\d+)−1\) × (\d+)\.$",
-     "Calculate: {0} plus, open bracket, {1} minus 1, close bracket, times {2}."),
-    (r"^Number of terms \(n\) = (\d+), first = (\d+), last = (\d+)$",
-     "The number of terms, n, equals {0}. First equals {1}, last equals {2}."),
-    (r"^Sum = n/2 × \(first \+ last\) = (\d+)/2 × \((\d+)\+(\d+)\) = (\d+) × (\d+)$",
-     "Sum equals n over 2, times, open bracket, first plus last, close bracket. "
-     "That is {0} over 2, times, open bracket, {1} plus {2}, close bracket, which is {3} times {4}."),
-    (r"^Sum = (\d+)/2 × \((\d+) \+ (\d+)\)\.$",
-     "Sum equals {0} over 2, times, open bracket, {1} plus {2}, close bracket."),
-    (r"^Each term is multiplied by (\d+): ×(\d+) pattern$",
-     "Each term is multiplied by {0}: a times {1} pattern."),
-]
+# (pattern, template) pairs for a family whose lines need a fixed wording. The old formula-note
+# families were rewritten in the bank as plain sentences, so none is needed now.
+FAMILIES = []
 
 
 def by_rule(key, text, latex, sentence):

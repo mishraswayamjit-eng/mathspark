@@ -7,7 +7,7 @@ from_latex(tex)  a step's maths line as print, ready for say()
 import re
 
 _MATHS_ONLY = re.compile(r"[\d\s×÷+−\-()]*")
-_LEAD = {"is", "gives", "give", "to"}
+_LEAD = {"is", "gives", "give", "to", "are"}
 
 # A digit pattern with letters or stars standing for digits: 1A9A5, 2★1★, 25N48, A59.
 _PATTERN = re.compile(r"(?<![0-9A-Za-z★])(?=[0-9A-Z★]*[A-Z★])(?=[0-9A-Z★]*\d)[0-9A-Z★]{2,}(?![0-9A-Za-z★])")
@@ -18,6 +18,8 @@ def _equals(s):
     """'=' is 'equals'; in a chain (a = b = c) the later ones are ', which equals'."""
     # "9 = 3 × 3 is not prime" -> "9, which is 3 × 3, is not prime"
     s = re.sub(r"(\d+) = (\d+(?: × \d+)+) is\b", r"\1, which is \2, is", s)
+    # "The first is 18 = 6 × 3 and the last is ..." -> "The first is 18, which is 6 × 3, and the last is ..."
+    s = re.sub(r"\bis (\d+) = (\d+ × \d+)(?! ×)", r"is \1, which is \2,", s)
     # "2 + 3 = 5 is prime" -> "2 + 3 = 5, which is prime"
     s = re.sub(r"= (\d+) is\b", r"= \1, which is", s)
     parts = s.split("=")

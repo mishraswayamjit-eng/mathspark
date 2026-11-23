@@ -49,8 +49,11 @@ def third_angle(qid, x, y, style, origin="rule"):
         steps = {0: tri("?", hl=known, note="Add the two angles you know: %s and %s" % (deg(x), deg(y))),
                  1: tri("?", note="? + %s + %s = 180°" % (deg(x), deg(y))),
                  2: found}
-    elif style == "rule-answer":
-        steps = {0: tri("?", note=SUM), 1: found}
+    elif style == "rule-add-take-check":
+        steps = {0: tri("?", note=SUM),
+                 1: tri("?", hl=known, note="Add the two you know: %s + %s = %s" % (deg(x), deg(y), deg(x + y))),
+                 2: tri(deg(z), hl=[ask], note="180° − %s = %s" % (deg(x + y), deg(z))),
+                 3: tri(deg(z), hl=["a", "b", "c"], note="Check: %s + %s + %s = 180°" % (deg(x), deg(y), deg(z)))}
     else:                             # the rule; add the two; take away
         steps = {0: tri("?", note=SUM),
                  1: tri("?", hl=known, note="%s + %s = %s" % (deg(x), deg(y), deg(x + y))),
@@ -77,15 +80,15 @@ def ratio_angles(qid, ratio):
     sizes = [k * unit for k in ratio]
     words = [parts_word(k) for k in ratio]
     key = "abc"[ratio.index(big)]
-    degrees = [deg(s) for s in sizes]
     mixed = [deg(s) if k == big else parts_word(k) for k, s in zip(ratio, sizes)]
     last = "Largest: %d × %s = %s" % (big, deg(unit), deg(big * unit))
     add(qid, origin="rule",
         figure=tri_angles(sizes[0], sizes[1], sizes[2], *words),
-        steps={0: tri_angles(sizes[0], sizes[1], sizes[2], *words, note=sum_note),
-               1: tri_angles(sizes[0], sizes[1], sizes[2], *words, note="One part = 180° ÷ %d = %s" % (total, deg(unit))),
-               2: [tri_angles(sizes[0], sizes[1], sizes[2], *degrees, hl=[key], note=last),
-                   tri_angles(sizes[0], sizes[1], sizes[2], *mixed, hl=[key], note=last)]})
+        steps={0: tri_angles(sizes[0], sizes[1], sizes[2], *words, note="The ratio shares the triangle's 180° into equal parts"),
+               1: tri_angles(sizes[0], sizes[1], sizes[2], *words, note="Count the parts: " + sum_note),
+               2: tri_angles(sizes[0], sizes[1], sizes[2], *words, note="One part = 180° ÷ %d = %s" % (total, deg(unit))),
+               # Only the largest angle is worked out in the steps, so the others stay in parts.
+               3: tri_angles(sizes[0], sizes[1], sizes[2], *mixed, hl=[key], note=last)})
 
 
 def area_rule(qid, base, height):
@@ -107,9 +110,9 @@ RULES = [
      lambda qid, m: third_angle(qid, int(m.group(1)), int(m.group(2)), "add-rule-take")),
     (re.compile(r"^If two angles of a triangle are (\d+)° and (\d+)°, the third angle is:$"), 3,
      lambda qid, m: third_angle(qid, int(m.group(1)), int(m.group(2)), "add-rule-take")),
-    (re.compile(r"^In a triangle, two angles are (\d+)° and (\d+)°\. Find the third angle\.$"), 2,
-     lambda qid, m: third_angle(qid, int(m.group(1)), int(m.group(2)), "rule-answer")),
-    (re.compile(r"^Angles of a triangle are in the ratio (\d+):(\d+):(\d+)\. Find the largest angle\.$"), 3,
+    (re.compile(r"^In a triangle, two angles are (\d+)° and (\d+)°\. Find the third angle\.$"), 4,
+     lambda qid, m: third_angle(qid, int(m.group(1)), int(m.group(2)), "rule-add-take-check")),
+    (re.compile(r"^Angles of a triangle are in the ratio (\d+):(\d+):(\d+)\. Find the largest angle\.$"), 4,
      lambda qid, m: ratio_angles(qid, [int(m.group(1)), int(m.group(2)), int(m.group(3))])),
     (re.compile(r"^Find the area of a triangle with base (\d+) cm and height (\d+) cm\.$"), 3,
      lambda qid, m: area_rule(qid, int(m.group(1)), int(m.group(2)))),

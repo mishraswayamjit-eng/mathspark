@@ -28,7 +28,7 @@ def _equals(s):
             out += piece
             continue
         clause = re.split(r"[.?!:;(]\s|, | and | so | because ", out)[-1]
-        if re.search(r"\b(is|are|equals|gives|makes)\b", clause):
+        if re.search(r"\b(is|are|equals|gives|makes|add)\b", clause):
             out = out.rstrip() + ", which is "
         else:
             out = out.rstrip() + " equals "
@@ -50,41 +50,8 @@ def _family(t):
     m = re.fullmatch(r"In the number (\d+), the place value of (\d) \(in ([a-z-]+) place\) is how many times the place value of (\d) \(in ([a-z-]+) place\)\?", t)
     if m:
         return "In the number %s, the place value of the %s in the %s place is how many times the place value of the %s in the %s place?" % m.groups()
-    m = re.fullmatch(r"PV of (\d) = (%s), PV of (\d) = (%s)" % (NUM, NUM), t)
-    if m:
-        a, b, c, d = m.groups()
-        if a == c:
-            return "The place value of one %s is %s, and the place value of the other %s is %s." % (a, b, c, d)
-        return "The place value of %s is %s, and the place value of %s is %s." % (a, b, c, d)
-    m = re.fullmatch(r"Ratio = (%s) ÷ (%s) = (%s)" % (NUM, NUM, NUM), t)
-    if m:
-        return "The ratio is %s divided by %s, which is %s." % m.groups()
-    if t == "Place value = digit × value of its position.":
-        return "Place value equals the digit, times the value of its position."
-    m = re.fullmatch(r"Place value = (%s) × (%s) = (%s)" % (NUM, NUM, NUM), t)
-    if m:
-        return "Place value equals %s times %s, which is %s." % m.groups()
-    m = re.fullmatch(r"Digits of (\d+): ([\d +]+) = (\d+)", t)
-    if m:
-        return "The digits of %s: %s, which equals %s." % (m.group(1), m.group(2).replace("+", "plus"), m.group(3))
-    if t == "Use the formula: (last − first) ÷ 2 + 1.":
-        return "Use the formula: last minus first, then divide by 2, then add 1."
-    m = re.fullmatch(r"Count = \((\d+) − (\d+)\) ÷ 2 \+ 1 = (\d+)", t)
-    if m:
-        return "Count: %s minus %s, then divide by 2, then add 1. That gives %s." % m.groups()
-    m = re.fullmatch(r"First odd: (\d+), Last odd: (\d+)", t)
-    if m:
-        return "The first odd is %s, and the last odd is %s." % m.groups()
-    m = re.fullmatch(r"This is from the (\d+) IPM exam \(Q(\d+)\)\.", t)
-    if m:
-        return "This is from the %s I P M exam, question %s." % m.groups()
-    m = re.fullmatch(r"Correct answer: Option (\d) — (.+)", t)
-    if m:
-        rest = say(m.group(2))
-        return "Correct answer: option %s, %s%s" % (m.group(1), rest, "" if rest[-1] in ".?!" else ".")
-    m = re.fullmatch(r"(Largest|Smallest) = (%s)" % NUM, t)
-    if m:
-        return "The %s is %s." % (m.group(1).lower(), m.group(2))
+    # (The whole-line templates for the old terse hints and steps of the generated families and
+    # past papers were removed when that text was rewritten in the bank as full sentences.)
     return None
 
 
@@ -96,6 +63,9 @@ def say(text):
     if fam:
         return fam
     s = t
+    # counting odd numbers in pairs: two sums in one clause read better as two short sentences
+    s = re.sub(r"there are (\d+) − (\d+) = (\d+) numbers, which make (\d+) ÷ 2 = (\d+) pairs",
+               r"there are \1 minus \2 equals \3 numbers. These make \4 divided by 2 equals \5 pairs", s)
     # money
     s = re.sub(r"₹\s*(%s)(?=\s+notes?\b)" % NUM, r"\1 rupee", s)
     s = re.sub(r"₹\s*(\d[\d,]*\d(?:\.\d+)?|\d)", r"\1 rupees", s)

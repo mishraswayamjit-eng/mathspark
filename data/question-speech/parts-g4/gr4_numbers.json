@@ -8,13 +8,16 @@
    "2181"
   ],
   "hints": [
-   "Add up the digits of each option.",
-   "You need a total of 11.",
-   "Only one option adds up correctly."
+   "The digit sum of a number is what you get when you add up all its digits. Test the numbers one at a time.",
+   "Start with 3420: add its digits and see whether they make 11. If they do not, move on to another number.",
+   "A similar one: the number 4127. Its digits add up to 4 plus 1 plus 2 plus 7, which is 14, so its digit sum is 14."
   ],
   "steps": [
-   "Add the digits of each number.",
-   "The digits of 1046: 1 plus 0 plus 4 plus 6, which equals 11."
+   "Add the digits of each number in turn. For 3420: 3 plus 4 plus 2 plus 0 equals 9. That is not 11.",
+   "For 6036: 6 plus 0 plus 3 plus 6 equals 15. That is not 11.",
+   "For 1046: 1 plus 0 plus 4 plus 6 equals 11. That is the total we want.",
+   "For 2181: 2 plus 1 plus 8 plus 1 equals 12. That is not 11.",
+   "Only 1046 has a digit sum of 11, so the answer is 1046."
   ]
  },
  "BOOST_EXT_G4_FP_2019_010_07": {
@@ -26,13 +29,15 @@
    "800"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "\"How many times\" is a dividing question. But first you need the two place values that are being compared.",
+   "Start with the 8 in the ten-thousands place: what is it worth? Then do the same for the 8 in the hundreds place.",
+   "A similar one: the number 72148. The 7 in the ten-thousands place is worth 70000 and the 2 in the thousands place is worth 2000. 70000 divided by 2000 equals 35, so the first place value is 35 times the second."
   ],
   "steps": [
-   "The place value of one 8 is 80000, and the place value of the other 8 is 800.",
-   "The ratio is 80000 divided by 800, which is 100."
+   "The 8 in the ten-thousands place is worth 8 times 10000, which is 80000.",
+   "The 8 in the hundreds place is worth 8 times 100, which is 800.",
+   "How many times does 800 fit into 80000? Take the same 2 zeros off both numbers: 80000 divided by 800 is the same as 800 divided by 8, which is 100. 80000 divided by 800 equals 100.",
+   "So the place value of the 8 in the ten-thousands place is 100 times the place value of the 8 in the hundreds place."
   ]
  },
  "BOOST_EXT_G4_FP_2020_019_06": {
@@ -44,13 +49,15 @@
    "3"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "Two digits of one number are being compared. Find what each digit is worth in its place, then ask how many times the second value fits into the first.",
+   "Start with the 3 in the thousands place: what is it worth? Then do the same for the 3 in the units place.",
+   "A similar one: the number 48826. The 8 in the hundreds place is worth 800 and the 2 in the tens place is worth 20. 800 divided by 20 equals 40, so the first place value is 40 times the second."
   ],
   "steps": [
-   "The place value of one 3 is 3000, and the place value of the other 3 is 3.",
-   "The ratio is 3000 divided by 3, which is 1000."
+   "The 3 in the thousands place is worth 3 times 1000, which is 3000.",
+   "The 3 in the units place is worth 3 times 1, which is 3.",
+   "How many times does 3 fit into 3000? 3000 divided by 3 equals 1000.",
+   "So the place value of the 3 in the thousands place is 1000 times the place value of the 3 in the units place."
   ]
  },
  "BOOST_EXT_G4_FP_2021_031_07": {
@@ -62,13 +69,15 @@
    "400"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "Two digits of one number are being compared. Find what each digit is worth in its place, then ask how many times the second value fits into the first.",
+   "Start with the 4 in the hundreds place: what is it worth? Then do the same for the 4 in the tens place.",
+   "A similar one: the number 63935. The 3 in the thousands place is worth 3000 and the 3 in the tens place is worth 30. 3000 divided by 30 equals 100, so the first place value is 100 times the second."
   ],
   "steps": [
-   "The place value of one 4 is 400, and the place value of the other 4 is 40.",
-   "The ratio is 400 divided by 40, which is 10."
+   "The 4 in the hundreds place is worth 4 times 100, which is 400.",
+   "The 4 in the tens place is worth 4 times 10, which is 40.",
+   "How many times does 40 fit into 400? Take the same zero off both numbers: 400 divided by 40 is the same as 40 divided by 4, which is 10. 400 divided by 40 equals 10.",
+   "So the place value of the 4 in the hundreds place is 10 times the place value of the 4 in the tens place."
   ]
  },
  "BOOST_EXT_G4_FP_2023_019_05": {
@@ -80,13 +89,14 @@
    "90000"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The ten-thousands place has value 10000.",
-   "Multiply 9 by 10000."
+   "Place value tells what a digit is worth because of where it sits. Name the places from the right: units, tens, hundreds, thousands, ten-thousands.",
+   "Count the places of 94863 from the right until you reach the ten-thousands place. Think what one ten-thousand is worth.",
+   "A similar one: the number 81462. The digit 8 is in the ten-thousands place, and one ten-thousand is worth 10000, so its place value is 8 times 10000, which is 80000."
   ],
   "steps": [
-   "The digit 9 is in the ten-thousands place.",
-   "Place value equals 9 times 10000, which is 90000."
+   "Read 94863 from the right: 3 is in the units place, 6 is in the tens place, 8 is in the hundreds place, 4 is in the thousands place and 9 is in the ten-thousands place.",
+   "One ten-thousand is worth 10000, and the digit there is 9.",
+   "9 times 10000 equals 90000, so the place value of the digit 9 is 90000."
   ]
  },
  "BOOST_EXT_G4_FP_2023_019_06": {
@@ -117,13 +127,15 @@
    "700"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "Two digits of one number are being compared. Find what each digit is worth in its place, then ask how many times the second value fits into the first.",
+   "Start with the 7 in the thousands place: what is it worth? Then do the same for the 7 in the hundreds place.",
+   "A similar one: the number 72148. The 7 in the ten-thousands place is worth 70000 and the 2 in the thousands place is worth 2000. 70000 divided by 2000 equals 35, so the first place value is 35 times the second."
   ],
   "steps": [
-   "The place value of one 7 is 7000, and the place value of the other 7 is 700.",
-   "The ratio is 7000 divided by 700, which is 10."
+   "The 7 in the thousands place is worth 7 times 1000, which is 7000.",
+   "The 7 in the hundreds place is worth 7 times 100, which is 700.",
+   "How many times does 700 fit into 7000? Take the same 2 zeros off both numbers: 7000 divided by 700 is the same as 70 divided by 7, which is 10. 7000 divided by 700 equals 10.",
+   "So the place value of the 7 in the thousands place is 10 times the place value of the 7 in the hundreds place."
   ]
  },
  "EXT_G4_FP_2020_019": {
@@ -1019,13 +1031,14 @@
    "15"
   ],
   "hints": [
-   "Find the first and last odd number in the range.",
-   "Use the formula: last minus first, then divide by 2, then add 1.",
-   "First odd in range is 21, last is 49."
+   "Odd and even numbers take turns, so every second number is odd. Find where the odd numbers start and stop in the range, then count them in pairs.",
+   "20 is even, so the first odd number is the one just after it. In the same way, find the last odd number before 50.",
+   "A similar one: the odd numbers from 10 to 30. They run from 11 to 29. From 11 to 30 there are 30 minus 10 equals 20 numbers. These make 20 divided by 2 equals 10 pairs with one odd number in each, so there are 10 odd numbers."
   ],
   "steps": [
-   "The first odd is 21, and the last odd is 49.",
-   "Count: 49 minus 21, then divide by 2, then add 1. That gives 15."
+   "20 and 50 are both even, so the odd numbers in the range run from 21 to 49.",
+   "Pair the numbers from 21 to 50: 21 and 22, 23 and 24, and so on up to 49 and 50. There are 50 minus 20, which is 30 numbers, so 30 divided by 2 equals 15 pairs.",
+   "Each pair has exactly one odd number, so there are 15 odd numbers from 20 to 50."
   ]
  },
  "PH3_EXT_G4_FP_2016_020_03_b": {
@@ -1037,13 +1050,14 @@
    "40"
   ],
   "hints": [
-   "Find the first and last odd number in the range.",
-   "Use the formula: last minus first, then divide by 2, then add 1.",
-   "First odd in range is 51, last is 89."
+   "Odd and even numbers take turns, so every second number is odd. Find where the odd numbers start and stop in the range, then count them in pairs.",
+   "50 is even, so the first odd number is the one just after it. In the same way, find the last odd number before 90.",
+   "A similar one: the odd numbers from 2 to 12. They run from 3 to 11. From 3 to 12 there are 12 minus 2 equals 10 numbers. These make 10 divided by 2 equals 5 pairs with one odd number in each, so there are 5 odd numbers."
   ],
   "steps": [
-   "The first odd is 51, and the last odd is 89.",
-   "Count: 89 minus 51, then divide by 2, then add 1. That gives 20."
+   "50 and 90 are both even, so the odd numbers in the range run from 51 to 89.",
+   "Pair the numbers from 51 to 90: 51 and 52, 53 and 54, and so on up to 89 and 90. There are 90 minus 50, which is 40 numbers, so 40 divided by 2 equals 20 pairs.",
+   "Each pair has exactly one odd number, so there are 20 odd numbers from 50 to 90."
   ]
  },
  "PYQ_2016_Q05": {
@@ -1878,13 +1892,15 @@
    "90000"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "Two digits of one number are being compared. Find what each digit is worth in its place, then ask how many times the second value fits into the first.",
+   "Start with the 9 in the ten-thousands place: what is it worth? Then do the same for the 9 in the thousands place.",
+   "A similar one: the number 63935. The 3 in the thousands place is worth 3000 and the 3 in the tens place is worth 30. 3000 divided by 30 equals 100, so the first place value is 100 times the second."
   ],
   "steps": [
-   "The place value of one 9 is 90000, and the place value of the other 9 is 9000.",
-   "The ratio is 90000 divided by 9000, which is 10."
+   "The 9 in the ten-thousands place is worth 9 times 10000, which is 90000.",
+   "The 9 in the thousands place is worth 9 times 1000, which is 9000.",
+   "How many times does 9000 fit into 90000? Take the same 3 zeros off both numbers: 90000 divided by 9000 is the same as 90 divided by 9, which is 10. 90000 divided by 9000 equals 10.",
+   "So the place value of the 9 in the ten-thousands place is 10 times the place value of the 9 in the thousands place."
   ]
  },
  "VAR_EXT_G4_FP_2016_005_03": {
@@ -1896,13 +1912,14 @@
    "6000"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The hundreds place has value 100.",
-   "Multiply 6 by 100."
+   "Place value tells what a digit is worth because of where it sits. Name the places from the right: units, tens, hundreds, thousands, ten-thousands.",
+   "Count the places of 12645 from the right until you reach the hundreds place. Think what one hundred is worth.",
+   "A similar one: the number 36728. The digit 7 is in the hundreds place, and one hundred is worth 100, so its place value is 7 times 100, which is 700."
   ],
   "steps": [
-   "The digit 6 is in the hundreds place.",
-   "Place value equals 6 times 100, which is 600."
+   "Read 12645 from the right: 5 is in the units place, 4 is in the tens place and 6 is in the hundreds place.",
+   "One hundred is worth 100, and the digit there is 6.",
+   "6 times 100 equals 600, so the place value of the digit 6 is 600."
   ]
  },
  "VAR_EXT_G4_FP_2016_005_04_b2": {
@@ -1914,13 +1931,14 @@
    "100"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The hundreds place has value 100.",
-   "Multiply 4 by 100."
+   "The same digit is worth different amounts in different places. Ask what the place is worth, and how many of that place the digit shows.",
+   "Count the places of 68457 from the right until you reach the hundreds place. Think what one hundred is worth.",
+   "A similar one: the number 36728. The digit 7 is in the hundreds place, and one hundred is worth 100, so its place value is 7 times 100, which is 700."
   ],
   "steps": [
-   "The digit 4 is in the hundreds place.",
-   "Place value equals 4 times 100, which is 400."
+   "Read 68457 from the right: 7 is in the units place, 5 is in the tens place and 4 is in the hundreds place.",
+   "One hundred is worth 100, and the digit there is 4.",
+   "4 times 100 equals 400, so the place value of the digit 4 is 400."
   ]
  },
  "VAR_EXT_G4_FP_2017_002_03_b2": {
@@ -1932,13 +1950,16 @@
    "19149"
   ],
   "hints": [
-   "Add up the digits of each option.",
-   "You need a total of 22.",
-   "Only one option adds up correctly."
+   "The digit sum of a number is what you get when you add up all its digits. Test the numbers one at a time.",
+   "Start with 43148: add its digits and see whether they make 22. If they do not, move on to another number.",
+   "A similar one: the number 21653. Its digits add up to 2 plus 1 plus 6 plus 5 plus 3, which is 17, so its digit sum is 17."
   ],
   "steps": [
-   "Add the digits of each number.",
-   "The digits of 54913: 5 plus 4 plus 9 plus 1 plus 3, which equals 22."
+   "Add the digits of each number in turn. For 54913: 5 plus 4 plus 9 plus 1 plus 3 equals 22. That is the total we want.",
+   "For 43148: 4 plus 3 plus 1 plus 4 plus 8 equals 20. That is not 22.",
+   "For 41608: 4 plus 1 plus 6 plus 0 plus 8 equals 19. That is not 22.",
+   "For 19149: 1 plus 9 plus 1 plus 4 plus 9 equals 24. That is not 22.",
+   "Only 54913 has a digit sum of 22, so the answer is 54913."
   ]
  },
  "VAR_EXT_G4_FP_2017_002_04": {
@@ -1950,13 +1971,15 @@
    "250"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "Two digits of one number are being compared. Find what each digit is worth in its place, then ask how many times the second value fits into the first.",
+   "Start with the 2 in the thousands place: what is it worth? Then do the same for the 8 in the units place.",
+   "A similar one: the number 84217. The 8 in the ten-thousands place is worth 80000 and the 2 in the hundreds place is worth 200. 80000 divided by 200 equals 400, so the first place value is 400 times the second."
   ],
   "steps": [
-   "The place value of 2 is 2000, and the place value of 8 is 8.",
-   "The ratio is 2000 divided by 8, which is 250."
+   "The 2 in the thousands place is worth 2 times 1000, which is 2000.",
+   "The 8 in the units place is worth 8 times 1, which is 8.",
+   "How many times does 8 fit into 2000? 2000 divided by 8 equals 250.",
+   "So the place value of the 2 in the thousands place is 250 times the place value of the 8 in the units place."
   ]
  },
  "VAR_EXT_G4_FP_2017_031_03": {
@@ -1987,13 +2010,15 @@
    "200"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "\"How many times\" is a dividing question. But first you need the two place values that are being compared.",
+   "Start with the 3 in the ten-thousands place: what is it worth? Then do the same for the 2 in the hundreds place.",
+   "A similar one: the number 63935. The 3 in the thousands place is worth 3000 and the 3 in the tens place is worth 30. 3000 divided by 30 equals 100, so the first place value is 100 times the second."
   ],
   "steps": [
-   "The place value of 3 is 30000, and the place value of 2 is 200.",
-   "The ratio is 30000 divided by 200, which is 150."
+   "The 3 in the ten-thousands place is worth 3 times 10000, which is 30000.",
+   "The 2 in the hundreds place is worth 2 times 100, which is 200.",
+   "How many times does 200 fit into 30000? Take the same 2 zeros off both numbers: 30000 divided by 200 is the same as 300 divided by 2, which is 150. 30000 divided by 200 equals 150.",
+   "So the place value of the 3 in the ten-thousands place is 150 times the place value of the 2 in the hundreds place."
   ]
  },
  "VAR_EXT_G4_FP_2018_008_02": {
@@ -2005,13 +2030,16 @@
    "54617"
   ],
   "hints": [
-   "Add up the digits of each option.",
-   "You need a total of 18.",
-   "Only one option adds up correctly."
+   "The digit sum of a number is what you get when you add up all its digits. Test the numbers one at a time.",
+   "Start with 35481: add its digits and see whether they make 18. If they do not, move on to another number.",
+   "A similar one: the number 35272. Its digits add up to 3 plus 5 plus 2 plus 7 plus 2, which is 19, so its digit sum is 19."
   ],
   "steps": [
-   "Add the digits of each number.",
-   "The digits of 90342: 9 plus 0 plus 3 plus 4 plus 2, which equals 18."
+   "Add the digits of each number in turn. For 35481: 3 plus 5 plus 4 plus 8 plus 1 equals 21. That is not 18.",
+   "For 99544: 9 plus 9 plus 5 plus 4 plus 4 equals 31. That is not 18.",
+   "For 90342: 9 plus 0 plus 3 plus 4 plus 2 equals 18. That is the total we want.",
+   "For 54617: 5 plus 4 plus 6 plus 1 plus 7 equals 23. That is not 18.",
+   "Only 90342 has a digit sum of 18, so the answer is 90342."
   ]
  },
  "VAR_EXT_G4_FP_2019_010_02": {
@@ -2023,13 +2051,16 @@
    "7155"
   ],
   "hints": [
-   "Add up the digits of each option.",
-   "You need a total of 23.",
-   "Only one option adds up correctly."
+   "For a digit sum, forget the places and simply add the digits. You are looking for the one number whose digits make the given total.",
+   "Start with 6855: add its digits and see whether they make 23. If they do not, move on to another number.",
+   "A similar one: the number 3518. Its digits add up to 3 plus 5 plus 1 plus 8, which is 17, so its digit sum is 17."
   ],
   "steps": [
-   "Add the digits of each number.",
-   "The digits of 6557: 6 plus 5 plus 5 plus 7, which equals 23."
+   "Add the digits of each number in turn. For 6855: 6 plus 8 plus 5 plus 5 equals 24. That is not 23.",
+   "For 4139: 4 plus 1 plus 3 plus 9 equals 17. That is not 23.",
+   "For 6557: 6 plus 5 plus 5 plus 7 equals 23. That is the total we want.",
+   "For 7155: 7 plus 1 plus 5 plus 5 equals 18. That is not 23.",
+   "Only 6557 has a digit sum of 23, so the answer is 6557."
   ]
  },
  "VAR_EXT_G4_FP_2021_031_01": {
@@ -2041,13 +2072,15 @@
    "180"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "\"How many times\" is a dividing question. But first you need the two place values that are being compared.",
+   "Start with the 9 in the thousands place: what is it worth? Then do the same for the 5 in the tens place.",
+   "A similar one: the number 84217. The 8 in the ten-thousands place is worth 80000 and the 2 in the hundreds place is worth 200. 80000 divided by 200 equals 400, so the first place value is 400 times the second."
   ],
   "steps": [
-   "The place value of 9 is 9000, and the place value of 5 is 50.",
-   "The ratio is 9000 divided by 50, which is 180."
+   "The 9 in the thousands place is worth 9 times 1000, which is 9000.",
+   "The 5 in the tens place is worth 5 times 10, which is 50.",
+   "How many times does 50 fit into 9000? Take the same zero off both numbers: 9000 divided by 50 is the same as 900 divided by 5, which is 180. 9000 divided by 50 equals 180.",
+   "So the place value of the 9 in the thousands place is 180 times the place value of the 5 in the tens place."
   ]
  },
  "VAR_EXT_G4_FP_2021_031_03_b2": {
@@ -2059,13 +2092,14 @@
    "1"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The units place has value 1.",
-   "Multiply 2 by 1."
+   "Place value tells what a digit is worth because of where it sits. Name the places from the right: units, tens, hundreds, thousands, ten-thousands.",
+   "Count the places of 46552 from the right until you reach the units place. Think what one unit is worth.",
+   "A similar one: the number 45817. The digit 7 is in the units place, and one unit is worth 1, so its place value is 7 times 1, which is 7."
   ],
   "steps": [
-   "The digit 2 is in the units place.",
-   "Place value equals 2 times 1, which is 2."
+   "Read 46552 from the right: 2 is in the units place.",
+   "One unit is worth 1, and the digit there is 2.",
+   "2 times 1 equals 2, so the place value of the digit 2 is 2."
   ]
  },
  "VAR_EXT_G4_FP_2021_031_04_b2": {
@@ -2077,13 +2111,15 @@
    "80000"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "\"How many times\" is a dividing question. But first you need the two place values that are being compared.",
+   "Start with the 8 in the ten-thousands place: what is it worth? Then do the same for the 4 in the hundreds place.",
+   "A similar one: the number 48826. The 8 in the hundreds place is worth 800 and the 2 in the tens place is worth 20. 800 divided by 20 equals 40, so the first place value is 40 times the second."
   ],
   "steps": [
-   "The place value of 8 is 80000, and the place value of 4 is 400.",
-   "The ratio is 80000 divided by 400, which is 200."
+   "The 8 in the ten-thousands place is worth 8 times 10000, which is 80000.",
+   "The 4 in the hundreds place is worth 4 times 100, which is 400.",
+   "How many times does 400 fit into 80000? Take the same 2 zeros off both numbers: 80000 divided by 400 is the same as 800 divided by 4, which is 200. 80000 divided by 400 equals 200.",
+   "So the place value of the 8 in the ten-thousands place is 200 times the place value of the 4 in the hundreds place."
   ]
  },
  "VAR_EXT_G4_FP_2022_011_02": {
@@ -2095,13 +2131,16 @@
    "720"
   ],
   "hints": [
-   "Add up the digits of each option.",
-   "You need a total of 25.",
-   "Only one option adds up correctly."
+   "The digit sum of a number is what you get when you add up all its digits. Test the numbers one at a time.",
+   "Start with 968: add its digits and see whether they make 25. If they do not, move on to another number.",
+   "A similar one: the number 915. Its digits add up to 9 plus 1 plus 5, which is 15, so its digit sum is 15."
   ],
   "steps": [
-   "Add the digits of each number.",
-   "The digits of 898: 8 plus 9 plus 8, which equals 25."
+   "Add the digits of each number in turn. For 968: 9 plus 6 plus 8 equals 23. That is not 25.",
+   "For 898: 8 plus 9 plus 8 equals 25. That is the total we want.",
+   "For 634: 6 plus 3 plus 4 equals 13. That is not 25.",
+   "For 720: 7 plus 2 plus 0 equals 9. That is not 25.",
+   "Only 898 has a digit sum of 25, so the answer is 898."
   ]
  },
  "VAR_EXT_G4_FP_2022_012_03": {
@@ -2113,13 +2152,14 @@
    "20000"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The thousands place has value 1000.",
-   "Multiply 2 by 1000."
+   "The same digit is worth different amounts in different places. Ask what the place is worth, and how many of that place the digit shows.",
+   "Count the places of 22049 from the right until you reach the thousands place. Think what one thousand is worth.",
+   "A similar one: the number 24836. The digit 4 is in the thousands place, and one thousand is worth 1000, so its place value is 4 times 1000, which is 4000."
   ],
   "steps": [
-   "The digit 2 is in the thousands place.",
-   "Place value equals 2 times 1000, which is 2000."
+   "Read 22049 from the right: 9 is in the units place, 4 is in the tens place, 0 is in the hundreds place and 2 is in the thousands place.",
+   "One thousand is worth 1000, and the digit there is 2.",
+   "2 times 1000 equals 2000, so the place value of the digit 2 is 2000."
   ]
  },
  "VAR_EXT_G4_FP_2022_012_03_b2": {
@@ -2131,13 +2171,15 @@
    "700"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "Two digits of one number are being compared. Find what each digit is worth in its place, then ask how many times the second value fits into the first.",
+   "Start with the 7 in the hundreds place: what is it worth? Then do the same for the 1 in the units place.",
+   "A similar one: the number 84217. The 8 in the ten-thousands place is worth 80000 and the 2 in the hundreds place is worth 200. 80000 divided by 200 equals 400, so the first place value is 400 times the second."
   ],
   "steps": [
-   "The place value of 7 is 700, and the place value of 1 is 1.",
-   "The ratio is 700 divided by 1, which is 700."
+   "The 7 in the hundreds place is worth 7 times 100, which is 700.",
+   "The 1 in the units place is worth just 1.",
+   "700 is 700 lots of 1, so 1 fits into 700 exactly 700 times.",
+   "So the place value of the 7 in the hundreds place is 700 times the place value of the 1 in the units place."
   ]
  },
  "VAR_EXT_G4_FP_2023_019_03_b2": {
@@ -2149,13 +2191,14 @@
    "1000"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The thousands place has value 1000.",
-   "Multiply 7 by 1000."
+   "Place value tells what a digit is worth because of where it sits. Name the places from the right: units, tens, hundreds, thousands, ten-thousands.",
+   "Count the places of 97486 from the right until you reach the thousands place. Think what one thousand is worth.",
+   "A similar one: the number 92541. The digit 2 is in the thousands place, and one thousand is worth 1000, so its place value is 2 times 1000, which is 2000."
   ],
   "steps": [
-   "The digit 7 is in the thousands place.",
-   "Place value equals 7 times 1000, which is 7000."
+   "Read 97486 from the right: 6 is in the units place, 8 is in the tens place, 4 is in the hundreds place and 7 is in the thousands place.",
+   "One thousand is worth 1000, and the digit there is 7.",
+   "7 times 1000 equals 7000, so the place value of the digit 7 is 7000."
   ]
  },
  "VAR_EXT_G4_FP_2023_019_04_b2": {
@@ -2167,13 +2210,15 @@
    "54"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "Two digits of one number are being compared. Find what each digit is worth in its place, then ask how many times the second value fits into the first.",
+   "Start with the 6 in the units place: what is it worth? Then do the same for the 6 in the tens place.",
+   "A similar one: the number 35358. The 5 in the tens place is worth 50 and the 5 in the thousands place is worth 5000. 50 is smaller than 5000, so the answer is less than 1. 5000 is 100 times 50, so 50 is one hundredth of 5000, which is written 0.01."
   ],
   "steps": [
-   "The place value of one 6 is 6, and the place value of the other 6 is 60.",
-   "The ratio is 6 divided by 60, which is 0.1."
+   "The 6 in the units place is worth 6 times 1, which is 6.",
+   "The 6 in the tens place is worth 6 times 10, which is 60.",
+   "6 is smaller than 60, so the answer is less than 1. 60 is 10 times 6, which means 6 is one tenth of 60.",
+   "One tenth is written as 0.1, so the first place value is 0.1 times the second."
   ]
  },
  "VAR_EXT_G4_FP_2024_004_04_b2": {
@@ -2185,13 +2230,15 @@
    "89960"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "\"How many times\" is a dividing question. But first you need the two place values that are being compared.",
+   "Start with the 9 in the ten-thousands place: what is it worth? Then do the same for the 4 in the tens place.",
+   "A similar one: the number 58124. The 8 in the thousands place is worth 8000 and the 1 in the hundreds place is worth 100. 8000 divided by 100 equals 80, so the first place value is 80 times the second."
   ],
   "steps": [
-   "The place value of 9 is 90000, and the place value of 4 is 40.",
-   "The ratio is 90000 divided by 40, which is 2250."
+   "The 9 in the ten-thousands place is worth 9 times 10000, which is 90000.",
+   "The 4 in the tens place is worth 4 times 10, which is 40.",
+   "How many times does 40 fit into 90000? Take the same zero off both numbers: 90000 divided by 40 is the same as 9000 divided by 4, which is 2250. 90000 divided by 40 equals 2250.",
+   "So the place value of the 9 in the ten-thousands place is 2250 times the place value of the 4 in the tens place."
   ]
  },
  "VAR_EXT_G4_FP_2024_009_03": {
@@ -2222,13 +2269,15 @@
    "15"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "\"How many times\" is a dividing question. But first you need the two place values that are being compared.",
+   "Start with the 9 in the thousands place: what is it worth? Then do the same for the 6 in the hundreds place.",
+   "A similar one: the number 84217. The 8 in the ten-thousands place is worth 80000 and the 2 in the hundreds place is worth 200. 80000 divided by 200 equals 400, so the first place value is 400 times the second."
   ],
   "steps": [
-   "The place value of 9 is 9000, and the place value of 6 is 600.",
-   "The ratio is 9000 divided by 600, which is 15."
+   "The 9 in the thousands place is worth 9 times 1000, which is 9000.",
+   "The 6 in the hundreds place is worth 6 times 100, which is 600.",
+   "How many times does 600 fit into 9000? Take the same 2 zeros off both numbers: 9000 divided by 600 is the same as 90 divided by 6, which is 15. 9000 divided by 600 equals 15.",
+   "So the place value of the 9 in the thousands place is 15 times the place value of the 6 in the hundreds place."
   ]
  },
  "VAR_EXT_G4_FP_2025_001_03_b2": {
@@ -2259,13 +2308,14 @@
    "10000"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The ten-thousands place has value 10000.",
-   "Multiply 6 by 10000."
+   "Place value tells what a digit is worth because of where it sits. Name the places from the right: units, tens, hundreds, thousands, ten-thousands.",
+   "Count the places of 66933 from the right until you reach the ten-thousands place. Think what one ten-thousand is worth.",
+   "A similar one: the number 81462. The digit 8 is in the ten-thousands place, and one ten-thousand is worth 10000, so its place value is 8 times 10000, which is 80000."
   ],
   "steps": [
-   "The digit 6 is in the ten-thousands place.",
-   "Place value equals 6 times 10000, which is 60000."
+   "Read 66933 from the right: 3 is in the units place, 3 is in the tens place, 9 is in the hundreds place, 6 is in the thousands place and 6 is in the ten-thousands place.",
+   "One ten-thousand is worth 10000, and the digit there is 6.",
+   "6 times 10000 equals 60000, so the place value of the digit 6 is 60000."
   ]
  },
  "VAR_EXT_G4_WS2_CH11_008_03_b2": {
@@ -2277,13 +2327,14 @@
    "10"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The tens place has value 10.",
-   "Multiply 3 by 10."
+   "The same digit is worth different amounts in different places. Ask what the place is worth, and how many of that place the digit shows.",
+   "Count the places of 93939 from the right until you reach the tens place. Think what one ten is worth.",
+   "A similar one: the number 13579. The digit 7 is in the tens place, and one ten is worth 10, so its place value is 7 times 10, which is 70."
   ],
   "steps": [
-   "The digit 3 is in the tens place.",
-   "Place value equals 3 times 10, which is 30."
+   "Read 93939 from the right: 9 is in the units place and 3 is in the tens place.",
+   "One ten is worth 10, and the digit there is 3.",
+   "3 times 10 equals 30, so the place value of the digit 3 is 30."
   ]
  }
 }

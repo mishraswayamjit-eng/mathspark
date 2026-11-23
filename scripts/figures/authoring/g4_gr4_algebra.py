@@ -144,6 +144,34 @@ for _qid, _q in sorted(P.qs.items()):
         then_add_take(_qid, _q, _vals, _m)
 
 
+# ── Rule: "Simplify: 3x + 1 + 2x + 2" (step figures only) ────────────────────
+# The terms are sorted into two columns, x terms and plain numbers, and each column is joined.
+# Shown after answering only: the sorted table is most of the answer.
+
+SIMPLIFY = re.compile(r"^Simplify: (\d+)([a-z]) \+ (\d+) \+ (\d+)([a-z]) ([+−]) (\d+)$")
+for _qid, _q in sorted(P.qs.items()):
+    _m = SIMPLIFY.match(_q["questionText"].replace("-", "−"))
+    if not _m:
+        continue
+    _a, _b, _c, _d = int(_m.group(1)), int(_m.group(3)), int(_m.group(4)), int(_m.group(7))
+    _x, _sign = _m.group(2), _m.group(6)
+    _k = _b + _d if _sign == "+" else _b - _d
+    _ans = "%d%s + %d" % (_a + _c, _x, _k)
+    _t = [s.get("text", "") for s in steps_of(_q)]
+    _lets = "%d%s + %d%s" % (_a, _x, _c, _x)
+    _nums = "%d %s %d" % (_b, _sign, _d)
+    if (_x != _m.group(5) or _k <= 0 or P.q(_qid) and _ans != [o["text"] for o in _q["options"] if o["id"] == _q["correctAnswer"]][0]
+            or len(_t) != 3 or ("%d%s" % (_a + _c, _x)) not in _t[0] or ("= %d" % _k) not in _t[1] or _ans not in _t[2]):
+        P.note(_qid, "simplify rule does not fit the steps")
+        continue
+    _H = ["%s terms" % _x, "Plain numbers"]
+    put(_qid, None,
+        [tb([[_lets, _nums], ["%d%s" % (_a + _c, _x), "?"]], _H, hl=["r1"], note="Join the %s terms: %s = %d%s" % (_x, _lets, _a + _c, _x)),
+         tb([[_lets, _nums], ["%d%s" % (_a + _c, _x), n(_k)]], _H, hl=["r1"], note="Now the plain numbers: %s = %d" % (_nums, _k)),
+         tb([[_lets, _nums], ["%d%s" % (_a + _c, _x), n(_k)]], _H, note="The two kinds cannot be joined: %s" % _ans)],
+        origin="rule")
+
+
 # ── Drawn one by one: putting numbers in (step figures only) ─────────────────
 
 put("Q_CH13_001", None,

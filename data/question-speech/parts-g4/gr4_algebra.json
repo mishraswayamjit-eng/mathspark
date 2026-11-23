@@ -5,17 +5,17 @@
    "19 x plus 10",
    "19 x plus 7",
    "29 x",
-   "11 x plus 8 x plus 7"
+   "19 x plus 13"
   ],
   "hints": [
-   "Group the x terms together and the numbers together.",
-   "Add the coefficients of x.",
-   "Combine the constant numbers."
+   "To simplify, sort the terms into two groups: the ones with x and the plain numbers. Each group is worked out on its own.",
+   "Start with the terms that have an x, 11 x and 8 x. How many x do they make together?",
+   "A similar one: 13 x plus 20 plus 14 x minus 16. The x terms give 13 x plus 14 x equals 27 x, and the plain numbers give 20 minus 16 equals 4, so it becomes 27 x plus 4."
   ],
   "steps": [
-   "Combine x terms: 11 x plus 8 x equals 19 x.",
-   "Combine constants: 10 minus 3 equals 7.",
-   "Result: 19 x plus 7."
+   "Join the x terms first: 11 x and 8 x together make 19 x.",
+   "Now the plain numbers: 10 minus 3 equals 7.",
+   "An x term and a plain number cannot be joined, so the simplest form is 19 x plus 7."
   ]
  },
  "BOOST_EXT_G4_FP_2020_039_05": {
@@ -665,7 +665,7 @@
   "steps": [
    "The three numbers are n, n plus 1 and n plus 2.",
    "Add them: n plus n plus 1 plus n plus 2.",
-   "The n terms make 3 n and the numbers make 1 plus 2 equals 3.",
+   "The n terms make 3 n and the numbers make 1 plus 2, which is 3.",
    "The sum is 3 n plus 3."
   ]
  },
@@ -1682,24 +1682,6 @@
    "Now multiply by 4. So 4 A squared equals 36. 4 times 9 equals 36."
   ]
  },
- "Q_CH13_006_V02": {
-  "q": "If A equals 2 and b equals 2, what is the value of A b?",
-  "options": [
-   "6",
-   "minus 1",
-   "2",
-   "4"
-  ],
-  "hints": [
-   "This is a substitution problem. Two letters written side by side mean multiply.",
-   "A b means A times b. Put the two numbers in place of the letters.",
-   "Similar example: if A equals 6 and b equals 5, then A b is 6 times 5, which is 30."
-  ],
-  "steps": [
-   "A b means A times b. Put A equals 2 and b equals 2. 2 times 2 equals 4.",
-   "The value of A b is 4."
-  ]
- },
  "Q_CH13_006_V03": {
   "q": "If A equals 3 and b equals 3, what is A plus 4 b?",
   "options": [
@@ -1775,24 +1757,6 @@
    "Now add b, which is 5. So 4 A plus b equals 17. 12 plus 5 equals 17."
   ]
  },
- "Q_CH13_008_V02": {
-  "q": "If A equals 2 and b equals 2, what is A squared?",
-  "options": [
-   "6",
-   "4",
-   "minus 1",
-   "2"
-  ],
-  "hints": [
-   "This is a substitution problem. The small 2 above a letter means the letter is multiplied by itself.",
-   "A squared means A times A. Use A equals 2. You do not need b here.",
-   "Similar example: if A equals 5, then A squared is 5 times 5, which is 25."
-  ],
-  "steps": [
-   "A squared means A times A. Put A equals 2. 2 times 2 equals 4.",
-   "The value of b is not needed here. The value of A squared is 4."
-  ]
- },
  "Q_CH13_008_V06": {
   "q": "If A equals 2 and b equals 6, what is A plus 4 b?",
   "options": [
@@ -1856,7 +1820,7 @@
    "0",
    "12",
    "30",
-   "minus 18"
+   "42"
   ],
   "hints": [
    "Put the numbers in place of the letters. A number next to a letter means multiply, and the multiplications are done before the adding and taking away.",
@@ -2179,20 +2143,20 @@
  "VAR2_EXT_G4_FP_2016_007_01": {
   "q": "Simplify: 3 x plus 1 plus 2 x plus 2.",
   "options": [
-   "3 x plus 2 x plus 3",
+   "8 x",
    "5 x plus 1",
    "6 x",
    "5 x plus 3"
   ],
   "hints": [
-   "Group the x terms together and the numbers together.",
-   "Add the coefficients of x.",
-   "Combine the constant numbers."
+   "This is about like terms. Terms with x can be joined with each other, and plain numbers can be joined with each other, but the two kinds stay apart.",
+   "Start with the terms that have an x, 3 x and 2 x. How many x do they make together?",
+   "A similar one: 12 x plus 9 plus 7 x plus 4. The x terms give 12 x plus 7 x equals 19 x, and the plain numbers give 9 plus 4 equals 13, so it becomes 19 x plus 13."
   ],
   "steps": [
-   "Combine x terms: 3 x plus 2 x equals 5 x.",
-   "Combine constants: 1 plus 2 equals 3.",
-   "Result: 5 x plus 3."
+   "The terms with x are 3 x and 2 x. Adding them gives 3 x plus 2 x, which is 5 x.",
+   "Now the plain numbers: 1 plus 2 equals 3.",
+   "An x term and a plain number cannot be joined, so the simplest form is 5 x plus 3."
   ]
  },
  "VAR2_EXT_G4_FP_2016_007_04": {
@@ -2217,20 +2181,20 @@
  "VAR2_EXT_G4_FP_2016_019_01": {
   "q": "Simplify: 9 x plus 1 plus 5 x plus 2.",
   "options": [
-   "9 x plus 5 x plus 3",
+   "17 x",
    "15 x",
    "14 x plus 1",
    "14 x plus 3"
   ],
   "hints": [
-   "Group the x terms together and the numbers together.",
-   "Add the coefficients of x.",
-   "Combine the constant numbers."
+   "To simplify, sort the terms into two groups: the ones with x and the plain numbers. Each group is worked out on its own.",
+   "Find the two terms with an x in them, 9 x and 5 x, and join those first. Leave the plain numbers for afterwards.",
+   "A similar one: 11 x plus 12 plus 13 x plus 14. The x terms give 11 x plus 13 x equals 24 x, and the plain numbers give 12 plus 14 equals 26, so it becomes 24 x plus 26."
   ],
   "steps": [
-   "Combine x terms: 9 x plus 5 x equals 14 x.",
-   "Combine constants: 1 plus 2 equals 3.",
-   "Result: 14 x plus 3."
+   "Join the x terms first: 9 x and 5 x together make 14 x.",
+   "The plain numbers are 1 and 2, with a plus sign in front of the 2. 1 plus 2 equals 3.",
+   "An x term and a plain number cannot be joined, so the simplest form is 14 x plus 3."
   ]
  },
  "VAR2_EXT_G4_FP_2016_019_04_p2b": {
@@ -2239,36 +2203,36 @@
    "11 x plus 8",
    "11 x plus 3",
    "19 x",
-   "5 x plus 6 x plus 3"
+   "11 x plus 13"
   ],
   "hints": [
-   "Group the x terms together and the numbers together.",
-   "Add the coefficients of x.",
-   "Combine the constant numbers."
+   "To simplify, sort the terms into two groups: the ones with x and the plain numbers. Each group is worked out on its own.",
+   "Find the two terms with an x in them, 5 x and 6 x, and join those first. Leave the plain numbers for afterwards.",
+   "A similar one: 13 x plus 20 plus 14 x minus 16. The x terms give 13 x plus 14 x equals 27 x, and the plain numbers give 20 minus 16 equals 4, so it becomes 27 x plus 4."
   ],
   "steps": [
-   "Combine x terms: 5 x plus 6 x equals 11 x.",
-   "Combine constants: 8 minus 5 equals 3.",
-   "Result: 11 x plus 3."
+   "Join the x terms first: 5 x and 6 x together make 11 x.",
+   "The plain numbers are 8 and 5, with a minus sign in front of the 5. 8 minus 5 equals 3.",
+   "An x term and a plain number cannot be joined, so the simplest form is 11 x plus 3."
   ]
  },
  "VAR2_EXT_G4_FP_2017_002_01": {
   "q": "Simplify: 4 x plus 7 plus 3 x plus 8.",
   "options": [
    "7 x plus 7",
-   "4 x plus 3 x plus 15",
+   "22 x",
    "14 x",
    "7 x plus 15"
   ],
   "hints": [
-   "Group the x terms together and the numbers together.",
-   "Add the coefficients of x.",
-   "Combine the constant numbers."
+   "To simplify, sort the terms into two groups: the ones with x and the plain numbers. Each group is worked out on its own.",
+   "Find the two terms with an x in them, 4 x and 3 x, and join those first. Leave the plain numbers for afterwards.",
+   "A similar one: 11 x plus 12 plus 13 x plus 14. The x terms give 11 x plus 13 x equals 24 x, and the plain numbers give 12 plus 14 equals 26, so it becomes 24 x plus 26."
   ],
   "steps": [
-   "Combine x terms: 4 x plus 3 x equals 7 x.",
-   "Combine constants: 7 plus 8 equals 15.",
-   "Result: 7 x plus 15."
+   "The terms with x are 4 x and 3 x. Adding them gives 4 x plus 3 x, which is 7 x.",
+   "The plain numbers are 7 and 8, with a plus sign in front of the 8. 7 plus 8 equals 15.",
+   "An x term and a plain number cannot be joined, so the simplest form is 7 x plus 15."
   ]
  },
  "VAR2_EXT_G4_FP_2020_018_02": {
@@ -2334,36 +2298,36 @@
    "6 x plus 6",
    "6 x plus 3",
    "12 x",
-   "2 x plus 4 x plus 3"
+   "6 x plus 9"
   ],
   "hints": [
-   "Group the x terms together and the numbers together.",
-   "Add the coefficients of x.",
-   "Combine the constant numbers."
+   "To simplify, sort the terms into two groups: the ones with x and the plain numbers. Each group is worked out on its own.",
+   "Start with the terms that have an x, 2 x and 4 x. How many x do they make together?",
+   "A similar one: 11 x plus 15 plus 12 x minus 13. The x terms give 11 x plus 12 x equals 23 x, and the plain numbers give 15 minus 13 equals 2, so it becomes 23 x plus 2."
   ],
   "steps": [
-   "Combine x terms: 2 x plus 4 x equals 6 x.",
-   "Combine constants: 6 minus 3 equals 3.",
-   "Result: 6 x plus 3."
+   "The terms with x are 2 x and 4 x. Adding them gives 2 x plus 4 x, which is 6 x.",
+   "Now the plain numbers: 6 minus 3 equals 3.",
+   "An x term and a plain number cannot be joined, so the simplest form is 6 x plus 3."
   ]
  },
  "VAR2_EXT_G4_FP_2023_006_01": {
   "q": "Simplify: 3 x plus 3 plus 5 x minus 1.",
   "options": [
    "11 x",
-   "3 x plus 5 x plus 2",
+   "8 x plus 4",
    "8 x plus 3",
    "8 x plus 2"
   ],
   "hints": [
-   "Group the x terms together and the numbers together.",
-   "Add the coefficients of x.",
-   "Combine the constant numbers."
+   "To simplify, sort the terms into two groups: the ones with x and the plain numbers. Each group is worked out on its own.",
+   "Find the two terms with an x in them, 3 x and 5 x, and join those first. Leave the plain numbers for afterwards.",
+   "A similar one: 11 x plus 15 plus 12 x minus 13. The x terms give 11 x plus 12 x equals 23 x, and the plain numbers give 15 minus 13 equals 2, so it becomes 23 x plus 2."
   ],
   "steps": [
-   "Combine x terms: 3 x plus 5 x equals 8 x.",
-   "Combine constants: 3 minus 1 equals 2.",
-   "Result: 8 x plus 2."
+   "The terms with x are 3 x and 5 x. Adding them gives 3 x plus 5 x, which is 8 x.",
+   "The plain numbers are 3 and 1, with a minus sign in front of the 1. 3 minus 1 equals 2.",
+   "An x term and a plain number cannot be joined, so the simplest form is 8 x plus 2."
   ]
  },
  "VAR2_EXT_G4_FP_2024_004_01": {
@@ -2372,17 +2336,17 @@
    "18 x plus 5",
    "18 x plus 11",
    "23 x",
-   "10 x plus 8 x plus 11"
+   "29 x"
   ],
   "hints": [
-   "Group the x terms together and the numbers together.",
-   "Add the coefficients of x.",
-   "Combine the constant numbers."
+   "To simplify, sort the terms into two groups: the ones with x and the plain numbers. Each group is worked out on its own.",
+   "Start with the terms that have an x, 10 x and 8 x. How many x do they make together?",
+   "A similar one: 12 x plus 9 plus 7 x plus 4. The x terms give 12 x plus 7 x equals 19 x, and the plain numbers give 9 plus 4 equals 13, so it becomes 19 x plus 13."
   ],
   "steps": [
-   "Combine x terms: 10 x plus 8 x equals 18 x.",
-   "Combine constants: 5 plus 6 equals 11.",
-   "Result: 18 x plus 11."
+   "The terms with x are 10 x and 8 x. Adding them gives 10 x plus 8 x, which is 18 x.",
+   "Now the plain numbers: 5 plus 6 equals 11.",
+   "An x term and a plain number cannot be joined, so the simplest form is 18 x plus 11."
   ]
  },
  "VAR2_EXT_G4_FP_2024_004_02": {
@@ -2409,18 +2373,18 @@
   "options": [
    "10 x",
    "8 x plus 2",
-   "2 x plus 6 x plus 10",
+   "18 x",
    "8 x plus 10"
   ],
   "hints": [
-   "Group the x terms together and the numbers together.",
-   "Add the coefficients of x.",
-   "Combine the constant numbers."
+   "This is about like terms. Terms with x can be joined with each other, and plain numbers can be joined with each other, but the two kinds stay apart.",
+   "Find the two terms with an x in them, 2 x and 6 x, and join those first. Leave the plain numbers for afterwards.",
+   "A similar one: 15 x plus 20 plus 16 x plus 30. The x terms give 15 x plus 16 x equals 31 x, and the plain numbers give 20 plus 30 equals 50, so it becomes 31 x plus 50."
   ],
   "steps": [
-   "Combine x terms: 2 x plus 6 x equals 8 x.",
-   "Combine constants: 2 plus 8 equals 10.",
-   "Result: 8 x plus 10."
+   "Join the x terms first: 2 x and 6 x together make 8 x.",
+   "Now the plain numbers: 2 plus 8 equals 10.",
+   "An x term and a plain number cannot be joined, so the simplest form is 8 x plus 10."
   ]
  },
  "VAR2_EXT_G4_FP_2024_037_01": {
@@ -2429,17 +2393,17 @@
    "7 x plus 5",
    "16 x",
    "7 x plus 9",
-   "4 x plus 3 x plus 5"
+   "7 x plus 13"
   ],
   "hints": [
-   "Group the x terms together and the numbers together.",
-   "Add the coefficients of x.",
-   "Combine the constant numbers."
+   "To simplify, sort the terms into two groups: the ones with x and the plain numbers. Each group is worked out on its own.",
+   "Start with the terms that have an x, 4 x and 3 x. How many x do they make together?",
+   "A similar one: 11 x plus 15 plus 12 x minus 13. The x terms give 11 x plus 12 x equals 23 x, and the plain numbers give 15 minus 13 equals 2, so it becomes 23 x plus 2."
   ],
   "steps": [
-   "Combine x terms: 4 x plus 3 x equals 7 x.",
-   "Combine constants: 9 minus 4 equals 5.",
-   "Result: 7 x plus 5."
+   "Join the x terms first: 4 x and 3 x together make 7 x.",
+   "The plain numbers are 9 and 4, with a minus sign in front of the 4. 9 minus 4 equals 5.",
+   "An x term and a plain number cannot be joined, so the simplest form is 7 x plus 5."
   ]
  },
  "VAR2_EXT_G4_FP_2025_012_02": {
@@ -2464,20 +2428,20 @@
  "VAR2_EXT_G4_FP_2025_035_01": {
   "q": "Simplify: 10 x plus 8 plus 3 x minus 3.",
   "options": [
-   "10 x plus 3 x plus 5",
+   "13 x plus 11",
    "21 x",
    "13 x plus 8",
    "13 x plus 5"
   ],
   "hints": [
-   "Group the x terms together and the numbers together.",
-   "Add the coefficients of x.",
-   "Combine the constant numbers."
+   "This is about like terms. Terms with x can be joined with each other, and plain numbers can be joined with each other, but the two kinds stay apart.",
+   "Start with the terms that have an x, 10 x and 3 x. How many x do they make together?",
+   "A similar one: 11 x plus 15 plus 12 x minus 13. The x terms give 11 x plus 12 x equals 23 x, and the plain numbers give 15 minus 13 equals 2, so it becomes 23 x plus 2."
   ],
   "steps": [
-   "Combine x terms: 10 x plus 3 x equals 13 x.",
-   "Combine constants: 8 minus 3 equals 5.",
-   "Result: 13 x plus 5."
+   "Join the x terms first: 10 x and 3 x together make 13 x.",
+   "The plain numbers are 8 and 3, with a minus sign in front of the 3. 8 minus 3 equals 5.",
+   "An x term and a plain number cannot be joined, so the simplest form is 13 x plus 5."
   ]
  },
  "VAR2_EXT_G4_FP_2025_038_04": {

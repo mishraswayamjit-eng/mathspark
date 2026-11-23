@@ -3343,6 +3343,12 @@
    null,
    {
     "kind": "grid",
+    "rows": 3,
+    "cols": 3,
+    "note": "3 × 3 = 9 is too small for 16"
+   },
+   {
+    "kind": "grid",
     "rows": 4,
     "cols": 4,
     "note": "4 × 4 = 16, so the square root is 4"

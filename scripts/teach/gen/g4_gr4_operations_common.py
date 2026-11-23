@@ -155,6 +155,18 @@ def has(q, value):
     return str(value) in [o.replace(",", "").replace("₹", "").strip() for o in opts(q)]
 
 
+def rivals(q, fallback, most=2):
+    """The other choices for an ask about the final answer: the question's own current options
+    (never a value the bank no longer offers), whole numbers only. `fallback` if there are none."""
+    right = key_text(q).replace(",", "").replace("₹", "").strip()
+    out = []
+    for o in opts(q):
+        o = o.replace(",", "").replace("₹", "").strip()
+        if o != right and o.isdigit() and o not in out:
+            out.append(o)
+    return out[:most] if out else list(fallback)
+
+
 _FIGS = None
 
 
