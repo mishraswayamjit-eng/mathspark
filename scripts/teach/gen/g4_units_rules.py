@@ -10,7 +10,7 @@ import re
 from g4_units_lib import a, b, c, g, l, n, option_texts, pick, u, w
 
 BAGS = re.compile(r"(\w+) has (\d+) bags of (\w+), each weighing (\d+) kg (\d+) g\. What is the total weight in grams\?")
-GLASSES = re.compile(r"A (\w+) holds (\d+) litres of water\. How many glasses of (\d+) ml each can be filled\?")
+GLASSES = re.compile(r"A (\w+) holds (\d+) litres of water\. How many (?:full )?glasses of (\d+) ml each can be filled\?")
 
 
 def bags(q):

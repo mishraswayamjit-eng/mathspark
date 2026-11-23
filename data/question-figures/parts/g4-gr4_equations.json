@@ -1065,44 +1065,6 @@
    null
   ]
  },
- "EXT_G4_WS2_CH14_001": {
-  "origin": "rule",
-  "figure": {
-   "kind": "balance",
-   "left": "x + 5",
-   "right": "12",
-   "note": "Both pans weigh the same. Find x."
-  },
-  "stepFigures": [
-   {
-    "kind": "balance",
-    "left": "x",
-    "right": "12 − 5",
-    "note": "x = 7",
-    "highlight": [
-     "right"
-    ]
-   },
-   {
-    "kind": "balance",
-    "left": "7 + 5",
-    "right": "12",
-    "note": "Put 7 in place of x: both pans match",
-    "highlight": [
-     "left"
-    ]
-   },
-   {
-    "kind": "balance",
-    "left": "x",
-    "right": "7",
-    "note": "x = 7",
-    "highlight": [
-     "right"
-    ]
-   }
-  ]
- },
  "EXT_G4_WS2_CH14_002": {
   "origin": "rule",
   "figure": {
@@ -1211,53 +1173,6 @@
     "left": "x",
     "right": "20",
     "note": "x = 20",
-    "highlight": [
-     "right"
-    ]
-   }
-  ]
- },
- "EXT_G4_WS2_CH14_005": {
-  "origin": "rule",
-  "figure": {
-   "kind": "balance",
-   "left": "2x + 3",
-   "right": "11",
-   "note": "Both pans weigh the same. Find x."
-  },
-  "stepFigures": [
-   {
-    "kind": "balance",
-    "left": "2x",
-    "right": "11 − 3",
-    "note": "Take 3 from both pans",
-    "highlight": [
-     "right"
-    ]
-   },
-   {
-    "kind": "balance",
-    "left": "x",
-    "right": "8 ÷ 2",
-    "note": "x = 4",
-    "highlight": [
-     "right"
-    ]
-   },
-   {
-    "kind": "balance",
-    "left": "2 × 4 + 3",
-    "right": "11",
-    "note": "Put 4 in place of x: both pans match",
-    "highlight": [
-     "left"
-    ]
-   },
-   {
-    "kind": "balance",
-    "left": "x",
-    "right": "4",
-    "note": "x = 4",
     "highlight": [
      "right"
     ]

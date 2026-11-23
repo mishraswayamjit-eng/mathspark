@@ -10396,6 +10396,10 @@
         {
          "at": 7,
          "label": "7"
+        },
+        {
+         "at": 2,
+         "label": "2"
         }
        ],
        "hops": [
@@ -10420,7 +10424,7 @@
          "to": 2
         }
        ],
-       "note": "Count back 5 hops"
+       "note": "The last hop lands on 2"
       }
      }
     ]
@@ -16619,6 +16623,39 @@
        "text": "34"
       },
       "shape": "underline"
+     },
+     {
+      "op": "figure",
+      "id": "nl",
+      "spec": {
+       "kind": "numberLine",
+       "min": 0,
+       "max": 40,
+       "step": 1,
+       "points": [
+        {
+         "at": 34,
+         "label": "34"
+        },
+        {
+         "at": 2,
+         "label": "2"
+        }
+       ],
+       "hops": [
+        {
+         "from": 34,
+         "to": 4,
+         "label": "−30"
+        },
+        {
+         "from": 4,
+         "to": 2,
+         "label": "−2"
+        }
+       ],
+       "note": "Then take away the 2: 4 − 2 = 2"
+      }
      }
     ]
    },

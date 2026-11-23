@@ -337,8 +337,9 @@ class Part(object):
         return self.by_id[qid]
 
     def add(self, qid, figure=None, steps=None, origin="authored", essential=False, uses_options=False):
-        if qid not in self.by_id:
-            raise SystemExit("%s is not a question in %s" % (qid, self.topic))
+        if qid not in self.by_id:   # a question since removed from the bank
+            print("skipped %s: no longer in %s" % (qid, self.topic))
+            return
         if qid in self.entries:
             raise SystemExit("%s defined twice" % qid)
         self.entries[qid] = {"figure": figure, "steps": steps or {}, "origin": origin,

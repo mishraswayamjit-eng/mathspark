@@ -241,8 +241,8 @@ def write_part(topic, lessons):
     qs = questions(topic)
     ids = [q["id"] for q in qs]
     stray = [k for k in lessons if k not in ids]
-    if stray:
-        raise ValueError("not questions of %s: %s" % (topic, stray))
+    if stray:   # questions since removed from the bank
+        print("skipped, no longer in %s: %s" % (topic, stray))
     ordered = {qid: lessons[qid] for qid in ids if qid in lessons}
     path = os.path.join(ROOT, "data", "teach", "parts", "g4-%s.json" % topic)
     with io.open(path, "w", encoding="utf-8", newline="\n") as f:

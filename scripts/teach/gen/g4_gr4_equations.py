@@ -40,8 +40,10 @@ def main():
 
     qs = questions()
     stray = sorted(set(hand) - {q["id"] for q in qs})
-    if stray:
-        sys.exit("not questions of this topic: %s" % ", ".join(stray))
+    if stray:   # questions since removed from the bank
+        print("skipped, no longer in this topic: %s" % ", ".join(stray))
+        for qid in stray:
+            del hand[qid]
 
     part = {}
     missing = []

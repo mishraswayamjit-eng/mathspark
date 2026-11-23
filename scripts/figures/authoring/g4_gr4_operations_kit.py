@@ -36,7 +36,7 @@ def answer_text(q):
 
 def num(text):
     """'1,224' -> 1224, '4.5' -> 4.5"""
-    v = float(text.replace(",", ""))
+    v = float(text.replace(",", "").replace("Rs.", "").replace("°", "").strip())
     return int(v) if v == int(v) else v
 
 

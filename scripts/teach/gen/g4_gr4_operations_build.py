@@ -57,7 +57,7 @@ def rule_for(q):
     m = re.fullmatch(r"If (\d+) (\w+) cost Rs\.(\d+), what is the cost of one (\w+)\?", t)
     if m:
         return unit_cost(q, int(m.group(1)), m.group(2), int(m.group(3)), m.group(4))
-    m = re.fullmatch(r"Think of a number (\d+)\. Multiply it by (\d+) and add (\d+)\. What do you get\?", t)
+    m = re.fullmatch(r"Think of (?:a|the) number (\d+)\. Multiply it by (\d+) and add (\d+)\. What do you get\?", t)
     if m:
         return think_number(q, *i(m, 1, 2, 3))
     m = re.fullmatch(r"(\w+) buys (\d+) (\w+) at Rs\.(\d+) each\. What is the total cost\?", t)

@@ -84,6 +84,8 @@ def series(qid, disp=None, vals=None, origin="authored", note=None, mode=None, b
     """disp: every term as written, None for an unknown. vals: every term as a number.
     Unknowns are filled from the answer key when vals is not given.
     far: the position of the last term, when terms are skipped and the question asks for it."""
+    if qid not in Q:   # a question since removed from the bank
+        return
     q = Q[qid]
     if disp is None:
         toks = tokens_of(q["questionText"])
@@ -238,6 +240,8 @@ def series(qid, disp=None, vals=None, origin="authored", note=None, mode=None, b
 # ── Rule: "find the Nth term" of a pattern with equal jumps ──────────────────
 
 def nth_term(qid, given, nth, origin="rule"):
+    if qid not in Q:   # a question since removed from the bank
+        return
     q = Q[qid]
     answer = int(re.findall(r"\d+", key_text(q))[0])
     d = given[1] - given[0]
@@ -299,6 +303,8 @@ def nth_term(qid, given, nth, origin="rule"):
 # ── Rule: adding a list by pairing its two ends ──────────────────────────────
 
 def pair_sum(qid):
+    if qid not in Q:   # a question since removed from the bank
+        return
     q = Q[qid]
     figs, rows = {}, []
     for i, s in enumerate(steps_of(q)):
@@ -353,6 +359,8 @@ for qid in P.ids("PH3_"):
 # ═════════════════════════════════════════════════════════════════════════════
 
 def A(qid, figure=None, steps=None, **kw):
+    if qid not in Q:   # a question since removed from the bank
+        return
     P.add(qid, figure, steps, origin="authored", **kw)
 
 
@@ -410,6 +418,8 @@ A("Q_CH16_021",
 
 # Each term is the two before it added together
 def sums(qid, vals, known, note):
+    if qid not in Q:   # a question since removed from the bank
+        return
     q = Q[qid]
     cells = [str(v) for v in vals[:known]] + ["?"] * (len(vals) - known)
     figs = {}
@@ -438,6 +448,8 @@ sums("Q_CH16_020", [2, 3, 5, 8, 13, 21, 34], 6, "How is each number made from th
 # Squares, cubes and n × (n + 1): the position and the term side by side
 def indexed(qid, terms, how, head, note, before_cells=None):
     """terms: every term. how(k) -> the working for position k, e.g. '3 × 3'."""
+    if qid not in Q:   # a question since removed from the bank
+        return
     q = Q[qid]
     known = len(terms) - 1
     cells = before_cells or [str(t) for t in terms[:known]] + ["?"]

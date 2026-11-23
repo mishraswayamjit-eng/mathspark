@@ -265,27 +265,6 @@
    "Only 672672 fits. For example, 784 times 858 equals 672672. So the product can be 672672."
   ]
  },
- "EXT_G4_WS2_CH15_002": {
-  "q": "A 3 by 3 magic square has top row 4, 3, 8 and middle row 9, 5, 1. The bottom row is still empty. When the magic square is completed, which of these numbers will not be used?",
-  "options": [
-   "3",
-   "6",
-   "9",
-   "11"
-  ],
-  "hints": [
-   "In a magic square every row and every column adds up to the same total. Find the total from a full row, then fill in the empty row.",
-   "Add the top row: 4 plus 3 plus 8. Each column must reach the same total, so work out what is missing under 4 and 9, under 3 and 5, and under 8 and 1.",
-   "Similar example: a magic square has top row 2, 7, 6 and middle row 9, 5, 1. Each line adds up to 15. The first column has 2 plus 9, so it needs 4. The second has 7 plus 5, so it needs 3. The third has 6 plus 1, so it needs 8. The bottom row is 4, 3, 8."
-  ],
-  "steps": [
-   "Find the total of a full row. 4 plus 3 plus 8 equals 15.",
-   "Each column must also add up to 15. The first column already has 4 and 9. 15 minus 4 minus 9 equals 2.",
-   "Do the same for the second and third columns. 15 minus 3 minus 5 equals 7. 15 minus 8 minus 1 equals 6.",
-   "The bottom row is 2, 7, 6. The finished square uses the numbers 1 to 9, once each.",
-   "3, 6 and 9 are all in the square. The number that will not be used is 11."
-  ]
- },
  "G4A_PUZZLES_001": {
   "q": "In this magic square, every row, every column and both diagonals add up to the same total. Row 1: 9, 2, 7. Row 2: 4, 6, 8. Row 3: 5, blank, 3. Which number is missing?",
   "options": [
