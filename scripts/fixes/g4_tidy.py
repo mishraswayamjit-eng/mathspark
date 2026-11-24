@@ -8,6 +8,7 @@
   - Profit and loss questions that ask in rupees but offer bare numbers: each option gets
     "Rs." in the question's own style ("66" becomes "Rs.66").
   - "Think of a number 12." becomes "Think of the number 12."
+  - Questions listed in UNFIT are removed, each with its reason.
   - Worksheet questions that repeat a hand-written question of the same topic are removed
     (the hand-written one is kept).
 
@@ -36,6 +37,10 @@ REPEATS = {
     "EXT_G4_WS2_CH16_002": "Q_CH16_002", "EXT_G4_WS2_CH16_004": "Q_CH16_004", "EXT_G4_WS2_CH16_005": "Q_CH16_005",
     "EXT_G4_WS2_CH16_006": "Q_CH16_006", "EXT_G4_WS2_CH16_009": "Q_CH16_009",
 }
+# removed outright, with the reason
+UNFIT = {
+    "VAR_EXT_G4_FP_2023_019_04_b2": "asks 'how many times' with the answer 0.1: decimal reasoning beyond Grade 4 place value",
+}
 RUPEES = ("BOOST_EXT_G4_FP_2017_021_07", "BOOST_EXT_G4_FP_2024_040_07", "VAR2_EXT_G4_FP_2018_001_02")
 BARE = re.compile(r"^\d+$")
 THINK = re.compile(r"\bThink of a number (\d)")
@@ -45,13 +50,16 @@ def main():
     write = "--write" in sys.argv
     questions = bank.load_bank()
     ids4 = {q["id"] for q in bank.load_bank(4)}
-    done = {"degrees": 0, "rupees": 0, "wording": 0, "removed": 0}
+    done = {"degrees": 0, "rupees": 0, "wording": 0, "removed": 0, "unfit": 0}
     out = []
     changed = {}
     for q in questions:
         qid = q["id"]
         if qid not in ids4:
             out.append(q)
+            continue
+        if qid in UNFIT:
+            done["unfit"] += 1
             continue
         if qid in REPEATS:
             if REPEATS[qid] not in ids4:
@@ -73,7 +81,7 @@ def main():
             q["questionText"] = THINK.sub(r"Think of the number \1", q["questionText"])
             done["wording"] += 1
         out.append(q)
-    print("Grade 4: %(degrees)d questions given degree signs, %(rupees)d given Rs., %(wording)d reworded, %(removed)d repeats removed" % done)
+    print("Grade 4: %(degrees)d questions given degree signs, %(rupees)d given Rs., %(wording)d reworded, %(removed)d repeats removed, %(unfit)d unfit removed" % done)
     if not write:
         print("nothing written (use --write)")
         return
@@ -83,7 +91,7 @@ def main():
         for qid, q in changed.items():
             if qid in record:
                 record[qid]["options"] = {o["id"]: o["text"] for o in q["options"]}
-        for qid in REPEATS:
+        for qid in list(REPEATS) + list(UNFIT):
             record.pop(qid, None)
         with io.open(NOTES, "w", encoding="utf-8", newline="\n") as f:
             json.dump({k: record[k] for k in sorted(record)}, f, ensure_ascii=False, indent=0)
