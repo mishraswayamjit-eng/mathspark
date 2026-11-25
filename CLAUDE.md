@@ -89,6 +89,7 @@ When adding JSON files to `data/`:
 5. All student API routes use `getAuthenticatedStudentId()` cookie auth
 6. Rate limiting on all POST endpoints
 7. `validateBody()` on all POST request bodies
+8. Data collected about a child is kept to the minimum: first name, grade, a 4-digit PIN, answers, and **a parent's email address, which is required at sign-up** (owner decision, Nov 2026). The parent email is the only way a child signs in again (new device, after logging out, or when the 30-day session ends) and is where the weekly report would go. This replaces the older MVP rule "no email" in the parent folder's `CLAUDE.md`. Still not collected: the child's own email, phone number, location.
 
 ### Truth vs Delivery — permitted LLM usage (amendment)
 

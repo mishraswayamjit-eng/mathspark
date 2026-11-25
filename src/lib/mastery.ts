@@ -1,5 +1,6 @@
 import { prisma } from './db';
 import type { MasteryLevel } from '@/types';
+import { istDayStart } from './sharedUtils';
 
 /**
  * Recalculate mastery from the student's last 10 attempts on a topic.
@@ -11,7 +12,7 @@ import type { MasteryLevel } from '@/types';
 const IST_OFFSET_MS = 330 * 60 * 1000;
 
 /** How many recent attempts are read to find the last 10 first tries. */
-const RECENT_READ = 40;
+const RECENT_READ = 60;
 
 /** One recent attempt, as read for mastery. */
 interface RecentAttempt {
@@ -49,6 +50,41 @@ export function lastTenFirstTries<T extends RecentAttempt>(newestFirst: T[]): T[
   return kept.slice(-10);
 }
 
+/**
+ * The same, for the newest `RECENT_READ` attempts of one topic.
+ *
+ * When that read is full, the oldest day in it may be cut in two: a child who
+ * answers many questions in one day can have the FIRST try at a question fall
+ * just outside the rows read while a later try the same day is inside them.
+ * That later try would then pass for a first try. So the part of that oldest
+ * day that was not read is looked up (question ids only), and tries at those
+ * questions on that day are left out. Only the oldest day can be affected: on
+ * any newer day, the first try is newer than the oldest row and so was read.
+ */
+async function firstTriesForMastery(
+  studentId: string,
+  topicId: string,
+  newestFirst: Array<{ isCorrect: boolean; questionId: string; createdAt: Date }>,
+) {
+  if (newestFirst.length < RECENT_READ) return lastTenFirstTries(newestFirst);
+  const oldest = newestFirst[newestFirst.length - 1];
+  if (!oldest || !oldest.createdAt) return lastTenFirstTries(newestFirst);
+  const oldestAt = new Date(oldest.createdAt);
+  const dayStart = istDayStart(oldestAt);
+  const earlier = await prisma.attempt.findMany({
+    where: { studentId, question: { topicId }, createdAt: { gte: dayStart, lt: oldestAt } },
+    select: { questionId: true },
+    distinct: ['questionId'],
+  });
+  if (earlier.length === 0) return lastTenFirstTries(newestFirst);
+  const triedEarlier: Record<string, boolean> = Object.create(null);
+  for (let i = 0; i < earlier.length; i++) triedEarlier[earlier[i].questionId] = true;
+  const day = indiaDay(oldestAt);
+  return lastTenFirstTries(
+    newestFirst.filter((a) => !(triedEarlier[a.questionId] && indiaDay(a.createdAt) === day)),
+  );
+}
+
 export async function calculateMastery(
   studentId: string,
   topicId: string,
@@ -62,7 +98,7 @@ export async function calculateMastery(
     take: RECENT_READ,
     select: { isCorrect: true, questionId: true, createdAt: true },
   });
-  const recent = lastTenFirstTries(read);
+  const recent = await firstTriesForMastery(studentId, topicId, read);
 
   if (recent.length === 0) return 'NotStarted';
 
@@ -95,7 +131,7 @@ async function recomputeProgress(studentId: string, topicId: string): Promise<vo
   ]);
 
   // Derive mastery from the last 10 first tries (see lastTenFirstTries)
-  const recent = lastTenFirstTries(read);
+  const recent = await firstTriesForMastery(studentId, topicId, read);
   let mastery: MasteryLevel = 'NotStarted';
   if (recent.length > 0) {
     const ratio = recent.filter((a) => a.isCorrect).length / recent.length;

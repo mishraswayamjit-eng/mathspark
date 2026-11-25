@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/db';
-import { getDisplayName } from '@/lib/sharedUtils';
+import { getDisplayName, usageDayKey } from '@/lib/sharedUtils';
 import type { LeagueTierName, LeagueMember } from '@/types';
 
 // ── Tier metadata ─────────────────────────────────────────────────────────────
@@ -157,8 +157,7 @@ export async function addWeeklyXP(studentId: string, xpAmount: number): Promise<
 
   const membership = await ensureCurrentWeekLeague(studentId);
 
-  const today = new Date();
-  today.setUTCHours(0, 0, 0, 0);
+  const today = usageDayKey(); // the India-time day
 
   await prisma.$transaction([
     prisma.leagueMembership.update({

@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/db';
 import { MONETIZATION_ENABLED } from '@/lib/monetization';
+import { usageDayKey } from '@/lib/sharedUtils';
 import type { LlmFeature } from './types';
 
 /** Daily message budget for a student with no active subscription. */
@@ -37,11 +38,9 @@ function istDayStart(now: Date): Date {
   );
 }
 
-/** The `UsageLog` row for today. Keyed on the UTC date, as the usage heartbeat does. */
+/** The `UsageLog` row for today: the India-time day, as every other reader and writer uses. */
 function usageLogDate(now: Date): Date {
-  const d = new Date(now.getTime());
-  d.setUTCHours(0, 0, 0, 0);
-  return d;
+  return usageDayKey(now);
 }
 
 export interface UsageResult {

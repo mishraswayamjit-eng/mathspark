@@ -10,6 +10,7 @@ import { prisma } from '@/lib/db';
 import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
 import type { ComputedAnalytics } from '@/lib/brain/recompute';
 import { endOfIstDay } from '@/lib/brain/rules';
+import { usageDayKey } from '@/lib/sharedUtils';
 import { getTopicsCached } from '@/lib/topicCache';
 import {
   computeStreak,
@@ -275,8 +276,7 @@ export async function loadHomeData(studentId: string): Promise<HomeData | null> 
     })(),
     // Today's XP (from UsageLog)
     (async () => {
-      const today = new Date();
-      today.setUTCHours(0, 0, 0, 0);
+      const today = usageDayKey(); // the India-time day
       return prisma.usageLog.findUnique({
         where: { studentId_date: { studentId, date: today } },
         select: { xpEarned: true },

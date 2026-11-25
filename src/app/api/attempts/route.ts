@@ -7,9 +7,8 @@ import { checkRateLimit } from '@/lib/rateLimit';
 import { validateInteractiveAnswer } from '@/lib/interactiveGrading';
 import { validateBody, ValidationError } from '@/lib/validateBody';
 import { logError } from '@/lib/logger';
+import { istDayStart, usageDayKey } from '@/lib/sharedUtils';
 
-// India has one time zone and no daylight saving: UTC + 5:30.
-const IST_OFFSET_MS = 330 * 60 * 1000;
 /** XP for a right answer on a question already tried earlier the same day. */
 const REVIEW_XP = 10;
 
@@ -91,8 +90,8 @@ export async function POST(req: Request) {
       ? validateInteractiveAnswer(question.interactionType, question.interactionData, interactiveAnswer ?? selected)
       : selected === question.correctAnswer;
 
-    const today = new Date();
-    today.setUTCHours(0, 0, 0, 0);
+    // The daily log (XP cap, question count) is keyed on the India-time day.
+    const today = usageDayKey();
 
     // Resolve the student's current-week league membership BEFORE the main tx.
     // `ensureCurrentWeekLeague` does its own writes (membership row + maybe league
@@ -107,31 +106,8 @@ export async function POST(req: Request) {
       return null;
     });
 
-    // Server-authoritative anti-tap timer: derive elapsed from the student's
-    // PREVIOUS recorded attempt instead of trusting the client-supplied
-    // `timeTakenMs` (which a script can forge to 9999 to dodge the 3s XP gate).
-    // First-ever attempt (no prior) → undefined → full credit, matching the
-    // flashcard `lastSeenAt` pattern. The client `timeTakenMs` is still stored
-    // on the row for analytics, just no longer trusted for the XP decision.
-    const lastAttempt = await prisma.attempt.findFirst({
-      where:   { studentId },
-      orderBy: { createdAt: 'desc' },
-      select:  { createdAt: true },
-    });
-    const serverElapsedMs = lastAttempt ? Date.now() - lastAttempt.createdAt.getTime() : undefined;
-
-    // A second try at the same question on the same India-time day (the review
-    // round, "review mistakes") comes after the correct answer has been shown,
-    // so it earns the review amount, not the full amount. Worked out here from
-    // the recorded attempts: the client is not asked.
-    const istNow = new Date(Date.now() + IST_OFFSET_MS);
-    istNow.setUTCHours(0, 0, 0, 0);
-    const indiaDayStart = new Date(istNow.getTime() - IST_OFFSET_MS);
-    const earlierToday = await prisma.attempt.findFirst({
-      where:  { studentId, questionId, createdAt: { gte: indiaDayStart } },
-      select: { id: true },
-    });
-    const isRepeatToday = earlierToday !== null;
+    // The start of today in India, for the "second try today" rule below.
+    const indiaDayStart = istDayStart(new Date());
 
     // ── Atomic core: create attempt + count daily usage + cap XP + league/lifetime XP ─
     const { attempt, xpAwarded } = await prisma.$transaction(async (tx) => {
@@ -152,6 +128,32 @@ export async function POST(req: Request) {
         update: { questionsAttempted: { increment: 1 } },
         create: { studentId, date: today, questionsAttempted: 1 },
       });
+
+      // The upsert above locks this student's row for today, so from here on
+      // the student's attempts are handled one at a time: a second request that
+      // arrived together with this one waits there until this one is committed,
+      // and then sees this attempt in the two reads below. Read before that
+      // point, two simultaneous requests could each miss the other.
+
+      // Server-authoritative anti-tap timer: time since the student's PREVIOUS
+      // recorded attempt, not the client-supplied `timeTakenMs` (which a script
+      // can forge to dodge the 3s XP gate). First-ever attempt → undefined →
+      // full credit. The client value is still stored on the row for analytics.
+      const previous = await tx.attempt.findFirst({
+        where:   { studentId, id: { not: created.id } },
+        orderBy: { createdAt: 'desc' },
+        select:  { createdAt: true },
+      });
+      const serverElapsedMs = previous ? created.createdAt.getTime() - previous.createdAt.getTime() : undefined;
+
+      // A second try at the same question on the same India-time day (the review
+      // round, "review mistakes") comes after the correct answer has been shown,
+      // so it earns the review amount, not the full amount. Worked out from the
+      // recorded attempts: the client is not asked.
+      const sameQuestionToday = await tx.attempt.count({
+        where: { studentId, questionId, createdAt: { gte: indiaDayStart } },
+      });
+      const isRepeatToday = sameQuestionToday > 1;
 
       // Compute and atomically cap daily XP within the same transaction
       const fullXP = computeXPForAttempt(serverIsCorrect, isBonusQuestion, serverElapsedMs);

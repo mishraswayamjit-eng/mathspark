@@ -72,6 +72,15 @@ describe('isQuizAnswerRight', () => {
     expect(isQuizAnswerRight('15th August', '15 August')).toBe(true);
     expect(isQuizAnswerRight('15 Aug', '15 August')).toBe(true);
     expect(isQuizAnswerRight('15', '15 August')).toBe(false);
+    // One or two letters do not name a month or a day: "a" fits April too.
+    expect(isQuizAnswerRight('15 a', '15 August')).toBe(false);
+    expect(isQuizAnswerRight('15 at', '15 August')).toBe(false);
+    expect(isQuizAnswerRight('15 j', '15 June')).toBe(false);
+    expect(isQuizAnswerRight('15 ju', '15 July')).toBe(false);
+    expect(isQuizAnswerRight('15 jun', '15 June')).toBe(true);
+    expect(isQuizAnswerRight('thu', 'Thursday 3')).toBe(false);
+    expect(isQuizAnswerRight('3 thurs', '3 Thursday')).toBe(true);
+    expect(isQuizAnswerRight('5 sept', '5 September')).toBe(true);
     expect(isQuizAnswerRight('25 hours', '25 minutes')).toBe(false);
   });
 

@@ -1,6 +1,7 @@
 import { prisma, USABLE_QUESTION_FILTER, aiSourceFilter } from './db';
 import { isEqualSurfacingEnabled } from './llm/featureFlags';
 import { matchesSubTopicKey } from './sharedUtils';
+import { shuffle } from './shuffle';
 import { getTopicsForGrade } from '@/data/topicTree';
 import type { Difficulty } from '@/types';
 import {
@@ -167,32 +168,42 @@ export async function getNextQuestionWithLadder(
   // Scoped selection for a single sub-topic key (empty key = whole pool). This is
   // the original `getNextQuestion` body verbatim — same queries, same order.
   async function pickForSubtopic(key: string) {
-    // Build optional subTopic filter. The DB `contains` is a cheap SUPERSET used to
-    // keep `take: 200` relevant; precise word-boundary matching is applied in-app
-    // below so keys like "ratio" don't leak "Ope(ratio)ns" / "angle" → "Tri(angle)s".
-    const subTopicFilter = key
-      ? { subTopic: { contains: key, mode: 'insensitive' as const } }
-      : {};
+    // Which questions belong to this key. A question that names its own topic
+    // (`nodeId`) is served only there: a "Fraction addition" question belongs to
+    // Fractions, though its label also matches the key of Addition & Subtraction.
+    // Without a `nodeId` (or when the key names no topic of the grade) the label
+    // decides. The DB `contains` is a cheap SUPERSET; precise word-boundary
+    // matching is applied in-app (`belongs`) so keys like "ratio" don't leak
+    // "Ope(ratio)ns" / "angle" → "Tri(angle)s".
+    const ownNodeId = nodeIdForKey(topicId, key);
+    const byLabel = { subTopic: { contains: key, mode: 'insensitive' as const } };
+    const inKey = !key
+      ? {}
+      : ownNodeId
+        ? {
+            OR: [
+              { nodeId: ownNodeId },
+              { AND: [{ OR: [{ nodeId: null }, { nodeId: '' }] }, byLabel] },
+            ],
+          }
+        : byLabel;
+    const belongs = (q: { subTopic: string; nodeId?: string | null }) =>
+      !key || (ownNodeId && q.nodeId ? q.nodeId === ownNodeId : matchesSubTopicKey(q.subTopic, key));
 
-    // `take: 200` keeps the read small, but a topic can hold more than 200
-    // questions. Reading from either end of the id order (chosen at random each
-    // time) reaches every question of a topic of up to 400, where one fixed
-    // order would never serve the rest.
-    const idOrder: 'asc' | 'desc' = Math.random() < 0.5 ? 'asc' : 'desc';
-
-    // Parallel DB reads
-    const [fetchedQuestions, sessionAttempts, progress, misconceptionAttempts] = await Promise.all([
+    // Parallel DB reads. The topic is read whole but light (three short
+    // columns), so a topic of any size is reached; full rows are fetched below
+    // only for the questions that can be served now.
+    const [lightPool, sessionAttempts, progress, misconceptionAttempts] = await Promise.all([
       prisma.question.findMany({
-        where: { topicId, ...subTopicFilter, ...USABLE_QUESTION_FILTER, ...aiSourceFilter() },
-        orderBy: { id: idOrder },
-        take: 200,
+        where: { topicId, ...inKey, ...USABLE_QUESTION_FILTER, ...aiSourceFilter() },
+        select: { id: true, subTopic: true, nodeId: true },
       }),
 
       prisma.attempt.findMany({
         where: {
           studentId,
           createdAt: { gte: seenWindowStart, lt: tomorrowStart },
-          question: { topicId, ...subTopicFilter },
+          question: { topicId, ...inKey },
         },
         orderBy: { createdAt: 'asc' },
         select: { questionId: true, isCorrect: true, createdAt: true },
@@ -207,24 +218,32 @@ export async function getNextQuestionWithLadder(
         where: {
           studentId,
           misconceptionType: { not: null },
-          question: { topicId, ...subTopicFilter },
+          question: { topicId, ...inKey },
         },
         select: { question: { select: { subTopic: true } } },
       }),
     ]);
 
-    // Precise word-boundary filter on the served pool (the DB query above only
-    // narrowed it to a substring superset).
-    // A question that names its own topic (`nodeId`) is served only there: a
-    // "Fraction addition" question belongs to Fractions, though its label also
-    // matches the key of Addition & Subtraction. Without a `nodeId` (or when the
-    // key names no topic of the grade) the label decides, as before.
-    const ownNodeId = nodeIdForKey(topicId, key);
-    const allQuestions = key
-      ? fetchedQuestions.filter((q) =>
-          ownNodeId && q.nodeId ? q.nodeId === ownNodeId : matchesSubTopicKey(q.subTopic, key),
-        )
-      : fetchedQuestions;
+    // Full rows for at most FULL_READ questions: the ones not seen in the window
+    // and not in this lesson, or, when every question has been seen, the ones
+    // not in this lesson (the absolute fallback below serves from those).
+    const FULL_READ = 200;
+    const poolIds = lightPool.filter(belongs).map((q) => q.id);
+    const seenBefore = new Set<string>(clientExcludeIds);
+    for (const a of sessionAttempts) seenBefore.add(a.questionId);
+    let candidateIds = poolIds.filter((id) => !seenBefore.has(id));
+    if (candidateIds.length === 0) {
+      const inLesson = new Set<string>(clientExcludeIds);
+      candidateIds = poolIds.filter((id) => !inLesson.has(id));
+    }
+    if (candidateIds.length > FULL_READ) candidateIds = shuffle(candidateIds).slice(0, FULL_READ);
+    const fetchedQuestions =
+      candidateIds.length > 0
+        ? await prisma.question.findMany({
+            where: { id: { in: candidateIds }, ...USABLE_QUESTION_FILTER, ...aiSourceFilter() },
+          })
+        : [];
+    const allQuestions = fetchedQuestions.filter(belongs);
 
     // Compute boosted subTopics (3+ misconception attempts → higher priority)
     const subTopicMiscCounts = new Map<string, number>();
@@ -336,12 +355,23 @@ export async function getNextQuestionWithLadder(
       // One extra small indexed query: today's attempts for this grade pool.
       const todays = await prisma.attempt.findMany({
         where: { studentId, createdAt: { gte: todayStart, lt: tomorrowStart }, question: { topicId } },
-        select: { question: { select: { subTopic: true } } },
+        select: { question: { select: { subTopic: true, nodeId: true } } },
       });
 
-      // Tally served-count per key via precise word-boundary matching.
+      // Tally served-count per key: under the topic a question names (`nodeId`)
+      // when it names one, else via precise word-boundary matching of its label.
       const served = new Map<string, number>(keys.map((k) => [k, 0]));
+      const keyOfNode = new Map<string, string>();
+      for (const k of keys) {
+        const nid = nodeIdForKey(topicId, k);
+        if (nid) keyOfNode.set(nid, k);
+      }
       for (const a of todays) {
+        const named = a.question.nodeId ? keyOfNode.get(a.question.nodeId) : undefined;
+        if (named) {
+          served.set(named, served.get(named)! + 1);
+          continue;
+        }
         const st = a.question.subTopic;
         for (const k of keys) if (matchesSubTopicKey(st, k)) served.set(k, served.get(k)! + 1);
       }

@@ -322,9 +322,24 @@ export async function generatePYQPaper(year: PYQYear, grade: number = 4) {
     },
   });
 
-  // If both batches hold this year, the first prefix's paper is the one offered.
-  const first = found.filter((q) => q.source === sources[0]);
-  const questions = first.length > 0 ? first : found;
+  // If both batches hold this year, serve the one `listPastPapers` lists: the
+  // first prefix (in order) that holds enough of the paper. A year asked for
+  // directly that no batch holds enough of gets its fullest batch, never a mix.
+  const batches = sources.map((s) => found.filter((q) => q.source === s));
+  let questions = batches[0];
+  let chosen = false;
+  for (let i = 0; i < batches.length; i++) {
+    if (batches[i].length >= family.fullSize * PAST_PAPER_MIN_SHARE) {
+      questions = batches[i];
+      chosen = true;
+      break;
+    }
+  }
+  if (!chosen) {
+    for (let i = 1; i < batches.length; i++) {
+      if (batches[i].length > questions.length) questions = batches[i];
+    }
+  }
 
   if (questions.length === 0) {
     throw new Error(`No PYQ questions found for year ${year}`);

@@ -9,6 +9,11 @@ import { addWeeklyXP } from '@/lib/leaderboard';
 import { logError } from '@/lib/logger';
 import { LESSON_TOPICS } from '@/data/lessonTopics';
 
+/** True for Prisma's "unique constraint failed" (P2002), without importing its namespace. */
+function isUniqueViolation(err: unknown): boolean {
+  return typeof err === 'object' && err !== null && 'code' in err && (err as { code?: unknown }).code === 'P2002';
+}
+
 // GET — return all lesson progress for the authenticated student
 export async function GET() {
   const studentId = await getAuthenticatedStudentId();
@@ -76,37 +81,47 @@ export async function POST(req: Request) {
       ? Math.min(86_400, Math.max(0, Math.round(body.durationSec)))
       : 0;
 
-    // Check if this is a first-time completion
-    const existing = await prisma.lessonProgress.findUnique({
-      where: {
-        studentId_topicSlug_levelId: { studentId, topicSlug, levelId },
-      },
-      select: { quizScore: true },
-    });
+    // First time or not is decided by the database, not by a read beforehand:
+    // the row is created, and the unique key (student, topic, level) lets only
+    // one request win. Two requests arriving together (a double tap, a retry)
+    // therefore cannot both be paid as a first completion.
+    const key = { studentId, topicSlug, levelId };
+    let isFirstTime = false;
+    try {
+      await prisma.lessonProgress.create({ data: { ...key, quizScore, durationSec } });
+      isFirstTime = true;
+    } catch (err) {
+      if (!isUniqueViolation(err)) throw err;
+    }
 
-    const isFirstTime = !existing;
+    // Not the first time: keep the highest score. A better score replaces the
+    // old one only if the old one is still what was read (compare and swap), so
+    // two requests with the same better score are not both paid the difference.
+    let previousScore: number | null = null;
+    let improved = false;
+    let storedScore = quizScore;
+    if (!isFirstTime) {
+      const existing = await prisma.lessonProgress.findUnique({
+        where: { studentId_topicSlug_levelId: key },
+        select: { quizScore: true },
+      });
+      previousScore = existing ? existing.quizScore : null;
+      if (previousScore !== null && quizScore > previousScore) {
+        const swapped = await prisma.lessonProgress.updateMany({
+          where: { ...key, quizScore: previousScore },
+          data: { quizScore, durationSec, completedAt: new Date() },
+        });
+        improved = swapped.count === 1;
+        if (!improved) storedScore = Math.max(previousScore, quizScore);
+      } else {
+        await prisma.lessonProgress.updateMany({
+          where: key,
+          data: { durationSec, completedAt: new Date() },
+        });
+        if (previousScore !== null) storedScore = previousScore;
+      }
+    }
     const isPerfect = quizScore === 100;
-
-    // Upsert — keep highest score
-    const progress = await prisma.lessonProgress.upsert({
-      where: {
-        studentId_topicSlug_levelId: { studentId, topicSlug, levelId },
-      },
-      create: {
-        studentId,
-        topicSlug,
-        levelId,
-        quizScore,
-        durationSec,
-      },
-      update: {
-        quizScore: existing && existing.quizScore > quizScore
-          ? existing.quizScore
-          : quizScore,
-        durationSec,
-        completedAt: new Date(),
-      },
-    });
 
     // XP calculation. A level pays once: in full the first time it is finished,
     // and after that only for the part of the score that is better than the
@@ -123,8 +138,8 @@ export async function POST(req: Request) {
       scoreBonus = bonusFor(quizScore);
       firstTimeBonus = 20;
       perfectBonus = isPerfect ? 15 : 0;
-    } else if (existing && quizScore > existing.quizScore) {
-      scoreBonus = Math.max(0, bonusFor(quizScore) - bonusFor(existing.quizScore));
+    } else if (improved && previousScore !== null) {
+      scoreBonus = Math.max(0, bonusFor(quizScore) - bonusFor(previousScore));
       perfectBonus = isPerfect ? 15 : 0;
     }
     const totalXP = base + scoreBonus + firstTimeBonus + perfectBonus;
@@ -133,11 +148,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({
       ok: true,
-      progress: {
-        topicSlug: progress.topicSlug,
-        levelId: progress.levelId,
-        quizScore: progress.quizScore,
-      },
+      progress: { topicSlug, levelId, quizScore: storedScore },
       xp: { total: totalXP, base, scoreBonus, firstTimeBonus, perfectBonus },
     });
   } catch (e) {

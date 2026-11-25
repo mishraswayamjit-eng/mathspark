@@ -165,6 +165,18 @@ function wordsAlike(typed: string, stored: string): boolean {
   return stored.length >= 2 && typed.indexOf(stored) === 0 && typed.length - stored.length <= 2;
 }
 
+/**
+ * True when the child's word names the stored month or weekday: the word
+ * itself, its plural, or a short form of at least three letters ("aug",
+ * "sept", "thu"). One or two letters are not enough: "a" fits April as well as
+ * August, and "j" fits June as well as July.
+ */
+function namesSame(typed: string, stored: string): boolean {
+  if (typed === stored) return true;
+  if (typed.length >= 3 && stored.indexOf(typed) === 0) return true;
+  return typed.indexOf(stored) === 0 && typed.length - stored.length <= 2;
+}
+
 function has(list: string[], word: string): boolean {
   return list.indexOf(word) !== -1;
 }
@@ -210,7 +222,7 @@ function matchOne(typedFolded: string, storedFolded: string): boolean {
     if (has(NAMING, storedWords[i])) {
       let named = false;
       for (let k = 0; k < typedWords.length; k++) {
-        if (wordsAlike(typedWords[k], storedWords[i])) {
+        if (namesSame(typedWords[k], storedWords[i])) {
           named = true;
           break;
         }

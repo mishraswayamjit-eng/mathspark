@@ -4,6 +4,7 @@ import { FREE_DAILY_MINUTES, UNLIMITED_THRESHOLD, isUnlimitedPlan, isPracticeAll
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { MONETIZATION_ENABLED } from '@/lib/monetization';
 import { logError } from '@/lib/logger';
+import { istDayStart, usageDayKey } from '@/lib/sharedUtils';
 
 export const dynamic = 'force-dynamic';
 
@@ -37,15 +38,14 @@ export async function GET() {
       prisma.attempt.count({
         where: {
           studentId,
-          createdAt: { gte: (() => { const d = new Date(); d.setUTCHours(0,0,0,0); return d; })() },
+          createdAt: { gte: istDayStart(new Date()) },
         },
       }),
     ]);
 
     if (!student) return NextResponse.json({ error: 'Student not found' }, { status: 404 });
 
-    const today    = new Date();
-    today.setUTCHours(0, 0, 0, 0);
+    const today    = usageDayKey(); // the India-time day
     const todayStr = today.toISOString().slice(0, 10);
     const lastStr  = student.lastActiveDate
       ? new Date(student.lastActiveDate).toISOString().slice(0, 10)

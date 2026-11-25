@@ -15,7 +15,15 @@ export const dynamic = 'force-dynamic';
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   // Signed-out visitors are fine here: /start, /auth/*, /student/login, /dev and
   // others live under this layout. Never redirect from the layout.
-  const studentId = await getAuthenticatedStudentId();
+  // The check throws when the database cannot confirm the account (see
+  // studentAuth). The shell must not take the page down for that: it renders
+  // without the child's data, and each page and route reports its own failure.
+  let studentId: string | null = null;
+  try {
+    studentId = await getAuthenticatedStudentId();
+  } catch (err) {
+    logError('[app/layout] could not confirm the signed-in child', err);
+  }
 
   let student: StudentBootstrap | null = null;
   if (studentId) {

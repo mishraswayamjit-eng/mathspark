@@ -1,6 +1,7 @@
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
 import { prisma } from '@/lib/db';
+import { logError } from '@/lib/logger';
 
 const COOKIE_NAME = 'mathspark_student_token';
 const EXPIRY = '30d';
@@ -53,29 +54,46 @@ const ACTIVE_CACHE_MAX = 5000;
 let activeCache: Record<string, { ok: boolean; at: number }> = {};
 let activeCacheSize = 0;
 
+async function readActive(studentId: string): Promise<boolean> {
+  const row = await prisma.student.findFirst({
+    where: { id: studentId, deletedAt: null },
+    select: { id: true },
+  });
+  return !!row;
+}
+
 async function isActiveStudent(studentId: string): Promise<boolean> {
   const now = Date.now();
   const hit = activeCache[studentId];
   if (hit && now - hit.at < ACTIVE_TTL_MS) return hit.ok;
+  let ok: boolean;
   try {
-    const row = await prisma.student.findFirst({
-      where: { id: studentId, deletedAt: null },
-      select: { id: true },
-    });
-    if (!hit) {
-      if (activeCacheSize >= ACTIVE_CACHE_MAX) {
-        activeCache = {};
-        activeCacheSize = 0;
-      }
-      activeCacheSize += 1;
+    ok = await readActive(studentId);
+  } catch (err) {
+    // The database could not be reached. Never answer "active" on a guess: a
+    // removed child's cookie must not start working because a read failed.
+    logError('[studentAuth] could not check that the account is active:', err);
+    // An earlier answer for this child, even an old one, is better than a guess.
+    if (hit) return hit.ok;
+    // No earlier answer: try once more, then give up. Giving up throws, so the
+    // route answers with a server error (which is the truth) instead of either
+    // signing the child out or letting a removed account in.
+    try {
+      ok = await readActive(studentId);
+    } catch (again) {
+      logError('[studentAuth] second check failed:', again);
+      throw new Error('Could not confirm that the account is active');
     }
-    activeCache[studentId] = { ok: !!row, at: now };
-    return !!row;
-  } catch {
-    // The database could not be reached: let the route itself report that,
-    // rather than signing every child out.
-    return true;
   }
+  if (!hit) {
+    if (activeCacheSize >= ACTIVE_CACHE_MAX) {
+      activeCache = {};
+      activeCacheSize = 0;
+    }
+    activeCacheSize += 1;
+  }
+  activeCache[studentId] = { ok, at: now };
+  return ok;
 }
 
 export { COOKIE_NAME };

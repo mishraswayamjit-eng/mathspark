@@ -22,6 +22,17 @@ export function istDayNumber(when: Date | string | number): number {
   return Math.floor((new Date(when).getTime() + IST_OFFSET_MS) / DAY_MS);
 }
 
+/**
+ * The key of the daily `UsageLog` row for the India-time day `when` falls on:
+ * that calendar date at 00:00 UTC, which is what the `date` column (a plain
+ * date) stores. Every reader and writer of the daily log must use this, so the
+ * day's XP cap, minutes and chat count all roll over at midnight in India,
+ * together with streaks, review XP and the adaptive "today".
+ */
+export function usageDayKey(when: Date | string | number = new Date()): Date {
+  return new Date(istDayNumber(when) * DAY_MS);
+}
+
 /** The first instant (as a UTC Date) of the India-time day that `when` falls on. */
 export function istDayStart(when: Date | string | number): Date {
   return new Date(istDayNumber(when) * DAY_MS - IST_OFFSET_MS);

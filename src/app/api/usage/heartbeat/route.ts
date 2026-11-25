@@ -4,6 +4,7 @@ import { FREE_DAILY_MINUTES, UNLIMITED_THRESHOLD, isUnlimitedPlan } from '@/lib/
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { MONETIZATION_ENABLED } from '@/lib/monetization';
 import { logError } from '@/lib/logger';
+import { usageDayKey } from '@/lib/sharedUtils';
 
 export const dynamic = 'force-dynamic';
 
@@ -21,8 +22,7 @@ export async function POST() {
       return NextResponse.json({ allowed: true, used: 0, limit: UNLIMITED_THRESHOLD, remaining: null });
     }
 
-    const today = new Date();
-    today.setUTCHours(0, 0, 0, 0);
+    const today = usageDayKey(); // the India-time day
     const todayStr = today.toISOString().slice(0, 10);
 
     // Upsert daily usage log (increment 1 minute per heartbeat)
